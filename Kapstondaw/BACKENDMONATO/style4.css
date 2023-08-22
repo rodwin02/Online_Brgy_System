@@ -1,0 +1,480 @@
+/* START CONTENT MANAGEMENT CSS*/
+.modal-b-info {
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 12% 0 0 29%;
+  display: none;
+}
+
+.form-b-info {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 625px;
+  height: 500px;
+  padding: 20px;
+
+}
+
+.header-cont {
+  display: flex;
+  flex-direction: row;
+}
+.header-cont p {
+  width: 100%;
+  color: #000;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.header-cont img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+  
+}
+
+.input-cont {
+  display: flex;
+  
+  justify-content: space-between;
+  
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 20px;
+}
+
+.left-cont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-right: 30px;
+}
+
+.left-cont input {
+  height: 30px;
+  margin-bottom: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.right-cont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-right: 30px;
+ 
+}
+
+.right-cont input {
+  height: 30px;
+  margin-bottom: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.UpdateInfo {
+  width: 82px;
+  height: 29px;
+  
+  border-radius: 5px;
+  background: #007236;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  margin-top: 150px;
+}
+
+.body-cont {
+  display: flex;
+  flex-direction: column;
+  max-width: 2000px;
+  height: auto;
+  margin-left: 75px;
+}
+
+.first-layer {
+  margin-top: 85px;
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+  display: flex; 
+  flex-direction: row;
+}
+
+.first-layer p {
+  width: 50%;
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+
+.first-layer a {
+  width: 50%;
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.second_layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  flex-direction: row;
+  width: 98%;
+  margin-top: 30px;
+  height: 65px;
+  
+  font-size: 13px;
+  font-family: Poppins;
+  font-weight: 400;
+}
+
+.second_layer .search-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-self: center; 
+  align-items: center;
+}
+.second_layer .search-cont p{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.second_layer .search-cont input{
+  height: 30px;
+  border: 1px solid #878787;
+  background: #FFF;
+  border-radius: 5px;
+}
+.second_layer .add-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: flex-end;
+  margin-right: 40px;
+}
+
+.second_layer .add-cont .addAnnouncement{
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+  color: #007236;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 130px;
+  border-radius: 20px;
+  justify-content: center;
+  
+}
+
+.third_layer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 98%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  color: #000;
+  font-size: 13px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+table thead tr th {
+  color: #000000;
+  font-size: 13px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #dfdfdf;
+}
+
+
+.edit, .delete {
+  margin-right: 10px;
+  text-decoration: none;
+}
+.edit {
+  color: #007236;
+  cursor: pointer;
+}
+.delete {
+  color: #F00;
+  cursor: pointer;
+}
+
+.modal-addAnnouncement{
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 9% 0 0 29%;
+  display: none;
+}
+.modal-editAnnouncement{
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 9% 0 0 29%;
+  display: none;
+}
+
+.formAnnouncement {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #F8F8F8;
+  width: 625px;
+  height: 580px;
+  padding: 20px;
+  overflow: auto;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+}
+.title-container p {
+  width: 100%;
+  color: #000;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.title-container img {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+  
+}
+
+.add-container {
+  display: flex;
+  
+  justify-content: space-between;
+  
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 20px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-right: 30px;
+}
+
+.left input {
+  height: 30px;
+  margin-bottom: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-right: 30px;
+ 
+}
+
+.right input {
+  height: 30px;
+  margin-bottom: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.upload {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+#preview {
+  max-width: 190px;
+  max-height: 190px;
+  margin-top: 5px;
+}
+.image {
+  padding: 4px;
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 5px;
+  width: 45%;
+}
+
+.submitAnnouncement {
+  width: 82px;
+  height: 29px;
+  
+  border-radius: 5px;
+  background: #007236;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  position: fixed;
+  margin-top: 510px;
+}
+
+.home_request {
+  display: flex;
+  flex-direction: column;
+  max-width: 2000px;
+  height: auto;
+  margin-left: 75px;
+}
+
+.first_layer {
+  margin-top: 85px;
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
+  display: flex; 
+  flex-direction: row;
+}
+.first_layer p {
+  width: 50%;
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+  
+}
+.first_layer a {
+  width: 50%;
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}

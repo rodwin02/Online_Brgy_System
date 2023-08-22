@@ -1,0 +1,39 @@
+.zone4 {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background-image:linear-gradient(120deg,rgba(#006630, 100%), rgba(#6BA024, 100%));
+  height: 8vh;
+  padding-left: 1rem;
+  min-width: 375px;
+  @media(min-width: 375px) {
+    display: none;
+  }
+
+  .layer1 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .logo {
+      width: 70px;
+
+      img {
+        position: absolute;
+        top: 30%;
+        width: inherit;
+      }
+    }
+    .brgy {
+      span {
+        color: #fff;
+        font-size: .8rem;
+      }
+      h2 {
+        color: #fff;
+        font-size: 1.2rem;
+        margin: 0;
+      }
+    }
+  }
+}

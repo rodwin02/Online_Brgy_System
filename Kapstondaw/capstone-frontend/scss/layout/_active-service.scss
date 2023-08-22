@@ -1,0 +1,75 @@
+.active-service {
+  background-color: rgba($color: #000000, $alpha: 0.25);
+  border: none;
+  display: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+
+  form {
+    position: sticky;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin: 0 auto;
+
+    background-color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    width: calc(100% - 30px);
+    @media (min-width: 375px) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% - 50%);
+      margin: 0;
+    }
+
+    p {
+      text-align: end;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      input,
+      textarea,
+      select {
+        border: none;
+        background-color: rgba($color: #a2eec6, $alpha: 0.25);
+        padding: 0.5rem;
+        margin: 1rem 0;
+      }
+      textarea {
+        width: 100%;
+        height: 100px;
+        resize: none;
+      }
+      select {
+        width: 30%;
+      }
+    }
+
+    .requestor {
+      display: none;
+    }
+
+    button {
+      border: none;
+      background-color: #007236;
+      border-radius: 1rem;
+      color: #fff;
+      padding: 0.5rem 1rem;
+    }
+  }
+}

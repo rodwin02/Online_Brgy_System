@@ -1,0 +1,49 @@
+footer {
+  background-color: #353636;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  text-align: center;
+  gap: 1rem;
+  color: #fff;
+  @media(min-width: 375px) {
+    justify-content: space-between;
+    padding: 2rem;
+  }
+
+  .links {
+
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+
+        @media(min-width: 375px) {
+          list-style:disc;
+          text-align: start;
+        }
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .com {
+
+    ul {
+
+      li {
+        text-align: start;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  }
+}

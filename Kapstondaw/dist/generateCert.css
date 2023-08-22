@@ -1,0 +1,2621 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+.printing-container-endorsement {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-endorsement .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-endorsement .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-endorsement .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-endorsement .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-endorsement .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-endorsement .print-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  color: #007236;
+  width: 105px;
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+}
+.printing-container-endorsement .form-container {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-endorsement .form-container .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+.printing-container-endorsement .form-container .paper .header-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 133px;
+}
+.printing-container-endorsement .form-container .paper .header-cont .left {
+  width: 118.677px;
+  height: 132.677px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.printing-container-endorsement .form-container .paper .header-cont .center-head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.printing-container-endorsement .form-container .paper .header-cont .center-head .first {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .header-cont .center-head .second {
+  color: #000;
+  font-family: Caladea;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .header-cont .center-head .second span {
+  color: #00AF50;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .header-cont .center-head .third {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .header-cont .right {
+  width: 115.677px;
+  height: 125.677px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.printing-container-endorsement .form-container .paper .line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.printing-container-endorsement .form-container .paper .body-container {
+  width: 100%;
+  height: auto;
+}
+.printing-container-endorsement .form-container .paper .body-container .title-body {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .body-container .to {
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 60px;
+  margin-top: 30px;
+}
+.printing-container-endorsement .form-container .paper .body-container .to span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-endorsement .form-container .paper .body-container .governor {
+  color: #000;
+  font-family: Caladea;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 85px;
+}
+.printing-container-endorsement .form-container .paper .body-container .greet {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+  margin-left: 105px;
+}
+.printing-container-endorsement .form-container .paper .body-container .first-p {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 85px;
+}
+.printing-container-endorsement .form-container .paper .body-container .first-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-endorsement .form-container .paper .body-container .second-p {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 85px;
+}
+.printing-container-endorsement .form-container .paper .body-container .second-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-endorsement .form-container .paper .body-container .third-p {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 85px;
+}
+.printing-container-endorsement .form-container .paper .body-container .third-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-endorsement .form-container .paper .body-container .date-time {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 40px;
+  margin-left: 105px;
+}
+.printing-container-endorsement .form-container .paper .body-container .ending-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 40px;
+  margin-left: 105px;
+}
+.printing-container-endorsement .form-container .paper .body-container .from {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 450px;
+}
+.printing-container-endorsement .form-container .paper .body-container .captain-name {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 450px;
+}
+.printing-container-endorsement .form-container .paper .body-container .captain-name span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 30px;
+}
+
+.watermark-cont {
+  position: relative;
+  margin-top: -580px;
+  margin-left: 140px;
+}
+.watermark-cont img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.printing-container-brgyClearance {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-brgyClearance .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-brgyClearance .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-brgyClearance .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-brgyClearance .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-brgyClearance .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-brgyClearance .print-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  color: #007236;
+  width: 105px;
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+  cursor: pointer;
+}
+.printing-container-brgyClearance .form-container-brgyClearance {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  border: 1px solid #000000;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 133px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .left {
+  width: 118.677px;
+  height: 132.677px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .center-head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .center-head .first {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .center-head .second {
+  color: #000;
+  font-family: Caladea;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .center-head .second span {
+  color: #00AF50;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .center-head .third {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .header-cont .right {
+  width: 115.677px;
+  height: 125.677px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont {
+  width: 30%;
+  background: linear-gradient(180deg, #ECEADF 0%, #C9C29F 100%);
+  display: flex;
+  flex-direction: column;
+  height: 832px;
+  padding-right: 40px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #000;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-captain {
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-captain span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .k-title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-councilor {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-councilor span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-councilor1 {
+  margin-left: 10px;
+  margin-top: 35px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .left-cont .left-name-cont .b-councilor1 span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont {
+  width: 70%;
+  padding: 10px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .greet {
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 15px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .certify {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .name {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .name input {
+  width: 300px;
+  margin-left: 110px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .address {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .address input {
+  width: 300px;
+  margin-left: 90px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .dob {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .dob input {
+  width: 300px;
+  margin-left: 52px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .pob {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .pob input {
+  width: 300px;
+  margin-left: 45px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .purpose {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .purpose input {
+  width: 300px;
+  margin-left: 90px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .certNo {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .certNo input {
+  width: 300px;
+  margin-left: 60px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .dateIssue {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .dateIssue input {
+  width: 300px;
+  margin-left: 56px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .findings {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .info .findings span {
+  width: 300px;
+  margin-left: 90px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 12px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .signature-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 12px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .signature-cont .signature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 75px;
+  margin-right: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .signature-cont .thumb-mark {
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 120px;
+  height: 90px;
+  margin-right: 40px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .signature-cont .thumb-mark span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .from {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 130px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 70px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .b-captain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 220px;
+  margin-top: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .b-captain span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .body-container .right-cont .validity {
+  width: 210px;
+  margin-top: 30px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 30px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .watermark-cont-brgyClearance {
+  position: relative;
+  margin-top: -680px;
+  margin-left: 20px;
+}
+.printing-container-brgyClearance .form-container-brgyClearance .paper .watermark-cont-brgyClearance img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.printing-container-indigency {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-indigency .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-indigency .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-indigency .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-indigency .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-indigency .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-indigency .print-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  color: #007236;
+  width: 105px;
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+}
+.printing-container-indigency .form-container-brgyClearance {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-indigency .form-container-brgyClearance .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 133px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .left {
+  width: 118.677px;
+  height: 132.677px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .center-head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .center-head .first {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .center-head .second {
+  color: #000;
+  font-family: Caladea;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .center-head .second span {
+  color: #00AF50;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .center-head .third {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .header-cont .right {
+  width: 115.677px;
+  height: 125.677px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont {
+  width: 30%;
+  background: linear-gradient(180deg, #ECEADF 0%, #C9C29F 100%);
+  display: flex;
+  flex-direction: column;
+  height: 832px;
+  padding-right: 40px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont p {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #000;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-captain {
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-captain span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .k-title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-councilor {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-councilor span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-councilor1 {
+  margin-left: 10px;
+  margin-top: 35px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .left-cont .b-councilor1 span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont {
+  width: 70%;
+  padding: 10px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .to {
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .to span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .position {
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 27px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .location {
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 27px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .first-p {
+  text-indent: 40px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .first-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .second-p {
+  text-indent: 40px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .third-p {
+  text-indent: 40px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .third-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .date-time {
+  color: #000;
+  font-family: Caladea;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+  margin-left: 40px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .b-captain1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  margin-left: 290px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .b-captain1 span {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .watermark-cont-indigency {
+  position: relative;
+  margin-top: -540px;
+  margin-left: 20px;
+}
+.printing-container-indigency .form-container-brgyClearance .paper .body-container .right-cont .watermark-cont-indigency img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.printing-container-lbr {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-lbr .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-lbr .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-lbr .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-lbr .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-lbr .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-lbr .print-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  color: #007236;
+  width: 105px;
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+}
+.printing-container-lbr .form-container {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-lbr .form-container .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+.printing-container-lbr .form-container .paper .header-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 133px;
+}
+.printing-container-lbr .form-container .paper .header-cont .left {
+  width: 118.677px;
+  height: 132.677px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.printing-container-lbr .form-container .paper .header-cont .center-head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.printing-container-lbr .form-container .paper .header-cont .center-head .first {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .header-cont .center-head .second {
+  color: #000;
+  font-family: Caladea;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .header-cont .center-head .second span {
+  color: #00AF50;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .header-cont .center-head .third {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .header-cont .right {
+  width: 115.677px;
+  height: 125.677px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.printing-container-lbr .form-container .paper .line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr {
+  width: 100%;
+  height: auto;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .title-body {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .to {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .governor {
+  color: #000;
+  font-family: Caladea;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .greet {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .first-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-right: 80px;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .first-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .first-p #nameRequest {
+  width: 47%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .first-p #noData {
+  width: 53%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .first-p span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .second-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-right: 80px;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .second-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .second-p #nameRequest1 {
+  width: 47%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .third-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-right: 80px;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .third-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .third-p #nameRequest2 {
+  width: 47%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .third-p #noData1 {
+  width: 53%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .fourth-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-right: 80px;
+  margin-top: 30px;
+  margin-left: 70px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .fourth-p input {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .fourth-p #nameRequest3 {
+  width: 47%;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .date-time {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 40px;
+  margin-left: 100px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .date-time span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .captain-name {
+  color: #000;
+  font-family: Caladea;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 450px;
+}
+.printing-container-lbr .form-container .paper .body-container-lbr .captain-name span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 30px;
+}
+
+.watermark-cont {
+  position: relative;
+  margin-top: -580px;
+  margin-left: 140px;
+}
+.watermark-cont img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.printing-container-businessClearance {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-businessClearance .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-businessClearance .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-businessClearance .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-businessClearance .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-businessClearance .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-businessClearance .print-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  color: #007236;
+  width: 105px;
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+}
+.printing-container-businessClearance .form-container-businessClearance {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  border: 1px solid #000000;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 133px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .left {
+  width: 118.677px;
+  height: 132.677px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .center-head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .center-head .first {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .center-head .second {
+  color: #000;
+  font-family: Caladea;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .center-head .second span {
+  color: #00AF50;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .center-head .third {
+  color: #000;
+  text-align: center;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .header-cont .right {
+  width: 115.677px;
+  height: 125.677px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .line {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont {
+  width: 30%;
+  background: linear-gradient(180deg, #ECEADF 0%, #C9C29F 100%);
+  display: flex;
+  flex-direction: column;
+  height: 832px;
+  padding-right: 40px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont p {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #000;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-captain {
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-captain span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .k-title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-councilor {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-councilor span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-councilor1 {
+  margin-left: 10px;
+  margin-top: 35px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .left-cont .b-councilor1 span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business {
+  width: 70%;
+  padding: 10px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .title {
+  color: #000;
+  font-family: Caladea;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .certify {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 40px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .name {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .name input {
+  width: 300px;
+  margin-left: 50px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .address {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .address input {
+  width: 300px;
+  margin-left: 32px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .owner {
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .info .owner input {
+  width: 300px;
+  margin-left: 42px;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .given {
+  text-indent: 50px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 100px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .signature-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 10px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 12px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .signature-cont .signature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 65px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .from {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 130px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 70px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .b-captain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 220px;
+  margin-top: 30px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .b-captain span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .ending-p {
+  color: #000;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 50px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .ending-p span {
+  color: #000;
+  font-family: Caladea;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .body-container .right-cont-business .validity {
+  width: 210px;
+  margin-top: 30px;
+  color: #000;
+  font-family: Caladea;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .watermark-cont-businessClearance {
+  position: relative;
+  margin-top: -680px;
+  margin-left: 20px;
+}
+.printing-container-businessClearance .form-container-businessClearance .paper .watermark-cont-businessClearance img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.printing-container-idForm {
+  max-width: 2000px;
+  height: auto;
+  margin-top: 85px;
+  margin-left: 75px;
+}
+.printing-container-idForm .title-cont {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-idForm .title-cont p {
+  display: flex;
+  align-self: center;
+  margin-left: 35px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #007236;
+}
+.printing-container-idForm .title-cont a {
+  justify-content: flex-end;
+  align-self: center;
+  margin-right: 45px;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
+.printing-container-idForm .print-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin-left: 22px;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
+  width: 97%;
+}
+.printing-container-idForm .print-title p {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 15px;
+}
+.printing-container-idForm .print-title a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 25px;
+  color: #007236;
+  width: 105px;
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #007236;
+  background: #FFF;
+}
+.printing-container-idForm .form-container-idForm {
+  max-width: 2000px;
+  height: 1056px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.printing-container-idForm .form-container-idForm .paper {
+  display: flex;
+  flex-direction: column;
+  width: 735.18px;
+  height: 967.559px;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper {
+  width: 700px;
+  height: 368px;
+  border: 3px solid #000;
+  background: #FFF;
+  margin: 20px;
+  padding: 10px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .title {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left {
+  width: 500px;
+  height: 131px;
+  border: 1px solid #000;
+  background: #FFF;
+  display: flex;
+  flex-direction: row;
+  color: #000;
+  font-family: Poppins;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont {
+  width: 70%;
+  height: 130px;
+  border-right: 1px solid #000;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan {
+  display: flex;
+  flex-direction: column;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan .fullname {
+  width: 100%;
+  height: 43px;
+  border-bottom: 1px solid #000;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan .address {
+  width: 100%;
+  height: 43px;
+  border-bottom: 1px solid #000;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan .placeStatus-cont {
+  display: flex;
+  flex-direction: row;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan .placeStatus-cont .pob {
+  width: 60%;
+  height: 44px;
+  border-right: 1px solid #000;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .left-cont .kanan .placeStatus-cont .civilStatus {
+  width: 40%;
+  height: 44px;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .right-cont {
+  width: 30%;
+  height: 130px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .right-cont .kaliwa {
+  display: flex;
+  flex-direction: column;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .right-cont .kaliwa .birthDate {
+  width: 100%;
+  height: 43px;
+  border-bottom: 1px solid #000;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .left .right-cont .kaliwa .contactNo {
+  width: 100%;
+  height: 86px;
+  padding-left: 5px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .second-layer .right {
+  width: 156px;
+  height: 131px;
+  border: 2px solid #000;
+  background: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #000;
+  font-family: Poppins;
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .warning {
+  color: #F00;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-top: 35px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer {
+  display: flex;
+  flex-direction: row;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer .sentence {
+  width: 426px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 10px;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer .sentence .signature {
+  color: #F00;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer .sentence .ending-s {
+  color: #000;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer .sentence .ending-s span {
+  color: #F00;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+}
+.printing-container-idForm .form-container-idForm .paper .half-paper .third-layer .pirma {
+  color: #000;
+  text-align: right;
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-left: 110px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 2;
+  justify-content: space-between;
+}
+
+.layer1,
+.layer2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.layer1 {
+  z-index: 2;
+  background: linear-gradient(180deg, #057435 49.41%, #F6EB13 211.08%);
+  width: 100%;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 110px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+  color: #FFFFFF;
+}
+
+.layer2 {
+  display: flex;
+  justify-content: flex-end;
+  justify-self: center;
+  margin-top: 16px;
+  width: 100%;
+  z-index: 2;
+  max-width: 2000px;
+  height: 69px;
+}
+
+.sidebar {
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  width: 75px;
+  height: 100%;
+  background: linear-gradient(180.45deg, #007236 10.56%, #92BA21 43.84%, #62A228 71.84%, #007236 100.06%);
+  position: fixed;
+  transition: width 0.3s;
+}
+
+.sidebar:hover {
+  width: 300px;
+}
+
+.slayer1 {
+  width: 25%;
+  position: relative;
+}
+
+.slayer1 .vector-side {
+  width: 60px;
+  height: 580px;
+  margin-top: 150px;
+  position: absolute;
+  z-index: 0;
+}
+
+.slayer1 .db-icon {
+  position: absolute;
+  margin-top: 240px;
+  margin-left: 8px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.slayer1 .bo-icon {
+  position: absolute;
+  margin-top: 295px;
+  margin-left: 8px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.slayer1 .ri-icon {
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 8px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.slayer1 .cc-icon {
+  position: absolute;
+  margin-top: 415px;
+  margin-left: 8px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.slayer1 .rs-icon {
+  position: absolute;
+  margin-top: 465px;
+  margin-left: 8px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.slayer1 .um-icon {
+  position: absolute;
+  margin-top: 520px;
+  margin-left: 13px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.slayer1 .cm-icon {
+  position: absolute;
+  margin-top: 580px;
+  margin-left: 13px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.slayer2 {
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  height: auto;
+  width: 75%;
+  margin-top: 225px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 30px;
+  /* identical to box height */
+  visibility: hidden;
+  transition: visibility 0.1s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out;
+}
+
+.slayer2 a {
+  width: 100%;
+  margin-top: 25px;
+  text-decoration: none;
+  color: white;
+  padding-left: 10px;
+}
+
+.sidebar:hover .slayer2 {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slayer2 a:hover {
+  width: 190px;
+  height: 30px;
+  background: rgba(152, 204, 177, 0.34);
+  border-radius: 5px;
+}
+
+.slayer2 .idform {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .b-clearance {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .e-certificate {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .c-indigency {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .c-latebirth {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .bb-clearance {
+  margin-left: 15px;
+  margin-top: -1px;
+  margin-bottom: -20px;
+  display: none;
+}
+
+.slayer2 .blotter1 {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .complain1 {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .awareness1 {
+  margin-left: 15px;
+  margin-top: -1px;
+  margin-bottom: -20px;
+  display: none;
+}
+
+.slayer2 .users {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  margin-bottom: -20px;
+  display: none;
+}
+
+.slayer2 .b-information {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+
+.slayer2 .announcement {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+
+.slayer2 .backup {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  display: none;
+}
+
+.slayer2 .restore {
+  margin-left: 15px;
+  margin-top: -0.5px;
+  margin-bottom: -20px;
+  display: none;
+}/*# sourceMappingURL=generateCert.css.map */

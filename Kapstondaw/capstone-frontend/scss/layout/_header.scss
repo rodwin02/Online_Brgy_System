@@ -1,0 +1,68 @@
+header {
+  background-image: linear-gradient(
+      120deg,
+      rgba(#006630, 80%),
+      rgba(#6ba024, 70%)
+    ),
+    url("../assets/mobile-hall-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 375px;
+  height: 225px;
+  transition: 0.2s ease-in-out;
+  @media (min-width: 375px) {
+    background-image: linear-gradient(
+        120deg,
+        rgba(#006630, 80%),
+        rgba(#6ba024, 70%)
+      ),
+      url("../assets/website-hall-bg.png");
+    background-size: cover;
+    height: 40vh;
+    padding: 2rem 0;
+    min-width: 780px;
+    max-width: 100%;
+  }
+
+  .menu {
+    text-align: end;
+    padding: 1rem;
+
+    img {
+      cursor: pointer;
+    }
+    @media (min-width: 375px) {
+      display: none;
+    }
+  }
+
+  ul {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    @media (min-width: 375px) {
+      min-width: 600px;
+    }
+
+    li {
+      list-style: none;
+      text-align: center;
+      display: none;
+      @media (min-width: 375px) {
+        display: block;
+      }
+      img {
+        width: 60%;
+        @media (min-width: 375px) {
+          width: 80%;
+        }
+      }
+    }
+  }
+  ul > :nth-child(4) {
+    display: block;
+  }
+}
