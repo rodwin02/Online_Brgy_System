@@ -23,7 +23,7 @@
                     <div class="context">
                         <span>June 08, 2023</span>
                         <p>Earthquake Drill</p>
-                        <a id="read">Read more ></a>
+                        <a href="./main_announcement.php">Read more ></a>
                     </div>
                 </div>
 
@@ -35,7 +35,7 @@
                     <div class="context">
                         <span>May 10, 2023</span>
                         <p>MAGPA-EARLY REGISTER NA PARA SA SY 2023-2024</p>
-                        <a href="">Read more ></a>
+                        <a href="./main_announcement.php">Read more ></a>
                     </div>
                 </div>
 
@@ -47,7 +47,7 @@
                     <div class="context">
                         <span>March 1, 2023</span>
                         <p>2023 National Womens Month</p>
-                        <a href="">Read more ></a>
+                        <a href="./main_announcement.php">Read more ></a>
                     </div>
                 </div>
             </div>

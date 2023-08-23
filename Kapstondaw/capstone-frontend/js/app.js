@@ -26,26 +26,7 @@ loginEl.forEach((login) => {
   });
 });
 
-const divEl = document.querySelectorAll(".hide");
-const newsEl = document.querySelector("#main-news");
-const readEl = document.querySelector("#read");
-
-// readEl.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   divEl.forEach((div) => {
-//     div.style.display = "none";
-//     newsEl.style.display = "block";
-
-//     const listEl = document.querySelectorAll(".news-list-header");
-
-//     listEl.forEach((list) => {
-//       list.addEventListener("click", () => {});
-//       $(".hide").show();
-//       newsEl.style.display = "none";
-//     });
-//   });
-// });
-
+// * subHeader
 const subHeaderEl = document.querySelector("#subHeader");
 document.addEventListener("scroll", (e) => {
   if (window.screen.width > 375) {
@@ -58,15 +39,7 @@ document.addEventListener("scroll", (e) => {
     subHeaderEl.classList.remove("scroll");
   }
 });
-
-const subMenuEl = document.querySelectorAll(".sub-menu");
-
-// subMenuEl.forEach((menu) => {
-//   menu.addEventListener("click", () => {
-//     $(".hide").show();
-//     $("#main-news").hide();
-//   });
-// });
+// * End of subHeader
 
 // * Services
 const activeForm = document.querySelectorAll(".active-form");
@@ -113,23 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // TODO end
 
-// $(".service-btn").on("click", (e) => {
-//   e.preventDefault();
-//   e.stopPropagation();
-//   console.log("logg");
-//   $("#active-service-brgyClearance").show();
-// });
-
-// $(".active-service-close").on("click", () => {
-//   $("#active-service-brgyClearance").hide();
-// });
-
-// $(".active-service-request").on("click", (e) => {
-//   $(".active-success").show();
-//   setTimeout(() => {
-//     $(".active-success").hide();
-//     // $("#active-service-brgyClearance").hide();
-//   }, 5000);
-// });
-
 // * End of services
+
+// * Announcements\
+// * End of Announcements

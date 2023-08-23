@@ -196,49 +196,6 @@
 
     <?php include './hotlines.php' ?>
 
-    <div class="main-news" id="main-news">
-        <div class="main-news-header" id="main-news-header">
-            <div class="layer1">
-                <div class="logo">
-                    <img src="./assets/brgy-logo.png" alt="brgy-logo" />
-                </div>
-                <div class="brgy">
-                    <span>Republic of the Philippines</span>
-                    <h2>Zone IV Dasmariñas Cavite</h2>
-                </div>
-            </div>
-
-            <ul class="sub-menu">
-                <li class="news-list-header"><a href="#">Home</a></li>
-                <li class="news-list-header"><a href="#about">About</a></li>
-                <li class="news-list-header"><a href="#services">Services</a></li>
-                <li class="news-list-header">
-                    <a href="#announcement">Announcement</a>
-                </li>
-                <li class="news-list-header">Contact us!</li>
-                <li class="news-list-header">Login</li>
-            </ul>
-        </div>
-        <section class="title">
-            <h2>SECOND QUARTER NATIONWIDE SIMULTANEOUS EARTHQUAKE DRILL</h2>
-        </section>
-
-        <section class="container">
-            <section class="image-container">
-                <img src="./assets//main-news-img.png" alt="" />
-            </section>
-            <h2>NUTRITION MONTH 2023</h2>
-            <p>
-                This month of July we celebrate Nutrition Month with the theme
-                "Healthy Diet gawing affordable for all” which aims to preserve and
-                maintain the health and wellness of our bodies. A healthy diet and
-                focus on our physical well-being will benefit both our bodies and
-                minds. Let's celebrate and strive together to make healthy diet
-                affordable for everyone! #NutritionMonth2023 #SulongNaSulongPa
-            </p>
-        </section>
-    </div>
-
     <footer>
         <img src="./assets/brgy-footer-logo.png" alt="" />
 
