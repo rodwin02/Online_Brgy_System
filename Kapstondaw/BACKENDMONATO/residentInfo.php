@@ -8,6 +8,18 @@ while($row = $result->fetch_assoc()) {
   $residents[] = $row;
 }
 
+$query2 =  "SELECT * FROM tbl_users";
+$result2 = $conn->query($query2);
+$row2 = $result2->fetch_assoc();
+$users = array();
+while($userRow = $result2->fetch_assoc()) {
+    $users[] = array(
+        'firstname' => $userRow['firstname'], 
+        'lastname' => $userRow['lastname']
+    );
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -152,12 +164,23 @@ while($row = $result->fetch_assoc()) {
                                 data-fsubdivision="<?= $row['father-subdivision'] ?>"
                                 data-fhouseholdNo="<?= $row['father-household-head'] ?>">Edit</a>
                             <a href="./model/print_resident.php" class="print">Print</a>
+                            <?php 
+                                $userExists = false;
+                                foreach($users as $user) {
+                                    if ($user['firstname'] === $row['firstname'] && $user['lastname'] === $row['lastname']) {
+                                        $userExists = true;
+                                        break;
+                                    }
+                                }
+                            ?>
+                            <?php if(!$userExists) { ?>
                             <a href="#" class="accountBtn" onclick="createAccount(this)"
                                 data-fname="<?= $row['firstname'] ?>" data-mname="<?= $row['middlename'] ?>"
                                 data-lname="<?= $row['lastname'] ?>" data-age="<?= $row['age'] ?>"
                                 data-gender="<?= $row['gender'] ?>" data-street="<?= $row['street'] ?>"
                                 data-cstatus="<?= $row['civil-status'] ?>" data-dbirth="<?= $row['date-of-birth'] ?>"
                                 data-email="<?= $row['email'] ?>">Account</a>
+                            <?php } ?>
                             <a href="./model/remove_resident.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
                         </td>
                     </tr>
