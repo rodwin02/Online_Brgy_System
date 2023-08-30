@@ -112,11 +112,13 @@ while($row = $result->fetch_assoc()) {
                     <?php if(!empty($certoflbr)) { ?>
                     <?php $no=1; foreach($certoflbr as $row): ?>
                     <tr>
-                        <td><?= $row['name-of-applicant'] ?></td>
-                        <td><?= $row['name-of-requestor'] ?></td>
-                        <td><?= $row['name-of-parent'] ?></td>
-                        <td><?= $row['name-of-father'] ?></td>
-                        <td><?= $row['name-of-mother'] ?></td>
+                        <td><?= $row['applicant_fname']. ' ' .$row['applicant_mname']. ' ' .$row['applicant_lname'] ?>
+                        </td>
+                        <td><?= $row['requestor_fname']. ' ' .$row['requestor_mname']. ' ' .$row['requestor_lname'] ?>
+                        </td>
+                        <td><?= $row['parent_fname']. ' ' .$row['parent_mname']. ' ' .$row['parent_lname'] ?></td>
+                        <td><?= $row['father_fname']. ' ' .$row['father_mname']. ' ' .$row['father_lname']  ?></td>
+                        <td><?= $row['mother_fname']. ' ' .$row['mother_mname']. ' ' .$row['mother_lname'] ?></td>
                         <td><?= $row['date-of-birth'] ?></td>
                         <td><?= $row['address'] ?></td>
                         <td><?= $row['date-requested'] ?></td>
@@ -151,14 +153,35 @@ while($row = $result->fetch_assoc()) {
             </div>
 
             <div class="modal-layer1">
-                <label for="applicant">Name of Applicant:</label>
-                <input type="text" id="applicant" name="applicant">
+                <h3>Name of Applicant</h3>
+                <label for="applicant_fname">Firstname:</label>
+                <input type="text" id="applicant_fname" name="applicant_fname">
 
-                <label for="father">Name of Father:</label>
-                <input type="text" id="father" name="father">
+                <label for="applicant_mname">Middlename:</label>
+                <input type="text" id="applicant_mname" name="applicant_mname">
 
-                <label for="mother">Name of Mother:</label>
-                <input type="text" id="mother" name="mother">
+                <label for="applicant_lname">Lastname:</label>
+                <input type="text" id="applicant_lname" name="applicant_lname">
+
+                <h3>Name of Father</h3>
+                <label for="father_fname">Firstname:</label>
+                <input type="text" id="father_fname" name="father_fname">
+
+                <label for="father_mname">Middlename:</label>
+                <input type="text" id="father_mname" name="father_mname">
+
+                <label for="father_lname">Lastname:</label>
+                <input type="text" id="father_lname" name="father_lname">
+
+                <h3>Name of Mother</h3>
+                <label for="mother_fname">Firstname:</label>
+                <input type="text" id="mother_fname" name="mother_fname">
+
+                <label for="mother_mname">Middlename:</label>
+                <input type="text" id="mother_mname" name="mother_mname">
+
+                <label for="mother_lname">Lastname:</label>
+                <input type="text" id="mother_lname" name="mother_lname">
 
                 <label for="dob">Date of Birth:</label>
                 <input type="date" id="dob" name="dob">
@@ -180,14 +203,25 @@ while($row = $result->fetch_assoc()) {
             </div>
 
             <div class="modal-layer1">
-                <label for="requestor">Name of Requestor:</label>
-                <input type="text" id="requestor" name="requestor">
+                <h3>Name of Requestors</h3>
+                <label for="requestor_fname">Firstname:</label>
+                <input type="text" id="requestor_fname" name="requestor_fname">
 
-                <label for="parent">Name of Parent:</label>
-                <input type="text" id="parent" name="parent">
+                <label for="requestor_mname">Middlename:</label>
+                <input type="text" id="requestor_mname" name="requestor_mname">
 
-                <label for="father/mother">Name of Father/Mother:</label>
-                <input type="text" id="father/mother" name="father-or-mother">
+                <label for="requestor_lname">Lastname:</label>
+                <input type="text" id="requestor_lname" name="requestor_lname">
+
+                <h3>Name of Parent</h3>
+                <label for="parent_fname">Firstname:</label>
+                <input type="text" id="parent_fname" name="parent_fname">
+
+                <label for="parent_mname">Middlename:</label>
+                <input type="text" id="parent_mname" name="parent_mname">
+
+                <label for="parent_lname">Lastname:</label>
+                <input type="text" id="parent_lname" name="parent_lname">
 
                 <label for="dob">Date of Birth:</label>
                 <input type="date" id="dob" name="dob">
@@ -210,14 +244,35 @@ while($row = $result->fetch_assoc()) {
             </div>
 
             <div class="modal-layer1">
-                <label for="requestor1">Name of Requestor:</label>
-                <input type="text" id="requestor1" name="requestor">
+                <h3>Name of Requestors</h3>
+                <label for="requestor_fname">Firstname:</label>
+                <input type="text" id="requestor_fname" name="requestor_fname">
 
-                <label for="father1">Name of Father:</label>
-                <input type="text" id="father1" name="father">
+                <label for="requestor_mname">Middlename:</label>
+                <input type="text" id="requestor_mname" name="requestor_mname">
 
-                <label for="mother1">Name of Mother:</label>
-                <input type="text" id="mother1" name="mother">
+                <label for="requestor_lname">Lastname:</label>
+                <input type="text" id="requestor_lname" name="requestor_lname">
+
+                <h3>Name of Father</h3>
+                <label for="father_fname">Firstname:</label>
+                <input type="text" id="father_fname" name="father_fname">
+
+                <label for="father_mname">Middlename:</label>
+                <input type="text" id="father_mname" name="father_mname">
+
+                <label for="father_lname">Lastname:</label>
+                <input type="text" id="father_lname" name="father_lname">
+
+                <h3>Name of Mother</h3>
+                <label for="mother_fname">Firstname:</label>
+                <input type="text" id="mother_fname" name="mother_fname">
+
+                <label for="mother_mname">Middlename:</label>
+                <input type="text" id="mother_mname" name="mother_mname">
+
+                <label for="mother_lname">Lastname:</label>
+                <input type="text" id="mother_lname" name="mother_lname">
 
                 <label for="dob1">Date of Birth:</label>
                 <input type="date" id="dob1" name="dob">

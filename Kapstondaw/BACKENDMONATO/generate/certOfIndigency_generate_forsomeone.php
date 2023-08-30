@@ -355,8 +355,9 @@
                         font-weight: 400;
                         line-height: normal;
                         margin-top: 50px;">This is certify that
-                            <input type="text" value="<?php echo $certofindigency['name-of-requestor']?>" id="name"
-                                placeholder="NAME OF REQUESTOR" style=" color: #000;
+                            <input type="text"
+                                value="<?php echo $certofindigency['requestor_fname']. ' ' .$certofindigency['requestor_mname']. ' ' .$certofindigency['requestor_lname']?>"
+                                id="name" placeholder="NAME OF REQUESTOR" style=" color: #000;
                             font-family: Caladea;
                             font-size: 19px;
                             font-style: normal;
@@ -408,8 +409,9 @@
                                 border-bottom: 1px solid black;
                                 width: 200px;">
                             of her husband,
-                            <input type="text" value="<?php echo $certofindigency['name-of-applicant']?>" id="name2"
-                                placeholder="NAME OF APPLICANT" style=" color: #000;
+                            <input type="text"
+                                value="<?php echo $certofindigency['applicant_fname']. ' ' .$certofindigency['applicant_mname']. ' ' .$certofindigency['applicant_lname']?>"
+                                id="name2" placeholder="NAME OF APPLICANT" style=" color: #000;
                             font-family: Caladea;
                             font-size: 19px;
                             font-style: normal;

@@ -7,19 +7,34 @@
         }
     }
     
-    $applicant      = $conn->real_escape_string($_POST['applicant']);
-    $requestor      = $conn->real_escape_string($_POST['requestor']);
-    $father         = $conn->real_escape_string($_POST['father']);
-    $mother 	      = $conn->real_escape_string($_POST['mother']);
-    $form 	        = $conn->real_escape_string($_POST['father-or-mother']);
+    $applicant_fname    = $conn->real_escape_string($_POST['applicant_fname']);
+    $applicant_mname    = $conn->real_escape_string($_POST['applicant_mname']);
+    $applicant_lname    = $conn->real_escape_string($_POST['applicant_lname']);
+
+    $requestor_fname    = $conn->real_escape_string($_POST['requestor_fname']);
+    $requestor_mname    = $conn->real_escape_string($_POST['requestor_mname']);
+    $requestor_lname    = $conn->real_escape_string($_POST['requestor_lname']);
+
+    $parent_fname    = $conn->real_escape_string($_POST['parent_fname']);
+    $parent_mname    = $conn->real_escape_string($_POST['parent_mname']);
+    $parent_lname    = $conn->real_escape_string($_POST['parent_lname']);
+
+    $mother_fname    = $conn->real_escape_string($_POST['mother_fname']);
+    $mother_mname    = $conn->real_escape_string($_POST['mother_mname']);
+    $mother_lname    = $conn->real_escape_string($_POST['mother_lname']);
+
+    $father_fname    = $conn->real_escape_string($_POST['father_fname']);
+    $father_mname    = $conn->real_escape_string($_POST['father_mname']);
+    $father_lname    = $conn->real_escape_string($_POST['father_lname']);
+
     $birthDate 	    = $conn->real_escape_string($_POST['dob']);
     $address 	      = $conn->real_escape_string($_POST['address']);
     $documentFor    = $conn->real_escape_string($_POST['documentFor']);
 
-    if(!empty($applicant) || $requestor && !empty($birthDate) && !empty($address)){
+    if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($applicant_lname) || !empty($requestor_lname)  && !empty($birthDate) && !empty($address)){
 
-        $insert  = "INSERT INTO tbl_certoflbr (`name-of-applicant`, `name-of-requestor`, `name-of-father`, `name-of-mother`, `mother-or-father`, `date-of-birth`, `address`, `documentFor`) 
-                    VALUES ('$applicant', '$requestor', '$father','$mother', '$form','$birthDate', '$address', '$documentFor')";
+        $insert  = "INSERT INTO tbl_certoflbr (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `parent_fname`, `parent_mname`, `parent_lname`, `father_fname`, `father_mname`, `father_lname`, `mother_fname`, `mother_mname`, `mother_lname`, `date-of-birth`, `address`, `documentFor`) 
+                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$parent_fname', '$parent_mname', '$parent_lname', '$father_fname', '$father_mname', '$father_lname', '$mother_fname', '$mother_mname', '$mother_lname', '$birthDate', '$address', '$documentFor')";
         $result  = $conn->query($insert);
 
         if($result === true){

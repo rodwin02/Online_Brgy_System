@@ -191,8 +191,8 @@
                     
                     margin-top: 30px;
                     margin-left: 70px;">1.
-                        <input type="text" value="<?php echo $certOfLBR['name-of-requestor']?>" id="nameRequest"
-                            placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
+                        <input type="text" value="<?php echo $certOfLBR['requestor_fname']. ' ' .$certOfLBR['requestor_mname']. ' ' .$certOfLBR['requestor_lname'] 
+?>" id="nameRequest" placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
                         font-family: Caladea;
                         font-size: 19px;
                         font-style: normal;
@@ -202,8 +202,8 @@
                         border-bottom: 1px solid black;
                         width: 200px;">
                         is the child/one of the children of
-                        <input type="text" value="<?php echo $certOfLBR['name-of-father']?>" id="nameFather"
-                            placeholder="FATHER’S NAME" style="color: #000;
+                        <input type="text" value="<?php echo $certOfLBR['father_fname']. ' ' .$certOfLBR['father_mname']. ' ' .$certOfLBR['father_lname']
+?>" id="nameFather" placeholder="FATHER’S NAME" style="color: #000;
                         font-family: Caladea;
                         font-size: 19px;
                         font-style: normal;
@@ -213,8 +213,8 @@
                         border-bottom: 1px solid black;
                         width: 200px;">
                         and
-                        <input type="text" value="<?php echo $certOfLBR['name-of-mother']?>" id="nameMother"
-                            placeholder="MOTHER’S NAME" style="color: #000;
+                        <input type="text" value="<?php echo $certOfLBR['mother_fname']. ' ' .$certOfLBR['mother_mname']. ' ' .$certOfLBR['mother_lname']
+?>" id="nameMother" placeholder="MOTHER’S NAME" style="color: #000;
                         font-family: Caladea;
                         font-size: 19px;
                         font-style: normal;
@@ -252,8 +252,9 @@
                     margin-top: 30px;
                     margin-left: 70px;">
                         The birth of
-                        <input type="text" value="<?php echo $certOfLBR['name-of-requestor'] ?>" id="nameRequest1"
-                            placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
+                        <input type="text"
+                            value="<?php echo $certOfLBR['requestor_fname']. ' ' .$certOfLBR['requestor_mname']. ' ' .$certOfLBR['requestor_lname']  ?>"
+                            id="nameRequest1" placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
                             font-family: Caladea;
                             font-size: 19px;
                             font-style: normal;
@@ -277,8 +278,8 @@
                     margin-top: 30px;
                     margin-left: 70px;">
                         I know the date and place of birth of
-                        <input type="text" value="<?php echo $certOfLBR['name-of-requestor']?>" id="nameRequest2"
-                            placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
+                        <input type="text" value="<?php echo $certOfLBR['requestor_fname']. ' ' .$certOfLBR['requestor_mname']. ' ' .$certOfLBR['requestor_lname'] 
+?>" id="nameRequest2" placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
                             font-family: Caladea;
                             font-size: 19px;
                             font-style: normal;
@@ -288,8 +289,8 @@
                             border-bottom: 1px solid black;
                             width: 200px;">
                         as well as his/her parentage and citizenship because the spouses,
-                        <input type="text" value="<?php echo $certOfLBR['name-of-father']?>" id="nameFather1"
-                            placeholder="FATHER'S NAME" style="color: #000;
+                        <input type="text" value="<?php echo $certOfLBR['father_fname']. ' ' .$certOfLBR['father_mname']. ' ' .$certOfLBR['father_lname']
+?>" id="nameFather1" placeholder="FATHER'S NAME" style="color: #000;
                         font-family: Caladea;
                         font-size: 19px;
                         font-style: normal;
@@ -299,8 +300,8 @@
                         border-bottom: 1px solid black;
                         width: 200px;">
                         and
-                        <input type="text" value="<?php echo $certOfLBR['name-of-mother']?>" id="nameMother1"
-                            placeholder="MOTHER’S NAME" style="color: #000;
+                        <input type="text" value="<?php echo $certOfLBR['mother_fname']. ' ' .$certOfLBR['mother_mname']. ' ' .$certOfLBR['mother_lname']
+?>" id="nameMother1" placeholder="MOTHER’S NAME" style="color: #000;
                         font-family: Caladea;
                         font-size: 19px;
                         font-style: normal;
@@ -332,8 +333,8 @@
                     
                     margin-top: 30px;
                     margin-left: 70px;">This certification is being issued to the request of
-                        <input type="text" value="<?php echo $certOfLBR['name-of-father'] ?>" id="nameFather2"
-                            placeholder="FATHER'S NAME" style="color: #000;
+                        <input type="text" value="<?php echo $certOfLBR['father_fname']. ' ' .$certOfLBR['father_mname']. ' ' .$certOfLBR['father_lname']
+ ?>" id="nameFather2" placeholder="FATHER'S NAME" style="color: #000;
                         font-family: Caladea;
                         font-size: 19px;
                         font-style: normal;
@@ -343,8 +344,8 @@
                         border-bottom: 1px solid black;
                         width: 200px;">
                         and
-                        <input type="text" value="<?php echo $certOfLBR['name-of-mother']?>" id="nameMother2"
-                            placeholder="MOTHER’S NAME" style="color: #000;
+                        <input type="text" value="<?php echo $certOfLBR['mother_fname']. ' ' .$certOfLBR['mother_mname']. ' ' .$certOfLBR['mother_lname']
+?>" id="nameMother2" placeholder="MOTHER’S NAME" style="color: #000;
                         font-family: Caladea;
                         font-size: 19px;
                         font-style: normal;
@@ -353,9 +354,8 @@
                         border: none;
                         border-bottom: 1px solid black;
                         width: 200px;">
-                        in order to certify the birth of <input type="text"
-                            value="<?php echo $certOfLBR['name-of-requestor']?>" id="nameRequest3"
-                            placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
+                        in order to certify the birth of <input type="text" value="<?php echo $certOfLBR['requestor_fname']. ' ' .$certOfLBR['requestor_mname']. ' ' .$certOfLBR['requestor_lname'] 
+?>" id="nameRequest3" placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
                         font-family: Caladea;
                         font-size: 19px;
                         font-style: normal;
