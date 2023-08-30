@@ -9,19 +9,44 @@
 	
 	$id 	= $conn->real_escape_string($_GET['id']);
 
-	if(!empty($id)){
-		$query 		= "DELETE FROM tbl_ecertificate WHERE id = '$id'";
-		
-		$result 	= $conn->query($query);
-		
-		if($result === true){
-            $_SESSION['message'] = 'Certificate has been removed!';
-            $_SESSION['success'] = 'danger';
-            
-        }else{
-            $_SESSION['message'] = 'Something went wrong!';
-            $_SESSION['success'] = 'danger';
-        }
+	if(!empty($id)){ 
+
+		try {
+
+			$select = $conn->prepare("SELECT * FROM tbl_ecertificate WHERE id = ?");
+			$select->bind_param("s", $id);
+			$select->execute();
+			$ecertificate = $select->get_result()->fetch_assoc();
+
+			$insert = "INSERT INTO del_ecertificate_archive(`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `address`, `documentFor`, `purpose`, `date-requested`) VALUES (
+				'{$ecertificate['applicant_fname']}',
+				'{$ecertificate['applicant_mname']}',
+				'{$ecertificate['applicant_lname']}',
+				'{$ecertificate['requestor_fname']}',
+				'{$ecertificate['requestor_mname']}',
+				'{$ecertificate['requestor_lname']}',
+				'{$ecertificate['address']}',
+				'{$ecertificate['documentFor']}',
+				'{$ecertificate['purpose']}',
+				'{$ecertificate['date-requested']}'
+			)";
+			$conn->query($insert);
+
+			$query = "DELETE FROM tbl_ecertificate WHERE id = '$id'";
+			$result = $conn->query($query);
+			
+			if($result === true){
+				$_SESSION['message'] = 'Certificate has been removed!';
+				$_SESSION['success'] = 'danger';
+				
+			}else{
+				$_SESSION['message'] = 'Something went wrong!';
+				$_SESSION['success'] = 'danger';
+			}
+	} catch (Exception $e) { 
+			$_SESSION['message'] = 'An error occurred: ' . $e->getMessage();
+			$_SESSION['success'] = 'danger';
+		}
 	}else{
 
 		$_SESSION['message'] = 'Missing Certificate ID!';
@@ -30,4 +55,3 @@
 
     header("Location: ../endorsmentCert.php");
 	$conn->close();
-

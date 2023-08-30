@@ -196,8 +196,8 @@
           
           margin-top: 30px;
           margin-left: 85px;"><span>I am here to endorse <input type="text"
-                                value="<?php echo $ecertificate['name-of-requestor'] ?>" id="name"
-                                placeholder="NAME OF REQUESTOR" required style=" color: #000;
+                                value="<?php echo $ecertificate['requestor_fname']. ' ' .$ecertificate['requestor_mname']. ' ' .$ecertificate['requestor_lname'] ?>"
+                                id="name" placeholder="NAME OF REQUESTOR" required style=" color: #000;
             font-family: Caladea;
             font-size: 20px;
             font-style: normal;
@@ -254,7 +254,8 @@
            border: none;
            border-bottom: 1px solid black;
            width: 200px;">
-                        of (his/her) brother, <input type="text" value="<?php echo $ecertificate['name-of-applicant']?>"
+                        of (his/her) brother, <input type="text"
+                            value="<?php echo $ecertificate['applicant_fname']. ' ' .$ecertificate['applicant_mname']. ' ' .$ecertificate['applicant_lname']?>"
                             id="name1" placeholder="NAME OF APPLICANT" style=" color: #000;
            font-family: Caladea;
            font-size: 20px;

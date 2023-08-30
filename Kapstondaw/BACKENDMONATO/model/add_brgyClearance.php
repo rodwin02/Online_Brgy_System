@@ -7,17 +7,19 @@
         }
     }
     
-    $fullname     = $conn->real_escape_string($_POST['fullname']);
+    $firstname     = $conn->real_escape_string($_POST['firstname']);
+    $middlename     = $conn->real_escape_string($_POST['middlename']);
+    $lastname     = $conn->real_escape_string($_POST['lastname']);
     $address      = $conn->real_escape_string($_POST['address']);
     $dob          = $conn->real_escape_string($_POST['dob']);
     $pob          = $conn->real_escape_string($_POST['pob']);
     $purpose      = $conn->real_escape_string($_POST['purpose']);
     $dateInput    = $conn->real_escape_string($_POST['dateInput']);
 
-    if(!empty($fullname) && !empty($address) && !empty($dob) && !empty($pob) && !empty($purpose) && !empty($dateInput)){
+    if(!empty($firstname) && !empty($lastname) && !empty($address) && !empty($dob) && !empty($pob) && !empty($purpose) && !empty($dateInput)){
 
-        $insert  = "INSERT INTO tbl_brgyclearance (`fullname`, `address`, `date-of-birth`, `place-of-birth`, `purpose`, `date-issue`) 
-                    VALUES ('$fullname', '$address', '$dob', '$pob', '$purpose', '$dateInput')";
+        $insert  = "INSERT INTO tbl_brgyclearance (`firstname`, `middlename`, `lastname`, `address`, `date-of-birth`, `place-of-birth`, `purpose`, `date-issue`) 
+                    VALUES ('$firstname', '$middlename', '$lastname', '$address', '$dob', '$pob', '$purpose', '$dateInput')";
         $result  = $conn->query($insert);
 
         if($result === true){

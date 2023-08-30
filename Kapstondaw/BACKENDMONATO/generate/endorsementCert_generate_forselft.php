@@ -197,8 +197,8 @@
           
           margin-top: 30px;
           margin-left: 85px;"><span>I am here to endorse <input type="text"
-                                value="<?php echo $ecertificate['name-of-applicant'] ?>" id="name"
-                                placeholder="NAME OF APPLICANT" required style="color: #000;
+                                value="<?php echo $ecertificate['applicant_fname']. ' ' .$ecertificate['applicant_mname']. ' ' .$ecertificate['applicant_lname'] ?>"
+                                id="name" placeholder="NAME OF APPLICANT" required style="color: #000;
             font-family: Caladea;
             font-size: 20px;
             font-style: normal;

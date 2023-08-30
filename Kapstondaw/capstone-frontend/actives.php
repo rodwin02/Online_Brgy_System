@@ -104,7 +104,7 @@ if(isset($_SESSION['message']))
         <div class="container">
             <label for="for">For</label>
             <select name="documentFor" id="for" class="for">
-                <option value="self">For self</option>
+                <option value="Self">For self</option>
                 <option value="Someone">For someone else</option>
             </select>
         </div>
@@ -132,7 +132,7 @@ if(isset($_SESSION['message']))
         <div class="container">
             <label for="for">For</label>
             <select name="documentFor" id="For" class="for">
-                <option value="self">For self</option>
+                <option value="Self">For self</option>
                 <option value="Someone">For someone else</option>
             </select>
         </div>
