@@ -8,15 +8,17 @@
     }
     
     $businessName = $conn->real_escape_string($_POST['businessName']);
-    $ownerName 	  = $conn->real_escape_string($_POST['businessOwnerName']);
+    $ownerFname 	  = $conn->real_escape_string($_POST['owner_fname']);
+    $ownerMname 	  = $conn->real_escape_string($_POST['owner_mname']);
+    $ownerLname 	  = $conn->real_escape_string($_POST['owner_lname']);
     $address 	    = $conn->real_escape_string($_POST['businessAddress']);
     $dateApplied  = $conn->real_escape_string($_POST['dateApplied']);
     $documentFor 	= $conn->real_escape_string($_POST['documentFor']);
 
-    if(!empty($businessName) && !empty($ownerName) && !empty($address) && !empty($dateApplied) && !empty($documentFor)){
+    if(!empty($businessName) && !empty($ownerFname && !empty($ownerLname)) && !empty($address) && !empty($dateApplied) && !empty($documentFor)){
 
-        $insert  = "INSERT INTO tbl_businessClearance (`business-name`, `business-owner-name`, `business-address`, `date-applied`, `documentFor`) 
-                    VALUES ('$businessName', '$ownerName','$address', '$dateApplied','$documentFor')";
+        $insert  = "INSERT INTO tbl_businessClearance (`business-name`, `business-owner-fname`, `business-owner-mname`, `business-owner-lname`, `business-address`, `date-applied`, `documentFor`) 
+                    VALUES ('$businessName', '$ownerFname', '$ownerMname', '$ownerLname','$address', '$dateApplied','$documentFor')";
         $result  = $conn->query($insert);
 
         if($result === true){

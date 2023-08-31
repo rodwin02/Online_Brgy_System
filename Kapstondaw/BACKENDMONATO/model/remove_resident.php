@@ -17,14 +17,7 @@ include '../server/server.php';
 		$select->execute();
 		$resident = $select->get_result()->fetch_assoc();
 
-		$check = $conn->prepare("SELECT 1 FROM residents_archive WHERE firstname = ? AND middlename = ? AND lastname = ?");
-		$check->bind_param("sss", $resident['firstname'], $resident['middlename'], $resident['lastname']);
-		$check->execute();
-		$exists = $check->get_result()->fetch_assoc();
-
-		if(!$exists) {
-
-		$insert = "INSERT INTO residents_archive (`firstname`, `middlename`, `lastname`, `age`, `gender`, `house-no`, `street`, `subdivision`, `date-of-birth`, `place-of-birth`, `civil-status`, `occupation`, `email`, `contact-no`, `voter-status`, `identified`, `sector`, `citizenship`, `household-no`, `osy`, `pwd`, `mother-firstname`, `mother-middlename`, `mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`, `father-firstname`, `father-middlename`, `father-lastname`, `father-age`, `father-house-no`, `father-street`, `father-subdivision`, `father-household-head`) 
+		$insert = "INSERT INTO del_residents_archive (`firstname`, `middlename`, `lastname`, `age`, `gender`, `house-no`, `street`, `subdivision`, `date-of-birth`, `place-of-birth`, `civil-status`, `occupation`, `email`, `contact-no`, `voter-status`, `identified`, `sector`, `citizenship`, `household-no`, `osy`, `pwd`, `mother-firstname`, `mother-middlename`, `mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`, `father-firstname`, `father-middlename`, `father-lastname`, `father-age`, `father-house-no`, `father-street`, `father-subdivision`, `father-household-head`) 
         VALUES (			
 				'{$resident['firstname']}', 
 				'{$resident['middlename']}',
@@ -66,7 +59,6 @@ include '../server/server.php';
 				'{$resident['father-subdivision']}',
 				'{$resident['father-household-head']}')";
 		$conn->query($insert);
-		}
 		
 		$delete = $conn->prepare("DELETE FROM tblresidents WHERE id = ?");
 		$delete->bind_param("s", $id);
