@@ -345,7 +345,7 @@
                         margin-top: 30px;
                         margin-left: 70px;">This certification is being issued to the request of
                         <input type="text" id="nameApplicant3"
-                            value="<?php echo $certOfLBR['applicant_fname']. ' ' .$certOfLBR['applicant_mname']. ' ' .$certOfLBR['applicant_lname']  ?>"
+                            value="<?php echo $certOfLBR['applicant_fname']. ' ' .$certOfLBR['applicant_mname']. ' ' .$certOfLBR['applicant_lname'] ?>"
                             placeholder="NAME OF APPLICANT" style="color: #000;
                         font-family: Caladea;
                         font-size: 19px;

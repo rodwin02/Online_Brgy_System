@@ -6,8 +6,8 @@
         <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><img src="./assets/Header-logo.png" alt="" /></li>
-        <li><a href="#announcement">Announcement</a></li>
+        <li><img src="../BACKENDMONATO/uploads/<?php echo $brgy_logo ?>" alt="" /></li>
+        <li><a href=" #announcement">Announcement</a></li>
         <li>Contact us!</li>
         <?php if(isset($_SESSION['username'])) { ?>
         <li><?php echo $_SESSION['username'];?></li>
@@ -21,7 +21,7 @@
 <div class="hide subHeader" id="subHeader">
     <div class="layer1">
         <div class="logo">
-            <img src="./assets/brgy-logo.png" alt="brgy-logo" />
+            <img src="../BACKENDMONATO/uploads/<?php echo $brgy_logo ?>" alt="brgy-logo" />
         </div>
         <div class="brgy">
             <span>Republic of the Philippines</span>

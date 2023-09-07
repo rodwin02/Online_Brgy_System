@@ -15,12 +15,13 @@
 <body>
 
 
+    <?php include "./model/fetch_brgy_information.php" ?>
     <?php include './actives.php' ?>
     <?php include './header.php' ?>
 
     <div class="hide home" id="home">
         <div class="context">
-            <h1>WELCOME TO <span>BARANGAY ZONE IV</span></h1>
+            <h1>WELCOME TO <span><?php echo $brgy_name ?></span></h1>
             <p>
                 Camerino Ave, Brgy Zone 4, Bayan Dasmariñas, Cavite Open Hours of
                 Barangay: Monday to Friday (8:00 AM - 5:00 AM)
@@ -29,7 +30,7 @@
             <button>ABOUT US</button>
         </div>
         <div class="logo">
-            <img src="./assets/dasma-logo.png" alt="dasma-logo" />
+            <img src="../BACKENDMONATO/uploads/<?php echo $municipality_logo ?>" alt="dasma-logo" />
         </div>
     </div>
 
@@ -197,7 +198,7 @@
     <?php include './hotlines.php' ?>
 
     <footer>
-        <img src="./assets/brgy-footer-logo.png" alt="" />
+        <img src="../BACKENDMONATO/uploads/<?php echo $brgy_logo ?>" alt="" />
 
         <h2>BARANGAY ZONE IV DASMARINAS, CAVITE</h2>
 

@@ -41,8 +41,10 @@
 
         .picture {
           width: 100%;
-          margin-bottom: 2rem;
           object-fit: cover;
+          @media (min-width: 375px) {
+            margin-bottom: 2rem;
+          }
 
           img {
             width: 100%;

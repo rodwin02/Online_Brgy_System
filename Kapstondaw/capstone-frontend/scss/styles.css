@@ -117,6 +117,7 @@ header ul > :nth-child(4) {
 }
 .subHeader .layer1 .logo {
   width: 90px;
+  display: flex;
 }
 @media (min-width: 375px) {
   .subHeader .layer1 .logo {
@@ -125,7 +126,7 @@ header ul > :nth-child(4) {
 }
 .subHeader .layer1 .logo img {
   position: absolute;
-  top: 30%;
+  top: 35%;
   width: inherit;
 }
 @media (min-width: 375px) {
@@ -286,6 +287,7 @@ header ul > :nth-child(4) {
 }
 .home .context h1 span {
   color: #007236;
+  text-transform: uppercase;
 }
 .home .context p {
   font-size: 0.8rem;
@@ -310,7 +312,7 @@ header ul > :nth-child(4) {
 }
 .home .logo {
   position: absolute;
-  top: 10%;
+  top: 0;
   width: 375px;
   transition: 0.2s ease-in-out;
 }
@@ -729,9 +731,13 @@ header ul > :nth-child(4) {
 }
 .announcement .swiper .options .card .picture {
   width: 100%;
-  margin-bottom: 2rem;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (min-width: 375px) {
+  .announcement .swiper .options .card .picture {
+    margin-bottom: 2rem;
+  }
 }
 .announcement .swiper .options .card .picture img {
   width: 100%;

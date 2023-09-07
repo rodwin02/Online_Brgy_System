@@ -31,12 +31,13 @@
 
     .logo {
       width: 90px;
+      display: flex;
       @media (min-width: 375px) {
         width: 80px;
       }
       img {
         position: absolute;
-        top: 30%;
+        top: 35%;
         width: inherit;
         @media (min-width: 375px) {
           position: static;

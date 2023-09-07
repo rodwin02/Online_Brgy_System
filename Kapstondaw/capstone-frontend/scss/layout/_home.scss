@@ -1,7 +1,7 @@
 .home {
   position: relative;
   height: calc(100vh - 40vh);
-  @media(min-width: 375px) {
+  @media (min-width: 375px) {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -19,8 +19,8 @@
     max-width: 500px;
     min-width: 375px;
     height: inherit;
-    transition: .2s ease-in-out;
-    @media(min-width: 375px) {
+    transition: 0.2s ease-in-out;
+    @media (min-width: 375px) {
       text-align: start;
       align-items: flex-start;
     }
@@ -28,14 +28,15 @@
     h1 {
       margin: 0;
       span {
-        color: #007236;;
+        color: #007236;
+        text-transform: uppercase;
       }
     }
 
     p {
-      font-size: .8rem;
+      font-size: 0.8rem;
       line-height: 150%;
-      @media(min-width: 375px) {
+      @media (min-width: 375px) {
         font-size: 1rem;
       }
     }
@@ -45,22 +46,21 @@
       background-color: #007236;
       border-radius: 2rem;
       color: #fff;
-      padding: .8rem 1.5rem;
-      @media(min-width: 375px) {
+      padding: 0.8rem 1.5rem;
+      @media (min-width: 375px) {
         padding: 1rem 2rem;
       }
     }
   }
   .logo {
     position: absolute;
-    top: 10%;
+    top: 0;
     width: 375px;
-    transition: .2s ease-in-out;
-    @media(min-width: 375px) {
-      position:static;
+    transition: 0.2s ease-in-out;
+    @media (min-width: 375px) {
+      position: static;
       top: 0;
       width: 450px;
-      
     }
 
     img {
