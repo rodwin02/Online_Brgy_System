@@ -32,11 +32,6 @@ if ($result->num_rows) {
             $_SESSION['lastname'] = $user['lastname'];
             $_SESSION['street'] = $user['street'];
 
-            $_SESSION['applicant_fname'] = $user['applicant_fname'];
-            $_SESSION['applicant_mname'] = $user['applicant_mname'];
-            $_SESSION['applicant_lname'] = $user['applicant_lname'];
-            $_SESSION['lastname'] = $user['lastname'];
-
             setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../main.php');
         } else {
             setMessageAndRedirect('Username or password is incorrect!', 'danger', '../main.php');
