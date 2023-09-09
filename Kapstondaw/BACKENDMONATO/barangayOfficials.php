@@ -37,7 +37,7 @@
 
     <!-- HEADER -->
     <div class="container">
-        <div class="layer1">Barangay Zone IV Dasmarinas Cavite
+        <div class="layer1"><?= $brgy_name. " " .$town_name."" .$province_name?>
         </div>
         <div class="layer2">
             <img src="vector/Vector 1.png" alt="">
@@ -143,8 +143,8 @@
         <div class="right_officials">
             <div class="logout_layer"><a href="#">Logout</a></div>
             <div class="brgy_layer">
-                <img src="image/barangaylogo.png" alt="">
-                <p>Barangay Zone IV <span>Dasmarinas</span></p>
+                <img src="./uploads/<?= $brgy_logo ?>" alt="brgy-image">
+                <p><?= $brgy_name ?> <span><?= $town_name?></span></p>
             </div>
         </div>
     </div>

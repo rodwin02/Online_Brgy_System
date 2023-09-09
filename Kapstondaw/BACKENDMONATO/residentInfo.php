@@ -45,7 +45,7 @@ while($userRow = $result2->fetch_assoc()) {
 
     <!-- HEADER -->
     <div class="container">
-        <div class="layer1">Barangay Zone IV Dasmarinas Cavite
+        <div class="layer1"><?= $brgy_name. " " .$town_name." " .$province_name?>
         </div>
         <div class="layer2">
             <img src="vector/Vector 1.png" alt="">

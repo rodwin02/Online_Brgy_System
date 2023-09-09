@@ -95,7 +95,12 @@ if(isset($_SESSION['message']))
         <h2>Endorsement</h2>
         <div class="container requestor">
             <label for="requestor">Requestor</label>
-            <input class="requestorName" type="text" name="requestor" id="requestor" placeholder="Enter requestor name">
+            <input class="requestorName" type="text" name="requestor_fname" id="requestor"
+                placeholder="Enter requestor firstname">
+            <input class="requestorName" type="text" name="requestor_mname" id="requestor"
+                placeholder="Enter requestor middlename">
+            <input class="requestorName" type="text" name="requestor_lname" id="requestor"
+                placeholder="Enter requestor lastname">
         </div>
         <div class="container">
             <label for="purpose">Purpose</label>
@@ -109,8 +114,9 @@ if(isset($_SESSION['message']))
             </select>
         </div>
 
-        <input type="hidden" name="applicant"
-            value="<?php echo $_SESSION['firstname'].' '. $_SESSION['middlename'].' '.$_SESSION['lastname']  ?>" id="">
+        <input type="hidden" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
+        <input type="hidden" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
+        <input type="hidden" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
         <input type="hidden" name="address" value="<?php echo $_SESSION['street'] ?>" id="">
 
         <button type="submit" class="active-service-request">Request</button>
