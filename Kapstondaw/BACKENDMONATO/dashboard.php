@@ -173,7 +173,8 @@
                             </div>
                         </div>
                         <div class="a2-p" id="more-allresidents">
-                            <a href="?state=population" class="b3">More info</a>
+                            <a href="morePopulation.php" class="b3">More info</a>
+
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
