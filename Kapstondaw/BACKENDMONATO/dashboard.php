@@ -162,7 +162,7 @@
                     <div class="population">
                         <div class="a1">
                             <div class="b1">
-                                <div class="c1">POPULATION</div>
+                                <div class="c1">Population</div>
                                 <div class="c2"><?= number_format($total) ?></div>
                                 <div class="c3">Total Population</div>
                             </div>
@@ -173,13 +173,13 @@
                             </div>
                         </div>
                         <div class="a2-p" id="more-allresidents">
-                            <a href="morePopulation.php" class="b3">More info</a>
-
+                            <a href="?state=population" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
+
                     <div class="male">
                         <div class="a1">
                             <div class="b1">
@@ -194,12 +194,13 @@
                             </div>
                         </div>
                         <div class="a2-m" id="more-male">
-                            <a href="?state=male" class="b3">More info</a>
+                            <a href="moreMale.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
+
                     <div class="female">
                         <div class="a1">
                             <div class="b1">
@@ -214,7 +215,7 @@
                             </div>
                         </div>
                         <div class="a2-f" id="more-female">
-                            <a href="?state=female" class="b3">More info</a>
+                            <a href="moreFemale.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
@@ -234,32 +235,13 @@
                             </div>
                         </div>
                         <div class="a2-v" id="more-voters">
-                            <a href="?state=voters" class="b3">More info</a>
+                            <a href="moreVoters.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="nonvoters">
-                        <div class="a1">
-                            <div class="b1">
-                                <div class="c1">NON-VOTERS</div>
-                                <div class="c2-n"><?= number_format($non) ?></div>
-                                <div class="c3">Total Non-voters</div>
-                            </div>
-                            <div class="b2">
-                                <div class="c4-n">
-                                    <img src="icons/people.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="a2-n" id="more-nonvoters">
-                            <a href="?state=non_voters" class="b3">More info</a>
-                            <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="blotter">
                         <div class="a1">
                             <div class="b1">
@@ -274,7 +256,7 @@
                             </div>
                         </div>
                         <div class="a2-b" id="more-blotters">
-                            <a href="?state=blotters" class="b3">More info</a>
+                            <a href="blotter.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
@@ -294,8 +276,7 @@
                             </div>
                         </div>
                         <div class="a2-o" id="more-osy">
-                            <a href="?state=pwd" class="b3">More info</a>
-                            <div class="b3">More info</div>
+                            <a href="moreOSY.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
@@ -315,7 +296,7 @@
                             </div>
                         </div>
                         <div class="a2-pw" id="more-pwd">
-                            <a href="?state=pwd" class="b3">More info</a>
+                            <a href="morePWD.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
@@ -335,7 +316,7 @@
                             </div>
                         </div>
                         <div class="a2-sn" id="more-snr">
-                            <a href="?state=snr" class="b3">More info</a>
+                            <a href="moreSNR.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
@@ -355,7 +336,7 @@
                             </div>
                         </div>
                         <div class="a2-st" id="more-students">
-                            <a href="?state=students" class="b3">More info</a>
+                            <a href="moreStudents.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>

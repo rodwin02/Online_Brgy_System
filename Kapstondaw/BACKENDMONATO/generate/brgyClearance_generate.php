@@ -350,7 +350,7 @@
                             line-height: normal;
                             margin-bottom: 15px;
                             align-items: center;">NAME:
-                                <input type="text" value="<?php echo $brgyclearance['fullname']?>" id="name"
+                                <input type="text" value="<?php echo $brgyclearance['firstname']?>" id="name"
                                     required="required" style=" width: 300px;
                                 margin-left: 110px;
                                 border: none;
