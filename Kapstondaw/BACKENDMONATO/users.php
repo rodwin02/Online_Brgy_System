@@ -99,6 +99,7 @@ while($row = $result->fetch_assoc()) {
             <table id="table">
                 <thead>
                     <tr>
+                        <th>Resident Name</th>
                         <th>Username</th>
                         <th>User Type</th>
                         <th>Created At</th>
@@ -109,6 +110,7 @@ while($row = $result->fetch_assoc()) {
                     <?php if(!empty($users)) { ?>
                     <?php $no=1; foreach($users as $row): ?>
                     <tr>
+                        <td><?= $row['firstname']. " " .$row['middlename']. " " .$row['lastname'] ?></td>
                         <td><?= $row['username']?></td>
                         <td><?= $row['role']?></td>
                         <td><?= $row['time'] ?></td>

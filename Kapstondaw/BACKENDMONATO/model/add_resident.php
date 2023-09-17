@@ -1,6 +1,7 @@
 <?php 
 	include '../server/server.php';
 	include './functions/autoGenerateUser.php';
+	include './sendEmail.php';
 
 	if(!isset($_SESSION['username'])){
 		if (isset($_SERVER["HTTP_REFERER"])) {

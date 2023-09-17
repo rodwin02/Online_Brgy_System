@@ -59,6 +59,10 @@ include '../server/server.php';
 				'{$resident['father-subdivision']}',
 				'{$resident['father-household-head']}')";
 		$conn->query($insert);
+
+		$deleteUser = $conn->prepare("DELETE FROM tbl_users WHERE firstname = ? AND middlename = ? AND lastname = ?");
+		$deleteUser->bind_param("sss", $resident['firstname'], $resident['middlename'], $resident['lastname']);
+		$deleteUser->execute();
 		
 		$delete = $conn->prepare("DELETE FROM tblresidents WHERE id = ?");
 		$delete->bind_param("s", $id);
@@ -66,6 +70,7 @@ include '../server/server.php';
 		
 		$_SESSION['message'] = $exists ? 'Resident already archived!' : 'Resident has been removed!';
 		$_SESSION['success'] = $exists ? 'warning' : 'danger';
+		
 		} catch (Exception $e) { 
 				$_SESSION['message'] = 'An error occurred: ' . $e->getMessage();
 			$_SESSION['success'] = 'danger';

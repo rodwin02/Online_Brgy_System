@@ -1,5 +1,6 @@
 <?php
 include '../server/server.php';
+include './functions/autoGenerateUser.php';
 
 require 'vendor/autoload.php';
 
@@ -77,9 +78,14 @@ foreach ($data as $key => $row) {
         $query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `age`, `gender`, `house-no`, `street`, `subdivision`, `date-of-birth`, `place-of-birth`, `civil-status`, `occupation`, `email`, `contact-no`, `voter-status`, `identified`, `sector`, `citizenship`, `household-no`, `osy`, `pwd`, `mother-firstname`, `mother-middlename`, `mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`, `father-firstname`, `father-lastname`, `father-middlename`, `father-age`, `father-house-no`, `father-street`, `father-subdivision`, `father-household-head`) 
              VALUES ('$firstname', '$middlename', '$lastname', '$age', '$gender', '$houseNo', '$street', '$subdivision', '$dob', '$pob', '$civil_status', '$occupation', '$email', '$contactNo', '$voter_status', '$identified', '$sector', '$citizenship', '$householdNo', '$osy', '$pwd', '$m_firstname', '$m_middlename', '$m_lastname', '$m_age', '$m_houseNo', '$m_street', '$m_subdivision', '$m_householdHead', '$f_firstname', '$f_lastname', '$f_middlename', '$f_age', '$f_houseNo', '$f_street', '$f_subdivision', '$f_householdHead')";
 
+        insertUser($conn, $username, $hashedPassword, $firstname, $middlename, $lastname, $age, $gender, $civil_status, $street, $dob, $email);
+
+
         if($conn->query($query) === true){
             $_SESSION['message'] = 'Resident Information has been saved!';
             $_SESSION['success'] = 'success';
+
+            include './sendEmail.php';
         }
     }
 }
