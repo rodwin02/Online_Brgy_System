@@ -1,5 +1,4 @@
 <?php
-session_start();
 include '../server/server.php';
 
 $username = trim($_POST['username'] ?? '');

@@ -7,7 +7,7 @@
             <ul>
                 <?php if(isset($_SESSION['username'])) { ?>
                 <li><?php echo $_SESSION['username'];?></li>
-                <li><a href="../BACKENDMONATO/model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
+                <li><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
                 <?php } else {?>
                 <li class="login" id="login">Login</li>
                 <?php } ?>

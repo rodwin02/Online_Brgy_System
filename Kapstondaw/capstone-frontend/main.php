@@ -1,4 +1,4 @@
-<?php include '../BACKENDMONATO/server/server.php' ?>
+<?php include './server/server.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -261,12 +261,12 @@
             0: {
                 slidesPerView: 1,
             },
-            500: {
+            600: {
                 slidesPerView: 2,
             },
             900: {
-                slidesPerView: 3,
-            },
+                slidesPerView: 3
+            }
         },
     });
 
@@ -285,7 +285,7 @@
             0: {
                 slidesPerView: 1,
             },
-            500: {
+            600: {
                 slidesPerView: 2,
             },
             900: {
@@ -309,7 +309,7 @@
             0: {
                 slidesPerView: 1,
             },
-            500: {
+            600: {
                 slidesPerView: 2,
             },
             900: {
