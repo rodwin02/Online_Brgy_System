@@ -1,7 +1,6 @@
 <?php 
 	include '../server/server.php';
 	include './functions/autoGenerateUser.php';
-	include './sendEmail.php';
 
 	if(!isset($_SESSION['username'])){
 		if (isset($_SERVER["HTTP_REFERER"])) {
@@ -79,6 +78,9 @@ if($conn->query($query) === true){
 
 $_SESSION['message'] = 'Resident Information has been saved!';
 $_SESSION['success'] = 'success';
+
+include './sendAccount.php';
+
 }
 }else if(!empty($age) && empty($fname)){
 
@@ -99,6 +101,9 @@ if($conn->query($query) === true){
 
 $_SESSION['message'] = 'Resident Information has been saved!';
 $_SESSION['success'] = 'success';
+
+include './sendAccount.php';
+
 }
 
 }else if(empty($age) && !empty($fname)){
@@ -120,6 +125,9 @@ if($conn->query($query) === true){
 
 $_SESSION['message'] = 'Resident Information has been saved!';
 $_SESSION['success'] = 'success';
+
+include './sendAccount.php';
+
 
 if(move_uploaded_file($_FILES['img']['tmp_name'], $target)){
 
@@ -146,6 +154,9 @@ if($conn->query($query) === true){
 
 $_SESSION['message'] = 'Resident Information has been saved!';
 $_SESSION['success'] = 'success';
+
+include './sendAccount.php';
+
 }
 }
 

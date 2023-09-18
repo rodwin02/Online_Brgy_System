@@ -3,11 +3,33 @@
 
 include '../server/server.php';
 
+
 $username = $_POST['username'];
-$current_password = $_POST['current_password'];
+$email = $_POST['email'];
+$current_password = $_POST['current_password'] ?? "";
 $new_password = $_POST['new_password'];
-$confirm_password = $_POST['confirm_password'];
-$userType = $_POST['usertype-user'];
+$confirm_password = $_POST['confirm_password'] ?? "";
+$userType = $_POST['usertype-user'] ?? "";
+
+if(isset($_POST["submit_admin"])) {
+    include "./sendNewPassword.php";
+    $new_password = password_hash($new_password, PASSWORD_DEFAULT);
+    $update_stmt = $conn->prepare('UPDATE tbl_users SET password = ? WHERE username = ?');
+    $update_stmt->bind_param("ss", $new_password, $username);
+    if ($update_stmt->execute()) {
+        $_SESSION['message'] = 'Password has been updated!';
+        $_SESSION['success'] = 'success';
+
+    } else {
+        $_SESSION['message'] = 'Something went wrong!';
+        $_SESSION['success'] = 'danger';
+    }
+
+    if (isset($_SERVER["HTTP_REFERER"])) {
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
+    }
+    return;
+}
 
 if (!empty($username)) {
     $_SESSION['message'] = $current_password;

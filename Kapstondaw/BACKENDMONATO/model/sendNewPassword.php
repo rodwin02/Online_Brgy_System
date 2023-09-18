@@ -19,12 +19,12 @@ try {
 
     //Recipients
     $mail->setFrom('renzvanni626@gmail.com');
-    $mail->addAddress(!empty($_POST["email"]) ? $_POST["email"] : $email);  // Add a recipient
+    $mail->addAddress($email);  // Add a recipient
 
     // Content
     $mail->isHTML(true);                        // Set email format to HTML
     $mail->Subject = 'Welcome to CHIMKEN - Chimken is the greatest and will take over the world with poppy. You cannot stop the chimken, poppy.church will find you.';
-    $mail->Body    = 'Dear '. $firstname. ", <br/>We are excited to welcome you to <b>CHIMKEN</b>! <br/>Your account has been successfully created. Here are your login details: <br/><b>Username:</b> ". $firstname. "<br/><b>Password:</b> naka hash pa di ko ma Decrypt";
+    $mail->Body    = 'Dear '. $username. ", <br/>We are excited to welcome you to <b>CHIMKEN</b>! <br/>Your password has been successfully change. Here are your login details: <br/><b>Username:</b> ". $username. "<br/><b>Password:</b> ". $new_password;
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();

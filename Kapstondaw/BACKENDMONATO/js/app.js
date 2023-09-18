@@ -183,9 +183,13 @@ function editAwareness(that) {
 function editPassword(that) {
   id = $(that).attr("data-id");
   username = $(that).attr("data-username");
+  email = $(that).attr("data-email");
+
+  console.log(email);
 
   $("#id").val(id);
   $("#username-user1").val(username);
+  $("#update-email").val(email);
 }
 
 const importBtn = document.querySelector(".importBtn");

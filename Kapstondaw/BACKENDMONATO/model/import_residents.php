@@ -85,7 +85,7 @@ foreach ($data as $key => $row) {
             $_SESSION['message'] = 'Resident Information has been saved!';
             $_SESSION['success'] = 'success';
 
-            include './sendEmail.php';
+            include './sendAccount.php';
         }
     }
 }

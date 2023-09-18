@@ -116,7 +116,8 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['time'] ?></td>
                         <td class="actions">
                             <a href="" class="edit" id="editUser" onclick="editPassword(this)"
-                                data-id="<?= $row['id']?>" data-username="<?= $row['username'] ?>">Edit</a>
+                                data-id="<?= $row['id']?>" data-email="<?= $row["email"] ?>"
+                                data-username="<?= $row['username'] ?>">Edit</a>
                             <a href="./model/remove_user.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
                         </td>
                     </tr>
@@ -184,26 +185,35 @@ while($row = $result->fetch_assoc()) {
                 <label for="username-user">Username</label>
                 <input type="text" id="username-user1" name="username" readonly value="<?= $row['username'] ?>"
                     required>
-
+                <?php if($_SESSION["role"] === "staff") { ?>
                 <label for="password-user">Current Password</label>
                 <input type="password" id="current_password" name="current_password" required>
+                <?php } ?>
 
                 <label for="password-user">New Password</label>
                 <input type="password" id="new_password" name="new_password" required>
 
+                <?php if($_SESSION["role"] === "staff") { ?>
                 <label for="password-user">Confirm Password</label>
                 <input type="password" id="confirm_password" name="confirm_password" required>
+                <?php } ?>
 
-                <label for="usertype-user">User Type</label>
+                <!-- <label for="usertype-user">User Type</label>
                 <select id="usertype-user" name="usertype-user" required>
                     <option value="staff">Staff</option>
                     <option value="admin">Admin</option>
                     <option value="user">User</option>
-                </select>
+                </select> -->
             </div>
 
+            <input type="hidden" name="email" id="update-email" value="<?= $row["email"] ?>">
             <input type="hidden" id="id" name="id">
+            <?php if($_SESSION["role"] === "staff") { ?>
             <input class="submitUser" type="submit" value="Create">
+            <?php } else {?>
+            <input class="submitUser" type="submit" name="submit_admin" value="Create">
+
+            <?php } ?>
         </form>
     </div>
     <!-- edit user -->
@@ -246,8 +256,8 @@ while($row = $result->fetch_assoc()) {
         </form>
     </div>
 
-    <script src="./js/jQuery-3.7.0.js"></script>
-    <script src="./js/app.js"></script>
+    <script src="./js//jQuery-3.7.0.js"></script>
+    <script src="./js//app.js"></script>
 
     <script>
     function previewImage(event) {
