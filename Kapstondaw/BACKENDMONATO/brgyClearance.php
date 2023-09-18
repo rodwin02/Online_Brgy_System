@@ -117,7 +117,8 @@ while($row = $result->fetch_assoc()) {
                         <td>
                             <a class="edit" href="">Edit</a>
                             <a class="print" href="./generate/brgyClearance_generate.php?id=<?= $row['id'] ?>">Print</a>
-                            <a href="./model/remove_brgyClearance.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
+                            <a href="./model/remove/remove_brgyClearance.php?id=<?= $row['id'] ?>"
+                                class="delete">Delete</a>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>

@@ -125,7 +125,7 @@ while($row = $result->fetch_assoc()) {
                                 data-time="<?= $row['time'] ?>" data-details="<?= $row['details'] ?>"
                                 data-status="<?= $row['status'] ?>">Edit</a>
                             <a href="./model/print_complain.php" class="print">Print</a>
-                            <a href="./model/remove_complain.php?id=<?= $row['id']?>" class="delete">Delete</a>
+                            <a href="./model/remove/remove_complain.php?id=<?= $row['id']?>" class="delete">Delete</a>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>

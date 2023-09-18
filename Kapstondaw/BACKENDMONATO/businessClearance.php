@@ -114,7 +114,7 @@ $businessClearance[] = $row;
                         <td><?= $row['documentFor'] ?></td>
                         <td>
                             <a href="#" class="edit">Edit</a>
-                            <a href="./model/remove_businessClearance.php?id=<?= $row['id'] ?>"
+                            <a href="./model/remove/remove_businessClearance.php?id=<?= $row['id'] ?>"
                                 class="delete">Delete</a>
                         </td>
                     </tr>

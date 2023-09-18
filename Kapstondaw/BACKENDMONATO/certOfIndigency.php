@@ -124,7 +124,8 @@ while($row = $result->fetch_assoc()) {
                             <a href="./generate/certOfIndigency_generate_forsomeone.php?id=<?= $row['id'] ?>"
                                 class="print">Print</a>
                             <?php } ?>
-                            <a href="./model/remove_certOfIndigency.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
+                            <a href="./model/remove/remove_certOfIndigency.php?id=<?= $row['id'] ?>"
+                                class="delete">Delete</a>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>

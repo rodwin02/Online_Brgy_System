@@ -130,7 +130,7 @@
                                 data-chair="<?= $row['chair_id'] ?>" data-pos="<?= $row['pos_id'] ?>"
                                 data-start="<?= $row['termstart'] ?>" data-end="<?= $row['termend'] ?>"
                                 data-status="<?= $row['status'] ?>">Edit</span>
-                            <!-- <a href="./model/remove_official.php?id=<?= $row['id'] ?>" class="delete">Delete</a> -->
+                            <!-- <a href="./model/remove/remove_official.php?id=<?= $row['id'] ?>" class="delete">Delete</a> -->
                         </td>
                     </tr>
                     <?php endforeach ?>

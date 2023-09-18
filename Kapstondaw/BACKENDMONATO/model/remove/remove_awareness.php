@@ -1,5 +1,5 @@
 <?php 
-	include '../server/server.php';
+	include '../../server/server.php';
 
 	if(!isset($_SESSION['username']) && $_SESSION['role']!='administrator'){
 		if (isset($_SERVER["HTTP_REFERER"])) {
@@ -11,26 +11,26 @@
 
 	if(!empty($id)){
 		try {
-			$select = $conn->prepare("SELECT * FROM tblcomplain WHERE id = ?");
+			$select = $conn->prepare("SELECT * FROM tblawareness WHERE id = ?");
 			$select->bind_param("s", $id);
 			$select->execute();
-			$blotter = $select->get_result()->fetch_assoc();
+			$awareness = $select->get_result()->fetch_assoc();
 
-			$insert = "INSERT INTO del_complain_archive(`complainant`, `date`, `location`, `time`, `details`, `status`) VALUES (
-				'{$blotter['complainant']}',
-				'{$blotter['date']}',
-				'{$blotter['location']}',
-				'{$blotter['time']}',	
-				'{$blotter['details']}',	
-				'{$blotter['status']}'	
+			$insert = "INSERT INTO del_awareness_archive(`name`, `date`, `time`, `location`, `details`, `status`) VALUES (
+				'{$awareness['name']}',
+				'{$awareness['date']}',
+				'{$awareness['time']}',	
+				'{$awareness['location']}',
+				'{$awareness['details']}',	
+				'{$awareness['status']}'	
 			)";
 			$conn->query($insert);
 			
-			$query = "DELETE FROM tblcomplain WHERE id = '$id'";
+			$query = "DELETE FROM tblawareness WHERE id = '$id'";
 			$result = $conn->query($query);
 			
 			if($result === true){
-				$_SESSION['message'] = 'Complain has been removed!';
+				$_SESSION['message'] = 'Awareness has been removed!';
 				$_SESSION['success'] = 'danger';
 				
 			}else{
@@ -43,9 +43,9 @@
 		}
 	}else{
 
-		$_SESSION['message'] = 'Missing Complain ID!';
+		$_SESSION['message'] = 'Missing Awareness ID!';
 		$_SESSION['success'] = 'danger';
 	}
 
-    header("Location: ../complain.php");
+    header("Location: ../../awareness.php");
 	$conn->close();

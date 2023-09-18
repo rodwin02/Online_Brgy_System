@@ -127,7 +127,7 @@ while($row = $result->fetch_assoc()) {
                     else { ?>
                             <a href="#" class="print">Print</a>
                             <?php } ?>
-                            <a href="./model/remove_idForm.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
+                            <a href="./model/remove/remove_idForm.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>

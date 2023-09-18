@@ -118,7 +118,7 @@ while($row = $result->fetch_assoc()) {
                             <a href="" class="edit" id="editUser" onclick="editPassword(this)"
                                 data-id="<?= $row['id']?>" data-email="<?= $row["email"] ?>"
                                 data-username="<?= $row['username'] ?>">Edit</a>
-                            <a href="./model/remove_user.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
+                            <a href="./model/remove/remove_user.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>

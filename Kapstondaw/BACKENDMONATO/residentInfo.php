@@ -181,7 +181,7 @@ while($userRow = $result2->fetch_assoc()) {
                                 data-cstatus="<?= $row['civil-status'] ?>" data-dbirth="<?= $row['date-of-birth'] ?>"
                                 data-email="<?= $row['email'] ?>">Account</a>
                             <?php } ?>
-                            <a href="./model/remove_resident.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
+                            <a href="./model/remove/remove_resident.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>

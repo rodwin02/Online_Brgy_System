@@ -135,7 +135,7 @@ while($row = $result->fetch_assoc()) {
                             <a href="./generate/certOfLBR_generate_forsingleparent.php?id=<?= $row['id'] ?>"
                                 class="print">Print</a>
                             <?php } ?>
-                            <a href="./model/remove_certOfLBR.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
+                            <a href="./model/remove/remove_certOfLBR.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>

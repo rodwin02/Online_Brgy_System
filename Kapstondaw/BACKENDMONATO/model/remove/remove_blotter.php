@@ -1,5 +1,5 @@
 <?php 
-	include '../server/server.php';
+	include '../../server/server.php';
 
 	if(!isset($_SESSION['username']) && $_SESSION['role']!='administrator'){
 		if (isset($_SERVER["HTTP_REFERER"])) {
@@ -52,7 +52,7 @@
 	}
 
 
-    header("Location: ../blotter.php");
+    header("Location: ../../blotter.php");
 	$conn->close();
 
 	?>
