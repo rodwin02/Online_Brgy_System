@@ -89,6 +89,8 @@
     <link rel="stylesheet" href="style1.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
+
     <script src="sidebar.js"></script>
 
 </head>
@@ -96,54 +98,10 @@
 <body>
 
     <?php include "./model/fetch_brgy_role.php" ?>
-    <!-- HEADER -->
-    <div class="container">
-        <div class="layer1"><?php echo $brgy_name. " " .$town_name. " " .$province_name ?>
-        </div>
-        <div class="layer2">
-            <img src="vector/Vector 1.png" alt="">
-        </div>
-    </div>
+    <?php include './actives/active_restore.php' ?>
 
-    <!-- SIDE BAR -->
-    <div class="sidebar">
-        <div class="slayer1">
-            <img class="vector-side" src="vector/layerside.png" alt="">
-            <img class="db-icon" src="icons/dashboard-icon.png" alt=""></img>
-            <img class="bo-icon" src="icons/B_Officials-iocn.png" alt=""></img>
-            <img class="ri-icon" src="icons/residents-icon.png" alt=""></img>
-            <img class="cc-icon" src="icons/certificate-icon.png" alt=""></img>
-            <img class="rs-icon" src="icons/blotter-icon.png" alt=""></img>
-            <img class="um-icon" src="icons/user-icon.png" alt=""></img>
-            <img class="cm-icon" src="icons/content-icon.png" alt=""></img>
-            </img>
-        </div>
 
-        <div class="slayer2">
-            <a class="db" href="dashboard.php">Dashboard</a>
-            <a class="bo" href="barangayOfficials.php">Barangay Officials</a>
-            <a class="ri" href="residentInfo.php">Residents Information</a>
-            <a class="cc" href="#">Certificate/Clearance</a>
-            <a href="idForm.php" class="idform">Identification Form</a>
-            <a href="brgyClearance.php" class="b-clearance">Barangay Clearance</a>
-            <a href="endorsmentCert.php" class="e-certificate">E-Certificate</a>
-            <a href="certOfIndigency.php" class="c-indigency">Cetificate of Indigency</a>
-            <a href="certOfLBR.php" class="c-latebirth">Certificate Of LBR</a>
-            <a href="businessClearance.php" class="bb-clearance">Business Clearance</a>
-            <a class="rs" href="#">Reports</a>
-            <a href="blotter.php" class="blotter1">Blotter records</a>
-            <a href="complain.php" class="complain1">Complain records</a>
-            <a href="awareness.php" class="awareness1">Awereness</a>
-            <a class="um" href="#">User Management</a>
-            <a href="users.php" class="users">Users</a>
-            <a class="cm" href="#">Content Management</a>
-            <a href="#" class="b-information" id="b-info">Barangay Information</a>
-            <a href="announcement.php" class="announcement">Announcement</a>
-            <a href="./backup/backup.php" class="backup">Backup</a>
-            <a href="restore" class="restore">Restore</a>
-            <a href="request.php" class="request">Requested Documents</a>
-        </div>
-    </div>
+    <?php include "./sidebar.php" ?>
 
     <?php if(isset($_SESSION['message'])): ?>
     <div class="alert alert-<?php echo $_SESSION['success']; ?> <?= $_SESSION['success']=='danger' ? 'bg-danger text-light' : null ?>"
@@ -473,6 +431,8 @@
         </form>
     </div>
 
+    <script src="./js//jQuery-3.7.0.js"></script>
+    <script src="./js//app.js"></script>
     <script>
     const monthYearElement = document.getElementById("monthYear");
     const daysElement = document.getElementById("days");

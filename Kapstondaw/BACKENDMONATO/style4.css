@@ -19,11 +19,10 @@
   position: fixed;
   flex-direction: column;
   border-radius: 20px;
-  background: #F8F8F8;
+  background: #f8f8f8;
   width: 625px;
   height: 500px;
   padding: 20px;
-
 }
 
 .header-cont {
@@ -46,14 +45,13 @@
   justify-content: center;
   align-self: center;
   cursor: pointer;
-  
 }
 
 .input-cont {
   display: flex;
-  
+
   justify-content: space-between;
-  
+
   color: #000;
   font-family: Poppins;
   font-size: 13px;
@@ -87,7 +85,6 @@
   flex-direction: column;
   width: 100%;
   margin-right: 30px;
- 
 }
 
 .right-cont input {
@@ -105,7 +102,7 @@
 .UpdateInfo {
   width: 82px;
   height: 29px;
-  
+
   border-radius: 5px;
   background: #007236;
   color: rgb(255, 255, 255);
@@ -128,8 +125,8 @@
   height: 50px;
   width: 100%;
   background: rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
-  display: flex; 
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
   flex-direction: row;
 }
 
@@ -138,8 +135,8 @@
   display: flex;
   align-self: center;
   margin-left: 35px;
-  
-  font-family: 'Poppins';
+
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -175,7 +172,7 @@
   width: 98%;
   margin-top: 30px;
   height: 65px;
-  
+
   font-size: 13px;
   font-family: Poppins;
   font-weight: 400;
@@ -185,17 +182,17 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-self: center; 
+  align-self: center;
   align-items: center;
 }
-.second_layer .search-cont p{
+.second_layer .search-cont p {
   margin-left: 20px;
   margin-right: 20px;
 }
-.second_layer .search-cont input{
+.second_layer .search-cont input {
   height: 30px;
   border: 1px solid #878787;
-  background: #FFF;
+  background: #fff;
   border-radius: 5px;
 }
 .second_layer .add-cont {
@@ -207,11 +204,11 @@
   margin-right: 40px;
 }
 
-.second_layer .add-cont .addAnnouncement{
+.second_layer .add-cont .addAnnouncement {
   height: 39px;
   border-radius: 20px;
   border: 1px solid #007236;
-  background: #FFF;
+  background: #fff;
   color: #007236;
   text-decoration: none;
   display: flex;
@@ -219,7 +216,6 @@
   width: 130px;
   border-radius: 20px;
   justify-content: center;
-  
 }
 
 .third_layer {
@@ -232,7 +228,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  
+
   margin-top: 25px;
   border-radius: 10px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -254,7 +250,8 @@ table thead tr th {
   line-height: normal;
 }
 
-th, td {
+th,
+td {
   padding: 8px;
   text-align: center;
 }
@@ -263,8 +260,8 @@ tr:nth-child(even) {
   background-color: #dfdfdf;
 }
 
-
-.edit, .delete {
+.edit,
+.delete {
   margin-right: 10px;
   text-decoration: none;
 }
@@ -273,11 +270,11 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 .delete {
-  color: #F00;
+  color: #f00;
   cursor: pointer;
 }
 
-.modal-addAnnouncement{
+.modal-addAnnouncement {
   display: flex;
   z-index: 2;
   height: 100vh;
@@ -291,7 +288,7 @@ tr:nth-child(even) {
   padding: 9% 0 0 29%;
   display: none;
 }
-.modal-editAnnouncement{
+.modal-editAnnouncement {
   display: flex;
   z-index: 2;
   height: 100vh;
@@ -311,7 +308,7 @@ tr:nth-child(even) {
   position: fixed;
   flex-direction: column;
   border-radius: 20px;
-  background: #F8F8F8;
+  background: #f8f8f8;
   width: 625px;
   height: 580px;
   padding: 20px;
@@ -338,14 +335,13 @@ tr:nth-child(even) {
   justify-content: center;
   align-self: center;
   cursor: pointer;
-  
 }
 
 .add-container {
   display: flex;
-  
+
   justify-content: space-between;
-  
+
   color: #000;
   font-family: Poppins;
   font-size: 13px;
@@ -379,7 +375,6 @@ tr:nth-child(even) {
   flex-direction: column;
   width: 100%;
   margin-right: 30px;
- 
 }
 
 .right input {
@@ -420,7 +415,7 @@ tr:nth-child(even) {
 .submitAnnouncement {
   width: 82px;
   height: 29px;
-  
+
   border-radius: 5px;
   background: #007236;
   color: rgb(255, 255, 255);
@@ -444,8 +439,8 @@ tr:nth-child(even) {
   height: 50px;
   width: 100%;
   background: rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
-  display: flex; 
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
   flex-direction: row;
 }
 .first_layer p {
@@ -453,15 +448,14 @@ tr:nth-child(even) {
   display: flex;
   align-self: center;
   margin-left: 35px;
-  
-  font-family: 'Poppins';
+
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 38px;
   /* identical to box height */
   color: #007236;
-  
 }
 .first_layer a {
   width: 50%;
@@ -478,3 +472,19 @@ tr:nth-child(even) {
   font-weight: 500;
   line-height: normal;
 }
+
+.add-residents-cont {
+  display: flex;
+  width: 97%;
+  margin: 25px;
+  flex-direction: column;
+
+}
+
+.input-container {
+  display: flex;
+  margin-bottom: 10px;
+} 
+
+
+
