@@ -46,8 +46,13 @@
                 <p>Barangay Officials</p>
             </div>
             <div class="second_layer">
-                <p>Current Barangay Officials</p>
-                <a href="#" id="showModal">+ Officials</a>
+                <div class="text-cont">
+                    <p>Current Barangay Officials</p>
+                </div>
+                <div class="modal-cont">
+                    <a href="#" id="showModal">+ Officials</a>
+                    <a href="#" id="archive">Archive</a>
+                </div>
             </div>
 
             <?php if(isset($_SESSION['message'])): ?>
@@ -57,6 +62,7 @@
             </div>
             <?php unset($_SESSION['message']); ?>
             <?php endif ?>
+
 
             <div class="third_layer">
                 <table>
@@ -250,8 +256,8 @@
     </div>
 
 
-    <script src="./js/jQuery-3.7.0.js"></script>
-    <script src="./js/app.js"></script>
+    <script src="./js//jQuery-3.7.0.js"></script>
+    <script src="./js//app.js"></script>
     <script>
     const showModalLink = document.getElementById('showModal');
     const modal = document.querySelector('.modal-AddOfficials');

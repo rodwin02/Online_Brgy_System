@@ -42,7 +42,7 @@
           <a href="#" class="b-information" id="b-info">Barangay Information</a>
           <a href="announcement.php" class="announcement">Announcement</a>
           <a href="./backup/backup.php" class="backup">Backup</a>
-          <a href="#" class="restore restoreBtn">Restore</a>
+          <a href="#" class="restore clicky restoreBtn">Restore</a>
           <a href="request.php" class="request">Requested Documents</a>
       </div>
   </div>

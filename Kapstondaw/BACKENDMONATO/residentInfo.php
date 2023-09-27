@@ -59,11 +59,13 @@ function calculateAge($dob) {
             <div class="search-cont">
                 <p>Search:</p>
                 <input class="searchBar" type="text" placeholder=" Enter text here">
+                <a href="#">Sort & Filter </a>
             </div>
             <div class="add-cont">
-                <a href="#" class="add" id="add">+ Resident</a>
+                <a href="addResidents.php" class="add">+ Resident</a>
                 <a href="./model/export_residents_csv.php" class="exportCVS">+ Export CVS</a>
                 <button class="importBtn">+ Import</button>
+                <Archive href="#" class="archiveResidents">Archive</a>
             </div>
         </div>
 
@@ -73,6 +75,7 @@ function calculateAge($dob) {
             <table id="table">
                 <thead>
                     <tr>
+                        <th>No</th>
                         <th>Full Name</th>
                         <th>Age</th>
                         <th>Date of Birth</th>
@@ -87,6 +90,7 @@ function calculateAge($dob) {
                     <?php if(!empty($residents)) { ?>
                     <?php $no=1; foreach($residents as $row): ?>
                     <tr>
+                        <td><?= $no ?></td>
                         <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
                         <td><?= calculateAge($row['date-of-birth'])?></td>
                         <td><?= $row['date-of-birth'] ?></td>
@@ -121,7 +125,6 @@ function calculateAge($dob) {
                                 data-fstreet="<?= $row['father-street'] ?>"
                                 data-fsubdivision="<?= $row['father-subdivision'] ?>"
                                 data-fhouseholdNo="<?= $row['father-household-head'] ?>">Edit</a>
-                            <a href="./model/print_resident.php" class="print">Print</a>
                             <?php 
                                 $userExists = false;
                                 foreach($users as $user) {
@@ -139,9 +142,26 @@ function calculateAge($dob) {
                                 data-cstatus="<?= $row['civil-status'] ?>" data-dbirth="<?= $row['date-of-birth'] ?>"
                                 data-email="<?= $row['email'] ?>">Account</a>
                             <?php } ?>
-                            <a href="./model/remove/remove_resident.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
+                            <a href="#" class="delete delete-archive" id="delete-archive">Delete</a>
+
+                            <div class="modal-delete">
+                                <div class="form-delete">
+                                    <div class="delete-cont">
+                                        <p>Delete</p>
+                                        <img src="icons/close 1.png" alt="" class="close-delete">
+                                    </div>
+                                    <div class="delete-description">
+                                        <p>Deleting this will remove all data
+                                            and cannot be undone.</p>
+                                    </div>
+                                    <div class="delete-submit">
+                                        <a href="./model/remove/remove_resident.php?id=<?= $row['id']?>">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
+
                     <?php $no++; endforeach ?>
                     <?php } ?>
                 </tbody>
@@ -160,7 +180,7 @@ function calculateAge($dob) {
 
 
         <!-- START ADD RESIDENTS -->
-        <div class="modal-AddResidents">
+        <div class=" modal-AddResidents">
             <form class="form1" action="./model/add_resident.php" method="POST">
                 <div class="title-cont">
                     <p>New Resident Registration Form</p>
@@ -302,7 +322,8 @@ function calculateAge($dob) {
                             <div class="check2">
                                 <input type="checkbox" id="person-with-disability1" value="PWD"
                                     name="person-with-disability">
-                                <label for="person-with-disability">Person with Disability:</label>
+                                <label for="person-with-disability">Person with
+                                    Disability:</label>
                             </div>
                         </div>
                     </div>
@@ -722,26 +743,28 @@ function calculateAge($dob) {
             </form>
         </div>
 
+
+
 </body>
 
 </html>
 
-<script src="./js//jQuery-3.7.0.js"></script>
+<script src=" ./js//jQuery-3.7.0.js"></script>
 <script src="./js//app.js"></script>
 <script>
 // ADD RESIDENTSw
-const addLink = document.getElementById('add');
-const modalAdd = document.querySelector('.modal-AddResidents');
-const closeButtonAdd = document.querySelector('.closeBtnAdd');
+// const addLink = document.getElementById('add');
+// const modalAdd = document.querySelector('.modal-AddResidents');
+// const closeButtonAdd = document.querySelector('.closeBtnAdd');
 
-addLink.addEventListener('click', function(event) {
-    event.preventDefault();
-    modalAdd.style.display = 'block';
-});
+// addLink.addEventListener('click', function(event) {
+//     event.preventDefault();
+//     modalAdd.style.display = 'block';
+// });
 
-closeButtonAdd.addEventListener('click', function() {
-    modalAdd.style.display = 'none';
-});
+// closeButtonAdd.addEventListener('click', function() {
+//     modalAdd.style.display = 'none';
+// });
 
 
 const editResidentsLink = document.querySelectorAll('.edit');
@@ -774,4 +797,20 @@ bInfo.addEventListener('click', function(event) {
 closemo.addEventListener('click', function() {
     modalInfo.style.display = 'none';
 });
+
+// DELETE RESIDENTS
+const deleteLink = document.querySelectorAll('.delete-archive');
+const modalDelete = document.querySelectorAll('.modal-delete');
+const closeButtonDelete = document.querySelectorAll('.close-delete');
+
+deleteLink.forEach((del, index) => {
+    del.addEventListener('click', (e) => {
+        console.log("Delete link clicked")
+        modalDelete[index].style.display = 'block';
+    });
+
+    closeButtonDelete[index].addEventListener('click', function() {
+        modalDelete[index].style.display = 'none';
+    });
+})
 </script>

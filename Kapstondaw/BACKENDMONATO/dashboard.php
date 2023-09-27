@@ -431,8 +431,8 @@
         </form>
     </div>
 
-    <script src="./js//jQuery-3.7.0.js"></script>
-    <script src="./js//app.js"></script>
+    <script src="./js/jQuery-3.7.0.js"></script>
+    <script src="./js/app.js"></script>
     <script>
     const monthYearElement = document.getElementById("monthYear");
     const daysElement = document.getElementById("days");

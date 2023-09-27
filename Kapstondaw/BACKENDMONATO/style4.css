@@ -435,7 +435,7 @@ tr:nth-child(even) {
 }
 
 .first_layer {
-  margin-top: 85px;
+  margin-top: 68px;
   height: 50px;
   width: 100%;
   background: rgba(0, 0, 0, 0.05);
@@ -461,7 +461,7 @@ tr:nth-child(even) {
   width: 50%;
   justify-content: flex-end;
   align-self: center;
-  margin-right: 45px;
+  margin-top: 85px;
   display: flex;
   text-decoration: none;
 
@@ -478,13 +478,102 @@ tr:nth-child(even) {
   width: 97%;
   margin: 25px;
   flex-direction: column;
-
 }
 
 .input-container {
   display: flex;
   margin-bottom: 10px;
-} 
+}
 
+.modal-delete {
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 17% 0 0 40%;
+  display: none;
+}
 
+.form-delete {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #f8f8f8;
+  width: 305px;
+  height: 250px;
+  overflow: hidden;
+}
 
+.delete-cont {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 49px;
+  flex-shrink: 0;
+  align-items: center;
+  padding: 0 15px;
+
+  border-radius: 10px 10px 0px 0px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.delete-cont p {
+  color: #fe423f;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.delete-cont img {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+}
+
+.delete-description {
+  padding: 15px 15px;
+}
+
+.delete-description p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+}
+
+.delete-submit {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  padding-top: 65px;
+}
+
+.delete-submit a {
+  width: 65px;
+  height: 30px;
+  flex-shrink: 0;
+
+  border-radius: 5px;
+  background: #fe423f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

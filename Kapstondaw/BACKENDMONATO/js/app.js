@@ -231,6 +231,7 @@ const restoreCon = document.querySelector(".restore-container");
 restoreBtn.addEventListener("click", (e) => {
   e.stopPropagation();
   restoreCon.style.display = "flex";
+  console.log("restoreBtn clicked");
 
   if (restoreCon.style.display == "flex") {
     const restoreMain = document.querySelector("#submitRestore");
@@ -252,7 +253,6 @@ restoreBtn.addEventListener("click", (e) => {
   document.addEventListener("click", function (event) {
     const restoreForm = document.querySelector(".restoreForm");
     let isRestoreForm = restoreForm.contains(event.target);
-    console.log("l2");
     if (!isRestoreForm) {
       restoreCon.style.display = "none";
     }

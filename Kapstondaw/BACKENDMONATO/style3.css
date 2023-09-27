@@ -6,9 +6,10 @@
   margin-left: 75px;
 }
 .first_layer {
-  margin-top: 85px;
+  margin-top: 70px;
   height: 50px;
   width: 100%;
+  
   background: rgba(0, 0, 0, 0.05);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -29,6 +30,7 @@
   color: #007236;
 }
 .first_layer a {
+  margin-top: 85px;
   width: 50%;
   justify-content: flex-end;
   align-self: center;
@@ -65,6 +67,7 @@
   flex-direction: row;
   align-self: center;
   align-items: center;
+  
 }
 .second_layer .search-cont p {
   margin-left: 20px;
@@ -76,6 +79,17 @@
   background: #fff;
   border-radius: 5px;
 }
+.second_layer .search-cont a {
+  text-decoration: none;
+  color: #007236;
+  text-align: left;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 15px;
+}
 .second_layer .add-cont {
   width: 100%;
   display: flex;
@@ -83,6 +97,7 @@
   align-self: center;
   justify-content: flex-end;
   margin-right: 40px;
+ 
 }
 .second_layer .add-cont .add {
   height: 39px;
@@ -97,6 +112,27 @@
   border-radius: 20px;
   justify-content: center;
   margin-right: 20px;
+}
+
+.second_layer .add-cont .archiveResidents {
+  height: 39px;
+  border-radius: 20px;
+  border: 1px solid #000000;
+  background: #fff;
+  color: #000000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 105px;
+  border-radius: 20px;
+  justify-content: center;
+  margin-right: 20px;
+}
+.second_layer .add-cont .archiveResidents:hover {
+  cursor: pointer;
+  background-color: #000000;
+  color: #fff;
+  transition: 0.3s ease-in-out;
 }
 
 .second_layer .add-cont .add:hover {
