@@ -9,7 +9,7 @@
   margin-top: 70px;
   height: 50px;
   width: 100%;
-  
+
   background: rgba(0, 0, 0, 0.05);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -67,7 +67,6 @@
   flex-direction: row;
   align-self: center;
   align-items: center;
-  
 }
 .second_layer .search-cont p {
   margin-left: 20px;
@@ -88,7 +87,82 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-left: 15px;
+  margin-left: 10px;
+}
+.second_layer .search-cont .sort {
+  z-index: 2;
+  margin-top: 190px;
+  width: 350px;
+  height: auto;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-left: 10px;
+  padding-bottom: 10px;
+  display: none;
+}
+.second_layer .search-cont .sort .header-sort {
+  width: 350px;
+  height: 35px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  align-items: center;
+}
+.second_layer .search-cont .sort .header-sort img {
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+}
+.second_layer .search-cont .sort .sortby-cont {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.second_layer .search-cont .sort .sortby-cont p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 25px;
+  margin-bottom: 5px;
+}
+.second_layer .search-cont .sort .sortby-cont .sort-btn ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  margin-left: 20px;
+}
+.second_layer .search-cont .sort .sortby-cont .sort-btn ul li {
+  list-style: none;
+  width: auto;
+
+  background-color: #fff;
+  border: solid 1px #727272;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 2px 8px;
+
+  color: #727272;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.second_layer .search-cont .sort .sortby-cont .sort-btn ul li:hover {
+  background-color: #007236;
+  color: #fff;
+  cursor: pointer;
 }
 .second_layer .add-cont {
   width: 100%;
@@ -97,7 +171,6 @@
   align-self: center;
   justify-content: flex-end;
   margin-right: 40px;
- 
 }
 .second_layer .add-cont .add {
   height: 39px;
