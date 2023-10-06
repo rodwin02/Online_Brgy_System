@@ -1,12 +1,41 @@
 <?php include './server/server.php'?>
 <?php
+$sortOption = $_GET["sort"] ?? null;
+$filterOption = $_GET["filter"] ?? null;
+$filterValue = $_GET["value"] ?? null;
+
+
+$params = [];
+$types = "";
+
 $query =  "SELECT * FROM tblresidents";
-$result = $conn->query($query);
+
+if($filterOption && $filterValue) {
+    $query .= " WHERE $filterOption = ?";
+    $params[] = $filterValue;
+    $types .= "s";
+}
+
+if($sortOption == "age") {
+    $query .= " ORDER BY $sortOption DESC";
+}
+
+$stmt = $conn->prepare($query);
+
+if (!empty($types) && !empty($params)) {
+    $stmt->bind_param($types, ...$params);
+}
+
+$stmt->execute();
+
+$result = $stmt->get_result();
 
 $residents = array();
 while($row = $result->fetch_assoc()) {
   $residents[] = $row;
 }
+
+$stmt->close();
 
 $query2 =  "SELECT * FROM tbl_users";
 $result2 = $conn->query($query2);
@@ -70,13 +99,7 @@ function calculateAge($dob) {
                         <p>Sort by</p>
                         <div class="sort-btn">
                             <ul>
-                                <li>students</li>
-                                <li>osy</li>
-                                <li>voters</li>
-                                <li>male</li>
-                                <li>female</li>
-                                <li>snr</li>
-                                <li>pwd</li>
+                                <li><a href="?sort=age">Age</a></li>
                             </ul>
                         </div>
                     </div>
@@ -84,13 +107,17 @@ function calculateAge($dob) {
                         <p>Filter by</p>
                         <div class="sort-btn">
                             <ul>
-                                <li>name</li>
-                                <li>pob</li>
-                                <li>dob</li>
-                                <li>age</li>
-                                <li>sex</li>
-                                <li>civil status</li>
-                                <li>created on</li>
+                                <li><a href="?filter=gender&value=Male">Male</a></li>
+                                <li><a href="?filter=gender&value=Female">Female</a></li>
+                                <li><a href="?filter='civil-status'&value=Single">Single</a></li>
+                                <li><a href="?filter='civil-status'&value=Married">Married</a></li>
+                                <li><a href="?filter='civil-status'&value=Divorced">Divorced</a></li>
+                                <li><a href="?filter='civil-status'&value=Widowed">Widowed</a></li>
+                                <li><a href="?filter='voter-status'&value=voter">Voter</a></li>
+                                <li><a href="?filter=sector&value=Student">Students</a></li>
+                                <li><a href="?filter=sector&value=Senior Citizen">SNR</a></li>
+                                <li><a href="?filter=osy&value=OSY">OSY</a></li>
+                                <li><a href="?filter=pwd&value=PWD">PWD</a></li>
                             </ul>
                         </div>
                     </div>
@@ -98,7 +125,7 @@ function calculateAge($dob) {
 
             </div>
             <div class="add-cont">
-                <a href="addResidents.php" class="add">+ Resident</a>
+                <a href="#" class="add">+ Resident</a>
                 <a href="./model/export_residents_csv.php" class="exportCVS">+ Export CVS</a>
                 <button class="importBtn">+ Import</button>
                 <Archive href="#" class="archiveResidents">Archive</a>
@@ -789,18 +816,18 @@ function calculateAge($dob) {
 <script src="./js//app.js"></script>
 <script>
 // ADD RESIDENTSw
-// const addLink = document.getElementById('add');
-// const modalAdd = document.querySelector('.modal-AddResidents');
-// const closeButtonAdd = document.querySelector('.closeBtnAdd');
+const addLink = document.querySelector('.add');
+const modalAdd = document.querySelector('.modal-AddResidents');
+const closeButtonAdd = document.querySelector('.closeBtnAdd');
 
-// addLink.addEventListener('click', function(event) {
-//     event.preventDefault();
-//     modalAdd.style.display = 'block';
-// });
+addLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    modalAdd.style.display = 'block';
+});
 
-// closeButtonAdd.addEventListener('click', function() {
-//     modalAdd.style.display = 'none';
-// });
+closeButtonAdd.addEventListener('click', function() {
+    modalAdd.style.display = 'none';
+});
 
 
 const editResidentsLink = document.querySelectorAll('.edit');

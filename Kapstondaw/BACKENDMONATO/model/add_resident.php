@@ -19,6 +19,15 @@ $houseNo = $conn->real_escape_string($_POST['house-no']);
 $street = $conn->real_escape_string($_POST['street']);
 $subdivision = $conn->real_escape_string($_POST['subdivision']);
 $dbirth = $conn->real_escape_string($_POST['dob']);
+
+function calculateAge($dob) {
+    $today = new DateTime();
+    $birthDate = new DateTime($dob);
+    $interval = $today->diff($birthDate);
+    return $interval->y;
+}
+
+$computedAge = calculateAge($dbirth);
 $pbirth = $conn->real_escape_string($_POST['place-of-birth']);
 $cstatus = $conn->real_escape_string($_POST['civil-status']);
 $occupation = $conn->real_escape_string($_POST['occupation']);
@@ -67,7 +76,7 @@ $query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `age`
 `mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`,
 `father-firstname`, `father-middlename`, `father-lastname`, `father-age`, `father-house-no`, `father-street`,
 `father-subdivision`, `father-household-head`)
-VALUES ('$fname', '$mname', '$lname', $age, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
+VALUES ('$fname', '$mname', '$lname', $computedAge, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
 '$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$identified', '$sector', '$citizenship', '$householdNo',
 '$osy', '$pwd', '$mfname', '$mmname', '$mlname', $mage, '$mhouseNo', '$mstreet', '$msubdivision', '$mhouseholdNo',
 '$ffname', '$fmname', '$flname', $fage, '$fhouseNo', '$fstreet', '$fsubdivision', '$fhouseholdNo')";
@@ -90,7 +99,7 @@ $query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `age`
 `mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`,
 `father-firstname`, `father-middlename`, `father-lastname`, `father-age`, `father-house-no`, `father-street`,
 `father-subdivision`, `father-household-head`)
-VALUES ('$fname', '$mname', '$lname', $age, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
+VALUES ('$fname', '$mname', '$lname', $computedAge, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
 '$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$identified', '$sector', '$citizenship', '$householdNo',
 '$osy', '$pwd', '$mfname', '$mmname', '$mlname', $mage, '$mhouseNo', '$mstreet', '$msubdivision', '$mhouseholdNo',
 '$ffname', '$fmname', '$flname', $fage, '$fhouseNo', '$fstreet', '$fsubdivision', '$fhouseholdNo')";
@@ -114,7 +123,7 @@ $query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `age`
 `mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`,
 `father-firstname`, `father-middlename`, `father-lastname`, `father-age`, `father-house-no`, `father-street`,
 `father-subdivision`, `father-household-head`)
-VALUES ('$fname', '$mname', '$lname', $age, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
+VALUES ('$fname', '$mname', '$lname', $computedAge, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
 '$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$identified', '$sector', '$citizenship', '$householdNo',
 '$osy', '$pwd', '$mfname', '$mmname', '$mlname', $mage, '$mhouseNo', '$mstreet', '$msubdivision', '$mhouseholdNo',
 '$ffname', '$fmname', '$flname', $fage, '$fhouseNo', '$fstreet', '$fsubdivision', '$fhouseholdNo')";
@@ -143,7 +152,7 @@ $query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `age`
 `mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`,
 `father-firstname`, `father-middlename`, `father-lastname`, `father-age`, `father-house-no`, `father-street`,
 `father-subdivision`, `father-household-head`)
-VALUES ('$fname', '$mname', '$lname', $age, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
+VALUES ('$fname', '$mname', '$lname', $computedAge, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
 '$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$identified', '$sector', '$citizenship', '$householdNo',
 '$osy', '$pwd', '$mfname', '$mmname', '$mlname', $mage, '$mhouseNo', '$mstreet', '$msubdivision', '$mhouseholdNo',
 '$ffname', '$fmname', '$flname', $fage, '$fhouseNo', '$fstreet', '$fsubdivision', '$fhouseholdNo')";
