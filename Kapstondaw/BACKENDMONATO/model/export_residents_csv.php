@@ -3,7 +3,7 @@
 require("../server/server.php");
 
 // get Users
-$query = "SELECT `firstname`, `middlename`, `lastname`, `age`, `gender`, `house-no`, `street`, `subdivision`, `date-of-birth`, `place-of-birth`, `civil-status`, `occupation`, `email`, `contact-no`, `voter-status`, `identified`, `sector`, `citizenship`, `household-no`, `osy`, `pwd`, `mother-firstname`, `mother-middlename`, `mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`, `father-firstname`, `father-lastname`, `father-middlename`, `father-age`, `father-house-no`, `father-street`, `father-subdivision`, `father-household-head` FROM tblresidents";
+$query = "SELECT `firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `osy`, `pwd`  FROM tblresidents";
 if (!$result = $conn->query($query)) {
     exit($conn->error);
 }
@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
 header('Content-Type: text/csv; charset=utf-8');
 header('Content-Disposition: attachment; filename=Residents.csv');
 $output = fopen('php://output', 'w');
-fputcsv($output, array('firstname', 'middlename', 'lastname', 'age', 'gender', 'house-no', 'street', 'subdivision', 'date-of-birth', 'place-of-birth', 'civil-status', 'occupation', 'email', 'contact-no', 'voter-status', 'identified', 'sector', 'citizenship', 'household-no', 'osy', 'pwd', 'mother-firstname', 'mother-middlename', 'mother-lastname', 'mother-age', 'mother-house-no', 'mother-street', 'mother-subdivision', 'mother-household-head', 'father-firstname', 'father-lastname', 'father-middlename', 'father-age', 'father-house-no', 'father-street', 'father-subdivision', 'father-household-head'));
+fputcsv($output, array(`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `osy`, `pwd`));
 
 if (count($users) > 0) {
     foreach ($users as $row) {

@@ -100,6 +100,7 @@ function calculateAge($dob) {
                         <div class="sort-btn">
                             <ul>
                                 <li><a href="?sort=age">Age</a></li>
+                                <li><a href="?sort=age">SNR</a></li>
                             </ul>
                         </div>
                     </div>
@@ -107,15 +108,13 @@ function calculateAge($dob) {
                         <p>Filter by</p>
                         <div class="sort-btn">
                             <ul>
-                                <li><a href="?filter=gender&value=Male">Male</a></li>
-                                <li><a href="?filter=gender&value=Female">Female</a></li>
-                                <li><a href="?filter='civil-status'&value=Single">Single</a></li>
-                                <li><a href="?filter='civil-status'&value=Married">Married</a></li>
-                                <li><a href="?filter='civil-status'&value=Divorced">Divorced</a></li>
-                                <li><a href="?filter='civil-status'&value=Widowed">Widowed</a></li>
-                                <li><a href="?filter='voter-status'&value=voter">Voter</a></li>
-                                <li><a href="?filter=sector&value=Student">Students</a></li>
-                                <li><a href="?filter=sector&value=Senior Citizen">SNR</a></li>
+                                <li><a href="?filter=sex&value=Male">Male</a></li>
+                                <li><a href="?filter=sex&value=Female">Female</a></li>
+                                <li><a href="?filter='civil_status'&value=Single">Single</a></li>
+                                <li><a href="?filter='civil_status'&value=Married">Married</a></li>
+                                <li><a href="?filter='civil_status'&value=Divorced">Divorced</a></li>
+                                <li><a href="?filter='civil_status'&value=Widowed">Widowed</a></li>
+                                <li><a href="?filter='voter_status'&value=voter">Voter</a></li>
                                 <li><a href="?filter=osy&value=OSY">OSY</a></li>
                                 <li><a href="?filter=pwd&value=PWD">PWD</a></li>
                             </ul>
@@ -141,10 +140,11 @@ function calculateAge($dob) {
                         <th>No</th>
                         <th>Full Name</th>
                         <th>Age</th>
+                        <th>Sex</th>
                         <th>Date of Birth</th>
-                        <th>Gender</th>
+                        <th>Place of Birth</th>
                         <th>Civil Status</th>
-                        <th>Street</th>
+                        <th>Address</th>
                         <th>Email</th>
                         <th>Action</th>
                     </tr>
@@ -155,39 +155,25 @@ function calculateAge($dob) {
                     <tr>
                         <td><?= $no ?></td>
                         <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
-                        <td><?= calculateAge($row['date-of-birth'])?></td>
-                        <td><?= $row['date-of-birth'] ?></td>
-                        <td><?= $row['gender'] ?></td>
-                        <td><?= $row['civil-status'] ?></td>
-                        <td><?= $row['street'] ?></td>
+                        <td><?= calculateAge($row['date_of_birth'])?></td>
+                        <td><?= $row['sex'] ?></td>
+                        <td><?= $row['date_of_birth'] ?></td>
+                        <td><?= $row['place_of_birth'] ?></td>
+                        <td><?= $row['civil_status'] ?></td>
+                        <td><?= $row['house_no']. " " .$row['street']. " " .$row['subdivision'] ?></td>
                         <td><?= $row['email'] ?></td>
                         <td class="actions">
                             <a href="#" class="edit" id="editResidents" onclick="editResident(this)"
                                 data-id="<?= $row['id'] ?>" data-fname="<?= $row['firstname'] ?>"
                                 data-mname="<?= $row['middlename'] ?>" data-lname="<?= $row['lastname'] ?>"
-                                data-age="<?= $row['age'] ?>" data-gender="<?= $row['gender'] ?>"
-                                data-houseNo="<?= $row['house-no'] ?>" data-street="<?= $row['street'] ?>"
-                                data-subdivision="<?= $row['subdivision'] ?>" data-dbirth="<?= $row['date-of-birth'] ?>"
-                                data-pbirth="<?= $row['place-of-birth'] ?>" data-cstatus="<?= $row['civil-status'] ?>"
-                                data-occupation="<?= $row['occupation'] ?>" data-email="<?= $row['email'] ?>"
-                                data-contactNo="<?= $row['contact-no'] ?>" data-vstatus="<?= $row['voter-status'] ?>"
-                                data-identified="<?= $row['identified'] ?>" data-sector="<?= $row['sector'] ?>"
-                                data-citizenship="<?= $row['citizenship'] ?>"
-                                data-householdNo="<?= $row['household-no'] ?>" data-osy="<?= $row['osy'] ?>"
-                                data-pwd="<?= $row['pwd'] ?>" data-mfname="<?= $row['mother-firstname'] ?>"
-                                data-mmname="<?= $row['mother-middlename'] ?>"
-                                data-mlname="<?= $row['mother-lastname'] ?>" data-mage="<?= $row['mother-age'] ?>"
-                                data-mhouseNo="<?= $row['mother-house-no'] ?>"
-                                data-mstreet="<?= $row['mother-street'] ?>"
-                                data-msubdivision="<?= $row['mother-subdivision'] ?>"
-                                data-mhouseholdNo="<?= $row['mother-household-head'] ?>"
-                                data-ffname="<?= $row['father-firstname'] ?>"
-                                data-fmname="<?= $row['father-middlename'] ?>"
-                                data-flname="<?= $row['father-lastname'] ?>" data-fage="<?= $row['father-age'] ?>"
-                                data-fhouseNo="<?= $row['father-house-no'] ?>"
-                                data-fstreet="<?= $row['father-street'] ?>"
-                                data-fsubdivision="<?= $row['father-subdivision'] ?>"
-                                data-fhouseholdNo="<?= $row['father-household-head'] ?>">Edit</a>
+                                data-sex="<?= $row['sex'] ?>" data-houseNo="<?= $row['house_no'] ?>"
+                                data-street="<?= $row['street'] ?>" data-subdivision="<?= $row['subdivision'] ?>"
+                                data-dbirth="<?= $row['date_of_birth'] ?>" data-pbirth="<?= $row['place_of_birth'] ?>"
+                                data-cstatus="<?= $row['civil_status'] ?>" data-occupation="<?= $row['occupation'] ?>"
+                                data-email="<?= $row['email'] ?>" data-contactNo="<?= $row['contact_no'] ?>"
+                                data-vstatus="<?= $row['voter_status'] ?>" data-citizenship="<?= $row['citizenship'] ?>"
+                                data-householdNo="<?= $row['household_no'] ?>" data-osy="<?= $row['osy'] ?>"
+                                data-pwd="<?= $row['pwd'] ?>">Edit</a>
                             <?php 
                                 $userExists = false;
                                 foreach($users as $user) {
@@ -200,9 +186,10 @@ function calculateAge($dob) {
                             <?php if(!$userExists) { ?>
                             <a href="#" class="accountBtn" onclick="createAccount(this)"
                                 data-fname="<?= $row['firstname'] ?>" data-mname="<?= $row['middlename'] ?>"
-                                data-lname="<?= $row['lastname'] ?>" data-age="<?= $row['age'] ?>"
-                                data-gender="<?= $row['gender'] ?>" data-street="<?= $row['street'] ?>"
-                                data-cstatus="<?= $row['civil-status'] ?>" data-dbirth="<?= $row['date-of-birth'] ?>"
+                                data-lname="<?= $row['lastname'] ?>"
+                                data-age="<?= calculateAge($row['date_of_birth']) ?>" data-sex="<?= $row['sex'] ?>"
+                                data-houseNo="<?= $row['house_no'] ?>" data-street="<?= $row['street'] ?>"
+                                data-cstatus="<?= $row['civil_status'] ?>" data-dbirth="<?= $row['date_of_birth'] ?>"
                                 data-email="<?= $row['email'] ?>">Account</a>
                             <?php } ?>
                             <a href="#" class="delete delete-archive" id="delete-archive">Delete</a>
@@ -537,8 +524,8 @@ function calculateAge($dob) {
                 </div>
 
                 <div class="input-wrapper">
-                    <label for="gender">Gender:</label>
-                    <select id="gender" name="gender" required>
+                    <label for="sex">Sex:</label>
+                    <select id="sex" name="sex" required>
                         <option value="">Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -658,107 +645,7 @@ function calculateAge($dob) {
             </div>
             <!-- end of div -->
 
-            <div class="parent-info">
-                <h3>Parents Information</h3>
-                <p>Mother</p>
-                <div class="mother-cont">
-                    <div class="input-wrapper">
-                        <label for="mother-firstname">First Name:</label>
-                        <input type="text" id="mother-firstname" name="mother-firstname" required>
-                    </div>
 
-                    <div class="input-wrapper">
-                        <label for="mother-middlename">Middle Name:</label>
-                        <input type="text" id="mother-middlename" name="mother-middlename" required>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="mother-lastname">Last Name:</label>
-                        <input type="text" id="mother-lastname" name="mother-lastname" required>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="mother-age">Age:</label>
-                        <input type="number" id="mother-age" name="mother-age" required>
-                    </div>
-                </div>
-                <!-- mother-cont end -->
-
-                <div class="mother-cont2">
-                    <div class="input-wrapper">
-                        <label for="mother-address">Address:</label><br>
-                        <div class="address-cont">
-                            <input type="text" id="mother-house-no" name="mother-house-no" placeholder="House No."
-                                required><br>
-                            <input type="text" id="mother-street" name="mother-street" placeholder="Street"
-                                required><br>
-                            <input type="text" id="mother-subdivision" name="mother-subdivision"
-                                placeholder="Subdivision" required>
-                        </div>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <div class="checkbox-household">
-                            <input type="checkbox" id="mother-household-head" value="household-head"
-                                name="mhousehold-head">
-                            <label for="mother-household-head">Household Head</label>
-                        </div>
-                    </div>
-                    <!-- checkboxhousehold end -->
-                </div>
-                <!-- mother-cont2 end -->
-
-
-                <p>Father</p>
-                <div class="father-cont">
-                    <div class="input-wrapper">
-                        <label for="father-firstname">First Name:</label>
-                        <input type="text" id="father-firstname" name="father-firstname" required>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="father-middlename">Middle Name:</label>
-                        <input type="text" id="father-middlename" name="father-middlename" required>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="father-lastname">Last Name:</label>
-                        <input type="text" id="father-lastname" name="father-lastname" required>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="father-age">Age:</label>
-                        <input type="number" id="father-age" name="father-age" required>
-                    </div>
-                </div>
-                <!-- father-cont end -->
-
-                <div class="father-cont2">
-                    <div class="input-wrapper">
-                        <label for="father-address">Address:</label><br>
-                        <div class="address-cont">
-                            <input type="text" id="father-house-no" name="father-house-no" placeholder="House No."
-                                required><br>
-                            <input type="text" id="father-street" name="father-street" placeholder="Street"
-                                required><br>
-                            <input type="text" id="father-subdivision" name="father-subdivision"
-                                placeholder="Subdivision" required>
-                        </div>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <div class="checkbox-household1">
-                            <input type="checkbox" id="father-household-head" value="household-head"
-                                name="fhousehold-head">
-                            <label for="father-household-head1">Household Head</label>
-                        </div>
-                    </div>
-                    <!-- checkboxhousehold end -->
-                </div>
-                <!-- father-cont2 end -->
-
-
-            </div>
             <!-- End of parent div -->
             <!-- END EDIT RESIDENTS -->
             <input type="hidden" name="id" id="id">
@@ -812,7 +699,7 @@ function calculateAge($dob) {
 
 </html>
 
-<script src=" ./js//jQuery-3.7.0.js"></script>
+<script src=" ./js/jQuery-3.7.0.js"></script>
 <script src="./js//app.js"></script>
 <script>
 // ADD RESIDENTSw

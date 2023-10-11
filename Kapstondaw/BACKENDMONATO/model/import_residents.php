@@ -32,42 +32,21 @@ foreach ($data as $key => $row) {
     $firstname        = $row[0];
     $middlename       = $row[1];
     $lastname         = $row[2];
-    $age              = $row[3];
-    $gender           = $row[4];
-    $houseNo          = $row[5];
-    $street           = $row[6];
-    $subdivision      = $row[7];
-    $dob              = $row[8];
-    $pob              = $row[9];
-    $civil_status     = $row[10];
-    $occupation       = $row[11];
-    $email            = $row[12];
-    $contactNo        = $row[13];
-    $voter_status     = $row[14];
-    $identified       = $row[15];
-    $sector           = $row[16];
-    $citizenship      = $row[17];
-    $householdNo      = $row[18];
-    $osy              = $row[19];
-    $pwd              = $row[20];
-
-    $m_firstname      = $row[21];
-    $m_middlename     = $row[22];
-    $m_lastname       = $row[23];
-    $m_age            = $row[24];
-    $m_houseNo        = $row[25];
-    $m_street         = $row[26];
-    $m_subdivision    = $row[27];
-    $m_householdHead  = $row[28];
-
-    $f_firstname      = $row[29];
-    $f_lastname       = $row[30];
-    $f_middlename     = $row[31];
-    $f_age            = $row[32];
-    $f_houseNo        = $row[33];
-    $f_street         = $row[34];
-    $f_subdivision    = $row[35];
-    $f_householdHead  = $row[36];
+    $sex              = $row[3];
+    $houseNo          = $row[4];
+    $street           = $row[5];
+    $subdivision      = $row[6];
+    $dob              = $row[7];
+    $pob              = $row[8];
+    $civil_status     = $row[9];
+    $occupation       = $row[10];
+    $email            = $row[11];
+    $contactNo        = $row[12];
+    $voter_status     = $row[13];
+    $citizenship      = $row[14];
+    $householdNo      = $row[15];
+    $osy              = $row[16];
+    $pwd              = $row[17];
 
     $query_check = "SELECT * FROM tblresidents WHERE firstname='$firstname' AND middlename='$middlename' AND lastname='$lastname'";
 
@@ -75,10 +54,10 @@ foreach ($data as $key => $row) {
 
 
     if($result->num_rows == 0) {
-        $query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `age`, `gender`, `house-no`, `street`, `subdivision`, `date-of-birth`, `place-of-birth`, `civil-status`, `occupation`, `email`, `contact-no`, `voter-status`, `identified`, `sector`, `citizenship`, `household-no`, `osy`, `pwd`, `mother-firstname`, `mother-middlename`, `mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`, `father-firstname`, `father-lastname`, `father-middlename`, `father-age`, `father-house-no`, `father-street`, `father-subdivision`, `father-household-head`) 
-             VALUES ('$firstname', '$middlename', '$lastname', '$age', '$gender', '$houseNo', '$street', '$subdivision', '$dob', '$pob', '$civil_status', '$occupation', '$email', '$contactNo', '$voter_status', '$identified', '$sector', '$citizenship', '$householdNo', '$osy', '$pwd', '$m_firstname', '$m_middlename', '$m_lastname', '$m_age', '$m_houseNo', '$m_street', '$m_subdivision', '$m_householdHead', '$f_firstname', '$f_lastname', '$f_middlename', '$f_age', '$f_houseNo', '$f_street', '$f_subdivision', '$f_householdHead')";
+        $query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `osy`, `pwd`) 
+             VALUES ('$firstname', '$middlename', '$lastname', '$sex', '$houseNo', '$street', '$subdivision', '$dob', '$pob', '$civil_status', '$occupation', '$email', '$contactNo', '$voter_status', '$citizenship', '$householdNo', '$osy', '$pwd')";
 
-        insertUser($conn, $username, $hashedPassword, $firstname, $middlename, $lastname, $age, $gender, $civil_status, $street, $dob, $email);
+        insertUser($conn, $username, $hashedPassword, $firstname, $middlename, $lastname, $sex, $civil_status, $street, $dob, $email);
 
 
         if($conn->query($query) === true){

@@ -17,47 +17,25 @@ include '../../server/server.php';
 		$select->execute();
 		$resident = $select->get_result()->fetch_assoc();
 
-		$insert = "INSERT INTO del_residents_archive (`firstname`, `middlename`, `lastname`, `age`, `gender`, `house-no`, `street`, `subdivision`, `date-of-birth`, `place-of-birth`, `civil-status`, `occupation`, `email`, `contact-no`, `voter-status`, `identified`, `sector`, `citizenship`, `household-no`, `osy`, `pwd`, `mother-firstname`, `mother-middlename`, `mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`, `father-firstname`, `father-middlename`, `father-lastname`, `father-age`, `father-house-no`, `father-street`, `father-subdivision`, `father-household-head`) 
+		$insert = "INSERT INTO del_residents_archive (`firstname`, `middlename`, `lastname`, `sex`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `osy`, `pwd`) 
         VALUES (			
 				'{$resident['firstname']}', 
 				'{$resident['middlename']}',
 				'{$resident['lastname']}',
-				'{$resident['age']}',
-				'{$resident['gender']}',
-				'{$resident['house-no']}',
+				'{$resident['sex']}',
 				'{$resident['street']}',
 				'{$resident['subdivision']}',
-				'{$resident['date-of-birth']}',
-				'{$resident['place-of-birth']}',
+				'{$resident['date_of_birth']}',
+				'{$resident['place_of_birth']}',
 				'{$resident['civil-status']}',
 				'{$resident['occupation']}',
 				'{$resident['email']}',
-				'{$resident['contact-no']}',
-				'{$resident['voter-status']}',
-				'{$resident['identified']}',
-				'{$resident['sector']}',
+				'{$resident['contact_no']}',
+				'{$resident['voter_status']}',
 				'{$resident['citizenship']}',
-				'{$resident['household-no']}',
+				'{$resident['household_no']}',
 				'{$resident['osy']}',
-				'{$resident['pwd']}',
-				
-				'{$resident['mother-firstname']}',	
-				'{$resident['mother-middlename']}',
-				'{$resident['mother-lastname']}',
-				'{$resident['mother-age']}',
-				'{$resident['mother-house-no']}',
-				'{$resident['mother-street']}',
-				'{$resident['mother-subdivision']}',
-				'{$resident['mother-household-head']}',
-
-				'{$resident['father-firstname']}',
-				'{$resident['father-middlename']}',
-				'{$resident['father-lastname']}',
-				'{$resident['father-age']}',
-				'{$resident['father-house-no']}',
-				'{$resident['father-street']}',
-				'{$resident['father-subdivision']}',
-				'{$resident['father-household-head']}')";
+				'{$resident['pwd']}' )";
 		$conn->query($insert);
 
 		$deleteUser = $conn->prepare("DELETE FROM tbl_users WHERE firstname = ? AND middlename = ? AND lastname = ?");
