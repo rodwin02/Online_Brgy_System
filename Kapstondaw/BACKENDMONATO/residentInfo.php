@@ -127,7 +127,7 @@ function calculateAge($dob) {
 
             </div>
             <div class="add-cont">
-                <a href="#" class="add">+ Resident</a>
+                <a href="addResidents.php" class="add">+ Household Head</a>
                 <a href="./model/export_residents_csv.php" class="exportCVS">+ Export CVS</a>
                 <button class="importBtn">+ Import</button>
                 <Archive href="#" class="archiveResidents">Archive</a>
@@ -590,20 +590,6 @@ function calculateAge($dob) {
 <script src=" ./js/jQuery-3.7.0.js"></script>
 <script src="./js//app.js"></script>
 <script>
-// ADD RESIDENTSw
-const addLink = document.querySelector('.add');
-const modalAdd = document.querySelector('.modal-AddResidents');
-const closeButtonAdd = document.querySelector('.closeBtnAdd');
-
-addLink.addEventListener('click', function(event) {
-    event.preventDefault();
-    modalAdd.style.display = 'block';
-});
-
-closeButtonAdd.addEventListener('click', function() {
-    modalAdd.style.display = 'none';
-});
-
 
 const editResidentsLink = document.querySelectorAll('.edit');
 const modalEdit = document.querySelector('.modal-editResidents');
