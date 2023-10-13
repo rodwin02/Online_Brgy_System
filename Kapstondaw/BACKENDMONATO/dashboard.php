@@ -1,22 +1,29 @@
 <?php include "./server/server.php" ?>
 <?php 
+
+function calculateAge($dob) {
+    $today = new DateTime();
+    $birthDate = new DateTime($dob);
+    $interval = $today->diff($birthDate);
+    return $interval->y;
+}
 	$query = "SELECT * FROM tblresidents";
     $result = $conn->query($query);
 	$total = $result->num_rows;
 
-  	$query1 = "SELECT * FROM tblresidents WHERE gender='Male'";
+  	$query1 = "SELECT * FROM tblresidents WHERE sex='Male'";
     $result1 = $conn->query($query1);
 	$male = $result1->num_rows;
 
-	$query2 = "SELECT * FROM tblresidents WHERE gender='Female'";
+	$query2 = "SELECT * FROM tblresidents WHERE sex='Female'";
     $result2 = $conn->query($query2);
 	$female = $result2->num_rows;
 
-  	$query3 = "SELECT * FROM tblresidents WHERE `voter-status`='voter'";
+  	$query3 = "SELECT * FROM tblresidents WHERE `voter_status`='voter'";
     $result3 = $conn->query($query3);
 	$totalvoters = $result3->num_rows;
 
-  $query4 = "SELECT * FROM tblresidents WHERE `voter-status`='non-voter'";
+  $query4 = "SELECT * FROM tblresidents WHERE `voter_status`='non-voter'";
 	$non = $conn->query($query4)->num_rows;
 
   $query5 = "SELECT * FROM tblblotter";
@@ -28,20 +35,20 @@
   $query7 = "SELECT * FROM tblresidents WHERE pwd='PWD'";
 	$pwd = $conn->query($query7)->num_rows;
 
-  $query8 = "SELECT * FROM tblresidents WHERE age>=60";
-	$snr = $conn->query($query8)->num_rows;
+//   $query8 = "SELECT * FROM tblresidents WHERE age>=60";
+// 	$snr = $conn->query($query8)->num_rows;
 
-  $query9 = "SELECT * FROM tblresidents WHERE sector='Student'";
-	$students = $conn->query($query9)->num_rows;
+//   $query9 = "SELECT * FROM tblresidents WHERE sector='Student'";
+// 	$students = $conn->query($query9)->num_rows;
 
   if(isset($_GET['state'])) {
     $state = $_GET['state'];
     
     if($state=='male'){
-        $query = "SELECT * FROM tblresidents WHERE gender='Male'";
+        $query = "SELECT * FROM tblresidents WHERE sex='Male'";
         $result2 = $conn->query($query);
     }elseif($state=='female'){
-        $query = "SELECT * FROM tblresidents WHERE gender='Female'";
+        $query = "SELECT * FROM tblresidents WHERE sex='Female'";
         $result2 = $conn->query($query);
     }elseif($state=='osy'){
         $query = "SELECT * FROM tblresidents WHERE osy='OSY'";
@@ -59,10 +66,10 @@
         $query = "SELECT * FROM tblblotter";
         $result2 = $conn->query($query);
     }elseif($state=='non_voters'){
-        $query = "SELECT * FROM tblresidents WHERE `voter-status`='non-voter'";
+        $query = "SELECT * FROM tblresidents WHERE `voter_status`='non-voter'";
         $result2 = $conn->query($query);
     }elseif($state=='voters'){
-        $query = "SELECT * FROM tblresidents WHERE `voter-status`='voter'";
+        $query = "SELECT * FROM tblresidents WHERE `voter_status`='voter'";
         $result2 = $conn->query($query);
        
     }else{
@@ -260,7 +267,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="snr">
+                    <!-- <div class="snr">
                         <div class="a1">
                             <div class="b1">
                                 <div class="c1">SNR</div>
@@ -279,8 +286,8 @@
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
                         </div>
-                    </div>
-                    <div class="students">
+                    </div> -->
+                    <!-- <div class="students">
                         <div class="a1">
                             <div class="b1">
                                 <div class="c1">STUDENTS</div>
@@ -299,7 +306,7 @@
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="line-container">
