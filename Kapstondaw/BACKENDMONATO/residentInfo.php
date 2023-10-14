@@ -48,6 +48,26 @@ while($userRow = $result2->fetch_assoc()) {
     );
 }
 
+$ageFilter = isset($_GET["age"]) ? (int)$_GET["age"] : null;
+$seniorFilter = isset($_GET["senior"]) && $_GET["senior"] === "true";
+
+$filteredResidents = [];
+
+foreach ($residents as $resident) {
+    $age = calculateAge($resident['date_of_birth']);
+
+    if ($ageFilter && $age == $ageFilter) {
+        $filteredResidents[] = $resident;
+        // echo "<pre>";
+        // print_r($filteredResidents);
+        // echo "</pre>";
+    } elseif ($seniorFilter && $age >= 60) {
+        $filteredResidents[] = $resident;
+        // echo "<pre>";
+        // print_r($filteredResidents);
+        // echo "</pre>";
+    }
+}
 
 function calculateAge($dob) {
     $today = new DateTime();
@@ -55,8 +75,6 @@ function calculateAge($dob) {
     $interval = $today->diff($birthDate);
     return $interval->y;
 }
-
-
 
 ?>
 <!DOCTYPE html>
@@ -102,8 +120,8 @@ function calculateAge($dob) {
                         <p>Sort by</p>
                         <div class="sort-btn">
                             <ul>
-                                <li><a href="?age">Age</a></li>
-                                <li><a href="?senior">SNR</a></li>
+                                <li><a href="?age=filter">Age</a></li>
+                                <li><a href="?senior=true">SNR</a></li>
                             </ul>
                         </div>
                     </div>
