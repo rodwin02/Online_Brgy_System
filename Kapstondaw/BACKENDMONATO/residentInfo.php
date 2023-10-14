@@ -518,10 +518,10 @@ function calculateAge($dob) {
                     <input type="text" id="lastname" name="lastname" required>
                 </div>
 
-                <div class="input-wrapper">
+                <!-- <div class="input-wrapper">
                     <label for="age">Age:</label>
                     <input type="number" id="age" name="age" required>
-                </div>
+                </div> -->
 
                 <div class="input-wrapper">
                     <label for="sex">Sex:</label>
@@ -596,25 +596,25 @@ function calculateAge($dob) {
                     </select>
                 </div>
 
-                <div class="input-wrapper">
+                <!-- <div class="input-wrapper">
                     <label for="identified">Identified as:</label>
                     <select id="identified" name="identified" required>
                         <option value="">Select Sector</option>
                         <option value="Positive">Positive</option>
                         <option value="Negative">Negative</option>
                     </select>
-                </div>
+                </div> -->
             </div>
 
             <div class="pangapat-layer">
-                <div class="input-wrapper">
+                <!-- <div class="input-wrapper">
                     <label for="sector">Sector:</label>
                     <select id="sector" name="sector" required>
                         <option value="">Select Sector</option>
                         <option value="Student">Student</option>
                         <option value="Senior Citizen">Senior Citizen</option>
                     </select>
-                </div>
+                </div> -->
 
                 <div class="input-wrapper">
                     <label for="citizenship">Citizenship:</label>
