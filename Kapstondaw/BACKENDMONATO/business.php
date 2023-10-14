@@ -85,7 +85,6 @@
                         <th>BUSINESS NAME</th>
                         <th>BUSINESS ADDRESS</th>
                         <th>BUSINESS TYPE</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -93,7 +92,9 @@
                     <tr>
                         <td>1</td>
                     </tr>
-
+                    <tr>
+                        <td>2</td>
+                    </tr>
 
                 </tbody>
                 <!-- Add more rows here -->
@@ -101,6 +102,16 @@
         </div>
     </div>
 
+    <div class="modal-addBusiness">
+        <form class="addBusiness" action="">
+            <div class="title-cont-modal">
+                <p>Add a Business</p>
+                <img src="icons/close 1.png" class="closeForm" alt="">
+            </div>
+        </form>
+    </div>
+
 </body>
 
 </html>
+

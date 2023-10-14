@@ -181,7 +181,8 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  width: 105px;
+  width: auto;
+  padding: 5px 5px;
   border-radius: 20px;
   justify-content: center;
   margin-right: 20px;
