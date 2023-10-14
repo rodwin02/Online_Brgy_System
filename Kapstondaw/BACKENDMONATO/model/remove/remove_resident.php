@@ -17,17 +17,18 @@ include '../../server/server.php';
 		$select->execute();
 		$resident = $select->get_result()->fetch_assoc();
 
-		$insert = "INSERT INTO del_residents_archive (`firstname`, `middlename`, `lastname`, `sex`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `osy`, `pwd`) 
+		$insert = "INSERT INTO del_residents_archive (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `osy`, `pwd`) 
         VALUES (			
 				'{$resident['firstname']}', 
 				'{$resident['middlename']}',
 				'{$resident['lastname']}',
 				'{$resident['sex']}',
+				'{$resident['house_no']}',
 				'{$resident['street']}',
 				'{$resident['subdivision']}',
 				'{$resident['date_of_birth']}',
 				'{$resident['place_of_birth']}',
-				'{$resident['civil-status']}',
+				'{$resident['civil_status']}',
 				'{$resident['occupation']}',
 				'{$resident['email']}',
 				'{$resident['contact_no']}',

@@ -11,7 +11,7 @@ $types = "";
 $query =  "SELECT * FROM tblresidents";
 
 if($filterOption && $filterValue) {
-    $query .= " WHERE $filterOption = ?";
+    $query .= " WHERE `$filterOption` = ?";
     $params[] = $filterValue;
     $types .= "s";
 }
@@ -48,12 +48,15 @@ while($userRow = $result2->fetch_assoc()) {
     );
 }
 
+
 function calculateAge($dob) {
     $today = new DateTime();
     $birthDate = new DateTime($dob);
     $interval = $today->diff($birthDate);
     return $interval->y;
 }
+
+
 
 ?>
 <!DOCTYPE html>
@@ -99,8 +102,8 @@ function calculateAge($dob) {
                         <p>Sort by</p>
                         <div class="sort-btn">
                             <ul>
-                                <li><a href="?sort=age">Age</a></li>
-                                <li><a href="?sort=age">SNR</a></li>
+                                <li><a href="?age">Age</a></li>
+                                <li><a href="?senior">SNR</a></li>
                             </ul>
                         </div>
                     </div>
@@ -110,11 +113,11 @@ function calculateAge($dob) {
                             <ul>
                                 <li><a href="?filter=sex&value=Male">Male</a></li>
                                 <li><a href="?filter=sex&value=Female">Female</a></li>
-                                <li><a href="?filter='civil_status'&value=Single">Single</a></li>
-                                <li><a href="?filter='civil_status'&value=Married">Married</a></li>
-                                <li><a href="?filter='civil_status'&value=Divorced">Divorced</a></li>
-                                <li><a href="?filter='civil_status'&value=Widowed">Widowed</a></li>
-                                <li><a href="?filter='voter_status'&value=voter">Voter</a></li>
+                                <li><a href="?filter=civil_status&value=Single">Single</a></li>
+                                <li><a href="?filter=civil_status&value=Married">Married</a></li>
+                                <li><a href="?filter=civil_status&value=Divorced">Divorced</a></li>
+                                <li><a href="?filter=civil_status&value=Widowed">Widowed</a></li>
+                                <li><a href="?filter=voter_status&value=voter">Voter</a></li>
                                 <li><a href="?filter=osy&value=OSY">OSY</a></li>
                                 <li><a href="?filter=pwd&value=PWD">PWD</a></li>
                             </ul>
@@ -252,14 +255,14 @@ function calculateAge($dob) {
                     <input type="text" id="lastname1" name="lastname" required>
                 </div>
 
-                <div class="input-wrapper">
+                <!-- <div class="input-wrapper">
                     <label for="age">Age:</label>
                     <input type="number" id="age1" name="age" required>
-                </div>
+                </div> -->
 
                 <div class="input-wrapper">
-                    <label for="gender">Gender:</label>
-                    <select id="gender1" name="gender" required>
+                    <label for="sex">Gender:</label>
+                    <select id="sex" name="sex" required>
                         <option value="">Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -330,25 +333,11 @@ function calculateAge($dob) {
                     </select>
                 </div>
 
-                <div class="input-wrapper">
-                    <label for="identified">Identified as:</label>
-                    <select id="identified1" name="identified" required>
-                        <option value="">Select Sector</option>
-                        <option value="Positive">Positive</option>
-                        <option value="Negative">Negative</option>
-                    </select>
-                </div>
+
             </div>
 
             <div class="pangapat-layer">
-                <div class="input-wrapper">
-                    <label for="sector">Sector:</label>
-                    <select id="sector1" name="sector" required>
-                        <option value="">Select Sector</option>
-                        <option value="Student">Student</option>
-                        <option value="Senior Citizen">Senior Citizen</option>
-                    </select>
-                </div>
+
 
                 <div class="input-wrapper">
                     <label for="citizenship">Citizenship:</label>
@@ -357,7 +346,7 @@ function calculateAge($dob) {
 
                 <div class="input-wrapper">
                     <label for="household-no">Household No.:</label>
-                    <input type="text" id="household-no1" name="household-no" required>
+                    <input type="text" id="household-no1" name="household-no">
                 </div>
 
                 <div class="checkbox-cont">
@@ -380,107 +369,6 @@ function calculateAge($dob) {
             </div>
             <!-- end of div -->
 
-            <div class="parent-info">
-                <h3>Parents Information</h3>
-                <p>Mother</p>
-                <div class="mother-cont">
-                    <div class="input-wrapper">
-                        <label for="mother-firstname">First Name:</label>
-                        <input type="text" id="mother-firstname1" name="mother-firstname" required>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="mother-middlename">Middle Name:</label>
-                        <input type="text" id="mother-middlename1" name="mother-middlename" required>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="mother-lastname">Last Name:</label>
-                        <input type="text" id="mother-lastname1" name="mother-lastname" required>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="mother-age">Age:</label>
-                        <input type="number" id="mother-age1" name="mother-age" required>
-                    </div>
-                </div>
-                <!-- mother-cont end -->
-
-                <div class="mother-cont2">
-                    <div class="input-wrapper">
-                        <label for="mother-address">Address:</label><br>
-                        <div class="address-cont">
-                            <input type="text" id="mother-house-no1" name="mother-house-no" placeholder="House No."
-                                required><br>
-                            <input type="text" id="mother-street1" name="mother-street" placeholder="Street"
-                                required><br>
-                            <input type="text" id="mother-subdivision1" name="mother-subdivision"
-                                placeholder="Subdivision" required>
-                        </div>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <div class="checkbox-household">
-                            <input type="checkbox" id="mother-household-head1" value="household-head"
-                                name="mhousehold-head">
-                            <label for="household-head">Household Head</label>
-                        </div>
-                    </div>
-                    <!-- checkboxhousehold end -->
-                </div>
-                <!-- mother-cont2 end -->
-
-
-                <p>Father</p>
-                <div class="father-cont">
-                    <div class="input-wrapper">
-                        <label for="father-firstname">First Name:</label>
-                        <input type="text" id="father-firstname1" name="father-firstname" required>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="father-middlename">Middle Name:</label>
-                        <input type="text" id="father-middlename1" name="father-middlename" required>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="father-lastname">Last Name:</label>
-                        <input type="text" id="father-lastname1" name="father-lastname" required>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="father-age">Age:</label>
-                        <input type="number" id="father-age1" name="father-age" required>
-                    </div>
-                </div>
-                <!-- father-cont end -->
-
-                <div class="father-cont2">
-                    <div class="input-wrapper">
-                        <label for="father-address">Address:</label><br>
-                        <div class="address-cont">
-                            <input type="text" id="father-house-no1" name="father-house-no" placeholder="House No."
-                                required><br>
-                            <input type="text" id="father-street1" name="father-street" placeholder="Street"
-                                required><br>
-                            <input type="text" id="father-subdivision1" name="father-subdivision"
-                                placeholder="Subdivision" required>
-                        </div>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <div class="checkbox-household1">
-                            <input type="checkbox" id="father-household-head1" value="household-head"
-                                name="fhousehold-head">
-                            <label for="household-head1">Household Head</label>
-                        </div>
-                    </div>
-                    <!-- checkboxhousehold end -->
-                </div>
-                <!-- father-cont2 end -->
-
-
-            </div>
             <!-- End of parent div -->
             <!-- END ADD RESIDENTS -->
             <input class="submit" type="submit" value="Create">

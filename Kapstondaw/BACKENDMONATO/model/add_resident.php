@@ -13,8 +13,7 @@
 $fname = $conn->real_escape_string($_POST['firstname']);
 $mname = $conn->real_escape_string($_POST['middlename']);
 $lname = $conn->real_escape_string($_POST['lastname']);
-$age = $conn->real_escape_string($_POST['age']);
-$gender = $conn->real_escape_string($_POST['gender']);
+$sex = $conn->real_escape_string($_POST['sex']);
 $houseNo = $conn->real_escape_string($_POST['house-no']);
 $street = $conn->real_escape_string($_POST['street']);
 $subdivision = $conn->real_escape_string($_POST['subdivision']);
@@ -34,54 +33,29 @@ $occupation = $conn->real_escape_string($_POST['occupation']);
 $email = $conn->real_escape_string($_POST['email']);
 $contact = $conn->real_escape_string($_POST['contact-no']);
 $vstatus = $conn->real_escape_string($_POST['voter-status']);
-$identified = $conn->real_escape_string($_POST['identified']);
-$sector = $conn->real_escape_string($_POST['sector']);
 $citizenship = $conn->real_escape_string($_POST['citizenship']);
 $householdNo = $conn->real_escape_string($_POST['household-no']);
-$osy = $conn->real_escape_string($_POST['out-of-school-youth']);
+$osy = $conn->real_escape_string(isset($_POST['out-of-school-youth']) ? $_POST['out-of-school-youth'] : "");
 $pwd = $conn->real_escape_string(isset($_POST['person-with-disability']) ? $_POST['person-with-disability'] : "");
-
-$mfname = $conn->real_escape_string($_POST['mother-firstname']);
-$mmname = $conn->real_escape_string($_POST['mother-middlename']);
-$mlname = $conn->real_escape_string($_POST['mother-lastname']);
-$mage = $conn->real_escape_string($_POST['mother-age']);
-$mhouseNo = $conn->real_escape_string($_POST['mother-house-no']);
-$mstreet = $conn->real_escape_string($_POST['mother-street']);
-$msubdivision = $conn->real_escape_string($_POST['mother-subdivision']);
-$mhouseholdNo = $conn->real_escape_string(isset($_POST['mhousehold-head']) ? $_POST['mhousehold-head'] : "");
-
-$ffname = $conn->real_escape_string($_POST['father-firstname']);
-$fmname = $conn->real_escape_string($_POST['father-middlename']);
-$flname = $conn->real_escape_string($_POST['father-lastname']);
-$fage = $conn->real_escape_string($_POST['father-age']);
-$fhouseNo = $conn->real_escape_string($_POST['father-house-no']);
-$fstreet = $conn->real_escape_string($_POST['father-street']);
-$fsubdivision = $conn->real_escape_string($_POST['father-subdivision']);
-$fhouseholdNo = $conn->real_escape_string($_POST['fhousehold-head']);
 
 // change profile2 name
 
 // image file directory
-$check = "SELECT id FROM tblresidents WHERE `firstname`='$fname' AND `middlename`='$mname' AND `lastname`='$lname'";
+$check = "SELECT id FROM tblresidents WHERE `firstname`='$fname' AND `lastname`='$lname'";
 $nat = $conn->query($check)->num_rows;
 
 if($nat == 0){
 if(!empty($fname)){
 
-if(!empty($age) && !empty($fname)){
+if(!empty($fname) && !empty($lname)){
 
-$query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `age`, `gender`, `house-no`, `street`,
-`subdivision`, `date-of-birth`, `place-of-birth`, `civil-status`, `occupation`, `email`, `contact-no`, `voter-status`,
-`identified`, `sector`, `citizenship`, `household-no`, `osy`, `pwd`, `mother-firstname`, `mother-middlename`,
-`mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`,
-`father-firstname`, `father-middlename`, `father-lastname`, `father-age`, `father-house-no`, `father-street`,
-`father-subdivision`, `father-household-head`)
-VALUES ('$fname', '$mname', '$lname', $computedAge, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
-'$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$identified', '$sector', '$citizenship', '$householdNo',
-'$osy', '$pwd', '$mfname', '$mmname', '$mlname', $mage, '$mhouseNo', '$mstreet', '$msubdivision', '$mhouseholdNo',
-'$ffname', '$fmname', '$flname', $fage, '$fhouseNo', '$fstreet', '$fsubdivision', '$fhouseholdNo')";
+$query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`,
+`subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`,`citizenship`, `household_no`, `osy`, `pwd`)
+VALUES ('$fname', '$mname', '$lname', '$sex', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
+'$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$citizenship', '$householdNo',
+'$osy', '$pwd')";
 
-insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $age, $gender, $cstatus, $street, $dbirth, $email);
+insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $sex, $cstatus, $street, $dbirth, $email);
 
 if($conn->query($query) === true){
 
@@ -91,20 +65,15 @@ $_SESSION['success'] = 'success';
 include './sendAccount.php';
 
 }
-}else if(!empty($age) && empty($fname)){
+}else if(!empty($fname) && empty($lname)){
 
-$query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `age`, `gender`, `house-no`, `street`,
-`subdivision`, `date-of-birth`, `place-of-birth`, `civil-status`, `occupation`, `email`, `contact-no`, `voter-status`,
-`identified`, `sector`, `citizenship`, `household-no`, `osy`, `pwd`, `mother-firstname`, `mother-middlename`,
-`mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`,
-`father-firstname`, `father-middlename`, `father-lastname`, `father-age`, `father-house-no`, `father-street`,
-`father-subdivision`, `father-household-head`)
-VALUES ('$fname', '$mname', '$lname', $computedAge, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
-'$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$identified', '$sector', '$citizenship', '$householdNo',
-'$osy', '$pwd', '$mfname', '$mmname', '$mlname', $mage, '$mhouseNo', '$mstreet', '$msubdivision', '$mhouseholdNo',
-'$ffname', '$fmname', '$flname', $fage, '$fhouseNo', '$fstreet', '$fsubdivision', '$fhouseholdNo')";
+$query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`,
+`subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`,`citizenship`, `household_no`, `osy`, `pwd`)
+VALUES ('$fname', '$mname', '$lname', '$sex', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
+'$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$citizenship', '$householdNo',
+'$osy', '$pwd')";
 
-insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $age, $gender, $cstatus, $street, $dbirth, $email);
+insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $sex, $cstatus, $street, $dbirth, $email);
 
 if($conn->query($query) === true){
 
@@ -117,18 +86,13 @@ include './sendAccount.php';
 
 }else if(empty($age) && !empty($fname)){
 
-$query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `age`, `gender`, `house-no`, `street`,
-`subdivision`, `date-of-birth`, `place-of-birth`, `civil-status`, `occupation`, `email`, `contact-no`, `voter-status`,
-`identified`, `sector`, `citizenship`, `household-no`, `osy`, `pwd`, `mother-firstname`, `mother-middlename`,
-`mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`,
-`father-firstname`, `father-middlename`, `father-lastname`, `father-age`, `father-house-no`, `father-street`,
-`father-subdivision`, `father-household-head`)
-VALUES ('$fname', '$mname', '$lname', $computedAge, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
-'$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$identified', '$sector', '$citizenship', '$householdNo',
-'$osy', '$pwd', '$mfname', '$mmname', '$mlname', $mage, '$mhouseNo', '$mstreet', '$msubdivision', '$mhouseholdNo',
-'$ffname', '$fmname', '$flname', $fage, '$fhouseNo', '$fstreet', '$fsubdivision', '$fhouseholdNo')";
+$query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`,
+`subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`,`citizenship`, `household_no`, `osy`, `pwd`)
+VALUES ('$fname', '$mname', '$lname', '$sex', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
+'$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$citizenship', '$householdNo',
+'$osy', '$pwd')";
 
-insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $age, $gender, $cstatus, $street, $dbirth, $email);
+insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $sex, $cstatus, $street, $dbirth, $email);
 
 if($conn->query($query) === true){
 
@@ -146,18 +110,13 @@ $_SESSION['success'] = 'success';
 }
 
 }else{
-$query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `age`, `gender`, `house-no`, `street`,
-`subdivision`, `date-of-birth`, `place-of-birth`, `civil-status`, `occupation`, `email`, `contact-no`, `voter-status`,
-`identified`, `sector`, `citizenship`, `household-no`, `osy`, `pwd`, `mother-firstname`, `mother-middlename`,
-`mother-lastname`, `mother-age`, `mother-house-no`, `mother-street`, `mother-subdivision`, `mother-household-head`,
-`father-firstname`, `father-middlename`, `father-lastname`, `father-age`, `father-house-no`, `father-street`,
-`father-subdivision`, `father-household-head`)
-VALUES ('$fname', '$mname', '$lname', $computedAge, '$gender', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
-'$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$identified', '$sector', '$citizenship', '$householdNo',
-'$osy', '$pwd', '$mfname', '$mmname', '$mlname', $mage, '$mhouseNo', '$mstreet', '$msubdivision', '$mhouseholdNo',
-'$ffname', '$fmname', '$flname', $fage, '$fhouseNo', '$fstreet', '$fsubdivision', '$fhouseholdNo')";
+$query = "INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`,
+`subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`,`citizenship`, `household_no`, `osy`, `pwd`)
+VALUES ('$fname', '$mname', '$lname', '$sex', '$houseNo', '$street', '$subdivision', '$dbirth', '$pbirth',
+'$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$citizenship', '$householdNo',
+'$osy', '$pwd')";
 
-insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $age, $gender, $cstatus, $street, $dbirth, $email);
+insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $sex, $cstatus, $street, $dbirth, $email);
 
 if($conn->query($query) === true){
 
