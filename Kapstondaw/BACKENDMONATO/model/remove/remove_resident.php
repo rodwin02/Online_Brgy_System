@@ -17,7 +17,7 @@ include '../../server/server.php';
 		$select->execute();
 		$resident = $select->get_result()->fetch_assoc();
 
-		$insert = "INSERT INTO del_residents_archive (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `osy`, `pwd`) 
+		$insert = "INSERT INTO del_residents_archive (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`, `citizenship`, `household_no`, `osy`, `pwd`, `household_head`) 
         VALUES (			
 				'{$resident['firstname']}', 
 				'{$resident['middlename']}',
@@ -36,7 +36,8 @@ include '../../server/server.php';
 				'{$resident['citizenship']}',
 				'{$resident['household_no']}',
 				'{$resident['osy']}',
-				'{$resident['pwd']}' )";
+				'{$resident['pwd']}',
+				'{$resident['household_head']}' )";
 		$conn->query($insert);
 
 		$deleteUser = $conn->prepare("DELETE FROM tbl_users WHERE firstname = ? AND middlename = ? AND lastname = ?");
