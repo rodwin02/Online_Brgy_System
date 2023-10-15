@@ -609,6 +609,26 @@ tr:nth-child(even) {
 .household-cont .household-inner-cont .title-cont p {
   position: absolute;
   margin-left: 90px;
+  justify-content: flex-start;
+  
+  width: 100%;
+  height: 30px;
+
+  flex-direction: row;
+
+  color: #000;
+
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.household-cont .household-inner-cont .title-cont1 p {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 120px;
   
   width: 100%;
   height: 30px;
@@ -756,11 +776,21 @@ tr:nth-child(even) {
   flex-direction: row;
   margin-top: 30px;
   align-items: center;
+  justify-content: flex-end;
   
-  margin-left: 400px;
+  
+}
+
+.household-cont .household-inner-cont .household-form .right-hold-cont .button-cont1 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+  align-items: center;
+
+  justify-content: flex-end;
 }
 .household-cont .household-inner-cont .household-form .right-hold-cont .button-cont .addMember {
-  width: 48%;
+  width: 15%;
   height: 30.836px;
   color: #000000;
   border: none;
@@ -786,7 +816,7 @@ tr:nth-child(even) {
   background-color: #000000;
 }
 .household-cont .household-inner-cont .household-form .right-hold-cont .button-cont .create-household {
-  width: 48%;
+  width: 15%;
   height: 30.836px;
   color: #007236;
   border: none;
@@ -804,6 +834,29 @@ tr:nth-child(even) {
 }
 
 .household-cont .household-inner-cont .household-form .right-hold-cont .button-cont .create-household:hover {
+  background-color: #007236;
+  color: #FFF;
+}
+
+.household-cont .household-inner-cont .household-form .right-hold-cont .button-cont1 .create-household1 {
+  width: 15%;
+  height: 30.836px;
+  color: #007236;
+  border: none;
+  border-radius: 5px;
+  background: #FFF;
+  border: solid 1px #007236;
+  cursor: pointer;
+
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+}
+
+.household-cont .household-inner-cont .household-form .right-hold-cont .button-cont1 .create-household1:hover {
   background-color: #007236;
   color: #FFF;
 }

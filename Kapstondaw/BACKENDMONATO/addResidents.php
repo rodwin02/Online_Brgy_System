@@ -56,7 +56,8 @@
                         </div>
                         <div class="input-container">
                             <label for="sex">Sex:</label>
-                            <select name="sex" id="sex" class="sex">
+                            <select name="sex" id="sex" class="sex">\
+                                <option value=""></option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
@@ -88,6 +89,7 @@
                         <div class="input-container">
                             <label for="civilStatus">Civil Status:</label>
                             <select id="civilStatus" class="civilStatus" name="civil-status">
+                                <option value=""></option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
                                 <option value="divorced">Divorced</option>
@@ -224,7 +226,6 @@
                     <div class="input-container">
                         <label for="sex2">Sex:</label>
                         <select name="sex" id="sex2" class="sex">
-                            <option value=""></option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
@@ -249,7 +250,6 @@
                     <div class="input-container">
                         <label for="civilStatus2">Civil Status:</label>
                         <select name="civilStatus" id="civilStatus2" class="civilStatus">
-                            <option value=""></option>
                             <option value="single">Single</option>
                             <option value="married">Married</option>
                             <option value="divorced">Divorced</option>
