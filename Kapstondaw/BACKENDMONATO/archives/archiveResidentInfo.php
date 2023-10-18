@@ -1,4 +1,4 @@
-<?php include './server/server.php'?>
+<?php include '../server/server.php'?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,21 +6,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Residents</title>
-    <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js"></script>
+    <link rel="stylesheet" href="../style3.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../style4.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../sidenav.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../style/generateCert.css?<?php echo time(); ?>">
+    <script src="../sidebar.js"></script>
 
 </head>
 
 <body>
 
-    <?php include './model/fetch_brgy_role.php' ?>
-    <?php include './actives/import_residents.php' ?>
-    <?php include './actives/active_restore.php' ?>
-    <?php include './actives/active_account.php' ?>
-    <?php include "./sidebar.php" ?>
+    <?php include '../model/fetch_brgy_role.php' ?>
+    <?php include '../actives/import_residents.php' ?>
+    <?php include '../actives/active_restore.php' ?>
+    <?php include '../actives/active_account.php' ?>
+    <?php include "../sidebar.php" ?>
 
 
     <div class="home_residents">
@@ -29,7 +29,7 @@
             <a href="#">Logout</a>
         </div>
         <a href="residentInfo.php" class="backContainer">
-            <img src="icons/back.png" alt="">
+            <img src="../icons/back.png" alt="">
             <p>Go Back</p>
         </a>
 
@@ -103,19 +103,4 @@
 
 </html>
 
-<script>
-        function ClearRow(button) {
-            // Find the row containing the clicked button
-            var row = button.parentNode.parentNode;
 
-            // Get all input elements within that row
-            var inputs = row.querySelectorAll('input, select');
-
-            // Loop through the input elements and clear their values
-            inputs.forEach(function(input) {
-                if (input.type === 'text' || input.type === 'date' || input.type === 'select-one') {
-                    input.value = '';
-                }
-            });
-        }
-    </script>

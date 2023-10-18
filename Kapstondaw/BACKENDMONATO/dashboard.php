@@ -120,9 +120,15 @@ function calculateAge($dob) {
 
 
     <div class="home-container">
+        <div class="logout-container">
+
+        </div>
         <div class="center">
             <div class="box">
-                <div class="rectangle">Dashboard</div>
+                <div class="rectangle">
+                    <p>Dashboard</p>
+                    <a href="#">Logout</a>
+                </div>
                 <div class="stats">
                     <div class="population">
                         <div class="a1">
@@ -267,46 +273,7 @@ function calculateAge($dob) {
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="snr">
-                        <div class="a1">
-                            <div class="b1">
-                                <div class="c1">SNR</div>
-                                <div class="c2-sn"><?= number_format($snr) ?></div>
-                                <div class="c3">Total SNR</div>
-                            </div>
-                            <div class="b2">
-                                <div class="c4-sn">
-                                    <img src="icons/people.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="a2-sn" id="more-snr">
-                            <a href="moreSNR.php" class="b3">More info</a>
-                            <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="students">
-                        <div class="a1">
-                            <div class="b1">
-                                <div class="c1">STUDENTS</div>
-                                <div class="c2-st"><?= number_format($students) ?></div>
-                                <div class="c3">Total STUDENTS</div>
-                            </div>
-                            <div class="b2">
-                                <div class="c4-st">
-                                    <img src="icons/people.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="a2-st" id="more-students">
-                            <a href="moreStudents.php" class="b3">More info</a>
-                            <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
-                            </div>
-                        </div>
-                    </div> -->
+                   
                 </div>
 
                 <div class="line-container">
@@ -360,42 +327,6 @@ function calculateAge($dob) {
                         </tr>
                     </table>
                     <div class="nextBtn">NEXT</div>
-                </div>
-
-
-            </div>
-        </div>
-
-        <div class="rightdiv">
-            <div class="upperdiv">
-                <a href="./model/logout.php">Logout</a>
-            </div>
-            <div class="lowerdiv">
-                <img src="./uploads/<?php echo $brgy_logo ?>" alt="">
-                <p class="adminText">ADMIN</p>
-
-                <div class="calendar">
-                    <div class="header">
-                        <span class="month-year" id="monthYear"></span>
-                    </div>
-                    <div class="weekdays">
-                        <span>Sun</span>
-                        <span>Mon</span>
-                        <span>Tue</span>
-                        <span>Wed</span>
-                        <span>Thu</span>
-                        <span>Fri</span>
-                        <span>Sat</span>
-                    </div>
-                    <div class="days" id="days">
-                        <!-- Days will be generated dynamically using JavaScript -->
-                    </div>
-                </div>
-
-                <div class="credits">
-                    <p>OMS</p>
-                    <p>Develop by BSIT3.2A</p>
-                    <p>2023 All Rights Reserved</p>
                 </div>
             </div>
         </div>
