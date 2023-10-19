@@ -260,3 +260,54 @@ accountBtn.forEach((accBtn) => {
     });
   });
 });
+
+// Add Households
+function displayDetails() {
+  document.getElementById("reviewHead").innerText =
+    document.getElementById("household-head").value;
+
+  const memberList = document.getElementById("membersTable");
+  memberList.innerHTML = "";
+  document.querySelectorAll(".member-form").forEach((members) => {
+    const tableRow = document.createElement("tr");
+    const fields = [
+      "firstname",
+      "middlename",
+      "lastname",
+      "dob",
+      "sex",
+      "pob",
+      "citizenship",
+      "occupation",
+      "civilStatus",
+    ];
+
+    fields.forEach((fieldRow) => {
+      const tableData = document.createElement("td");
+
+      tableData.innerText = members.querySelector(
+        'input[name="firstname"]'
+      ).value;
+      tableData.innerText = members.querySelector(
+        'input[name="middlename"]'
+      ).value;
+      tableData.innerText = members.querySelector(
+        'input[name="lastname"]'
+      ).value;
+      tableData.innerText = members.querySelector('input[name="dob"]').value;
+      tableData.innerText = members.querySelector('input[name="sex"]').value;
+      tableData.innerText = members.querySelector('input[name="pob"]').value;
+      tableData.innerText = members.querySelector(
+        'input[name="citizenship"]'
+      ).value;
+      tableData.innerText = members.querySelector(
+        'input[name="occupation"]'
+      ).value;
+      tableData.innerText = members.querySelector(
+        'input[name="civilStatus"]'
+      ).value;
+      tableRow.appendChild(tableData);
+    });
+    memberList.appendChild(tableRow);
+  });
+}

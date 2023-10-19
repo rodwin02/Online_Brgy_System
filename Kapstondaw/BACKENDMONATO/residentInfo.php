@@ -129,8 +129,8 @@ function calculateAge($dob) {
                         <p>Filter by</p>
                         <div class="sort-btn">
                             <ul>
-                                <li><a href="?filter=sex&value=Male">Male</a></li>
-                                <li><a href="?filter=sex&value=Female">Female</a></li>
+                                <li><a href="?filter=sex&value=male">Male</a></li>
+                                <li><a href="?filter=sex&value=female">Female</a></li>
                                 <li><a href="?filter=civil_status&value=Single">Single</a></li>
                                 <li><a href="?filter=civil_status&value=Married">Married</a></li>
                                 <li><a href="?filter=civil_status&value=Divorced">Divorced</a></li>
@@ -599,7 +599,6 @@ function calculateAge($dob) {
 <script src=" ./js/jQuery-3.7.0.js"></script>
 <script src="./js//app.js"></script>
 <script>
-
 const editResidentsLink = document.querySelectorAll('.edit');
 const modalEdit = document.querySelector('.modal-editResidents');
 const closeButtonEdit = document.querySelector('.closeBtnEdit');

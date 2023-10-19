@@ -88,7 +88,7 @@
 
                         <div class="input-container">
                             <label for="civilStatus">Civil Status:</label>
-                            <select id="civilStatus" class="civilStatus" name="civil-status">
+                            <select id="civilStatus" class="civilStatus" name="civil-status" required>
                                 <option value=""></option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
@@ -110,4 +110,3 @@
 </body>
 
 </html>
-
