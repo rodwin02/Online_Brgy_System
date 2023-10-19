@@ -24,7 +24,9 @@
       <div class="slayer2">
           <a class="db" href="dashboard.php">Dashboard</a>
           <a class="bo" href="barangayOfficials.php">Barangay Officials</a>
-          <a class="ri" href="residentInfo.php">Residents Information</a>
+          <a class="ri" href="#">Residents Information</a>
+          <a href="residentInfo.php" class="residentInfo">Residents Records</a>
+          <a href="business.php" class="businessInfo">Business Records</a>
           <a class="cc" href="#">Certificate/Clearance</a>
           <a href="idForm.php" class="idform">Identification Form</a>
           <a href="brgyClearance.php" class="b-clearance">Barangay Clearance</a>

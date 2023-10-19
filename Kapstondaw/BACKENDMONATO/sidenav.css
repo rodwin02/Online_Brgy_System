@@ -202,7 +202,16 @@ body {
   background: rgba(152, 204, 177, 0.34);
   border-radius: 5px;  
 }
-
+.slayer2 .residentInfo {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .businessInfo {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
 .slayer2 .idform {
   margin-left: 15px;
   margin-top: -1px;
