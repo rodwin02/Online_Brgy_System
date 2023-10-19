@@ -104,57 +104,6 @@
                 <button type="submit" class="submitHousehold">Create</button>
             </div>
 
-            <div class="member-container">
-                <div class="left-member-cont">
-                    <div class="input-container">
-                        <label for="firstName1">First Name:</label>
-                        <input type="text" id="firstName1" class="firstName">
-                    </div>
-                    <div class="input-container">
-                        <label for="middleName1">Middle Name:</label>
-                        <input type="text" id="middleName1" class="middleName">
-                    </div>
-                    <div class="input-container">
-                        <label for="lastName1">Last Name:</label>
-                        <input type="text" id="lastName1" class="lastName">
-                    </div>
-                    <div class="input-container">
-                        <label for="dob1">Date of Birth:</label>
-                        <input type="date" id="dob1" name="dob" class="dob" required>
-                    </div>
-                    <div class="input-container">
-                        <label for="sex1">Sex:</label>
-                        <select name="sex" id="sex1" class="sex">
-                            <option value=""></option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                        </td>
-                        <td>
-                            <select name="civilStatus[]" class="civilStatus111" required>
-                                <option value=""></option>
-                                <option value="single">Single</option>
-                                <option value="married">Married</option>
-                                <option value="divorced">Divorced</option>
-                                <option value="widowed">Widowed</option>
-                            </select>
-                        </td>
-                        <td><input type="text" name="citizenship[]" oninput="this.value = this.value.toUpperCase()"
-                                required></td>
-                        <td><input type="text" name="occupational[]" oninput="this.value = this.value.toUpperCase()"
-                                required></td>
-                        <td><input type="radio" name="householdHead[]" value="yes"></td>
-                        <td>
-                            <div class="DeleteBtn" onclick="deleteRow(this)">Delete</div>
-                        </td>
-                        </tr>
-
-                        </tbody>
-                        </table>
-                        <div class="submitHouseholdCont">
-                            <button type="submit" class="submitHousehold">Create</button>
-                        </div>
-
         </form>
         <div class="addRowCont">
             <button onclick="addRow()" class="addRow">Add Row</button>
