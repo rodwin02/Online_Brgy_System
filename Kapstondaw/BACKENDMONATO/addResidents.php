@@ -129,15 +129,15 @@
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
-                    </td>
-                    <td>
-                        <select name="civilStatus[]"  class="civilStatus111" required>
-                            <option value=""></option>
-                            <option value="single">Single</option>
-                            <option value="married">Married</option>
-                            <option value="divorced">Divorced</option>
-                            <option value="widowed">Widowed</option>
-                        </select>
+                        </td>
+                        <td>
+                            <select name="civilStatus[]" class="civilStatus111" required>
+                                <option value=""></option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="divorced">Divorced</option>
+                                <option value="widowed">Widowed</option>
+                            </select>
                         </td>
                         <td><input type="text" name="citizenship[]" oninput="this.value = this.value.toUpperCase()"
                                 required></td>
