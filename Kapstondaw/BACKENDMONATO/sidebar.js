@@ -1,5 +1,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+  var riLink = document.querySelector('.ri');
+  var residentInfoLink = document.querySelector('.residentInfo');
+  var businessInfoLink = document.querySelector('.businessInfo');
   var ccLink = document.querySelector('.cc');
   var idFormLink = document.querySelector('.idform');
   var bClearanceLink = document.querySelector('.b-clearance');
@@ -24,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Function to hide all sections except the specified one
   function hideSections(exceptSection) {
     var sections = [
+      residentInfoLink,
+      businessInfoLink,
       idFormLink,
       bClearanceLink,
       eCertificateLink,
@@ -47,6 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+  riLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    hideSections(bClearanceLink);
+    residentInfoLink.style.display = 'block';
+    businessInfoLink.style.display = 'block';
+    
+  });
 
   ccLink.addEventListener('click', function(event) {
     event.preventDefault();
