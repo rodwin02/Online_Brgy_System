@@ -109,7 +109,7 @@
                         <input type="hidden" value="Head" id="household-head" name="household-head">
 
                         <div class="button-cont">
-                            <!-- <div class="addMember" id="addMember" onclick="addMember()">Add Member</div> -->
+                            <div class="addMember" id="addMember" onclick="addMember()">Add Member</div>
                             <div class="" id="" onclick="renderAllDetails()">Show</div>
                             <div class="addMember" id="addMember">Add</div>
                             <input type="submit" class="create-household" value="Create">
