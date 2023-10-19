@@ -88,7 +88,7 @@
 
                         <div class="input-container">
                             <label for="civilStatus">Civil Status:</label>
-                            <select id="civilStatus" class="civilStatus" name="civil-status" required>
+                            <select id="civilStatus" class="civilStatus" name="civil-status">
                                 <option value=""></option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
@@ -103,9 +103,11 @@
                     </div>
                 </form>
             </div>
+            <div class="submitHouseholdCont">
+                <button type="submit" class="submitHousehold">Create</button>
+            </div>
+            </form>
         </div>
-    </div>
-
 
 </body>
 

@@ -1,0 +1,106 @@
+<?php include '../server/server.php'?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Residents</title>
+    <link rel="stylesheet" href="../style3.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../style4.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../sidenav.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../style/generateCert.css?<?php echo time(); ?>">
+    <script src="../sidebar.js"></script>
+
+</head>
+
+<body>
+
+    <?php include '../model/fetch_brgy_role.php' ?>
+    <?php include '../actives/import_residents.php' ?>
+    <?php include '../actives/active_restore.php' ?>
+    <?php include '../actives/active_account.php' ?>
+    <?php include "../sidebar.php" ?>
+
+
+    <div class="home_residents">
+        <div class="first_layer">
+            <p>INDIVIDUAL RECORD OF BARANGAY INHABITANTS</p>
+            <a href="#">Logout</a>
+        </div>
+        <a href="residentInfo.php" class="backContainer">
+            <img src="../icons/back.png" alt="">
+            <p>Go Back</p>
+        </a>
+
+        <form action="#" method="post">
+            <div class="table-wrapper">
+            <table class="addResidentsTable">
+            <thead>
+                <tr>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Ext.</th>
+                    <th>Date of Birth</th>
+                    <th>Place of Birth</th>
+                    <th>Sex</th>
+                    <th>Civil Status</th>
+                    <th>Citizenship</th>
+                    <th>Occupational</th>
+                    <th>No.</th>
+                    <th>St. Name</th>
+                    <th>Name of Subdivision</th>
+                    <th class="houseTitle">Household No.</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="lastName[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="firstName[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="middleName[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="ext[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    
+                    <td><input type="date" name="dateBirth[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="placeBirth[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    
+                    <td><select name="sex[]" class="sex111" required>
+                            <option value=""></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="civilStatus[]"  class="civilStatus111" required>
+                            <option value=""></option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="citizenship[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="occupational[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="no[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    <td><input type="text" name="streetName[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="subdiName[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    <td><input type="text" name="HouseholdNum[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    <td><div class="DeleteBtn" onclick="ClearRow(this)">Clear</div></td>
+                </tr>
+            
+            </tbody>
+            </table>
+            </div>
+        <div class="submitHouseholdCont">
+           <button type="submit" class="submitHousehold">Create</button>
+        </div>
+    </form>
+    </div>
+
+</body>
+
+</html>
+
+

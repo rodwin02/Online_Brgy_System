@@ -28,277 +28,139 @@
             <p>RECORD OF BARANGAY INHABITANTS BY HOUSEHOLD</p>
             <a href="#">Logout</a>
         </div>
+        <a href="residentInfo.php" class="backContainer">
+            <img src="icons/back.png" alt="">
+            <p>Go Back</p>
+        </a>
 
-
-        <div class="household-cont">
-            <img src="image/BorderInfo.png" alt="">
-            <div class="household-inner-cont">
-                <div class="title-cont">
-                    <p>Household Head Inforamtion</p>
-                </div>
-
-                <form action="./model/add_resident.php" method="POST" class="household-form">
-                    <div class="left-hold-cont">
-                        <div class="input-container">
-                            <label for="firstName">First Name:</label>
-                            <input type="text" id="firstName" class="firstName firstNameHead " name="firstname"
-                                required>
-                        </div>
-                        <div class=" input-container">
-                            <label for="middleName">Middle Name:</label>
-                            <input type="text" id="middleName" class="middleName middleNameHead" name="middlename">
-                        </div>
-                        <div class="input-container">
-                            <label for="lastName">Last Name:</label>
-                            <input type="text" id="lastName" class="lastName lastNameHead" name="lastname" required>
-                        </div>
-                        <div class="input-container">
-                            <label for="dob">Date of Birth:</label>
-                            <input type="date" id="dob" name="dob" class="dob dobHead" required>
-                        </div>
-                        <div class="input-container">
-                            <label for="sex">Sex:</label>
-                            <select name="sex" id="sex" class="sex sexHead">\
-                                <option value=""></option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                            </select>
-                        </div>
-                        <div class="input-container">
-                            <label for="pob">Place of Birth:</label>
-                            <input type="text" id="pob" name="place-of-birth" class="pob pobHead" required>
-                        </div>
-                    </div>
-                    <div class="right-hold-cont">
-                        <div class="input-container">
-                            <label for="address">Address:</label>
-                            <input type="text" id="houseNo" class="houseNo houseNoHead" placeholder="house no."
-                                name="house-no">
-                            <input type="text" id="streetNo" class="streetNo streetNoHead" placeholder="street no."
-                                name="street">
-                            <input type="text" id="Subdi" class="Subdi SubdiHead"
-                                placeholder="subdivision/zone/sitio/purok" name="subdivision">
-                        </div>
-
-                        <div class="input-container">
-                            <label for="Citizenship">Citizenship:</label>
-                            <input type="text" id="Citizenship" class="citizenship citizenshipHead" name="citizenship">
-                        </div>
-
-                        <div class="input-container">
-                            <label for="occupation">Occupation:</label>
-                            <input type="text" id="occupation occupationHead" name="occupation">
-                        </div>
-
-                        <div class="input-container">
-                            <label for="civilStatus">Civil Status:</label>
-                            <select id="civilStatus" class="civilStatus civilStatusHead" name="civil-status">
-                                <option value=""></option>
-                                <option value="single">Single</option>
-                                <option value="married">Married</option>
-                                <option value="divorced">Divorced</option>
-                                <option value="widowed">Widowed</option>
-                            </select>
-                        </div>
-
-                        <div class="input-container">
-                            <label for="emailmo">Email:</label>
-                            <input type="email" id="emailmo" class="emailmo emailmoHead" name="email">
-                        </div>
-
-                        <input type="hidden" value="Head" id="household-head" name="household-head">
-
-                        <div class="button-cont">
-                            <div class="addMember" id="addMember" onclick="addMember()">Add Member</div>
-                            <div class="" id="" onclick="renderAllDetails()">Show</div>
-                            <div class="addMember" id="addMember">Add</div>
-                            <input type="submit" class="create-household" value="Create">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="members-main-table">
-            <p>HOUSEHOLD MEMBERS</p>
-            <table class="member">
+        <form action="submit_form.php" method="post">
+            <table class="addResidentsTable">
                 <thead>
                     <tr>
-                        <th>Firstname</th>
-                        <th>Middlename</th>
-                        <th>Lastname</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Ext.</th>
+                        <th class="no">NO.</th>
+                        <th>St. Name</th>
+                        <th>Name of Subdivision</th>
                         <th>Date of Birth</th>
-                        <th>Sex</th>
                         <th>Place of Birth</th>
-                        <th>House No</th>
-                        <th>Street No</th>
-                        <th>Subdivision</th>
-                        <th>Citizenship</th>
-                        <th>Occupation</th>
+                        <th>Sex</th>
                         <th>Civil Status</th>
-                        <th>Email</th>
-                        <th>Household Head</th>
+                        <th>Citizenship</th>
+                        <th>Occupational</th>
+                        <th class="houseTitle">Household Head</th>
+                        <th>Action</th>
+
                     </tr>
                 </thead>
-                <tbody id="membersTable"></tbody>
-                <!-- <div class="fullName">Rodwin C. Homeres</div>
-                <div class="address">23 kanto lang st.</div>
-                <div class="bday">09/21/23</div>
-                <div class="gender">Male</div>
-                <div class="action" id="editMember">Edit</div> -->
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="lastName[]" oninput="this.value = this.value.toUpperCase()"
+                                required></td>
+                        <td><input type="text" name="firstName[]" oninput="this.value = this.value.toUpperCase()"
+                                required></td>
+                        <td><input type="text" name="middleName[]" oninput="this.value = this.value.toUpperCase()"
+                                required></td>
+                        <td><input type="text" name="ext[]" oninput="this.value = this.value.toUpperCase()"></td>
+                        <td><input type="text" name="no[]" oninput="this.value = this.value.toUpperCase()"></td>
+                        <td><input type="text" name="streetName[]" oninput="this.value = this.value.toUpperCase()"
+                                required></td>
+                        <td><input type="text" name="subdiName[]" oninput="this.value = this.value.toUpperCase()"></td>
+                        <td><input type="date" name="dateBirth[]" oninput="this.value = this.value.toUpperCase()"
+                                required></td>
+                        <td><input type="text" name="placeBirth[]" oninput="this.value = this.value.toUpperCase()"
+                                required></td>
+
+                        <td><select name="sex[]" class="sex111" required>
+                                <option value=""></option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="civilStatus[]" class="civilStatus111" required>
+                                <option value=""></option>
+                                <option value="Single">Single</option>
+                                <option value="Married">Married</option>
+                                <option value="Divorced">Divorced</option>
+                                <option value="Widowed">Widowed</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="citizenship[]" oninput="this.value = this.value.toUpperCase()"
+                                required></td>
+                        <td><input type="text" name="occupational[]" oninput="this.value = this.value.toUpperCase()"
+                                required></td>
+                        <td><input type="radio" name="householdHead[]" value="yes"></td>
+                        <td>
+                            <div class="DeleteBtn" onclick="deleteRow(this)">Delete</div>
+                        </td>
+                    </tr>
+
+                </tbody>
             </table>
-
-
-
-        </div>
-    </div>
-
-
-    <div class="modal-addMember" id="modal-addMember">
-        <form action="#" class="member-form" id="member-form">
-            <div class="title-member">
-                <p>Household Member Information</p>
-                <img src="icons/close 1.png" class="close-addMember" alt="">
+            <div class="submitHouseholdCont">
+                <button type="submit" class="submitHousehold">Create</button>
             </div>
 
             <div class="member-container">
                 <div class="left-member-cont">
                     <div class="input-container">
                         <label for="firstName1">First Name:</label>
-                        <input type="text" id="firstName1" class="firstName firstNameMember" name="firstname">
+                        <input type="text" id="firstName1" class="firstName">
                     </div>
                     <div class="input-container">
                         <label for="middleName1">Middle Name:</label>
-                        <input type="text" id="middleName1" class="middleName middleNameMember" name="middlename">
+                        <input type="text" id="middleName1" class="middleName">
                     </div>
                     <div class="input-container">
                         <label for="lastName1">Last Name:</label>
-                        <input type="text" id="lastName1" class="lastName lastNameMember" name="lastname">
+                        <input type="text" id="lastName1" class="lastName">
                     </div>
                     <div class="input-container">
                         <label for="dob1">Date of Birth:</label>
-                        <input type="date" id="dob1" name="dob" class="dob dobMember" required>
+                        <input type="date" id="dob1" name="dob" class="dob" required>
                     </div>
                     <div class="input-container">
                         <label for="sex1">Sex:</label>
-                        <select name="sex" id="sex1" class="sex sexMember">
+                        <select name="sex" id="sex1" class="sex">
                             <option value=""></option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
-                    </div>
-                    <div class="input-container">
-                        <label for="pob1">Place of Birth:</label>
-                        <input type="text" id="pob1" name="pob" class="pob pobMember" required>
-                    </div>
-                </div>
-
-                <div class="input-container">
-                    <!-- <label for="address">Address:</label> -->
-                    <input type="hidden" id="houseNo" class="houseNo houseNoMember" placeholder="house no."
-                        name="house-no">
-                    <input type="hidden" id="streetNo" class="streetNo streetNoMember" placeholder="street no."
-                        name="street">
-                    <input type="hidden" id="Subdi" class="Subdi SubdiMember" placeholder="subdivision/zone/sitio/purok"
-                        name="subdivision">
-                </div>
-
-                <div class="right-member-cont">
-                    <div class="input-container">
-                        <label for="Citizenship1">Citizenship:</label>
-                        <input type="text" id="Citizenship1" class="citizenship citizenshipMember name=" citizenship>
-                    </div>
-
-                    <div class=" input-container">
-                        <label for="occupation1">Occupation:</label>
-                        <input type="text" id="occupation1" class="occupationMember" name="occupation>
-                    </div>
-
-                    <div class=" input-container">
-                        <label for="civilStatus1">Civil Status:</label>
-                        <select name="civilStatus" id="civilStatus1" class="civilStatus civilStatusMember">
+                    </td>
+                    <td>
+                        <select name="civilStatus[]"  class="civilStatus111" required>
                             <option value=""></option>
                             <option value="single">Single</option>
                             <option value="married">Married</option>
                             <option value="divorced">Divorced</option>
                             <option value="widowed">Widowed</option>
                         </select>
-                    </div>
+                        </td>
+                        <td><input type="text" name="citizenship[]" oninput="this.value = this.value.toUpperCase()"
+                                required></td>
+                        <td><input type="text" name="occupational[]" oninput="this.value = this.value.toUpperCase()"
+                                required></td>
+                        <td><input type="radio" name="householdHead[]" value="yes"></td>
+                        <td>
+                            <div class="DeleteBtn" onclick="deleteRow(this)">Delete</div>
+                        </td>
+                        </tr>
 
-                    <div class="button-cont">
-                        <button onclick="renderAllDetails()">Show</button>
-                        <input type="submit" class="create-household" value="Create">
-                    </div>
-                </div>
-            </div>
+                        </tbody>
+                        </table>
+                        <div class="submitHouseholdCont">
+                            <button type="submit" class="submitHousehold">Create</button>
+                        </div>
+
         </form>
-    </div>
+        <div class="addRowCont">
+            <button onclick="addRow()" class="addRow">Add Row</button>
+        </div>
 
 
-    <div class="modal-editMember">
-        <form action="#" class="member-form">
-            <div class="title-member">
-                <p>Household Member Information</p>
-                <img src="icons/close 1.png" class="close-editMember" alt="">
-            </div>
-
-            <div class="member-container">
-                <div class="left-member-cont">
-                    <div class="input-container">
-                        <label for="firstName2">First Name:</label>
-                        <input type="text" id="firstName2" class="firstName">
-                    </div>
-                    <div class="input-container">
-                        <label for="middleName2">Middle Name:</label>
-                        <input type="text" id="middleName2" class="middleName">
-                    </div>
-                    <div class="input-container">
-                        <label for="lastName2">Last Name:</label>
-                        <input type="text" id="lastName2" class="lastName">
-                    </div>
-                    <div class="input-container">
-                        <label for="dob2">Date of Birth:</label>
-                        <input type="date" id="dob2" name="dob" class="dob" required>
-                    </div>
-                    <div class="input-container">
-                        <label for="sex2">Sex:</label>
-                        <select name="sex" id="sex2" class="sex">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-                    <div class="input-container">
-                        <label for="pob2">Place of Birth:</label>
-                        <input type="text" id="pob2" name="pob" class="pob" required>
-                    </div>
-                </div>
-
-                <div class="right-member-cont">
-                    <div class="input-container">
-                        <label for="Citizenship2">Citizenship:</label>
-                        <input type="text" id="Citizenship2">
-                    </div>
-
-                    <div class="input-container">
-                        <label for="occupation2">Occupation:</label>
-                        <input type="text" id="occupation2">
-                    </div>
-
-                    <div class="input-container">
-                        <label for="civilStatus2">Civil Status:</label>
-                        <select name="civilStatus" id="civilStatus2" class="civilStatus">
-                            <option value="single">Single</option>
-                            <option value="married">Married</option>
-                            <option value="divorced">Divorced</option>
-                            <option value="widowed">Widowed</option>
-                        </select>
-                    </div>
-
-                    <div class="button-cont">
-                        <input type="submit" class="create-household" value="Save">
-                    </div>
-                </div>
-            </div>
-        </form>
     </div>
 
 
@@ -306,204 +168,103 @@
 
 </html>
 
+
 <script>
-function addMember() {
-    console.log("member")
-    const membersDiv = document.getElementById("modal-addMember");
-    const newMemberInput = `
-    <form action="#" class="member-form" id="member-form">
-            <div class="title-member">
-                <p>Household Member Information</p>
-                <img src="icons/close 1.png" class="close-addMember" alt="">
-            </div>
-
-            <div class="member-container">
-                <div class="left-member-cont">
-                    <div class="input-container">
-                        <label for="firstName1">First Name:</label>
-                        <input type="text" id="firstName1" class="firstName firstNameMember" name="firstname">
-                    </div>
-                    <div class="input-container">
-                        <label for="middleName1">Middle Name:</label>
-                        <input type="text" id="middleName1" class="middleName middleNameMember" name="middlename">
-                    </div>
-                    <div class="input-container">
-                        <label for="lastName1">Last Name:</label>
-                        <input type="text" id="lastName1" class="lastName lastNameMember" name="lastname">
-                    </div>
-                    <div class="input-container">
-                        <label for="dob1">Date of Birth:</label>
-                        <input type="date" id="dob1" name="dob" class="dob dobMember" required>
-                    </div>
-                    <div class="input-container">
-                        <label for="sex1">Sex:</label>
-                        <select name="sex" id="sex1" class="sex sexMember">
-                            <option value=""></option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-                    <div class="input-container">
-                        <label for="pob1">Place of Birth:</label>
-                        <input type="text" id="pob1" name="pob" class="pob pobMember" required>
-                    </div>
-                </div>
-
-                <div class="input-container">
-                    <!-- <label for="address">Address:</label> -->
-                    <input type="hidden" id="houseNo" class="houseNo houseNoMember" placeholder="house no."
-                        name="house-no">
-                    <input type="hidden" id="streetNo" class="streetNo streetNoMember" placeholder="street no."
-                        name="street">
-                    <input type="hidden" id="Subdi" class="Subdi SubdiMember" placeholder="subdivision/zone/sitio/purok"
-                        name="subdivision">
-                </div>
-
-                <div class="right-member-cont">
-                    <div class="input-container">
-                        <label for="Citizenship1">Citizenship:</label>
-                        <input type="text" id="Citizenship1" class="citizenship citizenshipMember name=" citizenship>
-                    </div>
-
-                    <div class=" input-container">
-                        <label for="occupation1">Occupation:</label>
-                        <input type="text" id="occupation1" class="occupationMember" name="occupation>
-                    </div>
-
-                    <div class=" input-container">
-                        <label for="civilStatus1">Civil Status:</label>
-                        <select name="civilStatus" id="civilStatus1" class="civilStatus civilStatusMember">
-                            <option value=""></option>
-                            <option value="single">Single</option>
-                            <option value="married">Married</option>
-                            <option value="divorced">Divorced</option>
-                            <option value="widowed">Widowed</option>
-                        </select>
-                    </div>
-
-                    <div class="button-cont">
-                        <button onclick="renderAllDetails()">Show</button>
-                        <input type="submit" class="create-household" value="Create">
-                    </div>
-                </div>
-            </div>
-        </form>`;
-    membersDiv.innerHTML += newMemberInput;
+function deleteRow(btn) {
+    var row = btn.parentNode.parentNode;
+    row.parentNode.removeChild(row);
 }
 
-const memberList = document.getElementById("membersTable");
-memberList.innerHTML = "";
-
-const houseNoValue = document.querySelector('.houseNoHead').value;
-const streetNoValue = document.querySelector('.streetNoHead').value;
-const subdiValue = document.querySelector('.SubdiHead').value;
-
-function displayDetails() {
-
-    const tableRowHead = document.createElement("tr");
-    const fieldsHead = [
-        "firstNameHead",
-        "middleNameHead",
-        "lastNameHead",
-        "dobHead",
-        "sexHead",
-        "pobHead",
-        "houseNoHead",
-        "streetNoHead",
-        "SubdiHead",
-        "citizenshipHead",
-        "occupationHead",
-        "civilStatusHead",
-        "emailmoHead",
-        "household-head"
+function addRow() {
+    var table = document.querySelector("table tbody");
+    var newRow = document.createElement("tr");
+    var columns = ["lastName", "firstName", "middleName", "ext", "no", "streetName", "subdiName", "dateBirth",
+        "placeBirth", "sex", "civilStatus", "citizenship", "occupational", "householdHead"
     ];
 
+    for (var i = 0; i < columns.length; i++) {
+        var cell = document.createElement("td");
+        var input;
 
-    const householdHead = document.querySelector('#household-head').value;
+        if (columns[i] === "sex" || columns[i] === "civilStatus") {
+            input = document.createElement("select");
+            input.name = columns[i] + "[]";
+            input.required = true;
 
-    fieldsHead.forEach((field) => {
-        console.log(field);
-        const el = document.querySelector(`.${field}`);
-        const tableDataHead = document.createElement("td");
-        if (field === "household-head") {
-            tableDataHead.innerText = householdHead;
-        } else {
-            tableDataHead.innerText = el ? el.value :
-                "Not Found"
-        }
-        tableRowHead.appendChild(tableDataHead);
-    });
+            var emptyOption = document.createElement("option");
+            emptyOption.value = "";
+            input.appendChild(emptyOption);
 
-    memberList.appendChild(tableRowHead);
-}
+            if (columns[i] === "sex") {
+                var maleOption = document.createElement("option");
+                maleOption.value = "Male";
+                maleOption.text = "Male";
+                input.appendChild(maleOption);
 
-function displayMember() {
-    document.querySelectorAll(".member-form").forEach((members) => {
-        const tableRow = document.createElement("tr");
-
-        const fields = [
-            "firstNameMember",
-            "middleNameMember",
-            "lastNameMember",
-            "dobMember",
-            "sexMember",
-            "pobMember",
-            "houseNoMember",
-            "streetNoMember",
-            "SubdiMember",
-            "citizenshipMember",
-            "occupationMember",
-            "civilStatusMember",
-        ];
-
-        fields.forEach((fieldRow) => {
-            const tableData = document.createElement("td");
-
-            const memberEl = document.querySelector(`.${fieldRow}`);
-
-            if (fieldRow === "houseNoMember") {
-                tableData.innerText = houseNoValue;
-            } else if (fieldRow === "streetNoMember") {
-                tableData.innerText = streetNoValue;
-            } else if (fieldRow === "SubdiMember") {
-                tableData.innerText = subdiValue;
-            } else {
-                tableData.innerText = memberEl ? memberEl.value : "Not Found";
+                var femaleOption = document.createElement("option");
+                femaleOption.value = "Female";
+                femaleOption.text = "Female";
+                input.appendChild(femaleOption);
+            } else if (columns[i] === "civilStatus") {
+                var options = ["Single", "Married", "Divorced", "Widowed"];
+                for (var optionText of options) {
+                    var option = document.createElement("option");
+                    option.value = optionText;
+                    option.text = optionText;
+                    input.appendChild(option);
+                }
             }
-            tableRow.appendChild(tableData);
-        });
-        memberList.appendChild(tableRow);
-    });
+        } else if (columns[i] === "householdHead") {
+            input = document.createElement("input");
+            input.type = "radio";
+            input.name = columns[i] + "[]";
+            input.value = "yes";
+            input.className = "radio-input";
+        } else if (columns[i] === "no" || columns[i] === "streetName" || columns[i] === "subdiName") {
+            // Use hidden fields to store the initial values
+            input = document.createElement("input");
+            input.type = "hidden";
+            input.name = "initial" + columns[i];
+            input.value = document.querySelector("table tbody tr:first-child td:nth-child(" + (i + 1) + ") input")
+                .value;
+
+            // Display the initial value in a read-only input field
+            var displayInput = document.createElement("input");
+            displayInput.type = "text";
+            displayInput.name = columns[i] + "[]";
+            displayInput.value = input.value;
+            displayInput.readOnly = true;
+
+            cell.appendChild(input);
+            cell.appendChild(displayInput);
+        } else if (columns[i] === "dateBirth") {
+            // Create a new date input
+            input = document.createElement("input");
+            input.type = "date";
+            input.name = columns[i] + "[]";
+            input.required = true;
+        } else {
+            input = document.createElement("input");
+            input.type = "text";
+            input.name = columns[i] + "[]";
+            input.setAttribute("oninput", "this.value = this.value.toUpperCase()");
+        }
+
+        cell.appendChild(input);
+        newRow.appendChild(cell);
+    }
+
+    // Add a "Delete" button to the new row and attach the deleteRow function
+    var deleteCell = document.createElement("td");
+    var deleteButton = document.createElement("div");
+    deleteButton.className = "DeleteBtn";
+    deleteButton.textContent = "Delete";
+    deleteButton.onclick = function() {
+        deleteRow(deleteButton);
+    };
+    deleteCell.appendChild(deleteButton);
+    newRow.appendChild(deleteCell);
+
+    table.appendChild(newRow);
 }
-
-function renderAllDetails() {
-    displayDetails();
-    displayMember();
-}
-
-const addMemberLink = document.getElementById('addMember');
-const modalAddMember = document.querySelector('.modal-addMember');
-const closeAddMember = document.querySelector('.close-addMember');
-
-addMemberLink.addEventListener('click', function(event) {
-    event.preventDefault();
-    modalAddMember.style.display = 'block';
-});
-
-closeAddMember.addEventListener('click', function() {
-    modalAddMember.style.display = 'none';
-});
-
-const editMemberLink = document.getElementById('editMember');
-const modaleditMember = document.querySelector('.modal-editMember');
-const closeeditMember = document.querySelector('.close-editMember');
-
-editMemberLink.addEventListener('click', function(event) {
-    event.preventDefault();
-    modaleditMember.style.display = 'block';
-});
-
-closeeditMember.addEventListener('click', function() {
-    modaleditMember.style.display = 'none';
-});
 </script>

@@ -186,6 +186,8 @@
   border-radius: 20px;
   justify-content: center;
   margin-right: 20px;
+  display: flex;
+  
 }
 
 .second_layer .add-cont .archiveResidents {
