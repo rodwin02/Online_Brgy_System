@@ -28,87 +28,94 @@
             <p>INDIVIDUAL RECORD OF BARANGAY INHABITANTS</p>
             <a href="#">Logout</a>
         </div>
+        <a href="residentInfo.php" class="backContainer">
+            <img src="icons/back.png" alt="">
+            <p>Go Back</p>
+        </a>
 
-        <div class="household-cont">
-            <img src="image/BorderInfo.png" alt="">
-            <div class="household-inner-cont">
-                <div class="title-cont1">
-                    <p>Personal Inforamtion</p>
-                </div>
+        <form action="#" method="post">
+            <div class="table-wrapper">
+            <table class="addResidentsTable">
+            <thead>
+                <tr>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Ext.</th>
+                    <th>Date of Birth</th>
+                    <th>Place of Birth</th>
+                    <th>Sex</th>
+                    <th>Civil Status</th>
+                    <th>Citizenship</th>
+                    <th>Occupational</th>
+                    <th>No.</th>
+                    <th>St. Name</th>
+                    <th>Name of Subdivision</th>
+                    <th class="houseTitle">Household No.</th>
+                    <th>Action</th>
 
-                <form action="./model/add_resident.php" method="POST" class="household-form">
-                    <div class="left-hold-cont">
-                        <div class="input-container">
-                            <label for="firstName">First Name:</label>
-                            <input type="text" id="firstName" class="firstName" name="firstname" required>
-                        </div>
-                        <div class=" input-container">
-                            <label for="middleName">Middle Name:</label>
-                            <input type="text" id="middleName" class="middleName" name="middlename">
-                        </div>
-                        <div class="input-container">
-                            <label for="lastName">Last Name:</label>
-                            <input type="text" id="lastName" class="lastName" name="lastname" required>
-                        </div>
-                        <div class="input-container">
-                            <label for="dob">Date of Birth:</label>
-                            <input type="date" id="dob" name="dob" class="dob" required>
-                        </div>
-                        <div class="input-container">
-                            <label for="sex">Sex:</label>
-                            <select name="sex" id="sex" class="sex">
-                                <option value=""></option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                            </select>
-                        </div>
-                        <div class="input-container">
-                            <label for="pob">Place of Birth:</label>
-                            <input type="text" id="pob" name="place-of-birth" class="pob" required>
-                        </div>
-                    </div>
-                    <div class="right-hold-cont">
-                        <div class="input-container">
-                            <label for="address">Address:</label>
-                            <input type="text" id="houseNo" class="houseNo" placeholder="house no." name="house-no">
-                            <input type="text" id="streetNo" class="streetNo" placeholder="street no." name="street">
-                            <input type="text" id="Subdi" class="Subdi" placeholder="subdivision/zone/sitio/purok"
-                                name="subdivision">
-                        </div>
-
-                        <div class="input-container">
-                            <label for="Citizenship">Citizenship:</label>
-                            <input type="text" id="Citizenship" name="citizenship">
-                        </div>
-
-                        <div class="input-container">
-                            <label for="occupation">Occupation:</label>
-                            <input type="text" id="occupation" name="occupation">
-                        </div>
-
-                        <div class="input-container">
-                            <label for="civilStatus">Civil Status:</label>
-                            <select id="civilStatus" class="civilStatus" name="civil-status">
-                                <option value=""></option>
-                                <option value="single">Single</option>
-                                <option value="married">Married</option>
-                                <option value="divorced">Divorced</option>
-                                <option value="widowed">Widowed</option>
-                            </select>
-                        </div>
-
-                        <div class="button-cont1">
-                            <input type="submit" class="create-household1" value="Create">
-                        </div>
-                    </div>
-                </form>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="lastName[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="firstName[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="middleName[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="ext[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    
+                    <td><input type="date" name="dateBirth[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="placeBirth[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    
+                    <td><select name="sex[]" class="sex111" required>
+                            <option value=""></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="civilStatus[]"  class="civilStatus111" required>
+                            <option value=""></option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="citizenship[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="occupational[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="no[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    <td><input type="text" name="streetName[]" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="subdiName[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    <td><input type="text" name="HouseholdNum[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    <td><div class="DeleteBtn" onclick="ClearRow(this)">Clear</div></td>
+                </tr>
+            
+            </tbody>
+            </table>
             </div>
-            <div class="submitHouseholdCont">
-                <button type="submit" class="submitHousehold">Create</button>
-            </div>
-            </form>
+        <div class="submitHouseholdCont">
+           <button type="submit" class="submitHousehold">Create</button>
         </div>
+    </form>
+    </div>
 
 </body>
 
 </html>
+
+<script>
+        function ClearRow(button) {
+            // Find the row containing the clicked button
+            var row = button.parentNode.parentNode;
+
+            // Get all input elements within that row
+            var inputs = row.querySelectorAll('input, select');
+
+            // Loop through the input elements and clear their values
+            inputs.forEach(function(input) {
+                if (input.type === 'text' || input.type === 'date' || input.type === 'select-one') {
+                    input.value = '';
+                }
+            });
+        }
+    </script>
