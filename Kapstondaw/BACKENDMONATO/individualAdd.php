@@ -33,7 +33,7 @@
             <p>Go Back</p>
         </a>
 
-        <form action="#" method="post">
+        <form action="./model/add_v2resident.php" method="post">
             <div class="table-wrapper">
             <table class="addResidentsTable">
             <thead>
@@ -58,22 +58,22 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" name="lastName[]" oninput="this.value = this.value.toUpperCase()" required></td>
-                    <td><input type="text" name="firstName[]" oninput="this.value = this.value.toUpperCase()" required></td>
-                    <td><input type="text" name="middleName[]" oninput="this.value = this.value.toUpperCase()" required></td>
-                    <td><input type="text" name="ext[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    <td><input type="text" name="lastname" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="firstname" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="middlename" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="ext" oninput="this.value = this.value.toUpperCase()"></td>
                     
-                    <td><input type="date" name="dateBirth[]" oninput="this.value = this.value.toUpperCase()" required></td>
-                    <td><input type="text" name="placeBirth[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    <td><input type="date" name="dob" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="place-of-birth" oninput="this.value = this.value.toUpperCase()"></td>
                     
-                    <td><select name="sex[]" class="sex111" required>
+                    <td><select name="sex" class="sex111" required>
                             <option value=""></option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
                     </td>
                     <td>
-                        <select name="civilStatus[]"  class="civilStatus111" required>
+                        <select name="civil-status"  class="civilStatus111" required>
                             <option value=""></option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
@@ -81,12 +81,12 @@
                             <option value="Widowed">Widowed</option>
                         </select>
                     </td>
-                    <td><input type="text" name="citizenship[]" oninput="this.value = this.value.toUpperCase()" required></td>
-                    <td><input type="text" name="occupational[]" oninput="this.value = this.value.toUpperCase()" required></td>
-                    <td><input type="text" name="no[]" oninput="this.value = this.value.toUpperCase()"></td>
-                    <td><input type="text" name="streetName[]" oninput="this.value = this.value.toUpperCase()" required></td>
-                    <td><input type="text" name="subdiName[]" oninput="this.value = this.value.toUpperCase()"></td>
-                    <td><input type="text" name="HouseholdNum[]" oninput="this.value = this.value.toUpperCase()"></td>
+                    <td><input type="text" name="citizenship" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="occupation" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="no" oninput="this.value = this.value.toUpperCase()"></td>
+                    <td><input type="text" name="street" oninput="this.value = this.value.toUpperCase()" required></td>
+                    <td><input type="text" name="subdivision" oninput="this.value = this.value.toUpperCase()"></td>
+                    <td><input type="text" name="household-no" oninput="this.value = this.value.toUpperCase()"></td>
                     <td><div class="DeleteBtn" onclick="ClearRow(this)">Clear</div></td>
                 </tr>
             

@@ -1,55 +1,44 @@
 <?php
-
-// Include your database connection code if you have one
 include '../server/server.php';
 
-// Check if form was submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    // Get all the values from the form
-    $lastNames       = $_POST['lastName'];
-    $firstNames      = $_POST['firstName'];
-    $middleNames     = $_POST['middleName'];
-    $ext             = $_POST['ext'];
-    $noVal           = $_POST['no'];
-    $street          = $_POST['streetName'];
-    $subdiName       = $_POST['subdiName'];
-    $dateBirth       = $_POST['dateBirth'];
-    $placeBirth      = $_POST['placeBirth'];
-    $sex             = $_POST['sex'];
-    $civilStatus     = $_POST['civilStatus'];
-    $citizenship     = $_POST['citizenship'];
-    $occupation      = $_POST['occupational'];
-    $householdHead   = isset($_POST['householdHead'][$i]) ? $_POST['householdHead'][$i] : 'no';
-    //... continue for other fields
-
-    // Assuming you've already established a connection to your database named $conn
-
-    $success = true;
-
+    
+    // Assuming $conn is the connection to your database
+    
+    // Prepare the statement once for efficiency
     $stmt = $conn->prepare("INSERT INTO tbl_households (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `citizenship`, `household_head`, `ext`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-    for ($i = 0; $i < count($lastNames); $i++) {
+    $totalEntries = count($_POST['lastName']); // Assumes every other array has the same count
 
-        // Bind the parameters
-        $stmt->bind_param("ssssssssssssss", $firstNames[$i], $middleNames[$i], $lastNames[$i], $sex[$i], $noVal[$i], $street[$i], $subdiName[$i], $dateBirth[$i], $placeBirth[$i], $civilStatus[$i], $occupation[$i], $citizenship[$i], $householdHead[$i], $ext[$i]);
+    for ($i = 0; $i < $totalEntries; $i++) {
+        $householdHead =  isset($_POST['householdHead'][$i]) && in_array('yes', $_POST['householdHead'][$i]) ? 'yes' : 'no';
 
+        if (!$stmt->bind_param("ssssssssssssss", 
+            $_POST['firstName'][$i],
+            $_POST['middleName'][$i], 
+            $_POST['lastName'][$i],
+            $_POST['sex'][$i], 
+            $_POST['no'][$i], 
+            $_POST['streetName'][$i], 
+            $_POST['subdiName'][$i], 
+            $_POST['dateBirth'][$i], 
+            $_POST['placeBirth'][$i], 
+            $_POST['civilStatus'][$i], 
+            $_POST['occupational'][$i], 
+            $_POST['citizenship'][$i], 
+            $householdHead,
+            $_POST['ext'][$i])) {
+            echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+        }
+        
         // Execute the statement
         if (!$stmt->execute()) {
-            $success = false;
-            break;
+            echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
         }
     }
 
     $stmt->close();
-
-    if ($success) {
-        header("Location: ../residentInfo.php");
-    } else {
-        header("Location: ../addResidents.php");
-    }
-    exit; // Important to prevent further execution of the script
-
+    header("Location: ../residentInfo.php");
+    exit;
 }
-
 ?>

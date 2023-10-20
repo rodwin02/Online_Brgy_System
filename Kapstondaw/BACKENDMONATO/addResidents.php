@@ -92,7 +92,7 @@
                                 required></td>
                         <td><input type="text" name="occupational[]" oninput="this.value = this.value.toUpperCase()"
                                 required></td>
-                        <td><input type="radio" name="householdHead[]" value="yes"></td>
+                        <td><input type="radio" name="householdHead[0][]" value="yes"></td>
                         <td>
                             <div class="DeleteBtn" onclick="deleteRow(this)">Delete</div>
                         </td>
@@ -166,7 +166,7 @@ function addRow() {
         } else if (columns[i] === "householdHead") {
             input = document.createElement("input");
             input.type = "radio";
-            input.name = columns[i] + "[]";
+            input.name = columns[i] + "[" + table.rows.length + "][]";
             input.value = "yes";
             input.className = "radio-input";
         } else if (columns[i] === "no" || columns[i] === "streetName" || columns[i] === "subdiName") {
