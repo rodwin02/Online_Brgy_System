@@ -33,7 +33,7 @@
             <p>Go Back</p>
         </a>
 
-        <form action="submit_form.php" method="post">
+        <form action="./model/add_households.php" method="post">
             <table class="addResidentsTable">
                 <thead>
                     <tr>
