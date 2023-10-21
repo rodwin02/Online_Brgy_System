@@ -12,7 +12,7 @@ include '../../server/server.php';
 	if($id != ''){
 
 		try {
-		$select = $conn->prepare("SELECT * FROM tblresidents WHERE id = ?");
+		$select = $conn->prepare("SELECT * FROM tbl_households WHERE id = ?");
 		$select->bind_param("s", $id);
 		$select->execute();
 		$resident = $select->get_result()->fetch_assoc();
@@ -44,7 +44,7 @@ include '../../server/server.php';
 		$deleteUser->bind_param("sss", $resident['firstname'], $resident['middlename'], $resident['lastname']);
 		$deleteUser->execute();
 		
-		$delete = $conn->prepare("DELETE FROM tblresidents WHERE id = ?");
+		$delete = $conn->prepare("DELETE FROM tbl_households WHERE id = ?");
 		$delete->bind_param("s", $id);
 		$delete->execute();
 		

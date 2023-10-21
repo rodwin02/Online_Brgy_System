@@ -1,59 +1,49 @@
-<?php 
-    include '../server/server.php';
-    include './functions/autoGenerateUser.php';
-
-    // if(!isset($_SESSION['username'])){
-    //     header("Location: ../index.php");
-    //     exit;
-    // }
-
-    if($_SERVER['REQUEST_METHOD'] != 'POST'){
-        header("Location: ../residentInfo.php");
-        exit;
-    }
+<?php
+include '../server/server.php';
+include './functions/autoGenerateUser.php';
 
 
-    $stmt = $conn->prepare("SELECT id FROM tblresidents WHERE firstname=? AND lastname=? AND date_of_birth=?");
-    $stmt->bind_param("sss", $_POST['firstname'], $_POST['lastname'], $_POST['dob']);
-    $stmt->execute();
-    $stmt->store_result();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
+    // Get data from POST request
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $middlename = $_POST['middlename'];
+    $ext = $_POST['ext'];
+    $dob = $_POST['dob'];
+    $place_of_birth = $_POST['place-of-birth'];
+    $sex = $_POST['sex'];
+    $civil_status = $_POST['civil-status'];
+    $citizenship = $_POST['citizenship'];
+    $occupation = $_POST['occupation'];
+    $no = $_POST['no'];
+    $street = $_POST['street'];
+    $subdivision = $_POST['subdivision'];
+    $household_no = $_POST['household-no'];
 
-    if($stmt->num_rows == 0) {
-        $stmtInsert = $conn->prepare("INSERT INTO tblresidents (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`,
-        `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `contact_no`, `voter_status`,`citizenship`, `household_no`, `osy`, `pwd`, `household_head`, `ext`, `no`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?)");
-        // Bind your parameters here
-        $stmtInsert->bind_param("sssssssssssssssssssss", $_POST['firstname'], $_POST['middlename'], $_POST['lastname'],$_POST['sex'], $_POST['house-no'], $_POST['street'], $_POST['subdivision'], $_POST['dob'], $_POST['place-of-birth'], $_POST['civil-status'], $_POST['occupation'], $_POST['email'], $_POST['contact-no'], $_POST['voter-status'], $_POST['citizenship'], $_POST['household-no'], $_POST['out-of-school-youth'], $_POST['person-with-disability'], $_POST['household-head'], $_POST['ext'], $_POST['no']);
-        $stmtInsert->execute();
+    // Prepare the SQL statement
+    $stmt = $conn->prepare("INSERT INTO tbl_households (`firstname`, `middlename`, `lastname`, `ext`, `date_of_birth`, `place_of_birth`, `sex`, `civil_status`, `citizenship`, `occupation`, `house_no`, `street`, `subdivision`, `household_no`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    
+    $stmt->bind_param("ssssssssssssss", $firstname, $middlename, $lastname, $ext, $dob, $place_of_birth, $sex, $civil_status, $citizenship, $occupation, $no, $street, $subdivision, $household_no);
 
-        // Rest of your insert logic
-        if($stmtInsert) {
-        $_SESSION['message'] = 'Resident Information has been saved!';
-        $_SESSION['success'] = 'success';
-        } else {
-        $_SESSION['message'] = 'Error';
-        $_SESSION['success'] = 'danger';
-        }
+    // Execute the SQL statement
+    if ($stmt->execute()) {
+        // Handle successful insert (e.g., set a session message or redirect)
+        $_SESSION['message'] = 'Resident added successfully!';
 
-        // This line should be executed securely as well
         // function calculateAge($dob) {
         //     $today = new DateTime();
         //     $birthDate = new DateTime($dob);
         //     $interval = $today->diff($birthDate);
         //     return $interval->y;
         // }
-        // $cacldbirth = calculateAge($_POST['dob']);
+        // insertUser($conn, $username, $hashedPassword, $firstname, $middlename, $lastname, $sex, $civil_status, $street, $dob, $email);
 
-        // insertUser($conn, $username, $hashedPassword, $_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST['sex'], $_POST['civil-status'], $_POST['street'], $cacldbirth, $_POST['email']);
-
-        // include './sendAccount.php';
-
+        header("Location: ../residentInfo.php");
     } else {
-        $_SESSION['message'] = 'Resident Information already exists';
-        $_SESSION['success'] = 'danger';
+        // Handle error (e.g., set a session error message or redirect)
+        $_SESSION['error'] = 'Failed to add resident!';
+        header("Location: ../addResidentPage.php"); // Replace with your page's name if it's different
     }
-
-    header("Location: ../residentInfo.php");
-    $stmt->close();
-    $conn->close();
+}
 ?>
-

@@ -8,7 +8,7 @@ $filterValue = $_GET["value"] ?? null;
 $params = [];
 $types = "";
 
-$query =  "SELECT * FROM tblresidents";
+$query =  "SELECT * FROM tbl_households";
 
 if($filterOption && $filterValue) {
     $query .= " WHERE `$filterOption` = ?";
@@ -147,7 +147,7 @@ function calculateAge($dob) {
             <div class="add-cont">
                 <a href="individualAdd.php" class="add">+Individual</a>
                 <a href="addResidents.php" class="add">+Household</a>
-                <a href="./model/export_residents_csv.php" class="exportCVS">+Export CVS</a>
+                <a href="./model/export_households_csv.php" class="exportCVS">+Export CVS</a>
                 <button class="importBtn">+Import</button>
                 <Archive href="#" class="archiveResidents">Archive</a>
             </div>
