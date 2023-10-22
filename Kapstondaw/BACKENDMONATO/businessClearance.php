@@ -19,14 +19,16 @@ $businessClearance[] = $row;
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="modal.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
+
 </head>
 
 <body>
     <?php include './model/fetch_brgy_role.php' ?>
     <?php include './actives/active_restore.php' ?>
     <?php include './actives/active_account.php' ?>
-    <?php include "./sidebar.php" ?>
+    <?php include './sidebar.php' ?>
 
     <div class="home_residents">
         <div class="first_layer">
@@ -68,7 +70,14 @@ $businessClearance[] = $row;
                         <td><?= $row['business-address'] ?></td>
                         <td><?= $row['date-applied'] ?></td>
                         <td><?= $row['documentFor'] ?></td>
-                        <td>
+                        <td> 
+                            <?php if($row['documentFor'] === 'clearance') { ?>
+                            <a href="./generate/businessClearance_generate_forself.php?id=<?= $row['id'] ?>"
+                                class="print">Print</a>
+                            <?php } else {?>
+                            <a href="./generate/businessClosure_generate_forsingleparent.php?id=<?= $row['id'] ?>"
+                                class="print">Print</a>
+                            <?php } ?>
                             <a href="#" class="edit">Edit</a>
                             <a href="./model/remove/remove_businessClearance.php?id=<?= $row['id'] ?>"
                                 class="delete">Delete</a>

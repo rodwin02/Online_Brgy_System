@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
 
 </head>
@@ -37,12 +36,13 @@
     <?php include './model/fetch_brgy_role.php' ?>
     <?php include './actives/active_restore.php' ?>
     <?php include './actives/active_account.php' ?>
-    <?php include "./sidebar.php" ?>
+    <?php include './sidebar.php' ?>
 
     <div class="home_officials">
         <div class="left_officials">
             <div class="first_layer">
-                <p>Barangay Officials</p>
+                  <p>Barangay Officials</p>
+                  <a href="#">Logout</a>
             </div>
             <div class="second_layer">
                 <div class="text-cont">
@@ -101,13 +101,7 @@
                 </table>
             </div>
         </div>
-        <div class="right_officials">
-            <div class="logout_layer"><a href="#">Logout</a></div>
-            <div class="brgy_layer">
-                <img src="./uploads/<?= $brgy_logo ?>" alt="brgy-image">
-                <p><?= $brgy_name ?> <span><?= $town_name?></span></p>
-            </div>
-        </div>
+        
     </div>
 
     <!-- START ADD OFFICIALS -->

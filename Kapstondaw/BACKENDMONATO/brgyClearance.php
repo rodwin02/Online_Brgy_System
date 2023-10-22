@@ -17,11 +17,11 @@ while($row = $result->fetch_assoc()) {
     <title>Barangay Clearance</title>
     <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="modal.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
+
 
 </head>
 
@@ -29,7 +29,7 @@ while($row = $result->fetch_assoc()) {
     <?php include './model/fetch_brgy_role.php' ?>
     <?php include './actives/active_restore.php' ?>
     <?php include './actives/active_account.php' ?>
-    <?php include "./sidebar.php" ?>
+    <?php include './sidebar.php' ?>
 
     <div class="home_residents">
         <div class="first_layer">
