@@ -15,12 +15,10 @@
 </head>
 
 <body>
-
     <?php include './model/fetch_brgy_role.php' ?>
-    <?php include './actives/import_residents.php' ?>
     <?php include './actives/active_restore.php' ?>
     <?php include './actives/active_account.php' ?>
-    <?php include "./sidebar.php" ?>
+    <?php include './sidebar.php' ?>
 
 
     <div class="home_residents">

@@ -19,7 +19,9 @@ while($row = $result->fetch_assoc()) {
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="modal.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
+
 
 </head>
 
@@ -27,7 +29,7 @@ while($row = $result->fetch_assoc()) {
     <?php include './model/fetch_brgy_role.php' ?>
     <?php include './actives/active_restore.php' ?>
     <?php include './actives/active_account.php' ?>
-    <?php include "./sidebar.php" ?>
+    <?php include './sidebar.php' ?>
 
     <div class="home_residents">
         <div class="first_layer">
@@ -84,7 +86,7 @@ while($row = $result->fetch_assoc()) {
                             <a href="./generate/certOfLBR_generate_forself.php?id=<?= $row['id'] ?>"
                                 class="print">Print</a>
                             <?php }
-                elseif ($row['documentFor'] === 'children') { ?>
+                                  elseif ($row['documentFor'] === 'children') { ?>
                             <a href="./generate/certOfLBR_generate_fortheirchild.php?id=<?= $row['id'] ?>"
                                 class="print">Print</a>
                             <?php } else {?>

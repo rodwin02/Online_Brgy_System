@@ -18,7 +18,7 @@
     <?php include './actives/import_residents.php' ?>
     <?php include './actives/active_restore.php' ?>
     <?php include './actives/active_account.php' ?>
-    <?php include "./sidebar.php" ?>
+    <?php include './sidebar.php' ?>
 
     <div class="home_residents">
         <div class="first_layer">

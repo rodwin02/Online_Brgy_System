@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
+
 </head>
 
 <body>
@@ -18,11 +19,11 @@
     <?php include './actives/import_residents.php' ?>
     <?php include './actives/active_restore.php' ?>
     <?php include './actives/active_account.php' ?>
-    <?php include "./sidebar.php" ?>
+    <?php include './sidebar.php' ?>
 
     <div class="home_residents">
         <div class="first_layer">
-            <p>Business</p>
+            <p>Business Records</p>
             <a href="#">Logout</a>
         </div>
         <div class="second_layer">
@@ -67,7 +68,7 @@
 
             </div>
             <div class="add-cont">
-                <a href="addResidents.php" class="add">+ Business</a>
+                <a href="addBusiness.php" class="add">+ Business</a>
                 <a href="./model/export_residents_csv.php" class="exportCVS">+ Export CVS</a>
                 <button class="importBtn">+ Import</button>
                 <Archive href="#" class="archiveResidents">Archive</a>

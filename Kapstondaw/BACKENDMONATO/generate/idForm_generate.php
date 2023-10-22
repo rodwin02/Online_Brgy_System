@@ -281,20 +281,33 @@
                                     <div class="fullname" style="width: 100%;
                         height: 43px;
                         border-bottom: 1px solid #000;
-                        padding-left: 5px;">FULLNAME: (FIRST, MIDDLE, & LAST NAME)</div>
+                        padding-left: 5px;">
+                                        <h4>FULLNAME: (FIRST, MIDDLE, & LAST NAME)</h4>
+                                        <h2><?php echo  $idForm['firstname']. " " .$idForm['middlename']. " " .$idForm['lastname']?>
+                                        </h2>
+                                    </div>
                                     <div class="address" style="width: 100%;
                         height: 43px;
                         border-bottom: 1px solid #000;
-                        padding-left: 5px;">ADDRESS:</div>
+                        padding-left: 5px;">
+                                        <h5>ADDRESS:</h5>
+                                        <h2><?php echo $idForm['address']?></h2>
+                                    </div>
                                     <div class="placeStatus-cont" style="display: flex;
                         flex-direction: row;">
                                         <div class="pob" style=" width: 60%;
                             height: 44px;
                             border-right: 1px solid #000;
-                            padding-left: 5px;">PLACE OF BIRTH:</div>
+                            padding-left: 5px;">
+                                            <h5>PLACE OF BIRTH:</h5>
+                                            <h2><?php echo $idForm['place-of-birth']?></h2>
+                                        </div>
                                         <div class="civilStatus" style=" width: 40%;
                             height: 44px;
-                            padding-left: 5px;">CIVIL STATUS:</div>
+                            padding-left: 5px;">
+                                            <h5>CIVIL STATUS:</h5>
+                                            <h2><?php echo $idForm['civil-status']?></h2>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -305,10 +318,16 @@
                                     <div class="birthDate" style=" width: 100%;
                         height: 43px;
                         border-bottom: 1px solid #000;
-                        padding-left: 5px;">BIRTH DATE:</div>
+                        padding-left: 5px;">
+                                        <h5>BIRTH DATE:</h5>
+                                        <h2><?php echo $idForm['birth-date']?></h2>
+                                    </div>
                                     <div class="contactNo" style="width: 100%;
                         height: 86px;
-                        padding-left: 5px;">CONTACT NUMBER:</div>
+                        padding-left: 5px;">
+                                        <h5>CONTACT NUMBER:</h5>
+                                        <h2><?php echo $idForm['contact-number']?></h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -386,6 +405,7 @@
                     margin-left: 110px;">SIGNATURE/LAGDA/PIRMA.</p>
                     </div>
                 </div>
+
 
             </form>
         </div>

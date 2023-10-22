@@ -35,7 +35,7 @@
           <a href="certOfLBR.php" class="c-latebirth">Certificate Of LBR</a>
           <a href="businessClearance.php" class="bb-clearance">Business Clearance</a>
           <a class="rs" href="#">Reports</a>
-          <a href="blotter.php" class="blotter1">Blotter records</a>
+          <!-- <a href="blotter.php" class="blotter1">Blotter records</a> -->
           <a href="complain.php" class="complain1">Complain records</a>
           <a href="awareness.php" class="awareness1">Awereness</a>
           <a class="um" href="#">User Management</a>
@@ -45,6 +45,6 @@
           <a href="announcement.php" class="announcement">Announcement</a>
           <a href="./backup/backup.php" class="backup">Backup</a>
           <a href="#" class="restore clicky restoreBtn">Restore</a>
-          <a href="request.php" class="request">Requested Documents</a>
+          <!-- <a href="request.php" class="request">Requested Documents</a> -->
       </div>
   </div>

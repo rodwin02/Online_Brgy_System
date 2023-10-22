@@ -141,8 +141,8 @@ function calculateAge($dob) {
                                 </div>
                             </div>
                         </div>
-                        <div class="a2-p" id="more-allresidents">
-                            <a href="?state=population" class="b3">More info</a>
+                        <div class="a2-p" id="more-population">
+                            <a href="morePopulation.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
@@ -234,7 +234,7 @@ function calculateAge($dob) {
                     <div class="osy">
                         <div class="a1">
                             <div class="b1">
-                                <div class="c1">OSY</div>
+                                <div class="c1">OSY (15-24)</div>
                                 <div class="c2-o"><?= number_format($osy) ?></div>
                                 <div class="c3">Total OSY</div>
                             </div>
@@ -251,6 +251,47 @@ function calculateAge($dob) {
                             </div>
                         </div>
                     </div>
+                    <div class="osc">
+                        <div class="a1">
+                            <div class="b1">
+                                <div class="c1">OSC (6-14)</div>
+                                <div class="c2-osc">0</div>
+                                <div class="c3">Total OSC</div>
+                            </div>
+                            <div class="b2">
+                                <div class="c4-osc">
+                                    <img src="icons/people.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a2-osc" id="more-osc">
+                            <a href="#" class="b3">More info</a>
+                            <div class="b4">
+                                <img src="icons/down-arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="soloParent">
+                        <div class="a1">
+                            <div class="b1">
+                                <div class="c1">Solo Parent</div>
+                                <div class="c2-soloP">0</div>
+                                <div class="c3">Total Solo Parent</div>
+                            </div>
+                            <div class="b2">
+                                <div class="c4-soloP">
+                                    <img src="icons/people.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a2-soloP" id="more-pwd">
+                            <a href="#" class="b3">More info</a>
+                            <div class="b4">
+                                <img src="icons/down-arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="pwd">
                         <div class="a1">
                             <div class="b1">
@@ -266,6 +307,69 @@ function calculateAge($dob) {
                         </div>
                         <div class="a2-pw" id="more-pwd">
                             <a href="morePWD.php" class="b3">More info</a>
+                            <div class="b4">
+                                <img src="icons/down-arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="labor">
+                        <div class="a1">
+                            <div class="b1">
+                                <div class="c1">Labor Force</div>
+                                <div class="c2-lbr">0</div>
+                                <div class="c3">Total Labor Force</div>
+                            </div>
+                            <div class="b2">
+                                <div class="c4-lbr">
+                                    <img src="icons/people.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a2-lbr" id="more-pwd">
+                            <a href="#" class="b3">More info</a>
+                            <div class="b4">
+                                <img src="icons/down-arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="unemploy">
+                        <div class="a1">
+                            <div class="b1">
+                                <div class="c1">Unemployed</div>
+                                <div class="c2-ploy">0</div>
+                                <div class="c3">Total Unemployed</div>
+                            </div>
+                            <div class="b2">
+                                <div class="c4-ploy">
+                                    <img src="icons/people.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a2-ploy" id="more-pwd">
+                            <a href="#" class="b3">More info</a>
+                            <div class="b4">
+                                <img src="icons/down-arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ofw">
+                        <div class="a1">
+                            <div class="b1">
+                                <div class="c1">Unemployed</div>
+                                <div class="c2-ofw">0</div>
+                                <div class="c3">Total Unemployed</div>
+                            </div>
+                            <div class="b2">
+                                <div class="c4-ofw">
+                                    <img src="icons/people.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a2-ofw" id="more-pwd">
+                            <a href="#" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>

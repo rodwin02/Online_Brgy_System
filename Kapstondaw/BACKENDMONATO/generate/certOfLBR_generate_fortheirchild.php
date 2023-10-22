@@ -148,14 +148,14 @@
                     justify-content: center;
                     color: #000;
                     font-family: Caladea;
-                    font-size: 19px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 700;
                     line-height: normal;">CERTIFICATE OF LATE BIRTH REGISTRATION</div>
 
                     <p class="to" style="color: #000;
                     font-family: Caladea;
-                    font-size: 19px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
@@ -173,7 +173,7 @@
 
                     <p class="greet" style=" color: #000;
                     font-family: Caladea;
-                    font-size: 19px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
@@ -183,59 +183,64 @@
 
                     <p class="first-p" style=" color: #000;
                     font-family: Caladea;
-                    font-size: 19px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
                     padding-right: 80px;
                     
                     margin-top: 30px;
-                    margin-left: 70px;">1.
+                    margin-left: 70px;
+                    text-indent: 50px;">
                         <input type="text" value="<?php echo $certOfLBR['requestor_fname']. ' ' .$certOfLBR['requestor_mname']. ' ' .$certOfLBR['requestor_lname'] 
 ?>" id="nameRequest" placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
                         font-family: Caladea;
-                        font-size: 19px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
-                        line-height: normal;
+                        line-height: 20px;
                         border: none;
                         border-bottom: 1px solid black;
-                        width: 200px;">
+                        width: auto;">
                         is the child/one of the children of
                         <input type="text" value="<?php echo $certOfLBR['father_fname']. ' ' .$certOfLBR['father_mname']. ' ' .$certOfLBR['father_lname']
 ?>" id="nameFather" placeholder="FATHER’S NAME" style="color: #000;
                         font-family: Caladea;
-                        font-size: 19px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: 20px;
                         border: none;
                         border-bottom: 1px solid black;
-                        width: 200px;">
+                        width: auto;">
                         and
                         <input type="text" value="<?php echo $certOfLBR['mother_fname']. ' ' .$certOfLBR['mother_mname']. ' ' .$certOfLBR['mother_lname']
 ?>" id="nameMother" placeholder="MOTHER’S NAME" style="color: #000;
                         font-family: Caladea;
-                        font-size: 19px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
                         border: none;
                         border-bottom: 1px solid black;
-                        width: 200px;">, who was born on
-                        <input type="text" value="<?php echo $certOfLBR['date-of-birth']?>" id="dob"
-                            placeholder="DATE OF BIRTH" style="color: #000;
+                        width: auto;">, who was born on
+                        <input type="text" id="dob" value="
+<?php 
+$date = new DateTime($certOfLBR['date-of-birth']);
+echo $date->format('F d, Y'); 
+?>
+                        " placeholder="DATE OF BIRTH" style="color: #000;
                         font-family: Caladea;
-                        font-size: 19px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
-                        line-height: 20px;
+                        line-height: normal;
                         border: none;
                         border-bottom: 1px solid black;
-                        width: 200px;">
+                        width: auto;">
                         <span style="color: #000;
                         font-family: Caladea;
-                        font-size: 19px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;">at City of Dasmarinas, Cavite.</span>
@@ -243,134 +248,137 @@
 
                     <p class="second-p" style=" color: #000;
                     font-family: Caladea;
-                    font-size: 19px;;
+                    font-size: 16px;;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
                     padding-right: 80px;
                     
                     margin-top: 30px;
-                    margin-left: 70px;">
+                    margin-left: 70px;
+                    text-indent: 50px;">
                         The birth of
                         <input type="text"
                             value="<?php echo $certOfLBR['requestor_fname']. ' ' .$certOfLBR['requestor_mname']. ' ' .$certOfLBR['requestor_lname']  ?>"
                             id="nameRequest1" placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
                             font-family: Caladea;
-                            font-size: 19px;
+                            font-size: 16px;
                             font-style: normal;
                             font-weight: 700;
                             line-height: normal;
                             border: none;
                             border-bottom: 1px solid black;
-                            width: 200px;">,
+                            width: auto;">,
                         was attended by Midwife/Traditional hilot who was from City of Dasmarinas
                         Cavite.
                     </p>
 
                     <p class="third-p" style=" color: #000;
                     font-family: Caladea;
-                    font-size: 19px;;
+                    font-size: 16px;;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
                     padding-right: 80px;
                     
                     margin-top: 30px;
-                    margin-left: 70px;">
+                    margin-left: 70px;
+                    text-indent: 50px;">
                         I know the date and place of birth of
                         <input type="text" value="<?php echo $certOfLBR['requestor_fname']. ' ' .$certOfLBR['requestor_mname']. ' ' .$certOfLBR['requestor_lname'] 
 ?>" id="nameRequest2" placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
                             font-family: Caladea;
-                            font-size: 19px;
+                            font-size: 16px;
                             font-style: normal;
                             font-weight: 700;
                             line-height: 20px;
                             border: none;
                             border-bottom: 1px solid black;
-                            width: 200px;">
+                            width: auto;">
                         as well as his/her parentage and citizenship because the spouses,
                         <input type="text" value="<?php echo $certOfLBR['father_fname']. ' ' .$certOfLBR['father_mname']. ' ' .$certOfLBR['father_lname']
 ?>" id="nameFather1" placeholder="FATHER'S NAME" style="color: #000;
                         font-family: Caladea;
-                        font-size: 19px;
-                        font-style: normal;
-                        font-weight: 700;
-                        line-height: 20px;
-                        border: none;
-                        border-bottom: 1px solid black;
-                        width: 200px;">
-                        and
-                        <input type="text" value="<?php echo $certOfLBR['mother_fname']. ' ' .$certOfLBR['mother_mname']. ' ' .$certOfLBR['mother_lname']
-?>" id="nameMother1" placeholder="MOTHER’S NAME" style="color: #000;
-                        font-family: Caladea;
-                        font-size: 19px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
                         border: none;
                         border-bottom: 1px solid black;
-                        width: 200px;">
+                        width: auto;">
+                        and
+                        <input type="text" value="<?php echo $certOfLBR['mother_fname']. ' ' .$certOfLBR['mother_mname']. ' ' .$certOfLBR['mother_lname']
+?>" id="nameMother1" placeholder="MOTHER’S NAME" style="color: #000;
+                        font-family: Caladea;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        border: none;
+                        border-bottom: 1px solid black;
+                        width: auto;">
                         are personally known to me and permanent residents of
                         <input type="text" value="<?php echo $certOfLBR['address']?>" id="address" placeholder="ADDRESS"
                             style="color: #000;
                         font-family: Caladea;
-                        font-size: 19px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
-                        line-height: 20px;
+                        line-height: normal;
                         border: none;
                         border-bottom: 1px solid black;
-                        width: 200px;">, Subd., Zone IV, City of Dasmarinas, Cavite.
+                        width: auto;">, Subd., Zone IV, City of Dasmarinas, Cavite.
                     </p>
 
                     <p class="fourth-p" style=" color: #000;
                     font-family: Caladea;
-                    font-size: 19px;;
+                    font-size: 16px;;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
                     padding-right: 80px;
                     
                     margin-top: 30px;
-                    margin-left: 70px;">This certification is being issued to the request of
+                    margin-left: 70px;
+                    text-indent: 50px">This certification is being issued to the request of
                         <input type="text" value="<?php echo $certOfLBR['father_fname']. ' ' .$certOfLBR['father_mname']. ' ' .$certOfLBR['father_lname']
  ?>" id="nameFather2" placeholder="FATHER'S NAME" style="color: #000;
                         font-family: Caladea;
-                        font-size: 19px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
                         border: none;
                         border-bottom: 1px solid black;
-                        width: 200px;">
+                        width: auto;">
                         and
                         <input type="text" value="<?php echo $certOfLBR['mother_fname']. ' ' .$certOfLBR['mother_mname']. ' ' .$certOfLBR['mother_lname']
 ?>" id="nameMother2" placeholder="MOTHER’S NAME" style="color: #000;
                         font-family: Caladea;
-                        font-size: 19px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
                         border: none;
                         border-bottom: 1px solid black;
-                        width: 200px;">
+                        width: auto;">
                         in order to certify the birth of <input type="text" value="<?php echo $certOfLBR['requestor_fname']. ' ' .$certOfLBR['requestor_mname']. ' ' .$certOfLBR['requestor_lname'] 
 ?>" id="nameRequest3" placeholder="NAME OF REQUESTING LATE BIRTH" style="color: #000;
                         font-family: Caladea;
-                        font-size: 19px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: 20px;
                         border: none;
                         border-bottom: 1px solid black;
-                        width: 200px;"> and in order to
+                        width: auto;"> and in order to
                         give effect to the delayed registration of his/her birth on the Office of City
                         Civil Registrar of City of Dasmarinas, Cavite.
                     </p>
 
                     <div class="date-time" id="date-time" style=" color: #000;
                     font-family: Caladea;
-                    font-size: 19px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
@@ -389,7 +397,7 @@
                     margin-left: 450px;">
                         <span style="color: #000;
                         font-family: Caladea;
-                        font-size: 19px;
+                        font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
@@ -460,7 +468,7 @@ function updateDate() {
     const dateTimeElement = document.getElementById("date-time");
     dateTimeElement.innerHTML = `Issued this <span style="color: #000;
             font-family: Caladea;
-            font-size: 19px;
+            font-size: 16px;
             font-style: normal;
             font-weight: 700;
             line-height: normal;"> ${day}${daySuffix} day of ${month}, ${year} </span>`;

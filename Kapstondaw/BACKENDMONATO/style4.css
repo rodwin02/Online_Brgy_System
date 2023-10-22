@@ -1,4 +1,4 @@
-/* START CONTENT MANAGEMENT CSS*/
+Z/* START CONTENT MANAGEMENT CSS*/
 .modal-b-info {
   display: flex;
   z-index: 2;
@@ -448,6 +448,7 @@ tr:nth-child(even) {
   display: flex;
   align-self: center;
   margin-left: 35px;
+  
 
   font-family: "Poppins";
   font-style: normal;
@@ -456,6 +457,10 @@ tr:nth-child(even) {
   line-height: 38px;
   /* identical to box height */
   color: #007236;
+}
+.first_layer p span {
+  margin-left: 5px;
+  
 }
 .first_layer a {
   width: 50%;
