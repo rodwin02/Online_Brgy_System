@@ -144,44 +144,6 @@ while($row = $result->fetch_assoc()) {
         </form>
     </div>
 
-    <!-- UPDATE INFO -->
-    <div class="modal-b-info">
-        <form class="form-b-info" action="">
-            <div class="header-cont">
-                <p>Update Barangay Information</p>
-                <img src="icons/close 1.png" class="closemo" alt="">
-            </div>
-
-            <div class="input-cont">
-                <div class="left-cont">
-                    <label for="province_name">Province Name:</label>
-                    <input type="text" name="province_name" id="province_name">
-
-                    <label for="b_name">Barangay Name:</label>
-                    <input type="text" name="b_name" id="b_name">
-
-                    <label for="municipality_logo">Municipality Logo:</label>
-                    <img id="preview" alt="Preview">
-                    <input type="file" name="municipality_logo">
-                </div>
-
-                <div class="right-cont">
-                    <label for="town_name">Town Name:</label>
-                    <input type="text" name="town_name" id="town_name">
-
-                    <label for="tel_no">Tel No.:</label>
-                    <input type="text" name="tel_no" id="tel_no">
-
-                    <label for="barangay_logo">Barangay Logo:</label>
-                    <img id="preview" alt="Preview">
-                    <input type="file" name="barangay_logo" id="barangay_logo">
-                </div>
-            </div>
-            <input class="UpdateInfo" type="submit" value="Update">
-        </form>
-    </div>
-
-
 
     <script src="./js//jQuery-3.7.0.js"></script>
     <script src="./js//app.js"></script>
@@ -199,19 +161,7 @@ while($row = $result->fetch_assoc()) {
         modaladd.style.display = 'none';
     });
 
-    //js update info
-    const bInfo = document.getElementById('b-info');
-    const modalInfo = document.querySelector('.modal-b-info');
-    const closemo = document.querySelector('.closemo');
-
-    bInfo.addEventListener('click', function(event) {
-        event.preventDefault();
-        modalInfo.style.display = 'block';
-    });
-
-    closemo.addEventListener('click', function() {
-        modalInfo.style.display = 'none';
-    });
+    
     </script>
 </body>
 
