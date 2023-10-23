@@ -211,8 +211,8 @@ function calculateAge($dob) {
                                 data-lname="<?= $row['lastname'] ?>"
                                 data-age="<?= calculateAge($row['date_of_birth']) ?>" data-sex="<?= $row['sex'] ?>"
                                 data-houseNo="<?= $row['house_no'] ?>" data-street="<?= $row['street'] ?>"
-                                data-cstatus="<?= $row['civil_status'] ?>" data-dbirth="<?= $row['date_of_birth'] ?>"
-                                data-email="<?= $row['email'] ?>">Account</a>
+                                data-subdivision="<?= $row['subdivision'] ?>" data-cstatus="<?= $row['civil_status'] ?>"
+                                data-dbirth="<?= $row['date_of_birth'] ?>" data-email="<?= $row['email'] ?>">Account</a>
                             <?php } ?>
                             <a href="#" class="delete delete-archive" id="delete-archive">Delete</a>
 
@@ -616,7 +616,4 @@ sortFilterLink.addEventListener('click', function(event) {
 closeSort.addEventListener('click', function() {
     sort.style.display = 'none';
 });
-
-
-
 </script>

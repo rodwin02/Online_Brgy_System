@@ -69,7 +69,7 @@ while($row = $result->fetch_assoc()) {
                         </td>
                         <td><?= $row['requestor_fname'] ?> <?= $row['requestor_mname'] ?> <?= $row['requestor_lname'] ?>
                         </td>
-                        <td><?= $row['address'] ?></td>
+                        <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision']?></td>
                         <td><?= $row['documentFor'] ?></td>
                         <td><?= $row['purpose'] ?></td>
                         <td><?= $row['date-requested'] ?></td>
@@ -160,7 +160,7 @@ while($row = $result->fetch_assoc()) {
         </form>
     </div>
 
-    
+
 
     <script src="./js//jQuery-3.7.0.js"></script>
     <script src="./js//app.js"></script>
@@ -190,8 +190,6 @@ while($row = $result->fetch_assoc()) {
     closeForm1.addEventListener('click', function() {
         modaladdEcert1.style.display = 'none';
     });
-
- 
     </script>
 </body>
 

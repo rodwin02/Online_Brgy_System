@@ -114,10 +114,12 @@ if(isset($_SESSION['message']))
             </select>
         </div>
 
-        <input type="hidden" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
-        <input type="hidden" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
-        <input type="hidden" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
-        <input type="hidden" name="address" value="<?php echo $_SESSION['street'] ?>" id="">
+        <input type="text" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
+        <input type="text" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
+        <input type="text" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
+        <input type="text" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
+        <input type="text" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
+        <input type="text" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
 
         <button type="submit" class="active-service-request">Request</button>
     </form>
@@ -143,9 +145,10 @@ if(isset($_SESSION['message']))
             </select>
         </div>
 
-        <input type="hidden" name="applicant"
+        <input type="text" name="applicant"
             value="<?php echo $_SESSION['firstname'].' '. $_SESSION['middlename'].' '.$_SESSION['lastname']  ?>" id="">
-        <input type="hidden" name="address" value="<?php echo $_SESSION['street'] ?>" id="">
+
+        <input type="text" name="address" value="<?php echo $_SESSION['street'] ?>" id="">
 
         <button type="submit" class="active-service-request">Request</button>
     </form>

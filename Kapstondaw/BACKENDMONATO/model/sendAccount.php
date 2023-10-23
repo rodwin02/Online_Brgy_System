@@ -24,12 +24,15 @@ try {
     // Content
     $mail->isHTML(true);                        // Set email format to HTML
     $mail->Subject = 'Welcome to CHIMKEN - Chimken is the greatest and will take over the world with poppy. You cannot stop the chimken, poppy, church will find you.';
-    $recipient = $firstname ?? $fname;
-    $mail->Body    = 'Dear '. $recipient. ", <br/>We are excited to welcome you to <b>CHIMKEN</b>! <br/>Your account has been successfully created. Here are your login details: <br/><b>Username:</b> ". $username. "<br/><b>Password:</b> ". $plainPassword;
+    $recipientFname = $firstname ?? $fname;
+    $recipientMname = $middlename ?? $mname;
+    $recipientLname = $lastname ?? $lname;
+    $mail->Body    = 'Dear '. $recipientFname." ". $recipientMname." ". $recipientLname. ", <br/>We are excited to welcome you to <b>CHIMKEN</b>! <br/>Your account has been successfully created. Here are your login details: <br/><b>Username:</b> ". $username. "<br/><b>Password:</b> ". $plainPassword ?? $password;
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
     echo 'Message has been sent';
+    setMessageAndRedirect('User Account has been send to email!', 'success', '../users.php');
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

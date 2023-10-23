@@ -15,14 +15,16 @@
     $requestor_fname    = $conn->real_escape_string($_POST['requestor_fname']);
     $requestor_mname    = $conn->real_escape_string($_POST['requestor_mname']);
     $requestor_lname    = $conn->real_escape_string($_POST['requestor_lname']);
-    $address      = $conn->real_escape_string($_POST['address']);
+    $applicant_houseNo      = $conn->real_escape_string($_POST['applicant_houseNo']);
+    $applicant_street      = $conn->real_escape_string($_POST['applicant_street']);
+    $applicant_subdivision      = $conn->real_escape_string($_POST['applicant_subdivision']);
     $purpose      = $conn->real_escape_string($_POST['purpose']);
     $documentFor  = $conn->real_escape_string($_POST['documentFor']);
 
     if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($address)&& !empty($purpose)){
 
-        $insert  = "INSERT INTO tbl_ecertificate (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `address`, `documentFor`, `purpose`) 
-                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$address', '$documentFor','$purpose')";
+        $insert  = "INSERT INTO tbl_ecertificate (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `documentFor`, `purpose`) 
+                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$applicant_houseNo', '$applicant_street', '$applicant_subdivision',  '$documentFor','$purpose')";
         $result  = $conn->query($insert);
 
         if($result === true){

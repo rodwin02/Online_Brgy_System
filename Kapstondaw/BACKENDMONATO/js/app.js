@@ -224,7 +224,9 @@ function createAccount(that) {
   age = $(that).attr("data-age");
   gender = $(that).attr("data-gender");
   cstatus = $(that).attr("data-cstatus");
+  houseNo = $(that).attr("data-houseNo");
   street = $(that).attr("data-street");
+  subdi = $(that).attr("data-subdivision");
   dbirth = $(that).attr("data-dbirth");
   email = $(that).attr("data-email");
   $("#res_firstname").val(fname);
@@ -233,6 +235,8 @@ function createAccount(that) {
   $("#res_age").val(age);
   $("#res_gender").val(gender);
   $("#res_cstatus").val(cstatus);
+  $("#res_houseNo").val(houseNo);
+  $("#res_subdivision").val(subdi);
   $("#res_street").val(street);
   $("#res_dbirth").val(dbirth);
   $("#res_email").val(email);

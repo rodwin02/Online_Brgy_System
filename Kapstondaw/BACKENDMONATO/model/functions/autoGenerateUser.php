@@ -28,7 +28,7 @@ function setMessageAndRedirect($message, $status) {
     $_SESSION['message'] = $message;
     $_SESSION['success'] = $status;
 }
-function insertUser($conn, $username, $passwordHashed, $firstname, $middlename, $lastname, $sex, $cstatus, $street, $dbirth, $email) {
+function insertUser($conn, $username, $passwordHashed, $firstname, $middlename, $lastname, $sex, $cstatus, $street, $dbirth, $email, $houseNo, $subdivision) {
 $query = $conn->prepare("SELECT * FROM tbl_users WHERE username = ?");
 $query->bind_param("s", $username);
 $query->execute();
@@ -40,8 +40,9 @@ if ($result->num_rows > 0) {
 }
 
 $role = "user";
-$insert = $conn->prepare("INSERT INTO tbl_users (username, password, role, firstname, middlename, lastname, gender, civil_status, street, date_of_birth, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$insert->bind_param("sssssssssss", $username, $passwordHashed, $role, $firstname, $middlename, $lastname, $sex, $cstatus, $street, $dbirth, $email);
+$insert = $conn->prepare("INSERT INTO tbl_users (username, password, role, firstname, middlename, lastname, gender, civil_status, street, house_no, subdivision, date_of_birth, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$insert->bind_param("sssssssssssss", $username, $passwordHashed, $role, $firstname, $middlename, $lastname, $sex, $cstatus, $street, $houseNo, $subdivision, $dbirth, $email);
+
 
 if ($insert->execute()) {
     setMessageAndRedirect('User added!', 'success');

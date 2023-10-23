@@ -30,6 +30,8 @@ if ($result->num_rows) {
             $_SESSION['middlename'] = $user['middlename'];
             $_SESSION['lastname'] = $user['lastname'];
             $_SESSION['street'] = $user['street'];
+            $_SESSION['house_no'] = $user['house_no'];
+            $_SESSION['subdivision'] = $user['subdivision'];
 
             setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../main.php');
         } else {
