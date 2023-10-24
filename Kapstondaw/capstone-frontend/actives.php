@@ -74,17 +74,26 @@ if(isset($_SESSION['message']))
 
 
 <div class="active-service" id="active-service">
-    <form class="active-form">
-        <p class="active-service-close">x</p>
+    <form class="active-form" action="./model/request_brgyClearance.php" method="post">
+        <p class=" active-service-close">x</p>
         <h2>Barangay Clearance</h2>
-        <div class="container">
+        <!-- <div class="container">
             <label for="name">Name</label>
             <input required type="text" name="name" id="name" placeholder="Enter your name" />
         </div>
         <div class="container">
             <label for="purpose">Purpose</label>
             <textarea required name="purpose" id="purpose" placeholder="Enter your purpose"></textarea>
-        </div>
+        </div> -->
+
+        <input type="text" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
+        <input type="text" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
+        <input type="text" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
+        <input type="text" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
+        <input type="text" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
+        <input type="text" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
+        <input type="text" name="applicant_pob" value="<?php echo $_SESSION['place_of_birth'] ?>" id="">
+        <input type="text" name="applicant_dob" value="<?php echo $_SESSION['date_of_birth'] ?>" id="">
         <button type="submit" class="active-service-request">Request</button>
     </form>
 </div>

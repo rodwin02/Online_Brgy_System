@@ -55,6 +55,7 @@ while($row = $result->fetch_assoc()) {
                         <th>Fullname</th>
                         <th>Address</th>
                         <th>Date of Birth</th>
+                        <th>Date of Birth</th>
                         <th>Place of Birth</th>
                         <th>Purpose</th>
                         <th>Date of Issue</th>
@@ -65,8 +66,10 @@ while($row = $result->fetch_assoc()) {
                     <?php if(!empty($brgyClearance)) { ?>
                     <?php $no=1; foreach($brgyClearance as $row): ?>
                     <tr>
-                        <td><?= $row['firstname'] ?> <?= $row['middlename'] ?> <?= $row['lastname'] ?></td>
-                        <td><?= $row['address'] ?></td>
+                        <td><?= $row['applicant_fname'] ?> <?= $row['applicant_mname'] ?> <?= $row['applicant_lname'] ?>
+                        </td>
+                        <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision'] ?></td>
+                        <td><?= $row['date-of-birth'] ?></td>
                         <td><?= $row['date-of-birth'] ?></td>
                         <td><?= $row['place-of-birth'] ?></td>
                         <td><?= $row['purpose'] ?></td>
@@ -122,7 +125,7 @@ while($row = $result->fetch_assoc()) {
         </form>
     </div>
 
-   
+
 
 
 
@@ -142,9 +145,6 @@ while($row = $result->fetch_assoc()) {
     closeForm.addEventListener('click', function() {
         modaladdBrgyClearance.style.display = 'none';
     });
-
-
- 
     </script>
 </body>
 
