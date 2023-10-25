@@ -18,17 +18,18 @@
     $applicant_houseNo      = $conn->real_escape_string($_POST['applicant_houseNo']);
     $applicant_street      = $conn->real_escape_string($_POST['applicant_street']);
     $applicant_subdivision      = $conn->real_escape_string($_POST['applicant_subdivision']);
-    $purpose      = $conn->real_escape_string($_POST['purpose']);
     $documentFor  = $conn->real_escape_string($_POST['documentFor']);
-
+    // $contactNo      = $conn->real_escape_string($_POST['contactNo']);
+    // $purpose      = $conn->real_escape_string($_POST['purpose']);
+    
     if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($address)&& !empty($purpose)){
 
-        $insert  = "INSERT INTO tbl_ecertificate (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `documentFor`) 
-                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$applicant_houseNo', '$applicant_street', '$applicant_subdivision',  '$documentFor')";
+        $insert  = "INSERT INTO tbl_certofindigency (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `documentFor`) 
+                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$applicant_houseNo', '$applicant_street', '$applicant_subdivision', '$documentFor')";
         $result  = $conn->query($insert);
 
         if($result === true){
-            $_SESSION['message'] = 'Endorsement certificate requested successfully!';
+            $_SESSION['message'] = 'Certificate of Indigency requested successfully!';
             $_SESSION['success'] = 'success';
 
         }else{

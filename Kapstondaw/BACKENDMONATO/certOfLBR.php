@@ -78,7 +78,7 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['father_fname']. ' ' .$row['father_mname']. ' ' .$row['father_lname']  ?></td>
                         <td><?= $row['mother_fname']. ' ' .$row['mother_mname']. ' ' .$row['mother_lname'] ?></td>
                         <td><?= $row['date-of-birth'] ?></td>
-                        <td><?= $row['address'] ?></td>
+                        <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision'] ?></td>
                         <td><?= $row['date-requested'] ?></td>
                         <td><?= $row['documentFor'] ?></td>
                         <td>
@@ -244,7 +244,7 @@ while($row = $result->fetch_assoc()) {
         </form>
     </div>
 
-    
+
 
 
     <script src="./js/jQuery-3.7.0.js"></script>
@@ -288,8 +288,6 @@ while($row = $result->fetch_assoc()) {
     closeForm2.addEventListener('click', function() {
         modaladdlbr2.style.display = 'none';
     });
-
-  
     </script>
 </body>
 

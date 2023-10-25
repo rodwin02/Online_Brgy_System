@@ -53,7 +53,8 @@ while($row = $result->fetch_assoc()) {
             <table id="table">
                 <thead>
                     <tr>
-                        <th>Fullname</th>
+                        <th>Applicant</th>
+                        <th>Requestor</th>
                         <th>Address</th>
                         <th>Place of Birth</th>
                         <th>Birth Date</th>
@@ -69,12 +70,15 @@ while($row = $result->fetch_assoc()) {
                     <?php if(!empty($idForm)) { ?>
                     <?php $no=1; foreach($idForm as $row): ?>
                     <tr>
-                        <td><?= $row['firstname'] ?> <?= $row['middlename']?> <?= $row['lastname']?></td>
-                        <td><?= $row['address']?></td>
+                        <td><?= $row['applicant_fname'] ?> <?= $row['applicant_mname']?> <?= $row['applicant_lname']?>
+                        </td>
+                        <td><?= $row['requestor_fname'] ?> <?= $row['requestor_mname']?> <?= $row['requestor_lname']?>
+                        </td>
+                        <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision']?></td>
                         <td><?= $row['place-of-birth']?></td>
                         <td><?= $row['birth-date']?></td>
                         <td><?= $row['civil-status']?></td>
-                        <td><?= $row['contact-number']?></td>
+                        <td><?= $row['contact_number']?></td>
                         <td><?= $row['documentFor'] ?></td>
                         <td><?= $row['purpose'] ?></td>
                         <td><?= $row['date-requested'] ?></td>
@@ -160,8 +164,6 @@ while($row = $result->fetch_assoc()) {
     closeIdForm.addEventListener('click', function() {
         modaladd.style.display = 'none';
     });
-
-    
     </script>
 </body>
 

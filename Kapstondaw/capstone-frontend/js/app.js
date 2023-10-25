@@ -56,6 +56,7 @@ const requestorName = document.querySelectorAll(".requestorName");
 serviceBtn.forEach((btn, i) => {
   btn.addEventListener("click", () => {
     serviceEl[i].style.display = "block";
+    console.log("Service", i);
 
     closeService[i].addEventListener("click", () => {
       serviceEl[i].style.display = "none";
@@ -64,6 +65,8 @@ serviceBtn.forEach((btn, i) => {
     forEl.forEach((forService, i) => {
       forService.addEventListener("change", (e) => {
         if (e.target.value === "Someone") {
+          console.log("Service for someone", e.target.value);
+
           requestorEl[i].style.display = "flex";
           requestorName[i].setAttribute("required", "");
         } else {

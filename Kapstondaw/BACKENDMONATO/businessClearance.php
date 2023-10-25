@@ -64,13 +64,13 @@ $businessClearance[] = $row;
                     <?php if(!empty($businessClearance)) { ?>
                     <?php $no=1; foreach($businessClearance as $row): ?>
                     <tr>
-                        <td><?= $row['business-name'] ?></td>
-                        <td><?= $row['business-owner-fname']. ' ' .$row['business-owner-mname']. ' ' .$row['business-owner-lname'] ?>
+                        <td><?= $row['business_name'] ?></td>
+                        <td><?= $row['business_owner_fname']. ' ' .$row['business_owner_mname']. ' ' .$row['business_owner_lname'] ?>
                         </td>
-                        <td><?= $row['business-address'] ?></td>
-                        <td><?= $row['date-applied'] ?></td>
+                        <td><?= $row['business_address'] ?></td>
+                        <td><?= $row['date_applied'] ?></td>
                         <td><?= $row['documentFor'] ?></td>
-                        <td> 
+                        <td>
                             <?php if($row['documentFor'] === 'clearance') { ?>
                             <a href="./generate/businessClearance_generate_forself.php?id=<?= $row['id'] ?>"
                                 class="print">Print</a>
@@ -163,7 +163,7 @@ $businessClearance[] = $row;
     <script src="./js//jQuery-3.7.0.js"></script>
     <script src="./js//app.js"></script>
 
-  
+
 </body>
 
 </html>
@@ -194,7 +194,4 @@ addClosureLink.addEventListener('click', function(event) {
 closeClosure.addEventListener('click', function() {
     modaladdClosure.style.display = 'none';
 });
-
-
-
 </script>
