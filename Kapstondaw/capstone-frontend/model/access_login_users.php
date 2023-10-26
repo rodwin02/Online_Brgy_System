@@ -34,6 +34,7 @@ if ($result->num_rows) {
             $_SESSION['subdivision'] = $user['subdivision'];
             $_SESSION['date_of_birth'] = $user['date_of_birth'];
             $_SESSION['place_of_birth'] = $user['place_of_birth'];
+            $_SESSION['civil'] = $user['civil_status'];
 
             setMessageAndRedirect('You have successfully logged in to Automated Brgy Management System!', 'success', '../main.php');
         } else {

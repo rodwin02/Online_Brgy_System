@@ -18,14 +18,17 @@
     $applicant_houseNo      = $conn->real_escape_string($_POST['applicant_houseNo']);
     $applicant_street      = $conn->real_escape_string($_POST['applicant_street']);
     $applicant_subdivision      = $conn->real_escape_string($_POST['applicant_subdivision']);
+    $applicant_dob      = $conn->real_escape_string($_POST['applicant_dob']);
+    $applicant_pob      = $conn->real_escape_string($_POST['applicant_pob']);
+    $applicant_civilStatus      = $conn->real_escape_string($_POST['applicant_civilStatus']);
     $contactNo      = $conn->real_escape_string($_POST['contactNo']);
     $documentFor  = $conn->real_escape_string($_POST['documentFor']);
-    // $purpose      = $conn->real_escape_string($_POST['purpose']);
+    $purpose      = $conn->real_escape_string($_POST['purpose']);
     
     if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($address)&& !empty($purpose)){
 
-        $insert  = "INSERT INTO tbl_idform (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `contact_number`, `documentFor`) 
-                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$applicant_houseNo', '$applicant_street', '$applicant_subdivision',  '$contactNo', '$documentFor')";
+        $insert  = "INSERT INTO tbl_idform (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `place_of_birth`, `birth_date`, `civil_status`, `contact_number`, `documentFor`) 
+                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$applicant_houseNo', '$applicant_street', '$applicant_subdivision', '$applicant_pob', '$applicant_dob', '$applicant_civilStatus','$contactNo', '$documentFor')";
         $result  = $conn->query($insert);
 
         if($result === true){
@@ -33,7 +36,7 @@
             $_SESSION['success'] = 'success';
 
         }else{
-            $_SESSION['message'] = 'Something went wrong!';
+            $_SESSION['message'] = 'Something went wrong daw!';
             $_SESSION['success'] = 'danger';
         }
 

@@ -11,6 +11,8 @@ closeMenuEl.addEventListener("click", () => {
   activeMenuEl.classList.remove("show");
 });
 
+const serviceNoAcc = document.querySelectorAll(".service-noAcc");
+
 const loginEl = document.querySelectorAll(".login");
 const activeLogin = document.querySelector(".active-login");
 const closeLoginEl = document.querySelector(".active-login-close");
@@ -18,6 +20,16 @@ const closeLoginEl = document.querySelector(".active-login-close");
 loginEl.forEach((login) => {
   login.addEventListener("click", () => {
     console.log("log");
+    activeLogin.style.display = "block";
+
+    closeLoginEl.addEventListener("click", () => {
+      activeLogin.style.display = "none";
+    });
+  });
+});
+serviceNoAcc.forEach((noAcc) => {
+  noAcc.addEventListener("click", () => {
+    console.log("no account");
     activeLogin.style.display = "block";
 
     closeLoginEl.addEventListener("click", () => {

@@ -75,9 +75,9 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['requestor_fname'] ?> <?= $row['requestor_mname']?> <?= $row['requestor_lname']?>
                         </td>
                         <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision']?></td>
-                        <td><?= $row['place-of-birth']?></td>
-                        <td><?= $row['birth-date']?></td>
-                        <td><?= $row['civil-status']?></td>
+                        <td><?= $row['place_of_birth']?></td>
+                        <td><?= $row['birth_date']?></td>
+                        <td><?= $row['civil_status']?></td>
                         <td><?= $row['contact_number']?></td>
                         <td><?= $row['documentFor'] ?></td>
                         <td><?= $row['purpose'] ?></td>
