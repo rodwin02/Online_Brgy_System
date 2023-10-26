@@ -1,4 +1,5 @@
-  <!-- HEADER -->
+<link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
+ <!-- HEADER -->
   <div class="container">
       <div class="layer1"><?= $brgy_name. " " .$town_name." " .$province_name?>
       </div>
@@ -26,6 +27,7 @@
           <a class="bo" href="barangayOfficials.php">Barangay Officials</a>
           <a class="ri" href="#">Residents Information</a>
           <a href="residentInfo.php" class="residentInfo">Residents Records</a>
+          <a href="household.php" class="household">Household Records</a>
           <a href="business.php" class="businessInfo">Business Records</a>
           <a class="cc" href="#">Certificate/Clearance</a>
           <a href="idForm.php" class="idform">Identification Form</a>
@@ -35,7 +37,7 @@
           <a href="certOfLBR.php" class="c-latebirth">Certificate Of LBR</a>
           <a href="businessClearance.php" class="bb-clearance">Business Clearance</a>
           <a class="rs" href="#">Reports</a>
-          <!-- <a href="blotter.php" class="blotter1">Blotter records</a> -->
+          <a href="blotter.php" class="blotter1">Blotter records</a>
           <a href="complain.php" class="complain1">Complain records</a>
           <a href="awareness.php" class="awareness1">Awereness</a>
           <a class="um" href="#">User Management</a>
