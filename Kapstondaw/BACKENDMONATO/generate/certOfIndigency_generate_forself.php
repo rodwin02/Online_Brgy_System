@@ -365,8 +365,9 @@
                             border: none;
                             border-bottom: 1px solid black;
                             width: 200px;">. is a Filipino Citizen and bonafide resident of
-                            <input type="text" value="<?php echo $certofindigency['address'] ?>" id="address"
-                                placeholder="ADDRESS" style="color: #000;
+                            <input type="text"
+                                value="<?php echo $certofindigency['house_no']. " ". $certofindigency['street']. " ". $certofindigency['subdivision'] ?>"
+                                id="address" placeholder="ADDRESS" style="color: #000;
                             font-family: Caladea;
                             font-size: 19px;
                             font-style: normal;

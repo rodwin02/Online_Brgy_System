@@ -317,8 +317,9 @@ echo $date->format('F d, Y');
                         border-bottom: 1px solid black;
                         width: 203px;">
                         are personally known to me and residing of
-                        <input type="text" value="<?php echo $certOfLBR['address']?>" id="address" placeholder="ADDRESS"
-                            style="color: #000;
+                        <input type="text"
+                            value="<?php echo $certOfLBR['house_no']. " ". $certOfLBR['street']. " ". $certOfLBR['subdivision']?>"
+                            id="address" placeholder="ADDRESS" style="color: #000;
                         font-family: Caladea;
                         font-size: 16px;
                         font-style: normal;

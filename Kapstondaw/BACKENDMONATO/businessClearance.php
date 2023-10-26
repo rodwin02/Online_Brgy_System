@@ -71,13 +71,15 @@ $businessClearance[] = $row;
                         <td><?= $row['date_applied'] ?></td>
                         <td><?= $row['documentFor'] ?></td>
                         <td>
-                            <?php if($row['documentFor'] === 'clearance') { ?>
+                            <a href="./generate/businessClearance_generate.php?id=<?= $row['id'] ?>"
+                                class="print">Print</a>
+                            <!-- <?php if($row['documentFor'] === 'clearance') { ?>
                             <a href="./generate/businessClearance_generate_forself.php?id=<?= $row['id'] ?>"
                                 class="print">Print</a>
                             <?php } else {?>
                             <a href="./generate/businessClosure_generate_forsingleparent.php?id=<?= $row['id'] ?>"
                                 class="print">Print</a>
-                            <?php } ?>
+                            <?php } ?> -->
                             <a href="#" class="edit">Edit</a>
                             <a href="./model/remove/remove_businessClearance.php?id=<?= $row['id'] ?>"
                                 class="delete">Delete</a>

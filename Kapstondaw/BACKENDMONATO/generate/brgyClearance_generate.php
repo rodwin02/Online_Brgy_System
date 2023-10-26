@@ -4,6 +4,7 @@
     $query = "SELECT * FROM tbl_brgyclearance WHERE `id`='$id'";
     $result = $conn->query($query);
     $brgyclearance = $result->fetch_assoc();
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -350,8 +351,9 @@
                             line-height: normal;
                             margin-bottom: 15px;
                             align-items: center;">NAME:
-                                <input type="text" value="<?php echo $brgyclearance['firstname']?>" id="name"
-                                    required="required" style=" width: 300px;
+                                <input type="text"
+                                    value="<?php echo $brgyclearance['applicant_fname']. " ". $brgyclearance['applicant_mname']. " ". $brgyclearance['applicant_lname']?>"
+                                    id="name" required="required" style=" width: 300px;
                                 margin-left: 110px;
                                 border: none;
                                 border-bottom: 1px solid black;
@@ -375,8 +377,9 @@
                             line-height: normal;
                             margin-bottom: 15px;
                             align-items: center;">ADDRESS:
-                                <input type="text" value="<?php echo $brgyclearance['address']?>" id="address"
-                                    required="required" style="width: 300px;
+                                <input type="text"
+                                    value="<?php echo $brgyclearance['house_no']. " ". $brgyclearance['street']. " ". $brgyclearance['subdivision']?>"
+                                    id="address" required="required" style="width: 300px;
                                 margin-left: 90px;
                                 border: none;
                                 border-bottom: 1px solid black;

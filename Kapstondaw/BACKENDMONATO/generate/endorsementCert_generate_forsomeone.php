@@ -207,7 +207,8 @@
             border: none;
             border-bottom: 1px solid black;
             width: 200px;">.He / She is a <br></span>
-                        bonafide residents of <input type="text" value="<?php echo $ecertificate['address'] ?>"
+                        bonafide residents of <input type="text"
+                            value="<?php echo $ecertificate['house_no']. " ". $ecertificate['street']. " ". $ecertificate['subdivision'] ?>"
                             id="address" placeholder="ADDRESS" required style=" color: #000;
             font-family: Caladea;
             font-size: 20px;

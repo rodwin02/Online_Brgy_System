@@ -118,7 +118,7 @@
                         border-bottom: 1px solid #000;
                         padding-left: 5px;">
                                         <h4>FULLNAME: (FIRST, MIDDLE, & LAST NAME)</h4>
-                                        <h2><?php echo  $idForm['firstname']. " " .$idForm['middlename']. " " .$idForm['lastname']?>
+                                        <h2><?php echo  $idForm['applicant_fname']. " " .$idForm['applicant_mname']. " " .$idForm['applicant_lname']?>
                                         </h2>
                                     </div>
                                     <div class="address" style="width: 100%;
@@ -126,7 +126,8 @@
                         border-bottom: 1px solid #000;
                         padding-left: 5px;">
                                         <h5>ADDRESS:</h5>
-                                        <h2><?php echo $idForm['address']?></h2>
+                                        <h2><?php echo $idForm['house_no']. " ". $idForm['street']. " ". $idForm['subdivision']?>
+                                        </h2>
                                     </div>
                                     <div class="placeStatus-cont" style="display: flex;
                         flex-direction: row;">
@@ -161,7 +162,7 @@
                         height: 86px;
                         padding-left: 5px;">
                                         <h5>CONTACT NUMBER:</h5>
-                                        <h2><?php echo $idForm['contact-number']?></h2>
+                                        <h2><?php echo $idForm['contact_number']?></h2>
                                     </div>
                                 </div>
                             </div>
@@ -283,7 +284,7 @@
                         border-bottom: 1px solid #000;
                         padding-left: 5px;">
                                         <h4>FULLNAME: (FIRST, MIDDLE, & LAST NAME)</h4>
-                                        <h2><?php echo  $idForm['firstname']. " " .$idForm['middlename']. " " .$idForm['lastname']?>
+                                        <h2><?php echo  $idForm['applicant_fname']. " " .$idForm['applicant_mname']. " " .$idForm['applicant_lname']?>
                                         </h2>
                                     </div>
                                     <div class="address" style="width: 100%;
@@ -291,7 +292,8 @@
                         border-bottom: 1px solid #000;
                         padding-left: 5px;">
                                         <h5>ADDRESS:</h5>
-                                        <h2><?php echo $idForm['address']?></h2>
+                                        <h2><?php echo $idForm['house_no']. " ". $idForm['street']. " ". $idForm['subdivision']?>
+                                        </h2>
                                     </div>
                                     <div class="placeStatus-cont" style="display: flex;
                         flex-direction: row;">
@@ -326,7 +328,7 @@
                         height: 86px;
                         padding-left: 5px;">
                                         <h5>CONTACT NUMBER:</h5>
-                                        <h2><?php echo $idForm['contact-number']?></h2>
+                                        <h2><?php echo $idForm['contact_number']?></h2>
                                     </div>
                                 </div>
                             </div>
