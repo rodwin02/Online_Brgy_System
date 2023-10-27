@@ -22,7 +22,7 @@
 
     <div class="home_residents">
         <div class="first_layer">
-            <p>House Hold</p>
+            <p>Household Records</p>
             <a href="#">Logout</a>
         </div>
         <div class="second_layer">
@@ -32,10 +32,7 @@
                 <a href="#">Sort & Filter </a>
             </div>
             <div class="add-cont">
-                <a href="addResidents.php" class="add">+ Resident</a>
-                <a href="./model/export_residents_csv.php" class="exportCVS">+ Export CVS</a>
-                <button class="importBtn">+ Import</button>
-                <Archive href="#" class="archiveResidents">Archive</a>
+              
             </div>
         </div>
 
@@ -134,12 +131,70 @@
 
                     <?php $no++; endforeach ?>
                     <?php } ?>
-                </tbody>
-                <!-- Add more rows here -->
             </table>
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
     </div>
 
 </body>
 
 </html>
+
+<script>
+    // JavaScript code to handle pagination
+    const table = document.getElementById('table');
+    const rows = table.querySelectorAll('tbody tr');
+    const totalRows = rows.length;
+    const rowsPerPage = 10;
+    let currentPage = 1;
+
+    function showRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+
+        rows.forEach((row, index) => {
+            if (index >= start && index < end) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function updatePaginationButtons() {
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const pageNumbers = document.getElementById('pageNumbers');
+
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+        pageNumbers.textContent = currentPage;
+    }
+
+    // Initial setup
+    showRows(currentPage);
+    updatePaginationButtons();
+
+    // Previous button click event
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            showRows(currentPage);
+            updatePaginationButtons();
+        }
+    });
+
+    // Next button click event
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+            currentPage++;
+            showRows(currentPage);
+            updatePaginationButtons();
+        }
+    });
+</script>

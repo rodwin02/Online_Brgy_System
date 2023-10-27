@@ -224,12 +224,52 @@ Z/* START CONTENT MANAGEMENT CSS*/
   align-self: center;
   width: 98%;
 }
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.pagination #prevBtn, #nextBtn {
+  width: auto;
+  padding: 10px 15px;
+  height: 30.836px;
+  color: #007236;
+  border: none;
+  border-radius: 5px;
+  background: #FFF;
+  border: solid 1px #007236;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  margin: 0 10px;
+}
+
+.pagination #prevBtn:hover, #nextBtn:hover {
+  background-color: #007236;
+  color: white;
+}
 table {
   width: 100%;
   border-collapse: collapse;
 
-  margin-top: 25px;
+  margin: 20px 0;
   border-radius: 10px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
@@ -1051,4 +1091,404 @@ td {
 .table-wrapper {
   overflow-x: auto;
   max-width: 100%; /* Ensure the table wrapper expands to the width of its content */
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  
+  width: 85%;
+  height: auto;
+  border-radius: 0px 0px 10px 10px;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: auto;
+} 
+
+.input-form .headerInfo {
+  border-radius: 10px 10px 0px 0px;
+  background: #007236;
+  box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.input-form .headerInfo p {
+  color: #FFF;
+
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  padding: 10px 15px;
+}
+
+.input-form .bodyInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.input-form .bodyInfo .leftInfo {
+  display: flex;
+  width: 50%;
+  padding: 20px 20px;
+  flex-wrap: wrap;
+}
+.input-form .bodyInfo .leftInfo .inputFullname {
+  margin-bottom: 10px;
+}
+.input-form .bodyInfo .leftInfo .inputFullname p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.input-form .bodyInfo .leftInfo .inputFullname p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.input-form .bodyInfo .leftInfo .inputFullname input {
+  width: 25%;
+  fill: #FFF;
+  height: 30px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.50);
+}
+.input-form .bodyInfo .leftInfo .inputFullname .suffix {
+  width: 10%;
+}
+.input-form .bodyInfo .leftInfo .inputDob {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.input-form .bodyInfo .leftInfo .inputDob p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.input-form .bodyInfo .leftInfo .inputDob p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.input-form .bodyInfo .leftInfo .inputDob input {
+  width: 100%;
+  fill: #FFF;
+  height: 30px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.50);
+  padding-right: 5px;
+}
+
+.input-form .bodyInfo .leftInfo .inputPob {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.input-form .bodyInfo .leftInfo .inputPob p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.input-form .bodyInfo .leftInfo .inputPob p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.input-form .bodyInfo .leftInfo .inputPob input {
+  width: 100%;
+  fill: #FFF;
+  height: 30px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.50);
+  padding-right: 5px;
+}
+
+.input-form .bodyInfo .leftInfo .inputCitizenship {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.input-form .bodyInfo .leftInfo .inputCitizenship p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.input-form .bodyInfo .leftInfo .inputCitizenship p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.input-form .bodyInfo .leftInfo .inputCitizenship input {
+  width: 100%;
+  fill: #FFF;
+  height: 30px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.50);
+  padding-right: 5px;
+}
+
+.input-form .bodyInfo .leftInfo .inputPhoneNo {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.input-form .bodyInfo .leftInfo .inputPhoneNo p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.input-form .bodyInfo .leftInfo .inputPhoneNo p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.input-form .bodyInfo .leftInfo .inputPhoneNo input {
+  width: 100%;
+  fill: #FFF;
+  height: 30px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.50);
+  padding-right: 5px;
+}
+
+.input-form .bodyInfo .leftInfo .inputEmail {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.input-form .bodyInfo .leftInfo .inputEmail p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.input-form .bodyInfo .leftInfo .inputEmail p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.input-form .bodyInfo .leftInfo .inputEmail input {
+  width: 100%;
+  fill: #FFF;
+  height: 30px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.50);
+  padding-right: 5px;
+}
+
+.input-form .bodyInfo .rightInfo {
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+  padding: 20px 20px;
+}
+
+.input-form .bodyInfo .rightInfo .inputAddress {
+  margin-bottom: 10px;
+}
+.input-form .bodyInfo .rightInfo .inputAddress p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.input-form .bodyInfo .rightInfo .inputAddress p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.input-form .bodyInfo .rightInfo .inputAddress input {
+  width: 35%;
+  fill: #FFF;
+  height: 30px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.50);
+}
+.input-form .bodyInfo .rightInfo .inputAddress .houseNo {
+  width: 17%;
+}
+
+.input-form .bodyInfo .rightInfo .inputOccupation {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.input-form .bodyInfo .rightInfo .inputOccupation p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.input-form .bodyInfo .rightInfo .inputOccupation p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.input-form .bodyInfo .rightInfo .inputOccupation input {
+  width: 100%;
+  fill: #FFF;
+  height: 30px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.50);
+}
+
+
+.input-form .bodyInfo .rightInfo .inputSex {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.input-form .bodyInfo .rightInfo .inputSex p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.input-form .bodyInfo .rightInfo .inputSex p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.input-form .bodyInfo .rightInfo .inputSex input {
+  width: 100%;
+  fill: #FFF;
+  height: 30px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.50);
+}
+
+
+.input-form .bodyInfo .rightInfo .inputCivilStatus {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+.input-form .bodyInfo .rightInfo .inputCivilStatus p {
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.input-form .bodyInfo .rightInfo .inputCivilStatus p span {
+  color: #E94949;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.input-form .bodyInfo .rightInfo .inputCivilStatus input {
+  width: 100%;
+  fill: #FFF;
+  height: 30px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.50);
+}
+
+.input-form .footerInfo {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input-form .footerInfo .addSaTable {
+  width: auto;
+  padding: 5px 25px;
+  height: 30.836px;
+  color: #007236;
+  border: none;
+  border-radius: 5px;
+  background: #FFF;
+  border: solid 1px #007236;
+  cursor: pointer;
+
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+
+.input-form .footerInfo .addSaTable:hover {
+  background-color: #007236;
+  color: wheat;
+}
+
+
+.input-table {
+  width: 85%;
+  margin: auto;
+
+}
+
+.List {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 115px;
+  color: #007236;
+  padding: 10px 0px;
+
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

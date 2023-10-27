@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   var riLink = document.querySelector('.ri');
   var residentInfoLink = document.querySelector('.residentInfo');
+  var householdLink = document.querySelector('.household');
   var businessInfoLink = document.querySelector('.businessInfo');
   var ccLink = document.querySelector('.cc');
   var idFormLink = document.querySelector('.idform');
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cLateBirthLink = document.querySelector('.c-latebirth');
   var bbClearanceLink = document.querySelector('.bb-clearance');
   var rsLink = document.querySelector('.rs');
-  // var blotterLink = document.querySelector('.blotter1');
+  var blotterLink = document.querySelector('.blotter1');
   var complainLink = document.querySelector('.complain1');
   var awarenessLink = document.querySelector('.awareness1');
   var umLink = document.querySelector('.um');
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function hideSections(exceptSection) {
     var sections = [
       residentInfoLink,
+      householdLink,
       businessInfoLink,
       idFormLink,
       bClearanceLink,
@@ -35,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
       cIndigencyLink,
       cLateBirthLink,
       bbClearanceLink,
-      // blotterLink,
+      blotterLink,
       complainLink,
       awarenessLink,
       usersLink,
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     event.preventDefault();
     hideSections(residentInfoLink);
     residentInfoLink.style.display = 'block';
+    householdLink.style.display = 'block';
     businessInfoLink.style.display = 'block';
     
   });
@@ -74,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
   rsLink.addEventListener('click', function(event) {
     event.preventDefault();
     hideSections(complainLink);
-    // blotterLink.style.display = 'block';
+    blotterLink.style.display = 'block';
     complainLink.style.display = 'block';
     awarenessLink.style.display = 'block';
   });

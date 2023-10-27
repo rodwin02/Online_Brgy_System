@@ -207,6 +207,11 @@ body {
   margin-top: -1px;
   display: none;
 }
+.slayer2 .household {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
 .slayer2 .businessInfo {
   margin-left: 15px;
   margin-top: -1px;
@@ -296,3 +301,4 @@ body {
   margin-bottom: -20px;
   display: none;
 }
+

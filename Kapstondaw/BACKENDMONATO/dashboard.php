@@ -95,7 +95,7 @@ function calculateAge($dob) {
     <title>Dashboard</title>
     <link rel="stylesheet" href="style1.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
+    
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
 
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
@@ -358,9 +358,9 @@ function calculateAge($dob) {
                     <div class="ofw">
                         <div class="a1">
                             <div class="b1">
-                                <div class="c1">Unemployed</div>
+                                <div class="c1">OFW</div>
                                 <div class="c2-ofw">0</div>
-                                <div class="c3">Total Unemployed</div>
+                                <div class="c3">Total OFW</div>
                             </div>
                             <div class="b2">
                                 <div class="c4-ofw">
