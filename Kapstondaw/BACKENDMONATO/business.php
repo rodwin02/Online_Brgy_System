@@ -69,9 +69,9 @@
             </div>
             <div class="add-cont">
                 <a href="addBusiness.php" class="add">+ Business</a>
-                <a href="./model/export_residents_csv.php" class="exportCVS">+ Export CVS</a>
+                <a href="#" class="exportCVS">+ Export CVS</a>
                 <button class="importBtn">+ Import</button>
-                <Archive href="#" class="archiveResidents">Archive</a>
+                <a href="archives/ArchiveBusiness.php" class="archiveResidents">Archive</a>
             </div>
         </div>
 
@@ -86,14 +86,14 @@
                         <th>BUSINESS NAME</th>
                         <th>BUSINESS ADDRESS</th>
                         <th>BUSINESS TYPE</th>
+                        <th>ACTION</th>
                     </tr>
                 </thead>
                 <tbody>
-
-                
-
+                    <tr>
+                        <td></td>
+                    </tr>
                 </tbody>
-                <!-- Add more rows here -->
             </table>
         </div>
     </div>

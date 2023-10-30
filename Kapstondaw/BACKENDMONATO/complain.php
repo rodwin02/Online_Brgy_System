@@ -42,6 +42,7 @@ while($row = $result->fetch_assoc()) {
             </div>
             <div class="add-cont">
                 <a href="#" class="addComplain" id="addComplain">+ Complain</a>
+                <a href="archives/ArchiveComplain.php" class="archiveResidents">Archive</a>
             </div>
         </div>
 

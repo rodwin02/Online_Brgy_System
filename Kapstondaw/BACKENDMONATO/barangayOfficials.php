@@ -50,7 +50,7 @@
                 </div>
                 <div class="modal-cont">
                     <a href="#" id="showModal">+ Officials</a>
-                    <a href="ArchiveOfficial.php" id="archive">Archive</a>
+                    <a href="archives/ArchiveOfficial.php" id="archive">Archive</a>
                 </div>
             </div>
 

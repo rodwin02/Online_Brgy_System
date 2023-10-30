@@ -41,6 +41,7 @@ while($row = $result->fetch_assoc()) {
             </div>
             <div class="add-cont">
                 <a href="#" class="addAwareness" id="addAwareness">+ Awareness</a>
+                <a href="archives/ArchiveAwareness.php" class="archiveResidents">Archive</a>
             </div>
         </div>
 
@@ -88,14 +89,7 @@ while($row = $result->fetch_assoc()) {
                     <?php $no++; endforeach ?>
                     <?php } ?>
                 </tbody>
-                <!-- Add more rows here -->
             </table>
-
-            <!-- <div class="pagination">
-        <button class="previous" onclick="showPreviousTable()">&lt; Previous</button>
-        <span id="pageNumber">1</span>
-        <button class="next" onclick="showNextTable()">Next &gt;</button>
-      </div> -->
         </div>
     </div>
 

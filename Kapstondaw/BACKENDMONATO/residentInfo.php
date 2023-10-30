@@ -93,13 +93,11 @@ function calculateAge($dob) {
 </head>
 
 <body>
-
     <?php include './model/fetch_brgy_role.php' ?>
     <?php include './actives/import_residents.php' ?>
     <?php include './actives/active_restore.php' ?>
     <?php include './actives/active_account.php' ?>
-    <?php include './sidebar.php' ?>
-
+    <?php include "./sidebar.php" ?>
 
     <div class="home_residents">
         <div class="first_layer">
@@ -149,7 +147,7 @@ function calculateAge($dob) {
                 <a href="addResidents.php" class="add">+Household</a>
                 <a href="./model/export_households_csv.php" class="exportCVS">+Export CVS</a>
                 <button class="importBtn">+Import</button>
-                <a href="ArchiveResident.php" class="archiveResidents">Archive</a>
+                <a href="archives/ArchiveResident.php" class="archiveResidents">Archive</a>
             </div>
         </div>
 
@@ -247,152 +245,6 @@ function calculateAge($dob) {
                 <button id="nextBtn">Next</button>
             </div>
         </div>
-    </div>
-
-
-
-    <!-- START ADD RESIDENTS -->
-    <div class=" modal-AddResidents">
-        <form class="form1" action="./model/add_resident.php" method="POST">
-            <div class="title-cont">
-                <p>New Resident Registration Form</p>
-                <img src="icons/close 1.png" class="closeBtnAdd" alt="">
-            </div>
-            <div class="unang-layer">
-                <div class="input-wrapper">
-                    <label for="firstname">First Name:</label>
-                    <input type="text" id="firstname1" name="firstname" required>
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="middlename">Middle Name:</label>
-                    <input type="text" id="middlename1" name="middlename" required>
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="lastname">Last Name:</label>
-                    <input type="text" id="lastname1" name="lastname" required>
-                </div>
-
-                <!-- <div class="input-wrapper">
-                    <label for="age">Age:</label>
-                    <input type="number" id="age1" name="age" required>
-                </div> -->
-
-                <div class="input-wrapper">
-                    <label for="sex">Gender:</label>
-                    <select id="sex" name="sex" required>
-                        <option value="">Select Gender</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="pangalawang-layer">
-                <div class="input-wrapper1">
-                    <label for="address">Address:</label><br>
-                    <div class="address-cont">
-                        <!-- <label for="house-no">House No.:</label> -->
-                        <input type="text" id="house-no1" name="house-no" placeholder="House no." required><br>
-
-                        <!-- <label for="street">Street:</label> -->
-                        <input type="text" id="street1" name="street" placeholder="Street" required><br>
-
-                        <!-- <label for="subdivision">Subdivision:</label> -->
-                        <input type="text" id="subdivision1" name="subdivision" placeholder="Subdivision" required>
-                    </div>
-                </div>
-
-                <div class="input-wrapper1">
-                    <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob1" name="dob" required>
-                </div>
-
-                <div class="input-wrapper1">
-                    <label for="place-of-birth">Place of Birth:</label>
-                    <input type="text" id="place-of-birth1" name="place-of-birth" required>
-                </div>
-
-                <div class="input-wrapper1">
-                    <label for="civil-status">Civil Status:</label>
-                    <select id="civil-status1" name="civil-status" required>
-                        <option value="">Select Civil Status</option>
-                        <option value="Single">Single</option>
-                        <option value="Married">Married</option>
-                        <option value="Divorced">Divorced</option>
-                        <option value="Widowed">Widowed</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="pangatlong-layer">
-                <div class="input-wrapper">
-                    <label for="occupation">Occupation:</label>
-                    <input type="text" id="occupation1" name="occupation" required>
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email1" name="email" required>
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="contact-no">Contact No.:</label>
-                    <input type="tel" id="contact-no1" name="contact-no" required>
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="voter-status">Voter Status:</label>
-                    <select id="voter-status1" name="voter-status" required>
-                        <option value="">Select Voter Status</option>
-                        <option value="voter">Voter</option>
-                        <option value="non-voter">Non-voter</option>
-                    </select>
-                </div>
-
-
-            </div>
-
-            <div class="pangapat-layer">
-
-
-                <div class="input-wrapper">
-                    <label for="citizenship">Citizenship:</label>
-                    <input type="text" id="citizenship1" name="citizenship" required>
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="household-no">Household No.:</label>
-                    <input type="text" id="household-no1" name="household-no">
-                </div>
-
-                <div class="checkbox-cont">
-                    <div class="input-wrapper">
-                        <div class="check1">
-                            <input type="checkbox" id="out-of-school-youth1" value="OSY" name="out-of-school-youth">
-                            <label for="out-of-school-youth">Out of School Youth:</label>
-                        </div>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <div class="check2">
-                            <input type="checkbox" id="person-with-disability1" value="PWD"
-                                name="person-with-disability">
-                            <label for="person-with-disability">Person with
-                                Disability:</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end of div -->
-
-            <!-- End of parent div -->
-            <!-- END ADD RESIDENTS -->
-            <input class="submit" type="submit" value="Create">
-        </form>
-
     </div>
 
 
