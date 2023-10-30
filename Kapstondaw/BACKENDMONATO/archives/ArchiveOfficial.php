@@ -1,31 +1,33 @@
-<?php include "./server/server.php" ?>
+<?php include "../server/server.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archive Officials</title>
-    <link rel="stylesheet" href="style2.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-    <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <title>Archives Barangay Officials</title>
+    <link rel="stylesheet" href="../style2.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../style4.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="../style/generateCert.css?<?php echo time(); ?>">
+    <script src="sidebar2.js ?<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="../sidenav.css">
 </head>
-<body> 
-    <?php include './model/fetch_brgy_role.php' ?>
-    <?php include './actives/active_restore.php' ?>
-    <?php include './actives/active_account.php' ?>
-    <?php include './sidebar.php' ?>
 
+<body>
+    <?php include '../model/fetch_brgy_role.php' ?>
+    <?php include '../actives/active_restore.php' ?>
+    <?php include '../actives/active_account.php' ?>
+    <?php include 'sidebar2.php' ?>
+    
     <div class="home_officials">
         <div class="left_officials">
             <div class="first_layer">
-                  <p>Barangay Officials</p>
+                  <p>Archives Barangay Officialss</p>
                   <a href="#">Logout</a>
             </div>
 
-            <a href="barangayOfficials.php" class="backContainer">
-                <img src="icons/back.png" alt="">
+            <a href="../barangayOfficials.php" class="backContainer">
+                <img src="../icons/back.png" alt="">
                 <p>Go Back</p>
             </a>
 

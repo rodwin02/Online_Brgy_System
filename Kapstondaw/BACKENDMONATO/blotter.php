@@ -42,6 +42,7 @@ while($row = $result->fetch_assoc()) {
             </div>
             <div class="add-cont">
                 <a href="#" class="addBlotter" id="addBlotter">+ Blotter</a>
+                <a href="archives/ArchiveBlotter.php" class="archiveResidents">Archive</a>
             </div>
         </div>
 
@@ -90,12 +91,6 @@ while($row = $result->fetch_assoc()) {
                 </tbody>
                 <!-- Add more rows here -->
             </table>
-
-            <!-- <div class="pagination">
-        <button class="previous" onclick="showPreviousTable()">&lt; Previous</button>
-        <span id="pageNumber">1</span>
-        <button class="next" onclick="showNextTable()">Next &gt;</button>
-      </div> -->
         </div>
     </div>
 

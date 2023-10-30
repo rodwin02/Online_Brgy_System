@@ -45,6 +45,7 @@ while($row = $result->fetch_assoc()) {
                 <a href="#" class="add" id="addlbr_forself">+ Forself</a>
                 <a href="#" class="add" id="addlbr_forsingleparent">+ Single parent</a>
                 <a href="#" class="add" id="addlbr_fortheirchild">+ Their child</a>
+                <a href="archives/ArchiveCertOfLBR.php" class="archiveResidents">Archive</a>
             </div>
         </div>
 

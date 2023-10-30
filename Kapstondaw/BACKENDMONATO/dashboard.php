@@ -95,9 +95,7 @@ function calculateAge($dob) {
     <title>Dashboard</title>
     <link rel="stylesheet" href="style1.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
-    
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
-
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
 
 </head>
