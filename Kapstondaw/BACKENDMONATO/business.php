@@ -1,4 +1,13 @@
 <?php include './server/server.php'?>
+<?php
+$query =  "SELECT * FROM tbl_business";
+$result = $conn->query($query);
+
+$business = array();
+while($row = $result->fetch_assoc()) {
+  $business[] = $row;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,18 +98,24 @@
                     </tr>
                 </thead>
                 <tbody>
-
-                
-
+                    <?php if(!empty($business)) { ?>
+                    <?php $no=1; foreach($business as $row): ?>
+                    <tr>
+                        <td><?= $no ?></td>
+                        <td><?= $row['taxpayer_name']?></td>
+                        <td><?= $row['business_name']?></td>
+                        <td><?= $row['business_address']?></td>
+                    </tr>
+                    <?php endforeach?>
+                    <?php }?>
                 </tbody>
                 <!-- Add more rows here -->
             </table>
         </div>
     </div>
-     
+
 
 
 </body>
 
 </html>
-
