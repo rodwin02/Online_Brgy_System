@@ -101,6 +101,11 @@ while($row = $result->fetch_assoc()) {
                     <?php } ?>
                 </tbody>
             </table>
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
     </div>
 
@@ -111,43 +116,31 @@ while($row = $result->fetch_assoc()) {
                 <img src="icons/close 1.png" class="closeForm_forself" alt="">
             </div>
 
-            <div class="modal-layer1">
-                <h3>Name of Applicant</h3>
-                <label for="applicant_fname">Firstname:</label>
-                <input type="text" id="applicant_fname" name="applicant_fname">
-
-                <label for="applicant_mname">Middlename:</label>
-                <input type="text" id="applicant_mname" name="applicant_mname">
-
-                <label for="applicant_lname">Lastname:</label>
-                <input type="text" id="applicant_lname" name="applicant_lname">
-
-                <h3>Name of Father</h3>
-                <label for="father_fname">Firstname:</label>
-                <input type="text" id="father_fname" name="father_fname">
-
-                <label for="father_mname">Middlename:</label>
-                <input type="text" id="father_mname" name="father_mname">
-
-                <label for="father_lname">Lastname:</label>
-                <input type="text" id="father_lname" name="father_lname">
-
-                <h3>Name of Mother</h3>
-                <label for="mother_fname">Firstname:</label>
-                <input type="text" id="mother_fname" name="mother_fname">
-
-                <label for="mother_mname">Middlename:</label>
-                <input type="text" id="mother_mname" name="mother_mname">
-
-                <label for="mother_lname">Lastname:</label>
-                <input type="text" id="mother_lname" name="mother_lname">
-
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob">
-
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address">
-
+            <div class="modal-layer-lbr-self">
+                <div class="input-lbr-self">
+                    <label for="applicantName">Applicant Name:</label>
+                    <input type="text" id="applicantName" placeholder="Applicant Name">
+                </div>
+                <div class="input-lbr-self">
+                    <label for="fatherName">Father's Name:</label>
+                    <input type="text" id="fatherName" placeholder="Father name">
+                </div>
+                <div class="input-lbr-self">
+                    <label for="motherName">Mother's Name:</label>
+                    <input type="text" id="motherName" placeholder="Mother name">
+                </div>
+                <div class="input-lbr-self">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+                <div class="input-lbr-self">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" id="house_no" placeholder="Houseno.">
+                        <input type="text" id="street" placeholder="Street name">
+                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                    </div>
+                </div>
             </div>
             <input type="hidden" name="documentFor" value="self">
             <input type="submit" id="submit" value="Add">
@@ -161,35 +154,30 @@ while($row = $result->fetch_assoc()) {
                 <img src="icons/close 1.png" class="closeForm_forsingleparent" alt="">
             </div>
 
-            <div class="modal-layer1">
-                <h3>Name of Requestors</h3>
-                <label for="requestor_fname">Firstname:</label>
-                <input type="text" id="requestor_fname" name="requestor_fname">
-
-                <label for="requestor_mname">Middlename:</label>
-                <input type="text" id="requestor_mname" name="requestor_mname">
-
-                <label for="requestor_lname">Lastname:</label>
-                <input type="text" id="requestor_lname" name="requestor_lname">
-
-                <h3>Name of Parent</h3>
-                <label for="parent_fname">Firstname:</label>
-                <input type="text" id="parent_fname" name="parent_fname">
-
-                <label for="parent_mname">Middlename:</label>
-                <input type="text" id="parent_mname" name="parent_mname">
-
-                <label for="parent_lname">Lastname:</label>
-                <input type="text" id="parent_lname" name="parent_lname">
-
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob">
-
-                <label for="address">Address:</label>
-                <input type="text" id="address1" name="address">
-
+            <div class="modal-layer-lbr-single-parent">
+                <div class="input-lbr-single-parent">
+                    <label for="requestortName">Requestor Name:</label>
+                    <input type="text" id="requestortName" placeholder="Requestor Name">
+                </div>
+                <div class="input-lbr-single-parent">
+                    <label for="fatherName">Parent's Name:</label>
+                    <input type="text" id="fatherName" placeholder="Father name">
+                </div>
+                <div class="input-lbr-single-parent">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+                <div class="input-lbr-single-parent">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" id="house_no" placeholder="Houseno.">
+                        <input type="text" id="street" placeholder="Street name">
+                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                    </div>
+                </div>   
             </div>
-            <input type="hidden" name="documentFor" value="single parent">
+
+            <input type="hidden" name="documentFor" value="single-parent">
             <input type="submit" id="submit" value="Add">
         </form>
     </div>
@@ -202,43 +190,31 @@ while($row = $result->fetch_assoc()) {
                 <img src="icons/close 1.png" class="closeForm_fortheirchild" alt="">
             </div>
 
-            <div class="modal-layer1">
-                <h3>Name of Requestors</h3>
-                <label for="requestor_fname">Firstname:</label>
-                <input type="text" id="requestor_fname" name="requestor_fname">
-
-                <label for="requestor_mname">Middlename:</label>
-                <input type="text" id="requestor_mname" name="requestor_mname">
-
-                <label for="requestor_lname">Lastname:</label>
-                <input type="text" id="requestor_lname" name="requestor_lname">
-
-                <h3>Name of Father</h3>
-                <label for="father_fname">Firstname:</label>
-                <input type="text" id="father_fname" name="father_fname">
-
-                <label for="father_mname">Middlename:</label>
-                <input type="text" id="father_mname" name="father_mname">
-
-                <label for="father_lname">Lastname:</label>
-                <input type="text" id="father_lname" name="father_lname">
-
-                <h3>Name of Mother</h3>
-                <label for="mother_fname">Firstname:</label>
-                <input type="text" id="mother_fname" name="mother_fname">
-
-                <label for="mother_mname">Middlename:</label>
-                <input type="text" id="mother_mname" name="mother_mname">
-
-                <label for="mother_lname">Lastname:</label>
-                <input type="text" id="mother_lname" name="mother_lname">
-
-                <label for="dob1">Date of Birth:</label>
-                <input type="date" id="dob1" name="dob">
-
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address">
-
+            <div class="modal-layer-lbr-for-child">
+                <div class="input-lbr-for-child">
+                    <label for="requestortName">Requestor Name:</label>
+                    <input type="text" id="requestortName" placeholder="Requestor Name">
+                </div>
+                <div class="input-lbr-for-child">
+                    <label for="fatherName">Father's Name:</label>
+                    <input type="text" id="fatherName" placeholder="Father name">
+                </div>
+                <div class="input-lbr-for-child">
+                    <label for="motherName">Mother's Name:</label>
+                    <input type="text" id="motherName" placeholder="Mother name">
+                </div>
+                <div class="input-lbr-for-child">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+                <div class="input-lbr-for-child">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" id="house_no" placeholder="Houseno.">
+                        <input type="text" id="street" placeholder="Street name">
+                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                    </div>
+                </div>   
             </div>
             <input type="hidden" name="documentFor" value="children">
             <input type="submit" id="submit" value="Add">
@@ -290,6 +266,52 @@ while($row = $result->fetch_assoc()) {
         modaladdlbr2.style.display = 'none';
     });
     </script>
-</body>
 
+</body>
 </html>
+
+<script>
+        // JavaScript code to handle pagination
+        const table = document.getElementById('table');
+    const rows = table.querySelectorAll('tbody tr');
+    const totalRows = rows.length;
+    const rowsPerPage = 10;
+    let currentPage = 1;
+
+    function showRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+
+        rows.forEach((row, index) => {
+            if (index >= start && index < end) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function updatePaginationButtons() {
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const pageNumbers = document.getElementById('pageNumbers');
+
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+        pageNumbers.textContent = currentPage;
+    }
+
+    // Initial setup
+    showRows(currentPage);
+    updatePaginationButtons();
+
+    // Previous button click event
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            showRows(currentPage);
+            updatePaginationButtons();
+        }
+    });
+</script>

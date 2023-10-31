@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Household</title>
+    <title>RECORD OF BARANGAY INHABITANTS BY HOUSEHOLD</title>
     <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
@@ -37,17 +37,18 @@
                     <div class="inputFullname">
                         <p>Full name<span>*</span></p>
                         <input type="text" id="lastName" oninput="this.value = this.value.toUpperCase()"
-                                required>
+                                placeholder="Last Name" required>
                         <input type="text"  id="firstName" oninput="this.value = this.value.toUpperCase()"
-                                required>
+                                placeholder="First Name" required>
                         <input type="text"  id="middleName" oninput="this.value = this.value.toUpperCase()"
-                                required>     
-                        <input type="text" class="suffix" id="ext" oninput="this.value = this.value.toUpperCase()">                
+                                placeholder="Middle Name"required>     
+                        <input type="text" class="suffix" id="ext" oninput="this.value = this.value.toUpperCase()" 
+                               placeholder="Suffix">                
                     </div>
                     <div class="inputDob">
                         <p>Date of Birth<span>*</span></p>
                         <input type="date" id="dateBirth" oninput="this.value = this.value.toUpperCase()"
-                                required>
+                               required>
                     </div>
                     <div class="inputPob">
                         <p>Place of Birth<span>*</span></p>
@@ -61,11 +62,11 @@
                     </div>
                     <div class="inputPhoneNo">
                        <p>Phone number</p>
-                       <input type="number" id="phoneNo">
+                       <input type="number" id="phoneNo" placeholder="e.g., 09123456789">
                     </div>
                     <div class="inputEmail">
                        <p>Email</p>
-                       <input type="text" id="email">
+                       <input type="text" id="email" placeholder="Enter your email">
                     </div>
                 </div>
 
@@ -73,11 +74,11 @@
                     <div class="inputAddress">
                         <p>Address<span>*</span></p>
                         <input type="text" class="houseNo" id="no" oninput="this.value = this.value.toUpperCase()"
-                                required>
+                               placeholder="House No.">
                         <input type="text" id="streetName" oninput="this.value = this.value.toUpperCase()"
-                                required>
+                               placeholder="Street Name"required>
                         <input type="text" id="subdiName" oninput="this.value = this.value.toUpperCase()"
-                                required>                    
+                               placeholder="Subdivision Name">                    
                     </div>
 
                     <div class="inputOccupation">
@@ -108,7 +109,7 @@
                 </div>
              </div>
              <div class="footerInfo">
-                <button type="submit" class="addSaTable" onclick="displayData()">Create</button>
+                <button type="submit" class="addSaTable">Create</button>
              </div>
         </form>
 
@@ -118,13 +119,18 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Middle Name</th>
+                        <th>Full Name</th>
                         <th>Date of Birth</th>
-                        <th>House No</th>
-                        <th>Street Name</th>
-                        <th>Subdivision Name</th>
+                        <th>Place of Birth</th>
+                        <th>Citizenship</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Occupation</th>
+                        <th>Sex</th>
+                        <th>Civil Status</th>
+                        <th class="houseTitle">Household Head</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -133,95 +139,119 @@
             </table>
         </form>
     </div>
-</body>
-</html>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const addSaTableButton = document.querySelector('.addSaTable');
+        const inputTableBody = document.querySelector('.input-table tbody');
 
-<script>
-    // Function to display data in the input-table and clear input fields
-    function displayData() {
-        // Get references to the visible input fields
-        var requiredFields = [
-            "lastName",
-            "firstName",
-            "middleName",
-            "dateBirth",
-            "no",
-            "streetName",
-            "subdiName"
-        ];
+        addSaTableButton.addEventListener('click', function(event) {
+            event.preventDefault();
 
-        // Check if the required fields in the input-form are filled
-        var missingFields = requiredFields.filter(function(fieldName) {
-            var field = document.getElementById(fieldName);
-            return field.value.trim() === "";
+            // Define an array of required fields
+            const requiredFields = ['lastName', 'firstName', 'middleName', 'dateBirth', 'placeBirth', 'citizenship', 'streetName', 'occupation', 'sex', 'civilStatus'];
+
+            // Check if all required fields are filled out
+            const allFieldsFilled = requiredFields.every(fieldName => {
+                const field = document.getElementById(fieldName);
+                return field.value.trim() !== '';
+            });
+
+            if (!allFieldsFilled) {
+                alert("Please fill out all required fields.");
+                return; // Stop execution if not all required fields are filled
+            }
+
+            // Continue with creating a new row if all required fields are filled
+            const lastName = document.getElementById('lastName').value;
+            const firstName = document.getElementById('firstName').value;
+            const middleName = document.getElementById('middleName').value;
+            const dateBirth = document.getElementById('dateBirth').value;
+            const placeBirth = document.getElementById('placeBirth').value;
+            const citizenship = document.getElementById('citizenship').value;
+            const phoneNo = document.getElementById('phoneNo').value;
+            const email = document.getElementById('email').value;
+            const houseNo = document.getElementById('no').value;
+            const streetName = document.getElementById('streetName').value;
+            const subdiName = document.getElementById('subdiName').value;
+            const occupation = document.getElementById('occupation').value;
+            const sex = document.getElementById('sex').value;
+            const civilStatus = document.getElementById('civilStatus').value;
+
+            // Phone number validation for the Philippines (10 digits starting with 09)
+            const phoneNoValue = document.getElementById('phoneNo').value;
+            if (phoneNoValue.trim() !== "") {
+                const phoneNumberPattern = /^(09|\+639)\d{9}$/;
+                if (!phoneNumberPattern.test(phoneNoValue)) {
+                    alert("Please enter a valid Philippine phone number.");
+                    return; // Stop execution if the phone number is invalid
+            }
+            }
+
+            // Email validation
+            const emailValue = document.getElementById('email').value;
+            if (emailValue.trim() !== "") {
+                const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+                if (!emailPattern.test(emailValue)) {
+                    alert("Please enter a valid email address.");
+                    return; // Stop execution if the email is invalid
+            }
+            }
+
+            // Create a new row in the table
+            const newRow = inputTableBody.insertRow();
+            newRow.insertCell(0).textContent = `${lastName}, ${firstName} ${middleName}`;
+            newRow.insertCell(1).textContent = dateBirth;
+            newRow.insertCell(2).textContent = placeBirth;
+            newRow.insertCell(3).textContent = citizenship;
+            newRow.insertCell(4).textContent = phoneNo;
+            newRow.insertCell(5).textContent = email;
+            newRow.insertCell(6).textContent = `${houseNo} ${streetName}, ${subdiName}`;
+            newRow.insertCell(7).textContent = occupation;
+            newRow.insertCell(8).textContent = sex;
+            newRow.insertCell(9).textContent = civilStatus;
+
+            // Create a radio button for the "Household Head" column
+            const householdHeadCell = newRow.insertCell(10);
+            const radioInput = document.createElement('input');
+            radioInput.type = 'radio';
+            radioInput.name = 'householdHead';
+            householdHeadCell.appendChild(radioInput);
+
+            // Create a "Delete" button for the "Action" column
+            const actionCell = newRow.insertCell(11);
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.style.cursor = 'pointer';
+            deleteButton.style.color = '#ff0000';
+            deleteButton.style.fontSize = '10px';
+            deleteButton.style.fontFamily = 'Poppins';
+            deleteButton.style.fontStyle = 'normal';
+            deleteButton.style.fontWeight = '700';
+            deleteButton.style.lineHeight = 'normal';
+            deleteButton.style.border = 'none';
+            deleteButton.addEventListener('click', function() {
+                // Remove the row when the "Delete" button is clicked
+                inputTableBody.removeChild(newRow);
+            });
+            actionCell.appendChild(deleteButton);
+
+            // Clear input fields (except for 'no', 'streetName', and 'subdiName')
+            requiredFields.forEach(fieldName => {
+                if (fieldName !== 'no' && fieldName !== 'streetName' && fieldName !== 'subdiName') {
+                    document.getElementById(fieldName).value = '';
+                }
+            });
+
+            // Clear additional fields
+            document.getElementById('ext').value = '';
+            document.getElementById('phoneNo').value = '';
+            document.getElementById('email').value = '';
         });
-
-        if (missingFields.length > 0) {
-            alert("Please fill in all required fields in the input form.");
-            return;
-        }
-
-        // Reference to the table in the input-table form
-        var table = document.querySelector(".input-table table");
-
-        // Create a new row and cells in the table
-        var newRow = table.insertRow(-1);
-        var cell1 = newRow.insertCell(0);
-        var cell2 = newRow.insertCell(1);
-        var cell3 = newRow.insertCell(2);
-        var cell4 = newRow.insertCell(3);
-        var cell5 = newRow.insertCell(4);
-        var cell6 = newRow.insertCell(5);
-        var cell7 = newRow.insertCell(6);
-
-        // Populate the cells with the input data
-        cell1.innerHTML = document.getElementById("lastName").value;
-        cell2.innerHTML = document.getElementById("firstName").value;
-        cell3.innerHTML = document.getElementById("middleName").value;
-        cell4.innerHTML = document.getElementById("dateBirth").value;
-        cell5.innerHTML = document.getElementById("no").value;
-        cell6.innerHTML = document.getElementById("streetName").value;
-        cell7.innerHTML = document.getElementById("subdiName").value;
-
-        // Clear only the visible input fields
-        requiredFields.forEach(function(fieldName) {
-            document.getElementById(fieldName).value = "";
-        });
-
-        // Store "Citizenship," "Phone Number," "Email," and "Place of Birth" in hidden input fields
-        var citizenship = document.getElementById("citizenship").value;
-        var phoneNo = document.getElementById("phoneNo").value;
-        var email = document.getElementById("email").value;
-        var placeBirth = document.getElementById("placeBirth").value;
-
-        // Create hidden input fields to store the data
-        var citizenshipInput = document.createElement("input");
-        citizenshipInput.type = "hidden";
-        citizenshipInput.name = "hidden_citizenship";
-        citizenshipInput.value = citizenship;
-        document.getElementById("input-form").appendChild(citizenshipInput);
-
-        var phoneNoInput = document.createElement("input");
-        phoneNoInput.type = "hidden";
-        phoneNoInput.name = "hidden_phoneNo";
-        phoneNoInput.value = phoneNo;
-        document.getElementById("input-form").appendChild(phoneNoInput);
-
-        var emailInput = document.createElement("input");
-        emailInput.type = "hidden";
-        emailInput.name = "hidden_email";
-        emailInput.value = email;
-        document.getElementById("input-form").appendChild(emailInput);
-
-        var placeBirthInput = document.createElement("input");
-        placeBirthInput.type = "hidden";
-        placeBirthInput.name = "hidden_placeBirth";
-        placeBirthInput.value = placeBirth;
-        document.getElementById("input-form").appendChild(placeBirthInput);
-    }
+    });
 </script>
 
 
-
+</body>
+</html>
 

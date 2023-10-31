@@ -231,6 +231,7 @@ tr:nth-child(even) {
   overflow: auto;
   padding: 12% 0 0 35%;
   display: none;
+ 
 }
 .modal-editOfficials {
   display: flex;

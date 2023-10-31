@@ -85,6 +85,11 @@ while($row = $result->fetch_assoc()) {
                     <?php } ?>
                 </tbody>
             </table>
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
     </div>
 
@@ -95,30 +100,32 @@ while($row = $result->fetch_assoc()) {
                 <img src="icons/close 1.png" class="closeForm" alt="">
             </div>
 
-            <div class="modal-layer1">
-                <label for="firstname">Firstname:</label>
-                <input type="text" id="firstname" name="firstname">
-
-                <label for="middlename">Middlename:</label>
-                <input type="text" id="middlename" name="middlename">
-
-                <label for="lastname">Lastname:</label>
-                <input type="text" id="lastname" name="lastname">
-
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address">
-
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob">
-
-                <label for="pob">Place of Birth:</label>
-                <input type="text" id="pob" name="pob">
-
-                <label for="purpose">Purpose:</label>
-                <input type="text" id="purpose" name="purpose">
-
-                <label for="dateInput">Date Issue:</label>
-                <input type="date" id="dateInput" name="dateInput">
+            <div class="modal-layer-brgyClearance">
+                <div class="input-brgy-clearance">
+                    <label for="fullname">Fullname:</label>
+                    <input type="text" id="fullname" placeholder="Full name">
+                </div>
+                <div class="input-brgy-clearance">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" id="house_no" placeholder="Houseno.">
+                        <input type="text" id="street" placeholder="Street name">
+                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-brgy-clearance">
+                    <label for="birth_date">Birth Date:</label>
+                    <input type="date" id="birth_date">
+                </div>
+                <div class="input-brgy-clearance">
+                    <label for="place_of_birth">Place of Birth:</label>
+                    <input type="text" id="place_of_birth">
+                </div>
+                <div class="input-brgy-clearance">
+                     <label for="purpose">Purpose:</label>
+                     <input type="text" id="purpose" name="purpose">
+                </div>
+                
             </div>
             <input type="submit" id="submit" value="Add">
         </form>
@@ -148,3 +155,49 @@ while($row = $result->fetch_assoc()) {
 </body>
 
 </html>
+
+<script>
+      // JavaScript code to handle pagination
+      const table = document.getElementById('table');
+    const rows = table.querySelectorAll('tbody tr');
+    const totalRows = rows.length;
+    const rowsPerPage = 10;
+    let currentPage = 1;
+
+    function showRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+
+        rows.forEach((row, index) => {
+            if (index >= start && index < end) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function updatePaginationButtons() {
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const pageNumbers = document.getElementById('pageNumbers');
+
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+        pageNumbers.textContent = currentPage;
+    }
+
+    // Initial setup
+    showRows(currentPage);
+    updatePaginationButtons();
+
+    // Previous button click event
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            showRows(currentPage);
+            updatePaginationButtons();
+        }
+    });
+</script>
