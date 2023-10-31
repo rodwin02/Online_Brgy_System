@@ -10,19 +10,26 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 15% 0 0 35%;
+  padding: 12% 0 0 35%;
   display: none;
 }
 
 .formIdForm {
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
+  border-radius: 20px;
   background: #F8F8F8;
-  width: 425px;
-  height: 400px;
+  width: 500px;
+  height: auto;
   padding: 20px;
-  border-radius: 10px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .title-cont-modal {
@@ -48,11 +55,37 @@
   align-self: center;
   cursor: pointer;
 }
+.input-label {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer1 .input-label input {
+  width: 210px;
+  height: 33px;
+  padding-left: 5px;
+}
+
+.input-label .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-label .label111 input {
+  margin-right: 10px;
+}
+.input-label .label111 #house_no {
+  width: 20%;
+}
+.input-label .label111 #street {
+  width: 35%;
+}
+.input-label .label111 #subdivision {
+  width: 35%;
+}
 
 .modal-layer1 {
   display: flex;
-  flex-direction: column;
-
+  flex-wrap: wrap;
   margin-top: 15px;
   color: #000;
   font-family: Poppins;
@@ -87,13 +120,19 @@
   width: 89.744px;
   height: 35.836px;
   flex-shrink: 0;
-  color: white;
+  color: #007236;
   border-radius: 5px;
-  background: #007236;
+  background: #FFFF;
+  border: 1px solid #007236;
   display: flex;
   justify-content: center;
   align-self: flex-end;
   margin-top: 20px;
+  cursor: pointer;
+}
+#submit:hover {
+  background-color: #007236;
+  color: #F8F8F8;
 }
 
 /* BRGY CLEARANCE CSS */
@@ -108,20 +147,56 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 11% 0 0 35%;
+  padding: 12% 0 0 35%;
   display: none;
 }
 
 .formBrgyClearance {
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
+  border-radius: 20px;
   background: #F8F8F8;
-  width: 425px;
-  height: 530px;
+  width: 400px;
+  height: auto;
   padding: 20px;
-  border-radius: 10px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
+
+.input-brgy-clearance {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-brgyClearance .input-brgy-clearance input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-brgy-clearance .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-brgy-clearance .label111 input {
+  margin-right: 10px;
+}
+.input-brgy-clearance .label111 #house_no {
+  width: 25%;
+}
+.input-brgy-clearance .label111 #street {
+  width: 35%;
+}
+.input-brgy-clearance .label111 #subdivision {
+  width: 40%;
+}
+
 
 /* E CERT */
 .modal-addEcert_forself {
@@ -141,14 +216,49 @@
 
 .formEcert_forself {
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
+  border-radius: 20px;
   background: #F8F8F8;
-  width: 425px;
-  height: 400px;
+  width: 400px;
+  height: auto;
   padding: 20px;
-  border-radius: 10px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
+.input-e-self {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-endorsement-self .input-e-self input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-e-self .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-e-self .label111 input {
+  margin-right: 10px;
+}
+.input-e-self .label111 #house_no {
+  width: 25%;
+}
+.input-e-self .label111 #street {
+  width: 35%;
+}
+.input-e-self .label111 #subdivision {
+  width: 40%;
+}
+
 
 .modal-addEcert_forsomeone {
   display: flex;
@@ -161,19 +271,53 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 13% 0 0 35%;
+  padding: 15% 0 0 35%;
   display: none;
 }
 
 .formEcert_forsomeone {
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
+  border-radius: 20px;
   background: #F8F8F8;
-  width: 425px;
-  height: 460px;
+  width: 400px;
+  height: auto;
   padding: 20px;
-  border-radius: 10px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-e-someone {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-endorsement-someone .input-e-someone input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-e-someone .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-e-someone .label111 input {
+  margin-right: 10px;
+}
+.input-e-someone .label111 #house_no {
+  width: 25%;
+}
+.input-e-someone .label111 #street {
+  width: 35%;
+}
+.input-e-someone .label111 #subdivision {
+  width: 40%;
 }
 
 
@@ -195,13 +339,47 @@
 
 .formIndigency_forself {
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
+  border-radius: 20px;
   background: #F8F8F8;
-  width: 425px;
-  height: 400px;
+  width: 400px;
+  height: auto;
   padding: 20px;
-  border-radius: 10px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-indigency-self {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-indigency-self .input-indigency-self input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-indigency-self .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-indigency-self .label111 input {
+  margin-right: 10px;
+}
+.input-indigency-self .label111 #house_no {
+  width: 25%;
+}
+.input-indigency-self .label111 #street {
+  width: 35%;
+}
+.input-indigency-self .label111 #subdivision {
+  width: 40%;
 }
 
 .modal-addIndigency_forsomeone {
@@ -215,21 +393,54 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 13% 0 0 35%;
+  padding: 15% 0 0 35%;
   display: none;
 }
 
 .formIndigency_forsomeone {
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
+  border-radius: 20px;
   background: #F8F8F8;
-  width: 425px;
-  height: 460px;
+  width: 400px;
+  height: auto;
   padding: 20px;
-  border-radius: 10px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-indigency-someone {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-indigency-someone .input-indigency-someone input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
 }
 
+.input-indigency-someone .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-indigency-someone .label111 input {
+  margin-right: 10px;
+}
+.input-indigency-someone .label111 #house_no {
+  width: 25%;
+}
+.input-indigency-someone .label111 #street {
+  width: 35%;
+}
+.input-indigency-someone .label111 #subdivision {
+  width: 40%;
+}
 /* CERT OF LBR */
 .modal-addlbr_forself {
   display: flex;
@@ -242,19 +453,53 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 13% 0 0 35%;
+  padding: 15% 0 0 35%;
   display: none;
 }
 
 .formlbr_forself {
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
+  border-radius: 20px;
   background: #F8F8F8;
-  width: 425px;
-  height: 460px;
+  width: 400px;
+  height: auto;
   padding: 20px;
-  border-radius: 10px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-lbr-self {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-lbr-self .input-lbr-self input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-lbr-self .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-lbr-self .label111 input {
+  margin-right: 10px;
+}
+.input-lbr-self .label111 #house_no {
+  width: 25%;
+}
+.input-lbr-self .label111 #street {
+  width: 35%;
+}
+.input-lbr-self .label111 #subdivision {
+  width: 40%;
 }
 
 .modal-addlbr_forsingleparent {
@@ -268,19 +513,53 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 13% 0 0 35%;
+  padding: 15% 0 0 35%;
   display: none;
 }
 
 .formlbr_forsingleparent{
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
+  border-radius: 20px;
   background: #F8F8F8;
-  width: 425px;
-  height: 460px;
+  width: 400px;
+  height: auto;
   padding: 20px;
-  border-radius: 10px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-lbr-single-parent {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-lbr-single-parent .input-lbr-single-parent input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-lbr-single-parent .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-lbr-single-parent .label111 input {
+  margin-right: 10px;
+}
+.input-lbr-single-parent .label111 #house_no {
+  width: 25%;
+}
+.input-lbr-single-parent .label111 #street {
+  width: 35%;
+}
+.input-lbr-single-parent .label111 #subdivision {
+  width: 40%;
 }
 
 .modal-addlbr_fortheirchild {
@@ -294,21 +573,54 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 13% 0 0 35%;
+  padding: 15% 0 0 35%;
   display: none;
 }
 
 .formlbr_fortheirchild{
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
+  border-radius: 20px;
   background: #F8F8F8;
-  width: 425px;
-  height: 460px;
+  width: 400px;
+  height: auto;
   padding: 20px;
-  border-radius: 10px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-lbr-for-child {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-lbr-for-child .input-lbr-for-child input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
 }
 
+.input-lbr-for-child .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-lbr-for-child .label111 input {
+  margin-right: 10px;
+}
+.input-lbr-for-child .label111 #house_no {
+  width: 25%;
+}
+.input-lbr-for-child .label111 #street {
+  width: 35%;
+}
+.input-lbr-for-child .label111 #subdivision {
+  width: 40%;
+}
 /* BUSINESS CLEARANCE */
 
 .modal-addClearance {
@@ -322,21 +634,54 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 13% 0 0 35%;
+  padding: 17% 0 0 35%;
   display: none;
 }
 
 .formaddClearance { 
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
+  border-radius: 20px;
   background: #F8F8F8;
-  width: 425px;
-  height: 460px;
+  width: 400px;
+  height: auto;
   padding: 20px;
-  border-radius: 10px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-b-clearance {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-b-clearance .input-b-clearance input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
 }
 
+.input-b-clearance .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-b-clearance .label111 input {
+  margin-right: 10px;
+}
+.input-b-clearance .label111 #house_no {
+  width: 25%;
+}
+.input-b-clearance .label111 #street {
+  width: 35%;
+}
+.input-b-clearance .label111 #subdivision {
+  width: 40%;
+}
 .modal-addClosure {
   display: flex;
   z-index: 2;
@@ -348,17 +693,51 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 12% 0 0 35%;
+  padding: 17% 0 0 35%;
   display: none;
 }
 
 .formaddClosure { 
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
+  border-radius: 20px;
   background: #F8F8F8;
-  width: 425px;
-  height: 460px;
+  width: 400px;
+  height: auto;
   padding: 20px;
-  border-radius: 10px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.input-b-closure {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+.modal-layer-b-closure .input-b-closure input {
+  height: 33px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+.input-b-closure .label111 {
+  display: flex;
+  flex-direction: row;
+}
+.input-b-closure .label111 input {
+  margin-right: 10px;
+}
+.input-b-closure .label111 #house_no {
+  width: 25%;
+}
+.input-b-closure .label111 #street {
+  width: 35%;
+}
+.input-b-closure .label111 #subdivision {
+  width: 40%;
 }

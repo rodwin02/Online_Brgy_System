@@ -457,71 +457,71 @@ deleteLink.forEach((del, index) => {
 })
 
 
-// SORT & FILTER
-const sortFilterLink = document.getElementById('sortFilter');
-const sort = document.querySelector('.sort');
-const closeSort = document.querySelector('.close-sort');
+    // SORT & FILTER
+    const sortFilterLink = document.getElementById('sortFilter');
+    const sort = document.querySelector('.sort');
+    const closeSort = document.querySelector('.close-sort');
 
-sortFilterLink.addEventListener('click', function(event) {
-    event.preventDefault();
-    sort.style.display = 'block';
-});
+    sortFilterLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        sort.style.display = 'block';
+    });
 
-closeSort.addEventListener('click', function() {
-    sort.style.display = 'none';
-});
+    closeSort.addEventListener('click', function() {
+        sort.style.display = 'none';
+    });
 
 
-// JavaScript code to handle pagination
-const table = document.getElementById('table');
-const rows = table.querySelectorAll('tbody tr');
-const totalRows = rows.length;
-const rowsPerPage = 10;
-let currentPage = 1;
+    // JavaScript code to handle pagination
+    const table = document.getElementById('table');
+    const rows = table.querySelectorAll('tbody tr');
+    const totalRows = rows.length;
+    const rowsPerPage = 10;
+    let currentPage = 1;
 
-function showRows(page) {
-    const start = (page - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
+    function showRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
 
-    rows.forEach((row, index) => {
-        if (index >= start && index < end) {
-            row.style.display = 'table-row';
-        } else {
-            row.style.display = 'none';
+        rows.forEach((row, index) => {
+            if (index >= start && index < end) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function updatePaginationButtons() {
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const pageNumbers = document.getElementById('pageNumbers');
+
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+        pageNumbers.textContent = currentPage;
+    }
+
+    // Initial setup
+    showRows(currentPage);
+    updatePaginationButtons();
+
+    // Previous button click event
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            showRows(currentPage);
+            updatePaginationButtons();
         }
     });
-}
 
-function updatePaginationButtons() {
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const pageNumbers = document.getElementById('pageNumbers');
-
-    prevBtn.disabled = currentPage === 1;
-    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
-
-    pageNumbers.textContent = currentPage;
-}
-
-// Initial setup
-showRows(currentPage);
-updatePaginationButtons();
-
-// Previous button click event
-document.getElementById('prevBtn').addEventListener('click', () => {
-    if (currentPage > 1) {
-        currentPage--;
-        showRows(currentPage);
-        updatePaginationButtons();
-    }
-});
-
-// Next button click event
-document.getElementById('nextBtn').addEventListener('click', () => {
-    if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
-        currentPage++;
-        showRows(currentPage);
-        updatePaginationButtons();
-    }
-});
+    // Next button click event
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+            currentPage++;
+            showRows(currentPage);
+            updatePaginationButtons();
+        }
+    });
 </script>

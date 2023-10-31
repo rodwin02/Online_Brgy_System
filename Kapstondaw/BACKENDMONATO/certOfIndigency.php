@@ -91,6 +91,11 @@ while($row = $result->fetch_assoc()) {
                     <?php } ?>
                 </tbody>
             </table>
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
     </div>
 
@@ -100,25 +105,25 @@ while($row = $result->fetch_assoc()) {
                 <p>For Self</p>
                 <img src="icons/close 1.png" class="closeForm_forself" alt="">
             </div>
-
-            <div class="modal-layer1">
-                <h3>Name of Applicant</h3>
-                <label for="applicant_fname">Firstname:</label>
-                <input type="text" id="applicant_fname" name="applicant_fname">
-
-                <label for="applicant_mname">Middlename:</label>
-                <input type="text" id="applicant_mname" name="applicant_mname">
-
-                <label for="applicant_lname">Lastname:</label>
-                <input type="text" id="applicant_lname" name="applicant_lname">
-
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address">
-
-                <label for="purpose">Purpose:</label>
-                <input type="text" id="purpose" name="purpose">
+            
+            <div class="modal-layer-indigency-self">
+                <div class="input-indigency-self">
+                    <label for="applicantName">Applicant Name:</label>
+                    <input type="text" id="applicantName" placeholder="Applicant Name">
+                </div>
+                <div class="input-indigency-self">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" id="house_no" placeholder="Houseno.">
+                        <input type="text" id="street" placeholder="Street name">
+                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-indigency-self">
+                     <label for="purpose">Purpose:</label>
+                     <input type="text" id="purpose" name="purpose">
+                </div>
             </div>
-
             <input type="hidden" name="documentFor" value="Self">
             <input type="submit" id="submit" value="Add">
         </form>
@@ -131,32 +136,27 @@ while($row = $result->fetch_assoc()) {
                 <img src="icons/close 1.png" class="closeForm_forsomeone" alt="">
             </div>
 
-            <div class="modal-layer1">
-                <h3>Name of Requestors</h3>
-                <label for="requestor_fname">Firstname:</label>
-                <input type="text" id="requestor_fname" name="requestor_fname">
-
-                <label for="requestor_mname">Middlename:</label>
-                <input type="text" id="requestor_mname" name="requestor_mname">
-
-                <label for="requestor_lname">Lastname:</label>
-                <input type="text" id="requestor_lname" name="requestor_lname">
-
-                <h3>Name of Applicant</h3>
-                <label for="applicant_fname">Firstname:</label>
-                <input type="text" id="applicant_fname" name="applicant_fname">
-
-                <label for="applicant_mname">Middlename:</label>
-                <input type="text" id="applicant_mname" name="applicant_mname">
-
-                <label for="applicant_lname">Lastname:</label>
-                <input type="text" id="applicant_lname" name="applicant_lname">
-
-                <label for="address">Address:</label>
-                <input type="text" id="address1" name="address">
-
-                <label for="purpose">Purpose:</label>
-                <input type="text" id="purpose1" name="purpose">
+            <div class="modal-layer-indigency-someone">
+                <div class="input-indigency-someone">
+                    <label for="applicantName">Applicant Name:</label>
+                    <input type="text" id="applicantName" placeholder="Applicant Name">
+                </div>
+                <div class="input-indigency-someone">
+                    <label for="requestorName">Requestor Name:</label>
+                    <input type="text" id="requestorName" placeholder="Requestor Name">
+                </div>
+                <div class="input-indigency-someone">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" id="house_no" placeholder="Houseno.">
+                        <input type="text" id="street" placeholder="Street name">
+                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-indigency-someone">
+                     <label for="purpose">Purpose:</label>
+                     <input type="text" id="purpose" name="purpose">
+                </div>
             </div>
             <input type="hidden" name="documentFor" value="Someone">
             <input type="submit" id="submit" value="Add">
@@ -199,4 +199,49 @@ addIndigencyLink1.addEventListener('click', function(event) {
 closeForm1.addEventListener('click', function() {
     modaladdIndigency1.style.display = 'none';
 });
+
+
+    // JavaScript code to handle pagination
+    const table = document.getElementById('table');
+    const rows = table.querySelectorAll('tbody tr');
+    const totalRows = rows.length;
+    const rowsPerPage = 10;
+    let currentPage = 1;
+
+    function showRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+
+        rows.forEach((row, index) => {
+            if (index >= start && index < end) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function updatePaginationButtons() {
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const pageNumbers = document.getElementById('pageNumbers');
+
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+        pageNumbers.textContent = currentPage;
+    }
+
+    // Initial setup
+    showRows(currentPage);
+    updatePaginationButtons();
+
+    // Previous button click event
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            showRows(currentPage);
+            updatePaginationButtons();
+        }
+    });
 </script>

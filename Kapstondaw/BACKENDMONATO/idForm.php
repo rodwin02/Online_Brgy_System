@@ -97,6 +97,11 @@ while($row = $result->fetch_assoc()) {
                     <?php } ?>
                 </tbody>
             </table>
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
     </div>
 
@@ -108,42 +113,53 @@ while($row = $result->fetch_assoc()) {
             </div>
 
             <div class="modal-layer1">
-                <label for="fullname">Firstname:</label>
-                <input type="text" id="firstname" name="firstname">
-
-                <label for="middlename">Middlename:</label>
-                <input type="text" id="middlename" name="middlename">
-
-                <label for="lastname">Lastname:</label>
-                <input type="text" id="lastname" name="lastname">
-
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address">
-
-                <label for="pob">Place of Birth:</label>
-                <input type="text" id="pob" name="pob">
-
-                <label for="birthDate">Birth Date:</label>
-                <input type="text" id="birthDate" name="birthDate">
-
-                <label for="civilStatus">Civil Status:</label>
-                <input type="text" id="civilStatus" name="civilStatus">
-
-                <label for="contact">Contact Number:</label>
-                <input type="text" id="contact" name="contact">
-
-                <label for="documentFor">Document For:</label>
-                <select name="documentFor" id="documentFor">
-                    <option value="Self">Forself</option>
-                    <option value="Someone">Forsomeone</option>
-                </select>
-
-                <label for="purpose">Purpose:</label>
-                <input type="text" id="purpose" name="purpose">
-
-                <label for="dateRequest">Date Requested:</label>
-                <input type="date" id="dateRequest" name="dateRequested">
-
+                <div class="input-label">
+                    <label for="applicantName">Applicant:</label>
+                    <input type="text" id="applicantName" placeholder="Applicant name">
+                </div>
+                <div class="input-label">
+                    <label for="requestorName">Requestor:</label>
+                    <input type="text" id="requestorName" placeholder="Requestor name"  >
+                </div>
+                <div class="input-label">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" id="house_no" placeholder="Houseno.">
+                        <input type="text" id="street" placeholder="Street name">
+                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-label">
+                    <label for="place_of_birth">Place of Birth:</label>
+                    <input type="text" id="place_of_birth">
+                </div>
+                <div class="input-label">
+                    <label for="birth_date">Birth Date:</label>
+                    <input type="date" id="birth_date">
+                </div>
+                <div class="input-label">     
+                    <label for="civil_status">Civil Status:</label>
+                    <input type="text" id="civil_status">
+                </div>
+                <div class="input-label">
+                    <label for="contact_number">Contact Number:</label>
+                    <input type="text" id="contact_number">
+                </div>
+                <div class="input-label">
+                    <label for="documentFor">Document For:</label>
+                    <select name="documentFor" id="documentFor">
+                       <option value="Self">Forself</option>
+                       <option value="Someone">Forsomeone</option>
+                    </select>
+                </div>
+                <div class="input-label">
+                     <label for="purpose">Purpose:</label>
+                     <input type="text" id="purpose" name="purpose">
+                </div>
+                <div class="input-label">
+                    <label for="date-requested">Date Requested:</label>
+                    <input type="date" id="date-requested">
+                </div>
             </div>
             <input type="submit" id="submit" value="Add">
         </form>
@@ -169,3 +185,58 @@ while($row = $result->fetch_assoc()) {
 </body>
 
 </html>
+
+<script>
+      // JavaScript code to handle pagination
+      const table = document.getElementById('table');
+    const rows = table.querySelectorAll('tbody tr');
+    const totalRows = rows.length;
+    const rowsPerPage = 10;
+    let currentPage = 1;
+
+    function showRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+
+        rows.forEach((row, index) => {
+            if (index >= start && index < end) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function updatePaginationButtons() {
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const pageNumbers = document.getElementById('pageNumbers');
+
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+        pageNumbers.textContent = currentPage;
+    }
+
+    // Initial setup
+    showRows(currentPage);
+    updatePaginationButtons();
+
+    // Previous button click event
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            showRows(currentPage);
+            updatePaginationButtons();
+        }
+    });
+
+    // Next button click event
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+            currentPage++;
+            showRows(currentPage);
+            updatePaginationButtons();
+        }
+    });
+</script>

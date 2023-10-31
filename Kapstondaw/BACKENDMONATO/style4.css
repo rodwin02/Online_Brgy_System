@@ -1475,9 +1475,9 @@ td {
 
 
 .input-table {
-  width: 85%;
+  width: 98%;
   margin: auto;
-
+  padding-bottom: 20px;
 }
 
 .List {

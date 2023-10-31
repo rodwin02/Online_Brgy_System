@@ -90,6 +90,11 @@ $businessClearance[] = $row;
                     <?php } ?>
                 </tbody>
             </table>
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
     </div>
 
@@ -100,29 +105,25 @@ $businessClearance[] = $row;
                 <img src="icons/close 1.png" class="closeClearance" alt="">
             </div>
 
-            <div class="modal-layer1">
-                <label for="businessName">Business Name:</label>
-                <input type="text" id="businessName" name="businessName">
-
-                <h3>Business Owner's Name</h3>
-                <label for="owner_fname">Firstname:</label>
-                <input type="text" id="owner_fname" name="owner_fname">
-
-                <label for="owner_mname">Middlename:</label>
-                <input type="text" id="owner_mname" name="owner_mname">
-
-                <label for="owner_lname">Lastname:</label>
-                <input type="text" id="owner_lname" name="owner_lname">
-
-                <label for="businessAddress">Business Address:</label>
-                <input type="text" id="businessAddress" name="businessAddress">
-
-                <label for="dateApplied">Date Applied:</label>
-                <input type="date" id="dateApplied" name="dateApplied">
-
-                <label for="documentFor">Document For:</label>
-                <input type="text" id="documentFor" name="documentFor">
+            <div class="modal-layer-b-clearance">
+                <div class="input-b-clearance">
+                    <label for="businessName">Business Name:</label>
+                    <input type="text" id="businessName" placeholder="Business name">
+                </div>
+                <div class="input-b-clearance">
+                    <label for="ownerName">Business Owner's Name:</label>
+                    <input type="text" id="ownerName" placeholder="business owner name">
+                </div>
+                <div class="input-b-clearance">
+                    <label for="address">Business Address:</label>
+                    <div class="label111">
+                        <input type="text" id="house_no" placeholder="Houseno.">
+                        <input type="text" id="street" placeholder="Street name">
+                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                    </div>
+                </div>
             </div>
+            <input type="hidden" name="documentFor" value="clearance">
             <input type="submit" id="submit" value="Add">
         </form>
     </div>
@@ -135,29 +136,26 @@ $businessClearance[] = $row;
                 <img src="icons/close 1.png" class="closeClosure" alt="">
             </div>
 
-            <div class="modal-layer1">
-                <label for="businessName">Business Name:</label>
-                <input type="text" id="businessName">
+            <div class="modal-layer-b-closure">
+                <div class="input-b-closure">
+                    <label for="businessName">Business Name:</label>
+                    <input type="text" id="businessName" placeholder="Business name">
+                </div>
+                <div class="input-b-closure">
+                    <label for="ownerName">Business Owner's Name:</label>
+                    <input type="text" id="ownerName" placeholder="Fbusiness owner name">
+                </div>
+                <div class="input-b-closure">
+                    <label for="address">Business Address:</label>
+                    <div class="label111">
+                        <input type="text" id="house_no" placeholder="Houseno.">
+                        <input type="text" id="street" placeholder="Street name">
+                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                    </div>
+                </div>
 
-                <h3>Business Owner's Name</h3>
-                <label for="owner_fname">Firstname:</label>
-                <input type="text" id="owner_fname" name="owner_fname">
-
-                <label for="owner_mname">Middlename:</label>
-                <input type="text" id="owner_mname" name="owner_mname">
-
-                <label for="owner_lname">Lastname:</label>
-                <input type="text" id="owner_lname" name="owner_lname">
-
-                <label for="businessAddress">Business Address:</label>
-                <input type="text" id="businessAddress">
-
-                <label for="dateClosure">Date Closure:</label>
-                <input type="text" id="dateClosure">
-
-                <label for="documentFor">Document For:</label>
-                <input type="text" id="documentFor1" value="Closure">
             </div>
+            <input type="hidden" name="documentFor" value="closure">
             <input type="submit" id="submit" value="Add">
         </form>
     </div>
@@ -197,4 +195,48 @@ addClosureLink.addEventListener('click', function(event) {
 closeClosure.addEventListener('click', function() {
     modaladdClosure.style.display = 'none';
 });
+
+    // JavaScript code to handle pagination
+    const table = document.getElementById('table');
+    const rows = table.querySelectorAll('tbody tr');
+    const totalRows = rows.length;
+    const rowsPerPage = 10;
+    let currentPage = 1;
+
+    function showRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+
+        rows.forEach((row, index) => {
+            if (index >= start && index < end) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function updatePaginationButtons() {
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const pageNumbers = document.getElementById('pageNumbers');
+
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+        pageNumbers.textContent = currentPage;
+    }
+
+    // Initial setup
+    showRows(currentPage);
+    updatePaginationButtons();
+
+    // Previous button click event
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            showRows(currentPage);
+            updatePaginationButtons();
+        }
+    });
 </script>
