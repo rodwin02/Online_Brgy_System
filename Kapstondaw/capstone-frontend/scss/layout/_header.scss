@@ -22,6 +22,9 @@ header {
     padding: 2rem 0;
     min-width: 780px;
     max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .menu {
@@ -44,7 +47,7 @@ header {
     margin: 0;
     padding: 0;
     @media (min-width: 375px) {
-      min-width: 600px;
+      width: 100%;
     }
 
     li {
@@ -62,7 +65,7 @@ header {
       }
     }
   }
-  ul > :nth-child(4) {
+  ul > :nth-child(5) {
     display: block;
   }
 }

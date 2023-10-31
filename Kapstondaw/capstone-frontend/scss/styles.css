@@ -37,6 +37,9 @@ header {
     padding: 2rem 0;
     min-width: 780px;
     max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 header .menu {
@@ -61,14 +64,13 @@ header ul {
 }
 @media (min-width: 375px) {
   header ul {
-    min-width: 600px;
+    width: 100%;
   }
 }
 header ul li {
   list-style: none;
   text-align: center;
   display: none;
-  font-size: 1rem;
 }
 @media (min-width: 375px) {
   header ul li {
@@ -83,7 +85,7 @@ header ul li img {
     width: 80%;
   }
 }
-header ul > :nth-child(4) {
+header ul > :nth-child(5) {
   display: block;
 }
 

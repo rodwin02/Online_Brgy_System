@@ -1,6 +1,23 @@
 <?php include "../server/server.php" ?>
+<?php
+$query =  "SELECT * FROM del_residents_archive";
+$result = $conn->query($query);
+
+$resident = array();
+while($row = $result->fetch_assoc()) {
+$resident[] = $row;
+}
+
+function calculateAge($dob) {
+    $today = new DateTime();
+    $birthDate = new DateTime($dob);
+    $interval = $today->diff($birthDate);
+    return $interval->y;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,9 +104,43 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if(!empty($resident)) { ?>
+                    <?php $no=1; foreach($resident as $row): ?>
                     <tr>
-                        <td></td>
-                    </tr>     
+                        <td><?= $no ?></td>
+                        <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
+                        <td><?= calculateAge($row['date_of_birth'])?></td>
+                        <td><?= $row['sex'] ?></td>
+                        <td><?= $row['date_of_birth'] ?></td>
+                        <td><?= $row['place_of_birth'] ?></td>
+                        <td><?= $row['civil_status'] ?></td>
+                        <td><?= $row['house_no']. " " .$row['street']. " " .$row['subdivision'] ?></td>
+                        <td><?= $row['email'] ?></td>
+                        <td class="actions">
+                            <a href="../model/recover/recover_resident.php?id=<?= $row['id']?>" class="edit"
+                                id="editResidents">Recover</a>
+
+
+                            <div class="modal-delete">
+                                <div class="form-delete">
+                                    <div class="delete-cont">
+                                        <p>Delete</p>
+                                        <img src="icons/close 1.png" alt="" class="close-delete">
+                                    </div>
+                                    <div class="delete-description">
+                                        <p>Deleting this will remove all data
+                                            and cannot be undone.</p>
+                                    </div>
+                                    <div class="delete-submit">
+                                        <a href="./model/remove/remove_resident.php?id=<?= $row['id']?>">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <?php $no++; endforeach ?>
+                    <?php } ?>
                 </tbody>
             </table>
 
@@ -102,59 +153,60 @@
     </div>
 
 </body>
+
 </html>
 
 <script>
-    // JavaScript code to handle pagination
-    const table = document.getElementById('table');
-    const rows = table.querySelectorAll('tbody tr');
-    const totalRows = rows.length;
-    const rowsPerPage = 10;
-    let currentPage = 1;
+// JavaScript code to handle pagination
+const table = document.getElementById('table');
+const rows = table.querySelectorAll('tbody tr');
+const totalRows = rows.length;
+const rowsPerPage = 10;
+let currentPage = 1;
 
-    function showRows(page) {
-        const start = (page - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
+function showRows(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
 
-        rows.forEach((row, index) => {
-            if (index >= start && index < end) {
-                row.style.display = 'table-row';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
-
-    function updatePaginationButtons() {
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const pageNumbers = document.getElementById('pageNumbers');
-
-        prevBtn.disabled = currentPage === 1;
-        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
-
-        pageNumbers.textContent = currentPage;
-    }
-
-    // Initial setup
-    showRows(currentPage);
-    updatePaginationButtons();
-
-    // Previous button click event
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            showRows(currentPage);
-            updatePaginationButtons();
+    rows.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
         }
     });
+}
 
-    // Next button click event
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
-            currentPage++;
-            showRows(currentPage);
-            updatePaginationButtons();
-        }
-    });
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+    pageNumbers.textContent = currentPage;
+}
+
+// Initial setup
+showRows(currentPage);
+updatePaginationButtons();
+
+// Previous button click event
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+
+// Next button click event
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+        currentPage++;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
 </script>

@@ -99,9 +99,24 @@ while($row = $result->fetch_assoc()) {
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if(!empty($business)) {?>
+                    <?php $no=1; foreach($business as $row): ?>
                     <tr>
-                        <td></td>
+                        <td>
+                            <?= $no ?></td>
+                        <td><?= $row['taxpayer_name']?>
+                        </td>
+                        <td>
+                            <?= $row['business_name']?></td>
+                        <td><?= $row['business_address']?></td>
+                        <td><?= $row['business_type']?></td>
+                        <td>
+                            <a href="#">Edit</a>
+                            <a href="#">Delete</a>
+                        </td>
                     </tr>
+                    <?php $no++; endforeach  ?>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
