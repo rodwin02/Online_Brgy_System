@@ -42,6 +42,7 @@ while($row = $result->fetch_assoc()) {
             </div>
             <div class="add-cont">
                 <a href="#" class="addUsers" id="addUser">+ User</a>
+                <a href="archives/ArchiveUser.php" class="archiveResidents">Archive</a>
             </div>
         </div>
 
@@ -82,14 +83,12 @@ while($row = $result->fetch_assoc()) {
                     <?php $no++; endforeach ?>
                     <?php } ?>
                 </tbody>
-                <!-- Add more rows here -->
             </table>
-
-            <!-- <div class="pagination">
-        <button class="previous" onclick="showPreviousTable()">&lt; Previous</button>
-        <span id="pageNumber">1</span>
-        <button class="next" onclick="showNextTable()">Next &gt;</button>
-      </div> -->
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
     </div>
 
@@ -234,6 +233,59 @@ while($row = $result->fetch_assoc()) {
     var preview = document.querySelector('#preview');
     preview.setAttribute('src', existingImage);
 
+
+    // JavaScript code to handle pagination
+    const table = document.getElementById('table');
+    const rows = table.querySelectorAll('tbody tr');
+    const totalRows = rows.length;
+    const rowsPerPage = 10;
+    let currentPage = 1;
+
+    function showRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+
+        rows.forEach((row, index) => {
+            if (index >= start && index < end) {
+                row.style.display = 'table-row';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function updatePaginationButtons() {
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const pageNumbers = document.getElementById('pageNumbers');
+
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+        pageNumbers.textContent = currentPage;
+    }
+
+    // Initial setup
+    showRows(currentPage);
+    updatePaginationButtons();
+
+    // Previous button click event
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            showRows(currentPage);
+            updatePaginationButtons();
+        }
+    });
+
+    // Next button click event
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+            currentPage++;
+            showRows(currentPage);
+            updatePaginationButtons();
+        }
+    });
     </script>
 
 </body>

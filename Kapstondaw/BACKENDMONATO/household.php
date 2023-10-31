@@ -32,7 +32,7 @@
                 <a href="#">Sort & Filter </a>
             </div>
             <div class="add-cont">
-              
+                <a href="archives/ArchiveHousehold.php" class="archiveResidents">Archive</a>
             </div>
         </div>
 

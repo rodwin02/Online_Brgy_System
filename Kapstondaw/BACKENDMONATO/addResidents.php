@@ -106,10 +106,7 @@
         <div class="addRowCont">
             <button onclick="addRow()" class="addRow">Add Row</button>
         </div>
-
-
     </div>
-
 
 </body>
 
@@ -121,7 +118,6 @@ function deleteRow(btn) {
     var row = btn.parentNode.parentNode;
     row.parentNode.removeChild(row);
 }
-
 function addRow() {
     var table = document.querySelector("table tbody");
     var newRow = document.createElement("tr");
@@ -213,5 +209,5 @@ function addRow() {
     newRow.appendChild(deleteCell);
 
     table.appendChild(newRow);
-}
+} 
 </script>

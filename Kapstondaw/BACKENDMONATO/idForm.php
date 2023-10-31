@@ -44,6 +44,7 @@ while($row = $result->fetch_assoc()) {
             </div>
             <div class="add-cont">
                 <a href="#" class="add" id="addIdForm">+ ID Form</a>
+                <a href="archives/ArchiveIdForm.php" class="archiveResidents">Archive</a>
             </div>
         </div>
 

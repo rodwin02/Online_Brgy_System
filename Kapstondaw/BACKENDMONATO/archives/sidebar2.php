@@ -8,8 +8,8 @@
       </div>
   </div>
 
-   <!-- SIDE BAR -->
-   <div class="sidebar">
+  <!-- SIDE BAR -->
+  <div class="sidebar">
       <div class="slayer1">
           <img class="vector-side" src="../vector/layerside.png" alt="">
           <img class="db-icon" src="../icons/dashboard-icon.png" alt=""></img>

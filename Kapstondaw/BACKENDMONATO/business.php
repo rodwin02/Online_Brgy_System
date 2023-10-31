@@ -78,9 +78,9 @@ while($row = $result->fetch_assoc()) {
             </div>
             <div class="add-cont">
                 <a href="addBusiness.php" class="add">+ Business</a>
-                <a href="./model/export_residents_csv.php" class="exportCVS">+ Export CVS</a>
+                <a href="#" class="exportCVS">+ Export CVS</a>
                 <button class="importBtn">+ Import</button>
-                <Archive href="#" class="archiveResidents">Archive</a>
+                <a href="archives/ArchiveBusiness.php" class="archiveResidents">Archive</a>
             </div>
         </div>
 
@@ -95,21 +95,14 @@ while($row = $result->fetch_assoc()) {
                         <th>BUSINESS NAME</th>
                         <th>BUSINESS ADDRESS</th>
                         <th>BUSINESS TYPE</th>
+                        <th>ACTION</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if(!empty($business)) { ?>
-                    <?php $no=1; foreach($business as $row): ?>
                     <tr>
-                        <td><?= $no ?></td>
-                        <td><?= $row['taxpayer_name']?></td>
-                        <td><?= $row['business_name']?></td>
-                        <td><?= $row['business_address']?></td>
+                        <td></td>
                     </tr>
-                    <?php endforeach?>
-                    <?php }?>
                 </tbody>
-                <!-- Add more rows here -->
             </table>
         </div>
     </div>

@@ -43,6 +43,7 @@ $businessClearance[] = $row;
             <div class="add-cont">
                 <a href="#" class="add" id="addClearance">+ Clearance</a>
                 <a href="#" class="add" id="addClosure">+ Closure</a>
+                <a href="archives/ArchiveBusinessClearance.php" class="archiveResidents">Archive</a>
             </div>
         </div>
 
