@@ -17,6 +17,7 @@
     $street = $conn->real_escape_string($_POST['street']);
     $subdivision = $conn->real_escape_string($_POST['subdivision']);
     $dbirth = $conn->real_escape_string($_POST['dob']);
+    $suffix = $conn->real_escape_string($_POST['suffix']);
 
 	function calculateAge($dob) {
 	    $today = new DateTime();
@@ -26,7 +27,7 @@
 	}
 
 	$computedAge = calculateAge($dbirth);
-    $pbirth = $conn->real_escape_string($_POST['place-of-birth']);
+    $pbirth = $conn->real_escape_string($_POST['pob']);
     $cstatus = $conn->real_escape_string($_POST['civil-status']);
     $occupation = $conn->real_escape_string($_POST['occupation']);
     $email = $conn->real_escape_string($_POST['email']);
@@ -46,8 +47,8 @@
 	$result = $stmt->get_result();
         $head = "yes";
 	if ($result->num_rows == 0) {
-		$stmt = $conn->prepare("INSERT INTO tbl_households (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `citizenship`, `household_no`, `household_head`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-		$stmt->bind_param("sssssssssssssss", $fname, $mname, $lname, $sex, $houseNo, $street, $subdivision, $dbirth, $pbirth, $cstatus, $occupation, $email, $citizenship, $householdNo, $head);
+		$stmt = $conn->prepare("INSERT INTO tbl_households (`firstname`, `middlename`, `lastname`, `sex`, `house_no`, `street`, `subdivision`, `date_of_birth`, `place_of_birth`, `civil_status`, `occupation`, `email`, `citizenship`, `household_no`, `household_head`, `suffix`, `contact_no`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		$stmt->bind_param("sssssssssssssssss", $fname, $mname, $lname, $sex, $houseNo, $street, $subdivision, $dbirth, $pbirth, $cstatus, $occupation, $email, $citizenship, $householdNo, $head, $suffix, $contact);
 
 		if ($stmt->execute()) {
 			$_SESSION['message'] = 'Resident Information has been saved!';
