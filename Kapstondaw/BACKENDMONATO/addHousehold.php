@@ -30,7 +30,7 @@
             <p>Go Back</p>
         </a>
 
-        <form action="#" class="input-form">
+        <div class="input-form">
             <div class="headerInfo">
                 <p>Household Information</p>
             </div>
@@ -44,7 +44,7 @@
                             oninput="this.value = this.value.toUpperCase()" placeholder="First Name" required>
                         <input type="text" name="middleName[]" id="middleName"
                             oninput="this.value = this.value.toUpperCase()" placeholder="Middle Name" required>
-                        <input type="text" name="suffix[]" class="suffix" id="ext"
+                        <input type="text" name="ext[]" class="suffix" id="ext"
                             oninput="this.value = this.value.toUpperCase()" placeholder="Suffix">
                     </div>
                     <div class="inputDob">
@@ -113,12 +113,12 @@
             <div class="footerInfo">
                 <button type="button" class="addSaTable">Create</button>
             </div>
-        </form>
+        </div>
 
         <p class="List">List of Members</p>
 
         <form action="./model/add_households.php" method="post" class="input-table">
-            <table>
+            <table class="main-table">
                 <thead>
                     <tr>
                         <th>Full Name</th>
@@ -171,6 +171,7 @@
             const lastName = document.getElementById('lastName').value;
             const firstName = document.getElementById('firstName').value;
             const middleName = document.getElementById('middleName').value;
+            const ext = document.getElementById('ext').value;
             const dateBirth = document.getElementById('dateBirth').value;
             const placeBirth = document.getElementById('placeBirth').value;
             const citizenship = document.getElementById('citizenship').value;
@@ -227,22 +228,28 @@
             const nameCell = newRow.insertCell(0);
             const lastNameInput = document.createElement('input');
             lastNameInput.type = 'text';
-            lastNameInput.name = 'lastName[]';
-            lastNameInput.value = document.getElementById('lastName').value;
+            lastNameInput.name = 'lastName' + "[]";
+            lastNameInput.value = lastName
 
             const firstNameInput = document.createElement('input');
             firstNameInput.type = 'text';
             firstNameInput.name = 'firstName[]';
-            firstNameInput.value = document.getElementById('firstName').value;
+            firstNameInput.value = firstName
 
             const middleNameInput = document.createElement('input');
             middleNameInput.type = 'text';
             middleNameInput.name = 'middleName[]';
-            middleNameInput.value = document.getElementById('middleName').value;
+            middleNameInput.value = middleName
+
+            const extInput = document.createElement('input');
+            extInput.type = 'text';
+            extInput.name = 'ext[]';
+            extInput.value = ext
 
             nameCell.appendChild(lastNameInput);
             nameCell.appendChild(firstNameInput);
             nameCell.appendChild(middleNameInput);
+            nameCell.appendChild(extInput);
 
             const dobCell = newRow.insertCell(1);
             const dobInput = document.createElement('input');
@@ -335,7 +342,18 @@
             const radioInput = document.createElement('input');
             radioInput.type = 'radio';
             radioInput.name =
-                'householdHead';
+                'householdHead' + "[" + inputTableBody.rows.length +
+                "]";
+            // radioInput.value = 'no'; // Set the value to 'yes'
+            console.log(inputTableBody.rows.length)
+
+            radioInput.value = 'no'; // Default value is 'no'
+            radioInput.addEventListener('change', function() {
+                if (radioInput.checked) {
+                    radioInput.value = 'yes';
+                }
+            });
+            console.log(radioInput.value)
             householdHeadCell.appendChild(radioInput);
 
             // Create a "Delete" button for the "Action" column

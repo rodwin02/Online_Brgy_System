@@ -11,7 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $totalEntries = count($_POST['lastName']); // Assumes every other array has the same count
 
     for ($i = 0; $i < $totalEntries; $i++) {
-        $householdHead =  isset($_POST['householdHead'][$i]) && in_array('yes', $_POST['householdHead'][$i]) ? 'yes' : 'no';
+        // $householdHead =  isset($_POST['householdHead'][$i]) && in_array('yes', $_POST['householdHead'][$i]) ? 'yes' : 'no';
+        // $householdHead =  isset($_POST['householdHead'][$i]) && in_array('yes', $_POST['householdHead'][$i]) ? 'yes' : 'no';
+        
+        // $householdHead = isset($_POST['householdHead'][$i]) && $_POST['householdHead'][$i] === 'yes' ? 'yes' : 'no';
+
+
+           $householdHead = isset($_POST['householdHead'][$i+1]) && $_POST['householdHead'][$i+1] === 'yes' ? 'yes' : 'no';
 
         if (!$stmt->bind_param("ssssssssssssss", 
             $_POST['firstName'][$i],
@@ -26,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST['civilStatus'][$i], 
             $_POST['occupational'][$i], 
             $_POST['citizenship'][$i], 
+            // $_POST['householdHead'][$i], 
             $householdHead,
             $_POST['ext'][$i])) {
             echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
