@@ -11,4 +11,25 @@
 		$tel_no =  $row['tel_no'];
 		$brgy_logo		= $row['brgy_logo'];
 	}
- ?>
+	
+if(isset($_SESSION['firstname']) && isset($_SESSION['middlename']) && isset($_SESSION['lastname'])) {
+// $query1 = "SELECT * FROM tbl_idform AS idform
+//           JOIN tbl_brgyclearance AS brgyclearance
+//           WHERE idform.applicant_fname = '" . $_SESSION['firstname'] . "'
+//           AND idform.applicant_mname = '" . $_SESSION['middlename'] . "'
+//           AND idform.applicant_lname = '" . $_SESSION['lastname'] . "'";
+
+$query1 = "SELECT tbl_idform.*, tbl_brgyclearance.* FROM tbl_idform JOIN tbl_brgyclearance";
+
+$result1 = $conn->query($query1);
+
+    // Initialize an array to store the results
+$certs = array();
+
+while ($row = $result1->fetch_assoc()) {
+	$certs[] = $row;
+}
+}
+
+
+?>

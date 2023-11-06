@@ -14,7 +14,7 @@
         <li><?php echo $_SESSION['username'];?></li>
         <li><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
         <?php } else {?>
-        <li class="login" id="login">Login</li>
+        <li class="" id=""><a href="./login_page.php">Login</a></li>
         <?php } ?>
     </ul>
 </header>

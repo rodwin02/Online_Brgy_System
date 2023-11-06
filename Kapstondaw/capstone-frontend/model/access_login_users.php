@@ -53,6 +53,6 @@ $conn->close();
 function setMessageAndRedirect($message, $status, $location) {
     $_SESSION['message'] = $message;
     $_SESSION['success'] = $status;
-    header("Location: $location");
+    header("Location: ../main.php");
     exit();
 }

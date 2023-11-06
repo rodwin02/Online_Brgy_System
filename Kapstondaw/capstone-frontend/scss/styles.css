@@ -928,6 +928,88 @@ footer .com ul li {
   padding: 0.5rem;
 }
 
+.login_page {
+  background-color: #fbfffd;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+.login_page .section-1 {
+  background-image: linear-gradient(120deg, rgba(0, 102, 48, 0.9), rgba(107, 160, 36, 0.85));
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 70%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login_page .section-1 img {
+  width: 500px;
+}
+.login_page .section-2 {
+  background-color: #f5f5f7;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.login_page .section-2 .close {
+  padding: 1rem;
+  text-align: end;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.login_page .section-2 form {
+  width: 70%;
+}
+.login_page .section-2 form .username,
+.login_page .section-2 form .password {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 1.5rem;
+}
+.login_page .section-2 form .username label,
+.login_page .section-2 form .password label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgba(0, 0, 0, 0.6);
+  transition: 0.2s ease-in-out;
+  padding: 0 0.2rem;
+}
+.login_page .section-2 form .username input,
+.login_page .section-2 form .password input {
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+.login_page .section-2 form .username input:focus + label,
+.login_page .section-2 form .username input:valid + label,
+.login_page .section-2 form .password input:focus + label,
+.login_page .section-2 form .password input:valid + label {
+  top: -10px;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.35);
+  transition: 0.3s ease-in-out;
+}
+.login_page .section-2 form button {
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
+  display: block;
+  background-color: #344e41;
+  border-radius: 2rem;
+  border: none;
+  color: #f5f5f7;
+  font-weight: bold;
+}
+
 .announcement_title {
   width: 100%;
   background: rgba(0, 0, 0, 0.05);
@@ -964,6 +1046,43 @@ footer .com ul li {
 .announcement_context h2,
 .announcement_context p {
   text-align: start;
+}
+
+.cart {
+  height: 100vh;
+  background-color: #f5f5f7;
+}
+.cart .main-cart {
+  width: 70%;
+  margin: 5rem auto 0;
+}
+.cart .main-cart h1 {
+  color: #007236;
+  margin: 0 0 2rem;
+}
+.cart .main-cart table {
+  width: 100%;
+  background-color: #fbfffd;
+  border-radius: 0.5rem;
+}
+.cart .main-cart table thead {
+  border: 2px solid red;
+}
+.cart .main-cart table thead tr td {
+  padding: 1rem;
+  color: #007236;
+}
+.cart .main-cart table tbody tr td {
+  padding: 1rem;
+}
+.cart .main-cart table tbody tr td span {
+  color: #007236;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid #007236;
+}
+.cart .main-cart table tbody tr td:nth-child(5) {
+  color: red;
 }
 
 .active-menu {
