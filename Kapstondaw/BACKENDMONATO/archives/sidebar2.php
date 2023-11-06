@@ -43,7 +43,7 @@
           <a class="um" href="#">User Management</a>
           <a href="../users.php" class="users">Users</a>
           <a class="cm" href="#">Content Management</a>
-          <a href="#" class="b-information" id="b-info">Barangay Information</a>
+          <a href="BarangayInfo.php" class="b-information" id="b-info">Barangay Information</a>
           <a href="../announcement.php" class="announcement">Announcement</a>
           <a href="../backup/backup.php" class="backup">Backup</a>
           <a href="#" class="restore clicky restoreBtn">Restore</a>

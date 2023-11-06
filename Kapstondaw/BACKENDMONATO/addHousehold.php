@@ -91,16 +91,15 @@
 
                     <div class="inputSex">
                         <p>Sex <span>*</span></p>
-                        <select id="sex" name="sex[]" class="sex111" required>
+                        <select id="sex" name="sex[]" required>
                             <option value=""></option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
                     </div>
-
                     <div class="inputCivilStatus">
-                        <p>Civil Status <span>*</span></p>
-                        <select id="civilStatus" name="civilStatus[]" class="civilStatus111" required>
+                        <p>Civil Status<span>*</span></p>
+                        <select id="civilStatus" name="civilStatus[]" required>
                             <option value=""></option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
@@ -108,6 +107,19 @@
                             <option value="Widowed">Widowed</option>
                         </select>
                     </div>
+                    <div class="inputVoterStatus">
+                        <p>Voters Status <span></span></p>
+                        <select id="votersStatus" name="votersStatus[]" >
+                            <option value=""></option>
+                            <option value="Voters">Voters</option>
+                            <option value="Non-voters">Non-voters</option>
+                        </select>
+                    </div>
+                    <div class="inputProfile">
+                        <p>Image Profile</p>
+                        <input type="file" id="imageProfile" accept="image/*" onchange="previewProfile()">
+                    </div>
+
                 </div>
             </div>
             <div class="footerInfo">
@@ -123,14 +135,16 @@
                     <tr>
                         <th>Full Name</th>
                         <th>Date of Birth</th>
-                        <th>Place of Birth</th>
-                        <th>Citizenship</th>
+                        <th style="display: none">Place of Birth</th>
+                        <th style="display: none">Citizenship</th>
                         <th>Phone Number</th>
                         <th>Email</th>
                         <th>Address</th>
-                        <th>Occupation</th>
+                        <th style="display: none">Occupation</th>
                         <th>Sex</th>
-                        <th>Civil Status</th>
+                        <th style="display: none">Civil Status</th>
+                        <th style="display: none">Voters Status</th>
+                        <th style="display: none">Image Profile</th>
                         <th class="houseTitle">Household Head</th>
                         <th>Action</th>
                     </tr>
@@ -139,7 +153,10 @@
                     <!-- Data will be dynamically added here using JavaScript -->
                 </tbody>
             </table>
-            <button type="submit">Submit</button>
+            <div class="submitContainerDaw">
+               <button type="submit" class="submitHouseholdDaw">Submit</button>
+            </div>
+
         </form>
     </div>
 
@@ -183,6 +200,8 @@
             const occupation = document.getElementById('occupation').value;
             const sex = document.getElementById('sex').value;
             const civilStatus = document.getElementById('civilStatus').value;
+            const votersStatus = document.getElementById('votersStatus').value;
+            const imageProfile = document.getElementById('imageProfile').value;
 
             // Phone number validation for the Philippines (10 digits starting with 09)
             const phoneNoValue = document.getElementById('phoneNo').value;
@@ -222,29 +241,42 @@
                 'occupational',
                 'sex',
                 'civilStatus',
+                'votersStatus',
+                'imageProfile',
                 'ext'
             ];
             // Create a single set of input fields for names
             const nameCell = newRow.insertCell(0);
+            nameCell.style.width = '100%';
+            nameCell.style.display = 'flex';
+            nameCell.style.flexDirection = 'row';
+            nameCell.style.paddingTop = '8px';
             const lastNameInput = document.createElement('input');
             lastNameInput.type = 'text';
             lastNameInput.name = 'lastName' + "[]";
             lastNameInput.value = lastName
+            lastNameInput.style.width = '30%';
+            lastNameInput.style.marginRight = '5px';
 
             const firstNameInput = document.createElement('input');
             firstNameInput.type = 'text';
             firstNameInput.name = 'firstName[]';
             firstNameInput.value = firstName
+            firstNameInput.style.width = '30%';
+            firstNameInput.style.marginRight = '5px';
 
             const middleNameInput = document.createElement('input');
             middleNameInput.type = 'text';
             middleNameInput.name = 'middleName[]';
             middleNameInput.value = middleName
+            middleNameInput.style.width = '30%';
+            middleNameInput.style.marginRight = '5px';
 
             const extInput = document.createElement('input');
             extInput.type = 'text';
             extInput.name = 'ext[]';
             extInput.value = ext
+            extInput.style.width = '20%';
 
             nameCell.appendChild(lastNameInput);
             nameCell.appendChild(firstNameInput);
@@ -256,10 +288,12 @@
             dobInput.type = 'text';
             dobInput.name = 'dateBirth[]';
             dobInput.value = dateBirth
+            
 
             dobCell.appendChild(dobInput);
 
             const pobCell = newRow.insertCell(2);
+            pobCell.style.display = 'none';
             const pobInput = document.createElement('input');
             pobInput.type = 'text';
             pobInput.name = 'placeBirth[]';
@@ -268,6 +302,7 @@
             pobCell.appendChild(pobInput);
 
             const citizenshipCell = newRow.insertCell(3);
+            citizenshipCell.style.display = 'none';
             const citizenshipInput = document.createElement('input');
             citizenshipInput.type = 'text';
             citizenshipInput.name = 'citizenship[]';
@@ -292,27 +327,34 @@
             emailCell.appendChild(emailInput);
 
             const addressCell = newRow.insertCell(6);
+            addressCell.style.width = '100%';
+            addressCell.style.display = 'flex';
+            addressCell.style.flexDirection = 'row';
             const houseNoInput = document.createElement('input');
             houseNoInput.type = 'text';
             houseNoInput.name = 'no[]';
             houseNoInput.value = document.getElementById('no').value;
-            houseNoInput.style.width = '30px';
+            houseNoInput.style.width = '50px';
+            houseNoInput.style.marginRight = '5px';
 
             const streetNameInput = document.createElement('input');
             streetNameInput.type = 'text';
             streetNameInput.name = 'streetName[]';
             streetNameInput.value = document.getElementById('streetName').value;
+            streetNameInput.style.marginRight = '5px';
 
             const subdiNameInput = document.createElement('input');
             subdiNameInput.type = 'text';
             subdiNameInput.name = 'subdiName[]';
             subdiNameInput.value = document.getElementById('subdiName').value;
+            subdiNameInput.style.marginRight = '5px';
 
             addressCell.appendChild(houseNoInput);
             addressCell.appendChild(streetNameInput);
             addressCell.appendChild(subdiNameInput);
 
             const occupationCell = newRow.insertCell(7);
+            occupationCell.style.display = 'none';
             const occupationInput = document.createElement('input');
             occupationInput.type = 'text';
             occupationInput.name = 'occupational[]';
@@ -329,21 +371,47 @@
             sexCell.appendChild(sexInput);
 
             const civilStatusCell = newRow.insertCell(9);
+            civilStatusCell.style.display = 'none';
             const civilStatusInput = document.createElement('input');
             civilStatusInput.type = 'text';
             civilStatusInput.name = 'civilStatus[]';
             civilStatusInput.value = civilStatus
+            
 
             civilStatusCell.appendChild(civilStatusInput);
-            // inputElement.readOnly = true; // Make the input read-only
-            // cell.appendChild(inputElement);
+        
 
-            const householdHeadCell = newRow.insertCell(10);
+            // Create a new cell for the "Voters Status" input
+            const votersStatusCell = newRow.insertCell(10); // Adjust the column index if needed
+            votersStatusCell.style.display = 'none';
+            const votersStatusInput = document.createElement('input');
+            votersStatusInput.type = 'text';
+            votersStatusInput.name = 'votersStatus[]';
+            votersStatusInput.value = votersStatus
+
+            votersStatusCell.appendChild(votersStatusInput);
+
+            // Create a new cell for the "Image Profile" input
+            const imageProfileCell = newRow.insertCell(11); // Adjust the column index if needed
+            imageProfileCell.style.display = 'none';
+            const imageProfileInput = document.createElement('input');
+            imageProfileInput.type = 'file';
+            imageProfileInput.name = 'imageProfile[]'; // Add [] for multiple file inputs
+            imageProfileInput.accept = 'image/*';
+            imageProfileInput.onchange = function() {
+                previewProfile(imageProfileInput); // Call the previewProfile function
+            };
+
+            imageProfileCell.appendChild(imageProfileInput);
+
+            const householdHeadCell = newRow.insertCell(12);
+            
             const radioInput = document.createElement('input');
             radioInput.type = 'radio';
-            radioInput.name =
-                'householdHead' + "[" + inputTableBody.rows.length +
-                "]";
+            radioInput.style.marginTop = '5px';
+            radioInput.style.height = '18px';
+            radioInput.style.width = '18px';
+            radioInput.name = 'householdHead' + "[" + inputTableBody.rows.length + "]";
             // radioInput.value = 'no'; // Set the value to 'yes'
             console.log(inputTableBody.rows.length)
 
@@ -357,7 +425,7 @@
             householdHeadCell.appendChild(radioInput);
 
             // Create a "Delete" button for the "Action" column
-            const actionCell = newRow.insertCell(11);
+            const actionCell = newRow.insertCell(13);
             const deleteButton = document.createElement('button');
             deleteButton.textContent =
                 'Delete';
