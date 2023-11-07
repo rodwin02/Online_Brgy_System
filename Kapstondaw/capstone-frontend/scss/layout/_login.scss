@@ -1,17 +1,10 @@
 .login_page {
-  background-color: #fbfffd;
+  background-color: #006630;
   height: 100vh;
   width: 100%;
   display: flex;
 
   .section-1 {
-    background-image: linear-gradient(
-      120deg,
-      rgba(#006630, 90%),
-      rgba(#6ba024, 85%)
-    );
-    background-repeat: no-repeat;
-    background-size: contain;
     width: 70%;
     height: inherit;
     display: flex;
@@ -25,6 +18,7 @@
 
   .section-2 {
     background-color: #f5f5f7;
+    border-radius: 2rem 0 0 2rem;
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -39,6 +33,10 @@
       width: 100%;
     }
     form {
+      h1 {
+        color: #006630;
+        text-align: center;
+      }
       width: 70%;
       .username,
       .password {
@@ -77,7 +75,7 @@
         padding: 0.5rem 2rem;
         margin: 0 auto;
         display: block;
-        background-color: #344e41;
+        background-color: #006630;
         border-radius: 2rem;
         border: none;
         color: #f5f5f7;

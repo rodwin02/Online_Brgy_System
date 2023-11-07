@@ -929,15 +929,12 @@ footer .com ul li {
 }
 
 .login_page {
-  background-color: #fbfffd;
+  background-color: #006630;
   height: 100vh;
   width: 100%;
   display: flex;
 }
 .login_page .section-1 {
-  background-image: linear-gradient(120deg, rgba(0, 102, 48, 0.9), rgba(107, 160, 36, 0.85));
-  background-repeat: no-repeat;
-  background-size: contain;
   width: 70%;
   height: inherit;
   display: flex;
@@ -949,6 +946,7 @@ footer .com ul li {
 }
 .login_page .section-2 {
   background-color: #f5f5f7;
+  border-radius: 2rem 0 0 2rem;
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -965,6 +963,10 @@ footer .com ul li {
 }
 .login_page .section-2 form {
   width: 70%;
+}
+.login_page .section-2 form h1 {
+  color: #006630;
+  text-align: center;
 }
 .login_page .section-2 form .username,
 .login_page .section-2 form .password {
@@ -1003,7 +1005,7 @@ footer .com ul li {
   padding: 0.5rem 2rem;
   margin: 0 auto;
   display: block;
-  background-color: #344e41;
+  background-color: #006630;
   border-radius: 2rem;
   border: none;
   color: #f5f5f7;
