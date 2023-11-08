@@ -46,6 +46,7 @@
                 <thead>
                     <tr>
                         <td>Name</td>
+                        <td>Requestor name</td>
                         <td>Description</td>
                         <td>Requested Date</td>
                         <td>Status</td>
@@ -54,29 +55,20 @@
                 </thead>
                 <tbody>
                     <?php if(!empty($certs)) {?>
-                    <?php foreach($certs as $row) : 
-                        if($_SESSION['firstname'] === $row['applicant_fname']) {?>
+                    <?php foreach($certs as $row) : ?>
                     <tr>
                         <td><?= $row['applicant_fname']. " ". $row['applicant_mname']. " ". $row['applicant_lname'] ?>
                         </td>
-                        <td> <?php
-                            if (!empty($row['idform'])) {
-                                // Data is from tbl_idform
-                                echo "ID Form";
-                            } elseif (!empty($row['brgyclearance'])) {
-                                // Data is from tbl_brgyclearance
-                                echo "Barangay ID";
-                            } else {
-                                // Handle other cases or set a default description
-                                echo "Unknown";
-                            }
-                            ?>
+                        <td>
+                            <?php  if(isset($row['requestor_fname'])) {
+                             echo $row['requestor_fname']. " ". $row['requestor_mname']. " ". $row['requestor_lname']; }?>
                         </td>
-                        <td><?= $row['date-requested']?></td>
+                        <td>Des</td>
+                        <td></td>
                         <td><span>Complete</span></td>
                         <td>Cancel</td>
                     </tr>
-                    <?php } endforeach  ?>
+                    <?php  endforeach  ?>
                     <?php } ?>
                 </tbody>
             </table>

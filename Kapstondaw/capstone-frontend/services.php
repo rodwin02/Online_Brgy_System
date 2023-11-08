@@ -8,7 +8,7 @@
                 <img src="./assets/stamp.png" alt="stamp" />
                 <p>IDENTIFICATION FORM</p>
                 <?php if(!isset($_SESSION['role'])) { ?>
-                <button class="service-noAcc">REQUEST</button>
+                <button class=""><a href="./login_page.php">REQUEST</a></button>
                 <?php } else { ?>
                 <button class="service-btn">REQUEST</button>
                 <?php }?>
@@ -17,7 +17,7 @@
                 <img src="./assets/stamp.png" alt="stamp" />
                 <p>BARANGAY CLEARANCE</p>
                 <?php if(!isset($_SESSION['role'])) { ?>
-                <button class="service-noAcc">REQUEST</button>
+                <button class=""><a href="./login_page.php">REQUEST</a></button>
                 <?php } else { ?>
                 <button class="service-btn">REQUEST</button>
                 <?php }?>
@@ -26,7 +26,7 @@
                 <img src="./assets/stamp.png" alt="stamp" />
                 <p>ENDORSEMENT CERTIFICATE</p>
                 <?php if(!isset($_SESSION['role'])) { ?>
-                <button class="service-noAcc">REQUEST</button>
+                <button class=""><a href="./login_page.php">REQUEST</a></button>
                 <?php } else { ?>
                 <button class="service-btn">REQUEST</button>
                 <?php }?>
@@ -35,7 +35,7 @@
                 <img src="./assets/stamp.png" alt="stamp" />
                 <p>CERTIFICATE OF INDIGENCY</p>
                 <?php if(!isset($_SESSION['role'])) { ?>
-                <button class="service-noAcc">REQUEST</button>
+                <button class=""><a href="./login_page.php">REQUEST</a></button>
                 <?php } else { ?>
                 <button class="service-btn">REQUEST</button>
                 <?php }?>
@@ -44,7 +44,7 @@
                 <img src="./assets/stamp.png" alt="stamp" />
                 <p>CERTIFICATE OF LATE BIRTH REGISTRATION</p>
                 <?php if(!isset($_SESSION['role'])) { ?>
-                <button class="service-noAcc">REQUEST</button>
+                <button class=""><a href="./login_page.php">REQUEST</a></button>
                 <?php } else { ?>
                 <button class="service-btn">REQUEST</button>
                 <?php }?>
@@ -53,7 +53,7 @@
                 <img src="./assets/stamp.png" alt="stamp" />
                 <p>BUSINESS CLEARANCE</p>
                 <?php if(!isset($_SESSION['role'])) { ?>
-                <button class="service-noAcc">REQUEST</button>
+                <button class=""><a href="./login_page.php">REQUEST</a></button>
                 <?php } else { ?>
                 <button class="service-btn">REQUEST</button>
                 <?php }?>
