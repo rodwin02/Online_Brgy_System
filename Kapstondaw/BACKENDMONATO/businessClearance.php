@@ -49,6 +49,7 @@ $businessClearance[] = $row;
 
         <?php include './template/message.php' ?>
 
+        <form action="" class="form-allCert">
         <div class="third_layer">
             <table id="table">
                 <thead>
@@ -58,6 +59,7 @@ $businessClearance[] = $row;
                         <th>Business Address</th>
                         <th>Date Applied</th>
                         <th>Document For</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -71,6 +73,14 @@ $businessClearance[] = $row;
                         <td><?= $row['business_address'] ?></td>
                         <td><?= $row['date_applied'] ?></td>
                         <td><?= $row['documentFor'] ?></td>
+                        <td>
+                            <select name="Status" id="Status" onchange="changeColor(this)">
+                                <option class="Pending" value="Pending">Pending</option>
+                                <option class="Preparing" value="Preparing">Preparing</option>
+                                <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
+                                <option class="Completed" value="Completed">Completed</option>
+                            </select></td>
+                        </td>
                         <td>
                             <a href="./generate/businessClearance_generate.php?id=<?= $row['id'] ?>"
                                 class="print">Print</a>
@@ -96,6 +106,7 @@ $businessClearance[] = $row;
                 <button id="nextBtn">Next</button>
             </div>
         </div>
+        </form>
     </div>
 
     <div class="modal-addClearance">

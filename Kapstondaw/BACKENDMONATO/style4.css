@@ -266,6 +266,12 @@ Z/* START CONTENT MANAGEMENT CSS*/
   background-color: #007236;
   color: white;
 }
+.form-allCert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -280,6 +286,12 @@ table {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+table tbody tr #Status {
+  border: none;
+  cursor: pointer;
+  background: none;
+  
 }
 
 table thead tr th {
