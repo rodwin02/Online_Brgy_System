@@ -49,7 +49,8 @@ while($row = $result->fetch_assoc()) {
         </div>
 
         <?php include './template/message.php' ?>
-
+        
+        <form action="" class="form-allCert">
         <div class="third_layer">
             <table id="table">
                 <thead>
@@ -64,6 +65,7 @@ while($row = $result->fetch_assoc()) {
                         <th>Document For</th>
                         <th>Purpose</th>
                         <th>Date Requested</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -82,7 +84,14 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['contact_number']?></td>
                         <td><?= $row['documentFor'] ?></td>
                         <td><?= $row['purpose'] ?></td>
-                        <td><?= $row['date-requested'] ?></td>
+                        <td><?= $row['date_requested'] ?></td>
+                        <td>
+                            <select name="Status" id="Status" onchange="changeColor(this)">
+                                <option class="Pending" value="Pending">Pending</option>
+                                <option class="Preparing" value="Preparing">Preparing</option>
+                                <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
+                                <option class="Completed" value="Completed">Completed</option>
+                            </select></td>
                         <td>
                             <?php if($row['documentFor'] === 'Self') { ?>
                             <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">Print</a>
@@ -103,6 +112,8 @@ while($row = $result->fetch_assoc()) {
                 <button id="nextBtn">Next</button>
             </div>
         </div>
+        </form>
+       
     </div>
 
     <div class="modal-addIdForm">
@@ -230,13 +241,5 @@ while($row = $result->fetch_assoc()) {
             updatePaginationButtons();
         }
     });
-
-    // Next button click event
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
-            currentPage++;
-            showRows(currentPage);
-            updatePaginationButtons();
-        }
-    });
+    
 </script>

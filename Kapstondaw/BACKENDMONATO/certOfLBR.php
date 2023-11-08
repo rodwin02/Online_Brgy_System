@@ -51,6 +51,7 @@ while($row = $result->fetch_assoc()) {
 
         <?php include './template/message.php' ?>
 
+        <form action="" class="form-allCert">
         <div class="third_layer">
             <table id="table">
                 <thead>
@@ -64,6 +65,7 @@ while($row = $result->fetch_assoc()) {
                         <th>Address</th>
                         <th>Date Requested</th>
                         <th>Document For</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -82,6 +84,14 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision'] ?></td>
                         <td><?= $row['date-requested'] ?></td>
                         <td><?= $row['documentFor'] ?></td>
+                        <td>
+                            <select name="Status" id="Status" onchange="changeColor(this)">
+                                <option class="Pending" value="Pending">Pending</option>
+                                <option class="Preparing" value="Preparing">Preparing</option>
+                                <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
+                                <option class="Completed" value="Completed">Completed</option>
+                            </select></td>
+                        </td>
                         <td>
                             <?php if($row['documentFor'] === 'self') { ?>
                             <a href="./generate/certOfLBR_generate_forself.php?id=<?= $row['id'] ?>"
@@ -107,6 +117,7 @@ while($row = $result->fetch_assoc()) {
                 <button id="nextBtn">Next</button>
             </div>
         </div>
+        </form>
     </div>
 
     <div class="modal-addlbr_forself">

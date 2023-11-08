@@ -49,6 +49,7 @@ while($row = $result->fetch_assoc()) {
 
         <?php include './template/message.php' ?>
 
+        <form action="" class="form-allCert">
         <div class="third_layer">
             <table id="table">
                 <thead>
@@ -59,6 +60,7 @@ while($row = $result->fetch_assoc()) {
                         <th>Place of Birth</th>
                         <th>Purpose</th>
                         <th>Date of Issue</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -72,8 +74,15 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['date-of-birth'] ?></td>
                         <td><?= $row['place-of-birth'] ?></td>
                         <td><?= $row['purpose'] ?></td>
-                        <td><?= $row['date-issue'] ?></td>
-
+                        <td><?= $row['date_requested'] ?></td>
+                        <td>
+                            <select name="Status" id="Status" onchange="changeColor(this)">
+                                <option class="Pending" value="Pending">Pending</option>
+                                <option class="Preparing" value="Preparing">Preparing</option>
+                                <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
+                                <option class="Completed" value="Completed">Completed</option>
+                            </select></td>
+                        </td>
                         <td>
                             <a class="edit" href="">Edit</a>
                             <a class="print" href="./generate/brgyClearance_generate.php?id=<?= $row['id'] ?>">Print</a>
@@ -91,6 +100,7 @@ while($row = $result->fetch_assoc()) {
                 <button id="nextBtn">Next</button>
             </div>
         </div>
+        </form>
     </div>
 
     <div class="modal-addBrgyClearance">
