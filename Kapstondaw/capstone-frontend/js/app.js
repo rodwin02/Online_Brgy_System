@@ -2,14 +2,18 @@ const activeMenuEl = document.querySelector("#active-menu");
 const activeConEl = document.querySelector("#active-container");
 
 const menuEl = document.querySelector("#menu");
-menuEl.addEventListener("click", () => {
-  activeMenuEl.classList.add("show");
-});
+if (menuEl !== null) {
+  menuEl.addEventListener("click", () => {
+    activeMenuEl.classList.add("show");
+  });
+}
 
 const closeMenuEl = document.querySelector("#close-menu");
-closeMenuEl.addEventListener("click", () => {
-  activeMenuEl.classList.remove("show");
-});
+if (closeMenuEl !== null) {
+  closeMenuEl.addEventListener("click", () => {
+    activeMenuEl.classList.remove("show");
+  });
+}
 
 const serviceNoAcc = document.querySelectorAll(".service-noAcc");
 
@@ -105,3 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // * Announcements\
 // * End of Announcements
+
+/// * car table scroll
+// const cartBody = document.querySelector("table tbody");
+// console.log("table cart");
+// // Check if the number of rows exceeds 5, then add the scroll class
+// if (cartBody && cartBody.rows.length > 10) {
+//   cartBody.classList.add("scroll");
+// }
