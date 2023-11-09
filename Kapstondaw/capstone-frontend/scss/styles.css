@@ -1062,28 +1062,39 @@ footer .com ul li {
   color: #007236;
   margin: 0 0 2rem;
 }
-.cart .main-cart table {
+.cart .main-cart .table-container {
+  position: relative;
+  max-height: 500px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+.cart .main-cart .table-container table {
   width: 100%;
   background-color: #fbfffd;
   border-radius: 0.5rem;
 }
-.cart .main-cart table thead {
-  border: 2px solid red;
+.cart .main-cart .table-container table thead {
+  position: sticky;
+  top: 0;
 }
-.cart .main-cart table thead tr td {
+.cart .main-cart .table-container table thead tr {
+  background-color: #fbfffd;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.05);
+}
+.cart .main-cart .table-container table thead tr td {
   padding: 1rem;
   color: #007236;
 }
-.cart .main-cart table tbody tr td {
+.cart .main-cart .table-container table tbody tr td {
   padding: 1rem;
 }
-.cart .main-cart table tbody tr td span {
+.cart .main-cart .table-container table tbody tr td .pending {
   color: #007236;
   padding: 0.5rem;
   border-radius: 1rem;
   border: 1px solid #007236;
 }
-.cart .main-cart table tbody tr td:nth-child(5) {
+.cart .main-cart .table-container table tbody tr td > a {
   color: red;
 }
 

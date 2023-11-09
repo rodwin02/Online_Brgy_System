@@ -31,14 +31,20 @@ if(isset($_SESSION['firstname']) && isset($_SESSION['middlename']) && isset($_SE
 //           AND tbl_idform.applicant_mname = '$middlename'
 //           AND tbl_idform.applicant_lname = '$lastname'";
 
-$query1 = "SELECT applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested
+$query1 = "SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_idform' AS source
 			FROM tbl_idform
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
            UNION ALL
-           SELECT applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested
-		   FROM tbl_brgyclearance
+           SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_brgyclearance' AS source
+			FROM tbl_brgyclearance
+           WHERE applicant_fname = '$firstname'
+           AND applicant_mname = '$middlename'
+           AND applicant_lname = '$lastname'
+		   UNION ALL
+			SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_ecertificate' AS source
+			FROM tbl_ecertificate
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'

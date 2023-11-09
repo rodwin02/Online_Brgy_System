@@ -12,7 +12,17 @@
 
 <body>
     <?php include "./model/fetch_brgy_information.php" ?>
-    <div class="cart">
+
+    <?php 
+if(isset($_SESSION['message'])) 
+{ ?>
+    <div class="active-success">
+        <div class="container">
+            <h2><?php echo $_SESSION['message']; ?></h2>
+        </div>
+    </div>
+    <?php unset($_SESSION['message']);
+} ?> <div class="cart">
 
         <div class="announcementHeader">
             <div class="layer1">
@@ -34,7 +44,7 @@
                 <?php if(isset($_SESSION['username'])) { ?>
                 <li><a href="#">Cart</a></li>
                 <li><?php echo $_SESSION['username'];?></li>
-                <li><a href="../BACKENDMONATO/model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
+                <li><a href="./model/logout.php?username=<?= $_SESSION['username']  ?>">Logout</a></li>
                 <?php } else {?>
                 <li class="login" id="login">Login</li>
                 <?php } ?>
@@ -42,38 +52,61 @@
         </div>
         <div class="main-cart">
             <h1>Requested Status</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <td>Name</td>
-                        <td>Requestor name</td>
-                        <td>Description</td>
-                        <td>Requested Date</td>
-                        <td>Status</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if(!empty($certs)) {?>
-                    <?php foreach($certs as $row) : ?>
-                    <tr>
-                        <td><?= $row['applicant_fname']. " ". $row['applicant_mname']. " ". $row['applicant_lname'] ?>
-                        </td>
-                        <td>
-                            <?php  if(isset($row['requestor_fname'])) {
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Requestor name</td>
+                            <td>Description</td>
+                            <td>Requested Date</td>
+                            <td>Status</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if(!empty($certs)) {?>
+                        <?php foreach($certs as $row) : ?>
+                        <tr>
+                            <td><?= $row['applicant_fname']. " ". $row['applicant_mname']. " ". $row['applicant_lname'] ?>
+                            </td>
+                            <td>
+                                <?php  if(isset($row['requestor_fname'])) {
                              echo $row['requestor_fname']. " ". $row['requestor_mname']. " ". $row['requestor_lname']; }?>
-                        </td>
-                        <td>Des</td>
-                        <td></td>
-                        <td><span>Complete</span></td>
-                        <td>Cancel</td>
-                    </tr>
-                    <?php  endforeach  ?>
-                    <?php } ?>
-                </tbody>
-            </table>
+                            </td>
+                            <td>
+                                <?php     
+                            if (isset($row['applicant_fname'])) {
+                                if ($row['source'] === 'tbl_idform') {
+                                    echo "Identification";
+                                } elseif ($row['source'] === 'tbl_brgyclearance') {
+                                    echo "Barangay Clearance";
+                                }
+                                elseif ($row['source'] === 'tbl_ecertificate') {
+                                    echo "Endorsement Certificate";
+                                }
+                            }
+                            ?>
+                            </td>
+                            <td>
+                                <?= $row['date_requested'] ?></td>
+                            <td>
+                                <?php if($row['status'] === "pending") {?>
+                                <span class="pending"><?= $row['status']?></span>
+                                <?php } ?>
+                            </td>
+                            <td><a href="./model/cancel/cancel_idform.php?id=<?= $row['id'] ?>">Cancel</a></td>
+                        </tr>
+                        <?php  endforeach  ?>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+
+    <script src=" ./js//jQuery-3-7-0"></script>
+    <script src="./js//app.js"></script>
 </body>
 
 </html>

@@ -9,35 +9,46 @@
       color: #007236;
       margin: 0 0 2rem;
     }
+    .table-container {
+      position: relative;
+      max-height: 500px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      table {
+        width: 100%;
+        background-color: #fbfffd;
+        border-radius: 0.5rem;
+        thead {
+          position: sticky;
+          top: 0;
 
-    table {
-      width: 100%;
-      background-color: #fbfffd;
-      border-radius: 0.5rem;
-      thead {
-        border: 2px solid red;
+          tr {
+            background-color: #fbfffd;
+            box-shadow: 0 2px 25px rgba(0, 0, 0, 0.05);
+            td {
+              padding: 1rem;
 
-        tr {
-          td {
-            padding: 1rem;
-
-            color: #007236;
-          }
-        }
-      }
-      tbody {
-        tr {
-          td {
-            padding: 1rem;
-            span {
               color: #007236;
-              padding: 0.5rem;
-              border-radius: 1rem;
-              border: 1px solid #007236;
             }
           }
-          td:nth-child(5) {
-            color: red;
+        }
+        tbody {
+          tr {
+            td {
+              padding: 1rem;
+              .pending {
+                color: #007236;
+                padding: 0.5rem;
+                border-radius: 1rem;
+                border: 1px solid #007236;
+              }
+            }
+            // td:nth-child(5) {
+            //   color: red;
+            // }
+            td > a {
+              color: red;
+            }
           }
         }
       }
