@@ -30,15 +30,17 @@
             <button>ABOUT US</button>
         </div>
         <div class="logo">
-            <img src="../BACKENDMONATO/uploads/<?php echo $municipality_logo ?>" alt="dasma-logo" />
+            <img src="../BACKENDMONATO/uploads/logo/<?php echo $municipality_logo ?>" alt="dasma-logo" />
         </div>
     </div>
 
 
     <div class="hide zone4">
         <div class="layer1">
-            <div class="logo">
-                <img src="./assets/brgy-logo.png" alt="brgy-logo" />
+            <div class="section1">
+                <div class="logo">
+                    <img src="../BACKENDMONATO/uploads/logo/<?= $brgy_logo ?>" alt="brgy-logo" />
+                </div>
             </div>
             <div class="brgy">
                 <span>Republic of the Philippines</span>
@@ -198,9 +200,11 @@
     <?php include './hotlines.php' ?>
 
     <footer>
-        <img src="../BACKENDMONATO/uploads/<?php echo $brgy_logo ?>" alt="" />
+        <div class="logo">
+            <img src="../BACKENDMONATO/uploads/logo/<?php echo $brgy_logo ?>" alt="" />
+        </div>
 
-        <h2>BARANGAY ZONE IV DASMARINAS, CAVITE</h2>
+        <h2><?= $brgy_name." ".$town_name.", ".$province_name ?></h2>
 
         <div class="links">
             <h2>
@@ -219,7 +223,7 @@
             <ul>
                 <li>
                     <img src="./assets/location.png" alt="" />
-                    <p>Camerino Ave, Brgy Zone 4, Bayan Dasmariñas, Cavite</p>
+                    <p><?= "Camerino Ave, ".$brgy_name.", Bayan".$town_name.", ".$province_name?></p>
                 </li>
                 <li>
                     <img src="./assets/email.png" alt="" />
@@ -235,7 +239,7 @@
 
     <div class="copyright">
         <h2>
-            Copyright © 2023 by Barangay Zone IV Dasmariñas Cavite. All Rights
+            Copyright © 2023 by <?= $brgy_name." ".$town_name." ".$province_name ?>. All Rights
             Reserved.
         </h2>
     </div>

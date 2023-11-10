@@ -18,17 +18,20 @@
 			$select->execute();
 			$ecertificate = $select->get_result()->fetch_assoc();
 
-			$insert = "INSERT INTO del_ecertificate_archive(`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `address`, `documentFor`, `purpose`, `date-requested`) VALUES (
+			$insert = "INSERT INTO del_ecertificate_archive(`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `documentFor`, `purpose`, `status`, `date_requested`) VALUES (
 				'{$ecertificate['applicant_fname']}',
 				'{$ecertificate['applicant_mname']}',
 				'{$ecertificate['applicant_lname']}',
 				'{$ecertificate['requestor_fname']}',
 				'{$ecertificate['requestor_mname']}',
 				'{$ecertificate['requestor_lname']}',
-				'{$ecertificate['address']}',
+				'{$ecertificate['house_no']}',
+				'{$ecertificate['street']}',
+				'{$ecertificate['subdivision']}',
 				'{$ecertificate['documentFor']}',
 				'{$ecertificate['purpose']}',
-				'{$ecertificate['date-requested']}'
+				'{$ecertificate['status']}',
+				'{$ecertificate['date_requested']}'
 			)";
 			$conn->query($insert);
 

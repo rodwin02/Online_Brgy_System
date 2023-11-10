@@ -17,15 +17,20 @@
 			$select->execute();
 			$brgyClearance = $select->get_result()->fetch_assoc();
 
-			$insert = "INSERT INTO del_brgyclearance_archive(`firstname`, `middlename`, `lastname`, `address`, `date-of-birth`, `place-of-birth`, `purpose`, `date-issue`) VALUES (
-				'{$brgyClearance['firstname']}',
-				'{$brgyClearance['middlename']}',
-				'{$brgyClearance['lastname']}',
-				'{$brgyClearance['address']}',
+			$insert = "INSERT INTO del_brgyclearance_archive(`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `date-of-birth`, `place-of-birth`, `purpose`, `status`) VALUES (
+				'{$brgyClearance['applicant_fname']}',
+				'{$brgyClearance['applicant_mname']}',
+				'{$brgyClearance['applicant_lname']}',
+				'{$brgyClearance['requestor_fname']}',
+				'{$brgyClearance['requestor_mname']}',
+				'{$brgyClearance['requestor_lname']}',
+				'{$brgyClearance['house-no']}',
+				'{$brgyClearance['street']}',
+				'{$brgyClearance['subdivision']}',
 				'{$brgyClearance['date-of-birth']}',
 				'{$brgyClearance['place-of-birth']}',
 				'{$brgyClearance['purpose']}',
-				'{$brgyClearance['date-issue']}'
+				'deleted'
 			)";
 			$conn->query($insert);
 	 

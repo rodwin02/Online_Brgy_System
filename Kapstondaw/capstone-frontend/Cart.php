@@ -85,6 +85,12 @@ if(isset($_SESSION['message']))
                                 elseif ($row['source'] === 'tbl_ecertificate') {
                                     echo "Endorsement Certificate";
                                 }
+                                elseif ($row['source'] === 'tbl_certoflbr') {
+                                    echo "Certificate of Late Birth";
+                                }
+                                elseif ($row['source'] === 'tbl_certofindigency') {
+                                    echo "Certificate of Indigency";
+                                }
                             }
                             ?>
                             </td>
@@ -93,6 +99,8 @@ if(isset($_SESSION['message']))
                             <td>
                                 <?php if($row['status'] === "pending") {?>
                                 <span class="pending"><?= $row['status']?></span>
+                                <?php } else if($row['status'] === "pick-up") {?>
+                                <span class="pick-up">for <?= $row['status']?></span>
                                 <?php } ?>
                             </td>
                             <td><a href="./model/cancel/cancel_idform.php?id=<?= $row['id'] ?>">Cancel</a></td>

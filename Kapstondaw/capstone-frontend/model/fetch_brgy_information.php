@@ -10,6 +10,9 @@
 		$town_name	= $row['town_name'];
 		$tel_no =  $row['tel_no'];
 		$brgy_logo		= $row['brgy_logo'];
+		$header_image		= $row['header_image'];
+		$mission		= $row['mission'];
+		$vision		= $row['vision'];
 	}
 	
 if(isset($_SESSION['firstname']) && isset($_SESSION['middlename']) && isset($_SESSION['lastname'])) {
@@ -36,18 +39,35 @@ $query1 = "SELECT id, applicant_fname, applicant_mname, applicant_lname, request
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
+		   AND (status = 'pending' OR status = 'pick-up')
            UNION ALL
            SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_brgyclearance' AS source
 			FROM tbl_brgyclearance
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
+		   AND (status = 'pending' OR status = 'pick-up')
 		   UNION ALL
 			SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_ecertificate' AS source
 			FROM tbl_ecertificate
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
+		   AND (status = 'pending' OR status = 'pick-up')
+		   UNION ALL
+			SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_certoflbr' AS source
+		   	FROM tbl_certoflbr
+           WHERE applicant_fname = '$firstname'
+           AND applicant_mname = '$middlename'
+           AND applicant_lname = '$lastname'
+		   AND (status = 'pending' OR status = 'pick-up')
+		   UNION ALL
+		   	SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_certofindigency' AS source
+		   	FROM tbl_certofindigency
+           WHERE applicant_fname = '$firstname'
+           AND applicant_mname = '$middlename'
+           AND applicant_lname = '$lastname'
+		   AND (status = 'pending' OR status = 'pick-up')
 		   ORDER BY date_requested DESC";
 
 $result1 = $conn->query($query1);

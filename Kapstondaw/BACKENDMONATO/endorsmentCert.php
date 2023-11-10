@@ -50,62 +50,65 @@ while($row = $result->fetch_assoc()) {
         <?php include './template/message.php' ?>
 
         <form action="" class="form-allCert">
-        <div class="third_layer">
-            <table id="table">
-                <thead>
-                    <tr>
-                        <th>Name of Applicant</th>
-                        <th>Name of Requestor</th>
-                        <th>Address</th>
-                        <th>Document For</th>
-                        <th>Purpose</th>
-                        <th>Date Requested</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if(!empty($ecertificate)) { ?>
-                    <?php $no=1; foreach($ecertificate as $row): ?>
-                    <tr>
-                        <td><?= $row['applicant_fname'] ?> <?= $row['applicant_mname'] ?> <?= $row['applicant_lname'] ?>
-                        </td>
-                        <td><?= $row['requestor_fname'] ?> <?= $row['requestor_mname'] ?> <?= $row['requestor_lname'] ?>
-                        </td>
-                        <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision']?></td>
-                        <td><?= $row['documentFor'] ?></td>
-                        <td><?= $row['purpose'] ?></td>
-                        <td><?= $row['date-requested'] ?></td>
-                        <td>
-                            <select name="Status" id="Status" onchange="changeColor(this)">
-                                <option class="Pending" value="Pending">Pending</option>
-                                <option class="Preparing" value="Preparing">Preparing</option>
-                                <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
-                                <option class="Completed" value="Completed">Completed</option>
-                            </select></td>
-                        </td>
-                        <td>
-                            <?php if($row['documentFor'] === 'Self') { ?>
-                            <a href="./generate/endorsementCert_generate_forselft.php?id=<?= $row['id']?>"
-                                class="print">Print</a>
-                            <?php } else {?>
-                            <a href="./generate/endorsementCert_generate_forsomeone.php?id=<?= $row['id']?>"
-                                class="print">Print</a>
-                            <?php } ?>
-                            <a href="./model/remove/remove_endorsementCert.php?id=<?= $row['id']?>"
-                                class="delete">Delete</a>
-                        </td>
-                    </tr>
-                    <?php $no++; endforeach ?>
-                    <?php } ?>
-                </tbody>
-            </table>
-            <div class="pagination">
-                <button id="prevBtn">Previous</button>
-                <div id="pageNumbers" class="page-numbers"></div>
-                <button id="nextBtn">Next</button>
+            <div class="third_layer">
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>Name of Applicant</th>
+                            <th>Name of Requestor</th>
+                            <th>Address</th>
+                            <th>Document For</th>
+                            <th>Purpose</th>
+                            <th>Date Requested</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if(!empty($ecertificate)) { ?>
+                        <?php $no=1; foreach($ecertificate as $row): ?>
+                        <tr>
+                            <td><?= $row['applicant_fname'] ?> <?= $row['applicant_mname'] ?>
+                                <?= $row['applicant_lname'] ?>
+                            </td>
+                            <td><?= $row['requestor_fname'] ?> <?= $row['requestor_mname'] ?>
+                                <?= $row['requestor_lname'] ?>
+                            </td>
+                            <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision']?></td>
+                            <td><?= $row['documentFor'] ?></td>
+                            <td><?= $row['purpose'] ?></td>
+                            <td><?= $row['date_requested'] ?></td>
+                            <td>
+                                <select name="Status" id="Status" onchange="changeColor(this)">
+                                    <option class="Pending" value="Pending">Pending</option>
+                                    <option class="Preparing" value="Preparing">Preparing</option>
+                                    <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
+                                    <option class="Completed" value="Completed">Completed</option>
+                                </select>
+                            </td>
+                            </td>
+                            <td>
+                                <?php if($row['documentFor'] === 'Self') { ?>
+                                <a href="./generate/endorsementCert_generate_forselft.php?id=<?= $row['id']?>"
+                                    class="print">Print</a>
+                                <?php } else {?>
+                                <a href="./generate/endorsementCert_generate_forsomeone.php?id=<?= $row['id']?>"
+                                    class="print">Print</a>
+                                <?php } ?>
+                                <a href="./model/remove/remove_endorsementCert.php?id=<?= $row['id']?>"
+                                    class="delete">Delete</a>
+                            </td>
+                        </tr>
+                        <?php $no++; endforeach ?>
+                        <?php } ?>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button id="prevBtn">Previous</button>
+                    <div id="pageNumbers" class="page-numbers"></div>
+                    <button id="nextBtn">Next</button>
+                </div>
             </div>
-        </div>
         </form>
     </div>
 
@@ -130,8 +133,8 @@ while($row = $result->fetch_assoc()) {
                     </div>
                 </div>
                 <div class="input-e-self">
-                     <label for="purpose">Purpose:</label>
-                     <input type="text" id="purpose" name="purpose">
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" id="purpose" name="purpose">
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Self">
@@ -164,8 +167,8 @@ while($row = $result->fetch_assoc()) {
                     </div>
                 </div>
                 <div class="input-e-someone">
-                     <label for="purpose">Purpose:</label>
-                     <input type="text" id="purpose" name="purpose">
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" id="purpose" name="purpose">
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Someone">
@@ -206,50 +209,51 @@ while($row = $result->fetch_assoc()) {
     </script>
 
 </body>
+
 </html>
 
 <script>
-      // JavaScript code to handle pagination
-      const table = document.getElementById('table');
-    const rows = table.querySelectorAll('tbody tr');
-    const totalRows = rows.length;
-    const rowsPerPage = 10;
-    let currentPage = 1;
+// JavaScript code to handle pagination
+const table = document.getElementById('table');
+const rows = table.querySelectorAll('tbody tr');
+const totalRows = rows.length;
+const rowsPerPage = 10;
+let currentPage = 1;
 
-    function showRows(page) {
-        const start = (page - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
+function showRows(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
 
-        rows.forEach((row, index) => {
-            if (index >= start && index < end) {
-                row.style.display = 'table-row';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
-
-    function updatePaginationButtons() {
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const pageNumbers = document.getElementById('pageNumbers');
-
-        prevBtn.disabled = currentPage === 1;
-        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
-
-        pageNumbers.textContent = currentPage;
-    }
-
-    // Initial setup
-    showRows(currentPage);
-    updatePaginationButtons();
-
-    // Previous button click event
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            showRows(currentPage);
-            updatePaginationButtons();
+    rows.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
         }
     });
+}
+
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+    pageNumbers.textContent = currentPage;
+}
+
+// Initial setup
+showRows(currentPage);
+updatePaginationButtons();
+
+// Previous button click event
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
 </script>

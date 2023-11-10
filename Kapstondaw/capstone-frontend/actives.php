@@ -78,14 +78,14 @@ if(isset($_SESSION['message']))
             <textarea required name="purpose" id="purpose" placeholder="Enter your purpose"></textarea>
         </div> -->
 
-        <input type="text" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
-        <input type="text" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
-        <input type="text" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
-        <input type="text" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
-        <input type="text" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
-        <input type="text" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
-        <input type="text" name="applicant_pob" value="<?php echo $_SESSION['place_of_birth'] ?>" id="">
-        <input type="text" name="applicant_dob" value="<?php echo $_SESSION['date_of_birth'] ?>" id="">
+        <input type="hidden" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
+        <input type="hidden" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
+        <input type="hidden" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
+        <input type="hidden" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
+        <input type="hidden" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
+        <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
+        <input type="hidden" name="applicant_pob" value="<?php echo $_SESSION['place_of_birth'] ?>" id="">
+        <input type="hidden" name="applicant_dob" value="<?php echo $_SESSION['date_of_birth'] ?>" id="">
         <button type="submit" class="active-service-request">Request</button>
     </form>
 </div>
@@ -115,12 +115,12 @@ if(isset($_SESSION['message']))
             </select>
         </div>
 
-        <input type="text" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
-        <input type="text" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
-        <input type="text" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
-        <input type="text" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
-        <input type="text" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
-        <input type="text" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
+        <input type="hidden" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
+        <input type="hidden" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
+        <input type="hidden" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
+        <input type="hidden" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
+        <input type="hidden" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
+        <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
 
         <button type="submit" class="active-service-request">Request</button>
     </form>
@@ -151,12 +151,12 @@ if(isset($_SESSION['message']))
             </select>
         </div>
 
-        <input type="text" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
-        <input type="text" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
-        <input type="text" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
-        <input type="text" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
-        <input type="text" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
-        <input type="text" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
+        <input type="hidden" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
+        <input type="hidden" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
+        <input type="hidden" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
+        <input type="hidden" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
+        <input type="hidden" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
+        <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
 
 
         <button type="submit" class="active-service-request">Request</button>
@@ -203,12 +203,12 @@ if(isset($_SESSION['message']))
             <label for="reason">Reason</label>
             <textarea required name="purpose" id="reason" placeholder="Enter Reason"></textarea>
         </div> -->
-        <input type="text" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
-        <input type="text" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
-        <input type="text" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
-        <input type="text" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
-        <input type="text" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
-        <input type="text" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
+        <input type="hidden" name="applicant_fname" value="<?php echo $_SESSION['firstname']?>">
+        <input type="hidden" name="applicant_mname" value="<?php echo $_SESSION['middlename']?>">
+        <input type="hidden" name="applicant_lname" value="<?php echo $_SESSION['lastname']?>">
+        <input type="hidden" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
+        <input type="hidden" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
+        <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
         <button type="submit" class="active-service-request">Request</button>
     </form>
 </div>

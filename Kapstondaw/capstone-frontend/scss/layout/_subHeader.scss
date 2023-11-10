@@ -30,17 +30,25 @@
     min-width: 375px;
 
     .logo {
-      width: 90px;
+      width: 77px;
+      height: 77px;
+      border-radius: 100%;
+      overflow: hidden;
+      background-color: aqua;
       display: flex;
+      align-items: center;
+      justify-content: center;
       @media (min-width: 375px) {
         width: 80px;
       }
       img {
-        position: absolute;
-        top: 35%;
+        // position: absolute;
+        // top: 35%;
         width: inherit;
+        height: inherit;
+        object-fit: cover;
         @media (min-width: 375px) {
-          position: static;
+          // position: static;
         }
       }
     }

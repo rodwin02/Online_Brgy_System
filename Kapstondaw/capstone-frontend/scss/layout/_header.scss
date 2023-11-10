@@ -1,22 +1,23 @@
 header {
-  background-image: linear-gradient(
-      120deg,
-      rgba(#006630, 80%),
-      rgba(#6ba024, 70%)
-    ),
-    url("../assets/mobile-hall-bg.png");
+  background: linear-gradient(
+    94deg,
+    #006630 26.26%,
+    #6ba024 134.24%,
+    #f6eb13 242.21%
+  );
   background-repeat: no-repeat;
   background-size: contain;
   min-width: 375px;
   height: 225px;
   transition: 0.2s ease-in-out;
+  position: relative;
   @media (min-width: 375px) {
-    background-image: linear-gradient(
-        120deg,
-        rgba(#006630, 80%),
-        rgba(#6ba024, 70%)
-      ),
-      url("../assets/website-hall-bg.png");
+    background: linear-gradient(
+      94deg,
+      #006630 26.26%,
+      #6ba024 134.24%,
+      #f6eb13 242.21%
+    );
     background-size: cover;
     height: 40vh;
     padding: 2rem 0;
@@ -27,12 +28,28 @@ header {
     justify-content: space-between;
   }
 
-  .menu {
-    text-align: end;
-    padding: 1rem;
+  .header-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    opacity: 0.4;
+    img {
+      object-fit: cover;
+      width: inherit;
+      height: inherit;
+    }
+  }
 
+  .menu {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 1rem;
     img {
       cursor: pointer;
+      z-index: 3;
     }
     @media (min-width: 375px) {
       display: none;
@@ -46,6 +63,7 @@ header {
     justify-content: space-around;
     margin: 0;
     padding: 0;
+    z-index: 2;
     @media (min-width: 375px) {
       width: 100%;
     }
@@ -57,15 +75,32 @@ header {
       @media (min-width: 375px) {
         display: block;
       }
-      img {
-        width: 60%;
-        @media (min-width: 375px) {
-          width: 80%;
+      .logo-container {
+        width: 112px;
+        height: 112px;
+        border-radius: 100%;
+        position: relative;
+        border: none;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: inherit;
+          height: inherit;
+          border-radius: 100%;
+          object-fit: cover;
+          @media (min-width: 375px) {
+            width: 181px;
+            height: 181px;
+          }
         }
       }
     }
-  }
-  ul > :nth-child(5) {
-    display: block;
+    li:nth-child(5) {
+      z-index: 2;
+      display: block;
+    }
   }
 }

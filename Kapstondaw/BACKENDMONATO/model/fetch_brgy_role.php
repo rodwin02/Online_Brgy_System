@@ -10,6 +10,9 @@
 		$town_name	= $row['town_name'];
 		$tel_no =  $row['tel_no'];
 		$brgy_logo		= $row['brgy_logo'];
+		$header_image		= $row['header_image'];
+		$mission		= $row['mission'];
+		$vision		= $row['vision'];
 	}
 
 	$pos_q = "SELECT * FROM tblposition ORDER BY `order` ASC";

@@ -1,3 +1,4 @@
+<?php include "./server/server.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,9 +11,12 @@
 </head>
 
 <body>
+    <?php include "./model/fetch_brgy_information.php"?>
     <div class="login_page">
         <section class="section-1">
-            <img src="./assets/brgy-logo.png" alt="Barangay Logo">
+            <div class="logo-container">
+                <img src="../BACKENDMONATO/uploads/logo/<?= $brgy_logo ?>" alt="Barangay Logo">
+            </div>
         </section>
 
         <section class="section-2">

@@ -16,7 +16,7 @@
 			$select->execute();
 			$certoflbr = $select->get_result()->fetch_assoc();
 
-			$insert = "INSERT INTO del_certoflbr_archive(`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `parent_fname`, `parent_mname`, `parent_lname`, `father_fname`, `father_mname`, `father_lname`, `mother_fname`, `mother_mname`, `mother_lname`, `date-of-birth`, `address`, `date-requested`, `documentFor`) VALUES (
+			$insert = "INSERT INTO del_certoflbr_archive(`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `parent_fname`, `parent_mname`, `parent_lname`, `father_fname`, `father_mname`, `father_lname`, `mother_fname`, `mother_mname`, `mother_lname`, `date_of_birth`, `house_no`, `street`, `subdivision`, `status`, `date_requested`, `documentFor`) VALUES (
 				'{$certoflbr['applicant_fname']}',
 				'{$certoflbr['applicant_mname']}',
 				'{$certoflbr['applicant_lname']}',
@@ -32,9 +32,12 @@
 				'{$certoflbr['mother_fname']}',
 				'{$certoflbr['mother_mname']}',
 				'{$certoflbr['mother_lname']}',
-				'{$certoflbr['date-of-birth']}',
-				'{$certoflbr['address']}',
-				'{$certoflbr['date-requested']}',
+				'{$certoflbr['date_of_birth']}',
+				'{$certoflbr['house_no']}',
+				'{$certoflbr['street']}',
+				'{$certoflbr['subdivision']}',
+				'{$certoflbr['status']}',
+				'{$certoflbr['date_requested']}',
 				'{$certoflbr['documentFor']}'
 			)";
 			$conn->query($insert);

@@ -36,16 +36,21 @@
           tr {
             td {
               padding: 1rem;
-              .pending {
-                color: #007236;
-                padding: 0.5rem;
+              .pending,
+              .pick-up {
+                padding: 0.5rem 1rem;
                 border-radius: 1rem;
-                border: 1px solid #007236;
+                border: none;
+              }
+              .pending {
+                color: #1a6c9b;
+                background-color: rgba($color: #1a6c9b, $alpha: 0.1);
+              }
+              .pick-up {
+                color: #007236;
+                background-color: rgba($color: #007236, $alpha: 0.1);
               }
             }
-            // td:nth-child(5) {
-            //   color: red;
-            // }
             td > a {
               color: red;
             }

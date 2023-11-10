@@ -78,7 +78,7 @@ while($row = $result->fetch_assoc()) {
             </div>
             <div class="add-cont">
                 <a href="addBusiness.php" class="add">+ Business</a>
-                <a href="#" class="exportCVS">+ Export CVS</a>
+                <a href="./model/export_business_csv.php" class="exportCVS">+ Export CVS</a>
                 <button class="importBtn">+ Import</button>
                 <a href="archives/ArchiveBusiness.php" class="archiveResidents">Archive</a>
             </div>

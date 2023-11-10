@@ -16,16 +16,19 @@
 			$select->execute();
 			$certofindigency = $select->get_result()->fetch_assoc();
 
-			$insert = "INSERT INTO del_certofindigency_archive(`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `address`, `documentFor`, `purpose`, `date-requested`) VALUES (
+			$insert = "INSERT INTO del_certofindigency_archive(`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `documentFor`, `purpose`, `status`, `date_requested`) VALUES (
 				'{$certofindigency['applicant_fname']}',
 				'{$certofindigency['applicant_mname']}',
 				'{$certofindigency['applicant_lname']}',
 				'{$certofindigency['requestor_fname']}',
 				'{$certofindigency['requestor_mname']}',
 				'{$certofindigency['requestor_lname']}',
-				'{$certofindigency['address']}',
+				'{$certofindigency['house_no']}',
+				'{$certofindigency['street']}',
+				'{$certofindigency['subdivision']}',
 				'{$certofindigency['documentFor']}',
 				'{$certofindigency['purpose']}',
+				'{$certofindigency['status']}',
 				'{$certofindigency['date-requested']}'
 			)";
 			$conn->query($insert);
