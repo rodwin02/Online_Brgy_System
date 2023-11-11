@@ -28,7 +28,7 @@
 				'{$certofindigency['subdivision']}',
 				'{$certofindigency['documentFor']}',
 				'{$certofindigency['purpose']}',
-				'{$certofindigency['status']}',
+				'Cancel',
 				'{$certofindigency['date-requested']}'
 			)";
 			$conn->query($insert);

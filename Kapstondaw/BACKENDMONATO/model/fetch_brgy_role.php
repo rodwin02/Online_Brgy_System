@@ -13,7 +13,21 @@
 		$header_image		= $row['header_image'];
 		$mission		= $row['mission'];
 		$vision		= $row['vision'];
+		$historicalBackground		= $row['historical_background'];
+		$email		= $row['email'];
+		$contactNo		= $row['contact_no'];
+		$addressNo		= $row['address_no'];
+		$addressStreet		= $row['address_street'];
+		$addressSubdi		= $row['address_subdi'];
+		$openTime		= $row['open_time'];
+		$closeTime		= $row['close_time'];
+
 	}
+$openTimeStamp = strtotime($openTime);
+$formattedOpenTime = date('H:i', $openTimeStamp);
+
+$closeTimeStamp = strtotime($closeTime);
+$formattedCloseTime = date('H:i', $closeTimeStamp);
 
 	$pos_q = "SELECT * FROM tblposition ORDER BY `order` ASC";
     $pos_r = $conn->query($pos_q);

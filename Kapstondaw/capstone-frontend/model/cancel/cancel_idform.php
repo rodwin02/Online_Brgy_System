@@ -17,21 +17,25 @@
 			$select->execute();
 			$idForm = $select->get_result()->fetch_assoc();
 
-            // ! broken
-			// $insert = "INSERT INTO del_idform_archive(`firstname`, `middlename`, `lastname`, `address`, `place-of-birth`, `birth-date`, `civil-status`, `contact-number`, `documentFor`, `purpose`, `date-requested`) VALUES (
-			// 	'{$idForm['firstname']}',
-			// 	'{$idForm['middlename']}',
-			// 	'{$idForm['lastname']}',
-			// 	'{$idForm['address']}',
-			// 	'{$idForm['place-of-birth']}',
-			// 	'{$idForm['birth-date']}',
-			// 	'{$idForm['civil-status']}',
-			// 	'{$idForm['contact-number']}',
-			// 	'{$idForm['documentFor']}',
-			// 	'{$idForm['purpose']}',
-			// 	'{$idForm['date-requested']}'
-			// )";
-			// $conn->query($insert);
+		$insert = "INSERT INTO del_idform_archive( `applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `place_of_birth`, `birth_date`, `civil_status`, `contact_number`, `documentFor`, `purpose`, `status`) VALUES (
+				'{$idForm['applicant_fname']}',
+				'{$idForm['applicant_mname']}',
+				'{$idForm['applicant_lname']}',
+				'{$idForm['requestor_fname']}',
+				'{$idForm['requestor_mname']}',
+				'{$idForm['requestor_lname']}',
+				'{$idForm['house_no']}',
+				'{$idForm['street']}',
+				'{$idForm['subdivision']}',
+				'{$idForm['place_of_birth']}',
+				'{$idForm['birth_date']}',
+				'{$idForm['civil_status']}',
+				'{$idForm['contact_number']}',
+				'{$idForm['documentFor']}',
+				'{$idForm['purpose']}',
+				'Cancel'
+			)";
+			$conn->query($insert);
 	 
 			$query 		= "DELETE FROM tbl_idform WHERE id = '$id'";
 			

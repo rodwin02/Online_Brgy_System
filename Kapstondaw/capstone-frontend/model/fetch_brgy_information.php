@@ -13,8 +13,23 @@
 		$header_image		= $row['header_image'];
 		$mission		= $row['mission'];
 		$vision		= $row['vision'];
+		$historicalBackground		= $row['historical_background'];
+		$email		= $row['email'];
+		$contactNo		= $row['contact_no'];
+		$addressNo		= $row['address_no'];
+		$addressStreet		= $row['address_street'];
+		$addressSubdi		= $row['address_subdi'];
+		$openTime		= $row['open_time'];
+		$closeTime		= $row['close_time'];
 	}
-	
+date_default_timezone_set('Asia/Manila');
+
+$openTimeStamp = strtotime($openTime);
+$formattedOpenTime = date('H:i a', $openTimeStamp);
+
+$closeTimeStamp = strtotime($closeTime);
+$formattedCloseTime = date('H:i a', $closeTimeStamp);
+
 if(isset($_SESSION['firstname']) && isset($_SESSION['middlename']) && isset($_SESSION['lastname'])) {
 	
 	$firstname = $_SESSION['firstname'];
@@ -39,35 +54,35 @@ $query1 = "SELECT id, applicant_fname, applicant_mname, applicant_lname, request
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
-		   AND (status = 'pending' OR status = 'pick-up')
+		   AND (status = 'Pending' OR status = 'For Pick-up')
            UNION ALL
            SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_brgyclearance' AS source
 			FROM tbl_brgyclearance
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
-		   AND (status = 'pending' OR status = 'pick-up')
+		   AND (status = 'Pending' OR status = 'For Pick-up')
 		   UNION ALL
 			SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_ecertificate' AS source
 			FROM tbl_ecertificate
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
-		   AND (status = 'pending' OR status = 'pick-up')
+		   AND (status = 'Pending' OR status = 'For Pick-up')
 		   UNION ALL
 			SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_certoflbr' AS source
 		   	FROM tbl_certoflbr
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
-		   AND (status = 'pending' OR status = 'pick-up')
+		   AND (status = 'Pending' OR status = 'For Pick-up')
 		   UNION ALL
 		   	SELECT id, applicant_fname, applicant_mname, applicant_lname, requestor_fname, requestor_mname, requestor_lname, date_requested, status, 'tbl_certofindigency' AS source
 		   	FROM tbl_certofindigency
            WHERE applicant_fname = '$firstname'
            AND applicant_mname = '$middlename'
            AND applicant_lname = '$lastname'
-		   AND (status = 'pending' OR status = 'pick-up')
+		   AND (status = 'Pending' OR status = 'For Pick-up')
 		   ORDER BY date_requested DESC";
 
 $result1 = $conn->query($query1);

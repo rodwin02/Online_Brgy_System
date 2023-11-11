@@ -52,7 +52,7 @@ while($row = $result->fetch_assoc()) {
                         <th>Document For</th>
                         <th>Purpose</th>
                         <th>Date Requested</th>
-                        <th>Action</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,6 +64,7 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['requestor_fname'] ?> <?= $row['requestor_mname'] ?> <?= $row['requestor_lname'] ?>
                         </td>
                         <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision'] ?></td>
+                        <td><?= $row['documentFor'] ?></td>
                         <td><?= $row['purpose'] ?></td>
                         <td><?= $row['date_requested'] ?></td>
                         <td><?= $row['status'] ?></td>

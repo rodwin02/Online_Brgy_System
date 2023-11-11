@@ -23,9 +23,7 @@
         <div class="context">
             <h1>WELCOME TO <span><?php echo $brgy_name ?></span></h1>
             <p>
-                Camerino Ave, Brgy Zone 4, Bayan Dasmariñas, Cavite Open Hours of
-                Barangay: Monday to Friday (8:00 AM - 5:00 AM)
-                barangayhall.zone4@gmail.com / (046) 471 1247
+                <?= "Camerino Ave, ".$brgy_name. ", Bayan ". $town_name. ", ". $province_name. " Open Hours of Barangay: Monday to Friday (". $formattedOpenTime. " - ". $formattedCloseTime. ") ". $email. " / ". $contactNo?>
             </p>
             <button>ABOUT US</button>
         </div>
@@ -52,30 +50,7 @@
     <div class="hide about" id="about">
         <h2 class="title">ABOUT OUR BARANGAY</h2>
         <h2 class="background">HISTORICAL BACKGROUND</h2>
-        <p>
-            Zone IV, formerly Poblacion, is a barangay in the city of Dasmariñas, in
-            the province of Cavite. Its population as determined by the 2020 Census
-            was 3,770. This represented 0.54% of the total population of Dasmariñas.
-            The household population of Zone IV in the 2015 Census was 3,224 broken
-            down into 901 households or an average of 3.58 members per
-            household.According to the 2015 Census, the age group with the highest
-            population in Zone IV is 20 to 24, with 375 individuals. Conversely, the
-            age group with the lowest population is 80 and over, with 21
-            individuals.Combining age groups together, those aged 14 and below,
-            consisting of the young dependent population which include
-            infants/babies, children and young adolescents/teenagers, make up an
-            aggregate of 23.02% (753). Those aged 15 up to 64, roughly, the
-            economically active population and actual or potential members of the
-            work force, constitute a total of 72.82% (2,382). Finally, old dependent
-            population consisting of the senior citizens, those aged 65 and over,
-            total 4.16% (136) in all. The computed Age Dependency Ratios mean that
-            among the population of Zone IV, there are 32 youth dependents to every
-            100 of the working age population; there are 6 aged/senior citizens to
-            every 100 of the working population; and overall, there are 37
-            dependents (young and old-age) to every 100 of the working population.
-            The median age of 28 indicates that half of the entire population of
-            Zone IV are aged less than 28 and the other half are over the age of 28.
-        </p>
+        <p><?= $historicalBackground ?></p>
         <div class="officials">
             <img src="./assets/officials.png" alt="officials" />
         </div>
@@ -227,11 +202,11 @@
                 </li>
                 <li>
                     <img src="./assets/email.png" alt="" />
-                    <p>barangayhall.zone4@gmail.com</p>
+                    <p><?= $email ?></p>
                 </li>
                 <li>
                     <img src="./assets/telephone.png" alt="" />
-                    <p>(046) 471 1247</p>
+                    <p><?= $contactNo ?></p>
                 </li>
             </ul>
         </div>

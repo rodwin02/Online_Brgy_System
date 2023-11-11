@@ -58,7 +58,6 @@ $idForm[] = $row;
                         <th>Purpose</th>
                         <th>Date Requested</th>
                         <th>Status</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>

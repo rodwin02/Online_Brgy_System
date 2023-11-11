@@ -46,18 +46,21 @@
                         </div>
                         <div class="barangay-input">
                             <label for="email-name">Email</label>
-                            <input type="text" name="email-name" id="email-name">
+                            <input type="text" name="email" id="email-name" value="<?= $email?>">
                         </div>
                         <div class="barangay-input">
                             <label for="contact-number">Contact Number</label>
-                            <input type="text" name="contact-number" id="contact-number">
+                            <input type="text" name="contact-number" id="contact-number" value="<?= $contactNo ?>">
                         </div>
                         <div class="barangay-input">
                             <label for="address-name">Address</label>
                             <div class="address-cont-brgy">
-                                <input type="text" name="address-no" id="address-no" placeholder="House no.">
-                                <input type="text" name="address-street" id="address-street" placeholder="Street">
-                                <input type="text" name="address-subdi" id="address-subdi" placeholder="Subdivision">
+                                <input type="text" name="address-no" id="address-no" placeholder="House no."
+                                    value="<?= $addressNo ?>">
+                                <input type="text" name="address-street" id="address-street" placeholder="Street"
+                                    value="<?= $addressStreet ?>">
+                                <input type="text" name="address-subdi" id="address-subdi" placeholder="Subdivision"
+                                    value="<?= $addressSubdi ?>">
                             </div>
                         </div>
                     </div>
@@ -69,11 +72,13 @@
                                 <div class="openClose-cont">
                                     <div class="input-time">
                                         <label for="open-time">Open at</label>
-                                        <input type="time" id="open-time" name="open-time">
+                                        <input type="time" id="open-time" name="open-time"
+                                            value="<?= $formattedOpenTime ?>">
                                     </div>
                                     <div class="input-time">
                                         <label for="close-time">Close at</label>
-                                        <input type="time" id="close-time" name="close-time">
+                                        <input type="time" id="close-time" name="close-time"
+                                            value="<?= $formattedCloseTime ?>">
                                     </div>
                                 </div>
                                 <div class="days-cont">
@@ -124,7 +129,8 @@
                     </div>
                     <div class="historical-desc">
                         <label for="history-desc">Historical Background Description</label>
-                        <textarea id="history-desc" rows="13" cols="165"></textarea>
+                        <textarea id="history-desc" name="historicalBackground" rows="13"
+                            cols="165"><?= $historicalBackground ?></textarea>
                     </div>
                     <div class="historical-img">
                         <label for="history-img">Historical Background Image</label>

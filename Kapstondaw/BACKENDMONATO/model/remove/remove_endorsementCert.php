@@ -30,7 +30,7 @@
 				'{$ecertificate['subdivision']}',
 				'{$ecertificate['documentFor']}',
 				'{$ecertificate['purpose']}',
-				'{$ecertificate['status']}',
+				'Cancel',
 				'{$ecertificate['date_requested']}'
 			)";
 			$conn->query($insert);

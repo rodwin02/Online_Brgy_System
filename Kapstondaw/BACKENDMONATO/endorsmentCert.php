@@ -79,12 +79,24 @@ while($row = $result->fetch_assoc()) {
                             <td><?= $row['purpose'] ?></td>
                             <td><?= $row['date_requested'] ?></td>
                             <td>
-                                <select name="Status" id="Status" onchange="changeColor(this)">
-                                    <option class="Pending" value="Pending">Pending</option>
-                                    <option class="Preparing" value="Preparing">Preparing</option>
-                                    <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
-                                    <option class="Completed" value="Completed">Completed</option>
-                                </select>
+                                <form action="./model/update_status/update_endorsement.php" method="POST"
+                                    class="form-allCert" id="statusForm">
+                                    <select name="status" id="Status">
+                                        <!-- <option class="Pending" value="Pending">Pending</option> -->
+                                        <option class="Preparing" value="Preparing"
+                                            <?php echo ($row['status'] === 'Preparing') ? 'selected' : ''; ?>>Preparing
+                                        </option>
+                                        <option class="For_Pick_up" value="For Pick-up"
+                                            <?php echo ($row['status'] === 'For Pick-up') ? 'selected' : ''; ?>>For
+                                            Pick-up
+                                        </option>
+                                        <option class="Completed" value="Completed"
+                                            <?php echo ($row['status'] === 'Completed') ? 'selected' : ''; ?>>Completed
+                                        </option>
+                                    </select>
+                                    <input type="hidden" name="id" value="<?= $row['id']?>">
+                                    <button type="submit" class="UpdateStatus">Update</button>
+                                </form>
                             </td>
                             </td>
                             <td>
@@ -96,7 +108,7 @@ while($row = $result->fetch_assoc()) {
                                     class="print">Print</a>
                                 <?php } ?>
                                 <a href="./model/remove/remove_endorsementCert.php?id=<?= $row['id']?>"
-                                    class="delete">Delete</a>
+                                    class="delete">Cancel</a>
                             </td>
                         </tr>
                         <?php $no++; endforeach ?>

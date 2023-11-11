@@ -97,13 +97,15 @@ if(isset($_SESSION['message']))
                             <td>
                                 <?= $row['date_requested'] ?></td>
                             <td>
-                                <?php if($row['status'] === "pending") {?>
+                                <?php if($row['status'] === "Pending") {?>
                                 <span class="pending"><?= $row['status']?></span>
-                                <?php } else if($row['status'] === "pick-up") {?>
-                                <span class="pick-up">for <?= $row['status']?></span>
+                                <?php } else if($row['status'] === "For Pick-up") {?>
+                                <span class="pick-up"><?= $row['status']?></span>
                                 <?php } ?>
                             </td>
-                            <td><a href="./model/cancel/cancel_idform.php?id=<?= $row['id'] ?>">Cancel</a></td>
+                            <td>
+                                <a href="./model/cancel/cancel_idform.php?id=<?= $row['id'] ?>">Cancel</a>
+                            </td>
                         </tr>
                         <?php  endforeach  ?>
                         <?php } ?>

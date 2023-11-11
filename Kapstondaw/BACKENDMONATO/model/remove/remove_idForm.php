@@ -33,7 +33,7 @@
 				'{$idForm['contact_number']}',
 				'{$idForm['documentFor']}',
 				'{$idForm['purpose']}',
-				'{$idForm['status']}'
+				'Cancel'
 			)";
 			$conn->query($insert);
 	 

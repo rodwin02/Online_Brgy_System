@@ -271,6 +271,12 @@ Z/* START CONTENT MANAGEMENT CSS*/
   justify-content: center;
   align-items: center;
 }
+.form-allCert .UpdateStatus {
+  border: none;
+  cursor: pointer;
+  color:#007236;
+  background: none;
+}
 
 table {
   width: 100%;

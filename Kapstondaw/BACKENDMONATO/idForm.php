@@ -49,8 +49,7 @@ while($row = $result->fetch_assoc()) {
         </div>
 
         <?php include './template/message.php' ?>
-        
-        <form action="" class="form-allCert">
+
         <div class="third_layer">
             <table id="table">
                 <thead>
@@ -70,12 +69,15 @@ while($row = $result->fetch_assoc()) {
                     </tr>
                 </thead>
                 <tbody>
+
                     <?php if(!empty($idForm)) { ?>
                     <?php $no=1; foreach($idForm as $row): ?>
                     <tr>
-                        <td><?= $row['applicant_fname'] ?> <?= $row['applicant_mname']?> <?= $row['applicant_lname']?>
+                        <td><?= $row['applicant_fname'] ?> <?= $row['applicant_mname']?>
+                            <?= $row['applicant_lname']?>
                         </td>
-                        <td><?= $row['requestor_fname'] ?> <?= $row['requestor_mname']?> <?= $row['requestor_lname']?>
+                        <td><?= $row['requestor_fname'] ?> <?= $row['requestor_mname']?>
+                            <?= $row['requestor_lname']?>
                         </td>
                         <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision']?></td>
                         <td><?= $row['place_of_birth']?></td>
@@ -86,12 +88,25 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['purpose'] ?></td>
                         <td><?= $row['date_requested'] ?></td>
                         <td>
-                            <select name="Status" id="Status" onchange="changeColor(this)">
-                                <option class="Pending" value="Pending">Pending</option>
-                                <option class="Preparing" value="Preparing">Preparing</option>
-                                <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
-                                <option class="Completed" value="Completed">Completed</option>
-                            </select></td>
+                            <form action="./model/update_status/update_idform.php" method="POST" class="form-allCert"
+                                id="statusForm">
+                                <select name="status" id="Status">
+                                    <!-- <option class="Pending" value="Pending">Pending</option> -->
+                                    <option class="Preparing" value="Preparing"
+                                        <?php echo ($row['status'] === 'Preparing') ? 'selected' : ''; ?>>Preparing
+                                    </option>
+                                    <option class="For_Pick_up" value="For Pick-up"
+                                        <?php echo ($row['status'] === 'For Pick-up') ? 'selected' : ''; ?>>For Pick-up
+                                    </option>
+                                    <option class="Completed" value="Completed"
+                                        <?php echo ($row['status'] === 'Completed') ? 'selected' : ''; ?>>Completed
+                                    </option>
+                                </select>
+                                <input type="hidden" name="id" value="<?= $row['id']?>">
+                                <button type="submit" class="UpdateStatus">Update</button>
+                            </form>
+
+                        </td>
                         <td>
                             <?php if($row['documentFor'] === 'Self') { ?>
                             <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">Print</a>
@@ -99,11 +114,12 @@ while($row = $result->fetch_assoc()) {
                     else { ?>
                             <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">Print</a>
                             <?php } ?>
-                            <a href="./model/remove/remove_idForm.php?id=<?= $row['id'] ?>" class="delete">Delete</a>
+                            <a href="./model/remove/remove_idForm.php?id=<?= $row['id'] ?>" class="delete">Cancel</a>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>
                     <?php } ?>
+
                 </tbody>
             </table>
             <div class="pagination">
@@ -112,8 +128,7 @@ while($row = $result->fetch_assoc()) {
                 <button id="nextBtn">Next</button>
             </div>
         </div>
-        </form>
-       
+
     </div>
 
     <div class="modal-addIdForm">
@@ -130,7 +145,7 @@ while($row = $result->fetch_assoc()) {
                 </div>
                 <div class="input-label">
                     <label for="requestorName">Requestor:</label>
-                    <input type="text" id="requestorName" placeholder="Requestor name"  >
+                    <input type="text" id="requestorName" placeholder="Requestor name">
                 </div>
                 <div class="input-label">
                     <label for="address">Address:</label>
@@ -148,7 +163,7 @@ while($row = $result->fetch_assoc()) {
                     <label for="birth_date">Birth Date:</label>
                     <input type="date" id="birth_date">
                 </div>
-                <div class="input-label">     
+                <div class="input-label">
                     <label for="civil_status">Civil Status:</label>
                     <input type="text" id="civil_status">
                 </div>
@@ -159,13 +174,13 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-label">
                     <label for="documentFor">Document For:</label>
                     <select name="documentFor" id="documentFor">
-                       <option value="Self">Forself</option>
-                       <option value="Someone">Forsomeone</option>
+                        <option value="Self">Forself</option>
+                        <option value="Someone">Forsomeone</option>
                     </select>
                 </div>
                 <div class="input-label">
-                     <label for="purpose">Purpose:</label>
-                     <input type="text" id="purpose" name="purpose">
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" id="purpose" name="purpose">
                 </div>
                 <div class="input-label">
                     <label for="date-requested">Date Requested:</label>
@@ -198,48 +213,53 @@ while($row = $result->fetch_assoc()) {
 </html>
 
 <script>
-      // JavaScript code to handle pagination
-      const table = document.getElementById('table');
-    const rows = table.querySelectorAll('tbody tr');
-    const totalRows = rows.length;
-    const rowsPerPage = 10;
-    let currentPage = 1;
+// document.getElementById('Status').addEventListener('change', function() {
+//     // Change color logic here
 
-    function showRows(page) {
-        const start = (page - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
+//     // Submit the form
+//     document.getElementById('statusForm').submit();
+// });
+// JavaScript code to handle pagination
+const table = document.getElementById('table');
+const rows = table.querySelectorAll('tbody tr');
+const totalRows = rows.length;
+const rowsPerPage = 10;
+let currentPage = 1;
 
-        rows.forEach((row, index) => {
-            if (index >= start && index < end) {
-                row.style.display = 'table-row';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
+function showRows(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
 
-    function updatePaginationButtons() {
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const pageNumbers = document.getElementById('pageNumbers');
-
-        prevBtn.disabled = currentPage === 1;
-        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
-
-        pageNumbers.textContent = currentPage;
-    }
-
-    // Initial setup
-    showRows(currentPage);
-    updatePaginationButtons();
-
-    // Previous button click event
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            showRows(currentPage);
-            updatePaginationButtons();
+    rows.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
         }
     });
-    
+}
+
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+    pageNumbers.textContent = currentPage;
+}
+
+// Initial setup
+showRows(currentPage);
+updatePaginationButtons();
+
+// Previous button click event
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
 </script>

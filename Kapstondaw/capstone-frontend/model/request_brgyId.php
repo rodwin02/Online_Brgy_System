@@ -28,7 +28,7 @@
     if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($address)&& !empty($purpose)){
 
         $insert  = "INSERT INTO tbl_idform (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `house_no`, `street`, `subdivision`, `place_of_birth`, `birth_date`, `civil_status`, `contact_number`, `documentFor`, `status`) 
-                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$applicant_houseNo', '$applicant_street', '$applicant_subdivision', '$applicant_pob', '$applicant_dob', '$applicant_civilStatus','$contactNo', '$documentFor', 'pending')";
+                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$applicant_houseNo', '$applicant_street', '$applicant_subdivision', '$applicant_pob', '$applicant_dob', '$applicant_civilStatus','$contactNo', '$documentFor', 'Pending')";
         $result  = $conn->query($insert);
 
         if($result === true){

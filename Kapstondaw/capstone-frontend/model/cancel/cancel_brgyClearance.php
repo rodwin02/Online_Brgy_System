@@ -56,5 +56,5 @@
 		$_SESSION['success'] = 'danger';
 	}
 
-    header("Location: ../../brgyClearance.php");
+    header("Location: ../../Cart.php");
 	$conn->close();

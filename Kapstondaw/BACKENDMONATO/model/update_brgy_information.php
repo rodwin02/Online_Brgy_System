@@ -20,6 +20,14 @@ $brgy_logo = $_FILES['barangay_logo']['name'];
 $header_image = $_FILES['header_image']['name'];
 $mission = $conn->real_escape_string($_POST['mission']);
 $vision = $conn->real_escape_string($_POST['vision']);
+$historicalBackground = $conn->real_escape_string($_POST['historicalBackground']);
+$email = $conn->real_escape_string($_POST['email']);
+$contactNo = $conn->real_escape_string($_POST['contact-number']);
+$addressNo = $conn->real_escape_string($_POST['address-no']);
+$addressStreet = $conn->real_escape_string($_POST['address-street']);
+$addressSubdi = $conn->real_escape_string($_POST['address-subdi']);
+$openTime = $conn->real_escape_string($_POST['open-time']);
+$closeTime = $conn->real_escape_string($_POST['close-time']);
 
 
 $targetDirectory = "../uploads/logo/";
@@ -32,7 +40,7 @@ $validBrgyLogo = !empty($brgy_logo) && move_uploaded_file($_FILES['barangay_logo
 $validHeaderImage = !empty($header_image) && move_uploaded_file($_FILES['header_image']['tmp_name'], $targetHeaderImage);
 
 if (!empty($brgy) && !empty($town)) {
-    $query = "UPDATE brgy_information SET province_name='$province', brgy_name='$brgy', town_name='$town', `tel_no`='$number', `mission`='$mission', `vision`='$vision'";
+    $query = "UPDATE brgy_information SET province_name='$province', brgy_name='$brgy', town_name='$town', `tel_no`='$number', `mission`='$mission', `vision`='$vision', `historical_background`='$historicalBackground', `email`='$email', `contact_no`='$contactNo', `address_no`='$addressNo', `address_street`='$addressStreet', `address_subdi`='$addressSubdi', `open_time`='$openTime', `close_time`='$closeTime'";
 
 	if ($validHeaderImage) {
         $query .= ", header_image='$header_image'";

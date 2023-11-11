@@ -52,7 +52,7 @@ while($row = $result->fetch_assoc()) {
                         <th>Document For</th>
                         <th>Purpose</th>
                         <th>Date Requested</th>
-                        <th>Action</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,6 +67,7 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['documentFor']?></td>
                         <td><?= $row['purpose']?></td>
                         <td><?= $row['date_requested']?></td>
+                        <td><?= $row['status']?></td>
                     </tr>
                     <?php $no++; endforeach  ?>
                     <?php } ?>

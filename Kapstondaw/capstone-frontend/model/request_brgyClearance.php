@@ -24,7 +24,7 @@
     if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($address)&& !empty($purpose)){
 
         $insert  = "INSERT INTO tbl_brgyclearance (`applicant_fname`, `applicant_mname`, `applicant_lname`, `house_no`, `street`, `subdivision`, `date-of-birth`, `place-of-birth`, `status`) 
-                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname','$applicant_houseNo', '$applicant_street', '$applicant_subdivision', '$applicant_dob', '$applicant_pob', 'pending')";
+                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname','$applicant_houseNo', '$applicant_street', '$applicant_subdivision', '$applicant_dob', '$applicant_pob', 'Pending')";
         $result  = $conn->query($insert);
 
         if($result === true){

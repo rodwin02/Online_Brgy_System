@@ -54,7 +54,6 @@ while($row = $result->fetch_assoc()) {
                         <th>Purpose</th>
                         <th>Date of Issue</th>
                         <th>Status</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>

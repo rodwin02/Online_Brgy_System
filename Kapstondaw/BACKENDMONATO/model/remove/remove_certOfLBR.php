@@ -36,7 +36,7 @@
 				'{$certoflbr['house_no']}',
 				'{$certoflbr['street']}',
 				'{$certoflbr['subdivision']}',
-				'{$certoflbr['status']}',
+				'Cancel',
 				'{$certoflbr['date_requested']}',
 				'{$certoflbr['documentFor']}'
 			)";

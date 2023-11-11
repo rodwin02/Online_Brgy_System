@@ -487,13 +487,20 @@ header ul li:nth-child(5) {
 }
 @media (min-width: 375px) {
   .about .officials {
-    display: block;
-    text-align: center;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: clamp(744px, 100%, 1300px);
+    height: 600px;
     margin-bottom: 2rem;
   }
   .about .officials img {
-    width: clamp(744px, 80%, 100%);
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: inherit;
+    height: inherit;
   }
 }
 

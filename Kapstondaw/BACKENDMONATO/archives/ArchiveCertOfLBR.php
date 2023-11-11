@@ -56,7 +56,6 @@ while($row = $result->fetch_assoc()) {
                         <th>Document For</th>
                         <th>Status</th>
                         <th>Date Requested</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
