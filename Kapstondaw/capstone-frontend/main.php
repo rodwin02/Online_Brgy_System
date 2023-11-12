@@ -52,7 +52,7 @@
         <h2 class="background">HISTORICAL BACKGROUND</h2>
         <p><?= $historicalBackground ?></p>
         <div class="officials">
-            <img src="./assets/officials.png" alt="officials" />
+            <img src="../BACKENDMONATO/uploads/logo/<?= $officials_image ?>" alt="officials" />
         </div>
     </div>
 

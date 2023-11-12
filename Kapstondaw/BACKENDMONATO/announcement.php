@@ -1,4 +1,13 @@
 <?php include './server/server.php'?>
+<?php
+$query =  "SELECT * FROM tbl_announcement";
+$result = $conn->query($query);
+
+$announcement = array();
+while($row = $result->fetch_assoc()) {
+  $announcement[] = $row;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,18 +61,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if(!empty($announcement)) { ?>
+                    <?php $no=1; foreach($announcement as $row): ?>
                     <tr>
-                        <td>watawat</td>
-                        <td>malay ko sayo</td>
-                        <td>kahit san</td>
-                        <td>ikaw ba?</td>
-                        <td>ewan ko</td>
-                        <td>kahit kailan</td>
+                        <td><?= $row['what_announcement']?></td>
+                        <td><?= $row['why_announcement']?></td>
+                        <td><?= $row['where_announcement']?></td>
+                        <td><?= $row['when_announcement']?></td>
+                        <td><?= $row['who_announcement']?></td>
+                        <td><?= $row['date_announcement']?></td>
                         <td>
                             <a href="#" class="edit" id="edit">Edit</a>
                             <a href="#" class="delete" id="delete">Delete</a>
                         </td>
                     </tr>
+                    <?php $no++; endforeach ?>
+                    <?php } ?>
                 </tbody>
             </table>
             <div class="pagination">
@@ -77,7 +90,8 @@
 
     <!-- START MODAL ANNOUNCEMENT -->
     <div class="modal-addAnnouncement">
-        <form class="formAnnouncement" action="">
+        <form class="formAnnouncement" action="./model/add_announcement.php" method="post"
+            enctype="multipart/form-data">
             <div class="title-container">
                 <p>Announcement</p>
                 <img src="icons/close 1.png" class="closeAnnouncement" alt="">
@@ -86,26 +100,27 @@
             <div class="add-container">
                 <div class="left">
                     <label for="what">What:</label>
-                    <input type="text" name="what" id="what">
+                    <input type="text" name="what_announcement" id="what">
                     <label for="where">Where:</label>
-                    <input type="text" name="where" id="where">
+                    <input type="text" name="where_announcement" id="where">
                     <label for="who">Who:</label>
-                    <input type="text" name="who" id="who">
+                    <input type="text" name="who_announcement" id="who">
                 </div>
 
                 <div class="right">
                     <label for="why">Why:</label>
-                    <input type="text" name="why" id="why">
+                    <input type="text" name="why_announcement" id="why">
                     <label for="when">When:</label>
-                    <input type="text" name="when" id="when">
-                    <label for="dateTime">Date/Time:</label>
-                    <input type="datetime-local" name="dateTime" id="dateTime">
+                    <input type="text" name="when_announcement" id="when">
+                    <label for="date">Date</label>
+                    <input type="date" name="date_announcement" id="date">
                 </div>
             </div>
             <p class="upload">Upload Photo:</p>
             <label for="image" class="image">
-                <input type="file" id="image"> </label>
-            <img id="preview" alt="Barangay Announcement">
+                <input type="file" name="image_announcement" id="image">
+            </label>
+            <!-- <img id="preview" alt="Barangay Announcement"> -->
 
 
             <input class="submitAnnouncement" type="submit" value="Add">
@@ -160,8 +175,6 @@
 </html>
 
 <script>
-
-
 const addAnnouncement = document.getElementById('addAnnouncement');
 const modalAnnouncement = document.querySelector('.modal-addAnnouncement');
 const closeAnnouncement = document.querySelector('.closeAnnouncement');
@@ -208,47 +221,47 @@ fileInput.addEventListener("change", function(event) {
 });
 
 
-    // JavaScript code to handle pagination
-    const table = document.getElementById('table');
-    const rows = table.querySelectorAll('tbody tr');
-    const totalRows = rows.length;
-    const rowsPerPage = 10;
-    let currentPage = 1;
+// JavaScript code to handle pagination
+const table = document.getElementById('table');
+const rows = table.querySelectorAll('tbody tr');
+const totalRows = rows.length;
+const rowsPerPage = 10;
+let currentPage = 1;
 
-    function showRows(page) {
-        const start = (page - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
+function showRows(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
 
-        rows.forEach((row, index) => {
-            if (index >= start && index < end) {
-                row.style.display = 'table-row';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
-
-    function updatePaginationButtons() {
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const pageNumbers = document.getElementById('pageNumbers');
-
-        prevBtn.disabled = currentPage === 1;
-        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
-
-        pageNumbers.textContent = currentPage;
-    }
-
-    // Initial setup
-    showRows(currentPage);
-    updatePaginationButtons();
-
-    // Previous button click event
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            showRows(currentPage);
-            updatePaginationButtons();
+    rows.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
         }
     });
+}
+
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+    pageNumbers.textContent = currentPage;
+}
+
+// Initial setup
+showRows(currentPage);
+updatePaginationButtons();
+
+// Previous button click event
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
 </script>
