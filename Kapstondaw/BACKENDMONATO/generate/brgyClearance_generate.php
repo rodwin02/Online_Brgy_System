@@ -458,7 +458,7 @@
                             line-height: normal;
                             margin-bottom: 15px;
                             align-items: center;">DATE OF ISSUE:
-                                <input type="text" value="<?php echo $brgyclearance['date-issue']?>" id="dateIssue"
+                                <input type="text" value="<?php echo $brgyclearance['date_requested']?>" id="dateIssue"
                                     required="required" style="width: 300px;
                                 margin-left: 56px;
                                 border: none;

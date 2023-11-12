@@ -10,7 +10,7 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 12% 0 0 35%;
+  padding: 10% 0 0 35%;
   display: none;
 }
 
@@ -20,7 +20,7 @@
   flex-direction: column;
   border-radius: 20px;
   background: #F8F8F8;
-  width: 500px;
+  width: 490px;
   height: auto;
   padding: 20px;
 
@@ -71,7 +71,7 @@
   flex-direction: row;
 }
 .input-label .label111 input {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .input-label .label111 #house_no {
   width: 20%;
@@ -80,8 +80,21 @@
   width: 35%;
 }
 .input-label .label111 #subdivision {
-  width: 35%;
+  width: 38%;
 }
+.input-label .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+  width: 32%;
+}
+.input-label .label111 #applicant_suffix{
+  width: 15%;
+}
+.input-label .label111 #requestor_fname, #requestor_mname, #requestor_lname {
+  width: 32%;
+}
+.input-label .label111 #requestor_suffix{
+  width: 15%;
+}
+
 
 .modal-layer1 {
   display: flex;
@@ -135,6 +148,7 @@
   color: #F8F8F8;
 }
 
+
 /* BRGY CLEARANCE CSS */
 .modal-addBrgyClearance {
   display: flex;
@@ -185,7 +199,8 @@
   flex-direction: row;
 }
 .input-brgy-clearance .label111 input {
-  margin-right: 10px;
+  margin-right: 5px;
+  
 }
 .input-brgy-clearance .label111 #house_no {
   width: 25%;
@@ -195,6 +210,12 @@
 }
 .input-brgy-clearance .label111 #subdivision {
   width: 40%;
+}
+.input-brgy-clearance .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+  width: 32%;
+}
+.input-brgy-clearance .label111 #applicant_suffix{
+  width: 15%;
 }
 
 
@@ -247,7 +268,7 @@
   flex-direction: row;
 }
 .input-e-self .label111 input {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .input-e-self .label111 #house_no {
   width: 25%;
@@ -258,7 +279,12 @@
 .input-e-self .label111 #subdivision {
   width: 40%;
 }
-
+.input-e-self .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+  width: 32%;
+}
+.input-e-self .label111 #applicant_suffix{
+  width: 15%;
+}
 
 .modal-addEcert_forsomeone {
   display: flex;
@@ -306,9 +332,10 @@
 .input-e-someone .label111 {
   display: flex;
   flex-direction: row;
+ 
 }
 .input-e-someone .label111 input {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .input-e-someone .label111 #house_no {
   width: 25%;
@@ -319,7 +346,18 @@
 .input-e-someone .label111 #subdivision {
   width: 40%;
 }
-
+.input-e-someone .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+  width: 32%;
+}
+.input-e-someone .label111 #applicant_suffix{
+  width: 15%;
+}
+.input-e-someone .label111 #requestor_fname, #requestor_mname, #requestor_lname {
+  width: 32%;
+}
+.input-e-someone .label111 #requestor_suffix{
+  width: 15%;
+}
 
 /* CERT OF INDIGENCY */
 .modal-addIndigency_forself {
@@ -370,7 +408,7 @@
   flex-direction: row;
 }
 .input-indigency-self .label111 input {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .input-indigency-self .label111 #house_no {
   width: 25%;
@@ -381,6 +419,13 @@
 .input-indigency-self .label111 #subdivision {
   width: 40%;
 }
+.input-indigency-self .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+  width: 32%;
+}
+.input-indigency-self .label111 #applicant_suffix{
+  width: 15%;
+}
+
 
 .modal-addIndigency_forsomeone {
   display: flex;
@@ -430,7 +475,7 @@
   flex-direction: row;
 }
 .input-indigency-someone .label111 input {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .input-indigency-someone .label111 #house_no {
   width: 25%;
@@ -440,6 +485,18 @@
 }
 .input-indigency-someone .label111 #subdivision {
   width: 40%;
+}
+.input-indigency-someone .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+  width: 32%;
+}
+.input-indigency-someone .label111 #applicant_suffix{
+  width: 15%;
+}
+.input-indigency-someone .label111 #requestor_fname, #requestor_mname, #requestor_lname {
+  width: 32%;
+}
+.input-indigency-someone .label111 #requestor_suffix{
+  width: 15%;
 }
 /* CERT OF LBR */
 .modal-addlbr_forself {
@@ -490,7 +547,7 @@
   flex-direction: row;
 }
 .input-lbr-self .label111 input {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .input-lbr-self .label111 #house_no {
   width: 25%;
@@ -500,6 +557,18 @@
 }
 .input-lbr-self .label111 #subdivision {
   width: 40%;
+}
+.input-lbr-self .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+  width: 32%;
+}
+.input-lbr-self .label111 #applicant_suffix{
+  width: 15%;
+}
+.input-lbr-self .label111 #father_fname, #father_mname, #father_lname, #mother_fname, #mother_mname, #mother_lname {
+  width: 32%;
+}
+.input-lbr-self .label111 #father_suffix, #mother_suffix{
+  width: 15%;
 }
 
 .modal-addlbr_forsingleparent {
@@ -550,7 +619,7 @@
   flex-direction: row;
 }
 .input-lbr-single-parent .label111 input {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .input-lbr-single-parent .label111 #house_no {
   width: 25%;
@@ -560,6 +629,18 @@
 }
 .input-lbr-single-parent .label111 #subdivision {
   width: 40%;
+}
+.input-lbr-single-parent .label111 #requestor_fname, #requestor_mname, #requestor_lname {
+  width: 32%;
+}
+.input-lbr-single-parent .label111 #requestor_suffix{
+  width: 15%;
+}
+.input-lbr-single-parent .label111 #parent_fname, #parent_mname, #parent_lname {
+  width: 32%;
+}
+.input-lbr-single-parent .label111 #parent_suffix{
+  width: 15%;
 }
 
 .modal-addlbr_fortheirchild {
@@ -610,7 +691,7 @@
   flex-direction: row;
 }
 .input-lbr-for-child .label111 input {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .input-lbr-for-child .label111 #house_no {
   width: 25%;
@@ -621,6 +702,19 @@
 .input-lbr-for-child .label111 #subdivision {
   width: 40%;
 }
+.input-lbr-for-child .label111 #requestor_fname, #requestor_mname, #requestor_lname {
+  width: 32%;
+}
+.input-lbr-for-child .label111 #requestor_suffix{
+  width: 15%;
+}
+.input-lbr-for-child .label111 #father_fname, #father_mname, #father_lname, #mother_fname, #mother_mname, #mother_lname {
+  width: 32%;
+}
+.input-lbr-for-child .label111 #father_suffix, #mother_suffix{
+  width: 15%;
+}
+
 /* BUSINESS CLEARANCE */
 
 .modal-addClearance {
@@ -671,7 +765,7 @@
   flex-direction: row;
 }
 .input-b-clearance .label111 input {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .input-b-clearance .label111 #house_no {
   width: 25%;
@@ -681,6 +775,12 @@
 }
 .input-b-clearance .label111 #subdivision {
   width: 40%;
+}
+.input-b-clearance .label111 #business_owner_fname, #business_owner_mname, #business_owner_lname {
+  width: 32%;
+}
+.input-b-clearance .label111 #business_owner_suffix{
+  width: 15%;
 }
 .modal-addClosure {
   display: flex;
@@ -730,7 +830,7 @@
   flex-direction: row;
 }
 .input-b-closure .label111 input {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .input-b-closure .label111 #house_no {
   width: 25%;
@@ -740,4 +840,10 @@
 }
 .input-b-closure .label111 #subdivision {
   width: 40%;
+}
+.input-b-closure .label111 #business_owner_fname, #business_owner_mname, #business_owner_lname {
+  width: 32%;
+}
+.input-b-closure .label111 #business_owner_suffix{
+  width: 15%;
 }

@@ -30,34 +30,35 @@
             </div>
         </div>
 
-        <div class="third_layer">
-            <div class="Voters">
-                <div class="text-cont">
-                    <p class="text">All Voters</p>
-                    <p class="number">15,000</p>
+        <div class="Box-Container">
+            <div class="First-Cont">
+                <div class="bigBoxVoters">
+                    <div class="text-cont">
+                        <p class="text">TOTAL Voters</p>
+                        <p class="number">3,000</p>
+                    </div>
+                    <img src="icons/ResidentsSeeMore.png" alt="">
                 </div>
-                <img src="icons/people.png" alt="">
             </div>
-
-            <div class="Voters">
-                <div class="text-cont">
-                    <p class="text">Positive Voters</p>
-                    <p class="number">15,000</p>
+            <div class="Second-Cont">
+                <div class="smallBoxVoters">
+                    <div class="text-cont">
+                        <p class="text">Male</p>
+                        <p class="number">600</p>
+                    </div>
+                    <img src="icons/people.png" alt="">
                 </div>
-                <img src="icons/people.png" alt="">
-            </div>
-
-            <div class="Voters">
-                <div class="text-cont">
-                    <p class="text">Negative Voters</p>
-                    <p class="number">15,000</p>
+                <div class="smallBoxVoters">
+                    <div class="text-cont">
+                        <p class="text">Female</p>
+                        <p class="number">600</p>
+                    </div>
+                    <img src="icons/people.png" alt="">
                 </div>
-                <img src="icons/people.png" alt="">
             </div>
-
-        
-
         </div>
+
+    
 
         <div class="fourth_layer">
             <table id="table">

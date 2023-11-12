@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -153,6 +154,26 @@
     <!-- END EDIT MODAL ANNOUNCEMENT -->
 
 
+<div class="addModal-cont">
+    <div id="displayContainer">
+        <!-- Initial container without any specific class -->
+        <div class="column-cont">
+            <p id="questionDisplay"></p>
+            <p id="answerDisplay"></p>
+        </div>
+        <a href="#" class="editBtn">Edit</a>
+    </div>
+    <a href="#" class="addBtn" id="addBtn">Add</a>
+</div>
+
+<div class="modal-add">
+    <form action="" class="addForm">
+        <img src="icons/close 1.png" class="closeAddForm" alt="">
+        <input type="text" name="question" id="questionInput" placeholder="Input question here">
+        <input type="text" name="answer" id="answerInput" placeholder="Input answer here">
+        <input type="submit" value="Add" id="submitBtn">
+    </form>
+</div>
 
 
 </body>
@@ -160,7 +181,54 @@
 </html>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // The DOM is ready
+        console.log("DOM is ready");
 
+        // Add click event for the Add button in the modal
+        document.getElementById("submitBtn").addEventListener("click", function (e) {
+            // Prevent the form from submitting
+            e.preventDefault();
+
+            // Get the values from the input fields
+            var questionValue = document.getElementById("questionInput").value;
+            var answerValue = document.getElementById("answerInput").value;
+
+            // Create new display elements
+            var newQuestionDisplay = document.createElement("p");
+            newQuestionDisplay.innerText = questionValue;
+
+            var newAnswerDisplay = document.createElement("p");
+            newAnswerDisplay.innerText = answerValue;
+
+            // Create a container for each cloned pair
+            var newDisplayContainer = document.createElement("div");
+            newDisplayContainer.classList.add("display-container");
+
+            // Append the new elements to the container
+            newDisplayContainer.appendChild(newQuestionDisplay);
+            newDisplayContainer.appendChild(newAnswerDisplay);
+
+            // Append the new container to the main display container
+            document.getElementById("displayContainer").appendChild(newDisplayContainer);
+
+            // Optionally, you can clear the input fields after updating the display
+            document.getElementById("questionInput").value = '';
+            document.getElementById("answerInput").value = '';
+        });
+    });
+    const addBtn = document.getElementById('addBtn');
+    const modalAdd = document.querySelector('.modal-add');
+    const closeAddForm = document.querySelector('.closeAddForm');
+
+    addBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        modalAdd.style.display = 'block';
+    });
+
+    closeAddForm.addEventListener('click', function() {
+        modalAdd.style.display = 'none';
+    });
 
 const addAnnouncement = document.getElementById('addAnnouncement');
 const modalAnnouncement = document.querySelector('.modal-addAnnouncement');

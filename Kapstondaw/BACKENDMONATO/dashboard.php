@@ -395,36 +395,6 @@ function calculateAge($dob) {
                             <td>John Doe</td>
                             <td>Information 1</td>
                         </tr>
-                        <tr>
-                            <td>June 29, 2023</td>
-                            <td>2:30 PM</td>
-                            <td>Jane Smith</td>
-                            <td>Information 2</td>
-                        </tr>
-                        <tr>
-                            <td>June 30, 2023</td>
-                            <td>8:45 AM</td>
-                            <td>Mike Johnson</td>
-                            <td>Information 3</td>
-                        </tr>
-                        <tr>
-                            <td>July 1, 2023</td>
-                            <td>4:15 PM</td>
-                            <td>Sarah Williams</td>
-                            <td>Information 4</td>
-                        </tr>
-                        <tr>
-                            <td>July 2, 2023</td>
-                            <td>9:30 AM</td>
-                            <td>David Brown</td>
-                            <td>Information 5</td>
-                        </tr>
-                        <tr>
-                            <td>July 3, 2023</td>
-                            <td>1:00 PM</td>
-                            <td>Emily Davis</td>
-                            <td>Information 6</td>
-                        </tr>
                     </table>
                     <div class="nextBtn">NEXT</div>
                 </div>

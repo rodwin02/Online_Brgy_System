@@ -31,55 +31,56 @@
             </div>
         </div>
 
-        <div class="third_layer">
-            <div class="Male">
-                <div class="text-cont">
-                    <p class="text">All Male</p>
-                    <p class="number">15,000</p>
+        <div class="Box-Container">
+            <div class="First-Cont">
+                <div class="bigBoxMale">
+                    <div class="text-cont">
+                        <p class="text">TOTAL MALE</p>
+                        <p class="number">3,000</p>
+                    </div>
+                    <img src="icons/ResidentsSeeMore.png" alt="">
                 </div>
-                <img src="icons/people.png" alt="">
             </div>
-
-            <div class="Male">
-                <div class="text-cont">
-                    <p class="text">Babies</p>
-                    <p class="number">15,000</p>
+            <div class="Second-Cont">
+                <div class="smallBoxMale">
+                    <div class="text-cont">
+                        <p class="text">Infant</p>
+                        <p class="number">600</p>
+                    </div>
+                    <img src="icons/InfantSeeMore.png" alt="">
                 </div>
-                <img src="icons/people.png" alt="">
-            </div>
-
-            <div class="Male">
-                <div class="text-cont">
-                    <p class="text">Childs</p>
-                    <p class="number">15,000</p>
+                <div class="smallBoxMale">
+                    <div class="text-cont">
+                        <p class="text">Child</p>
+                        <p class="number">600</p>
+                    </div>
+                    <img src="icons/ChildSeeMore.png" alt="">
                 </div>
-                <img src="icons/people.png" alt="">
-            </div>
 
-            <div class="Male">
-                <div class="text-cont">
-                    <p class="text">Adolescents</p>
-                    <p class="number">15,000</p>
+                <div class="smallBoxMale">
+                    <div class="text-cont">
+                        <p class="text">Adolescents</p>
+                        <p class="number">600</p>
+                    </div>
+                    <img src="icons/AdolescentsSeeMore.png" alt="">
                 </div>
-                <img src="icons/people.png" alt="">
-            </div>
 
-            <div class="Male">
-                <div class="text-cont">
-                    <p class="text">Adults</p>
-                    <p class="number">15,000</p>
+                <div class="smallBoxMale">
+                    <div class="text-cont">
+                        <p class="text">Adults</p>
+                        <p class="number">600</p>
+                    </div>
+                    <img src="icons/AdultsSeeMore.png" alt="">
                 </div>
-                <img src="icons/people.png" alt="">
-            </div>
 
-            <div class="Male">
-                <div class="text-cont">
-                    <p class="text">Elderly</p>
-                    <p class="number">15,000</p>
+                <div class="smallBoxMale">
+                    <div class="text-cont">
+                        <p class="text">Elderly</p>
+                        <p class="number">600</p>
+                    </div>
+                    <img src="icons/ElderlySeeMore.png" alt="">
                 </div>
-                <img src="icons/people.png" alt="">
             </div>
-
         </div>
 
         <div class="fourth_layer">

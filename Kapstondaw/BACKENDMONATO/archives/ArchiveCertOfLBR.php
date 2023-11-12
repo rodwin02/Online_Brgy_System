@@ -33,6 +33,10 @@ while($row = $result->fetch_assoc()) {
             <p>Archives Certificate of Late Birth Registration</p>
             <a href="#">Logout</a>
         </div>
+        <a href="../certOfLBR.php" class="backContainer">
+            <img src="../icons/back.png" alt="">
+            <p>Go Back</p>
+        </a>
         <div class="second_layer">
             <div class="search-cont">
                 <p>Search:</p>
@@ -82,6 +86,11 @@ while($row = $result->fetch_assoc()) {
                     <?php } ?>
                 </tbody>
             </table>
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
     </div>
 
