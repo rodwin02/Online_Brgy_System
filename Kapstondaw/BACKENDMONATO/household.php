@@ -1,6 +1,6 @@
 <?php include './server/server.php'?>
 <?php
-$query =  "SELECT * FROM tbl_households";
+$query =  "SELECT * FROM tbl_households WHERE household_head='yes'";
 $result = $conn->query($query);
 
 $households = array();
@@ -71,7 +71,6 @@ function calculateAge($dob) {
                 <tbody>
                     <?php if(!empty($households)) { ?>
                     <?php $no=1; foreach($households as $row):?>
-                    <?php if($row['household_head'] == "yes") {  ?>
                     <tr>
                         <td><?= $no ?></td>
                         <td><?= $row['firstname'] ?> <?=$row['middlename'] ?> <?= $row['lastname']?></td>
@@ -115,7 +114,7 @@ function calculateAge($dob) {
                         </td>
                     </tr>
 
-                    <?php $no++; }?>
+                    <?php $no++; ?>
                     <?php  endforeach ?>
                     <?php } ?>
             </table>

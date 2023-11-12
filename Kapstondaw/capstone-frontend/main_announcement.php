@@ -1,4 +1,11 @@
 <?php include "./server/server.php" ?>
+<?php
+    $id = $_GET['id'];
+    $query = "SELECT * FROM tbl_announcement WHERE `id`='$id'";
+    $result = $conn->query($query);
+    $announcement = $result->fetch_assoc();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +50,7 @@
 
     <section class="announcement_context">
         <section class="image-container">
-            <img src="./assets//main-news-img.png" alt="" />
+            <img src="../BACKENDMONATO/uploads/announcement/<?= $announcement['image_announcement']?>" alt="image" />
         </section>
         <h2>NUTRITION MONTH 2023</h2>
         <p>

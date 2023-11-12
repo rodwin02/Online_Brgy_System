@@ -17,6 +17,7 @@ $town = $conn->real_escape_string($_POST['municipality_name']);
 $number = $conn->real_escape_string($_POST['tel_no']);
 $city_logo = $_FILES['municipality_logo']['name'];
 $brgy_logo = $_FILES['barangay_logo']['name'];
+$historicalBackground_image = $_FILES['historicalBackground_image']['name'];
 $header_image = $_FILES['header_image']['name'];
 $mission = $conn->real_escape_string($_POST['mission']);
 $vision = $conn->real_escape_string($_POST['vision']);
@@ -34,10 +35,12 @@ $targetDirectory = "../uploads/logo/";
 $targetCityLogo = $targetDirectory . $city_logo;
 $targetBrgyLogo = $targetDirectory . $brgy_logo;
 $targetHeaderImage = $targetDirectory . $header_image;
+$targetHistoricalBg = $targetDirectory . $historicalBackground_image;
 
 $validCityLogo = !empty($city_logo) && move_uploaded_file($_FILES['municipality_logo']['tmp_name'], $targetCityLogo);
 $validBrgyLogo = !empty($brgy_logo) && move_uploaded_file($_FILES['barangay_logo']['tmp_name'], $targetBrgyLogo);
 $validHeaderImage = !empty($header_image) && move_uploaded_file($_FILES['header_image']['tmp_name'], $targetHeaderImage);
+$validHistoricalBg = !empty($historicalBackground_image) && move_uploaded_file($_FILES['historicalBackground_image']['tmp_name'], $targetHistoricalBg);
 
 if (!empty($brgy) && !empty($town)) {
     $query = "UPDATE brgy_information SET province_name='$province', brgy_name='$brgy', town_name='$town', `tel_no`='$number', `mission`='$mission', `vision`='$vision', `historical_background`='$historicalBackground', `email`='$email', `contact_no`='$contactNo', `address_no`='$addressNo', `address_street`='$addressStreet', `address_subdi`='$addressSubdi', `open_time`='$openTime', `close_time`='$closeTime'";
@@ -52,6 +55,9 @@ if (!empty($brgy) && !empty($town)) {
 
     if ($validBrgyLogo) {
         $query .= ", brgy_logo='$brgy_logo'";
+    }
+	if ($validHistoricalBg) {
+        $query .= ", historicalBackground_image='$historicalBackground_image'";
     }
 
     $query .= " WHERE id=1";

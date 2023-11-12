@@ -21,6 +21,7 @@
 		$addressSubdi		= $row['address_subdi'];
 		$openTime		= $row['open_time'];
 		$closeTime		= $row['close_time'];
+		$officials_image		= $row['historicalBackground_image'];
 
 	}
 $openTimeStamp = strtotime($openTime);

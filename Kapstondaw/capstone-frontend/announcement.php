@@ -1,3 +1,13 @@
+<?php include "./server/server.php" ?>
+<?php
+$query =  "SELECT * FROM tbl_announcement";
+$result = $conn->query($query);
+
+$announcement = array();
+while($row = $result->fetch_assoc()) {
+  $announcement[] = $row;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,41 +25,21 @@
 
         <div class="hide swiper swiperAnnouncement" id="announcement">
             <div class="swiper-wrapper options">
+                <?php if(!empty($announcement)) { ?>
+                <?php $no=1; foreach($announcement as $row): ?>
                 <div class="swiper-slide card">
                     <div class="picture">
-                        <img src="./assets/news1.png" alt="" />
+                        <img src="../BACKENDMONATO/uploads/announcement/<?= $row['image_announcement']?>" alt="image" />
                     </div>
                     <hr>
                     <div class="context">
-                        <span>June 08, 2023</span>
+                        <span><?= $row['date_announcement']?></span>
                         <p>Earthquake Drill</p>
-                        <a href="./main_announcement.php">Read more ></a>
+                        <a href="./main_announcement.php?id=<?= $row['id'] ?>">Read more ></a>
                     </div>
                 </div>
-
-                <div class="swiper-slide card">
-                    <div class="picture">
-                        <img src="./assets/news2.png" alt="" />
-                    </div>
-                    <hr>
-                    <div class="context">
-                        <span>May 10, 2023</span>
-                        <p>MAGPA-EARLY REGISTER NA PARA SA SY 2023-2024</p>
-                        <a href="./main_announcement.php">Read more ></a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide card">
-                    <div class="picture">
-                        <img src="./assets/news3.png" alt="" />
-                    </div>
-                    <hr>
-                    <div class="context">
-                        <span>March 1, 2023</span>
-                        <p>2023 National Womens Month</p>
-                        <a href="./main_announcement.php">Read more ></a>
-                    </div>
-                </div>
+                <?php $no++; endforeach ?>
+                <?php } ?>
             </div>
 
             <img class="swiper-button-prev" src="./assets/arrow-preview.png" alt="arrow-preview" />

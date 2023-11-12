@@ -38,16 +38,17 @@
         box-shadow: 10px 20px 25px rgba(0 0 0 / 0.25);
         text-align: center;
         width: fit-content;
-
+        overflow: hidden;
         .picture {
           width: 100%;
-          object-fit: cover;
+          height: 300px;
           @media (min-width: 375px) {
             margin-bottom: 2rem;
           }
 
           img {
             width: 100%;
+            height: inherit;
             object-fit: cover;
           }
         }

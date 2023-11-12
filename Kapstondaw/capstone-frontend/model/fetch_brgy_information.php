@@ -21,6 +21,8 @@
 		$addressSubdi		= $row['address_subdi'];
 		$openTime		= $row['open_time'];
 		$closeTime		= $row['close_time'];
+		$officials_image		= $row['historicalBackground_image'];
+
 	}
 date_default_timezone_set('Asia/Manila');
 

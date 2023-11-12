@@ -134,8 +134,11 @@
                     </div>
                     <div class="historical-img">
                         <label for="history-img">Historical Background Image</label>
-                        <div id="ImgPreview" class="image-preview"></div>
-                        <input type="file" id="history-img" accept="image/*" onchange="previewHistoryImage()">
+                        <div id="ImgPreview" class="image-preview">
+                            <img src="./uploads/logo/<?= $officials_image ?>" alt="Historical Background Image">
+                        </div>
+                        <input type="file" name="historicalBackground_image" id="history-img" accept="image/*"
+                            onchange="previewHistoryImage()">
                     </div>
                     <div class="MissionVision-cont">
                         <div class="mission-cont">
