@@ -92,8 +92,8 @@ while($row = $result->fetch_assoc()) {
                                 id="statusForm">
                                 <select name="status" id="Status">
                                     <!-- <option class="Pending" value="Pending">Pending</option> -->
-                                    <option class="Preparing" value="Preparing"
-                                        <?php echo ($row['status'] === 'Preparing') ? 'selected' : ''; ?>>Preparing
+                                    <option class="Pending" value="Pending"
+                                        <?php echo ($row['status'] === 'Pending') ? 'selected' : ''; ?>>Pending
                                     </option>
                                     <option class="For_Pick_up" value="For Pick-up"
                                         <?php echo ($row['status'] === 'For Pick-up') ? 'selected' : ''; ?>>For Pick-up
@@ -103,7 +103,7 @@ while($row = $result->fetch_assoc()) {
                                     </option>
                                 </select>
                                 <input type="hidden" name="id" value="<?= $row['id']?>">
-                                <button type="submit" class="UpdateStatus">Update</button>
+                                <input type="hidden" name="dateRequested" value="<?= $row['date_requested']?>">
                             </form>
 
                         </td>
@@ -239,27 +239,12 @@ while($row = $result->fetch_assoc()) {
 </html>
 
 <script>
-// DELETE RESIDENTS
-const deleteLink = document.querySelectorAll('.delete');
-const modalDelete = document.querySelectorAll('.modal-delete');
-const closeButtonDelete = document.querySelectorAll('.close-delete');
-
-deleteLink.forEach((del, index) => {
-    del.addEventListener('click', (e) => {
-        console.log("Delete link clicked")
-        modalDelete[index].style.display = 'block';
+document.querySelectorAll('.form-allCert').forEach(function(form) {
+    form.querySelector('select[name="status"]').addEventListener('change', function() {
+        // Trigger form submission when an option is selected
+        form.submit();
     });
-
-    closeButtonDelete[index].addEventListener('click', function() {
-        modalDelete[index].style.display = 'none';
-    });
-})
-// document.getElementById('Status').addEventListener('change', function() {
-//     // Change color logic here
-
-//     // Submit the form
-//     document.getElementById('statusForm').submit();
-// });
+});
 // JavaScript code to handle pagination
 const table = document.getElementById('table');
 const rows = table.querySelectorAll('tbody tr');

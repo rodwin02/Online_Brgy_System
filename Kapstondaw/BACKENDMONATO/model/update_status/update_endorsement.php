@@ -12,7 +12,16 @@ $status = $conn->real_escape_string($_POST['status']);
 
 
 if (!empty($status)) {
-    $query = "UPDATE tbl_ecertificate SET status='$status' WHERE id='$id'";
+         $dateRequested = isset($_POST['dateRequested']) ? $_POST['dateRequested'] : '';
+    $query = "UPDATE tbl_ecertificate SET status='$status'";
+
+    // Only include the date if it is present in the form
+    if (!empty($dateRequested)) {
+        $query .= ", date_requested='$dateRequested'";
+    }
+
+    $query .= " WHERE id='$id'";
+    // $query = "UPDATE tbl_ecertificate SET status='$status' WHERE id='$id'";
 
     if ($conn->query($query) === true) {
         $_SESSION['message'] = 'Endorsement Certificate status has been updated!';
