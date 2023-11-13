@@ -81,9 +81,8 @@ while($row = $result->fetch_assoc()) {
                                 <form action="./model/update_status/update_certOFIndigency.php" method="POST"
                                     class="form-allCert" id="statusForm">
                                     <select name="status" id="Status">
-                                        <!-- <option class="Pending" value="Pending">Pending</option> -->
-                                        <option class="Preparing" value="Preparing"
-                                            <?php echo ($row['status'] === 'Preparing') ? 'selected' : ''; ?>>Preparing
+                                        <option class="Pending" value="Pending"
+                                            <?php echo ($row['status'] === 'Pending') ? 'selected' : ''; ?>>Pending
                                         </option>
                                         <option class="For_Pick_up" value="For Pick-up"
                                             <?php echo ($row['status'] === 'For Pick-up') ? 'selected' : ''; ?>>For
@@ -94,7 +93,9 @@ while($row = $result->fetch_assoc()) {
                                         </option>
                                     </select>
                                     <input type="hidden" name="id" value="<?= $row['id']?>">
-                                    <button type="submit" class="UpdateStatus">Update</button>
+                                    <input type="hidden" name="dateRequested" value="<?= $row['date_requested']?>">
+
+                                    <!-- <button type="submit" class="UpdateStatus">Update</button> -->
                                 </form>
                             </td>
                             </td>
@@ -198,6 +199,12 @@ while($row = $result->fetch_assoc()) {
 <script src="./js//app.js"></script>
 <script src="sidebar.js"></script>
 <script>
+document.querySelectorAll('.form-allCert').forEach(function(form) {
+    form.querySelector('select[name="status"]').addEventListener('change', function() {
+        // Trigger form submission when an option is selected
+        form.submit();
+    });
+});
 const addIndigencyLink = document.getElementById('addIndigency_forself');
 const modaladdIndigency = document.querySelector('.modal-addIndigency_forself');
 const closeForm = document.querySelector('.closeForm_forself');
