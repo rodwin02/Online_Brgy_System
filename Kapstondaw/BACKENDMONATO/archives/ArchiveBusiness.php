@@ -22,6 +22,10 @@
             <p>Archives Business Records</p>
             <a href="#">Logout</a>
         </div>
+        <a href="../business.php" class="backContainer">
+            <img src="../icons/back.png" alt="">
+            <p>Go Back</p>
+        </a>
         <div class="second_layer">
             <div class="search-cont">
                 <p>Search:</p>
@@ -49,6 +53,11 @@
                 </tbody>
                 <!-- Add more rows here -->
             </table>
+            <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
     </div>
 

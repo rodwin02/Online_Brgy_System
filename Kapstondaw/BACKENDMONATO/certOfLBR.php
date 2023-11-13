@@ -119,8 +119,24 @@ while($row = $result->fetch_assoc()) {
                                 <a href="./generate/certOfLBR_generate_forsingleparent.php?id=<?= $row['id'] ?>"
                                     class="print">Print</a>
                                 <?php } ?>
-                                <a href="./model/remove/remove_certOfLBR.php?id=<?= $row['id'] ?>"
+                                <a href="#"
                                     class="delete">Cancel</a>
+
+                                <div class="modal-delete">
+                                    <div class="form-delete">
+                                        <div class="delete-cont">
+                                            <p>Delete</p>
+                                            <img src="icons/close 1.png" alt="" class="close-delete">
+                                        </div>
+                                        <div class="delete-description">
+                                            <p>Deleting this will remove all data
+                                                and cannot be undone.</p>
+                                        </div>
+                                        <div class="delete-submit">
+                                            <a href="./model/remove/remove_certOfLBR.php?id=<?= $row['id']?>">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         <?php $no++; endforeach ?>
@@ -145,16 +161,31 @@ while($row = $result->fetch_assoc()) {
 
             <div class="modal-layer-lbr-self">
                 <div class="input-lbr-self">
-                    <label for="applicantName">Applicant Name:</label>
-                    <input type="text" id="applicantName" placeholder="Applicant Name">
+                    <label for="applicantName">Applicant:</label>
+                    <div class="label111">
+                        <input type="text" id="applicant_fname" placeholder="First Name">
+                        <input type="text" id="applicant_mname" placeholder="Middle Name">
+                        <input type="text" id="applicant_lname" placeholder="Last Name">
+                        <input type="text" id="applicant_suffix" placeholder="Suffix">
+                    </div>
                 </div>
                 <div class="input-lbr-self">
-                    <label for="fatherName">Father's Name:</label>
-                    <input type="text" id="fatherName" placeholder="Father name">
+                    <label for="fatherName">Father Name:</label>
+                    <div class="label111">
+                        <input type="text" id="father_fname" placeholder="First Name">
+                        <input type="text" id="father_mname" placeholder="Middle Name">
+                        <input type="text" id="father_lname" placeholder="Last Name">
+                        <input type="text" id="father_suffix" placeholder="Suffix">
+                    </div>
                 </div>
                 <div class="input-lbr-self">
-                    <label for="motherName">Mother's Name:</label>
-                    <input type="text" id="motherName" placeholder="Mother name">
+                    <label for="motherName">Mother Name:</label>
+                    <div class="label111">
+                        <input type="text" id="mother_fname" placeholder="First Name">
+                        <input type="text" id="mother_mname" placeholder="Middle Name">
+                        <input type="text" id="mother_lname" placeholder="Last Name">
+                        <input type="text" id="mother_suffix" placeholder="Suffix">
+                    </div>
                 </div>
                 <div class="input-lbr-self">
                     <label for="dob">Date of Birth:</label>
@@ -183,12 +214,22 @@ while($row = $result->fetch_assoc()) {
 
             <div class="modal-layer-lbr-single-parent">
                 <div class="input-lbr-single-parent">
-                    <label for="requestortName">Requestor Name:</label>
-                    <input type="text" id="requestortName" placeholder="Requestor Name">
+                    <label for="requestorName">Requestor:</label>
+                    <div class="label111">
+                        <input type="text" id="requestor_fname" placeholder="First Name">
+                        <input type="text" id="requestor_mname" placeholder="Middle Name">
+                        <input type="text" id="requestor_lname" placeholder="Last Name">
+                        <input type="text" id="requestor_suffix" placeholder="Suffix">
+                    </div>
                 </div>
                 <div class="input-lbr-single-parent">
-                    <label for="fatherName">Parent's Name:</label>
-                    <input type="text" id="fatherName" placeholder="Father name">
+                    <label for="parentName">Parent Name:</label>
+                    <div class="label111">
+                        <input type="text" id="parent_fname" placeholder="First Name">
+                        <input type="text" id="parent_mname" placeholder="Middle Name">
+                        <input type="text" id="parent_lname" placeholder="Last Name">
+                        <input type="text" id="parent_suffix" placeholder="Suffix">
+                    </div>
                 </div>
                 <div class="input-lbr-single-parent">
                     <label for="dob">Date of Birth:</label>
@@ -219,16 +260,31 @@ while($row = $result->fetch_assoc()) {
 
             <div class="modal-layer-lbr-for-child">
                 <div class="input-lbr-for-child">
-                    <label for="requestortName">Requestor Name:</label>
-                    <input type="text" id="requestortName" placeholder="Requestor Name">
+                    <label for="requestorName">Requestor:</label>
+                    <div class="label111">
+                        <input type="text" id="requestor_fname" placeholder="First Name">
+                        <input type="text" id="requestor_mname" placeholder="Middle Name">
+                        <input type="text" id="requestor_lname" placeholder="Last Name">
+                        <input type="text" id="requestor_suffix" placeholder="Suffix">
+                    </div>
                 </div>
                 <div class="input-lbr-for-child">
-                    <label for="fatherName">Father's Name:</label>
-                    <input type="text" id="fatherName" placeholder="Father name">
+                    <label for="fatherName">Father Name:</label>
+                    <div class="label111">
+                        <input type="text" id="father_fname" placeholder="First Name">
+                        <input type="text" id="father_mname" placeholder="Middle Name">
+                        <input type="text" id="father_lname" placeholder="Last Name">
+                        <input type="text" id="father_suffix" placeholder="Suffix">
+                    </div>
                 </div>
                 <div class="input-lbr-for-child">
-                    <label for="motherName">Mother's Name:</label>
-                    <input type="text" id="motherName" placeholder="Mother name">
+                    <label for="motherName">Mother Name:</label>
+                    <div class="label111">
+                        <input type="text" id="mother_fname" placeholder="First Name">
+                        <input type="text" id="mother_mname" placeholder="Middle Name">
+                        <input type="text" id="mother_lname" placeholder="Last Name">
+                        <input type="text" id="mother_suffix" placeholder="Suffix">
+                    </div>
                 </div>
                 <div class="input-lbr-for-child">
                     <label for="dob">Date of Birth:</label>
@@ -305,6 +361,21 @@ while($row = $result->fetch_assoc()) {
 </html>
 
 <script>
+// DELETE RESIDENTS
+const deleteLink = document.querySelectorAll('.delete');
+const modalDelete = document.querySelectorAll('.modal-delete');
+const closeButtonDelete = document.querySelectorAll('.close-delete');
+
+deleteLink.forEach((del, index) => {
+    del.addEventListener('click', (e) => {
+        console.log("Delete link clicked")
+        modalDelete[index].style.display = 'block';
+    });
+
+    closeButtonDelete[index].addEventListener('click', function() {
+        modalDelete[index].style.display = 'none';
+    });
+})
 // JavaScript code to handle pagination
 const table = document.getElementById('table');
 const rows = table.querySelectorAll('tbody tr');

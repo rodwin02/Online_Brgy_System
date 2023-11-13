@@ -107,8 +107,24 @@ while($row = $result->fetch_assoc()) {
                                 <a href="./generate/endorsementCert_generate_forsomeone.php?id=<?= $row['id']?>"
                                     class="print">Print</a>
                                 <?php } ?>
-                                <a href="./model/remove/remove_endorsementCert.php?id=<?= $row['id']?>"
+                                <a href="#"
                                     class="delete">Cancel</a>
+
+                                <div class="modal-delete">
+                                    <div class="form-delete">
+                                        <div class="delete-cont">
+                                            <p>Delete</p>
+                                            <img src="icons/close 1.png" alt="" class="close-delete">
+                                        </div>
+                                        <div class="delete-description">
+                                            <p>Deleting this will remove all data
+                                                and cannot be undone.</p>
+                                        </div>
+                                        <div class="delete-submit">
+                                            <a href="./model/remove/remove_endorsementCert.php?id=<?= $row['id']?>">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         <?php $no++; endforeach ?>
@@ -133,8 +149,13 @@ while($row = $result->fetch_assoc()) {
 
             <div class="modal-layer-endorsement-self">
                 <div class="input-e-self">
-                    <label for="applicantName">Applicant Name:</label>
-                    <input type="text" id="applicantName" placeholder="Applicant Name">
+                    <label for="applicantName">Applicant:</label>
+                    <div class="label111">
+                        <input type="text" id="applicant_fname" placeholder="First Name">
+                        <input type="text" id="applicant_mname" placeholder="Middle Name">
+                        <input type="text" id="applicant_lname" placeholder="Last Name">
+                        <input type="text" id="applicant_suffix" placeholder="Suffix">
+                    </div>
                 </div>
                 <div class="input-e-self">
                     <label for="address">Address:</label>
@@ -163,12 +184,22 @@ while($row = $result->fetch_assoc()) {
 
             <div class="modal-layer-endorsement-someone">
                 <div class="input-e-someone">
-                    <label for="applicantName">Applicant Name:</label>
-                    <input type="text" id="applicantName" placeholder="Applicant Name">
+                    <label for="applicantName">Applicant:</label>
+                    <div class="label111">
+                        <input type="text" id="applicant_fname" placeholder="First Name">
+                        <input type="text" id="applicant_mname" placeholder="Middle Name">
+                        <input type="text" id="applicant_lname" placeholder="Last Name">
+                        <input type="text" id="applicant_suffix" placeholder="Suffix">
+                    </div>
                 </div>
                 <div class="input-e-someone">
-                    <label for="requestorName">Requestor Name:</label>
-                    <input type="text" id="requestorName" placeholder="Requestor Name">
+                    <label for="requestorName">Requestor:</label>
+                    <div class="label111">
+                        <input type="text" id="requestor_fname" placeholder="First Name">
+                        <input type="text" id="requestor_mname" placeholder="Middle Name">
+                        <input type="text" id="requestor_lname" placeholder="Last Name">
+                        <input type="text" id="requestor_suffix" placeholder="Suffix">
+                    </div>
                 </div>
                 <div class="input-e-someone">
                     <label for="address">Address:</label>
@@ -231,6 +262,22 @@ while($row = $result->fetch_assoc()) {
 </html>
 
 <script>
+// DELETE RESIDENTS
+const deleteLink = document.querySelectorAll('.delete');
+const modalDelete = document.querySelectorAll('.modal-delete');
+const closeButtonDelete = document.querySelectorAll('.close-delete');
+
+deleteLink.forEach((del, index) => {
+    del.addEventListener('click', (e) => {
+        console.log("Delete link clicked")
+        modalDelete[index].style.display = 'block';
+    });
+
+    closeButtonDelete[index].addEventListener('click', function() {
+        modalDelete[index].style.display = 'none';
+    });
+})
+
 // JavaScript code to handle pagination
 const table = document.getElementById('table');
 const rows = table.querySelectorAll('tbody tr');

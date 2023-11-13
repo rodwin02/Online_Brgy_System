@@ -229,12 +229,34 @@ function calculateAge($dob) {
                             </div>
                         </div>
                     </div>
+
+                    <div class="osc">
+                        <div class="a1">
+                            <div class="b1">
+                                <div class="c1">OSC (6-14)</div>
+                                <div class="c2-osc">0</div>
+                                <div class="c3">Total Out of School Children</div>
+                            </div>
+                            <div class="b2">
+                                <div class="c4-osc">
+                                    <img src="icons/people.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a2-osc" id="more-osc">
+                            <a href="moreOSC.php" class="b3">More info</a>
+                            <div class="b4">
+                                <img src="icons/down-arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="osy">
                         <div class="a1">
                             <div class="b1">
                                 <div class="c1">OSY (15-24)</div>
                                 <div class="c2-o"><?= number_format($osy) ?></div>
-                                <div class="c3">Total OSY</div>
+                                <div class="c3">Total Out of School Youth</div>
                             </div>
                             <div class="b2">
                                 <div class="c4-o">
@@ -249,26 +271,9 @@ function calculateAge($dob) {
                             </div>
                         </div>
                     </div>
-                    <div class="osc">
-                        <div class="a1">
-                            <div class="b1">
-                                <div class="c1">OSC (6-14)</div>
-                                <div class="c2-osc">0</div>
-                                <div class="c3">Total OSC</div>
-                            </div>
-                            <div class="b2">
-                                <div class="c4-osc">
-                                    <img src="icons/people.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="a2-osc" id="more-osc">
-                            <a href="#" class="b3">More info</a>
-                            <div class="b4">
-                                <img src="icons/down-arrow.png" alt="">
-                            </div>
-                        </div>
-                    </div>
+
+                    
+
                     <div class="soloParent">
                         <div class="a1">
                             <div class="b1">
@@ -282,8 +287,8 @@ function calculateAge($dob) {
                                 </div>
                             </div>
                         </div>
-                        <div class="a2-soloP" id="more-pwd">
-                            <a href="#" class="b3">More info</a>
+                        <div class="a2-soloP" id="more-soloParent">
+                            <a href="moreSoloParent.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
@@ -295,7 +300,7 @@ function calculateAge($dob) {
                             <div class="b1">
                                 <div class="c1">PWD</div>
                                 <div class="c2-pw"><?= number_format($pwd) ?></div>
-                                <div class="c3">Total PWD</div>
+                                <div class="c3">Total Person with Disabilities</div>
                             </div>
                             <div class="b2">
                                 <div class="c4-pw">
@@ -324,8 +329,8 @@ function calculateAge($dob) {
                                 </div>
                             </div>
                         </div>
-                        <div class="a2-lbr" id="more-pwd">
-                            <a href="#" class="b3">More info</a>
+                        <div class="a2-lbr" id="more-labor">
+                            <a href="moreLaborForce.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
@@ -345,8 +350,8 @@ function calculateAge($dob) {
                                 </div>
                             </div>
                         </div>
-                        <div class="a2-ploy" id="more-pwd">
-                            <a href="#" class="b3">More info</a>
+                        <div class="a2-ploy" id="more-unemploy">
+                            <a href="moreUnemployed.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
@@ -358,7 +363,7 @@ function calculateAge($dob) {
                             <div class="b1">
                                 <div class="c1">OFW</div>
                                 <div class="c2-ofw">0</div>
-                                <div class="c3">Total OFW</div>
+                                <div class="c3">Total Overseas Filipino Worker</div>
                             </div>
                             <div class="b2">
                                 <div class="c4-ofw">
@@ -366,8 +371,50 @@ function calculateAge($dob) {
                                 </div>
                             </div>
                         </div>
-                        <div class="a2-ofw" id="more-pwd">
-                            <a href="#" class="b3">More info</a>
+                        <div class="a2-ofw" id="more-ofw">
+                            <a href="moreOFW.php" class="b3">More info</a>
+                            <div class="b4">
+                                <img src="icons/down-arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="student">
+                        <div class="a1">
+                            <div class="b1">
+                                <div class="c1">Student</div>
+                                <div class="c2-student">0</div>
+                                <div class="c3">Total Students</div>
+                            </div>
+                            <div class="b2">
+                                <div class="c4-student">
+                                    <img src="icons/people.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a2-student" id="more-student">
+                            <a href="moreStudents.php" class="b3">More info</a>
+                            <div class="b4">
+                                <img src="icons/down-arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="senior">
+                        <div class="a1">
+                            <div class="b1">
+                                <div class="c1">Senior Citizen</div>
+                                <div class="c2-senior">0</div>
+                                <div class="c3">Total Senior Citizens</div>
+                            </div>
+                            <div class="b2">
+                                <div class="c4-senior">
+                                    <img src="icons/people.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="a2-senior" id="more-senior">
+                            <a href="moreSNR.php" class="b3">More info</a>
                             <div class="b4">
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
@@ -394,36 +441,6 @@ function calculateAge($dob) {
                             <td>10:00 AM</td>
                             <td>John Doe</td>
                             <td>Information 1</td>
-                        </tr>
-                        <tr>
-                            <td>June 29, 2023</td>
-                            <td>2:30 PM</td>
-                            <td>Jane Smith</td>
-                            <td>Information 2</td>
-                        </tr>
-                        <tr>
-                            <td>June 30, 2023</td>
-                            <td>8:45 AM</td>
-                            <td>Mike Johnson</td>
-                            <td>Information 3</td>
-                        </tr>
-                        <tr>
-                            <td>July 1, 2023</td>
-                            <td>4:15 PM</td>
-                            <td>Sarah Williams</td>
-                            <td>Information 4</td>
-                        </tr>
-                        <tr>
-                            <td>July 2, 2023</td>
-                            <td>9:30 AM</td>
-                            <td>David Brown</td>
-                            <td>Information 5</td>
-                        </tr>
-                        <tr>
-                            <td>July 3, 2023</td>
-                            <td>1:00 PM</td>
-                            <td>Emily Davis</td>
-                            <td>Information 6</td>
                         </tr>
                     </table>
                     <div class="nextBtn">NEXT</div>

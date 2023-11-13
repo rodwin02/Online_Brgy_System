@@ -20,6 +20,7 @@ while($row = $result->fetch_assoc()) {
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
@@ -167,14 +168,12 @@ while($row = $result->fetch_assoc()) {
     </div>
     <!-- END EDIT MODAL ANNOUNCEMENT -->
 
-
-
-
 </body>
 
 </html>
 
 <script>
+
 const addAnnouncement = document.getElementById('addAnnouncement');
 const modalAnnouncement = document.querySelector('.modal-addAnnouncement');
 const closeAnnouncement = document.querySelector('.closeAnnouncement');

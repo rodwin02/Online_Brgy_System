@@ -85,6 +85,11 @@
                     <!-- Add more rows here -->
                     <!-- Add more rows here -->
                 </table>
+                <div class="pagination">
+                <button id="prevBtn">Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextBtn">Next</button>
+            </div>
             </div>
         </div>
         

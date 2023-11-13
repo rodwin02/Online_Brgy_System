@@ -107,7 +107,7 @@ function calculateAge($dob) {
                                             and cannot be undone.</p>
                                     </div>
                                     <div class="delete-submit">
-                                        <a href="./model/remove/remove_resident.php?id=<?= $row['id']?>">Delete</a>
+                                        <a href="./model/remove/remove_household.php?id=<?= $row['id']?>">Delete</a>
                                     </div>
                                 </div>
                             </div>
@@ -131,6 +131,21 @@ function calculateAge($dob) {
 </html>
 
 <script>
+// DELETE RESIDENTS
+const deleteLink = document.querySelectorAll('.delete-archive');
+const modalDelete = document.querySelectorAll('.modal-delete');
+const closeButtonDelete = document.querySelectorAll('.close-delete');
+
+deleteLink.forEach((del, index) => {
+    del.addEventListener('click', (e) => {
+        console.log("Delete link clicked")
+        modalDelete[index].style.display = 'block';
+    });
+
+    closeButtonDelete[index].addEventListener('click', function() {
+        modalDelete[index].style.display = 'none';
+    });
+})
 // JavaScript code to handle pagination
 const table = document.getElementById('table');
 const rows = table.querySelectorAll('tbody tr');

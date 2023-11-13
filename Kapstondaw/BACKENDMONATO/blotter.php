@@ -83,7 +83,24 @@ while($row = $result->fetch_assoc()) {
                                 data-date="<?= $row['date'] ?>" data-time="<?= $row['time'] ?>"
                                 data-details="<?= $row['details'] ?>" data-status="<?= $row['status'] ?>">Edit</a>
                             <a href="./model/print_blotter.php?id=<?= $row['id']?>" class="print">Print</a>
-                            <a href="./model/remove/remove_blotter.php?id=<?= $row['id']?>" class="delete">Delete</a>
+                            <a href="#"
+                                    class="delete">Cancel</a>
+
+                                <div class="modal-delete">
+                                    <div class="form-delete">
+                                        <div class="delete-cont">
+                                            <p>Delete</p>
+                                            <img src="icons/close 1.png" alt="" class="close-delete">
+                                        </div>
+                                        <div class="delete-description">
+                                            <p>Deleting this will remove all data
+                                                and cannot be undone.</p>
+                                        </div>
+                                        <div class="delete-submit">
+                                            <a href="./model/remove/remove_blotter.php?id=<?= $row['id']?>">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>
@@ -268,8 +285,24 @@ while($row = $result->fetch_assoc()) {
 </html>
 
 <script>
-        // JavaScript code to handle pagination
-        const table = document.getElementById('table');
+// DELETE RESIDENTS
+const deleteLink = document.querySelectorAll('.delete');
+const modalDelete = document.querySelectorAll('.modal-delete');
+const closeButtonDelete = document.querySelectorAll('.close-delete');
+
+deleteLink.forEach((del, index) => {
+    del.addEventListener('click', (e) => {
+        console.log("Delete link clicked")
+        modalDelete[index].style.display = 'block';
+    });
+
+    closeButtonDelete[index].addEventListener('click', function() {
+        modalDelete[index].style.display = 'none';
+    });
+})
+
+    // JavaScript code to handle pagination
+    const table = document.getElementById('table');
     const rows = table.querySelectorAll('tbody tr');
     const totalRows = rows.length;
     const rowsPerPage = 10;

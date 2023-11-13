@@ -22,7 +22,6 @@
 		$openTime		= $row['open_time'];
 		$closeTime		= $row['close_time'];
 		$officials_image		= $row['historicalBackground_image'];
-
 	}
 $openTimeStamp = strtotime($openTime);
 $formattedOpenTime = date('H:i', $openTimeStamp);

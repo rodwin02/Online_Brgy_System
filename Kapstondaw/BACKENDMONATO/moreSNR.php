@@ -30,13 +30,31 @@
             </div>
         </div>
 
-        <div class="third_layer">
-            <div class="SNR">
-                <div class="text-cont">
-                    <p class="text">All Senior Citizen</p>
-                    <p class="number">15,000</p>
+        <div class="Box-Container">
+            <div class="First-Cont">
+                <div class="bigBoxSenior">
+                    <div class="text-cont">
+                        <p class="text">TOTAL SENIOR CITIZEN</p>
+                        <p class="number">3,000</p>
+                    </div>
+                    <img src="icons/ResidentsSeeMore.png" alt="">
                 </div>
-                <img src="icons/people.png" alt="">
+            </div>
+            <div class="Second-Cont">
+                <div class="smallBoxSenior">
+                    <div class="text-cont">
+                        <p class="text">Male</p>
+                        <p class="number">600</p>
+                    </div>
+                    <img src="icons/people.png" alt="">
+                </div>
+                <div class="smallBoxSenior">
+                    <div class="text-cont">
+                        <p class="text">Female</p>
+                        <p class="number">600</p>
+                    </div>
+                    <img src="icons/people.png" alt="">
+                </div>
             </div>
         </div>
 
