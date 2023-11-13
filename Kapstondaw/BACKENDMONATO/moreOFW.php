@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total Students</title>
+    <title>Total OFW</title>
     <link rel="stylesheet" href="moreInfo.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
@@ -20,7 +20,7 @@
 
     <div class="home_residents">
         <div class="first_layer">
-            <p>Total Students</p>
+            <p>Total OFW</p>
             <a href="#">Logout</a>
         </div>
         <div class="second_layer">
@@ -32,23 +32,23 @@
 
         <div class="Box-Container">
             <div class="First-Cont">
-                <div class="bigBoxStudent">
+                <div class="bigBoxOfw">
                     <div class="text-cont">
-                        <p class="text">TOTAL STUDENTS</p>
+                        <p class="text">TOTAL OVERSEAS <br>FILIPINO WORKER</p>
                         <p class="number">3,000</p>
                     </div>
                     <img src="icons/ResidentsSeeMore.png" alt="">
                 </div>
             </div>
             <div class="Second-Cont">
-                <div class="smallBoxStudent">
+                <div class="smallBoxOfw">
                     <div class="text-cont">
                         <p class="text">Male</p>
                         <p class="number">600</p>
                     </div>
                     <img src="icons/people.png" alt="">
                 </div>
-                <div class="smallBoxStudent">
+                <div class="smallBoxOfw">
                     <div class="text-cont">
                         <p class="text">Female</p>
                         <p class="number">600</p>

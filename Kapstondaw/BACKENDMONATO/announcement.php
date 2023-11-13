@@ -174,7 +174,6 @@ while($row = $result->fetch_assoc()) {
 
 <script>
 
-
 const addAnnouncement = document.getElementById('addAnnouncement');
 const modalAnnouncement = document.querySelector('.modal-addAnnouncement');
 const closeAnnouncement = document.querySelector('.closeAnnouncement');

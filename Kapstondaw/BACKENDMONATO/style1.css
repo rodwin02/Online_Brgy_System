@@ -69,12 +69,11 @@
 }
 
 .stats {
-  
-  width: 100%;
+  width: 96.3%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
- 
+  
 }
 a {
   text-decoration: none;
@@ -89,9 +88,9 @@ a {
 .population {
   display: flex;
   flex-direction: column;
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -254,9 +253,9 @@ tr:nth-child(even) {
 }
 
 .male {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -311,9 +310,9 @@ tr:nth-child(even) {
 }
 
 .female {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -367,9 +366,9 @@ tr:nth-child(even) {
 }
 
 .voters {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -423,9 +422,9 @@ tr:nth-child(even) {
 }
 
 .nonvoters {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -478,9 +477,9 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .blotter {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -534,9 +533,9 @@ tr:nth-child(even) {
 }
 
 .osc {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -590,9 +589,9 @@ tr:nth-child(even) {
 }
 
 .osy {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -645,9 +644,9 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .pwd {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -700,9 +699,9 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .soloParent {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -755,9 +754,9 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .labor {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -810,9 +809,9 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .unemploy {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -865,9 +864,9 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .ofw {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -920,9 +919,9 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .snr {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -976,9 +975,9 @@ tr:nth-child(even) {
 }
 
 .students {
-  width: 325px;
-  height: 140px;
-  margin: 10px 10px;
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
   background: #F8F8F8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -1031,7 +1030,118 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 
+.student {
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
+  background: #F8F8F8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.a2-student {
+  height: 15%;
+  background: rgba(48, 48, 48, 0.788);
+  border-radius: 0px 0px 5px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 
+.a2-student .b3 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  color: #FFFFFF;
+}
+.a2-student .b4 img{
+  margin-top: 4px;
+}
+.a1 .b1 .c2-student {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 52px;
+  display: flex;
+  align-items: center;
+  
+  color: rgba(48, 48, 48, 0.788);
+}
+.a1 .b2 .c4-student {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 35px;
+  width: 80px;
+  height: 80px;
+  background: rgba(48, 48, 48, 0.788);
+  border-radius: 10px;
+}
+
+
+.senior {
+  width: 315px;
+  height: 150px;
+  margin: 10px 12px ;
+  background: #F8F8F8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.a2-senior {
+  height: 15%;
+  background: rgba(0, 104, 81, 0.74);
+  border-radius: 0px 0px 5px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.a2-senior .b3 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  color: #FFFFFF;
+}
+.a2-senior .b4 img{
+  margin-top: 4px;
+}
+.a1 .b1 .c2-senior {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 52px;
+  display: flex;
+  align-items: center;
+  
+  color: rgba(0, 104, 81, 0.74);
+}
+.a1 .b2 .c4-senior {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 35px;
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 104, 81, 0.74);
+  border-radius: 10px;
+}
 /* MORE INFO CSS */
 .modal-allResidents {
   display: flex;
