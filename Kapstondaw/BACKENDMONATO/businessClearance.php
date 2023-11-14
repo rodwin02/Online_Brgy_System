@@ -50,50 +50,50 @@ $businessClearance[] = $row;
         <?php include './template/message.php' ?>
 
         <form action="" class="form-allCert">
-        <div class="third_layer">
-            <table id="table">
-                <thead>
-                    <tr>
-                        <th>Business Name</th>
-                        <th>Business Owner's Name</th>
-                        <th>Business Address</th>
-                        <th>Date Applied</th>
-                        <th>Document For</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if(!empty($businessClearance)) { ?>
-                    <?php $no=1; foreach($businessClearance as $row): ?>
-                    <tr>
-                        <td><?= $row['business_name'] ?></td>
-                        <td><?= $row['business_owner_fname']. ' ' .$row['business_owner_mname']. ' ' .$row['business_owner_lname'] ?>
-                        </td>
-                        <td><?= $row['business_address'] ?></td>
-                        <td><?= $row['date_applied'] ?></td>
-                        <td><?= $row['documentFor'] ?></td>
-                        <td>
-                            <select name="Status" id="Status" onchange="changeColor(this)">
-                                <option class="Pending" value="Pending">Pending</option>
-                                <option class="Preparing" value="Preparing">Preparing</option>
-                                <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
-                                <option class="Completed" value="Completed">Completed</option>
-                            </select></td>
-                        </td>
-                        <td>
-                            <a href="./generate/businessClearance_generate.php?id=<?= $row['id'] ?>"
-                                class="print">Print</a>
-                            <!-- <?php if($row['documentFor'] === 'clearance') { ?>
+            <div class="third_layer">
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>Business Name</th>
+                            <th>Business Owner's Name</th>
+                            <th>Business Address</th>
+                            <th>Date Applied</th>
+                            <th>Document For</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if(!empty($businessClearance)) { ?>
+                        <?php $no=1; foreach($businessClearance as $row): ?>
+                        <tr>
+                            <td><?= $row['business_name'] ?></td>
+                            <td><?= $row['business_owner_fname']. ' ' .$row['business_owner_mname']. ' ' .$row['business_owner_lname'] ?>
+                            </td>
+                            <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision'] ?></td>
+                            <td><?= $row['date_applied'] ?></td>
+                            <td><?= $row['documentFor'] ?></td>
+                            <td>
+                                <select name="Status" id="Status" onchange="changeColor(this)">
+                                    <option class="Pending" value="Pending">Pending</option>
+                                    <option class="Preparing" value="Preparing">Preparing</option>
+                                    <option class="For_Pick_up" value="For_Pick_up">For Pick-up</option>
+                                    <option class="Completed" value="Completed">Completed</option>
+                                </select>
+                            </td>
+                            </td>
+                            <td>
+                                <a href="./generate/businessClearance_generate.php?id=<?= $row['id'] ?>"
+                                    class="print">Print</a>
+                                <!-- <?php if($row['documentFor'] === 'clearance') { ?>
                             <a href="./generate/businessClearance_generate_forself.php?id=<?= $row['id'] ?>"
                                 class="print">Print</a>
                             <?php } else {?>
                             <a href="./generate/businessClosure_generate_forsingleparent.php?id=<?= $row['id'] ?>"
                                 class="print">Print</a>
                             <?php } ?> -->
-                            <a href="#" class="edit">Edit</a>
-                            <a href="#"
-                                    class="delete">Cancel</a>
+                                <a href="#" class="edit">Edit</a>
+                                <a href="#" class="delete">Cancel</a>
 
                                 <div class="modal-delete">
                                     <div class="form-delete">
@@ -106,22 +106,23 @@ $businessClearance[] = $row;
                                                 and cannot be undone.</p>
                                         </div>
                                         <div class="delete-submit">
-                                            <a href="./model/remove/remove_businessClearance.php?id=<?= $row['id']?>">Delete</a>
+                                            <a
+                                                href="./model/remove/remove_businessClearance.php?id=<?= $row['id']?>">Delete</a>
                                         </div>
                                     </div>
                                 </div>
-                        </td>
-                    </tr>
-                    <?php $no++; endforeach ?>
-                    <?php } ?>
-                </tbody>
-            </table>
-            <div class="pagination">
-                <button id="prevBtn">Previous</button>
-                <div id="pageNumbers" class="page-numbers"></div>
-                <button id="nextBtn">Next</button>
+                            </td>
+                        </tr>
+                        <?php $no++; endforeach ?>
+                        <?php } ?>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button id="prevBtn">Previous</button>
+                    <div id="pageNumbers" class="page-numbers"></div>
+                    <button id="nextBtn">Next</button>
+                </div>
             </div>
-        </div>
         </form>
     </div>
 
@@ -135,27 +136,27 @@ $businessClearance[] = $row;
             <div class="modal-layer-b-clearance">
                 <div class="input-b-clearance">
                     <label for="businessName">Business Name:</label>
-                    <input type="text" id="businessName" placeholder="Business name">
+                    <input type="text" name="business_name" id="businessName" placeholder="Business name">
                 </div>
                 <div class="input-b-clearance">
                     <label for="ownerName">Business Owner's Name:</label>
                     <div class="label111">
-                        <input type="text" id="business_owner_fname" placeholder="First Name">
-                        <input type="text" id="business_owner_mname" placeholder="Middle Name">
-                        <input type="text" id="business_owner_lname" placeholder="Last Name">
-                        <input type="text" id="business_owner_suffix" placeholder="Suffix">
+                        <input type="text" name="owner_fname" id="business_owner_fname" placeholder="First Name">
+                        <input type="text" name="owner_mname" id="owner_mname" placeholder="Middle Name">
+                        <input type="text" name="owner_lname" id="business_owner_lname" placeholder="Last Name">
+                        <input type="text" name="owner_suffix" id="business_owner_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-b-clearance">
                     <label for="address">Business Address:</label>
                     <div class="label111">
-                        <input type="text" id="house_no" placeholder="Houseno.">
-                        <input type="text" id="street" placeholder="Street name">
-                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" id="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
                     </div>
                 </div>
             </div>
-            <input type="hidden" name="documentFor" value="clearance">
+            <input type="hidden" name="documentFor" value="Clearance">
             <input type="submit" id="submit" value="Add">
         </form>
     </div>
@@ -249,47 +250,47 @@ deleteLink.forEach((del, index) => {
     });
 })
 
-    // JavaScript code to handle pagination
-    const table = document.getElementById('table');
-    const rows = table.querySelectorAll('tbody tr');
-    const totalRows = rows.length;
-    const rowsPerPage = 10;
-    let currentPage = 1;
+// JavaScript code to handle pagination
+const table = document.getElementById('table');
+const rows = table.querySelectorAll('tbody tr');
+const totalRows = rows.length;
+const rowsPerPage = 10;
+let currentPage = 1;
 
-    function showRows(page) {
-        const start = (page - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
+function showRows(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
 
-        rows.forEach((row, index) => {
-            if (index >= start && index < end) {
-                row.style.display = 'table-row';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
-
-    function updatePaginationButtons() {
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const pageNumbers = document.getElementById('pageNumbers');
-
-        prevBtn.disabled = currentPage === 1;
-        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
-
-        pageNumbers.textContent = currentPage;
-    }
-
-    // Initial setup
-    showRows(currentPage);
-    updatePaginationButtons();
-
-    // Previous button click event
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            showRows(currentPage);
-            updatePaginationButtons();
+    rows.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
         }
     });
+}
+
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+    pageNumbers.textContent = currentPage;
+}
+
+// Initial setup
+showRows(currentPage);
+updatePaginationButtons();
+
+// Previous button click event
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
 </script>

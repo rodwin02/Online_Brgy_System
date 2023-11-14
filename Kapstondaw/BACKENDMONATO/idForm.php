@@ -114,24 +114,23 @@ while($row = $result->fetch_assoc()) {
                     else { ?>
                             <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">Print</a>
                             <?php } ?>
-                            <a href="#"
-                                    class="delete">Cancel</a>
+                            <a href="#" class="delete">Cancel</a>
 
-                                <div class="modal-delete">
-                                    <div class="form-delete">
-                                        <div class="delete-cont">
-                                            <p>Delete</p>
-                                            <img src="icons/close 1.png" alt="" class="close-delete">
-                                        </div>
-                                        <div class="delete-description">
-                                            <p>Deleting this will remove all data
-                                                and cannot be undone.</p>
-                                        </div>
-                                        <div class="delete-submit">
-                                            <a href="./model/remove/remove_idForm.php?id=<?= $row['id']?>">Delete</a>
-                                        </div>
+                            <div class="modal-delete">
+                                <div class="form-delete">
+                                    <div class="delete-cont">
+                                        <p>Delete</p>
+                                        <img src="icons/close 1.png" alt="" class="close-delete">
+                                    </div>
+                                    <div class="delete-description">
+                                        <p>Deleting this will remove all data
+                                            and cannot be undone.</p>
+                                    </div>
+                                    <div class="delete-submit">
+                                        <a href="./model/remove/remove_idForm.php?id=<?= $row['id']?>">Delete</a>
                                     </div>
                                 </div>
+                            </div>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>
@@ -159,44 +158,44 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-label">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" id="applicant_fname" placeholder="First Name">
-                        <input type="text" id="applicant_mname" placeholder="Middle Name">
-                        <input type="text" id="applicant_lname" placeholder="Last Name">
-                        <input type="text" id="applicant_suffix" placeholder="Suffix">
+                        <input type="text" name="applicant_fname" id="applicant_fname" placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname" placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix" placeholder="Suffix">
                     </div>
-                    </div>
+                </div>
                 <div class="input-label">
                     <label for="requestorName">Requestor:</label>
                     <div class="label111">
-                        <input type="text" id="requestor_fname" placeholder="First Name">
-                        <input type="text" id="requestor_mname" placeholder="Middle Name">
-                        <input type="text" id="requestor_lname" placeholder="Last Name">
-                        <input type="text" id="requestor_suffix" placeholder="Suffix">
+                        <input type="text" name="requestor_fname" id="requestor_fname" placeholder="First Name">
+                        <input type="text" name="requestor_mname" id="requestor_mname" placeholder="Middle Name">
+                        <input type="text" name="requestor_lname" id="requestor_lname" placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" id="requestor_suffix" placeholder="Suffix">
                     </div>
-                    </div>
+                </div>
                 <div class="input-label">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" id="house_no" placeholder="Houseno.">
-                        <input type="text" id="street" placeholder="Street name">
-                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" id="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-label">
                     <label for="place_of_birth">Place of Birth:</label>
-                    <input type="text" id="place_of_birth">
+                    <input type="text" name="pob" id="place_of_birth">
                 </div>
                 <div class="input-label">
                     <label for="birth_date">Birth Date:</label>
-                    <input type="date" id="birth_date">
+                    <input type="date" name="dob" id="birth_date">
                 </div>
                 <div class="input-label">
                     <label for="civil_status">Civil Status:</label>
-                    <input type="text" id="civil_status">
+                    <input type="text" name="civil_status" id="civil_status">
                 </div>
                 <div class="input-label">
                     <label for="contact_number">Contact Number:</label>
-                    <input type="text" id="contact_number">
+                    <input type="text" name="contact_no" id="contact_number">
                 </div>
                 <div class="input-label">
                     <label for="documentFor">Document For:</label>
@@ -209,9 +208,6 @@ while($row = $result->fetch_assoc()) {
                     <label for="purpose">Purpose:</label>
                     <input type="text" id="purpose" name="purpose">
                 </div>
-                
-                <input type="date" id="date-requested" hidden="hidden">
-
             </div>
             <input type="submit" id="submit" value="Add">
         </form>

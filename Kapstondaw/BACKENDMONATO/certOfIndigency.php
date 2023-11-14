@@ -107,8 +107,7 @@ while($row = $result->fetch_assoc()) {
                                 <a href="./generate/certOfIndigency_generate_forsomeone.php?id=<?= $row['id'] ?>"
                                     class="print">Print</a>
                                 <?php } ?>
-                                <a href="#"
-                                    class="delete">Cancel</a>
+                                <a href="#" class="delete">Cancel</a>
 
                                 <div class="modal-delete">
                                     <div class="form-delete">
@@ -121,7 +120,8 @@ while($row = $result->fetch_assoc()) {
                                                 and cannot be undone.</p>
                                         </div>
                                         <div class="delete-submit">
-                                            <a href="./model/remove/remove_certOfIndigency.php?id=<?= $row['id']?>">Delete</a>
+                                            <a
+                                                href="./model/remove/remove_certOfIndigency.php?id=<?= $row['id']?>">Delete</a>
                                         </div>
                                     </div>
                                 </div>
@@ -151,18 +151,18 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-indigency-self">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" id="applicant_fname" placeholder="First Name">
-                        <input type="text" id="applicant_mname" placeholder="Middle Name">
-                        <input type="text" id="applicant_lname" placeholder="Last Name">
-                        <input type="text" id="applicant_suffix" placeholder="Suffix">
+                        <input type="text" name="applicant_fname" id="applicant_fname" placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname" placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-indigency-self">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" id="house_no" placeholder="Houseno.">
-                        <input type="text" id="street" placeholder="Street name">
-                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" id="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-indigency-self">
@@ -186,27 +186,27 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-indigency-someone">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" id="applicant_fname" placeholder="First Name">
-                        <input type="text" id="applicant_mname" placeholder="Middle Name">
-                        <input type="text" id="applicant_lname" placeholder="Last Name">
-                        <input type="text" id="applicant_suffix" placeholder="Suffix">
+                        <input type="text" name="applicant_fname" id="applicant_fname" placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname" placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-indigency-someone">
                     <label for="requestorName">Requestor:</label>
                     <div class="label111">
-                        <input type="text" id="requestor_fname" placeholder="First Name">
-                        <input type="text" id="requestor_mname" placeholder="Middle Name">
-                        <input type="text" id="requestor_lname" placeholder="Last Name">
-                        <input type="text" id="requestor_suffix" placeholder="Suffix">
+                        <input type="text" name="requestor_fname" id="requestor_fname" placeholder="First Name">
+                        <input type="text" name="requestor_mname" id="requestor_mname" placeholder="Middle Name">
+                        <input type="text" name="requestor_lname" id="requestor_lname" placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" id="requestor_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-indigency-someone">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" id="house_no" placeholder="Houseno.">
-                        <input type="text" id="street" placeholder="Street name">
-                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" id="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-indigency-someone">

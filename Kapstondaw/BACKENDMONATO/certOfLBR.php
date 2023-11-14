@@ -119,8 +119,7 @@ while($row = $result->fetch_assoc()) {
                                 <a href="./generate/certOfLBR_generate_forsingleparent.php?id=<?= $row['id'] ?>"
                                     class="print">Print</a>
                                 <?php } ?>
-                                <a href="#"
-                                    class="delete">Cancel</a>
+                                <a href="#" class="delete">Cancel</a>
 
                                 <div class="modal-delete">
                                     <div class="form-delete">
@@ -163,28 +162,28 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-lbr-self">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" id="applicant_fname" placeholder="First Name">
-                        <input type="text" id="applicant_mname" placeholder="Middle Name">
-                        <input type="text" id="applicant_lname" placeholder="Last Name">
-                        <input type="text" id="applicant_suffix" placeholder="Suffix">
+                        <input type="text" name="applicant_fname" id="applicant_fname" placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname" placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-self">
                     <label for="fatherName">Father Name:</label>
                     <div class="label111">
-                        <input type="text" id="father_fname" placeholder="First Name">
-                        <input type="text" id="father_mname" placeholder="Middle Name">
-                        <input type="text" id="father_lname" placeholder="Last Name">
-                        <input type="text" id="father_suffix" placeholder="Suffix">
+                        <input type="text" name="father_fname" id="father_fname" placeholder="First Name">
+                        <input type="text" name="father_mname" id="father_mname" placeholder="Middle Name">
+                        <input type="text" name="father_lname" id="father_lname" placeholder="Last Name">
+                        <input type="text" name="father_suffix" id="father_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-self">
                     <label for="motherName">Mother Name:</label>
                     <div class="label111">
-                        <input type="text" id="mother_fname" placeholder="First Name">
-                        <input type="text" id="mother_mname" placeholder="Middle Name">
-                        <input type="text" id="mother_lname" placeholder="Last Name">
-                        <input type="text" id="mother_suffix" placeholder="Suffix">
+                        <input type="text" name="mother_fname" id="mother_fname" placeholder="First Name">
+                        <input type="text" name="mother_mname" id="mother_mname" placeholder="Middle Name">
+                        <input type="text" name="mother_lname" id="mother_lname" placeholder="Last Name">
+                        <input type="text" name="mother_suffix" id="mother_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-self">
@@ -194,13 +193,13 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-lbr-self">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" id="house_no" placeholder="Houseno.">
-                        <input type="text" id="street" placeholder="Street name">
-                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" id="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
                     </div>
                 </div>
             </div>
-            <input type="hidden" name="documentFor" value="self">
+            <input type="hidden" name="documentFor" value="Self">
             <input type="submit" id="submit" value="Add">
         </form>
     </div>
@@ -216,19 +215,19 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-lbr-single-parent">
                     <label for="requestorName">Requestor:</label>
                     <div class="label111">
-                        <input type="text" id="requestor_fname" placeholder="First Name">
-                        <input type="text" id="requestor_mname" placeholder="Middle Name">
-                        <input type="text" id="requestor_lname" placeholder="Last Name">
-                        <input type="text" id="requestor_suffix" placeholder="Suffix">
+                        <input type="text" name="requestor_fname" id="requestor_fname" placeholder="First Name">
+                        <input type="text" name="requestor_mname" id="requestor_mname" placeholder="Middle Name">
+                        <input type="text" name="requestor_lname" id="requestor_lname" placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" id="requestor_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-single-parent">
                     <label for="parentName">Parent Name:</label>
                     <div class="label111">
-                        <input type="text" id="parent_fname" placeholder="First Name">
-                        <input type="text" id="parent_mname" placeholder="Middle Name">
-                        <input type="text" id="parent_lname" placeholder="Last Name">
-                        <input type="text" id="parent_suffix" placeholder="Suffix">
+                        <input type="text" name="parent_fname" id="parent_fname" placeholder="First Name">
+                        <input type="text" name="parent_mname" id="parent_mname" placeholder="Middle Name">
+                        <input type="text" name="parent_lname" id="parent_lname" placeholder="Last Name">
+                        <input type="text" name="parent_suffix" id="parent_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-single-parent">
@@ -238,14 +237,14 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-lbr-single-parent">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" id="house_no" placeholder="Houseno.">
-                        <input type="text" id="street" placeholder="Street name">
-                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" id="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
                     </div>
                 </div>
             </div>
 
-            <input type="hidden" name="documentFor" value="single-parent">
+            <input type="hidden" name="documentFor" value="Single Parent">
             <input type="submit" id="submit" value="Add">
         </form>
     </div>
@@ -262,28 +261,28 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-lbr-for-child">
                     <label for="requestorName">Requestor:</label>
                     <div class="label111">
-                        <input type="text" id="requestor_fname" placeholder="First Name">
-                        <input type="text" id="requestor_mname" placeholder="Middle Name">
-                        <input type="text" id="requestor_lname" placeholder="Last Name">
-                        <input type="text" id="requestor_suffix" placeholder="Suffix">
+                        <input type="text" name="requestor_fname" id="requestor_fname" placeholder="First Name">
+                        <input type="text" name="requestor_mname" id="requestor_mname" placeholder="Middle Name">
+                        <input type="text" name="requestor_lname" id="requestor_lname" placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" id="requestor_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-for-child">
                     <label for="fatherName">Father Name:</label>
                     <div class="label111">
-                        <input type="text" id="father_fname" placeholder="First Name">
-                        <input type="text" id="father_mname" placeholder="Middle Name">
-                        <input type="text" id="father_lname" placeholder="Last Name">
-                        <input type="text" id="father_suffix" placeholder="Suffix">
+                        <input type="text" name="father_fname" id="father_fname" placeholder="First Name">
+                        <input type="text" name="father_mname" id="father_mname" placeholder="Middle Name">
+                        <input type="text" name="father_lname" id="father_lname" placeholder="Last Name">
+                        <input type="text" name="father_suffix" id="father_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-for-child">
                     <label for="motherName">Mother Name:</label>
                     <div class="label111">
-                        <input type="text" id="mother_fname" placeholder="First Name">
-                        <input type="text" id="mother_mname" placeholder="Middle Name">
-                        <input type="text" id="mother_lname" placeholder="Last Name">
-                        <input type="text" id="mother_suffix" placeholder="Suffix">
+                        <input type="text" name="mother_fname" id="mother_fname" placeholder="First Name">
+                        <input type="text" name="mother_mname" id="mother_mname" placeholder="Middle Name">
+                        <input type="text" name="mother_lname" id="mother_lname" placeholder="Last Name">
+                        <input type="text" name="mother_suffix" id="mother_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-for-child">
@@ -293,13 +292,13 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-lbr-for-child">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" id="house_no" placeholder="Houseno.">
-                        <input type="text" id="street" placeholder="Street name">
-                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" id="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
                     </div>
                 </div>
             </div>
-            <input type="hidden" name="documentFor" value="children">
+            <input type="hidden" name="documentFor" value="Children">
             <input type="submit" id="submit" value="Add">
         </form>
     </div>

@@ -10,17 +10,24 @@
     $applicant_fname    = $conn->real_escape_string($_POST['applicant_fname']);
     $applicant_mname    = $conn->real_escape_string($_POST['applicant_mname']);
     $applicant_lname    = $conn->real_escape_string($_POST['applicant_lname']);
+    $applicant_suffix   = $conn->real_escape_string($_POST['applicant_suffix']);
+    
     $requestor_fname    = $conn->real_escape_string($_POST['requestor_fname']);
     $requestor_mname    = $conn->real_escape_string($_POST['requestor_mname']);
     $requestor_lname    = $conn->real_escape_string($_POST['requestor_lname']);
-    $address      = $conn->real_escape_string($_POST['address']);
+    $requestor_suffix   = $conn->real_escape_string($_POST['requestor_suffix']);
+    
+    $house_no         = $conn->real_escape_string($_POST['house_no']);
+    $street         = $conn->real_escape_string($_POST['street']);
+    $subdivision         = $conn->real_escape_string($_POST['subdivision']);
+    
     $purpose      = $conn->real_escape_string($_POST['purpose']);
     $documentFor  = $conn->real_escape_string($_POST['documentFor']);
 
-    if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($applicant_lname) || !empty($requestor_lname) && !empty($address)&& !empty($purpose)){
+    if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($applicant_lname) || !empty($requestor_lname)){
 
-        $insert  = "INSERT INTO tbl_certofindigency (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `address`, `documentFor`, `purpose`) 
-                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$address', '$documentFor','$purpose')";
+        $insert  = "INSERT INTO tbl_certofindigency (`applicant_fname`, `applicant_mname`, `applicant_lname`, `applicant_suffix`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `requestor_suffix`, `house_no`, `street`, `subdivision`, `documentFor`, `purpose`, `status`) 
+                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$applicant_suffix', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$requestor_suffix', '$house_no', '$street', '$subdivision', '$documentFor','$purpose', 'Pending')";
         $result  = $conn->query($insert);
 
         if($result === true){

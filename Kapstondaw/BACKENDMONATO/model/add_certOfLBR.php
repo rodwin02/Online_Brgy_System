@@ -10,31 +10,39 @@
     $applicant_fname    = $conn->real_escape_string($_POST['applicant_fname']);
     $applicant_mname    = $conn->real_escape_string($_POST['applicant_mname']);
     $applicant_lname    = $conn->real_escape_string($_POST['applicant_lname']);
+    $applicant_suffix    = $conn->real_escape_string($_POST['applicant_suffix']);
 
     $requestor_fname    = $conn->real_escape_string($_POST['requestor_fname']);
     $requestor_mname    = $conn->real_escape_string($_POST['requestor_mname']);
     $requestor_lname    = $conn->real_escape_string($_POST['requestor_lname']);
+    $requestor_suffix    = $conn->real_escape_string($_POST['requestor_suffix']);
 
     $parent_fname    = $conn->real_escape_string($_POST['parent_fname']);
     $parent_mname    = $conn->real_escape_string($_POST['parent_mname']);
     $parent_lname    = $conn->real_escape_string($_POST['parent_lname']);
+    $parent_suffix    = $conn->real_escape_string($_POST['parent_suffix']);
 
     $mother_fname    = $conn->real_escape_string($_POST['mother_fname']);
     $mother_mname    = $conn->real_escape_string($_POST['mother_mname']);
     $mother_lname    = $conn->real_escape_string($_POST['mother_lname']);
+    $mother_suffix    = $conn->real_escape_string($_POST['mother_suffix']);
 
     $father_fname    = $conn->real_escape_string($_POST['father_fname']);
     $father_mname    = $conn->real_escape_string($_POST['father_mname']);
     $father_lname    = $conn->real_escape_string($_POST['father_lname']);
+    $father_suffix    = $conn->real_escape_string($_POST['father_suffix']);
 
-    $birthDate 	    = $conn->real_escape_string($_POST['dob']);
-    $address 	      = $conn->real_escape_string($_POST['address']);
+    $house_no         = $conn->real_escape_string($_POST['house_no']);
+    $street         = $conn->real_escape_string($_POST['street']);
+    $subdivision         = $conn->real_escape_string($_POST['subdivision']);
+    
+    $dob 	    = $conn->real_escape_string($_POST['dob']);
     $documentFor    = $conn->real_escape_string($_POST['documentFor']);
 
-    if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($applicant_lname) || !empty($requestor_lname)  && !empty($birthDate) && !empty($address)){
+    if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($applicant_lname) || !empty($requestor_lname)){
 
-        $insert  = "INSERT INTO tbl_certoflbr (`applicant_fname`, `applicant_mname`, `applicant_lname`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `parent_fname`, `parent_mname`, `parent_lname`, `father_fname`, `father_mname`, `father_lname`, `mother_fname`, `mother_mname`, `mother_lname`, `date-of-birth`, `address`, `documentFor`) 
-                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$parent_fname', '$parent_mname', '$parent_lname', '$father_fname', '$father_mname', '$father_lname', '$mother_fname', '$mother_mname', '$mother_lname', '$birthDate', '$address', '$documentFor')";
+        $insert  = "INSERT INTO tbl_certoflbr (`applicant_fname`, `applicant_mname`, `applicant_lname`, `applicant_suffix`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `requestor_suffix`, `parent_fname`, `parent_mname`, `parent_lname`, `parent_suffix`, `father_fname`, `father_mname`, `father_lname`, `father_suffix`, `mother_fname`, `mother_mname`, `mother_lname`, `mother_suffix`, `date_of_birth`, `house_no`, `street`, `subdivision`, `status`, `documentFor`) 
+                    VALUES ('$applicant_fname', '$applicant_mname', '$applicant_lname', '$applicant_suffix', '$requestor_fname', '$requestor_mname', '$requestor_lname', '$requestor_suffix', '$parent_fname', '$parent_mname', '$parent_lname', '$parent_suffix', '$father_fname', '$father_mname', '$father_lname', '$father_suffix', '$mother_fname', '$mother_mname', '$mother_lname', '$mother_suffix', '$dob', '$house_no', '$street', '$subdivision', 'Pending', '$documentFor')";
         $result  = $conn->query($insert);
 
         if($result === true){
