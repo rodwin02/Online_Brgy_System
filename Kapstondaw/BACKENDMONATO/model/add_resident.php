@@ -50,7 +50,7 @@ VALUES ('$fname', '$mname', '$lname', '$sex', '$houseNo', '$street', '$subdivisi
 '$cstatus', '$occupation', '$email', '$contact', '$vstatus', '$citizenship', '$householdNo',
 '$osy', '$pwd', '$hHead')";
 
-insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $sex, $cstatus, $street, $dbirth, $email);
+insertUser($conn, $username, $hashedPassword, $fname, $mname, $lname, $sex, $cstatus, $street, $dbirth, $pbirth, $email, $houseNo, $subdivision);
 
 if($conn->query($query) === true){
 

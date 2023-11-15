@@ -7,9 +7,9 @@
         }
     }
     
-    $applicant_fname    = $conn->real_escape_string($_POST['applicant_fname']);
-    $applicant_mname    = $conn->real_escape_string($_POST['applicant_mname']);
-    $applicant_lname    = $conn->real_escape_string($_POST['applicant_lname']);
+    $applicant_fname    = $conn->real_escape_string(isset($_POST['applicant_fname']) ? $_POST['applicant_fname'] : "");
+    $applicant_mname    = $conn->real_escape_string(isset($_POST['applicant_mname']) ? $_POST['applicant_mname'] : "");
+    $applicant_lname    = $conn->real_escape_string(isset($_POST['applicant_lname']) ? $_POST['applicant_lname'] : "");
     $applicant_suffix    = $conn->real_escape_string($_POST['applicant_suffix']);
 
     $requestor_fname    = $conn->real_escape_string($_POST['requestor_fname']);

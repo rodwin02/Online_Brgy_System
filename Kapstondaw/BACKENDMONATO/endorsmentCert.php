@@ -100,6 +100,13 @@ while($row = $result->fetch_assoc()) {
                             </td>
                             </td>
                             <td>
+                                <!-- EDIT -->
+                                <?php if($row['documentFor'] === 'Self') { ?>
+                                <a href="#" id="editEcert_forself" class="edit">Edit</a>
+                                <?php } else {?>
+                                <a href="#" id="editEcert_forsomeone" class="edit">Edit</a>
+                                <?php } ?>
+                                <!-- PRINT -->
                                 <?php if($row['documentFor'] === 'Self') { ?>
                                 <a href="./generate/endorsementCert_generate_forselft.php?id=<?= $row['id']?>"
                                     class="print">Print</a>
@@ -151,23 +158,59 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-e-self">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" name="applicant_fname" id="applicant_fname" placeholder="First Name">
-                        <input type="text" name="applicant_mname" id="applicant_mname" placeholder="Middle Name">
-                        <input type="text" name="applicant_lname" id="applicant_lname" placeholder="Last Name">
-                        <input type="text" name="applicant_suffix" id="applicant_suffix" placeholder="Suffix">
+                        <input type="text" name="applicant_fname" id="applicant_fname_self" placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname_self" placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname_self" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix_self" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-e-self">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
-                        <input type="text" name="street" id="street" placeholder="Street name">
-                        <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no_self" placeholder="Houseno.">
+                        <input type="text" name="street" id="street_self" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision_self" placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-e-self">
                     <label for="purpose">Purpose:</label>
-                    <input type="text" name="purpose" id="purpose">
+                    <input type="text" name="purpose" id="purpose_self">
+                </div>
+            </div>
+            <input type="hidden" name="documentFor" value="Self">
+            <input type="submit" id="submit" value="Add">
+        </form>
+    </div>
+
+    <!-- EDIT MODAL SELF -->
+    <div class="modal-editEcert_forself">
+        <form class="formEcert_forself" action="./model/edit_endorsementCert.php" method="post">
+            <div class="title-cont-modal">
+                <p>For Self</p>
+                <img src="icons/close 1.png" class="closeForm_forself1" alt="">
+            </div>
+
+            <div class="modal-layer-endorsement-self">
+                <div class="input-e-self">
+                    <label for="applicantName">Applicant:</label>
+                    <div class="label111">
+                        <input type="text" name="applicant_fname" id="applicant_fname_self1" placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname_self1" placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname_self1" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix_self1" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-e-self">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" name="house_no" id="house_no_self1" placeholder="Houseno.">
+                        <input type="text" name="street" id="street_self1" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision_self1" placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-e-self">
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" name="purpose" id="purpose_self1">
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Self">
@@ -186,32 +229,34 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-e-someone">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" name="applicant_fname" id="applicant_fname" placeholder="First Name">
-                        <input type="text" name="applicant_mname" id="applicant_mname" placeholder="Middle Name">
-                        <input type="text" name="applicant_lname" id="applicant_lname" placeholder="Last Name">
-                        <input type="text" name="applicant_suffix" id="applicant_suffix" placeholder="Suffix">
+                        <input type="text" name="applicant_fname" id="applicant_fname_someone" placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname_someone"
+                            placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname_someone" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix_someone" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-e-someone">
                     <label for="requestorName">Requestor:</label>
                     <div class="label111">
-                        <input type="text" name="requestor_fname" id="requestor_fname" placeholder="First Name">
-                        <input type="text" name="requestor_mname" id="requestor_mname" placeholder="Middle Name">
-                        <input type="text" name="requestor_lname" id="requestor_lname" placeholder="Last Name">
-                        <input type="text" name="requestor_suffix" id="requestor_suffix" placeholder="Suffix">
+                        <input type="text" name="requestor_fname" id="requestor_fname_someone" placeholder="First Name">
+                        <input type="text" name="requestor_mname" id="requestor_mname_someone"
+                            placeholder="Middle Name">
+                        <input type="text" name="requestor_lname" id="requestor_lname_someone" placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" id="requestor_suffix_someone" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-e-someone">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
-                        <input type="text" name="street" id="street" placeholder="Street name">
-                        <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no_someone" placeholder="Houseno.">
+                        <input type="text" name="street" id="street_someone" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision_someone" placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-e-someone">
                     <label for="purpose">Purpose:</label>
-                    <input type="text" name="purpose" id="purpose">
+                    <input type="text" name="purpose" id="purpose_someone">
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Someone">
@@ -219,6 +264,54 @@ while($row = $result->fetch_assoc()) {
         </form>
     </div>
 
+    <!-- EDIT MODAL SOMEONE -->
+    <div class="modal-editEcert_forsomeone">
+        <form class="formEcert_forsomeone" action="./model/edit_endorsementCert.php" method="post">
+            <div class="title-cont-modal">
+                <p>For Someone</p>
+                <img src="icons/close 1.png" class="closeForm_forsomeone1" alt="">
+            </div>
+
+            <div class="modal-layer-endorsement-someone">
+                <div class="input-e-someone">
+                    <label for="applicantName">Applicant:</label>
+                    <div class="label111">
+                        <input type="text" name="applicant_fname" id="applicant_fname_someone1"
+                            placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname_someone1"
+                            placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname_someone1" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix_someone1" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-e-someone">
+                    <label for="requestorName">Requestor:</label>
+                    <div class="label111">
+                        <input type="text" name="requestor_fname" id="requestor_fname_someone1"
+                            placeholder="First Name">
+                        <input type="text" name="requestor_mname" id="requestor_mname_someone1"
+                            placeholder="Middle Name">
+                        <input type="text" name="requestor_lname" id="requestor_lname_someone1" placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" id="requestor_suffix_someone1" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-e-someone">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" name="house_no" id="house_no_someone1" placeholder="Houseno.">
+                        <input type="text" name="street" id="street_someone1" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision_someone1" placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-e-someone">
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" name="purpose" id="purpose_someone1">
+                </div>
+            </div>
+            <input type="hidden" name="documentFor" value="Someone">
+            <input type="submit" id="submit" value="Add">
+        </form>
+    </div>
 
 
     <script src="./js//jQuery-3.7.0.js"></script>
@@ -230,30 +323,57 @@ while($row = $result->fetch_assoc()) {
             form.submit();
         });
     });
-    const addEcertLink = document.getElementById('addEcert_forself');
-    const modaladdEcert = document.querySelector('.modal-addEcert_forself');
-    const closeForm = document.querySelector('.closeForm_forself');
+    const addEcertLinkSelf = document.getElementById('addEcert_forself');
+    const modaladdEcertSelf = document.querySelector('.modal-addEcert_forself');
+    const closeFormSelf = document.querySelector('.closeForm_forself');
 
-    addEcertLink.addEventListener('click', function(event) {
+    addEcertLinkSelf.addEventListener('click', function(event) {
         event.preventDefault();
-        modaladdEcert.style.display = 'block';
+        modaladdEcertSelf.style.display = 'block';
     });
 
-    closeForm.addEventListener('click', function() {
-        modaladdEcert.style.display = 'none';
+    closeFormSelf.addEventListener('click', function() {
+        modaladdEcertSelf.style.display = 'none';
     });
 
-    const addEcertLink1 = document.getElementById('addEcert_forsomeone');
-    const modaladdEcert1 = document.querySelector('.modal-addEcert_forsomeone');
-    const closeForm1 = document.querySelector('.closeForm_forsomeone');
+    const addEcertLinkSomeone = document.getElementById('addEcert_forsomeone');
+    const modaladdEcertSomeone = document.querySelector('.modal-addEcert_forsomeone');
+    const closeFormSomeone = document.querySelector('.closeForm_forsomeone');
 
-    addEcertLink1.addEventListener('click', function(event) {
+    addEcertLinkSomeone.addEventListener('click', function(event) {
         event.preventDefault();
-        modaladdEcert1.style.display = 'block';
+        modaladdEcertSomeone.style.display = 'block';
     });
 
-    closeForm1.addEventListener('click', function() {
-        modaladdEcert1.style.display = 'none';
+    closeFormSomeone.addEventListener('click', function() {
+        modaladdEcertSomeone.style.display = 'none';
+    });
+
+    // EDIT MODAL
+    const editEcertLinkSelf = document.getElementById('editEcert_forself');
+    const modaleditEcertSelf = document.querySelector('.modal-editEcert_forself');
+    const closeFormSelf1 = document.querySelector('.closeForm_forself1');
+
+    editEcertLinkSelf.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditEcertSelf.style.display = 'block';
+    });
+
+    closeFormSelf1.addEventListener('click', function() {
+        modaleditEcertSelf.style.display = 'none';
+    });
+
+    const editEcertLinkSomeone = document.getElementById('editEcert_forsomeone');
+    const modaleditEcertSomeone = document.querySelector('.modal-editEcert_forsomeone');
+    const closeFormSomeone1 = document.querySelector('.closeForm_forsomeone1');
+
+    editEcertLinkSomeone.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditEcertSomeone.style.display = 'block';
+    });
+
+    closeFormSomeone1.addEventListener('click', function() {
+        modaleditEcertSomeone.style.display = 'none';
     });
     </script>
 

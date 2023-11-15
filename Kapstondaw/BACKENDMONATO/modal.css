@@ -13,6 +13,20 @@
   padding: 10% 0 0 35%;
   display: none;
 }
+.modal-editIdForm {
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 10% 0 0 35%;
+  display: none;
+}
 
 .formIdForm {
   display: flex;
@@ -94,7 +108,28 @@
 .input-label .label111 #requestor_suffix{
   width: 15%;
 }
-
+/* EDIT */
+.input-label .label111 #house_no1 {
+  width: 20%;
+}
+.input-label .label111 #street1 {
+  width: 35%;
+}
+.input-label .label111 #subdivision1 {
+  width: 38%;
+}
+.input-label .label111 #applicant_fname1, #applicant_mname1, #applicant_lname1 {
+  width: 32%;
+}
+.input-label .label111 #applicant_suffix1{
+  width: 15%;
+}
+.input-label .label111 #requestor_fname1, #requestor_mname1, #requestor_lname1 {
+  width: 32%;
+}
+.input-label .label111 #requestor_suffix1{
+  width: 15%;
+}
 
 .modal-layer1 {
   display: flex;
@@ -164,6 +199,20 @@
   padding: 12% 0 0 35%;
   display: none;
 }
+.modal-editBrgyClearance {
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 12% 0 0 35%;
+  display: none;
+}
 
 .formBrgyClearance {
   display: flex;
@@ -217,7 +266,22 @@
 .input-brgy-clearance .label111 #applicant_suffix{
   width: 15%;
 }
-
+/* EDIT */
+.input-brgy-clearance .label111 #house_no1 {
+  width: 25%;
+}
+.input-brgy-clearance .label111 #street1 {
+  width: 35%;
+}
+.input-brgy-clearance .label111 #subdivision1 {
+  width: 40%;
+}
+.input-brgy-clearance .label111 #applicant_fname1, #applicant_mname1, #applicant_lname1 {
+  width: 32%;
+}
+.input-brgy-clearance .label111 #applicant_suffix1{
+  width: 15%;
+}
 
 /* E CERT */
 .modal-addEcert_forself {
@@ -234,6 +298,21 @@
   padding: 15% 0 0 35%;
   display: none;
 }
+.modal-editEcert_forself {
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+
 
 .formEcert_forself {
   display: flex;
@@ -270,19 +349,35 @@
 .input-e-self .label111 input {
   margin-right: 5px;
 }
-.input-e-self .label111 #house_no {
+.input-e-self .label111 #house_no_self {
   width: 25%;
 }
-.input-e-self .label111 #street {
+.input-e-self .label111 #street_self {
   width: 35%;
 }
-.input-e-self .label111 #subdivision {
+.input-e-self .label111 #subdivision_self {
   width: 40%;
 }
-.input-e-self .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+.input-e-self .label111 #applicant_fname_self, #applicant_mname_self, #applicant_lname_self {
   width: 32%;
 }
-.input-e-self .label111 #applicant_suffix{
+.input-e-self .label111 #applicant_suffix_self{
+  width: 15%;
+}
+/* EDIT */
+.input-e-self .label111 #house_no_self1 {
+  width: 25%;
+}
+.input-e-self .label111 #street_self1 {
+  width: 35%;
+}
+.input-e-self .label111 #subdivision_self1 {
+  width: 40%;
+}
+.input-e-self .label111 #applicant_fname_self1, #applicant_mname_self1, #applicant_lname_self1 {
+  width: 32%;
+}
+.input-e-self .label111 #applicant_suffix_self1{
   width: 15%;
 }
 
@@ -300,6 +395,21 @@
   padding: 15% 0 0 35%;
   display: none;
 }
+.modal-editEcert_forsomeone {
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+
 
 .formEcert_forsomeone {
   display: flex;
@@ -337,30 +447,66 @@
 .input-e-someone .label111 input {
   margin-right: 5px;
 }
-.input-e-someone .label111 #house_no {
+.input-e-someone .label111 #house_no_someone {
   width: 25%;
 }
-.input-e-someone .label111 #street {
+.input-e-someone .label111 #street_someone {
   width: 35%;
 }
-.input-e-someone .label111 #subdivision {
+.input-e-someone .label111 #subdivision_someone {
   width: 40%;
 }
-.input-e-someone .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+.input-e-someone .label111 #applicant_fname_someone, #applicant_mname_someone, #applicant_lname_someone {
   width: 32%;
 }
-.input-e-someone .label111 #applicant_suffix{
+.input-e-someone .label111 #applicant_suffix_someone{
   width: 15%;
 }
-.input-e-someone .label111 #requestor_fname, #requestor_mname, #requestor_lname {
+.input-e-someone .label111 #requestor_fname_someone, #requestor_mname_someone, #requestor_lname_someone {
   width: 32%;
 }
-.input-e-someone .label111 #requestor_suffix{
+.input-e-someone .label111 #requestor_suffix_someone{
+  width: 15%;
+}
+/* EDIT */
+.input-e-someone .label111 #house_no_someone1 {
+  width: 25%;
+}
+.input-e-someone .label111 #street_someone1 {
+  width: 35%;
+}
+.input-e-someone .label111 #subdivision_someone1 {
+  width: 40%;
+}
+.input-e-someone .label111 #applicant_fname_someone1, #applicant_mname_someone1, #applicant_lname_someone1 {
+  width: 32%;
+}
+.input-e-someone .label111 #applicant_suffix_someone1{
+  width: 15%;
+}
+.input-e-someone .label111 #requestor_fname_someone1, #requestor_mname_someone1, #requestor_lname_someone1 {
+  width: 32%;
+}
+.input-e-someone .label111 #requestor_suffix_someone1{
   width: 15%;
 }
 
 /* CERT OF INDIGENCY */
 .modal-addIndigency_forself {
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editIndigency_forself {
   display: flex;
   z-index: 2;
   height: 100vh;
@@ -410,24 +556,53 @@
 .input-indigency-self .label111 input {
   margin-right: 5px;
 }
-.input-indigency-self .label111 #house_no {
+.input-indigency-self .label111 #house_no_self {
   width: 25%;
 }
-.input-indigency-self .label111 #street {
+.input-indigency-self .label111 #street_self {
   width: 35%;
 }
-.input-indigency-self .label111 #subdivision {
+.input-indigency-self .label111 #subdivision_self {
   width: 40%;
 }
-.input-indigency-self .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+.input-indigency-self .label111 #applicant_fname_self, #applicant_mname_self, #applicant_lname_self {
   width: 32%;
 }
-.input-indigency-self .label111 #applicant_suffix{
+.input-indigency-self .label111 #applicant_suffix_self{
+  width: 15%;
+}
+/* EDIT */
+.input-indigency-self .label111 #house_no_self1 {
+  width: 25%;
+}
+.input-indigency-self .label111 #street_self1 {
+  width: 35%;
+}
+.input-indigency-self .label111 #subdivision_self1{
+  width: 40%;
+}
+.input-indigency-self .label111 #applicant_fname_self1, #applicant_mname_self1, #applicant_lname_self1 {
+  width: 32%;
+}
+.input-indigency-self .label111 #applicant_suffix_self1{
   width: 15%;
 }
 
-
 .modal-addIndigency_forsomeone {
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editIndigency_forsomeone {
   display: flex;
   z-index: 2;
   height: 100vh;
@@ -477,29 +652,65 @@
 .input-indigency-someone .label111 input {
   margin-right: 5px;
 }
-.input-indigency-someone .label111 #house_no {
+.input-indigency-someone .label111 #house_no_someone {
   width: 25%;
 }
-.input-indigency-someone .label111 #street {
+.input-indigency-someone .label111 #street_someone {
   width: 35%;
 }
-.input-indigency-someone .label111 #subdivision {
+.input-indigency-someone .label111 #subdivision_someone {
   width: 40%;
 }
-.input-indigency-someone .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+.input-indigency-someone .label111 #applicant_fname_someone, #applicant_mname_someone, #applicant_lname_someone {
   width: 32%;
 }
-.input-indigency-someone .label111 #applicant_suffix{
+.input-indigency-someone .label111 #applicant_suffix_someone{
   width: 15%;
 }
-.input-indigency-someone .label111 #requestor_fname, #requestor_mname, #requestor_lname {
+.input-indigency-someone .label111 #requestor_fname_someone, #requestor_mname_someone, #requestor_lname_someone {
   width: 32%;
 }
-.input-indigency-someone .label111 #requestor_suffix{
+.input-indigency-someone .label111 #requestor_suffix_someone{
+  width: 15%;
+}
+/* EDIT */
+.input-indigency-someone .label111 #house_no_someone1 {
+  width: 25%;
+}
+.input-indigency-someone .label111 #street_someone1 {
+  width: 35%;
+}
+.input-indigency-someone .label111 #subdivision_someone1 {
+  width: 40%;
+}
+.input-indigency-someone .label111 #applicant_fname_someone1, #applicant_mname_someone1, #applicant_lname_someone1 {
+  width: 32%;
+}
+.input-indigency-someone .label111 #applicant_suffix_someone1{
+  width: 15%;
+}
+.input-indigency-someone .label111 #requestor_fname_someone1, #requestor_mname_someone1, #requestor_lname_someone1 {
+  width: 32%;
+}
+.input-indigency-someone .label111 #requestor_suffix_someone1{
   width: 15%;
 }
 /* CERT OF LBR */
 .modal-addlbr_forself {
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editlbr_forself {
   display: flex;
   z-index: 2;
   height: 100vh;
@@ -549,29 +760,65 @@
 .input-lbr-self .label111 input {
   margin-right: 5px;
 }
-.input-lbr-self .label111 #house_no {
+.input-lbr-self .label111 #house_no_self {
   width: 25%;
 }
-.input-lbr-self .label111 #street {
+.input-lbr-self .label111 #street_self {
   width: 35%;
 }
-.input-lbr-self .label111 #subdivision {
+.input-lbr-self .label111 #subdivision_self {
   width: 40%;
 }
-.input-lbr-self .label111 #applicant_fname, #applicant_mname, #applicant_lname {
+.input-lbr-self .label111 #applicant_fname_self, #applicant_mname_self, #applicant_lname_self {
   width: 32%;
 }
-.input-lbr-self .label111 #applicant_suffix{
+.input-lbr-self .label111 #applicant_suffix_self{
   width: 15%;
 }
-.input-lbr-self .label111 #father_fname, #father_mname, #father_lname, #mother_fname, #mother_mname, #mother_lname {
+.input-lbr-self .label111 #father_fname_self, #father_mname_self, #father_lname_self, #mother_fname_self, #mother_mname_self, #mother_lname_self {
   width: 32%;
 }
-.input-lbr-self .label111 #father_suffix, #mother_suffix{
+.input-lbr-self .label111 #father_suffix_self, #mother_suffix_self{
+  width: 15%;
+}
+/* EDIT */
+.input-lbr-self .label111 #house_no_self1 {
+  width: 25%;
+}
+.input-lbr-self .label111 #street_self1 {
+  width: 35%;
+}
+.input-lbr-self .label111 #subdivision_self1 {
+  width: 40%;
+}
+.input-lbr-self .label111 #applicant_fname_self1, #applicant_mname_self1, #applicant_lname_self1 {
+  width: 32%;
+}
+.input-lbr-self .label111 #applicant_suffix_self1{
+  width: 15%;
+}
+.input-lbr-self .label111 #father_fname_self1, #father_mname_self1, #father_lname_self1, #mother_fname_self1, #mother_mname_self1, #mother_lname_self1 {
+  width: 32%;
+}
+.input-lbr-self .label111 #father_suffix_self1, #mother_suffix_self1{
   width: 15%;
 }
 
 .modal-addlbr_forsingleparent {
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editlbr_forsingleparent {
   display: flex;
   z-index: 2;
   height: 100vh;
@@ -621,29 +868,66 @@
 .input-lbr-single-parent .label111 input {
   margin-right: 5px;
 }
-.input-lbr-single-parent .label111 #house_no {
+.input-lbr-single-parent .label111 #house_no_parent {
   width: 25%;
 }
-.input-lbr-single-parent .label111 #street {
+.input-lbr-single-parent .label111 #street_parent {
   width: 35%;
 }
-.input-lbr-single-parent .label111 #subdivision {
+.input-lbr-single-parent .label111 #subdivision_parent {
   width: 40%;
 }
-.input-lbr-single-parent .label111 #requestor_fname, #requestor_mname, #requestor_lname {
+.input-lbr-single-parent .label111 #requestor_fname_parent, #requestor_mname_parent, #requestor_lname_parent {
   width: 32%;
 }
-.input-lbr-single-parent .label111 #requestor_suffix{
+.input-lbr-single-parent .label111 #requestor_suffix_parent{
   width: 15%;
 }
-.input-lbr-single-parent .label111 #parent_fname, #parent_mname, #parent_lname {
+.input-lbr-single-parent .label111 #parent_fname_parent, #parent_mname_parent, #parent_lname_parent {
   width: 32%;
 }
-.input-lbr-single-parent .label111 #parent_suffix{
+.input-lbr-single-parent .label111 #parent_suffix_parent{
+  width: 15%;
+}
+/* EDIT */
+.input-lbr-single-parent .label111 #house_no_parent1 {
+  width: 25%;
+}
+.input-lbr-single-parent .label111 #street_parent1 {
+  width: 35%;
+}
+.input-lbr-single-parent .label111 #subdivision_parent1 {
+  width: 40%;
+}
+.input-lbr-single-parent .label111 #requestor_fname_parent1, #requestor_mname_parent1, #requestor_lname_parent1 {
+  width: 32%;
+}
+.input-lbr-single-parent .label111 #requestor_suffix_parent1{
+  width: 15%;
+}
+.input-lbr-single-parent .label111 #parent_fname_parent1, #parent_mname_parent1, #parent_lname_parent1 {
+  width: 32%;
+}
+.input-lbr-single-parent .label111 #parent_suffix_parent1{
   width: 15%;
 }
 
+
 .modal-addlbr_fortheirchild {
+  display: flex;
+  z-index: 2;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+}
+.modal-editlbr_fortheirchild {
   display: flex;
   z-index: 2;
   height: 100vh;
@@ -693,25 +977,47 @@
 .input-lbr-for-child .label111 input {
   margin-right: 5px;
 }
-.input-lbr-for-child .label111 #house_no {
+.input-lbr-for-child .label111 #house_no_child {
   width: 25%;
 }
-.input-lbr-for-child .label111 #street {
+.input-lbr-for-child .label111 #street_child {
   width: 35%;
 }
-.input-lbr-for-child .label111 #subdivision {
+.input-lbr-for-child .label111 #subdivision_child {
   width: 40%;
 }
-.input-lbr-for-child .label111 #requestor_fname, #requestor_mname, #requestor_lname {
+.input-lbr-for-child .label111 #requestor_fname_child, #requestor_mname_child, #requestor_lname_child {
   width: 32%;
 }
-.input-lbr-for-child .label111 #requestor_suffix{
+.input-lbr-for-child .label111 #requestor_suffix_child{
   width: 15%;
 }
-.input-lbr-for-child .label111 #father_fname, #father_mname, #father_lname, #mother_fname, #mother_mname, #mother_lname {
+.input-lbr-for-child .label111 #father_fname_child, #father_mname_child, #father_lname_child, #mother_fname_child, #mother_mname_child, #mother_lname_child {
   width: 32%;
 }
-.input-lbr-for-child .label111 #father_suffix, #mother_suffix{
+.input-lbr-for-child .label111 #father_suffix_child, #mother_suffix_child{
+  width: 15%;
+}
+/* EDIT */
+.input-lbr-for-child .label111 #house_no_child1 {
+  width: 25%;
+}
+.input-lbr-for-child .label111 #street_child1 {
+  width: 35%;
+}
+.input-lbr-for-child .label111 #subdivision_child1 {
+  width: 40%;
+}
+.input-lbr-for-child .label111 #requestor_fname_child1, #requestor_mname_child1, #requestor_lname_child1 {
+  width: 32%;
+}
+.input-lbr-for-child .label111 #requestor_suffix_child1{
+  width: 15%;
+}
+.input-lbr-for-child .label111 #father_fname_child1, #father_mname_child1, #father_lname_child1, #mother_fname_child1, #mother_mname_child1, #mother_lname_child1 {
+  width: 32%;
+}
+.input-lbr-for-child .label111 #father_suffix_child1, #mother_suffix_child1{
   width: 15%;
 }
 

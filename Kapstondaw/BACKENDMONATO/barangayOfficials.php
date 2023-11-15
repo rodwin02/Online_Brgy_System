@@ -41,8 +41,8 @@
     <div class="home_officials">
         <div class="left_officials">
             <div class="first_layer">
-                  <p>Barangay Officials</p>
-                  <a href="#">Logout</a>
+                <p>Barangay Officials</p>
+                <a href="#">Logout</a>
             </div>
             <div class="second_layer">
                 <div class="text-cont">
@@ -69,7 +69,6 @@
                         <tr>
                             <th>Full Name</th>
                             <th>Chairmanship</th>
-                            <th>Position</th>
                             <th>Term Start</th>
                             <th>Term End</th>
                             <th>Status</th>
@@ -81,7 +80,6 @@
                     <tr>
                         <td><?= $row['name']?></td>
                         <td><?= $row['title'] ?></td>
-                        <td><?= $row['position'] ?></td>
                         <td><?= $row['termstart'] ?></td>
                         <td><?= $row['termend'] ?></td>
                         <td class="status"><?= $row['status'] ?></td>
@@ -101,7 +99,7 @@
                 </table>
             </div>
         </div>
-        
+
     </div>
 
     <!-- START ADD OFFICIALS -->
@@ -113,9 +111,15 @@
             </div>
 
             <div class="pangalawang-cont">
-                <label class="fullname" for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname" pattern="[A-Za-z\s]+" title="Please enter only letters"
-                    required>
+                <label for="officialName">Applicant:</label>
+                <div class="labelOfficials">
+                    <input type="text" name="officialName_fname" id="officialName_fname" placeholder="First Name"
+                        required>
+                    <input type="text" name="officialName_mname" id="officialName_mname" placeholder="Middle Name">
+                    <input type="text" name="officialName_lame" id="officialName_lname" placeholder="Last Name"
+                        required>
+                    <input type="text" name="officialName_suffix" id="officialName_suffix" placeholder="Suffix">
+                </div>
 
                 <label class="chairmanship" for="chairmanship">Chairmanship:</label>
                 <select id="chairmanship" name="chairmanship" required>
@@ -125,14 +129,6 @@
                     <?php endforeach ?>
                 </select>
 
-                <label class="position" for="position">Position:</label>
-                <select id="position" name="position" required>
-                    <option disabled selected>Select Position</option>
-                    <?php foreach($position as $row): ?>
-                    <option value="<?= $row['id'] ?>">Brgy. <?= $row['position'] ?></option>
-                    <?php endforeach ?>
-                    <!-- Add more options as needed -->
-                </select>
 
                 <label class="term-start" for="term-start">Term Start:</label>
                 <input type="date" id="term-start" name="term-start" required>
@@ -169,9 +165,15 @@
             </div>
 
             <div class="pangalawang-cont">
-                <label class="fullname" for="fullname">Full Name:</label>
-                <input type="text" id="fullname1" name="fullname" pattern="[A-Za-z\s]+"
-                    title="Please enter only letters" required>
+                <label for="officialName">Applicant:</label>
+                <div class="labelOfficials">
+                    <input type="text" name="officialName_fname1" id="officialName_fname1" placeholder="First Name"
+                        required>
+                    <input type="text" name="officialName_mname1" id="officialName_mname1" placeholder="Middle Name">
+                    <input type="text" name="officialName_lame1" id="officialName_lname1" placeholder="Last Name"
+                        required>
+                    <input type="text" name="officialName_suffix1" id="officialName_suffix1" placeholder="Suffix">
+                </div>
 
                 <label class="chairmanship" for="chairmanship">Chairmanship:</label>
                 <select id="chairmanship1" name="chairmanship" required>
@@ -179,15 +181,6 @@
                     <?php foreach($chair as $row): ?>
                     <option value="<?= $row['id'] ?>"><?= $row['title'] ?></option>
                     <?php endforeach ?>
-                </select>
-
-                <label class="position" for="position">Position:</label>
-                <select id="position1" name="position" required>
-                    <option disabled selected>Select Position</option>
-                    <?php foreach($position as $row): ?>
-                    <option value="<?= $row['id'] ?>">Brgy. <?= $row['position'] ?></option>
-                    <?php endforeach ?>
-                    <!-- Add more options as needed -->
                 </select>
 
                 <label class="term-start" for="term-start">Term Start:</label>
@@ -211,7 +204,7 @@
     </div>
     <!-- END EDIT OFFICIALS -->
 
-   
+
 
 
     <script src="./js//jQuery-3.7.0.js"></script>
@@ -244,8 +237,6 @@
     closeButtonEdit.addEventListener('click', function() {
         modalEdit.style.display = 'none';
     });
-
-
     </script>
 </body>
 

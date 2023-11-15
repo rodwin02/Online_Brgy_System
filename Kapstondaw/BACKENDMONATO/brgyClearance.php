@@ -98,7 +98,7 @@ while($row = $result->fetch_assoc()) {
                             </td>
                             </td>
                             <td>
-                                <a class="edit" href="">Edit</a>
+                                <a class="edit" href="#" id="editbrgyClearance">Edit</a>
                                 <a class="print"
                                     href="./generate/brgyClearance_generate.php?id=<?= $row['id'] ?>">Print</a>
                                 <a href="#" class="delete">Cancel</a>
@@ -177,6 +177,49 @@ while($row = $result->fetch_assoc()) {
         </form>
     </div>
 
+    <!-- EDIT MODAL -->
+    <div class="modal-editBrgyClearance">
+        <form class="formBrgyClearance" action="./model/edit_brgyClearance.php" method="post">
+            <div class="title-cont-modal">
+                <p>Barangay Clearance</p>
+                <img src="icons/close 1.png" class="closeForm1" alt="">
+            </div>
+
+            <div class="modal-layer-brgyClearance">
+                <div class="input-brgy-clearance">
+                    <label for="applicantName">Applicant:</label>
+                    <div class="label111">
+                        <input type="text" name="applicant_fname" id="applicant_fname1" placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname1" placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname1" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix1" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-brgy-clearance">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" name="house_no" id="house_no1" placeholder="Houseno.">
+                        <input type="text" name="street" id="street1" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision1" placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-brgy-clearance">
+                    <label for="birth_date">Birth Date:</label>
+                    <input type="date" name="dob" id="birth_date1">
+                </div>
+                <div class="input-brgy-clearance">
+                    <label for="place_of_birth">Place of Birth:</label>
+                    <input type="text" name="pob" id="place_of_birth1">
+                </div>
+                <div class="input-brgy-clearance">
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" name="purpose" id="purpose1" name="purpose">
+                </div>
+
+            </div>
+            <input type="submit" id="submit" value="Add">
+        </form>
+    </div>
 
 
 
@@ -202,6 +245,19 @@ while($row = $result->fetch_assoc()) {
 
     closeForm.addEventListener('click', function() {
         modaladdBrgyClearance.style.display = 'none';
+    });
+    //EDIT
+    const editbrgyClearanceLink = document.getElementById('editbrgyClearance');
+    const modaleditBrgyClearance = document.querySelector('.modal-editBrgyClearance');
+    const closeForm1 = document.querySelector('.closeForm1');
+
+    editbrgyClearanceLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditBrgyClearance.style.display = 'block';
+    });
+
+    closeForm1.addEventListener('click', function() {
+        modaleditBrgyClearance.style.display = 'none';
     });
     </script>
 </body>

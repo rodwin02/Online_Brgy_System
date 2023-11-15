@@ -108,6 +108,7 @@ while($row = $result->fetch_assoc()) {
 
                         </td>
                         <td>
+                            <a href="#" id="editIdForm" class="edit">Edit</a>
                             <?php if($row['documentFor'] === 'Self') { ?>
                             <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">Print</a>
                             <?php } 
@@ -213,6 +214,73 @@ while($row = $result->fetch_assoc()) {
         </form>
     </div>
 
+    <!-- EDIT MODAL -->
+    <div class="modal-editIdForm">
+        <form class="formIdForm" action="./model/edit_idForm.php" method="post">
+            <div class="title-cont-modal">
+                <p>ID Form</p>
+                <img src="icons/close 1.png" class="closeIdForm1" alt="">
+            </div>
+
+            <div class="modal-layer1">
+                <div class="input-label">
+                    <label for="applicantName">Applicant:</label>
+                    <div class="label111">
+                        <input type="text" name="applicant_fname1" id="applicant_fname1" placeholder="First Name">
+                        <input type="text" name="applicant_mname1" id="applicant_mname1" placeholder="Middle Name">
+                        <input type="text" name="applicant_lname1" id="applicant_lname1" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix1" id="applicant_suffix1" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-label">
+                    <label for="requestorName">Requestor:</label>
+                    <div class="label111">
+                        <input type="text" name="requestor_fname1" id="requestor_fname1" placeholder="First Name">
+                        <input type="text" name="requestor_mname1" id="requestor_mname1" placeholder="Middle Name">
+                        <input type="text" name="requestor_lname1" id="requestor_lname1" placeholder="Last Name">
+                        <input type="text" name="requestor_suffix1" id="requestor_suffix1" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-label">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" name="house_no1" id="house_no1" placeholder="Houseno.">
+                        <input type="text" name="street1" id="street1" placeholder="Street name">
+                        <input type="text" name="subdivision1" id="subdivision1" placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-label">
+                    <label for="place_of_birth">Place of Birth:</label>
+                    <input type="text" name="pob1" id="place_of_birth1">
+                </div>
+                <div class="input-label">
+                    <label for="birth_date">Birth Date:</label>
+                    <input type="date" name="dob1" id="birth_date1">
+                </div>
+                <div class="input-label">
+                    <label for="civil_status">Civil Status:</label>
+                    <input type="text" name="civil_status1" id="civil_status1">
+                </div>
+                <div class="input-label">
+                    <label for="contact_number">Contact Number:</label>
+                    <input type="text" name="contact_no1" id="contact_number1">
+                </div>
+                <div class="input-label">
+                    <label for="documentFor">Document For:</label>
+                    <select name="documentFor" id="documentFor1">
+                        <option value="Self">Forself</option>
+                        <option value="Someone">Forsomeone</option>
+                    </select>
+                </div>
+                <div class="input-label">
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" id="purpose1" name="purpose">
+                </div>
+            </div>
+            <input type="submit" id="submit" value="Add">
+        </form>
+    </div>
+
 
     <script src="./js//jQuery-3.7.0.js"></script>
     <script src="./js//app.js"></script>
@@ -228,6 +296,19 @@ while($row = $result->fetch_assoc()) {
 
     closeIdForm.addEventListener('click', function() {
         modaladd.style.display = 'none';
+    });
+    //EDIT
+    const editIdFormLink = document.getElementById('editIdForm');
+    const modaledit = document.querySelector('.modal-editIdForm');
+    const closeIdForm1 = document.querySelector('.closeIdForm1');
+
+    editIdFormLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaledit.style.display = 'block';
+    });
+
+    closeIdForm1.addEventListener('click', function() {
+        modaledit.style.display = 'none';
     });
     </script>
 </body>
