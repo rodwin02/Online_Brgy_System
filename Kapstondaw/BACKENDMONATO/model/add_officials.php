@@ -9,7 +9,7 @@
     
 	$fname 	= $conn->real_escape_string($_POST['officialName_fname']);
 	$mname 	= $conn->real_escape_string($_POST['officialName_mname']);
-	$lname 	= $conn->real_escape_string($_POST['officialName_lname']);
+	$lname 	= $conn->real_escape_string($_POST['officialName_lame']);
 	$suffix 	= $conn->real_escape_string($_POST['officialName_suffix']);
 	$chair 	= $conn->real_escape_string($_POST['chairmanship']);
 	$start 	= $conn->real_escape_string($_POST['term-start']);
@@ -27,7 +27,7 @@
             $_SESSION['success'] = 'danger';
         } else {
             // Chairmanship position doesn't exist, proceed with insertion
-            $insert = "INSERT INTO tblofficials (`firstname`, `middlename`, `lastname`, `suffix`, `chairmanship`, `position`, termstart, termend, `status`) VALUES ('$fname', '$mname', '$lname', '$suffix', '$chair','$pos', '$start','$end', '$status')";
+            $insert = "INSERT INTO tblofficials (`firstname`, `middlename`, `lastname`, `suffix`, `chairmanship`, `position`, `termstart`, `termend`, `status`) VALUES ('$fname', '$mname', '$lname', '$suffix', '$chair','$pos', '$start','$end', '$status')";
             $result = $conn->query($insert);
 
             if ($result === true) {

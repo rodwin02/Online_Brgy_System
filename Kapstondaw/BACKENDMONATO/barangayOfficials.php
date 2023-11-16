@@ -1,14 +1,6 @@
 <?php include "./server/server.php" ?>
 <?php 
-	if(isset($_SESSION['role'])){
-		if($_SESSION['role'] =='staff'){
-			$off_q = "SELECT *,tblofficials.id as id, tblposition.id as pos_id,tblchairmanship.id as chair_id FROM tblofficials JOIN tblposition ON tblposition.id=tblofficials.position JOIN tblchairmanship ON tblchairmanship.id=tblofficials.chairmanship WHERE `status`='Active' ORDER BY tblposition.order ASC ";
-		}else{
-			$off_q = "SELECT *,tblofficials.id as id, tblposition.id as pos_id,tblchairmanship.id as chair_id FROM tblofficials JOIN tblposition ON tblposition.id=tblofficials.position JOIN tblchairmanship ON tblchairmanship.id=tblofficials.chairmanship ORDER BY tblposition.order ASC, `status` ASC ";
-		}
-	}else{
-		$off_q = "SELECT *,tblofficials.id as id, tblposition.id as pos_id,tblchairmanship.id as chair_id FROM tblofficials JOIN tblposition ON tblposition.id=tblofficials.position JOIN tblchairmanship ON tblchairmanship.id=tblofficials.chairmanship ORDER BY tblposition.order ASC ";
-	}
+    $off_q = "SELECT *, tblofficials.id as id, tblchairmanship.id as chair_id FROM tblofficials  JOIN tblchairmanship ON tblchairmanship.id=tblofficials.chairmanship ORDER BY tblchairmanship.id ASC";
 	
 	$res_o = $conn->query($off_q);
 
@@ -88,8 +80,8 @@
                                 data-id="<?= $row['id'] ?>" data-fname="<?= $row['firstname'] ?>"
                                 data-mname="<?= $row['middlename'] ?>" data-lname="<?= $row['lastname'] ?>"
                                 data-suffix="<?= $row['suffix'] ?>" data-chair="<?= $row['chair_id'] ?>"
-                                data-pos="<?= $row['pos_id'] ?>" data-start="<?= $row['termstart'] ?>"
-                                data-end="<?= $row['termend'] ?>" data-status="<?= $row['status'] ?>">Edit</span>
+                                data-start="<?= $row['termstart'] ?>" data-end="<?= $row['termend'] ?>"
+                                data-status="<?= $row['status'] ?>">Edit</span>
                             <!-- <a href="./model/remove/remove_official.php?id=<?= $row['id'] ?>" class="delete">Delete</a> -->
                         </td>
                     </tr>
