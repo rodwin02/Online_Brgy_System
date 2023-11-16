@@ -16,6 +16,7 @@ $(".searchBar").on("keyup", function () {
 //   $(".modal-editResidents").hide()
 // })
 
+// ! EDIT OFFICIAL
 function editOfficial(that) {
   id = $(that).attr("data-id");
   na = $(that).attr("data-name");
@@ -34,6 +35,7 @@ function editOfficial(that) {
   $("#status1").val(status);
 }
 
+// ! EDIT RESIDENT
 function editResident(that) {
   id = $(that).attr("data-id");
   fname = $(that).attr("data-fname");
@@ -78,6 +80,243 @@ function editResident(that) {
   $("#person-with-disability").prop("checked", pwd);
 }
 
+// ! EDIT IDFORM
+function editIdForm(that) {
+  id = $(that).attr("data-id");
+  applicant_fname = $(that).attr("data-applicant_fname");
+  applicant_mname = $(that).attr("data-applicant_mname");
+  applicant_lname = $(that).attr("data-applicant_lname");
+  applicant_suffix = $(that).attr("data-applicant_suffix");
+
+  requestor_fname = $(that).attr("data-requestor_fname");
+  requestor_mname = $(that).attr("data-requestor_mname");
+  requestor_lname = $(that).attr("data-requestor_lname");
+  requestor_suffix = $(that).attr("data-requestor_suffix");
+
+  house_no = $(that).attr("data-house_no");
+  street = $(that).attr("data-street");
+  subdivision = $(that).attr("data-subdivision");
+  pob = $(that).attr("data-pob");
+  dob = $(that).attr("data-dob");
+  civil_status = $(that).attr("data-civil_status");
+  contact_no = $(that).attr("data-contact_no");
+  document_for = $(that).attr("data-document_for");
+  purpose = $(that).attr("data-purpose");
+  date_requested = $(that).attr("data-date_requested");
+
+  $("#idform_id").val(id);
+  $("#applicant_fname1").val(applicant_fname);
+  $("#applicant_mname1").val(applicant_mname);
+  $("#applicant_lname1").val(applicant_lname);
+  $("#applicant_suffix1").val(applicant_suffix);
+
+  $("#requestor_fname1").val(requestor_fname);
+  $("#requestor_mname1").val(requestor_mname);
+  $("#requestor_lname1").val(requestor_lname);
+  $("#requestor_suffix1").val(requestor_suffix);
+
+  $("#house_no1").val(house_no);
+  $("#street1").val(street);
+  $("#subdivision1").val(subdivision);
+
+  $("#place_of_birth1").val(pob);
+  $("#birth_date1").val(dob);
+  $("#civil_status1").val(civil_status);
+  $("#contact_number1").val(contact_no);
+  $("#documentFor1").val(document_for);
+  $("#purpose1").val(purpose);
+  $("#date_requested").val(date_requested);
+}
+
+// ! EDIT BRGY CLEARANCE
+function editBrgyClearance(that) {
+  id = $(that).attr("data-id");
+  applicant_fname = $(that).attr("data-applicant_fname");
+  applicant_mname = $(that).attr("data-applicant_mname");
+  applicant_lname = $(that).attr("data-applicant_lname");
+  applicant_suffix = $(that).attr("data-applicant_suffix");
+
+  requestor_fname = $(that).attr("data-requestor_fname");
+  requestor_mname = $(that).attr("data-requestor_mname");
+  requestor_lname = $(that).attr("data-requestor_lname");
+  requestor_suffix = $(that).attr("data-requestor_suffix");
+
+  house_no = $(that).attr("data-house_no");
+  street = $(that).attr("data-street");
+  subdivision = $(that).attr("data-subdivision");
+  pob = $(that).attr("data-pob");
+  dob = $(that).attr("data-dob");
+  purpose = $(that).attr("data-purpose");
+  date_requested = $(that).attr("data-date_requested");
+
+  $("#brgyClearance_id").val(id);
+  $("#applicant_fname1").val(applicant_fname);
+  $("#applicant_mname1").val(applicant_mname);
+  $("#applicant_lname1").val(applicant_lname);
+  $("#applicant_suffix1").val(applicant_suffix);
+
+  $("#requestor_fname1").val(requestor_fname);
+  $("#requestor_mname1").val(requestor_mname);
+  $("#requestor_lname1").val(requestor_lname);
+  $("#requestor_suffix1").val(requestor_suffix);
+
+  $("#house_no1").val(house_no);
+  $("#street1").val(street);
+  $("#subdivision1").val(subdivision);
+
+  $("#place_of_birth1").val(pob);
+  $("#birth_date1").val(dob);
+  $("#purpose1").val(purpose);
+  $("#date_requested").val(date_requested);
+}
+
+// ! ENDORSEMENT CERTIFICATE
+function editEndorsementCert(that) {
+  id = $(that).attr("data-id");
+  applicant_fname = $(that).attr("data-applicant_fname");
+  applicant_mname = $(that).attr("data-applicant_mname");
+  applicant_lname = $(that).attr("data-applicant_lname");
+  applicant_suffix = $(that).attr("data-applicant_suffix");
+
+  requestor_fname = $(that).attr("data-requestor_fname");
+  requestor_mname = $(that).attr("data-requestor_mname");
+  requestor_lname = $(that).attr("data-requestor_lname");
+  requestor_suffix = $(that).attr("data-requestor_suffix");
+
+  house_no = $(that).attr("data-house_no");
+  street = $(that).attr("data-street");
+  subdivision = $(that).attr("data-subdivision");
+  purpose = $(that).attr("data-purpose");
+  date_requested = $(that).attr("data-date_requested");
+
+  $(".endorsementCert_id").val(id);
+  $(".applicant_fname").val(applicant_fname);
+  $(".applicant_mname").val(applicant_mname);
+  $(".applicant_lname").val(applicant_lname);
+  $(".applicant_suffix").val(applicant_suffix);
+
+  $(".requestor_fname").val(requestor_fname);
+  $(".requestor_mname").val(requestor_mname);
+  $(".requestor_lname").val(requestor_lname);
+  $(".requestor_suffix").val(requestor_suffix);
+
+  $(".house_no").val(house_no);
+  $(".street").val(street);
+  $(".subdivision").val(subdivision);
+
+  $(".purpose").val(purpose);
+  $(".date_requested").val(date_requested);
+}
+
+// ! CERTIFICATE OF INDIGENCY
+function editCertOfIndigency(that) {
+  id = $(that).attr("data-id");
+  applicant_fname = $(that).attr("data-applicant_fname");
+  applicant_mname = $(that).attr("data-applicant_mname");
+  applicant_lname = $(that).attr("data-applicant_lname");
+  applicant_suffix = $(that).attr("data-applicant_suffix");
+
+  requestor_fname = $(that).attr("data-requestor_fname");
+  requestor_mname = $(that).attr("data-requestor_mname");
+  requestor_lname = $(that).attr("data-requestor_lname");
+  requestor_suffix = $(that).attr("data-requestor_suffix");
+
+  house_no = $(that).attr("data-house_no");
+  street = $(that).attr("data-street");
+  subdivision = $(that).attr("data-subdivision");
+  purpose = $(that).attr("data-purpose");
+  date_requested = $(that).attr("data-date_requested");
+
+  $(".certOfIndigency_id").val(id);
+  $(".applicant_fname").val(applicant_fname);
+  $(".applicant_mname").val(applicant_mname);
+  $(".applicant_lname").val(applicant_lname);
+  $(".applicant_suffix").val(applicant_suffix);
+
+  $(".requestor_fname").val(requestor_fname);
+  $(".requestor_mname").val(requestor_mname);
+  $(".requestor_lname").val(requestor_lname);
+  $(".requestor_suffix").val(requestor_suffix);
+
+  $(".house_no").val(house_no);
+  $(".street").val(street);
+  $(".subdivision").val(subdivision);
+
+  $(".purpose").val(purpose);
+  $(".date_requested").val(date_requested);
+}
+
+// ! CERTIFICATE OF LBR
+function certOfLbr(that) {
+  id = $(that).attr("data-id");
+  applicant_fname = $(that).attr("data-applicant_fname");
+  applicant_mname = $(that).attr("data-applicant_mname");
+  applicant_lname = $(that).attr("data-applicant_lname");
+  applicant_suffix = $(that).attr("data-applicant_suffix");
+
+  requestor_fname = $(that).attr("data-requestor_fname");
+  requestor_mname = $(that).attr("data-requestor_mname");
+  requestor_lname = $(that).attr("data-requestor_lname");
+  requestor_suffix = $(that).attr("data-requestor_suffix");
+
+  parent_fname = $(that).attr("data-parent_fname");
+  parent_mname = $(that).attr("data-parent_mname");
+  parent_lname = $(that).attr("data-parent_lname");
+  parent_suffix = $(that).attr("data-parent_suffix");
+
+  father_fname = $(that).attr("data-father_fname");
+  father_mname = $(that).attr("data-father_mname");
+  father_lname = $(that).attr("data-father_lname");
+  father_suffix = $(that).attr("data-father_suffix");
+
+  mother_fname = $(that).attr("data-mother_fname");
+  mother_mname = $(that).attr("data-mother_mname");
+  mother_lname = $(that).attr("data-mother_lname");
+  mother_suffix = $(that).attr("data-mother_suffix");
+
+  dob = $(that).attr("data-date_of_birth");
+
+  house_no = $(that).attr("data-house_no");
+  street = $(that).attr("data-street");
+  subdivision = $(that).attr("data-subdivision");
+  date_requested = $(that).attr("data-date_requested");
+
+  $(".certOFlbr_id").val(id);
+  $(".applicant_fname").val(applicant_fname);
+  $(".applicant_mname").val(applicant_mname);
+  $(".applicant_lname").val(applicant_lname);
+  $(".applicant_suffix").val(applicant_suffix);
+
+  $(".requestor_fname").val(requestor_fname);
+  $(".requestor_mname").val(requestor_mname);
+  $(".requestor_lname").val(requestor_lname);
+  $(".requestor_suffix").val(requestor_suffix);
+
+  $(".parent_fname").val(parent_fname);
+  $(".parent_mname").val(parent_mname);
+  $(".parent_lname").val(parent_lname);
+  $(".parent_suffix").val(parent_suffix);
+
+  $(".father_fname").val(father_fname);
+  $(".father_mname").val(father_mname);
+  $(".father_lname").val(father_lname);
+  $(".father_suffix").val(father_suffix);
+
+  $(".mother_fname").val(mother_fname);
+  $(".mother_mname").val(mother_mname);
+  $(".mother_lname").val(mother_lname);
+  $(".mother_suffix").val(mother_suffix);
+
+  $(".dob").val(dob);
+
+  $(".house_no").val(house_no);
+  $(".street").val(street);
+  $(".subdivision").val(subdivision);
+
+  $(".date_requested").val(date_requested);
+}
+
+// ! EDIT BLOTTER
 function editBlotter(that) {
   id = $(that).attr("data-id");
   complainant = $(that).attr("data-complainant");
@@ -102,6 +341,7 @@ function editBlotter(that) {
   $("#detailsBlotter1").val(details);
 }
 
+// ! EDIT COMPLAIN
 function complainEdit(that) {
   id = $(that).attr("data-id");
   complainant = $(that).attr("data-complainant");
@@ -120,6 +360,7 @@ function complainEdit(that) {
   $("#statusComplain1").val(status);
 }
 
+// ! EDIT AWARENESS
 function editAwareness(that) {
   id = $(that).attr("data-id");
   awareness = $(that).attr("data-name");

@@ -1,6 +1,6 @@
 <?php include './server/server.php'?>
 <?php
-$query =  "SELECT * FROM tbl_idform";
+$query =  "SELECT * FROM tbl_idform ORDER BY id DESC";
 $result = $conn->query($query);
 
 $idForm = array();
@@ -108,7 +108,21 @@ while($row = $result->fetch_assoc()) {
 
                         </td>
                         <td>
-                            <a href="#" id="editIdForm" class="edit">Edit</a>
+                            <a href="#" id="editIdForm" class="edit" data-id="<?=$row['id'] ?>"
+                                onclick="editIdForm(this)" data-applicant_fname="<?=$row['applicant_fname'] ?>"
+                                data-applicant_mname="<?=$row['applicant_mname'] ?>"
+                                data-applicant_lname="<?=$row['applicant_lname'] ?>"
+                                data-applicant_suffix="<?=$row['applicant_suffix'] ?>"
+                                data-requestor_fname="<?=$row['requestor_fname'] ?>"
+                                data-requestor_mname="<?=$row['requestor_mname'] ?>"
+                                data-requestor_lname="<?=$row['requestor_lname'] ?>"
+                                data-requestor_suffix="<?=$row['requestor_suffix'] ?>"
+                                data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
+                                data-subdivision="<?=$row['subdivision'] ?>" data-pob="<?=$row['place_of_birth'] ?>"
+                                data-dob="<?=$row['birth_date'] ?>" data-civil_status="<?=$row['civil_status'] ?>"
+                                data-contact_no="<?=$row['contact_number'] ?>"
+                                data-document_for="<?=$row['documentFor'] ?>" data-purpose="<?=$row['purpose'] ?>"
+                                data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
                             <?php if($row['documentFor'] === 'Self') { ?>
                             <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">Print</a>
                             <?php } 
@@ -216,7 +230,7 @@ while($row = $result->fetch_assoc()) {
 
     <!-- EDIT MODAL -->
     <div class="modal-editIdForm">
-        <form class="formIdForm" action="./model/edit_idForm.php" method="post">
+        <form class="formIdForm" action="./model/edit_certificates/edit_idForm.php" method="post">
             <div class="title-cont-modal">
                 <p>ID Form</p>
                 <img src="icons/close 1.png" class="closeIdForm1" alt="">
@@ -226,44 +240,44 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-label">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" name="applicant_fname1" id="applicant_fname1" placeholder="First Name">
-                        <input type="text" name="applicant_mname1" id="applicant_mname1" placeholder="Middle Name">
-                        <input type="text" name="applicant_lname1" id="applicant_lname1" placeholder="Last Name">
-                        <input type="text" name="applicant_suffix1" id="applicant_suffix1" placeholder="Suffix">
+                        <input type="text" name="applicant_fname" id="applicant_fname1" placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname1" placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname1" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix1" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-label">
                     <label for="requestorName">Requestor:</label>
                     <div class="label111">
-                        <input type="text" name="requestor_fname1" id="requestor_fname1" placeholder="First Name">
-                        <input type="text" name="requestor_mname1" id="requestor_mname1" placeholder="Middle Name">
-                        <input type="text" name="requestor_lname1" id="requestor_lname1" placeholder="Last Name">
-                        <input type="text" name="requestor_suffix1" id="requestor_suffix1" placeholder="Suffix">
+                        <input type="text" name="requestor_fname" id="requestor_fname1" placeholder="First Name">
+                        <input type="text" name="requestor_mname" id="requestor_mname1" placeholder="Middle Name">
+                        <input type="text" name="requestor_lname" id="requestor_lname1" placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" id="requestor_suffix1" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-label">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" name="house_no1" id="house_no1" placeholder="Houseno.">
-                        <input type="text" name="street1" id="street1" placeholder="Street name">
-                        <input type="text" name="subdivision1" id="subdivision1" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no1" placeholder="Houseno.">
+                        <input type="text" name="street" id="street1" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision1" placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-label">
                     <label for="place_of_birth">Place of Birth:</label>
-                    <input type="text" name="pob1" id="place_of_birth1">
+                    <input type="text" name="pob" id="place_of_birth1">
                 </div>
                 <div class="input-label">
                     <label for="birth_date">Birth Date:</label>
-                    <input type="date" name="dob1" id="birth_date1">
+                    <input type="date" name="dob" id="birth_date1">
                 </div>
                 <div class="input-label">
                     <label for="civil_status">Civil Status:</label>
-                    <input type="text" name="civil_status1" id="civil_status1">
+                    <input type="text" name="civil_status" id="civil_status1">
                 </div>
                 <div class="input-label">
                     <label for="contact_number">Contact Number:</label>
-                    <input type="text" name="contact_no1" id="contact_number1">
+                    <input type="text" name="contact_no" id="contact_number1">
                 </div>
                 <div class="input-label">
                     <label for="documentFor">Document For:</label>
@@ -277,6 +291,8 @@ while($row = $result->fetch_assoc()) {
                     <input type="text" id="purpose1" name="purpose">
                 </div>
             </div>
+            <input type="hidden" name="id" id="idform_id">
+            <input type="hidden" name="date_requested" id="date_requested">
             <input type="submit" id="submit" value="Add">
         </form>
     </div>
@@ -298,18 +314,22 @@ while($row = $result->fetch_assoc()) {
         modaladd.style.display = 'none';
     });
     //EDIT
-    const editIdFormLink = document.getElementById('editIdForm');
+    const editIdFormLink = document.querySelectorAll('.edit');
     const modaledit = document.querySelector('.modal-editIdForm');
     const closeIdForm1 = document.querySelector('.closeIdForm1');
 
-    editIdFormLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        modaledit.style.display = 'block';
-    });
 
-    closeIdForm1.addEventListener('click', function() {
-        modaledit.style.display = 'none';
-    });
+
+    editIdFormLink.forEach(edit => {
+        edit.addEventListener('click', function(event) {
+            event.preventDefault();
+            modaledit.style.display = 'block';
+        });
+
+        closeIdForm1.addEventListener('click', function() {
+            modaledit.style.display = 'none';
+        });
+    })
     </script>
 </body>
 

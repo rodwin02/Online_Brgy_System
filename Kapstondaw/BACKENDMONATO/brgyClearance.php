@@ -98,7 +98,19 @@ while($row = $result->fetch_assoc()) {
                             </td>
                             </td>
                             <td>
-                                <a class="edit" href="#" id="editbrgyClearance">Edit</a>
+                                <a class="edit" href="#" id="editbrgyClearance" onclick="editBrgyClearance(this)"
+                                    data-id="<?=$row['id'] ?>" data-applicant_fname="<?=$row['applicant_fname'] ?>"
+                                    data-applicant_mname="<?=$row['applicant_mname'] ?>"
+                                    data-applicant_lname="<?=$row['applicant_lname'] ?>"
+                                    data-applicant_suffix="<?=$row['applicant_suffix'] ?>"
+                                    data-requestor_fname="<?=$row['requestor_fname'] ?>"
+                                    data-requestor_mname="<?=$row['requestor_mname'] ?>"
+                                    data-requestor_lname="<?=$row['requestor_lname'] ?>"
+                                    data-requestor_suffix="<?=$row['requestor_suffix'] ?>"
+                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
+                                    data-subdivision="<?=$row['subdivision'] ?>" data-pob="<?=$row['place-of-birth'] ?>"
+                                    data-dob="<?=$row['date-of-birth'] ?>" data-purpose="<?=$row['purpose'] ?>"
+                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
                                 <a class="print"
                                     href="./generate/brgyClearance_generate.php?id=<?= $row['id'] ?>">Print</a>
                                 <a href="#" class="delete">Cancel</a>
@@ -179,7 +191,7 @@ while($row = $result->fetch_assoc()) {
 
     <!-- EDIT MODAL -->
     <div class="modal-editBrgyClearance">
-        <form class="formBrgyClearance" action="./model/edit_brgyClearance.php" method="post">
+        <form class="formBrgyClearance" action="./model/edit_certificates/edit_brgyClearance.php" method="post">
             <div class="title-cont-modal">
                 <p>Barangay Clearance</p>
                 <img src="icons/close 1.png" class="closeForm1" alt="">
@@ -217,6 +229,8 @@ while($row = $result->fetch_assoc()) {
                 </div>
 
             </div>
+            <input type="hidden" name="id" id="brgyClearance_id">
+            <input type="hidden" name="date_requested" id="date_requested">
             <input type="submit" id="submit" value="Add">
         </form>
     </div>
@@ -247,18 +261,20 @@ while($row = $result->fetch_assoc()) {
         modaladdBrgyClearance.style.display = 'none';
     });
     //EDIT
-    const editbrgyClearanceLink = document.getElementById('editbrgyClearance');
+    const editbrgyClearanceLink = document.querySelectorAll('.edit');
     const modaleditBrgyClearance = document.querySelector('.modal-editBrgyClearance');
     const closeForm1 = document.querySelector('.closeForm1');
 
-    editbrgyClearanceLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        modaleditBrgyClearance.style.display = 'block';
-    });
+    editbrgyClearanceLink.forEach(edit => {
+        edit.addEventListener('click', function(event) {
+            event.preventDefault();
+            modaleditBrgyClearance.style.display = 'block';
+        });
 
-    closeForm1.addEventListener('click', function() {
-        modaleditBrgyClearance.style.display = 'none';
-    });
+        closeForm1.addEventListener('click', function() {
+            modaleditBrgyClearance.style.display = 'none';
+        });
+    })
     </script>
 </body>
 

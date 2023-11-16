@@ -102,9 +102,31 @@ while($row = $result->fetch_assoc()) {
                             <td>
                                 <!-- EDIT -->
                                 <?php if($row['documentFor'] === 'Self') { ?>
-                                <a href="#" id="editIndigency_forself" class="edit">Edit</a>
+                                <a href="#" id="editIndigency_forself" class="edit editIndigency_forself"
+                                    onclick="editCertOfIndigency(this)" data-id="<?=$row['id'] ?>"
+                                    data-applicant_fname="<?=$row['applicant_fname'] ?>"
+                                    data-applicant_mname="<?=$row['applicant_mname'] ?>"
+                                    data-applicant_lname="<?=$row['applicant_lname'] ?>"
+                                    data-applicant_suffix="<?=$row['applicant_suffix'] ?>"
+                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
+                                    data-subdivision="<?=$row['subdivision'] ?>"
+                                    data-document_for="<?=$row['documentFor'] ?>" data-purpose="<?=$row['purpose'] ?>"
+                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
                                 <?php } else {?>
-                                <a href="#" id="editIndigency_forsomeone" class="edit">Edit</a>
+                                <a href="#" id="editIndigency_forsomeone" class="edit editIndigency_forsomeone"
+                                    onclick="editCertOfIndigency(this)" data-id=" <?=$row['id'] ?>"
+                                    data-applicant_fname="<?=$row['applicant_fname'] ?>"
+                                    data-applicant_mname="<?=$row['applicant_mname'] ?>"
+                                    data-applicant_lname="<?=$row['applicant_lname'] ?>"
+                                    data-applicant_suffix="<?=$row['applicant_suffix'] ?>"
+                                    data-requestor_fname="<?=$row['requestor_fname'] ?>"
+                                    data-requestor_mname="<?=$row['requestor_mname'] ?>"
+                                    data-requestor_lname="<?=$row['requestor_lname'] ?>"
+                                    data-requestor_suffix="<?=$row['requestor_suffix'] ?>"
+                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
+                                    data-subdivision="<?=$row['subdivision'] ?>"
+                                    data-document_for="<?=$row['documentFor'] ?>" data-purpose="<?=$row['purpose'] ?>"
+                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
                                 <?php } ?>
                                 <!-- PRINT -->
                                 <?php if($row['documentFor'] === 'Self') { ?>
@@ -185,7 +207,7 @@ while($row = $result->fetch_assoc()) {
     <!-- EDIT MODAL SELF -->
 
     <div class="modal-editIndigency_forself">
-        <form class="formIndigency_forself" action="./model/edit_certOfIndigency.php" method="post">
+        <form class="formIndigency_forself" action="./model/edit_certificates/edit_certOfIdigency.php" method="post">
             <div class="title-cont-modal">
                 <p>For Self</p>
                 <img src="icons/close 1.png" class="closeForm_forself1" alt="">
@@ -195,26 +217,33 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-indigency-self">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" name="applicant_fname" id="applicant_fname_self1" placeholder="First Name">
-                        <input type="text" name="applicant_mname" id="applicant_mname_self1" placeholder="Middle Name">
-                        <input type="text" name="applicant_lname" id="applicant_lname_self1" placeholder="Last Name">
-                        <input type="text" name="applicant_suffix" id="applicant_suffix_self1" placeholder="Suffix">
+                        <input type="text" name="applicant_fname" id="applicant_fname_self1" class="applicant_fname"
+                            placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname_self1" class="applicant_mname"
+                            placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname_self1" class="applicant_lname"
+                            placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix_self1" class="applicant_suffix"
+                            placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-indigency-self">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" name="house_no" id="house_no_self1" placeholder="Houseno.">
-                        <input type="text" name="street" id="street_self1" placeholder="Street name">
-                        <input type="text" name="subdivision" id="subdivision_self1" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no_self1" class="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" id="street_self1" class="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision_self1" class="subdivision"
+                            placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-indigency-self">
                     <label for="purpose">Purpose:</label>
-                    <input type="text" id="purpose_self1" name="purpose">
+                    <input type="text" id="purpose_self1" name="purpose" class="purpose">
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Self">
+            <input type="hidden" name="date_requested" id="date_requested" class="date_requested">
+            <input type="hidden" name="id" id="certOfIndigency_id" class="certOfIndigency_id">
             <input type="submit" id="submit" value="Submit">
         </form>
     </div>
@@ -267,7 +296,7 @@ while($row = $result->fetch_assoc()) {
 
     <!-- EDIT MODAL SOMEONE -->
     <div class="modal-editIndigency_forsomeone">
-        <form class="formIndigency_forsomeone" action="./model/edit_certOfIndigency.php" method="post">
+        <form class="formIndigency_forsomeone" action="./model/edit_certificates/edit_certOfIdigency.php" method="post">
             <div class="title-cont-modal">
                 <p>For Someone</p>
                 <img src="icons/close 1.png" class="closeForm_forsomeone1" alt="">
@@ -277,39 +306,47 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-indigency-someone">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" name="applicant_fname" id="applicant_fname_someone1"
-                            placeholder="First Name">
-                        <input type="text" name="applicant_mname" id="applicant_mname_someone1"
+                        <input type="text" name="applicant_fname" id="applicant_fname_someone1" class="applicant_fname"
+                            placeholder=" First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname_someone1" class="applicant_mname"
                             placeholder="Middle Name">
-                        <input type="text" name="applicant_lname" id="applicant_lname_someone1" placeholder="Last Name">
-                        <input type="text" name="applicant_suffix" id="applicant_suffix_someone1" placeholder="Suffix">
+                        <input type="text" name="applicant_lname" id="applicant_lname_someone1" class="applicant_lname"
+                            placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix_someone1"
+                            class="applicant_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-indigency-someone">
                     <label for="requestorName">Requestor:</label>
                     <div class="label111">
-                        <input type="text" name="requestor_fname" id="requestor_fname_someone1"
+                        <input type="text" name="requestor_fname" id="requestor_fname_someone1" class="requestor_fname"
                             placeholder="First Name">
-                        <input type="text" name="requestor_mname" id="requestor_mname_someone1"
+                        <input type="text" name="requestor_mname" id="requestor_mname_someone1" class="requestor_mname"
                             placeholder="Middle Name">
-                        <input type="text" name="requestor_lname" id="requestor_lname_someone1" placeholder="Last Name">
-                        <input type="text" name="requestor_suffix" id="requestor_suffix_someone1" placeholder="Suffix">
+                        <input type="text" name="requestor_lname" id="requestor_lname_someone1" class="requestor_lname"
+                            placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" id="requestor_suffix_someone1"
+                            class="requestor_suffix" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-indigency-someone">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" name="house_no" id="house_no_someone1" placeholder="Houseno.">
-                        <input type="text" name="street" id="street_someone1" placeholder="Street name">
-                        <input type="text" name="subdivision" id="subdivision_someone1" placeholder="Subdivision name">
+                        <input type="text" name="house_no" id="house_no_someone1" class="house_no"
+                            placeholder="Houseno.">
+                        <input type="text" name="street" id="street_someone1" class="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision_someone1" class="subdivision"
+                            placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-indigency-someone">
                     <label for="purpose">Purpose:</label>
-                    <input type="text" id="purpose_someone1" name="purpose">
+                    <input type="text" id="purpose_someone1" name="purpose" class="purpose">
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Someone">
+            <input type="hidden" name="date_requested" id="date_requested" class="date_requested">
+            <input type="hidden" name="id" id="certOfIndigency_id" class="certOfIndigency_id">
             <input type="submit" id="submit" value="Submit">
         </form>
     </div>
@@ -356,31 +393,35 @@ closeFormSomeone.addEventListener('click', function() {
 });
 
 //EDIT
-const editIndigencyLinkSelf = document.getElementById('editIndigency_forself');
+const editIndigencyLinkSelf = document.querySelectorAll('.editIndigency_forself');
 const modaleditIndigencySelf = document.querySelector('.modal-editIndigency_forself');
 const closeFormSelf1 = document.querySelector('.closeForm_forself1');
 
-editIndigencyLinkSelf.addEventListener('click', function(event) {
-    event.preventDefault();
-    modaleditIndigencySelf.style.display = 'block';
-});
+editIndigencyLinkSelf.forEach(edit => {
+    edit.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditIndigencySelf.style.display = 'block';
+    });
 
-closeFormSelf1.addEventListener('click', function() {
-    modaleditIndigencySelf.style.display = 'none';
-});
+    closeFormSelf1.addEventListener('click', function() {
+        modaleditIndigencySelf.style.display = 'none';
+    });
+})
 
-const editIndigencyLinkSomeone = document.getElementById('editIndigency_forsomeone');
+const editIndigencyLinkSomeone = document.querySelectorAll('.editIndigency_forsomeone');
 const modaleditIndigencySomeone = document.querySelector('.modal-editIndigency_forsomeone');
 const closeFormSomeone1 = document.querySelector('.closeForm_forsomeone1');
 
-editIndigencyLinkSomeone.addEventListener('click', function(event) {
-    event.preventDefault();
-    modaleditIndigencySomeone.style.display = 'block';
-});
+editIndigencyLinkSomeone.forEach(edit => {
+    edit.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditIndigencySomeone.style.display = 'block';
+    });
 
-closeFormSomeone1.addEventListener('click', function() {
-    modaleditIndigencySomeone.style.display = 'none';
-});
+    closeFormSomeone1.addEventListener('click', function() {
+        modaleditIndigencySomeone.style.display = 'none';
+    });
+})
 
 // DELETE RESIDENTS
 const deleteLink = document.querySelectorAll('.delete');

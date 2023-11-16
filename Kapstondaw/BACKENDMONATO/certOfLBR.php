@@ -110,12 +110,58 @@ while($row = $result->fetch_assoc()) {
                             <td>
                                 <!-- EDIT -->
                                 <?php if($row['documentFor'] === 'Self') { ?>
-                                <a href="#" id="editlbr_forself" class="edit">Edit</a>
+                                <a href="#" id="editlbr_forself" class="edit editlbr_forself" onclick="certOfLbr(this)"
+                                    data-id="<?=$row['id'] ?>" data-applicant_fname="<?=$row['applicant_fname'] ?>"
+                                    data-applicant_mname="<?=$row['applicant_mname'] ?>"
+                                    data-applicant_lname="<?=$row['applicant_lname'] ?>"
+                                    data-applicant_suffix="<?=$row['applicant_suffix'] ?>"
+                                    data-father_fname="<?=$row['father_fname'] ?>"
+                                    data-father_mname="<?=$row['father_mname'] ?>"
+                                    data-father_lname="<?=$row['father_lname'] ?>"
+                                    data-father_suffix="<?=$row['father_suffix'] ?>"
+                                    data-mother_fname="<?=$row['mother_fname'] ?>"
+                                    data-mother_mname="<?=$row['mother_mname'] ?>"
+                                    data-mother_lname="<?=$row['mother_lname'] ?>"
+                                    data-mother_suffix="<?=$row['mother_suffix'] ?>"
+                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
+                                    data-subdivision="<?=$row['subdivision'] ?>"
+                                    data-date_of_birth="<?=$row['date_of_birth'] ?>"
+                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
                                 <?php }
                                   elseif ($row['documentFor'] === 'Children') { ?>
-                                <a href="#" id="editlbr_fortheirchild" class="edit">Edit</a>
+                                <a href="#" id="editlbr_fortheirchild" class="edit editlbr_fortheirchild"
+                                    onclick="certOfLbr(this)" data-id="<?=$row['id'] ?>"
+                                    data-requestor_fname="<?=$row['requestor_fname'] ?>"
+                                    data-requestor_mname="<?=$row['requestor_mname'] ?>"
+                                    data-requestor_lname="<?=$row['requestor_lname'] ?>"
+                                    data-requestor_suffix="<?=$row['requestor_suffix'] ?>"
+                                    data-father_fname="<?=$row['father_fname'] ?>"
+                                    data-father_mname="<?=$row['father_mname'] ?>"
+                                    data-father_lname="<?=$row['father_lname'] ?>"
+                                    data-father_suffix="<?=$row['father_suffix'] ?>"
+                                    data-mother_fname="<?=$row['mother_fname'] ?>"
+                                    data-mother_mname="<?=$row['mother_mname'] ?>"
+                                    data-mother_lname="<?=$row['mother_lname'] ?>"
+                                    data-mother_suffix="<?=$row['mother_suffix'] ?>"
+                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
+                                    data-subdivision="<?=$row['subdivision'] ?>"
+                                    data-date_of_birth="<?=$row['date_of_birth'] ?>"
+                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
                                 <?php } else {?>
-                                <a href="#" id="editlbr_forsingleparent" class="edit">Edit</a>
+                                <a href="#" id="editlbr_forsingleparent" class="edit editlbr_forsingleparent"
+                                    onclick="certOfLbr(this)" data-id="<?=$row['id'] ?>"
+                                    data-requestor_fname="<?=$row['requestor_fname'] ?>"
+                                    data-requestor_mname="<?=$row['requestor_mname'] ?>"
+                                    data-requestor_lname="<?=$row['requestor_lname'] ?>"
+                                    data-requestor_suffix="<?=$row['requestor_suffix'] ?>"
+                                    data-parent_fname="<?=$row['parent_fname'] ?>"
+                                    data-parent_mname="<?=$row['parent_mname'] ?>"
+                                    data-parent_lname="<?=$row['parent_lname'] ?>"
+                                    data-parent_suffix="<?=$row['parent_suffix'] ?>"
+                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
+                                    data-subdivision="<?=$row['subdivision'] ?>"
+                                    data-date_of_birth="<?=$row['date_of_birth'] ?>"
+                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
                                 <?php } ?>
                                 <!-- PRINT -->
                                 <?php if($row['documentFor'] === 'Self') { ?>
@@ -216,7 +262,7 @@ while($row = $result->fetch_assoc()) {
 
     <!-- EDIT MODAL SELF -->
     <div class="modal-editlbr_forself">
-        <form class="formlbr_forself" action="./model/edit_certOfLBR.php" method="post">
+        <form class="formlbr_forself" action="./model/edit_certificates/edit_certOfLbr.php" method="post">
             <div class="title-cont-modal">
                 <p>For Self</p>
                 <img src="icons/close 1.png" class="closeForm_forself1" alt="">
@@ -226,44 +272,59 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-lbr-self">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" name="applicant_fname" id="applicant_fname_self1" placeholder="First Name">
-                        <input type="text" name="applicant_mname" id="applicant_mname_self1" placeholder="Middle Name">
-                        <input type="text" name="applicant_lname" id="applicant_lname_self1" placeholder="Last Name">
-                        <input type="text" name="applicant_suffix" id="applicant_suffix_self1" placeholder="Suffix">
+                        <input type="text" name="applicant_fname" class="applicant_fname" id="applicant_fname_self1"
+                            placeholder="First Name">
+                        <input type="text" name="applicant_mname" class="applicant_mname" id="applicant_mname_self1"
+                            placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" class="applicant_lname" id="applicant_lname_self1"
+                            placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" class="applicant_suffix" id="applicant_suffix_self1"
+                            placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-self">
                     <label for="fatherName">Father Name:</label>
                     <div class="label111">
-                        <input type="text" name="father_fname" id="father_fname_self1" placeholder="First Name">
-                        <input type="text" name="father_mname" id="father_mname_self1" placeholder="Middle Name">
-                        <input type="text" name="father_lname" id="father_lname_self1" placeholder="Last Name">
-                        <input type="text" name="father_suffix" id="father_suffix_self1" placeholder="Suffix">
+                        <input type="text" name="father_fname" class="father_fname" id="father_fname_self1"
+                            placeholder="First Name">
+                        <input type="text" name="father_mname" class="father_mname" id="father_mname_self1"
+                            placeholder="Middle Name">
+                        <input type="text" name="father_lname" class="father_lname" id="father_lname_self1"
+                            placeholder="Last Name">
+                        <input type="text" name="father_suffix" class="father_suffix" id="father_suffix_self1"
+                            placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-self">
                     <label for="motherName">Mother Name:</label>
                     <div class="label111">
-                        <input type="text" name="mother_fname" id="mother_fname_self1" placeholder="First Name">
-                        <input type="text" name="mother_mname" id="mother_mname_self1" placeholder="Middle Name">
-                        <input type="text" name="mother_lname" id="mother_lname_self1" placeholder="Last Name">
-                        <input type="text" name="mother_suffix" id="mother_suffix_self1" placeholder="Suffix">
+                        <input type="text" name="mother_fname" class="mother_fname" id="mother_fname_self1"
+                            placeholder="First Name">
+                        <input type="text" name="mother_mname" class="mother_mname" id="mother_mname_self1"
+                            placeholder="Middle Name">
+                        <input type="text" name="mother_lname" class="mother_lname" id="mother_lname_self1"
+                            placeholder="Last Name">
+                        <input type="text" name="mother_suffix" class="mother_suffix" id="mother_suffix_self1"
+                            placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-self">
                     <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob_self1" name="dob">
+                    <input type="date" id="dob_self1" name="dob" class="dob">
                 </div>
                 <div class="input-lbr-self">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" name="house_no" id="house_no_self1" placeholder="Houseno.">
-                        <input type="text" name="street" id="street_self1" placeholder="Street name">
-                        <input type="text" name="subdivision" id="subdivision_self1" placeholder="Subdivision name">
+                        <input type="text" name="house_no" class="house_no" id="house_no_self1" placeholder="Houseno.">
+                        <input type="text" name="street" class="street" id="street_self1" placeholder="Street name">
+                        <input type="text" name="subdivision" class="subdivision" id="subdivision_self1"
+                            placeholder="Subdivision name">
                     </div>
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Self">
+            <input type="hidden" name="id" class="certOFlbr_id">
+            <input type="hidden" name="date_requested" class="ate_requested">
             <input type="submit" id="submit" value="Submit">
         </form>
     </div>
@@ -315,7 +376,7 @@ while($row = $result->fetch_assoc()) {
 
     <!-- EDIT MODAL PARENT -->
     <div class="modal-editlbr_forsingleparent">
-        <form class="formlbr_forsingleparent" action="./model/edit_certOfLBR.php" method="post">
+        <form class="formlbr_forsingleparent" action="./model/edit_certificates/edit_certOfLbr.php" method="post">
             <div class="title-cont-modal">
                 <p>For Single Parent</p>
                 <img src="icons/close 1.png" class="closeForm_forsingleparent1" alt="">
@@ -325,37 +386,48 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-lbr-single-parent">
                     <label for="requestorName">Requestor:</label>
                     <div class="label111">
-                        <input type="text" name="requestor_fname" id="requestor_fname_parent1" placeholder="First Name">
-                        <input type="text" name="requestor_mname" id="requestor_mname_parent1"
+                        <input type="text" name="requestor_fname" class="requestor_fname" id="requestor_fname_parent1"
+                            placeholder="First Name">
+                        <input type="text" name="requestor_mname" class="requestor_mname" id="requestor_mname_parent1"
                             placeholder="Middle Name">
-                        <input type="text" name="requestor_lname" id="requestor_lname_parent1" placeholder="Last Name">
-                        <input type="text" name="requestor_suffix" id="requestor_suffix_parent1" placeholder="Suffix">
+                        <input type="text" name="requestor_lname" class="requestor_lname" id="requestor_lname_parent1"
+                            placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" class="requestor_suffix"
+                            id="requestor_suffix_parent1" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-single-parent">
                     <label for="parentName">Parent Name:</label>
                     <div class="label111">
-                        <input type="text" name="parent_fname" id="parent_fname_parent1" placeholder="First Name">
-                        <input type="text" name="parent_mname" id="parent_mname_parent1" placeholder="Middle Name">
-                        <input type="text" name="parent_lname" id="parent_lname_parent1" placeholder="Last Name">
-                        <input type="text" name="parent_suffix" id="parent_suffix_parent1" placeholder="Suffix">
+                        <input type="text" name="parent_fname" class="parent_fname" id="parent_fname_parent1"
+                            placeholder="First Name">
+                        <input type="text" name="parent_mname" class="requestor_mname" id="parent_mname_parent1"
+                            placeholder="Middle Name">
+                        <input type="text" name="parent_lname" class="requestor_lname" id="parent_lname_parent1"
+                            placeholder="Last Name">
+                        <input type="text" name="parent_suffix" class="requestor_suffix" id="parent_suffix_parent1"
+                            placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-single-parent">
                     <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob_parent1" name="dob">
+                    <input type="date" id="dob_parent1" name="dob" class="dob">
                 </div>
                 <div class="input-lbr-single-parent">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" name="house_no" id="house_no_parent1" placeholder="Houseno.">
-                        <input type="text" name="street" id="street_parent1" placeholder="Street name">
-                        <input type="text" name="subdivision" id="subdivision_parent1" placeholder="Subdivision name">
+                        <input type="text" name="house_no" class="house_no" id="house_no_parent1"
+                            placeholder="Houseno.">
+                        <input type="text" name="street" class="street" id="street_parent1" placeholder="Street name">
+                        <input type="text" name="subdivision" class="subdivision" id="subdivision_parent1"
+                            placeholder="Subdivision name">
                     </div>
                 </div>
             </div>
 
             <input type="hidden" name="documentFor" value="Single Parent">
+            <input type="hidden" name="id" class="certOFlbr_id">
+            <input type="hidden" name="date_requested" class="ate_requested">
             <input type="submit" id="submit" value="Submit">
         </form>
     </div>
@@ -416,7 +488,7 @@ while($row = $result->fetch_assoc()) {
 
     <!-- EDIT MODAL CHILD -->
     <div class="modal-editlbr_fortheirchild">
-        <form class="formlbr_fortheirchild" action="./model/edit_certOfLBR.php" method="post">
+        <form class="formlbr_fortheirchild" action="./model/edit_certificates/edit_certOfLbr.php" method="post">
             <div class="title-cont-modal">
                 <p>For Their Child</p>
                 <img src="icons/close 1.png" class="closeForm_fortheirchild1" alt="">
@@ -426,44 +498,59 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-lbr-for-child">
                     <label for="requestorName">Requestor:</label>
                     <div class="label111">
-                        <input type="text" name="requestor_fname" id="requestor_fname_child1" placeholder="First Name">
-                        <input type="text" name="requestor_mname" id="requestor_mname_child1" placeholder="Middle Name">
-                        <input type="text" name="requestor_lname" id="requestor_lname_child1" placeholder="Last Name">
-                        <input type="text" name="requestor_suffix" id="requestor_suffix_child1" placeholder="Suffix">
+                        <input type="text" name="requestor_fname" class="requestor_fname" id="requestor_fname_child1"
+                            placeholder="First Name">
+                        <input type="text" name="requestor_mname" class="requestor_mname" id="requestor_mname_child1"
+                            placeholder="Middle Name">
+                        <input type="text" name="requestor_lname" class="requestor_lname" id="requestor_lname_child1"
+                            placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" class="requestor_suffix" id="requestor_suffix_child1"
+                            placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-for-child">
                     <label for="fatherName">Father Name:</label>
                     <div class="label111">
-                        <input type="text" name="father_fname" id="father_fname_child1" placeholder="First Name">
-                        <input type="text" name="father_mname" id="father_mname_child1" placeholder="Middle Name">
-                        <input type="text" name="father_lname" id="father_lname_child1" placeholder="Last Name">
-                        <input type="text" name="father_suffix" id="father_suffix_child1" placeholder="Suffix">
+                        <input type="text" name="father_fname" class="father_fname" id="father_fname_child1"
+                            placeholder="First Name">
+                        <input type="text" name="father_mname" class="father_mname" id="father_mname_child1"
+                            placeholder="Middle Name">
+                        <input type="text" name="father_lname" class="father_lname" id="father_lname_child1"
+                            placeholder="Last Name">
+                        <input type="text" name="father_suffix" class="father_suffix" id="father_suffix_child1"
+                            placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-for-child">
                     <label for="motherName">Mother Name:</label>
                     <div class="label111">
-                        <input type="text" name="mother_fname" id="mother_fname_child1" placeholder="First Name">
-                        <input type="text" name="mother_mname" id="mother_mname_child1" placeholder="Middle Name">
-                        <input type="text" name="mother_lname" id="mother_lname_child1" placeholder="Last Name">
-                        <input type="text" name="mother_suffix" id="mother_suffix_child1" placeholder="Suffix">
+                        <input type="text" name="mother_fname" class="mother_fname" id="mother_fname_child1"
+                            placeholder="First Name">
+                        <input type="text" name="mother_mname" class="mother_mname" id="mother_mname_child1"
+                            placeholder="Middle Name">
+                        <input type="text" name="mother_lname" class="mother_lname" id="mother_lname_child1"
+                            placeholder="Last Name">
+                        <input type="text" name="mother_suffix" class="mother_suffix id=" mother_suffix_child1"
+                            placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-lbr-for-child">
                     <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob_child1" name="dob">
+                    <input type="date" id="dob_child1" name="dob" class="dob">
                 </div>
                 <div class="input-lbr-for-child">
                     <label for="address">Address:</label>
                     <div class="label111">
-                        <input type="text" name="house_no" id="house_no_child1" placeholder="Houseno.">
-                        <input type="text" name="street" id="street_child1" placeholder="Street name">
-                        <input type="text" name="subdivision" id="subdivision_child1" placeholder="Subdivision name">
+                        <input type="text" name="house_no" class="house_no" id="house_no_child1" placeholder="Houseno.">
+                        <input type="text" name="street" class="street" id="street_child1" placeholder="Street name">
+                        <input type="text" name="subdivision" class="subdivision" id="subdivision_child1"
+                            placeholder="Subdivision name">
                     </div>
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Children">
+            <input type="hidden" name="id" class="certOFlbr_id">
+            <input type="hidden" name="date_requested" class="ate_requested">
             <input type="submit" id="submit" value="Submit">
         </form>
     </div>
@@ -521,44 +608,50 @@ while($row = $result->fetch_assoc()) {
 
 
     //EDIT
-    const editlbrLinkSelf = document.getElementById('editlbr_forself');
+    const editlbrLinkSelf = document.querySelectorAll('.editlbr_forself');
     const modaleditlbrSelf = document.querySelector('.modal-editlbr_forself');
     const closeFormSelf1 = document.querySelector('.closeForm_forself1');
 
-    editlbrLinkSelf.addEventListener('click', function(event) {
-        event.preventDefault();
-        modaleditlbrSelf.style.display = 'block';
-    });
+    editlbrLinkSelf.forEach(edit => {
+        edit.addEventListener('click', function(event) {
+            event.preventDefault();
+            modaleditlbrSelf.style.display = 'block';
+        });
 
-    closeFormSelf1.addEventListener('click', function() {
-        modaleditlbrSelf.style.display = 'none';
-    });
+        closeFormSelf1.addEventListener('click', function() {
+            modaleditlbrSelf.style.display = 'none';
+        });
+    })
 
-    const editlbrLinkParent = document.getElementById('editlbr_forsingleparent');
+    const editlbrLinkParent = document.querySelectorAll('.editlbr_forsingleparent');
     const modaleditlbrParent = document.querySelector('.modal-editlbr_forsingleparent');
     const closeFormParent1 = document.querySelector('.closeForm_forsingleparent1');
 
-    editlbrLinkParent.addEventListener('click', function(event) {
-        event.preventDefault();
-        modaleditlbrParent.style.display = 'block';
-    });
+    editlbrLinkParent.forEach(edit => {
+        edit.addEventListener('click', function(event) {
+            event.preventDefault();
+            modaleditlbrParent.style.display = 'block';
+        });
 
-    closeFormParent1.addEventListener('click', function() {
-        modaleditlbrParent.style.display = 'none';
-    });
+        closeFormParent1.addEventListener('click', function() {
+            modaleditlbrParent.style.display = 'none';
+        });
+    })
 
-    const editlbrLinkChild = document.getElementById('editlbr_fortheirchild');
+    const editlbrLinkChild = document.querySelectorAll('.editlbr_fortheirchild');
     const modaleditlbrChild = document.querySelector('.modal-editlbr_fortheirchild');
     const closeFormChild1 = document.querySelector('.closeForm_fortheirchild1');
 
-    editlbrLinkChild.addEventListener('click', function(event) {
-        event.preventDefault();
-        modaleditlbrChild.style.display = 'block';
-    });
+    editlbrLinkChild.forEach(edit => {
+        edit.addEventListener('click', function(event) {
+            event.preventDefault();
+            modaleditlbrChild.style.display = 'block';
+        });
 
-    closeFormChild1.addEventListener('click', function() {
-        modaleditlbrChild.style.display = 'none';
-    });
+        closeFormChild1.addEventListener('click', function() {
+            modaleditlbrChild.style.display = 'none';
+        });
+    })
     </script>
 
 </body>
