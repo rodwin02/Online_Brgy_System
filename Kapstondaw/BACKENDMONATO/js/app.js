@@ -19,7 +19,10 @@ $(".searchBar").on("keyup", function () {
 // ! EDIT OFFICIAL
 function editOfficial(that) {
   id = $(that).attr("data-id");
-  na = $(that).attr("data-name");
+  fname = $(that).attr("data-fname");
+  mname = $(that).attr("data-mname");
+  lname = $(that).attr("data-lname");
+  suffix = $(that).attr("data-suffix");
   chair = $(that).attr("data-chair");
   pos = $(that).attr("data-pos");
   start = $(that).attr("data-start");
@@ -27,7 +30,10 @@ function editOfficial(that) {
   status = $(that).attr("data-status");
 
   $("#official_id").val(id);
-  $("#fullname1").val(na);
+  $("#officialName_fname1").val(fname);
+  $("#officialName_mname1").val(mname);
+  $("#officialName_lname1").val(lname);
+  $("#officialName_suffix1").val(suffix);
   $("#chairmanship1").val(chair);
   $("#position1").val(pos);
   $("#term-start1").val(start);

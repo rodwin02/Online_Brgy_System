@@ -8,17 +8,19 @@
 	}
 	
     $id 	= $conn->real_escape_string($_POST['official_id']);
-	$name 	= $conn->real_escape_string($_POST['fullname']);
+	$fname 	= $conn->real_escape_string($_POST['officialName_fname']);
+	$mname 	= $conn->real_escape_string($_POST['officialName_mname']);
+	$lname 	= $conn->real_escape_string($_POST['officialName_lname']);
+	$suffix 	= $conn->real_escape_string($_POST['officialName_suffix']);
 	$chair 	= $conn->real_escape_string($_POST['chairmanship']);
-    $pos 	= $conn->real_escape_string($_POST['position']);
 	$start 	= $conn->real_escape_string($_POST['term-start']);
     $end 	= $conn->real_escape_string($_POST['term-end']);
-	$status = $conn->real_escape_string($_POST['status']);
+	$status 	= $conn->real_escape_string($_POST['status']);
 
 	if(!empty($id)){
 
 		if($status !== 'Inactive') {
-		$query 		= "UPDATE tblofficials SET `name`='$name', `chairmanship`='$chair', `position`='$pos', termstart='$start', termend='$end', `status`='$status' WHERE id=$id;";	
+		$query 		= "UPDATE tblofficials SET `firstname`='$fname', `middlename`='$mname', `lastname`='$lname', `suffix`='$suffix',   `chairmanship`='$chair', termstart='$start', termend='$end', `status`='$status' WHERE id=$id;";	
 		$result 	= $conn->query($query);
 
 		if($result === true){
@@ -32,7 +34,7 @@
 			$_SESSION['success'] = 'danger';
 		}
 	} else { 
-		$query  = "INSERT INTO officials_archive (`name`, `chairmanship`, `position`, termstart, termend, `status`) VALUES ('$name', '$chair','$pos', '$start','$end', '$status')";
+		$query  = "INSERT INTO officials_archive (`firstname`, `middlename`, `lastname`, `suffix`, `chairmanship`,  termstart, termend, `status`) VALUES ('$fname', '$mname', '$lname', '$suffix', '$chair', '$start','$end', '$status')";
 		$result 	= $conn->query($query);
 
 		if($result === true){

@@ -1,7 +1,16 @@
 <?php include "../server/server.php" ?>
+<?php
+$query =  "SELECT *,officials_archive.id as id, tblchairmanship.id as chair_id FROM officials_archive JOIN tblchairmanship ON tblchairmanship.id=officials_archive.chairmanship ORDER BY officials_archive.id DESC ";
+$result = $conn->query($query);
 
+$officials = array();
+while($row = $result->fetch_assoc()) {
+  $officials[] = $row;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,12 +27,12 @@
     <?php include '../actives/active_restore.php' ?>
     <?php include '../actives/active_account.php' ?>
     <?php include 'sidebar2.php' ?>
-    
+
     <div class="home_officials">
         <div class="left_officials">
             <div class="first_layer">
-                  <p>Archives Barangay Officialss</p>
-                  <a href="#">Logout</a>
+                <p>Archives Barangay Officialss</p>
+                <a href="#">Logout</a>
             </div>
 
             <a href="../barangayOfficials.php" class="backContainer">
@@ -36,7 +45,7 @@
                     <p>Archives</p>
                 </div>
                 <div class="modal-cont">
-                   
+
                 </div>
             </div>
 
@@ -55,30 +64,19 @@
                         <tr>
                             <th>Full Name</th>
                             <th>Chairmanship</th>
-                            <th>Position</th>
                             <th>Term Start</th>
                             <th>Term End</th>
                             <th>Status</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
-                    <?php if(!empty($official)) { ?>
-                    <?php foreach($official as $row): ?>
+                    <?php if(!empty($officials)) { ?>
+                    <?php foreach($officials as $row): ?>
                     <tr>
-                        <td><?= $row['name']?></td>
+                        <td><?= $row['firstname']. " ". $row['middlename']. " ". $row['lastname']?></td>
                         <td><?= $row['title'] ?></td>
-                        <td><?= $row['position'] ?></td>
                         <td><?= $row['termstart'] ?></td>
                         <td><?= $row['termend'] ?></td>
                         <td class="status"><?= $row['status'] ?></td>
-                        <td class="actions">
-                            <span class="edit" id="editOfficials" onclick="editOfficial(this)"
-                                data-id="<?= $row['id'] ?>" data-name="<?= $row['name'] ?>"
-                                data-chair="<?= $row['chair_id'] ?>" data-pos="<?= $row['pos_id'] ?>"
-                                data-start="<?= $row['termstart'] ?>" data-end="<?= $row['termend'] ?>"
-                                data-status="<?= $row['status'] ?>">Edit</span>
-                            <!-- <a href="./model/remove/remove_official.php?id=<?= $row['id'] ?>" class="delete">Delete</a> -->
-                        </td>
                     </tr>
                     <?php endforeach ?>
                     <?php }?>
@@ -86,13 +84,14 @@
                     <!-- Add more rows here -->
                 </table>
                 <div class="pagination">
-                <button id="prevBtn">Previous</button>
-                <div id="pageNumbers" class="page-numbers"></div>
-                <button id="nextBtn">Next</button>
-            </div>
+                    <button id="prevBtn">Previous</button>
+                    <div id="pageNumbers" class="page-numbers"></div>
+                    <button id="nextBtn">Next</button>
+                </div>
             </div>
         </div>
-        
+
     </div>
 </body>
+
 </html>

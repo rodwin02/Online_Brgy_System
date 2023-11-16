@@ -78,17 +78,18 @@
                     <?php if(!empty($official)) { ?>
                     <?php foreach($official as $row): ?>
                     <tr>
-                        <td><?= $row['name']?></td>
+                        <td><?= $row['firstname']. " ".$row['middlename']. " ".$row['lastname']?></td>
                         <td><?= $row['title'] ?></td>
                         <td><?= $row['termstart'] ?></td>
                         <td><?= $row['termend'] ?></td>
                         <td class="status"><?= $row['status'] ?></td>
                         <td class="actions">
                             <span class="edit" id="editOfficials" onclick="editOfficial(this)"
-                                data-id="<?= $row['id'] ?>" data-name="<?= $row['name'] ?>"
-                                data-chair="<?= $row['chair_id'] ?>" data-pos="<?= $row['pos_id'] ?>"
-                                data-start="<?= $row['termstart'] ?>" data-end="<?= $row['termend'] ?>"
-                                data-status="<?= $row['status'] ?>">Edit</span>
+                                data-id="<?= $row['id'] ?>" data-fname="<?= $row['firstname'] ?>"
+                                data-mname="<?= $row['middlename'] ?>" data-lname="<?= $row['lastname'] ?>"
+                                data-suffix="<?= $row['suffix'] ?>" data-chair="<?= $row['chair_id'] ?>"
+                                data-pos="<?= $row['pos_id'] ?>" data-start="<?= $row['termstart'] ?>"
+                                data-end="<?= $row['termend'] ?>" data-status="<?= $row['status'] ?>">Edit</span>
                             <!-- <a href="./model/remove/remove_official.php?id=<?= $row['id'] ?>" class="delete">Delete</a> -->
                         </td>
                     </tr>
@@ -167,12 +168,12 @@
             <div class="pangalawang-cont">
                 <label for="officialName">Applicant:</label>
                 <div class="labelOfficials">
-                    <input type="text" name="officialName_fname1" id="officialName_fname1" placeholder="First Name"
+                    <input type="text" name="officialName_fname" id="officialName_fname1" placeholder="First Name"
                         required>
-                    <input type="text" name="officialName_mname1" id="officialName_mname1" placeholder="Middle Name">
-                    <input type="text" name="officialName_lame1" id="officialName_lname1" placeholder="Last Name"
+                    <input type="text" name="officialName_mname" id="officialName_mname1" placeholder="Middle Name">
+                    <input type="text" name="officialName_lname" id="officialName_lname1" placeholder="Last Name"
                         required>
-                    <input type="text" name="officialName_suffix1" id="officialName_suffix1" placeholder="Suffix">
+                    <input type="text" name="officialName_suffix" id="officialName_suffix1" placeholder="Suffix">
                 </div>
 
                 <label class="chairmanship" for="chairmanship">Chairmanship:</label>
