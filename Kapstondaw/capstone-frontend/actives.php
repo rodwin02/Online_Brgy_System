@@ -60,7 +60,16 @@ if(isset($_SESSION['message']))
         <input type="hidden" name="applicant_dob" value="<?php echo $_SESSION['date_of_birth'] ?>" id="">
         <input type="hidden" name="applicant_pob" value="<?php echo $_SESSION['place_of_birth'] ?>" id="">
         <input type="hidden" name="applicant_civilStatus" value="<?php echo $_SESSION['civil'] ?>">
-        <button type="submit" class="active-service-request">Request</button>
+        <button type="button" class="fake-btn">Request</button>
+        <div class="confirmation">
+            <div class="main-container">
+                <h1>Are you sure?</h1>
+                <div class="buttons">
+                    <button type="submit" class="active-service-request">Request</button>
+                    <button type="button" class="cancel-request">Cancel</button>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 
@@ -86,7 +95,16 @@ if(isset($_SESSION['message']))
         <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
         <input type="hidden" name="applicant_pob" value="<?php echo $_SESSION['place_of_birth'] ?>" id="">
         <input type="hidden" name="applicant_dob" value="<?php echo $_SESSION['date_of_birth'] ?>" id="">
-        <button type="submit" class="active-service-request">Request</button>
+        <button type="button" class="fake-btn">Request</button>
+        <div class="confirmation">
+            <div class="main-container">
+                <h1>Are you sure?</h1>
+                <div class="buttons">
+                    <button type="submit" class="active-service-request">Request</button>
+                    <button type="button" class="cancel-request">Cancel</button>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 
@@ -122,7 +140,16 @@ if(isset($_SESSION['message']))
         <input type="hidden" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
         <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
 
-        <button type="submit" class="active-service-request">Request</button>
+        <button type="button" class="fake-btn">Request</button>
+        <div class="confirmation">
+            <div class="main-container">
+                <h1>Are you sure?</h1>
+                <div class="buttons">
+                    <button type="submit" class="active-service-request">Request</button>
+                    <button type="button" class="cancel-request">Cancel</button>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 
@@ -159,7 +186,16 @@ if(isset($_SESSION['message']))
         <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
 
 
-        <button type="submit" class="active-service-request">Request</button>
+        <button type="button" class="fake-btn">Request</button>
+        <div class="confirmation">
+            <div class="main-container">
+                <h1>Are you sure?</h1>
+                <div class="buttons">
+                    <button type="submit" class="active-service-request">Request</button>
+                    <button type="button" class="cancel-request">Cancel</button>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 
@@ -209,7 +245,16 @@ if(isset($_SESSION['message']))
         <input type="hidden" name="applicant_houseNo" value="<?php echo $_SESSION['house_no'] ?>" id="">
         <input type="hidden" name="applicant_street" value="<?php echo $_SESSION['street'] ?>" id="">
         <input type="hidden" name="applicant_subdivision" value="<?php echo $_SESSION['subdivision'] ?>" id="">
-        <button type="submit" class="active-service-request">Request</button>
+        <button type="button" class="fake-btn">Request</button>
+        <div class="confirmation">
+            <div class="main-container">
+                <h1>Are you sure?</h1>
+                <div class="buttons">
+                    <button type="submit" class="active-service-request">Request</button>
+                    <button type="button" class="cancel-request">Cancel</button>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 

@@ -7,32 +7,32 @@ function calculateAge($dob) {
     $interval = $today->diff($birthDate);
     return $interval->y;
 }
-	$query = "SELECT * FROM tblresidents";
+	$query = "SELECT * FROM tbl_households";
     $result = $conn->query($query);
 	$total = $result->num_rows;
 
-  	$query1 = "SELECT * FROM tblresidents WHERE sex='Male'";
+  	$query1 = "SELECT * FROM tbl_households WHERE sex='Male'";
     $result1 = $conn->query($query1);
 	$male = $result1->num_rows;
 
-	$query2 = "SELECT * FROM tblresidents WHERE sex='Female'";
+	$query2 = "SELECT * FROM tbl_households WHERE sex='Female'";
     $result2 = $conn->query($query2);
 	$female = $result2->num_rows;
 
-  	$query3 = "SELECT * FROM tblresidents WHERE `voter_status`='voter'";
+  	$query3 = "SELECT * FROM tbl_households WHERE `voter_status`='voter'";
     $result3 = $conn->query($query3);
 	$totalvoters = $result3->num_rows;
 
-  $query4 = "SELECT * FROM tblresidents WHERE `voter_status`='non-voter'";
+  $query4 = "SELECT * FROM tbl_households WHERE `voter_status`='non-voter'";
 	$non = $conn->query($query4)->num_rows;
 
   $query5 = "SELECT * FROM tblblotter";
 	$blotter = $conn->query($query5)->num_rows;
 
-  $query6 = "SELECT * FROM tblresidents WHERE osy='OSY'";
+  $query6 = "SELECT * FROM tbl_households WHERE osy='OSY'";
 	$osy = $conn->query($query6)->num_rows;
 
-  $query7 = "SELECT * FROM tblresidents WHERE pwd='PWD'";
+  $query7 = "SELECT * FROM tbl_households WHERE pwd='PWD'";
 	$pwd = $conn->query($query7)->num_rows;
 
 //   $query8 = "SELECT * FROM tblresidents WHERE age>=60";
@@ -250,7 +250,7 @@ function calculateAge($dob) {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="osy">
                         <div class="a1">
                             <div class="b1">
@@ -272,7 +272,7 @@ function calculateAge($dob) {
                         </div>
                     </div>
 
-                    
+
 
                     <div class="soloParent">
                         <div class="a1">
@@ -294,7 +294,7 @@ function calculateAge($dob) {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="pwd">
                         <div class="a1">
                             <div class="b1">
@@ -420,7 +420,7 @@ function calculateAge($dob) {
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
 
                 <div class="line-container">
@@ -449,7 +449,7 @@ function calculateAge($dob) {
         </div>
     </div>
 
-   
+
 
     <script src="./js/jQuery-3.7.0.js"></script>
     <script src="./js/app.js"></script>

@@ -117,3 +117,18 @@ document.addEventListener("DOMContentLoaded", function () {
 // if (cartBody && cartBody.rows.length > 10) {
 //   cartBody.classList.add("scroll");
 // }
+
+// ! confirmation for requesting
+const fakeBtn = document.querySelectorAll(".fake-btn");
+const confirmation = document.querySelectorAll(".confirmation");
+const cancelRequest = document.querySelectorAll(".cancel-request");
+
+fakeBtn.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    confirmation[index].style.display = "flex";
+  });
+
+  cancelRequest[index].addEventListener("click", () => {
+    confirmation[index].style.display = "none";
+  });
+});
