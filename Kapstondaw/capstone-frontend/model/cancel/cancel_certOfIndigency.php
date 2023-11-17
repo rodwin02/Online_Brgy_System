@@ -12,12 +12,12 @@
 	if($id != ''){
 
 		try {
-			$select = $conn->prepare("SELECT * FROM tbl_brgyclearance WHERE id = ?");
+			$select = $conn->prepare("SELECT * FROM tbl_certofindigency WHERE id = ?");
 			$select->bind_param("s", $id);
 			$select->execute();
 			$brgyClearance = $select->get_result()->fetch_assoc();
 
-			$insert = "INSERT INTO del_brgyclearance_archive(`applicant_fname`, `applicant_mname`, `applicant_lname`, `applicant_suffix`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `requestor_suffix`, `house_no`, `street`, `subdivision`, `date-of-birth`, `place-of-birth`, `status`, `date_requested`) VALUES (
+			$insert = "INSERT INTO del_certofindigency_archive( `applicant_fname`, `applicant_mname`, `applicant_lname`, `applicant_suffix`, `requestor_fname`, `requestor_mname`, `requestor_lname`, `requestor_suffix`, `house_no`, `street`, `subdivision`, `documentFor`, `status`, `date_requested`) VALUES (
 				'{$brgyClearance['applicant_fname']}',
 				'{$brgyClearance['applicant_mname']}',
 				'{$brgyClearance['applicant_lname']}',
@@ -26,22 +26,21 @@
 				'{$brgyClearance['requestor_mname']}',
 				'{$brgyClearance['requestor_lname']}',
 				'{$brgyClearance['requestor_suffix']}',
-				'{$brgyClearance['house-no']}',
+				'{$brgyClearance['house_no']}',
 				'{$brgyClearance['street']}',
 				'{$brgyClearance['subdivision']}',
-				'{$brgyClearance['date-of-birth']}',
-				'{$brgyClearance['place-of-birth']}',
+				'{$brgyClearance['documentFor']}',
 				'Cancel',
 				'{$brgyClearance['date_requested']}'
 			)";
 			$conn->query($insert);
 	 
-			$query 		= "DELETE FROM tbl_brgyclearance WHERE id = '$id'";
+			$query 		= "DELETE FROM tbl_certofindigency WHERE id = '$id'";
 			
 			$result 	= $conn->query($query);
 			
 			if($result === true){
-				$_SESSION['message'] = 'Brgy Clearance has been removed!';
+				$_SESSION['message'] = 'Certificate of Indigency has been removed!';
 				$_SESSION['success'] = 'danger';
 				
 			}else{
@@ -54,7 +53,7 @@
 		}
 	}else{
 
-		$_SESSION['message'] = 'Missing Brgy Clearance ID!';
+		$_SESSION['message'] = 'Missing Certificate of Indigency ID!';
 		$_SESSION['success'] = 'danger';
 	}
 

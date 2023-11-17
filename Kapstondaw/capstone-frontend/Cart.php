@@ -104,7 +104,22 @@ if(isset($_SESSION['message']))
                                 <?php } ?>
                             </td>
                             <td>
+                                <?php
+                                if ($row['source'] === 'tbl_idform') { ?>
                                 <a href="./model/cancel/cancel_idform.php?id=<?= $row['id'] ?>">Cancel</a>
+                                <?php } elseif ($row['source'] === 'tbl_brgyclearance') { ?>
+                                <a href="./model/cancel/cancel_brgyClearance.php?id=<?= $row['id'] ?>">Cancel</a>
+                                <?php }
+                                elseif ($row['source'] === 'tbl_ecertificate') { ?>
+                                <a href="./model/cancel/cancel_endorsement.php?id=<?= $row['id'] ?>">Cancel</a>
+                                <?php }
+                                elseif ($row['source'] === 'tbl_certoflbr') { ?>
+                                <a href="./model/cancel/cancel_certOfLbr.php?id=<?= $row['id'] ?>">Cancel</a>
+                                <?php }
+                                elseif ($row['source'] === 'tbl_certofindigency') { ?>
+                                <a href="./model/cancel/cancel_certOfIndigency.php?id=<?= $row['id'] ?>">Cancel</a>
+                                <?php }
+                                ?>
                             </td>
                         </tr>
                         <?php  endforeach  ?>
