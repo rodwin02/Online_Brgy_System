@@ -1873,14 +1873,17 @@ td {
   flex-direction: column;
   width: 100%;
   height: auto;
+  
 }
 
 .barangay-layer2 .menu-img-cont {
   display: flex;
   flex-direction: column;
   height: 350px;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 30px;
+  width: 100%;
 }
 
 .barangay-layer2 .menu-img-cont label {
@@ -1890,23 +1893,33 @@ td {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  
 }
-.barangay-layer2 .menu-img-cont #MenuPreview {
+.barangay-layer2 .menu-img-cont .menu-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 97%;
+  margin-top: 5px;
+}
+.barangay-layer2 .menu-img-cont .menu-center #MenuPreview {
   border: 1px dotted #000000;
-  width: 90%;
+  width: 97%;
   height: 250px;
-  margin-top: 10px;
+
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
-.barangay-layer2 .menu-img-cont #MenuPreview img {
+.barangay-layer2 .menu-img-cont .menu-center #MenuPreview img {
   width: 100%;
   max-height: 250px;
 }
-.barangay-layer2 .menu-img-cont #menu-img {
+.barangay-layer2 .menu-img-cont .menu-center #menu-img {
   border: 1px dotted #000000;
   padding: 5px 5px;
   border-radius: 5px;
@@ -1958,10 +1971,14 @@ td {
 .barangay-layer2 .historical-desc {
   display: flex;
   flex-direction: column;
-  height: 280px;
-  justify-content: center;
-  align-items: center;
+  height: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 10px 0px;
+ 
+  width: 100%;
+  margin-left: 30px;
+  margin-bottom: 20px;
 }
 .barangay-layer2 .historical-desc label {
   color: #000000;
@@ -1972,16 +1989,96 @@ td {
   line-height: normal;
 
 }
-
-.barangay-layer2 .historical-desc textarea {
-  color: #000000;
-  font-family: Poppins;
-  font-size: 14.5px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  padding: 5px 10px;
+.barangay-layer2 .historical-desc .history-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 5px;
+  flex-direction: column;
+  padding-left: 20px;
+  width: 100%;
 }
+.history-center section {
+  height: 500px;
+  width: 94%;
+}
+
+.history-center .col {
+
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: #00000059 0px 5px 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 5px 0px;
+  
+}
+
+.box {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.col .first, .second, .third {
+  border-right: 2px solid #00000033;
+}
+
+.col .first input[type=number] {
+  outline: none;
+  border: none;
+  width: 60px;
+  color: #000000;
+  font-size: 14px;
+  padding: 5px 5px;
+  margin-left: 10px;
+  background-color: #99999948;
+  border-radius: 5px;
+}
+
+.col button {
+  border: none;
+  color: #0e0505;
+  font-size: 18px;
+  font-weight: 300;
+  background-color: transparent;
+  padding: 0% 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+}
+.col button:hover {
+  background-color: #40576d1a;
+}
+
+.col button.active {
+  background-color: #73b1e333;
+  color: #5271ff;
+}
+.col .third button:focus {
+  background-color: #73b1e333;
+  color: #5271ff;
+}
+
+.col input[type=color] {
+  width: 35px;
+  outline: none;
+  border: none;
+  background: none;
+}
+.barangay-layer2 .historical-desc .history-center textarea {
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  resize: vertical;
+  background: #FFF;
+}
+
 
 .barangay-layer2 .MissionVision-cont {
   display: flex;
@@ -1994,12 +2091,74 @@ td {
 }
 
 .barangay-layer2 .MissionVision-cont .mission-cont {
+  width: 50%;
+  
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  margin-top: 5px;
+  flex-direction: column;
 }
+.mission-cont .colMission {
+   width: 100%;
+  border-radius: 4px;
+  box-shadow: #00000059 0px 5px 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 5px 0px;
+ 
+  
+}
+.colMission .first, .second, .third {
+  border-right: 2px solid #00000033;
+}
+.colMission .first input[type=number] {
+  outline: none;
+  border: none;
+  width: 60px;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  padding: 5px 5px;
+  margin-left: 10px;
+  background-color: #99999948;
+  border-radius: 5px;
+}
+
+.colMission button {
+  border: none;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 300;
+  background-color: transparent;
+  padding: 0% 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+}
+.colMission button:hover {
+  background-color: #40576d1a;
+}
+
+.colMission button.active {
+  background-color: #73b1e333;
+  color: #5271ff;
+}
+.colMission .third button:focus {
+  background-color: #73b1e333;
+  color: #5271ff;
+}
+
+.colMission input[type=color] {
+  width: 35px;
+  outline: none;
+  border: none;
+  background: none;
+}
+
 .barangay-layer2 .MissionVision-cont .mission-cont label {
   color: #000000;
   font-family: Poppins;
@@ -2007,23 +2166,28 @@ td {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 .barangay-layer2 .MissionVision-cont .mission-cont textarea {
-  color: #000000;
-  font-family: Poppins;
-  font-size: 14.5px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  padding: 5px 10px;
-  text-align: center;
+  width: 100%;
+  height: 220px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  resize: vertical;
+  border-radius: 4px;
+
 }
 .barangay-layer2 .MissionVision-cont .vision-cont {
+  width: 50%;
+  
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  margin-top: 5px;
+  flex-direction: column;
+ 
 }
 
 .barangay-layer2 .MissionVision-cont .vision-cont label {
@@ -2033,17 +2197,78 @@ td {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.vision-cont .colVision {
+  width: 100%;
+ border-radius: 4px;
+ box-shadow: #00000059 0px 5px 15px;
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-top-right-radius: 5px;
+ border-top-left-radius: 5px;
+ padding: 5px 0px;
+
+}
+.colVision .first, .second, .third {
+ border-right: 2px solid #00000033;
+}
+.colVision .first input[type=number] {
+ outline: none;
+ border: none;
+ width: 60px;
+ color: rgb(0, 0, 0);
+ font-size: 14px;
+ padding: 5px 5px;
+ margin-left: 10px;
+ background-color: #99999948;
+ border-radius: 5px;
+}
+
+.colVision button {
+ border: none;
+ color: #030101;
+ font-size: 18px;
+ font-weight: 300;
+ background-color: transparent;
+ padding: 0% 16px;
+ border-radius: 3px;
+ cursor: pointer;
+ user-select: none;
+}
+.colVision button:hover {
+ background-color: #40576d1a;
+}
+
+.colVision button.active {
+ background-color: #73b1e333;
+ color: #5271ff;
+}
+.colVision .third button:focus {
+ background-color: #73b1e333;
+ color: #5271ff;
+}
+
+.colVision input[type=color] {
+ width: 35px;
+ outline: none;
+ border: none;
+ background: none;
 }
 
 .barangay-layer2 .MissionVision-cont .vision-cont textarea {
-  color: #000000;
-  font-family: Poppins;
-  font-size: 14.5px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  padding: 5px 10px;
-  text-align: center;
+  width: 100%;
+  height: 220px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  resize: vertical;
+  border-radius: 4px;
+ 
+  
 }
 
 .addModal-cont {
@@ -2092,7 +2317,25 @@ td {
   width: 15px;
   height: 15px;
   display: flex;
-
 }
 
+.update-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top: 15px;
+ 
+}
+.update-Container button {
+  color: #007236;
+  border: 1px solid #007236;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
+.update-Container button:hover {
+  background-color: #007236;
+  color: white;
+}
