@@ -30,31 +30,54 @@
         </a>
 
         <form action="./model/add_business.php" method="post">
-            <table class="addResidentsTable">
-                <thead>
-                    <tr>
-                        <th>Taxpayer Name</th>
-                        <th>Business Name</th>
-                        <th>Business Address</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" name="taxpayerName" oninput="this.value = this.value.toUpperCase()"
-                                required></td>
-                        <td><input type="text" name="businessName" oninput="this.value = this.value.toUpperCase()"
-                                required></td>
-                        <td><input type="text" name="businessAddress" oninput="this.value = this.value.toUpperCase()"
-                                required></td>
+            <div class="BusinessCont">
+                <div class="businessHeader">
+                    <p>Business Registration</p>
+                </div>
+                <div class="businessBody">
+                    <div class="left-cont">
+                        <div class="input-business">
+                            <label for="taxPayer_name">Taxpayer Name</label>
+                            <input type="text" name="taxPayer_lname" id="taxPayer_lname" placeholder="Last Name">
+                            <input type="text" name="taxPayer_fname" id="taxPayer_fname" placeholder="First Name">
+                            <input type="text" name="taxPayer_mname" id="taxPayer_mname" placeholder="Middle Name">
+                            <input type="text" name="taxPayer_suffix" id="taxPayer_suffix" placeholder="Suffix">
+                        </div>
+                        <div class="input-business">
+                            <label for="taxPayer_name">Location</label>
+                            <input type="text" name="taxPayer_houseNo" id="taxPayer_houseNo" placeholder="House no.">
+                            <input type="text" name="taxPayer_street" id="taxPayer_street" placeholder="Street Name">
+                            <input type="text" name="taxPayer_subdivision" id="taxPayer_subdivision"
+                                placeholder="Subdivision Name">
+                        </div>
+                        <label for="businessType">Type</label>
+                        <select name="businessType" id="businessType">
+                            <option value="">Select Type</option>
+                            <option value="New">New</option>
+                            <option value="Renewal">Renewal</option>
+                        </select>
+                    </div>
 
-                        <td>
-                            <div class="DeleteBtn" onclick="clearRow(this)">Clear</div>
-                        </td>
-                    </tr>
+                    <div class="right-cont">
+                        <div class="input-business">
+                            <label for="business_name">Taxpayer Name</label>
+                            <input type="text" name="business_name" id="business_name" placeholder="Business Name">
+                        </div>
+                        <div class="input-business">
+                            <label for="date">Date</label>
+                            <input type="date">
 
-                </tbody>
-            </table>
+                            <label for="businessStatus">Status</label>
+                            <select name="businessStatus" id="businessStatus">
+                                <option value="">Select Status</option>
+                                <option value="Food">Food</option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
             <div class="submitHouseholdCont">
                 <button type="submit" class="">Create</button>
             </div>

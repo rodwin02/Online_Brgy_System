@@ -230,7 +230,7 @@ function calculateAge($dob) {
                         </div>
                     </div>
 
-                    <div class="osc">
+                    <!-- <div class="osc">
                         <div class="a1">
                             <div class="b1">
                                 <div class="c1">OSC (6-14)</div>
@@ -419,7 +419,7 @@ function calculateAge($dob) {
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 

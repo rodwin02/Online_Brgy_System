@@ -118,7 +118,10 @@
                 <select id="chairmanship" name="chairmanship" required>
                     <option disabled selected>Select Chairmanship</option>
                     <?php foreach($chair as $row): ?>
+                    <?php if(!in_array($row['id'], array_column($official, 'chair_id'))): ?>
                     <option value="<?= $row['id'] ?>"><?= $row['title'] ?></option>
+                    <?php endif; ?>
+
                     <?php endforeach ?>
                 </select>
 

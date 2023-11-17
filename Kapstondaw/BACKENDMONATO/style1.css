@@ -88,7 +88,7 @@ a {
 .population {
   display: flex;
   flex-direction: column;
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -253,7 +253,7 @@ tr:nth-child(even) {
 }
 
 .male {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -310,7 +310,7 @@ tr:nth-child(even) {
 }
 
 .female {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -366,7 +366,7 @@ tr:nth-child(even) {
 }
 
 .voters {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -422,7 +422,7 @@ tr:nth-child(even) {
 }
 
 .nonvoters {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -477,7 +477,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .blotter {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -533,7 +533,7 @@ tr:nth-child(even) {
 }
 
 .osc {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -589,7 +589,7 @@ tr:nth-child(even) {
 }
 
 .osy {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -644,7 +644,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .pwd {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -699,7 +699,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .soloParent {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -754,7 +754,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .labor {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -809,7 +809,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .unemploy {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -864,7 +864,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .ofw {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -919,7 +919,7 @@ tr:nth-child(even) {
   border-radius: 10px;
 }
 .snr {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -975,7 +975,7 @@ tr:nth-child(even) {
 }
 
 .students {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -1031,7 +1031,7 @@ tr:nth-child(even) {
 }
 
 .student {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;
@@ -1088,7 +1088,7 @@ tr:nth-child(even) {
 
 
 .senior {
-  width: 315px;
+  width: 330px;
   height: 150px;
   margin: 10px 12px ;
   background: #F8F8F8;

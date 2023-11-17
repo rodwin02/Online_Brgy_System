@@ -170,7 +170,7 @@ Z/* START CONTENT MANAGEMENT CSS*/
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   flex-direction: row;
   width: 98%;
-  margin-top: 30px;
+  margin-top: 10px;
   height: 65px;
 
   font-size: 13px;
@@ -538,7 +538,8 @@ tr:nth-child(even) {
 }
 .backContainer {
   display: flex;
-  margin: 15px 15px;
+  margin-left: 15px;
+  margin-top: 15px;
   cursor: pointer;
 }
 .backContainer img {
