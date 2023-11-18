@@ -128,18 +128,19 @@
                             <div id="MenuPreview" class="image-preview">
                                 <img src="./uploads/logo/<?= $header_image ?>" alt="">
                             </div>
-                            <input type="file" name="header_image" id="menu-img" accept="image/*" onchange="previewMenu()">
+                            <input type="file" name="header_image" id="menu-img" accept="image/*"
+                                onchange="previewMenu()">
                         </div>
                     </div>
 
                     <div class="historical-desc">
-                    <label for="history-desc">Historical Background Description</label>
-                    <div class="history-center">
-                        <section>
-                            <!-- Quill editor container -->
-                            <div id="editorDescription" style="height: 300px;"><?= $historicalBackground ?></div>
-                        </section>
-                    </div>
+                      <label for="history-desc">Historical Background Description</label>
+                      <div class="history-center">
+                          <section>
+                              <!-- Quill editor container -->
+                              <div id="editorDescription" style="height: 300px;"><?= $historicalBackground ?></div>
+                          </section>
+                      </div>
                     </div>
 
                     <div class="historical-img">
@@ -163,7 +164,7 @@
                             <label for="vision">Vision</label>
                             <section>
                                 <!-- Quill editor container -->
-                                <div id="editorVision" style="height: 200px;"><?= $vision ?></div>
+                                <div id="editorVision" style="height: 200px;"><?= $vision ?></div> 
                             </section>
                         </div>
                     </div>
@@ -172,7 +173,7 @@
             </div>
 
             <div class="update-Container">
-               <button type="submit">Update</button>
+                <button type="submit">Update</button>
             </div>
 
         </form>
@@ -181,7 +182,7 @@
 
      <!-- Include Quill library -->
      <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script>
+     <script>
         // Initialize Quill editors
         var editorDescription = new Quill('#editorDescription', {
             theme: 'snow'
@@ -290,6 +291,5 @@ function previewHistoryImage() {
         preview.innerHTML = '';
     }
 }
-
 
 </script>

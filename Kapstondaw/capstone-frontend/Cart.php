@@ -106,18 +106,86 @@ if(isset($_SESSION['message']))
                             <td>
                                 <?php
                                 if ($row['source'] === 'tbl_idform') { ?>
-                                <a href="./model/cancel/cancel_idform.php?id=<?= $row['id'] ?>">Cancel</a>
+                                <a href="#" class="cancel-item">Cancel</a>
+                                <div class="cancel-container">
+                                    <div class="confirm-cancel-item">
+                                        <div class="main-container">
+                                            <h1>Are you sure?</h1>
+                                            <div class="buttons">
+                                                <button type="button" class="btn1"><a
+                                                        href="./model/cancel/cancel_idform.php?id=<?= $row['id'] ?>">Confirm</a></button>
+                                                <button type="button" class="abort-cancel-item">No</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <?php } elseif ($row['source'] === 'tbl_brgyclearance') { ?>
-                                <a href="./model/cancel/cancel_brgyClearance.php?id=<?= $row['id'] ?>">Cancel</a>
+                                <a href="#" class="cancel-item">Cancel</a>
+                                <div class="cancel-container">
+                                    <div class="confirm-cancel-item">
+                                        <div class="main-container">
+                                            <h1>Are you sure?</h1>
+                                            <div class="buttons">
+                                                <button type="button" class="btn1">
+                                                    <a
+                                                        href="./model/cancel/cancel_brgyClearance.php?id=<?= $row['id'] ?>">Cancel</a>
+                                                </button>
+                                                <button type="button" class="abort-cancel-item">No</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <?php }
                                 elseif ($row['source'] === 'tbl_ecertificate') { ?>
-                                <a href="./model/cancel/cancel_endorsement.php?id=<?= $row['id'] ?>">Cancel</a>
+                                <a href="#" class="cancel-item">Cancel</a>
+                                <div class="cancel-container">
+                                    <div class="confirm-cancel-item">
+                                        <div class="main-container">
+                                            <h1>Are you sure?</h1>
+                                            <div class="buttons">
+                                                <button type="button" class="btn1">
+                                                    <a
+                                                        href="./model/cancel/cancel_endorsement.php?id=<?= $row['id'] ?>">Cancel</a>
+                                                </button>
+                                                <button type="button" class="abort-cancel-item">No</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <?php }
                                 elseif ($row['source'] === 'tbl_certoflbr') { ?>
-                                <a href="./model/cancel/cancel_certOfLbr.php?id=<?= $row['id'] ?>">Cancel</a>
+                                <a href="#" class="cancel-item">Cancel</a>
+                                <div class="cancel-container">
+                                    <div class="confirm-cancel-item">
+                                        <div class="main-container">
+                                            <h1>Are you sure?</h1>
+                                            <div class="buttons">
+                                                <button type="button" class="btn1">
+                                                    <a
+                                                        href="./model/cancel/cancel_certOfLbr.php?id=<?= $row['id'] ?>">Cancel</a>
+                                                </button>
+                                                <button type="button" class="abort-cancel-item">No</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <?php }
                                 elseif ($row['source'] === 'tbl_certofindigency') { ?>
-                                <a href="./model/cancel/cancel_certOfIndigency.php?id=<?= $row['id'] ?>">Cancel</a>
+                                <a href="#" class="cancel-item">Cancel</a>
+                                <div class="cancel-container">
+                                    <div class="confirm-cancel-item">
+                                        <div class="main-container">
+                                            <h1>Are you sure?</h1>
+                                            <div class="buttons">
+                                                <button type="button" class="btn1">
+                                                    <a
+                                                        href="./model/cancel/cancel_certOfIndigency.php?id=<?= $row['id'] ?>">Cancel</a>
+                                                </button>
+                                                <button type="button" class="abort-cancel-item">No</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <?php }
                                 ?>
                             </td>
