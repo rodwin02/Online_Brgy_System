@@ -57,13 +57,13 @@ while($row = $result->fetch_assoc()) {
                         <th>Applicant</th>
                         <th>Requestor</th>
                         <th>Address</th>
-                        <th>Place of Birth</th>
-                        <th>Birth Date</th>
-                        <th>Civil Status</th>
+                        <th style="display: none">Place of Birth</th>
+                        <th style="display: none">Birth Date</th>
+                        <th style="display: none">Civil Status</th>
                         <th>Contact Number</th>
                         <th>Document For</th>
                         <th>Purpose</th>
-                        <th>Date Requested</th>
+                        <th style="display: none">Date Requested</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -80,13 +80,13 @@ while($row = $result->fetch_assoc()) {
                             <?= $row['requestor_lname']?>
                         </td>
                         <td><?= $row['house_no']. " ". $row['street']. " ". $row['subdivision']?></td>
-                        <td><?= $row['place_of_birth']?></td>
-                        <td><?= $row['birth_date']?></td>
-                        <td><?= $row['civil_status']?></td>
+                        <td style="display: none"><?= $row['place_of_birth']?></td>
+                        <td style="display: none"><?= $row['birth_date']?></td>
+                        <td style="display: none"><?= $row['civil_status']?></td>
                         <td><?= $row['contact_number']?></td>
                         <td><?= $row['documentFor'] ?></td>
                         <td><?= $row['purpose'] ?></td>
-                        <td><?= $row['date_requested'] ?></td>
+                        <td style="display: none"><?= $row['date_requested'] ?></td>
                         <td>
                             <form action="./model/update_status/update_idform.php" method="POST" class="form-allCert"
                                 id="statusForm">

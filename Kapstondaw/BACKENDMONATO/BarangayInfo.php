@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -130,57 +131,17 @@
                             <input type="file" name="header_image" id="menu-img" accept="image/*" onchange="previewMenu()">
                         </div>
                     </div>
-                    <div class="historical-desc">
-                        <label for="history-desc">Historical Background Description</label>
-                        <div class="history-center">
-                        <section>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="first box">
-                                        <input id="font-size" type="number" value="16" min="1" max="100" onchange="f1(this)">
-                                    </div>
-                                    <div class="second box">
-                                        <button type="button" onclick="f2(this)">
-                                            <i class="fa-solid fa-bold"></i>
-                                        </button>
-                                        <button type="button" onclick="f3(this)">
-                                            <i class="fa-solid fa-italic"></i>
-                                        </button>
-                                        <button type="button" onclick="f4(this)">
-                                            <i class="fa-solid fa-underline"></i>
-                                        </button>
-                                    </div>
-                                    <div class="third box">
-                                        <button type="button" onclick="f5(this)">
-                                            <i class="fa-solid fa-align-left"></i>
-                                        </button>
-                                        <button type="button" onclick="f6(this)">
-                                            <i class="fa-solid fa-align-center"></i>
-                                        </button>
-                                        <button type="button" onclick="f7(this)">
-                                            <i class="fa-solid fa-align-right"></i>
-                                        </button>
-                                    </div>
-                                    <div class="fourth box">
-                                        <button type="button" onclick="f8(this)">aA</button>
-                                        <button type="button" onclick="f9()">
-                                            <i class="fa-solid fa-text-slash"></i>
-                                        </button>
-                                        <input type="color" onchange="f10(this)">
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col">
-                                    <textarea id="textarea1" placeholder="Your text here "><?= $historicalBackground ?></textarea>
-                                </div>
-                            </div>
-                        </section>
 
-                        <script src="app.js"></script>
-                        </div>
+                    <div class="historical-desc">
+                    <label for="history-desc">Historical Background Description</label>
+                    <div class="history-center">
+                        <section>
+                            <!-- Quill editor container -->
+                            <div id="editorDescription" style="height: 300px;"><?= $historicalBackground ?></div>
+                        </section>
                     </div>
+                    </div>
+
                     <div class="historical-img">
                         <label for="history-img">Historical Background Image</label>
                         <div id="ImgPreview" class="image-preview">
@@ -193,109 +154,60 @@
                         <div class="mission-cont">
                             <label for="mission">Mission</label>
                             <section>
-                                <div class="row">
-                                    <div class="colMission">
-                                        <div class="first box">
-                                            <input id="font-size1" type="number" value="16" min="1" max="100" onchange="f1(this)">
-                                        </div>
-                                        <div class="second box">
-                                            <button type="button" onclick="f2(this)">
-                                                <i class="fa-solid fa-bold"></i>
-                                            </button>
-                                            <button type="button" onclick="f3(this)">
-                                                <i class="fa-solid fa-italic"></i>
-                                            </button>
-                                            <button type="button" onclick="f4(this)">
-                                                <i class="fa-solid fa-underline"></i>
-                                            </button>
-                                        </div>
-                                        <div class="third box">
-                                            <button type="button" onclick="f5(this)">
-                                                <i class="fa-solid fa-align-left"></i>
-                                            </button>
-                                            <button type="button" onclick="f6(this)">
-                                                <i class="fa-solid fa-align-center"></i>
-                                            </button>
-                                            <button type="button" onclick="f7(this)">
-                                                <i class="fa-solid fa-align-right"></i>
-                                            </button>
-                                        </div>
-                                        <div class="fourth box">
-                                            <button type="button" onclick="f8(this)">aA</button>
-                                            <button type="button" onclick="f9()">
-                                                <i class="fa-solid fa-text-slash"></i>
-                                            </button>
-                                            <input type="color" onchange="f10(this)">
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="colMission">
-                                        <textarea id="textarea1" placeholder="Your text here "><?= $mission ?></textarea>
-                                    </div>
-                                </div>
+                                <!-- Quill editor container -->
+                                <div id="editorMission" style="height: 200px;"><?= $mission ?></div>
                             </section>
                         </div>
+
                         <div class="vision-cont">
                             <label for="vision">Vision</label>
                             <section>
-                                <div class="row">
-                                    <div class="colVision">
-                                        <div class="first box">
-                                            <input id="font-size1" type="number" value="16" min="1" max="100" onchange="f1(this)">
-                                        </div>
-                                        <div class="second box">
-                                            <button type="button" onclick="f2(this)">
-                                                <i class="fa-solid fa-bold"></i>
-                                            </button>
-                                            <button type="button" onclick="f3(this)">
-                                                <i class="fa-solid fa-italic"></i>
-                                            </button>
-                                            <button type="button" onclick="f4(this)">
-                                                <i class="fa-solid fa-underline"></i>
-                                            </button>
-                                        </div>
-                                        <div class="third box">
-                                            <button type="button" onclick="f5(this)">
-                                                <i class="fa-solid fa-align-left"></i>
-                                            </button>
-                                            <button type="button" onclick="f6(this)">
-                                                <i class="fa-solid fa-align-center"></i>
-                                            </button>
-                                            <button type="button" onclick="f7(this)">
-                                                <i class="fa-solid fa-align-right"></i>
-                                            </button>
-                                        </div>
-                                        <div class="fourth box">
-                                            <button type="button" onclick="f8(this)">aA</button>
-                                            <button type="button" onclick="f9()">
-                                                <i class="fa-solid fa-text-slash"></i>
-                                            </button>
-                                            <input type="color" onchange="f10(this)">
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="colVision">
-                                        <textarea id="textarea1" placeholder="Your text here "><?= $vision ?></textarea>
-                                    </div>
-                                </div>
+                                <!-- Quill editor container -->
+                                <div id="editorVision" style="height: 200px;"><?= $vision ?></div>
                             </section>
                         </div>
                     </div>
+
                 </div>
             </div>
 
             <div class="update-Container">
                <button type="submit">Update</button>
             </div>
+
         </form>
     </div>
 
-</body>
 
+     <!-- Include Quill library -->
+     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        // Initialize Quill editors
+        var editorDescription = new Quill('#editorDescription', {
+            theme: 'snow'
+        });
+
+        var editorMission = new Quill('#editorMission', {
+            theme: 'snow'
+        });
+
+        var editorVision = new Quill('#editorVision', {
+            theme: 'snow'
+        });
+
+        // Function to get HTML content from Quill editors and set them to hidden textarea fields
+        function updateHiddenFields() {
+            document.getElementById('textareaDescription').value = editorDescription.root.innerHTML;
+            document.getElementById('textareaMission').value = editorMission.root.innerHTML;
+            document.getElementById('textareaVision').value = editorVision.root.innerHTML;
+        }
+
+        // // Call the updateHiddenFields function before submitting the form
+        // document.querySelector('form').addEventListener('submit', function () {
+        //     updateHiddenFields();
+        // });
+    </script>
+</body>
 </html>
 
 <script>
@@ -378,87 +290,6 @@ function previewHistoryImage() {
         preview.innerHTML = '';
     }
 }
-
-const textarea = document.getElementById("textarea1");
-
-function f1(e) {
-    let value = e.value;
-    textarea.style.fontSize = value + "px";
-}
-
-function f2(e) {
-    if (textarea.style.fontWeight == "bold") {
-        textarea.style.fontWeight = "normal";
-        e.classList.remove("active");
-    }
-    else {
-        textarea.style.fontWeight = "bold";
-        e.classList.add("active");
-    }
-}
-
-function f3(e) {
-    if (textarea.style.fontStyle == "italic") {
-        textarea.style.fontStyle = "normal";
-        e.classList.remove("active");
-    }
-    else {
-        textarea.style.fontStyle = "italic";
-        e.classList.add("active");
-    }
-}
-
-function f4(e) {
-    if (textarea.style.textDecoration == "underline") {
-        textarea.style.textDecoration = "none";
-        e.classList.remove("active");
-    }
-    else {
-        textarea.style.textDecoration = "underline";
-        e.classList.add("active");
-    }
-}
-
-function f5(e) {
-    textarea.style.textAlign = "left";
-}
-
-function f6(e) {
-    textarea.style.textAlign = "center";
-}
-
-function f7(e) {
-    textarea.style.textAlign = "right";
-}
-
-function f8(e) {
-    if (textarea.style.textTransform == "uppercase") {
-        textarea.style.textTransform = "none";
-        e.classList.remove("active");
-    }
-    else {
-        textarea.style.textTransform = "uppercase";
-        e.classList.add("active");
-    }
-}
-
-function f9() {
-    textarea.style.fontWeight = "normal";
-    textarea.style.textAlign = "left";
-    textarea.style.fontStyle = "normal";
-    textarea.style.textTransform = "capitalize";
-    textarea.value = "";
-}
-
-function f1(e) {
-    let value = e.value;
-    textarea.style.color = value;
-}
-
-window.addEventListener('load', () => {
-    textarea.value = "";
-});
-
 
 
 </script>

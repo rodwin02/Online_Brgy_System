@@ -128,21 +128,31 @@ while($row = $result->fetch_assoc()) {
             </div>
 
             <div class="unang-layer-to">
-                <!-- Dito nakalagay yung date,time, and location based dun sa nireport nya front end  -->
-
                 <div class="unang-left">
                     <label for="name">Complainant:</label>
-                    <input id="fullnameComplain" type="text" name="complainant">
+                    <div class="input-cont-complain">
+                        <input type="text" name="complainant_fname" id="complainant_fname" placeholder="First Name" required>
+                        <input type="text" name="complainant_mname" id="complainant_mname" placeholder="Middle Name">
+                        <input type="text" name="complainant_lname" id="complainant_lname" placeholder="Last Name" required>
+                        <input type="text" name="complainant_suffix" id="complainant_suffix" placeholder="Suffix">
+                    </div>
 
-                    <label for="time">Time:</label>
-                    <input id="timeComplain" type="time" name="time">
-                </div>
-                <div class="unang-right">
-                    <label for="date">Date:</label>
-                    <input id="dateComplain" type="date" name="date">
-
-                    <label for="location">Location:</label>
-                    <input id="locationComplain" type="text" name="location">
+                    <div class="input-complain222"> 
+                        <div class="input-cont-complain2">
+                           <label for="time">Time:</label>
+                           <input id="timeComplain" type="time" name="time">
+                        </div>
+                        
+                        <div class="input-cont-complain2">
+                           <label for="date">Date:</label>
+                           <input id="dateComplain" type="date" name="date">
+                        </div>
+                       
+                        <div class="input-cont-complain2">
+                           <label for="location">Location:</label>
+                           <input id="locationComplain" type="text" name="location" placeholder="Street Name">
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -152,15 +162,19 @@ while($row = $result->fetch_assoc()) {
             </div>
 
             <div class="pangatlong-layer-to">
-                <label for="statusComplain">Status</label>
-                <select id="statusComplain" name="statusComplain" required>
-                    <option value="">Select Status</option>
-                    <option value="active">Active</option>
-                    <option value="schedule">Schedule</option>
-                </select>
-            </div>
+                <div class="statusComplain_cont">
+                    <label for="statusComplain">Status</label>
+                    <select id="statusComplain" name="statusComplain" required>
+                        <option value="">Select Status</option>
+                        <option value="active">Active</option>
+                        <option value="schedule">Schedule</option>
+                    </select>
+                </div>
 
-            <input class="submitComplain" type="submit" value="Create">
+                <div class="submit_cont">
+                   <button type="button">Submit</button>
+                </div>
+            </div>
         </form>
     </div>
     <!-- END ADD COMPLAIN -->
@@ -178,17 +192,29 @@ while($row = $result->fetch_assoc()) {
 
                 <div class="unang-left">
                     <label for="name">Complainant:</label>
-                    <input id="fullnameComplain1" type="text" name="complainant">
+                    <div class="input-cont-complain">
+                        <input type="text" name="complainant_fname" id="complainant_fname1" placeholder="First Name" required>
+                        <input type="text" name="complainant_mname" id="complainant_mname1" placeholder="Middle Name">
+                        <input type="text" name="complainant_lname" id="complainant_lname1" placeholder="Last Name" required>
+                        <input type="text" name="complainant_suffix" id="complainant_suffix1" placeholder="Suffix">
+                    </div>
 
-                    <label for="time">Time:</label>
-                    <input id="timeComplain1" step="any" type="time" name="time">
-                </div>
-                <div class="unang-right">
-                    <label for="date">Date:</label>
-                    <input id="dateComplain1" type="date" name="date">
-
-                    <label for="location">Location:</label>
-                    <input id="locationComplain1" type="text" name="location">
+                    <div class="input-complain222"> 
+                        <div class="input-cont-complain2">
+                           <label for="time">Time:</label>
+                           <input id="timeComplain1" type="time" name="time">
+                        </div>
+                        
+                        <div class="input-cont-complain2">
+                           <label for="date">Date:</label>
+                           <input id="dateComplain1" type="date" name="date">
+                        </div>
+                       
+                        <div class="input-cont-complain2">
+                           <label for="location">Location:</label>
+                           <input id="locationComplain1" type="text" name="location" placeholder="Street Name">
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -198,17 +224,22 @@ while($row = $result->fetch_assoc()) {
             </div>
 
             <div class="pangatlong-layer-to">
-                <label for="statusComplain">Status</label>
-                <select id="statusComplain1" name="statusComplain" required>
-                    <option value="">Select Status</option>
-                    <option value="active">Active</option>
-                    <option value="schedule">Schedule</option>
-                    <option value="settled">Settled</option>
-                </select>
+                <div class="statusComplain_cont">
+                    <label for="statusComplain">Status</label>
+                    <select id="statusComplain1" name="statusComplain" required>
+                        <option value="">Select Status</option>
+                        <option value="active">Active</option>
+                        <option value="schedule">Schedule</option>
+                    </select>
+                </div>
+
+                <div class="submit_cont">
+                   <button type="button">Submit</button>
+                </div>
             </div>
 
             <input type="hidden" name="complain_id" id="complain_id">
-            <input class="submitComplain" type="submit" value="Create">
+            
         </form>
     </div>
     <!-- END EDIT COMPLAIN -->
@@ -268,48 +299,56 @@ deleteLink.forEach((del, index) => {
         modalDelete[index].style.display = 'none';
     });
 })
+// JavaScript code to handle pagination
+const table = document.getElementById('table');
+const rows = table.querySelectorAll('tbody tr');
+const totalRows = rows.length;
+const rowsPerPage = 10;
+let currentPage = 1;
 
-    // JavaScript code to handle pagination
-    const table = document.getElementById('table');
-    const rows = table.querySelectorAll('tbody tr');
-    const totalRows = rows.length;
-    const rowsPerPage = 10;
-    let currentPage = 1;
+function showRows(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
 
-    function showRows(page) {
-        const start = (page - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
-
-        rows.forEach((row, index) => {
-            if (index >= start && index < end) {
-                row.style.display = 'table-row';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
-
-    function updatePaginationButtons() {
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const pageNumbers = document.getElementById('pageNumbers');
-
-        prevBtn.disabled = currentPage === 1;
-        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
-
-        pageNumbers.textContent = currentPage;
-    }
-
-    // Initial setup
-    showRows(currentPage);
-    updatePaginationButtons();
-
-    // Previous button click event
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            showRows(currentPage);
-            updatePaginationButtons();
+    rows.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
         }
     });
+}
+
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+    pageNumbers.textContent = currentPage;
+}
+
+// Initial setup
+showRows(currentPage);
+updatePaginationButtons();
+
+// Previous button click event
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+
+// Next button click event
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+        currentPage++;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
 </script>

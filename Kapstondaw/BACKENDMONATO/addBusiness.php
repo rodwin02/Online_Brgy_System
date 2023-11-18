@@ -29,57 +29,62 @@
             <p>Go Back</p>
         </a>
 
-        <form action="./model/add_business.php" method="post">
+        <form action="./model/add_business.php" method="post" class="formAddBusiness">
             <div class="BusinessCont">
                 <div class="businessHeader">
                     <p>Business Registration</p>
                 </div>
                 <div class="businessBody">
-                    <div class="left-cont">
-                        <div class="input-business">
-                            <label for="taxPayer_name">Taxpayer Name</label>
-                            <input type="text" name="taxPayer_lname" id="taxPayer_lname" placeholder="Last Name">
-                            <input type="text" name="taxPayer_fname" id="taxPayer_fname" placeholder="First Name">
+                    <div class="left_cont">
+                        <label for="taxPayer_name">Taxpayer Name</label>
+                        <div class="input_business">
+                            <input type="text" name="taxPayer_lname" id="taxPayer_lname" placeholder="Last Name" required>
+                            <input type="text" name="taxPayer_fname" id="taxPayer_fname" placeholder="First Name" required>
                             <input type="text" name="taxPayer_mname" id="taxPayer_mname" placeholder="Middle Name">
                             <input type="text" name="taxPayer_suffix" id="taxPayer_suffix" placeholder="Suffix">
                         </div>
-                        <div class="input-business">
-                            <label for="taxPayer_name">Location</label>
+                        <label for="taxPayer_name">Location</label>
+                        <div class="input_business">
                             <input type="text" name="taxPayer_houseNo" id="taxPayer_houseNo" placeholder="House no.">
-                            <input type="text" name="taxPayer_street" id="taxPayer_street" placeholder="Street Name">
+                            <input type="text" name="taxPayer_street" id="taxPayer_street" placeholder="Street Name" required>
                             <input type="text" name="taxPayer_subdivision" id="taxPayer_subdivision"
                                 placeholder="Subdivision Name">
                         </div>
-                        <label for="businessType">Type</label>
-                        <select name="businessType" id="businessType">
+                        <label for="businessType">Business Type</label>
+                        <div class="input_business">
+                        <select name="businessType" id="businessType" required>
                             <option value="">Select Type</option>
-                            <option value="New">New</option>
-                            <option value="Renewal">Renewal</option>
-                        </select>
-                    </div>
-
-                    <div class="right-cont">
-                        <div class="input-business">
-                            <label for="business_name">Taxpayer Name</label>
-                            <input type="text" name="business_name" id="business_name" placeholder="Business Name">
-                        </div>
-                        <div class="input-business">
-                            <label for="date">Date</label>
-                            <input type="date">
-
-                            <label for="businessStatus">Status</label>
-                            <select name="businessStatus" id="businessStatus">
-                                <option value="">Select Status</option>
                                 <option value="Food">Food</option>
                                 <option value=""></option>
-                            </select>
+                        </select>
+                        </div>
+                    </div>
+
+                    <div class="right_cont">
+                        <label for="business_name">Business Name</label>
+                        <div class="input_business">
+                            <input type="text" name="business_name" id="business_name" placeholder="Business Name" required>
                         </div>
 
+                        <label for="date">Start Date</label>
+                        <div class="input_business" required>
+                            <input type="date">
+                        </div>
+                       
+                        <label for="businessStatus">Business Status</label>
+                        <div class="input_business">
+                        <select name="businessStatus" id="businessStatus" required>
+                                <option value="">Select Status</option>
+                                <option value="New">New</option>
+                                <option value="Renewal">Renewal</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="submitHouseholdCont">
-                <button type="submit" class="">Create</button>
+            
+            <div class="submitBussinessCont">
+                   <button type="submit" class="">Create</button>
             </div>
 
         </form>

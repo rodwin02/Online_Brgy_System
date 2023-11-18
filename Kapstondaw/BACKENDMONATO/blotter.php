@@ -127,10 +127,20 @@ while($row = $result->fetch_assoc()) {
             <div class="hanggang-apatBlotter">
                 <div class="unang-layerBlotter">
                     <label for="complainant">Complainant</label>
-                    <input id="complanantBlotter" type="text" name="complainant" required>
+                    <div class="input-cont-blotter">
+                        <input type="text" name="complainant_fname" id="complainant_fname" placeholder="First Name" required>
+                        <input type="text" name="complainant_mname" id="complainant_mname" placeholder="Middle Name">
+                        <input type="text" name="complainant_lname" id="complainant_lname" placeholder="Last Name" required>
+                        <input type="text" name="complainant_suffix" id="complainant_suffix" placeholder="Suffix">
+                    </div>
 
                     <label for="respondent">Repondent</label>
-                    <input id="respondenttBlotter" type="text" name="respondent" required>
+                    <div class="input-cont-blotter">
+                        <input type="text" name="respondent_fname" id="respondent_fname" placeholder="First Name" required>
+                        <input type="text" name="respondent_mname" id="respondent_mname" placeholder="Middle Name">
+                        <input type="text" name="respondent_lname" id="respondent_lname" placeholder="Last Name" required>
+                        <input type="text" name="respondent_suffix" id="respondent_suffix" placeholder="Suffix">
+                    </div>
 
                 </div>
 
@@ -192,10 +202,20 @@ while($row = $result->fetch_assoc()) {
             <div class="hanggang-apatBlotter">
                 <div class="unang-layerBlotter">
                     <label for="complainant">Complainant</label>
-                    <input id="complanantBlotter1" type="text" name="complainant" required>
+                    <div class="input-cont-blotter">
+                        <input type="text" name="complainant_fname" id="complainant_fname1" placeholder="First Name" required>
+                        <input type="text" name="complainant_mname" id="complainant_mname1" placeholder="Middle Name">
+                        <input type="text" name="complainant_lname" id="complainant_lname1" placeholder="Last Name" required>
+                        <input type="text" name="complainant_suffix" id="complainant_suffix1" placeholder="Suffix">
+                    </div>
 
                     <label for="respondent">Repondent</label>
-                    <input id="respondenttBlotter1" type="text" name="respondent" required>
+                    <div class="input-cont-blotter">
+                        <input type="text" name="respondent_fname" id="respondent_fname1" placeholder="First Name" required>
+                        <input type="text" name="respondent_mname" id="respondent_mname1" placeholder="Middle Name">
+                        <input type="text" name="respondent_lname" id="respondent_lname1" placeholder="Last Name" required>
+                        <input type="text" name="respondent_suffix" id="respondent_suffix1" placeholder="Suffix">
+                    </div>
 
                 </div>
 
@@ -302,46 +322,55 @@ deleteLink.forEach((del, index) => {
 })
 
     // JavaScript code to handle pagination
-    const table = document.getElementById('table');
-    const rows = table.querySelectorAll('tbody tr');
-    const totalRows = rows.length;
-    const rowsPerPage = 10;
-    let currentPage = 1;
+const table = document.getElementById('table');
+const rows = table.querySelectorAll('tbody tr');
+const totalRows = rows.length;
+const rowsPerPage = 10;
+let currentPage = 1;
 
-    function showRows(page) {
-        const start = (page - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
+function showRows(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
 
-        rows.forEach((row, index) => {
-            if (index >= start && index < end) {
-                row.style.display = 'table-row';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
-
-    function updatePaginationButtons() {
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const pageNumbers = document.getElementById('pageNumbers');
-
-        prevBtn.disabled = currentPage === 1;
-        nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
-
-        pageNumbers.textContent = currentPage;
-    }
-
-    // Initial setup
-    showRows(currentPage);
-    updatePaginationButtons();
-
-    // Previous button click event
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            showRows(currentPage);
-            updatePaginationButtons();
+    rows.forEach((row, index) => {
+        if (index >= start && index < end) {
+            row.style.display = 'table-row';
+        } else {
+            row.style.display = 'none';
         }
     });
+}
+
+function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageNumbers = document.getElementById('pageNumbers');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === Math.ceil(totalRows / rowsPerPage);
+
+    pageNumbers.textContent = currentPage;
+}
+
+// Initial setup
+showRows(currentPage);
+updatePaginationButtons();
+
+// Previous button click event
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
+
+// Next button click event
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+        currentPage++;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
 </script>
