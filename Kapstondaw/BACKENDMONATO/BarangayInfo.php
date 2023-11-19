@@ -127,58 +127,61 @@
                             <div id="MenuPreview" class="image-preview">
                                 <img src="./uploads/logo/<?= $header_image ?>" alt="">
                             </div>
-                            <input type="file" name="header_image" id="menu-img" accept="image/*" onchange="previewMenu()">
+                            <input type="file" name="header_image" id="menu-img" accept="image/*"
+                                onchange="previewMenu()">
                         </div>
                     </div>
                     <div class="historical-desc">
                         <label for="history-desc">Historical Background Description</label>
                         <div class="history-center">
-                        <section>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="first box">
-                                        <input id="font-size" type="number" value="16" min="1" max="100" onchange="f1(this)">
-                                    </div>
-                                    <div class="second box">
-                                        <button type="button" onclick="f2(this)">
-                                            <i class="fa-solid fa-bold"></i>
-                                        </button>
-                                        <button type="button" onclick="f3(this)">
-                                            <i class="fa-solid fa-italic"></i>
-                                        </button>
-                                        <button type="button" onclick="f4(this)">
-                                            <i class="fa-solid fa-underline"></i>
-                                        </button>
-                                    </div>
-                                    <div class="third box">
-                                        <button type="button" onclick="f5(this)">
-                                            <i class="fa-solid fa-align-left"></i>
-                                        </button>
-                                        <button type="button" onclick="f6(this)">
-                                            <i class="fa-solid fa-align-center"></i>
-                                        </button>
-                                        <button type="button" onclick="f7(this)">
-                                            <i class="fa-solid fa-align-right"></i>
-                                        </button>
-                                    </div>
-                                    <div class="fourth box">
-                                        <button type="button" onclick="f8(this)">aA</button>
-                                        <button type="button" onclick="f9()">
-                                            <i class="fa-solid fa-text-slash"></i>
-                                        </button>
-                                        <input type="color" onchange="f10(this)">
+                            <section>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="first box">
+                                            <input id="font-size" type="number" value="16" min="1" max="100"
+                                                onchange="f1(this)">
+                                        </div>
+                                        <div class="second box">
+                                            <button type="button" onclick="f2(this)">
+                                                <i class="fa-solid fa-bold"></i>
+                                            </button>
+                                            <button type="button" onclick="f3(this)">
+                                                <i class="fa-solid fa-italic"></i>
+                                            </button>
+                                            <button type="button" onclick="f4(this)">
+                                                <i class="fa-solid fa-underline"></i>
+                                            </button>
+                                        </div>
+                                        <div class="third box">
+                                            <button type="button" onclick="f5(this)">
+                                                <i class="fa-solid fa-align-left"></i>
+                                            </button>
+                                            <button type="button" onclick="f6(this)">
+                                                <i class="fa-solid fa-align-center"></i>
+                                            </button>
+                                            <button type="button" onclick="f7(this)">
+                                                <i class="fa-solid fa-align-right"></i>
+                                            </button>
+                                        </div>
+                                        <div class="fourth box">
+                                            <button type="button" onclick="f8(this)">aA</button>
+                                            <button type="button" onclick="f9()">
+                                                <i class="fa-solid fa-text-slash"></i>
+                                            </button>
+                                            <input type="color" onchange="f10(this)">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col">
-                                    <textarea id="textarea1" placeholder="Your text here "><?= $historicalBackground ?></textarea>
+                                <br>
+                                <div class="row">
+                                    <div class="col">
+                                        <textarea id="textarea1" name="historicalBackground"
+                                            placeholder=" Your text here "><?= $historicalBackground ?></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
 
-                        <script src="app.js"></script>
+                            <script src=" app.js"></script>
                         </div>
                     </div>
                     <div class="historical-img">
@@ -196,7 +199,8 @@
                                 <div class="row">
                                     <div class="colMission">
                                         <div class="first box">
-                                            <input id="font-size1" type="number" value="16" min="1" max="100" onchange="f1(this)">
+                                            <input id="font-size1" type="number" value="16" min="1" max="100"
+                                                onchange="f1(this)">
                                         </div>
                                         <div class="second box">
                                             <button type="button" onclick="f2(this)">
@@ -232,7 +236,8 @@
                                 <br>
                                 <div class="row">
                                     <div class="colMission">
-                                        <textarea id="textarea1" placeholder="Your text here "><?= $mission ?></textarea>
+                                        <textarea id="textarea1" name="mission"
+                                            placeholder="Your text here "><?= $mission ?></textarea>
                                     </div>
                                 </div>
                             </section>
@@ -243,7 +248,8 @@
                                 <div class="row">
                                     <div class="colVision">
                                         <div class="first box">
-                                            <input id="font-size1" type="number" value="16" min="1" max="100" onchange="f1(this)">
+                                            <input id="font-size1" type="number" value="16" min="1" max="100"
+                                                onchange="f1(this)">
                                         </div>
                                         <div class="second box">
                                             <button type="button" onclick="f2(this)">
@@ -279,7 +285,8 @@
                                 <br>
                                 <div class="row">
                                     <div class="colVision">
-                                        <textarea id="textarea1" placeholder="Your text here "><?= $vision ?></textarea>
+                                        <textarea id="textarea1" name="vision"
+                                            placeholder="Your text here "><?= $vision ?></textarea>
                                     </div>
                                 </div>
                             </section>
@@ -289,7 +296,7 @@
             </div>
 
             <div class="update-Container">
-               <button type="submit">Update</button>
+                <button type="submit">Update</button>
             </div>
         </form>
     </div>
@@ -379,86 +386,79 @@ function previewHistoryImage() {
     }
 }
 
-const textarea = document.getElementById("textarea1");
+// const textarea = document.getElementById("textarea1");
 
-function f1(e) {
-    let value = e.value;
-    textarea.style.fontSize = value + "px";
-}
+// function f1(e) {
+//     let value = e.value;
+//     textarea.style.fontSize = value + "px";
+// }
 
-function f2(e) {
-    if (textarea.style.fontWeight == "bold") {
-        textarea.style.fontWeight = "normal";
-        e.classList.remove("active");
-    }
-    else {
-        textarea.style.fontWeight = "bold";
-        e.classList.add("active");
-    }
-}
+// function f2(e) {
+//     if (textarea.style.fontWeight == "bold") {
+//         textarea.style.fontWeight = "normal";
+//         e.classList.remove("active");
+//     } else {
+//         textarea.style.fontWeight = "bold";
+//         e.classList.add("active");
+//     }
+// }
 
-function f3(e) {
-    if (textarea.style.fontStyle == "italic") {
-        textarea.style.fontStyle = "normal";
-        e.classList.remove("active");
-    }
-    else {
-        textarea.style.fontStyle = "italic";
-        e.classList.add("active");
-    }
-}
+// function f3(e) {
+//     if (textarea.style.fontStyle == "italic") {
+//         textarea.style.fontStyle = "normal";
+//         e.classList.remove("active");
+//     } else {
+//         textarea.style.fontStyle = "italic";
+//         e.classList.add("active");
+//     }
+// }
 
-function f4(e) {
-    if (textarea.style.textDecoration == "underline") {
-        textarea.style.textDecoration = "none";
-        e.classList.remove("active");
-    }
-    else {
-        textarea.style.textDecoration = "underline";
-        e.classList.add("active");
-    }
-}
+// function f4(e) {
+//     if (textarea.style.textDecoration == "underline") {
+//         textarea.style.textDecoration = "none";
+//         e.classList.remove("active");
+//     } else {
+//         textarea.style.textDecoration = "underline";
+//         e.classList.add("active");
+//     }
+// }
 
-function f5(e) {
-    textarea.style.textAlign = "left";
-}
+// function f5(e) {
+//     textarea.style.textAlign = "left";
+// }
 
-function f6(e) {
-    textarea.style.textAlign = "center";
-}
+// function f6(e) {
+//     textarea.style.textAlign = "center";
+// }
 
-function f7(e) {
-    textarea.style.textAlign = "right";
-}
+// function f7(e) {
+//     textarea.style.textAlign = "right";
+// }
 
-function f8(e) {
-    if (textarea.style.textTransform == "uppercase") {
-        textarea.style.textTransform = "none";
-        e.classList.remove("active");
-    }
-    else {
-        textarea.style.textTransform = "uppercase";
-        e.classList.add("active");
-    }
-}
+// function f8(e) {
+//     if (textarea.style.textTransform == "uppercase") {
+//         textarea.style.textTransform = "none";
+//         e.classList.remove("active");
+//     } else {
+//         textarea.style.textTransform = "uppercase";
+//         e.classList.add("active");
+//     }
+// }
 
-function f9() {
-    textarea.style.fontWeight = "normal";
-    textarea.style.textAlign = "left";
-    textarea.style.fontStyle = "normal";
-    textarea.style.textTransform = "capitalize";
-    textarea.value = "";
-}
+// function f9() {
+//     textarea.style.fontWeight = "normal";
+//     textarea.style.textAlign = "left";
+//     textarea.style.fontStyle = "normal";
+//     textarea.style.textTransform = "capitalize";
+//     textarea.value = "";
+// }
 
-function f1(e) {
-    let value = e.value;
-    textarea.style.color = value;
-}
+// function f1(e) {
+//     let value = e.value;
+//     textarea.style.color = value;
+// }
 
-window.addEventListener('load', () => {
-    textarea.value = "";
-});
-
-
-
+// window.addEventListener('load', () => {
+//     textarea.value = "";
+// });
 </script>

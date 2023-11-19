@@ -58,7 +58,7 @@ document.addEventListener("scroll", (e) => {
 // * End of subHeader
 
 // * Services
-const activeForm = document.querySelectorAll(".active-form");
+const activeForm = document.querySelectorAll(".main-form");
 
 const serviceBtn = document.querySelectorAll(".service-btn");
 const serviceEl = document.querySelectorAll(".active-service");
@@ -94,6 +94,57 @@ serviceBtn.forEach((btn, i) => {
   });
 });
 
+// * REPORT
+
+const reportBtn = document.querySelectorAll(".report-btn");
+const activeReport = document.querySelectorAll(".active-report");
+const closeReport = document.querySelectorAll(".active-report-close");
+const submitReport = document.querySelectorAll(".active-report-submit");
+
+reportBtn.forEach((btn, i) => {
+  btn.addEventListener("click", () => {
+    activeReport[i].style.display = "block";
+    console.log("Service", i);
+
+    closeReport[i].addEventListener("click", () => {
+      activeReport[i].style.display = "none";
+    });
+  });
+});
+
+// ! confirmation for requesting and report
+
+const fakeBtn = document.querySelectorAll(".fake-btn");
+const confirmation = document.querySelectorAll(".confirmation");
+const cancelRequest = document.querySelectorAll(".cancel-request");
+
+fakeBtn.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    confirmation[index].style.display = "flex";
+    activeForm[index].style.display = "none";
+  });
+
+  cancelRequest[index].addEventListener("click", () => {
+    confirmation[index].style.display = "none";
+    activeForm[index].style.display = "block";
+  });
+});
+
+// * CANCEL REQUEST
+const cancelItem = document.querySelectorAll(".cancel-item");
+const cancelContainer = document.querySelectorAll(".cancel-container");
+const abortCancelItem = document.querySelectorAll(".abort-cancel-item");
+
+cancelItem.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    cancelContainer[index].style.display = "flex";
+  });
+
+  abortCancelItem[index].addEventListener("click", () => {
+    cancelContainer[index].style.display = "none";
+  });
+});
+
 // TODO it shows the message but it goes to the top to show the message
 document.addEventListener("DOMContentLoaded", function () {
   if (successEl) {
@@ -117,18 +168,3 @@ document.addEventListener("DOMContentLoaded", function () {
 // if (cartBody && cartBody.rows.length > 10) {
 //   cartBody.classList.add("scroll");
 // }
-
-// ! confirmation for requesting
-const fakeBtn = document.querySelectorAll(".fake-btn");
-const confirmation = document.querySelectorAll(".confirmation");
-const cancelRequest = document.querySelectorAll(".cancel-request");
-
-fakeBtn.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    confirmation[index].style.display = "flex";
-  });
-
-  cancelRequest[index].addEventListener("click", () => {
-    confirmation[index].style.display = "none";
-  });
-});
