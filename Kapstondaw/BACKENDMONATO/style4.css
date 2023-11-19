@@ -224,6 +224,7 @@ Z/* START CONTENT MANAGEMENT CSS*/
   flex-direction: column;
   align-self: center;
   width: 98%;
+  margin-bottom: 30px;
 }
 .pagination {
   display: flex;
@@ -297,7 +298,11 @@ table tbody tr #Status {
   border: none;
   cursor: pointer;
   background: none;
-  
+  height: 30px;
+  width: 75%;
+}
+.table #statusForm select {
+  width: 100%;
 }
 
 table thead tr th {
@@ -1177,10 +1182,12 @@ td {
 
 .input-form .bodyInfo .leftInfo .inputFullname input {
   width: 25%;
+  height: 28.5px;
   fill: #FFF;
-  height: 30px;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.50);
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
 }
 .input-form .bodyInfo .leftInfo .inputFullname .suffix {
   width: 10%;
@@ -1208,11 +1215,12 @@ td {
 }
 .input-form .bodyInfo .leftInfo .inputDob input {
   width: 100%;
+  height: 28.5px;
   fill: #FFF;
-  height: 30px;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.50);
-  padding-right: 5px;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
 }
 
 .input-form .bodyInfo .leftInfo .inputPob {
@@ -1238,11 +1246,12 @@ td {
 }
 .input-form .bodyInfo .leftInfo .inputPob input {
   width: 100%;
+  height: 28.5px;
   fill: #FFF;
-  height: 30px;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.50);
-  padding-right: 5px;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
 }
 
 .input-form .bodyInfo .leftInfo .inputCitizenship {
@@ -1268,11 +1277,12 @@ td {
 }
 .input-form .bodyInfo .leftInfo .inputCitizenship input {
   width: 100%;
+  height: 28.5px;
   fill: #FFF;
-  height: 30px;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.50);
-  padding-right: 5px;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
 }
 
 .input-form .bodyInfo .leftInfo .inputPhoneNo {
@@ -1288,21 +1298,14 @@ td {
   line-height: normal;
 }
 
-.input-form .bodyInfo .leftInfo .inputPhoneNo p span {
-  color: #E94949;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
 .input-form .bodyInfo .leftInfo .inputPhoneNo input {
   width: 100%;
+  height: 28.5px;
   fill: #FFF;
-  height: 30px;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.50);
-  padding-right: 5px;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
 }
 
 .input-form .bodyInfo .leftInfo .inputEmail {
@@ -1318,21 +1321,14 @@ td {
   line-height: normal;
 }
 
-.input-form .bodyInfo .leftInfo .inputEmail p span {
-  color: #E94949;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
 .input-form .bodyInfo .leftInfo .inputEmail input {
   width: 100%;
+  height: 28.5px;
   fill: #FFF;
-  height: 30px;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.50);
-  padding-right: 5px;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
 }
 
 .input-form .bodyInfo .rightInfo {
@@ -1364,10 +1360,12 @@ td {
 
 .input-form .bodyInfo .rightInfo .inputAddress input {
   width: 35%;
+  height: 28.5px;
   fill: #FFF;
-  height: 30px;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.50);
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
 }
 .input-form .bodyInfo .rightInfo .inputAddress .houseNo {
   width: 17%;
@@ -1396,10 +1394,12 @@ td {
 
 .input-form .bodyInfo .rightInfo .inputOccupation input {
   width: 100%;
+  height: 28.5px;
   fill: #FFF;
-  height: 30px;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.50);
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
 }
 
 
@@ -1424,12 +1424,15 @@ td {
   line-height: normal;
   }
 
-.input-form .bodyInfo .rightInfo .inputSex input {
+.input-form .bodyInfo .rightInfo .inputSex select {
   width: 100%;
+  height: 28.5px;
   fill: #FFF;
-  height: 30px;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.50);
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+  
 }
 
 
@@ -1457,10 +1460,12 @@ td {
 
 .input-form .bodyInfo .rightInfo .inputCivilStatus select {
   width: 100%;
+  height: 28.5px;
   fill: #FFF;
-  height: 30px;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.50);
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
 }
 .input-form .bodyInfo .rightInfo .inputVoterStatus {
   margin-bottom: 10px;
@@ -1485,11 +1490,13 @@ td {
   }
 
 .input-form .bodyInfo .rightInfo .inputVoterStatus select {
-  width: 100%;
+ width: 100%;
+  height: 28.5px;
   fill: #FFF;
-  height: 30px;
-  stroke-width: 1px;
-  stroke: rgba(0, 0, 0, 0.50);
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
 }
 .input-form .bodyInfo .rightInfo .inputProfile {
   margin-bottom: 10px;
@@ -1562,7 +1569,11 @@ td {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
+}
+.input-table .main-table {
+  width: 100%;
+  
+  border-radius: 0px;
 }
 .input-table thead {
   background-color: #4b804b27;
@@ -1935,7 +1946,7 @@ td {
   height: 550px;
   justify-content: center;
   align-items: center;
-  padding: 10px 0px;
+
 }
 
 .barangay-layer2 .historical-img label {
@@ -1978,7 +1989,7 @@ td {
  
   width: 100%;
   margin-left: 30px;
-  margin-bottom: 20px;
+ 
 }
 .barangay-layer2 .historical-desc label {
   color: #000000;
@@ -1999,84 +2010,7 @@ td {
   width: 100%;
 }
 .history-center section {
-  height: 500px;
-  width: 94%;
-}
-
-.history-center .col {
-
-  width: 100%;
-  border-radius: 4px;
-  box-shadow: #00000059 0px 5px 15px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  padding: 5px 0px;
-  
-}
-
-.box {
-  display: inline-block;
-  padding: 0 5px;
-}
-
-.col .first, .second, .third {
-  border-right: 2px solid #00000033;
-}
-
-.col .first input[type=number] {
-  outline: none;
-  border: none;
-  width: 60px;
-  color: #000000;
-  font-size: 14px;
-  padding: 5px 5px;
-  margin-left: 10px;
-  background-color: #99999948;
-  border-radius: 5px;
-}
-
-.col button {
-  border: none;
-  color: #0e0505;
-  font-size: 18px;
-  font-weight: 300;
-  background-color: transparent;
-  padding: 0% 16px;
-  border-radius: 3px;
-  cursor: pointer;
-  user-select: none;
-}
-.col button:hover {
-  background-color: #40576d1a;
-}
-
-.col button.active {
-  background-color: #73b1e333;
-  color: #5271ff;
-}
-.col .third button:focus {
-  background-color: #73b1e333;
-  color: #5271ff;
-}
-
-.col input[type=color] {
-  width: 35px;
-  outline: none;
-  border: none;
-  background: none;
-}
-.barangay-layer2 .historical-desc .history-center textarea {
-  width: 100%;
-  height: 400px;
-  padding: 10px;
-  outline: none;
-  border: none;
-  resize: vertical;
-  background: #FFF;
+  width: 95%;
 }
 
 
@@ -2098,68 +2032,10 @@ td {
   align-items: center;
   margin-top: 5px;
   flex-direction: column;
-}
-.mission-cont .colMission {
-   width: 100%;
-  border-radius: 4px;
-  box-shadow: #00000059 0px 5px 15px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  padding: 5px 0px;
- 
+  padding: 0 152.5px;
   
 }
-.colMission .first, .second, .third {
-  border-right: 2px solid #00000033;
-}
-.colMission .first input[type=number] {
-  outline: none;
-  border: none;
-  width: 60px;
-  color: rgb(0, 0, 0);
-  font-size: 14px;
-  padding: 5px 5px;
-  margin-left: 10px;
-  background-color: #99999948;
-  border-radius: 5px;
-}
-
-.colMission button {
-  border: none;
-  color: #000000;
-  font-size: 18px;
-  font-weight: 300;
-  background-color: transparent;
-  padding: 0% 16px;
-  border-radius: 3px;
-  cursor: pointer;
-  user-select: none;
-}
-.colMission button:hover {
-  background-color: #40576d1a;
-}
-
-.colMission button.active {
-  background-color: #73b1e333;
-  color: #5271ff;
-}
-.colMission .third button:focus {
-  background-color: #73b1e333;
-  color: #5271ff;
-}
-
-.colMission input[type=color] {
-  width: 35px;
-  outline: none;
-  border: none;
-  background: none;
-}
-
-.barangay-layer2 .MissionVision-cont .mission-cont label {
+.barangay-layer2 .MissionVision-cont .mission-cont label{
   color: #000000;
   font-family: Poppins;
   font-size: 16px;
@@ -2169,16 +2045,8 @@ td {
   margin-bottom: 10px;
   margin-top: 20px;
 }
-.barangay-layer2 .MissionVision-cont .mission-cont textarea {
-  width: 100%;
-  height: 220px;
-  padding: 10px;
-  outline: none;
-  border: none;
-  resize: vertical;
-  border-radius: 4px;
 
-}
+
 .barangay-layer2 .MissionVision-cont .vision-cont {
   width: 50%;
   
@@ -2187,7 +2055,7 @@ td {
   align-items: center;
   margin-top: 5px;
   flex-direction: column;
- 
+  padding: 0 152.5px;
 }
 
 .barangay-layer2 .MissionVision-cont .vision-cont label {
@@ -2199,76 +2067,6 @@ td {
   line-height: normal;
   margin-bottom: 10px;
   margin-top: 20px;
-}
-.vision-cont .colVision {
-  width: 100%;
- border-radius: 4px;
- box-shadow: #00000059 0px 5px 15px;
-
- display: flex;
- justify-content: center;
- align-items: center;
- border-top-right-radius: 5px;
- border-top-left-radius: 5px;
- padding: 5px 0px;
-
-}
-.colVision .first, .second, .third {
- border-right: 2px solid #00000033;
-}
-.colVision .first input[type=number] {
- outline: none;
- border: none;
- width: 60px;
- color: rgb(0, 0, 0);
- font-size: 14px;
- padding: 5px 5px;
- margin-left: 10px;
- background-color: #99999948;
- border-radius: 5px;
-}
-
-.colVision button {
- border: none;
- color: #030101;
- font-size: 18px;
- font-weight: 300;
- background-color: transparent;
- padding: 0% 16px;
- border-radius: 3px;
- cursor: pointer;
- user-select: none;
-}
-.colVision button:hover {
- background-color: #40576d1a;
-}
-
-.colVision button.active {
- background-color: #73b1e333;
- color: #5271ff;
-}
-.colVision .third button:focus {
- background-color: #73b1e333;
- color: #5271ff;
-}
-
-.colVision input[type=color] {
- width: 35px;
- outline: none;
- border: none;
- background: none;
-}
-
-.barangay-layer2 .MissionVision-cont .vision-cont textarea {
-  width: 100%;
-  height: 220px;
-  padding: 10px;
-  outline: none;
-  border: none;
-  resize: vertical;
-  border-radius: 4px;
- 
-  
 }
 
 .addModal-cont {
@@ -2339,3 +2137,148 @@ td {
   background-color: #007236;
   color: white;
 }
+
+
+.formAddBusiness {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  margin-top: 50px;
+}
+
+.formAddBusiness .submitBussinessCont {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
+
+.formAddBusiness .submitBussinessCont button {
+  color: #007236;
+  border: 1px solid #007236;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.formAddBusiness .submitBussinessCont button:hover {
+  background-color: #007236;
+  color: white;
+}
+.formAddBusiness .BusinessCont {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  background-color: #f5f5f5;
+  flex-direction: column;
+  fill: #FFF;
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+  border-radius: 0px 0px 10px 10px;
+}
+.formAddBusiness .BusinessCont .businessHeader {
+  display: flex;
+  justify-content: flex-start;
+  
+  padding: 12px 30px;
+  background-color: #007236;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.formAddBusiness .BusinessCont .businessHeader p {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.formAddBusiness .BusinessCont .businessBody {
+  display: flex;
+  width: 100%;
+}
+.formAddBusiness .BusinessCont .businessBody .left_cont {
+  display: flex;
+  width: 50%;
+
+  flex-direction: column;
+  padding: 10px 20px;
+}
+.formAddBusiness .BusinessCont .businessBody .right_cont {
+  display: flex;
+  width: 50%;
+  
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.formAddBusiness .BusinessCont .businessBody .left_cont .input_business {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.formAddBusiness .BusinessCont .businessBody .right_cont .input_business {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.formAddBusiness .BusinessCont .businessBody .left_cont label {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 5px;
+}
+.formAddBusiness .BusinessCont .businessBody .right_cont label {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 5px;
+}
+
+.formAddBusiness .BusinessCont .businessBody .left_cont .input_business input, #businessType, #businessStatus {
+  width: 25%;
+  height: 32px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+  margin-left: 5px;
+}
+.formAddBusiness .BusinessCont .businessBody .right_cont .input_business input, #businessType, #businessStatus {
+  width: 25%;
+  height: 32px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+  margin-left: 5px;
+}
+.formAddBusiness .BusinessCont .businessBody .left_cont .input_business #taxPayer_suffix {
+  width: 20%;
+  height: 32px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+.formAddBusiness .BusinessCont .businessBody .right_cont .input_business #business_name {
+  width: 60%;
+  height: 32px;
+  fill: #FFF;
+  border-radius: 3px;
+  border: none;
+  padding-left: 5px;
+  border: solid 1px #007236;
+}
+

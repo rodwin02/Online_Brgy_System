@@ -717,4 +717,13 @@ document.getElementById('prevBtn').addEventListener('click', () => {
         updatePaginationButtons();
     }
 });
+
+// Next button click event
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPage < Math.ceil(totalRows / rowsPerPage)) {
+        currentPage++;
+        showRows(currentPage);
+        updatePaginationButtons();
+    }
+});
 </script>

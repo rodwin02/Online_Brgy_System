@@ -25,6 +25,7 @@ function calculateAge($dob) {
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="modal.css ?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
 </head>
 
@@ -37,7 +38,7 @@ function calculateAge($dob) {
 
     <div class="home_residents">
         <div class="first_layer">
-            <p>Household Records</p>
+            <p>Fullname Household</p>
             <a href="#">Logout</a>
         </div>
         <div class="second_layer">
@@ -46,9 +47,7 @@ function calculateAge($dob) {
                 <input class="searchBar" type="text" placeholder=" Enter text here">
                 <a href="#">Sort & Filter </a>
             </div>
-            <div class="add-cont">
-                <a href="archives/ArchiveHousehold.php" class="archiveResidents">Archive</a>
-            </div>
+           
         </div>
 
         <?php include './template/message.php' ?>
@@ -65,6 +64,7 @@ function calculateAge($dob) {
                         <th>Civil Status</th>
                         <th>Street</th>
                         <th>Email</th>
+                        <th>Household Head</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -80,8 +80,11 @@ function calculateAge($dob) {
                         <td><?= $row['civil_status'] ?></td>
                         <td><?= $row['street'] ?></td>
                         <td><?= $row['email'] ?></td>
+                        <td>
+                        <input type="radio" name="household_head" value="<?= $row['household_head'] ?>" <?= ($row['household_head'] == 'yes') ? 'checked' : '' ?>>
+                        </td>
                         <td class="actions">
-                            <a href="householdDisplay.php" class="edit" id="viewHousehold">View</a>
+                            <a href="#" class="edit" id="editMember">Edit</a>
 
                             <a href="#" class="delete delete-archive" id="delete-archive">Delete</a>
 
@@ -115,6 +118,107 @@ function calculateAge($dob) {
         </div>
     </div>
 
+    <div class="Edit_Member">
+        <form action="#" class="formEditMember">
+        <div class="headerInfo">
+                <p>Edit Information</p>
+                <img src="icons/closeWhiteColor.png" class="closeForm_editMember" alt="">
+            </div>
+            <div class="bodyInfo">
+                <div class="leftInfo">
+                    <div class="inputFullname">
+                        <p>Full name<span>*</span></p>
+                        <input type="text" name="lastName[]" id="lastName"
+                            oninput="this.value = this.value.toUpperCase()" placeholder="Last Name" required>
+                        <input type="text" name="firstName[]" id="firstName"
+                            oninput="this.value = this.value.toUpperCase()" placeholder="First Name" required>
+                        <input type="text" name="middleName[]" id="middleName"
+                            oninput="this.value = this.value.toUpperCase()" placeholder="Middle Name" required>
+                        <input type="text" name="ext[]" class="suffix" id="ext"
+                            oninput="this.value = this.value.toUpperCase()" placeholder="Suffix">
+                    </div>
+                    <div class="inputDob">
+                        <p>Date of Birth<span>*</span></p>
+                        <input type="date" name="dateBirth[]" id="dateBirth"
+                            oninput="this.value = this.value.toUpperCase()" required>
+                    </div>
+                    <div class="inputPob">
+                        <p>Place of Birth<span>*</span></p>
+                        <input type="text" name="placeBirth[]" id="placeBirth"
+                            oninput="this.value = this.value.toUpperCase()" required>
+                    </div>
+                    <div class="inputCitizenship">
+                        <p>Citizenship<span>*</span></p>
+                        <input type="text" name="citizenship[]" id="citizenship"
+                            oninput="this.value = this.value.toUpperCase()" required>
+                    </div>
+                    <div class="inputPhoneNo">
+                        <p>Phone number</p>
+                        <input type="number" name="phoneNo[]" id="phoneNo" placeholder="e.g., 09123456789">
+                    </div>
+                    <div class="inputEmail">
+                        <p>Email</p>
+                        <input type="text" name="email[]" id="email" placeholder="Enter your email">
+                    </div>
+                </div>
+
+                <div class="rightInfo">
+                    <div class="inputAddress">
+                        <p>Address<span>*</span></p>
+                        <input type="text" name="no[]" class="houseNo" id="no"
+                            oninput="this.value = this.value.toUpperCase()" placeholder="House No.">
+                        <input type="text" name="streetName[]" id="streetName"
+                            oninput="this.value = this.value.toUpperCase()" placeholder="Street Name" required>
+                        <input type="text" name="subdiName[]" id="subdiName"
+                            oninput="this.value = this.value.toUpperCase()" placeholder="Subdivision Name">
+                    </div>
+
+                    <div class="inputOccupation">
+                        <p>Occupation <span>*</span></p>
+                        <input type="text" name="occupation[]" id="occupation"
+                            oninput="this.value = this.value.toUpperCase()" required>
+                    </div>
+
+                    <div class="inputSex">
+                        <p>Sex <span>*</span></p>
+                        <select id="sex" name="sex[]" required>
+                            <option value=""></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="inputCivilStatus">
+                        <p>Civil Status<span>*</span></p>
+                        <select id="civilStatus" name="civilStatus[]" required>
+                            <option value=""></option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                        </select>
+                    </div>
+                    <div class="inputVoterStatus">
+                        <p>Voters Status <span></span></p>
+                        <select id="votersStatus" name="votersStatus[]" >
+                            <option value=""></option>
+                            <option value="Voters">Voters</option>
+                            <option value="Non-voters">Non-voters</option>
+                        </select>
+                    </div>
+                    <div class="inputProfile">
+                        <p>Image Profile</p>
+                        <input type="file" id="imageProfile" accept="image/*" onchange="previewProfile()">
+                    </div>
+
+                </div>
+            </div>
+            <div class="footerInfo">
+                <button type="button" class="addSaTable">Update</button>
+            </div>
+        </form>
+           
+    </div>
+
 </body>
 
 </html>
@@ -135,6 +239,20 @@ deleteLink.forEach((del, index) => {
         modalDelete[index].style.display = 'none';
     });
 })
+
+// EDIT RESIDENTS
+const editMember = document.getElementById('editMember');
+const EditMemberModal = document.querySelector('.Edit_Member');
+const closeFormeditMember = document.querySelector('.closeForm_editMember');
+
+editMember.addEventListener('click', function(event) {
+    event.preventDefault();
+    EditMemberModal.style.display = 'block';
+});
+
+closeFormeditMember.addEventListener('click', function() {
+    EditMemberModal.style.display = 'none';
+});
 // JavaScript code to handle pagination
 const table = document.getElementById('table');
 const rows = table.querySelectorAll('tbody tr');

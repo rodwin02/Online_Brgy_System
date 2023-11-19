@@ -111,8 +111,8 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['business_address']?></td>
                         <td><?= $row['business_type']?></td>
                         <td>
-                            <a href="#">Edit</a>
-                            <a href="#">Delete</a>
+                            <a href="#" class="edit">Edit</a>
+                            <a href="#" class="delete">Delete</a>
                         </td>
                     </tr>
                     <?php $no++; endforeach  ?>

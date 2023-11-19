@@ -113,17 +113,53 @@ function calculateAge($dob) {
     </div>
     <?php unset($_SESSION['message']); ?>
     <?php endif ?>
+    
+    <div class="modal_notification">
+        <div class="form_notification">
+            <div class="one-notif">
+                <div class="row_notif">
+                <div class="left_notif">
+                    <img src="icons/request.png" alt="">
+                </div>
+                <div class="right_notif">
+                    <div class="account_name">Rodwin C. Homeres</div>
+                    <div class="request">REQUEST:</div>
+                    <div class="request_form">Certificate of Late Birth Registration</div>
+                    <div class="time">3 hours ago</div>
+                </div>
+                </div>
+                <div class="underline"></div>
+            </div>
 
+            <div class="one-notif">
+                <div class="row_notif">
+                <div class="left_notif">
+                    <img src="icons/request.png" alt="">
+                </div>
+                <div class="right_notif">
+                    <div class="account_name">Rodwin C. Homeres</div>
+                    <div class="request">REQUEST:</div>
+                    <div class="request_form">Certificate of Late Birth Registration</div>
+                    <div class="time">3 hours ago</div>
+                </div>
+                </div>
+                <div class="underline"></div>
+            </div>
+        </div>
+    </div>
 
     <div class="home-container">
-        <div class="logout-container">
-
-        </div>
         <div class="center">
             <div class="box">
                 <div class="rectangle">
                     <p>Dashboard</p>
-                    <a href="#">Logout</a>
+                    <div class="container-header">
+                        <img src="icons/bell.png" alt="" id="notifications">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
+                          <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878"/>
+                        </svg>
+                       <a class="logout" href="#">Logout</a>
+                    </div>
                 </div>
                 <div class="stats">
                     <div class="population">
@@ -449,50 +485,50 @@ function calculateAge($dob) {
         </div>
     </div>
 
-
-
     <script src="./js/jQuery-3.7.0.js"></script>
     <script src="./js/app.js"></script>
     <script>
-    const monthYearElement = document.getElementById("monthYear");
-    const daysElement = document.getElementById("days");
 
-    function updateCalendar() {
-        const today = new Date();
-        const currentMonth = today.getMonth();
-        const currentYear = today.getFullYear();
-        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+const notifications = document.getElementById('notifications');
+const modalNotification = document.querySelector('.modal_notification');
+const svgIcon = document.querySelector('.container-header svg');
 
-        // Set the month and year in the header
-        monthYearElement.textContent = new Date(currentYear, currentMonth).toLocaleString("default", {
-            month: "long"
-        }) + " " + currentYear;
+// Function to check if there is at least one notification
+function hasNotifications() {
+    return document.querySelectorAll('.one-notif').length > 0;
+}
 
-        // Clear the days
-        daysElement.innerHTML = "";
+// Toggle modal and SVG icon on notifications click
+notifications.addEventListener('click', function (event) {
+    event.preventDefault();
 
-        // Calculate the first day of the month
-        const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-
-        // Add empty spans for the days before the first day of the month
-        for (let i = 0; i < firstDay; i++) {
-            const emptySpan = document.createElement("span");
-            emptySpan.className = "empty";
-            daysElement.appendChild(emptySpan);
-        }
-
-        // Add the days of the month
-        for (let day = 1; day <= daysInMonth; day++) {
-            const daySpan = document.createElement("span");
-            daySpan.textContent = day;
-            if (currentMonth === today.getMonth() && currentYear === today.getFullYear() && day === today.getDate()) {
-                daySpan.className = "today";
-            }
-            daysElement.appendChild(daySpan);
+    if (modalNotification.style.display === 'block') {
+        modalNotification.style.display = 'none';
+        svgIcon.style.display = 'none';
+    } else {
+        modalNotification.style.display = 'block';
+        // Display SVG icon if there is at least one notification
+        if (hasNotifications()) {
+            svgIcon.style.display = 'block';
         }
     }
+});
 
-    updateCalendar();
+// Close modal on outside click
+document.body.addEventListener('click', function (event) {
+    if (!modalNotification.contains(event.target) && event.target !== notifications) {
+        modalNotification.style.display = 'none';
+        svgIcon.style.display = 'none';
+    }
+});
+
+// Check and display SVG icon on page load
+document.addEventListener('DOMContentLoaded', function () {
+    if (hasNotifications()) {
+        svgIcon.style.display = 'block';
+    }
+});
+
     </script>
 
 
