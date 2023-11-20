@@ -181,7 +181,7 @@
 
      <!-- Include Quill library -->
      <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script>
+     <script>
         // Initialize Quill editors
         var editorDescription = new Quill('#editorDescription', {
             theme: 'snow'
