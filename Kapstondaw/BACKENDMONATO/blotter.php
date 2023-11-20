@@ -1,6 +1,6 @@
 <?php include './server/server.php'?>
 <?php
-$query =  "SELECT * FROM tblblotter";
+$query =  "SELECT * FROM tbl_blotter";
 $result = $conn->query($query);
 
 $residents = array();
@@ -70,37 +70,49 @@ while($row = $result->fetch_assoc()) {
                     <?php if(!empty($residents)) { ?>
                     <?php $no=1; foreach($residents as $row): ?>
                     <tr>
-                        <td><?= $row['complainant']?></td>
-                        <td><?= $row['respondent']?></td>
-                        <td><?= $row['victim'] ?></td>
+                        <td><?= $row['complainant_fname']." ".$row['complainant_mname']." ".$row['complainant_lname']." ".$row['complainant_suffix']?>
+                        </td>
+                        <td><?= $row['respondent_fname']." ".$row['respondent_mname']." ".$row['respondent_lname']." ".$row['respondent_suffix']?>
+                        </td>
+                        <td><?= $row['victim_fname']." ".$row['victim_mname']." ".$row['victim_lname']." ".$row['victim_suffix'] ?>
+                        </td>
                         <td><?= $row['type'] ?></td>
                         <td><?= $row['status'] ?></td>
                         <td class="actions">
                             <a href="#" class="edit" id="editBlotter" onclick="editBlotter(this)"
-                                data-id="<?= $row['id'] ?>" data-complainant="<?= $row['complainant'] ?>"
-                                data-respondent="<?= $row['respondent'] ?>" data-victim="<?= $row['victim'] ?>"
-                                data-type="<?= $row['type'] ?>" data-location="<?= $row['location'] ?>"
-                                data-date="<?= $row['date'] ?>" data-time="<?= $row['time'] ?>"
-                                data-details="<?= $row['details'] ?>" data-status="<?= $row['status'] ?>">Edit</a>
+                                data-id="<?= $row['id'] ?>" data-complainant-fname="<?= $row['complainant_fname'] ?>"
+                                data-complainant-mname="<?= $row['complainant_mname'] ?>"
+                                data-complainant-lname="<?= $row['complainant_lname'] ?>"
+                                data-complainant-suffix="<?= $row['complainant_suffix'] ?>"
+                                data-respondent-fname="<?= $row['respondent_fname'] ?>"
+                                data-respondent-mname="<?= $row['respondent_mname'] ?>"
+                                data-respondent-lname="<?= $row['respondent_lname'] ?>"
+                                data-respondent-suffix="<?= $row['respondent_suffix'] ?>"
+                                data-victim-fname="<?= $row['victim_fname'] ?>"
+                                data-victim-mname="<?= $row['victim_mname'] ?>"
+                                data-victim-lname="<?= $row['victim_lname'] ?>"
+                                data-victim-suffix="<?= $row['victim_suffix'] ?>" data-type="<?= $row['type'] ?>"
+                                data-location="<?= $row['location'] ?>" data-date="<?= $row['date'] ?>"
+                                data-time="<?= $row['time'] ?>" data-details="<?= $row['details'] ?>"
+                                data-status="<?= $row['status'] ?>">Edit</a>
                             <a href="./model/print_blotter.php?id=<?= $row['id']?>" class="print">Print</a>
-                            <a href="#"
-                                    class="delete">Cancel</a>
+                            <a href="#" class="delete">Cancel</a>
 
-                                <div class="modal-delete">
-                                    <div class="form-delete">
-                                        <div class="delete-cont">
-                                            <p>Delete</p>
-                                            <img src="icons/close 1.png" alt="" class="close-delete">
-                                        </div>
-                                        <div class="delete-description">
-                                            <p>Deleting this will remove all data
-                                                and cannot be undone.</p>
-                                        </div>
-                                        <div class="delete-submit">
-                                            <a href="./model/remove/remove_blotter.php?id=<?= $row['id']?>">Delete</a>
-                                        </div>
+                            <div class="modal-delete">
+                                <div class="form-delete">
+                                    <div class="delete-cont">
+                                        <p>Delete</p>
+                                        <img src="icons/close 1.png" alt="" class="close-delete">
+                                    </div>
+                                    <div class="delete-description">
+                                        <p>Deleting this will remove all data
+                                            and cannot be undone.</p>
+                                    </div>
+                                    <div class="delete-submit">
+                                        <a href="./model/remove/remove_blotter.php?id=<?= $row['id']?>">Delete</a>
                                     </div>
                                 </div>
+                            </div>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>
@@ -128,17 +140,21 @@ while($row = $result->fetch_assoc()) {
                 <div class="unang-layerBlotter">
                     <label for="complainant">Complainant</label>
                     <div class="input-cont-blotter">
-                        <input type="text" name="complainant_fname" id="complainant_fname" placeholder="First Name" required>
+                        <input type="text" name="complainant_fname" id="complainant_fname" placeholder="First Name"
+                            required>
                         <input type="text" name="complainant_mname" id="complainant_mname" placeholder="Middle Name">
-                        <input type="text" name="complainant_lname" id="complainant_lname" placeholder="Last Name" required>
+                        <input type="text" name="complainant_lname" id="complainant_lname" placeholder="Last Name"
+                            required>
                         <input type="text" name="complainant_suffix" id="complainant_suffix" placeholder="Suffix">
                     </div>
 
                     <label for="respondent">Repondent</label>
                     <div class="input-cont-blotter">
-                        <input type="text" name="respondent_fname" id="respondent_fname" placeholder="First Name" required>
+                        <input type="text" name="respondent_fname" id="respondent_fname" placeholder="First Name"
+                            required>
                         <input type="text" name="respondent_mname" id="respondent_mname" placeholder="Middle Name">
-                        <input type="text" name="respondent_lname" id="respondent_lname" placeholder="Last Name" required>
+                        <input type="text" name="respondent_lname" id="respondent_lname" placeholder="Last Name"
+                            required>
                         <input type="text" name="respondent_suffix" id="respondent_suffix" placeholder="Suffix">
                     </div>
 
@@ -157,8 +173,7 @@ while($row = $result->fetch_assoc()) {
                 </div>
 
                 <div class="pangatlong-layerBlotter">
-                    <label for="victim">Victim</label>
-                    <input id="victimBlotter" type="text" name="victim" required>
+
 
                     <label for="location">Location</label>
                     <input id="locationBlotter" type="text" name="location" required>
@@ -175,6 +190,15 @@ while($row = $result->fetch_assoc()) {
                         <option value="scheduled">Scheduled</option>
                     </select>
                 </div>
+            </div>
+
+
+            <label for="">Victim</label>
+            <div class="input-cont-blotter" style="display: flex;">
+                <input type="text" name="victim_fname" id="victim_fname" placeholder="First Name" required>
+                <input type="text" name="victim_mname" id="victim_mname" placeholder="Middle Name">
+                <input type="text" name="victim_lname" id="victim_lname" placeholder="Last Name" required>
+                <input type="text" name="victim_suffix" id="victim_suffix" placeholder="Suffix">
             </div>
 
             <div class="panglima-layerBlotter">
@@ -203,17 +227,21 @@ while($row = $result->fetch_assoc()) {
                 <div class="unang-layerBlotter">
                     <label for="complainant">Complainant</label>
                     <div class="input-cont-blotter">
-                        <input type="text" name="complainant_fname" id="complainant_fname1" placeholder="First Name" required>
+                        <input type="text" name="complainant_fname" id="complainant_fname1" placeholder="First Name"
+                            required>
                         <input type="text" name="complainant_mname" id="complainant_mname1" placeholder="Middle Name">
-                        <input type="text" name="complainant_lname" id="complainant_lname1" placeholder="Last Name" required>
+                        <input type="text" name="complainant_lname" id="complainant_lname1" placeholder="Last Name"
+                            required>
                         <input type="text" name="complainant_suffix" id="complainant_suffix1" placeholder="Suffix">
                     </div>
 
                     <label for="respondent">Repondent</label>
                     <div class="input-cont-blotter">
-                        <input type="text" name="respondent_fname" id="respondent_fname1" placeholder="First Name" required>
+                        <input type="text" name="respondent_fname" id="respondent_fname1" placeholder="First Name"
+                            required>
                         <input type="text" name="respondent_mname" id="respondent_mname1" placeholder="Middle Name">
-                        <input type="text" name="respondent_lname" id="respondent_lname1" placeholder="Last Name" required>
+                        <input type="text" name="respondent_lname" id="respondent_lname1" placeholder="Last Name"
+                            required>
                         <input type="text" name="respondent_suffix" id="respondent_suffix1" placeholder="Suffix">
                     </div>
 
@@ -232,8 +260,6 @@ while($row = $result->fetch_assoc()) {
                 </div>
 
                 <div class="pangatlong-layerBlotter">
-                    <label for="victim">Victim</label>
-                    <input id="victimBlotter1" type="text" name="victim" required>
 
                     <label for="location">Location</label>
                     <input id="locationBlotter1" type="text" name="location" required>
@@ -253,6 +279,14 @@ while($row = $result->fetch_assoc()) {
                 </div>
             </div>
 
+            <label for="">Victim</label>
+            <div class="input-cont-blotter" style="display: flex;">
+                <input type="text" name="victim_fname" id="victim_fname1" placeholder="First Name" required>
+                <input type="text" name="victim_mname" id="victim_mname1" placeholder="Middle Name">
+                <input type="text" name="victim_lname" id="victim_lname1" placeholder="Last Name" required>
+                <input type="text" name="victim_suffix" id="victim_suffix1" placeholder="Suffix">
+            </div>
+
             <div class="panglima-layerBlotter">
                 <label class="detailstext" for="occupation">Details:</label>
                 <textarea id="detailsBlotter1" name="details" cols="4" rows="50" required></textarea>
@@ -264,10 +298,10 @@ while($row = $result->fetch_assoc()) {
     </div>
     <!-- END EDIT Blotter -->
 
-  
 
-    <script src="./js/jQuery-3.7.0.js"></script>
-    <script src="./js/app.js"></script>
+
+    <script src="./js//jQuery-3.7.0.js"></script>
+    <script src="./js//app.js"></script>
     <script>
     const addBlotterLink = document.getElementById('addBlotter');
     const modal = document.querySelector('.modal-AddBlotter');
@@ -297,11 +331,10 @@ while($row = $result->fetch_assoc()) {
     closeButtonEdit.addEventListener('click', function() {
         modalEdit.style.display = 'none';
     });
-
-  
     </script>
 
 </body>
+
 </html>
 
 <script>
@@ -321,7 +354,7 @@ deleteLink.forEach((del, index) => {
     });
 })
 
-    // JavaScript code to handle pagination
+// JavaScript code to handle pagination
 const table = document.getElementById('table');
 const rows = table.querySelectorAll('tbody tr');
 const totalRows = rows.length;

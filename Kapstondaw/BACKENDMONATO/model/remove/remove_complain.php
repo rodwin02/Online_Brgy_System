@@ -11,13 +11,16 @@
 
 	if(!empty($id)){
 		try {
-			$select = $conn->prepare("SELECT * FROM tblcomplain WHERE id = ?");
+			$select = $conn->prepare("SELECT * FROM tbl_complain WHERE id = ?");
 			$select->bind_param("s", $id);
 			$select->execute();
 			$blotter = $select->get_result()->fetch_assoc();
 
-			$insert = "INSERT INTO del_complain_archive(`complainant`, `date`, `location`, `time`, `details`, `status`) VALUES (
-				'{$blotter['complainant']}',
+			$insert = "INSERT INTO del_complain_archive(`complainant_fname`, `complainant_mname`, `complainant_lname`, `complainant_suffix`, `date`, `location`, `time`, `details`, `status`) VALUES (
+				'{$blotter['complainant_fname']}',
+				'{$blotter['complainant_mname']}',
+				'{$blotter['complainant_lname']}',
+				'{$blotter['complainant_suffix']}',
 				'{$blotter['date']}',
 				'{$blotter['location']}',
 				'{$blotter['time']}',	
@@ -26,7 +29,7 @@
 			)";
 			$conn->query($insert);
 			
-			$query = "DELETE FROM tblcomplain WHERE id = '$id'";
+			$query = "DELETE FROM tbl_complain WHERE id = '$id'";
 			$result = $conn->query($query);
 			
 			if($result === true){

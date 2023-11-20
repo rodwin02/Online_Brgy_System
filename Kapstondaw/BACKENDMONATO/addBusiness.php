@@ -38,42 +38,47 @@
                     <div class="left_cont">
                         <label for="taxPayer_name">Taxpayer Name</label>
                         <div class="input_business">
-                            <input type="text" name="taxPayer_lname" id="taxPayer_lname" placeholder="Last Name" required>
-                            <input type="text" name="taxPayer_fname" id="taxPayer_fname" placeholder="First Name" required>
+                            <input type="text" name="taxPayer_lname" id="taxPayer_lname" placeholder="Last Name"
+                                required>
+                            <input type="text" name="taxPayer_fname" id="taxPayer_fname" placeholder="First Name"
+                                required>
                             <input type="text" name="taxPayer_mname" id="taxPayer_mname" placeholder="Middle Name">
                             <input type="text" name="taxPayer_suffix" id="taxPayer_suffix" placeholder="Suffix">
                         </div>
                         <label for="taxPayer_name">Location</label>
                         <div class="input_business">
                             <input type="text" name="taxPayer_houseNo" id="taxPayer_houseNo" placeholder="House no.">
-                            <input type="text" name="taxPayer_street" id="taxPayer_street" placeholder="Street Name" required>
+                            <input type="text" name="taxPayer_street" id="taxPayer_street" placeholder="Street Name"
+                                required>
                             <input type="text" name="taxPayer_subdivision" id="taxPayer_subdivision"
                                 placeholder="Subdivision Name">
                         </div>
                         <label for="businessType">Business Type</label>
                         <div class="input_business">
-                        <select name="businessType" id="businessType" required>
-                            <option value="">Select Type</option>
+                            <select name="businessType" id="businessType" required>
+                                <option value="">Select Type</option>
                                 <option value="Food">Food</option>
                                 <option value=""></option>
-                        </select>
+                            </select>
                         </div>
                     </div>
 
                     <div class="right_cont">
                         <label for="business_name">Business Name</label>
                         <div class="input_business">
-                            <input type="text" name="business_name" id="business_name" placeholder="Business Name" required>
+                            <input type="text" name="business_name" id="business_name" placeholder="Business Name"
+                                required>
                         </div>
+
 
                         <label for="date">Start Date</label>
                         <div class="input_business" required>
-                            <input type="date">
+                            <input type="date" name="date_started">
                         </div>
-                       
+
                         <label for="businessStatus">Business Status</label>
                         <div class="input_business">
-                        <select name="businessStatus" id="businessStatus" required>
+                            <select name="businessStatus" id="businessStatus" required>
                                 <option value="">Select Status</option>
                                 <option value="New">New</option>
                                 <option value="Renewal">Renewal</option>
@@ -82,9 +87,9 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="submitBussinessCont">
-                   <button type="submit" class="">Create</button>
+                <button type="submit" class="">Create</button>
             </div>
 
         </form>

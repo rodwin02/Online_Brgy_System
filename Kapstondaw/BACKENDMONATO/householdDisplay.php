@@ -1,17 +1,45 @@
 <?php include './server/server.php'?>
 <?php
-$query =  "SELECT * FROM tbl_households WHERE household_head='yes'";
-$result = $conn->query($query);
+// Check if 'id' key is set in $_GET
+if(isset($_GET['id'])) {
+    $id = $conn->real_escape_string($_GET['id']);
 
-$households = array();
-while($row = $result->fetch_assoc()) {
-  $households[] = $row;
-}
-function calculateAge($dob) {
-    $today = new DateTime();
-    $birthDate = new DateTime($dob);
-    $interval = $today->diff($birthDate);
-    return $interval->y;
+    $select = $conn->prepare("SELECT * FROM tbl_households WHERE id = ?");
+    $select->bind_param("s", $id);
+    $select->execute();
+    $head = $select->get_result()->fetch_assoc();
+
+    // Check if 'firstname', 'middlename', and 'lastname' are not null
+    if ($head['firstname'] !== null && $head['middlename'] !== null && $head['lastname'] !== null) {
+        // Create a variable for the concatenated string
+        $household_head = $head['firstname'] . " " . $head['middlename'] . " " . $head['lastname'];
+
+        $query = "SELECT * FROM tbl_households WHERE firstname=? AND middlename=? AND lastname=? OR household_head=?";
+        $stmt = $conn->prepare($query);
+
+        // Pass variables by reference in bind_param
+        $stmt->bind_param("ssss", $head['firstname'], $head['middlename'], $head['lastname'], $household_head);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $households = array();
+        while($row = $result->fetch_assoc()) {
+            $households[] = $row;
+        }
+
+        function calculateAge($dob) {
+            $today = new DateTime();
+            $birthDate = new DateTime($dob);
+            $interval = $today->diff($birthDate);
+            return $interval->y;
+        }
+    } else {
+        // Handle the case where 'firstname', 'middlename', or 'lastname' is null
+        echo "Error: Missing required data for household head.";
+    }
+} else {
+    // Handle the case where 'id' is not set in $_GET
+    echo "Error: 'id' parameter is missing.";
 }
 ?>
 <!DOCTYPE html>
@@ -47,7 +75,7 @@ function calculateAge($dob) {
                 <input class="searchBar" type="text" placeholder=" Enter text here">
                 <a href="#">Sort & Filter </a>
             </div>
-           
+
         </div>
 
         <?php include './template/message.php' ?>
@@ -81,10 +109,21 @@ function calculateAge($dob) {
                         <td><?= $row['street'] ?></td>
                         <td><?= $row['email'] ?></td>
                         <td>
-                        <input type="radio" name="household_head" value="<?= $row['household_head'] ?>" <?= ($row['household_head'] == 'yes') ? 'checked' : '' ?>>
+                            <input type="radio" name="household_head" value="<?= $row['household_head'] ?>"
+                                <?= ($row['household_head'] == 'yes') ? 'checked' : '' ?>>
                         </td>
                         <td class="actions">
-                            <a href="#" class="edit" id="editMember">Edit</a>
+                            <a href="#" class="edit" id="editMember" onclick="editResident(this)"
+                                data-id="<?= $row['id'] ?>" data-fname="<?= $row['firstname'] ?>"
+                                data-mname="<?= $row['middlename'] ?>" data-lname="<?= $row['lastname'] ?>"
+                                data-sex="<?= $row['sex'] ?>" data-houseNo="<?= $row['house_no'] ?>"
+                                data-street="<?= $row['street'] ?>" data-subdivision="<?= $row['subdivision'] ?>"
+                                data-dbirth="<?= $row['date_of_birth'] ?>" data-pbirth="<?= $row['place_of_birth'] ?>"
+                                data-cstatus="<?= $row['civil_status'] ?>" data-occupation="<?= $row['occupation'] ?>"
+                                data-email="<?= $row['email'] ?>" data-contactNo="<?= $row['contact_no'] ?>"
+                                data-vstatus="<?= $row['voter_status'] ?>" data-citizenship="<?= $row['citizenship'] ?>"
+                                data-householdNo="<?= $row['household_no'] ?>" data-osy="<?= $row['osy'] ?>"
+                                data-pwd="<?= $row['pwd'] ?>" data-ext="<?= $row['ext'] ?>">Edit</a>
 
                             <a href="#" class="delete delete-archive" id="delete-archive">Delete</a>
 
@@ -119,8 +158,8 @@ function calculateAge($dob) {
     </div>
 
     <div class="Edit_Member">
-        <form action="#" class="formEditMember">
-        <div class="headerInfo">
+        <form action="./model/edit_individual.php" method="post" class="formEditMember">
+            <div class="headerInfo">
                 <p>Edit Information</p>
                 <img src="icons/closeWhiteColor.png" class="closeForm_editMember" alt="">
             </div>
@@ -128,60 +167,59 @@ function calculateAge($dob) {
                 <div class="leftInfo">
                     <div class="inputFullname">
                         <p>Full name<span>*</span></p>
-                        <input type="text" name="lastName[]" id="lastName"
-                            oninput="this.value = this.value.toUpperCase()" placeholder="Last Name" required>
-                        <input type="text" name="firstName[]" id="firstName"
+                        <input type="text" name="lastname" id="lastname" oninput="this.value = this.value.toUpperCase()"
+                            placeholder="Last Name" required>
+                        <input type="text" name="firstname" id="firstname"
                             oninput="this.value = this.value.toUpperCase()" placeholder="First Name" required>
-                        <input type="text" name="middleName[]" id="middleName"
+                        <input type="text" name="middlename" id="middlename"
                             oninput="this.value = this.value.toUpperCase()" placeholder="Middle Name" required>
-                        <input type="text" name="ext[]" class="suffix" id="ext"
+                        <input type="text" name="ext" class="suffix" id="ext"
                             oninput="this.value = this.value.toUpperCase()" placeholder="Suffix">
                     </div>
                     <div class="inputDob">
                         <p>Date of Birth<span>*</span></p>
-                        <input type="date" name="dateBirth[]" id="dateBirth"
-                            oninput="this.value = this.value.toUpperCase()" required>
+                        <input type="date" name="dob" id="dob" oninput="this.value = this.value.toUpperCase()" required>
                     </div>
                     <div class="inputPob">
                         <p>Place of Birth<span>*</span></p>
-                        <input type="text" name="placeBirth[]" id="placeBirth"
+                        <input type="text" name="pob" id="place-of-birth"
                             oninput="this.value = this.value.toUpperCase()" required>
                     </div>
                     <div class="inputCitizenship">
                         <p>Citizenship<span>*</span></p>
-                        <input type="text" name="citizenship[]" id="citizenship"
+                        <input type="text" name="citizenship" id="citizenship"
                             oninput="this.value = this.value.toUpperCase()" required>
                     </div>
                     <div class="inputPhoneNo">
                         <p>Phone number</p>
-                        <input type="number" name="phoneNo[]" id="phoneNo" placeholder="e.g., 09123456789">
+                        <input type="number" name="contact-no" id="contact-no" placeholder="e.g., 09123456789">
                     </div>
                     <div class="inputEmail">
                         <p>Email</p>
-                        <input type="text" name="email[]" id="email" placeholder="Enter your email">
+                        <input type="text" name="email" id="email" placeholder="Enter your email">
                     </div>
                 </div>
 
                 <div class="rightInfo">
                     <div class="inputAddress">
                         <p>Address<span>*</span></p>
-                        <input type="text" name="no[]" class="houseNo" id="no"
+                        <input type="text" name="house-no" class="houseNo" id="house-no"
                             oninput="this.value = this.value.toUpperCase()" placeholder="House No.">
-                        <input type="text" name="streetName[]" id="streetName"
-                            oninput="this.value = this.value.toUpperCase()" placeholder="Street Name" required>
-                        <input type="text" name="subdiName[]" id="subdiName"
+                        <input type="text" name="street" id="street" oninput="this.value = this.value.toUpperCase()"
+                            placeholder="Street Name" required>
+                        <input type="text" name="subdivision" id="subdivision"
                             oninput="this.value = this.value.toUpperCase()" placeholder="Subdivision Name">
                     </div>
 
                     <div class="inputOccupation">
                         <p>Occupation <span>*</span></p>
-                        <input type="text" name="occupation[]" id="occupation"
+                        <input type="text" name="occupation" id="occupation"
                             oninput="this.value = this.value.toUpperCase()" required>
                     </div>
 
                     <div class="inputSex">
                         <p>Sex <span>*</span></p>
-                        <select id="sex" name="sex[]" required>
+                        <select id="sex" name="sex" required>
                             <option value=""></option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -189,7 +227,7 @@ function calculateAge($dob) {
                     </div>
                     <div class="inputCivilStatus">
                         <p>Civil Status<span>*</span></p>
-                        <select id="civilStatus" name="civilStatus[]" required>
+                        <select id="civil-status" name="civil-status" required>
                             <option value=""></option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
@@ -199,7 +237,7 @@ function calculateAge($dob) {
                     </div>
                     <div class="inputVoterStatus">
                         <p>Voters Status <span></span></p>
-                        <select id="votersStatus" name="votersStatus[]" >
+                        <select id="voter-status" name="voter-status">
                             <option value=""></option>
                             <option value="Voters">Voters</option>
                             <option value="Non-voters">Non-voters</option>
@@ -213,11 +251,16 @@ function calculateAge($dob) {
                 </div>
             </div>
             <div class="footerInfo">
-                <button type="button" class="addSaTable">Update</button>
+                <input type="hidden" name="id" id="id">
+                <input type="hidden" name="headId" value="<?= $id?>">
+                <button type="submit" class="addSaTable">Update</button>
             </div>
         </form>
-           
+
     </div>
+
+    <script src="./js//jQuery-3.7.0.js"></script>
+    <script src="./js//app.js"></script>
 
 </body>
 
@@ -241,18 +284,21 @@ deleteLink.forEach((del, index) => {
 })
 
 // EDIT RESIDENTS
-const editMember = document.getElementById('editMember');
+const editMember = document.querySelectorAll('.edit');
 const EditMemberModal = document.querySelector('.Edit_Member');
 const closeFormeditMember = document.querySelector('.closeForm_editMember');
 
-editMember.addEventListener('click', function(event) {
-    event.preventDefault();
-    EditMemberModal.style.display = 'block';
-});
+editMember.forEach(edit => {
+    edit.addEventListener('click', function(event) {
+        event.preventDefault();
+        EditMemberModal.style.display = 'block';
+    });
 
-closeFormeditMember.addEventListener('click', function() {
-    EditMemberModal.style.display = 'none';
-});
+    closeFormeditMember.addEventListener('click', function() {
+        EditMemberModal.style.display = 'none';
+    });
+})
+
 // JavaScript code to handle pagination
 const table = document.getElementById('table');
 const rows = table.querySelectorAll('tbody tr');

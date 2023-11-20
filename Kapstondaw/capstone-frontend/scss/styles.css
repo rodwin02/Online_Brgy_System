@@ -1164,7 +1164,6 @@ footer .com ul li {
   margin: 0 0 2rem;
 }
 .cart .main-cart .table-container {
-  position: relative;
   max-height: 500px;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -1202,6 +1201,43 @@ footer .com ul li {
 .cart .main-cart .table-container table tbody tr td .pick-up {
   color: #007236;
   background-color: rgba(0, 114, 54, 0.1);
+}
+.cart .main-cart .table-container table tbody tr td .cancel-container {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item {
+  background-color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-weight: bold;
+}
+.cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .buttons .btn1 {
+  background-color: #007236;
+  color: #fff;
+}
+.cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .buttons .abort-cancel-item {
+  background-color: #e9ecef;
 }
 .cart .main-cart .table-container table tbody tr td > a {
   color: red;
@@ -1357,56 +1393,51 @@ footer .com ul li {
 .active-service form {
   position: sticky;
   top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(300px, 100%, 500px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.active-service form .main-form {
   background-color: #fff;
-  border: none;
-  border-radius: 0.5rem;
   padding: 1rem;
   text-align: center;
-  width: calc(100% - 30px);
-  overflow: hidden;
+  border: none;
+  border-radius: 1rem;
+  width: 100%;
 }
-@media (min-width: 375px) {
-  .active-service form {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    margin: 0;
-  }
-}
-.active-service form p {
+.active-service form .main-form p {
   text-align: end;
   font-size: 1.2rem;
   margin: 0;
 }
-.active-service form .container {
+.active-service form .main-form .container {
   display: flex;
   flex-direction: column;
   text-align: start;
 }
-.active-service form .container input,
-.active-service form .container textarea,
-.active-service form .container select {
+.active-service form .main-form .container input,
+.active-service form .main-form .container textarea,
+.active-service form .main-form .container select {
   border: none;
   background-color: rgba(162, 238, 198, 0.25);
   padding: 0.5rem;
   margin: 1rem 0;
 }
-.active-service form .container textarea {
+.active-service form .main-form .container textarea {
   width: 100%;
   height: 100px;
   resize: none;
 }
-.active-service form .container select {
+.active-service form .main-form .container select {
   width: 30%;
 }
-.active-service form .requestor {
+.active-service form .main-form .requestor {
   display: none;
 }
-.active-service form button {
+.active-service form .main-form button {
   border: none;
   background-color: #007236;
   border-radius: 1rem;
@@ -1414,6 +1445,100 @@ footer .com ul li {
   padding: 0.5rem 1rem;
 }
 .active-service form .confirmation {
+  background-color: #fff;
+  border: none;
+  border-radius: 1rem;
+  display: none;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.active-service form .confirmation .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.active-service form .confirmation .buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-weight: bold;
+}
+.active-service form .confirmation .buttons .active-service-request {
+  background-color: #007236;
+  color: #fff;
+}
+.active-service form .confirmation .buttons .cancel-request {
+  background-color: #e9ecef;
+}
+
+.active-report {
+  background-color: rgba(0, 0, 0, 0.25);
+  border: none;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+.active-report form {
+  position: sticky;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(300px, 100%, 500px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.active-report form .main-form {
+  background-color: #fff;
+  padding: 1rem;
+  text-align: center;
+  border: none;
+  border-radius: 1rem;
+  width: 100%;
+}
+.active-report form .main-form p {
+  text-align: end;
+  font-size: 1.2rem;
+  margin: 0;
+}
+.active-report form .main-form .container {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+.active-report form .main-form .container input,
+.active-report form .main-form .container textarea,
+.active-report form .main-form .container select {
+  border: none;
+  background-color: rgba(162, 238, 198, 0.25);
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+.active-report form .main-form .container textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+.active-report form .main-form .container select {
+  width: 30%;
+}
+.active-report form .main-form .requestor {
+  display: none;
+}
+.active-report form .main-form button {
+  border: none;
+  background-color: #007236;
+  border-radius: 1rem;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+.active-report form .confirmation {
   background-color: #fff;
   display: none;
   position: absolute;
@@ -1423,6 +1548,24 @@ footer .com ul li {
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+.active-report form .confirmation .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.active-report form .confirmation .buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-weight: bold;
+}
+.active-report form .confirmation .buttons .active-service-request {
+  background-color: #007236;
+  color: #fff;
+}
+.active-report form .confirmation .buttons .cancel-request {
+  background-color: #e9ecef;
 }
 
 .active-success {

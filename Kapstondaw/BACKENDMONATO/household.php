@@ -81,7 +81,7 @@ function calculateAge($dob) {
                         <td><?= $row['street'] ?></td>
                         <td><?= $row['email'] ?></td>
                         <td class="actions">
-                            <a href="householdDisplay.php" class="edit" id="viewHousehold">View</a>
+                            <a href="householdDisplay.php?id=<?= $row['id']?>" class="edit" id="viewHousehold">View</a>
 
                             <a href="#" class="delete delete-archive" id="delete-archive">Delete</a>
 

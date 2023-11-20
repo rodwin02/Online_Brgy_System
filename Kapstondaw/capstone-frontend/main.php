@@ -17,6 +17,7 @@
 
     <?php include "./model/fetch_brgy_information.php" ?>
     <?php include './actives.php' ?>
+    <?php include './active_report.php' ?>
     <?php include './header.php' ?>
 
     <div class="hide home" id="home">

@@ -1,4 +1,13 @@
 <?php include '../server/server.php'?>
+<?php 
+$query = "SELECT * FROM del_blotter_archive";
+$result = $conn->query($query);
+
+$residents = array();
+while($row = $result->fetch_assoc()) {
+$residents[] = $row;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,13 +55,23 @@
                         <th>Victim(s)</th>
                         <th>Blotter/Incident</th>
                         <th>Status</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if(!empty($residents)) { ?>
+                    <?php $no=1; foreach($residents as $row): ?>
                     <tr>
-                        <td></td>
+                        <td><?= $row['complainant_fname']." ".$row['complainant_mname']." ".$row['complainant_lname']." ".$row['complainant_suffix']?>
+                        </td>
+                        <td><?= $row['respondent_fname']." ".$row['respondent_mname']." ".$row['respondent_lname']." ".$row['respondent_suffix']?>
+                        </td>
+                        <td><?= $row['victim_fname']." ".$row['victim_mname']." ".$row['victim_lname']." ".$row['victim_suffix'] ?>
+                        </td>
+                        <td><?= $row['type'] ?></td>
+                        <td><?= $row['status'] ?></td>
                     </tr>
+                    <?php $no++; endforeach ?>
+                    <?php } ?>
                 </tbody>
                 <!-- Add more rows here -->
             </table>

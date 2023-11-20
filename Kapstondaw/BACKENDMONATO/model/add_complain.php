@@ -7,17 +7,21 @@
         }
     }
     
-    $complainant  = $conn->real_escape_string($_POST['complainant']);
+    $complainant_fname  = $conn->real_escape_string($_POST['complainant_fname']);
+    $complainant_mname  = $conn->real_escape_string($_POST['complainant_mname']);
+    $complainant_lname  = $conn->real_escape_string($_POST['complainant_lname']);
+    $complainant_suffix  = $conn->real_escape_string($_POST['complainant_suffix']);
+    
     $date 	= $conn->real_escape_string($_POST['date']);
     $location 	    = $conn->real_escape_string($_POST['location']);
     $time 	      = $conn->real_escape_string($_POST['time']);
     $details 	  = $conn->real_escape_string($_POST['details_complain']);
     $status 	    = $conn->real_escape_string($_POST['statusComplain']);
 
-    if(!empty($complainant) && !empty($date) && !empty($location) && !empty($time) && !empty($details) && !empty($status)){
+    if(!empty($date) && !empty($location) && !empty($time) && !empty($details) && !empty($status)){
 
-        $insert  = "INSERT INTO tblcomplain (`complainant`, `date`, `location`, `time`, `details`,`status`) 
-        VALUES ('$complainant', '$date','$location', '$time','$details','$status')";
+        $insert  = "INSERT INTO tbl_complain (`complainant_fname`, `complainant_mname`, `complainant_lname`, `complainant_suffix`, `date`, `location`, `time`, `details`, `status`) 
+        VALUES ('$complainant_fname', '$complainant_mname', '$complainant_lname', '$complainant_suffix', '$date','$location', '$time','$details','$status')";
         $result  = $conn->query($insert);
 
         if($result === true){

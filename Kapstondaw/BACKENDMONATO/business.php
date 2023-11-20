@@ -95,6 +95,7 @@ while($row = $result->fetch_assoc()) {
                         <th>BUSINESS NAME</th>
                         <th>BUSINESS ADDRESS</th>
                         <th>BUSINESS TYPE</th>
+                        <th>BUSINESS STATUS</th>
                         <th>ACTION</th>
                     </tr>
                 </thead>
@@ -104,12 +105,13 @@ while($row = $result->fetch_assoc()) {
                     <tr>
                         <td>
                             <?= $no ?></td>
-                        <td><?= $row['taxpayer_name']?>
+                        <td><?= $row['taxpayer_fname']." ".$row['taxpayer_mname']." ".$row['taxpayer_lname']." ".$row['taxpayer_suffix']?>
                         </td>
                         <td>
                             <?= $row['business_name']?></td>
-                        <td><?= $row['business_address']?></td>
+                        <td><?= $row['house_no']." ".$row['street']." ".$row['subdivision']?></td>
                         <td><?= $row['business_type']?></td>
+                        <td><?= $row['business_status']?></td>
                         <td>
                             <a href="#" class="edit">Edit</a>
                             <a href="#" class="delete">Delete</a>

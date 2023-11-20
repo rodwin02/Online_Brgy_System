@@ -109,7 +109,7 @@
                     </div>
                     <div class="inputVoterStatus">
                         <p>Voters Status <span></span></p>
-                        <select id="votersStatus" name="votersStatus[]" >
+                        <select id="votersStatus" name="votersStatus[]">
                             <option value=""></option>
                             <option value="Voters">Voters</option>
                             <option value="Non-voters">Non-voters</option>
@@ -154,7 +154,7 @@
                 </tbody>
             </table>
             <div class="submitContainerDaw">
-               <button type="submit" class="submitHouseholdDaw">Submit</button>
+                <button type="submit" class="submitHouseholdDaw">Submit</button>
             </div>
 
         </form>
@@ -288,7 +288,7 @@
             dobInput.type = 'text';
             dobInput.name = 'dateBirth[]';
             dobInput.value = dateBirth
-            
+
 
             dobCell.appendChild(dobInput);
 
@@ -313,7 +313,7 @@
             const phoneCell = newRow.insertCell(4);
             const phoneInput = document.createElement('input');
             phoneInput.type = 'text';
-            phoneInput.name = 'phoneNo[]';
+            phoneInput.name = 'contact_no[]';
             phoneInput.value = phoneNo
 
             phoneCell.appendChild(phoneInput);
@@ -376,17 +376,17 @@
             civilStatusInput.type = 'text';
             civilStatusInput.name = 'civilStatus[]';
             civilStatusInput.value = civilStatus
-            
+
 
             civilStatusCell.appendChild(civilStatusInput);
-        
+
 
             // Create a new cell for the "Voters Status" input
             const votersStatusCell = newRow.insertCell(10); // Adjust the column index if needed
             votersStatusCell.style.display = 'none';
             const votersStatusInput = document.createElement('input');
             votersStatusInput.type = 'text';
-            votersStatusInput.name = 'votersStatus[]';
+            votersStatusInput.name = 'voter_status[]';
             votersStatusInput.value = votersStatus
 
             votersStatusCell.appendChild(votersStatusInput);
@@ -405,7 +405,7 @@
             imageProfileCell.appendChild(imageProfileInput);
 
             const householdHeadCell = newRow.insertCell(12);
-            
+
             const radioInput = document.createElement('input');
             radioInput.type = 'radio';
             radioInput.style.marginTop = '5px';

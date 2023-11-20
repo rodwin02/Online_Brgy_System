@@ -11,15 +11,24 @@
 
 	if($id != ''){
 		try {
-			$select = $conn->prepare("SELECT * FROM tblblotter WHERE id = ?");
+			$select = $conn->prepare("SELECT * FROM tbl_blotter WHERE id = ?");
 			$select->bind_param("s", $id);
 			$select->execute();
 			$blotter = $select->get_result()->fetch_assoc();
 
-			$insert = "INSERT INTO del_blotter_archive(`complainant`, `respondent`, `victim`, `type`, `location`, `date`, `time`, `details`, `status`) VALUES (
-				'{$blotter['complainant']}',
-				'{$blotter['respondent']}',
-				'{$blotter['victim']}',
+			$insert = "INSERT INTO del_blotter_archive(`complainant_fname`, `complainant_mname`, `complainant_lname`, `complainant_suffix`, `respondent_fname`, `respondent_mname`, `respondent_lname`, `respondent_suffix`, `victim_fname`, `victim_mname`, `victim_lname`, `victim_suffix`, `type`, `location`, `date`, `time`, `details`, `status`) VALUES (
+				'{$blotter['complainant_fname']}',
+				'{$blotter['complainant_mname']}',
+				'{$blotter['complainant_lname']}',
+				'{$blotter['complainant_suffix']}',
+				'{$blotter['respondent_fname']}',
+				'{$blotter['respondent_mname']}',
+				'{$blotter['respondent_lname']}',
+				'{$blotter['respondent_suffix']}',
+				'{$blotter['victim_fname']}',
+				'{$blotter['victim_mname']}',
+				'{$blotter['victim_lname']}',
+				'{$blotter['victim_suffix']}',
 				'{$blotter['type']}',
 				'{$blotter['location']}',
 				'{$blotter['date']}',
@@ -29,7 +38,7 @@
 			)";
 			$conn->query($insert);
 			
-			$query = "DELETE FROM tblblotter WHERE id = '$id'";
+			$query = "DELETE FROM tbl_blotter WHERE id = '$id'";
 			$result = $conn->query($query);
 			
 			

@@ -8,17 +8,20 @@
 	}
 	
   $id 	        = $conn->real_escape_string($_POST['id']);
-  $name         = $conn->real_escape_string($_POST['name']);
+    $firstname  = $conn->real_escape_string($_POST['firstname']);
+    $middlename  = $conn->real_escape_string($_POST['middlename']);
+    $lastname  = $conn->real_escape_string($_POST['lastname']);
+    $suffix  = $conn->real_escape_string($_POST['suffix']);
   $date         = $conn->real_escape_string($_POST['date']);
   $time 	      = $conn->real_escape_string($_POST['time']);
   $location     = $conn->real_escape_string($_POST['location']);
   $details 	    = $conn->real_escape_string($_POST['details_awareness']);
-  $status 	    = $conn->real_escape_string($_POST['statusAwareness']);
+  $status 	    = $conn->real_escape_string($_POST['status_awareness']);
 
 	if(!empty($id)){
 
 		if($status !== 'settled') {
-			$query = "UPDATE tblawareness SET `name`='$name', `date`='$date', `time`='$time', `location`='$location', `details`='$details', `status`='$status' WHERE id=$id;";	
+			$query = "UPDATE tbl_awareness SET `firstname`='$firstname', `middlename`='$middlename', `lastname`='$lastname', `suffix`='$suffix', `date`='$date', `time`='$time', `location`='$location', `details`='$details', `status`='$status' WHERE id=$id;";	
 			$result 	= $conn->query($query);
 		if($result === true){
             
@@ -32,7 +35,7 @@
 		}
 
 		} else {
-			$query  = "INSERT INTO awareness_archive (`name`, `date`, `time`, `location`, `details`, `status`) VALUES ('$name','$date','$time', '$location', '$details', '$status')";
+			$query  = "INSERT INTO settled_awareness_archive (`firstname`, `middlename`, `lastname`, `suffix`, `date`, `time`, `location`, `details`, `status`) VALUES ('$firstname', '$middlename', '$lastname', '$suffix', '$date','$time', '$location', '$details', '$status')";
 			$result 	= $conn->query($query);
 
 		if($result === true){
@@ -40,7 +43,7 @@
 			$_SESSION['message'] = 'Awareness has been saved to archived!';
 			$_SESSION['success'] = 'success';
 
-			$delete = $conn->prepare("DELETE FROM tblawareness WHERE id = ?");
+			$delete = $conn->prepare("DELETE FROM tbl_awareness WHERE id = ?");
 			$delete->bind_param("i", $id);
 			$delete->execute();
 

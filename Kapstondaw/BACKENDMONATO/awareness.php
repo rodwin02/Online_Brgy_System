@@ -1,6 +1,6 @@
 <?php include './server/server.php'?>
 <?php
-$query =  "SELECT * FROM tblawareness";
+$query =  "SELECT * FROM tbl_awareness";
 $result = $conn->query($query);
 
 $awareness = array();
@@ -70,7 +70,8 @@ while($row = $result->fetch_assoc()) {
                     <?php if(!empty($awareness)) { ?>
                     <?php $no=1; foreach($awareness as $row): ?>
                     <tr>
-                        <td><?= $row['name']?></td>
+                        <td><?= $row['firstname']." ".$row['middlename']." ".$row['lastname']." ".$row['suffix']?>
+                        </td>
                         <td><?= $row['details']?></td>
                         <td><?= $row['date'] ?></td>
                         <td><?= $row['time'] ?></td>
@@ -78,29 +79,29 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['status'] ?></td>
                         <td class="actions">
                             <a href="#" class="edit" id="editAwareness" onclick="editAwareness(this)"
-                                data-id="<?= $row['id'] ?>" data-name="<?= $row['name'] ?>"
-                                data-date="<?= $row['date'] ?>" data-time="<?= $row['time'] ?>"
-                                data-location="<?= $row['location'] ?>" data-details="<?= $row['details'] ?>"
-                                data-status="<?= $row['status'] ?>">Edit</a>
+                                data-id="<?= $row['id'] ?>" data-firstname="<?= $row['firstname'] ?>"
+                                data-middlename="<?= $row['middlename'] ?>" data-lastname="<?= $row['lastname'] ?>"
+                                data-suffix="<?= $row['suffix'] ?>" data-date="<?= $row['date'] ?>"
+                                data-time="<?= $row['time'] ?>" data-location="<?= $row['location'] ?>"
+                                data-details="<?= $row['details'] ?>" data-status="<?= $row['status'] ?>">Edit</a>
                             <a href="./model/print_awareness.php" class="print">Print</a>
-                            <a href="#"
-                                    class="delete">Cancel</a>
+                            <a href="#" class="delete">Cancel</a>
 
-                                <div class="modal-delete">
-                                    <div class="form-delete">
-                                        <div class="delete-cont">
-                                            <p>Delete</p>
-                                            <img src="icons/close 1.png" alt="" class="close-delete">
-                                        </div>
-                                        <div class="delete-description">
-                                            <p>Deleting this will remove all data
-                                                and cannot be undone.</p>
-                                        </div>
-                                        <div class="delete-submit">
-                                            <a href="./model/remove/remove_awareness.php?id=<?= $row['id']?>">Delete</a>
-                                        </div>
+                            <div class="modal-delete">
+                                <div class="form-delete">
+                                    <div class="delete-cont">
+                                        <p>Delete</p>
+                                        <img src="icons/close 1.png" alt="" class="close-delete">
+                                    </div>
+                                    <div class="delete-description">
+                                        <p>Deleting this will remove all data
+                                            and cannot be undone.</p>
+                                    </div>
+                                    <div class="delete-submit">
+                                        <a href="./model/remove/remove_awareness.php?id=<?= $row['id']?>">Delete</a>
                                     </div>
                                 </div>
+                            </div>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>
@@ -127,26 +128,26 @@ while($row = $result->fetch_assoc()) {
                 <div class="unang-left">
                     <label for="name">Complainant:</label>
                     <div class="input-cont-complain">
-                        <input type="text" name="complainant_fname" id="complainant_fname" placeholder="First Name" required>
-                        <input type="text" name="complainant_mname" id="complainant_mname" placeholder="Middle Name">
-                        <input type="text" name="complainant_lname" id="complainant_lname" placeholder="Last Name" required>
-                        <input type="text" name="complainant_suffix" id="complainant_suffix" placeholder="Suffix">
+                        <input type="text" name="firstname" id="complainant_fname" placeholder="First Name" required>
+                        <input type="text" name="middlename" id="complainant_mname" placeholder="Middle Name">
+                        <input type="text" name="lastname" id="complainant_lname" placeholder="Last Name" required>
+                        <input type="text" name="suffix" id="complainant_suffix" placeholder="Suffix">
                     </div>
 
-                    <div class="input-complain222"> 
+                    <div class="input-complain222">
                         <div class="input-cont-complain2">
-                           <label for="time">Time:</label>
-                           <input id="timeComplain" type="time" name="time">
+                            <label for="time">Time:</label>
+                            <input id="timeComplain" type="time" name="time">
                         </div>
-                        
+
                         <div class="input-cont-complain2">
-                           <label for="date">Date:</label>
-                           <input id="dateComplain" type="date" name="date">
+                            <label for="date">Date:</label>
+                            <input id="dateComplain" type="date" name="date">
                         </div>
-                       
+
                         <div class="input-cont-complain2">
-                           <label for="location">Location:</label>
-                           <input id="locationComplain" type="text" name="location" placeholder="Street Name">
+                            <label for="location">Location:</label>
+                            <input id="locationComplain" type="text" name="location" placeholder="Street Name">
                         </div>
                     </div>
                 </div>
@@ -160,7 +161,7 @@ while($row = $result->fetch_assoc()) {
             <div class="pangatlong-layer-to">
                 <div class="statusComplain_cont">
                     <label for="statusComplain">Status</label>
-                    <select id="statusComplain" name="statusComplain" required>
+                    <select id="statusComplain" name="status_awareness" required>
                         <option value="">Select Status</option>
                         <option value="active">Active</option>
                         <option value="schedule">Schedule</option>
@@ -168,11 +169,11 @@ while($row = $result->fetch_assoc()) {
                 </div>
 
                 <div class="submit_cont">
-                   <button type="button">Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
             </div>
 
-           
+
         </form>
     </div>
     <!-- END ADD Awareness -->
@@ -189,26 +190,26 @@ while($row = $result->fetch_assoc()) {
                 <div class="unang-left">
                     <label for="name">Complainant:</label>
                     <div class="input-cont-complain">
-                        <input type="text" name="complainant_fname" id="complainant_fname1" placeholder="First Name" required>
-                        <input type="text" name="complainant_mname" id="complainant_mname1" placeholder="Middle Name">
-                        <input type="text" name="complainant_lname" id="complainant_lname1" placeholder="Last Name" required>
-                        <input type="text" name="complainant_suffix" id="complainant_suffix1" placeholder="Suffix">
+                        <input type="text" name="firstname" id="complainant_fname1" placeholder="First Name" required>
+                        <input type="text" name="middlename" id="complainant_mname1" placeholder="Middle Name">
+                        <input type="text" name="lastname" id="complainant_lname1" placeholder="Last Name" required>
+                        <input type="text" name="suffix" id="complainant_suffix1" placeholder="Suffix">
                     </div>
 
-                    <div class="input-complain222"> 
+                    <div class="input-complain222">
                         <div class="input-cont-complain2">
-                           <label for="time">Time:</label>
-                           <input id="timeComplain1" type="time" name="time">
+                            <label for="time">Time:</label>
+                            <input id="timeAwareness1" type="time" name="time">
                         </div>
-                        
+
                         <div class="input-cont-complain2">
-                           <label for="date">Date:</label>
-                           <input id="dateComplain1" type="date" name="date">
+                            <label for="date">Date:</label>
+                            <input id="dateAwareness1" type="date" name="date">
                         </div>
-                       
+
                         <div class="input-cont-complain2">
-                           <label for="location">Location:</label>
-                           <input id="locationComplain1" type="text" name="location" placeholder="Street Name">
+                            <label for="location">Location:</label>
+                            <input id="locationAwareness1" type="text" name="location" placeholder="Street Name">
                         </div>
                     </div>
                 </div>
@@ -222,15 +223,16 @@ while($row = $result->fetch_assoc()) {
             <div class="pangatlong-layer-to">
                 <div class="statusComplain_cont">
                     <label for="statusComplain">Status</label>
-                    <select id="statusComplain1" name="statusComplain" required>
+                    <select id="statusAwareness1" name="status_awareness" required>
                         <option value="">Select Status</option>
                         <option value="active">Active</option>
                         <option value="schedule">Schedule</option>
+                        <option value="settled">Settled</option>
                     </select>
                 </div>
 
                 <div class="submit_cont">
-                   <button type="button">Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
             </div>
 
@@ -240,7 +242,7 @@ while($row = $result->fetch_assoc()) {
     <!-- END EDIT Awareness -->
 
 
-   
+
 
 
     <script src="./js/jQuery-3.7.0.js"></script>
@@ -272,11 +274,10 @@ while($row = $result->fetch_assoc()) {
     closeButtonEdit.addEventListener('click', function() {
         modalEdit.style.display = 'none';
     });
-
-
     </script>
 
 </body>
+
 </html>
 
 <script>
@@ -296,7 +297,7 @@ deleteLink.forEach((del, index) => {
     });
 })
 
-   // JavaScript code to handle pagination
+// JavaScript code to handle pagination
 const table = document.getElementById('table');
 const rows = table.querySelectorAll('tbody tr');
 const totalRows = rows.length;

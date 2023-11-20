@@ -8,21 +8,31 @@
 	}
 	
   $id 	        = $conn->real_escape_string($_POST['blotter_id']);
-  $complainant  = $conn->real_escape_string($_POST['complainant']);
-  $respondent 	= $conn->real_escape_string($_POST['respondent']);
-  $victim 	    = $conn->real_escape_string($_POST['victim']);
-  $type         = $conn->real_escape_string($_POST['type']);
-  $location     = $conn->real_escape_string($_POST['location']);
-  $date         = $conn->real_escape_string($_POST['date']);
-  $time 	      = $conn->real_escape_string($_POST['time']);
-  $status 	    = $conn->real_escape_string($_POST['status']);
-  $details 	    = $conn->real_escape_string($_POST['details']);
+  $complainant_fname  = $conn->real_escape_string($_POST['complainant_fname']);
+    $complainant_mname  = $conn->real_escape_string($_POST['complainant_mname']);
+    $complainant_lname  = $conn->real_escape_string($_POST['complainant_lname']);
+    $complainant_suffix  = $conn->real_escape_string($_POST['complainant_suffix']);
+    
+    $respondent_fname  = $conn->real_escape_string($_POST['respondent_fname']);
+    $respondent_mname 	= $conn->real_escape_string($_POST['respondent_mname']);
+    $respondent_lname 	= $conn->real_escape_string($_POST['respondent_lname']);
+    $respondent_suffix 	= $conn->real_escape_string($_POST['respondent_suffix']);
+    
+    $victim_fname 	    = $conn->real_escape_string($_POST['victim_fname']);
+    $victim_mname 	    = $conn->real_escape_string($_POST['victim_mname']);
+    $victim_lname 	    = $conn->real_escape_string($_POST['victim_lname']);
+    $victim_suffix	    = $conn->real_escape_string($_POST['victim_suffix']);
+    $type 	      = $conn->real_escape_string($_POST['type']);
+    $location 	  = $conn->real_escape_string($_POST['location']);
+    $date         = $conn->real_escape_string($_POST['date']);
+    $time 	      = $conn->real_escape_string($_POST['time']);
+    $status 	    = $conn->real_escape_string($_POST['status']);
+    $details 	    = $conn->real_escape_string($_POST['details']);
 
 	if(!empty($id)){
 
 		if($status !== 'settled') {
-			$query = "UPDATE tblblotter SET `complainant`='$complainant', `respondent`='$respondent', `victim`='$victim',`type`='$type', `location`='$location', `date`='$date', 
-			`time`='$time', `status`='$status', `details`='$details' WHERE id=$id;";	
+			$query = "UPDATE tbl_blotter SET `complainant_fname`='$complainant_fname',`complainant_mname`='$complainant_mname',`complainant_lname`='$complainant_lname',`complainant_suffix`='$complainant_suffix',`respondent_fname`='$respondent_fname',`respondent_mname`='$respondent_mname',`respondent_lname`='$respondent_lname',`respondent_suffix`='$respondent_suffix',`victim_fname`='$victim_fname',`victim_mname`='$victim_mname',`victim_lname`='$victim_lname',`victim_suffix`='$victim_suffix',`type`='$type',`location`='$location',`date`='$date',`time`='$time',`details`='$details',`status`='$status' WHERE id=$id;";	
 			$result 	= $conn->query($query);
 		if($result === true){
             
@@ -36,7 +46,8 @@
 		}
 
 		} else {
-			$query  = "INSERT INTO blotter_archive (`complainant`, `respondent`, `victim`, `type`, `location`, `date`, `time`, `details`, `status`) VALUES ('$complainant', '$respondent','$victim', '$type','$location', '$date', '$time', '$details', '$status')";
+			$query  = "INSERT INTO settled_blotter_archive (`complainant_fname`, `complainant_mname`, `complainant_lname`, `complainant_suffix`, `respondent_fname`, `respondent_mname`, `respondent_lname`, `respondent_suffix`, `victim_fname`, `victim_mname`, `victim_lname`, `victim_suffix`, `type`, `location`, `date`, `time`, `details`, `status`) 
+                    VALUES ('$complainant_fname', '$complainant_mname', '$complainant_lname', '$complainant_suffix', '$respondent_fname', '$respondent_mname', '$respondent_lname', '$respondent_suffix', '$victim_fname', '$victim_mname', '$victim_lname', '$victim_suffix', '$type','$location','$date', '$time','$details', '$status')";
 			$result 	= $conn->query($query);
 
 		if($result === true){
@@ -44,7 +55,7 @@
 			$_SESSION['message'] = 'Blotter has been saved to archived!';
 			$_SESSION['success'] = 'success';
 
-			$delete = $conn->prepare("DELETE FROM tblblotter WHERE id = ?");
+			$delete = $conn->prepare("DELETE FROM tbl_blotter WHERE id = ?");
 			$delete->bind_param("i", $id);
 			$delete->execute();
 

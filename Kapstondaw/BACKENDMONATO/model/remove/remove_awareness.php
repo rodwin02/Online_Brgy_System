@@ -11,13 +11,16 @@
 
 	if(!empty($id)){
 		try {
-			$select = $conn->prepare("SELECT * FROM tblawareness WHERE id = ?");
+			$select = $conn->prepare("SELECT * FROM tbl_awareness WHERE id = ?");
 			$select->bind_param("s", $id);
 			$select->execute();
 			$awareness = $select->get_result()->fetch_assoc();
 
-			$insert = "INSERT INTO del_awareness_archive(`name`, `date`, `time`, `location`, `details`, `status`) VALUES (
-				'{$awareness['name']}',
+			$insert = "INSERT INTO del_awareness_archive(`firstname`, `middlename`, `lastname`, `suffix`, `date`, `time`, `location`, `details`, `status`) VALUES (
+				'{$awareness['firstname']}',
+				'{$awareness['middlename']}',
+				'{$awareness['lastname']}',
+				'{$awareness['suffix']}',
 				'{$awareness['date']}',
 				'{$awareness['time']}',	
 				'{$awareness['location']}',
@@ -26,7 +29,7 @@
 			)";
 			$conn->query($insert);
 			
-			$query = "DELETE FROM tblawareness WHERE id = '$id'";
+			$query = "DELETE FROM tbl_awareness WHERE id = '$id'";
 			$result = $conn->query($query);
 			
 			if($result === true){

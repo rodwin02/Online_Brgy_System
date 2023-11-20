@@ -7,9 +7,20 @@
         }
     }
     
-    $complainant  = $conn->real_escape_string($_POST['complainant']);
-    $respondent 	= $conn->real_escape_string($_POST['respondent']);
-    $victim 	    = $conn->real_escape_string($_POST['victim']);
+    $complainant_fname  = $conn->real_escape_string($_POST['complainant_fname']);
+    $complainant_mname  = $conn->real_escape_string($_POST['complainant_mname']);
+    $complainant_lname  = $conn->real_escape_string($_POST['complainant_lname']);
+    $complainant_suffix  = $conn->real_escape_string($_POST['complainant_suffix']);
+    
+    $respondent_fname  = $conn->real_escape_string($_POST['respondent_fname']);
+    $respondent_mname 	= $conn->real_escape_string($_POST['respondent_mname']);
+    $respondent_lname 	= $conn->real_escape_string($_POST['respondent_lname']);
+    $respondent_suffix 	= $conn->real_escape_string($_POST['respondent_suffix']);
+    
+    $victim_fname 	    = $conn->real_escape_string($_POST['victim_fname']);
+    $victim_mname 	    = $conn->real_escape_string($_POST['victim_mname']);
+    $victim_lname 	    = $conn->real_escape_string($_POST['victim_lname']);
+    $victim_suffix	    = $conn->real_escape_string($_POST['victim_suffix']);
     $type 	      = $conn->real_escape_string($_POST['type']);
     $location 	  = $conn->real_escape_string($_POST['location']);
     $date         = $conn->real_escape_string($_POST['date']);
@@ -17,10 +28,10 @@
     $status 	    = $conn->real_escape_string($_POST['status']);
     $details 	    = $conn->real_escape_string($_POST['details']);
 
-    if(!empty($complainant) && !empty($respondent) && !empty($victim) && !empty($type) && !empty($location) && !empty($date) && !empty($time) && !empty($status) && !empty($details)){
+    if(!empty($type) && !empty($location) && !empty($date) && !empty($time) && !empty($status) && !empty($details)){
 
-        $insert  = "INSERT INTO tblblotter (`complainant`, `respondent`, `victim`, `type`, `location`,`date`, `time`, `details`, `status`) 
-                    VALUES ('$complainant', '$respondent','$victim', '$type','$location','$date', '$time','$details', '$status')";
+        $insert  = "INSERT INTO tbl_blotter (`complainant_fname`, `complainant_mname`, `complainant_lname`, `complainant_suffix`, `respondent_fname`, `respondent_mname`, `respondent_lname`, `respondent_suffix`, `victim_fname`, `victim_mname`, `victim_lname`, `victim_suffix`, `type`, `location`, `date`, `time`, `details`, `status`) 
+                    VALUES ('$complainant_fname', '$complainant_mname', '$complainant_lname', '$complainant_suffix', '$respondent_fname', '$respondent_mname', '$respondent_lname', '$respondent_suffix', '$victim_fname', '$victim_mname', '$victim_lname', '$victim_suffix', '$type','$location','$date', '$time','$details', '$status')";
         $result  = $conn->query($insert);
 
         if($result === true){
