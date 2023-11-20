@@ -62,6 +62,7 @@ function editResident(that) {
   hholdNo = $(that).attr("data-householdNo");
   osy = $(that).attr("data-osy");
   pwd = $(that).attr("data-pwd");
+  ext = $(that).attr("data-ext");
 
   $("#indetity").prop("disabled", false);
 
@@ -69,12 +70,15 @@ function editResident(that) {
   $("#firstname").val(fname);
   $("#middlename").val(mname);
   $("#lastname").val(lname);
-  $("#house-no").val(houseNo);
+
   $("#sex").val(sex);
-  $("#street").val(street);
-  $("#subdivision").val(subD);
   $("#dob").val(dbirth);
   $("#place-of-birth").val(pbirth);
+
+  $("#house-no").val(houseNo);
+  $("#street").val(street);
+  $("#subdivision").val(subD);
+
   $("#civil-status").val(cstatus);
   $("#occupation").val(occu);
   $("#email").val(email);
@@ -84,6 +88,7 @@ function editResident(that) {
   $("#household-no").val(hholdNo);
   $("#out-of-school-youth").prop("checked", osy);
   $("#person-with-disability").prop("checked", pwd);
+  $("#ext").val(ext);
 }
 
 // ! EDIT IDFORM
