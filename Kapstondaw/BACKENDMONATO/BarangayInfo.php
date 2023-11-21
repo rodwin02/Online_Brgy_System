@@ -134,13 +134,13 @@
                     </div>
 
                     <div class="historical-desc">
-                      <label for="history-desc">Historical Background Description</label>
-                      <div class="history-center">
-                          <section>
-                              <!-- Quill editor container -->
-                              <div id="editorDescription" style="height: 300px;"><?= $historicalBackground ?></div>
-                          </section>
-                      </div>
+                        <label for="history-desc">Historical Background Description</label>
+                        <div class="history-center">
+                            <section>
+                                <!-- Quill editor container -->
+                                <div id="editorDescription" style="height: 300px;"><?= $historicalBackground ?></div>
+                            </section>
+                        </div>
                     </div>
 
                     <div class="historical-img">
@@ -164,7 +164,7 @@
                             <label for="vision">Vision</label>
                             <section>
                                 <!-- Quill editor container -->
-                                <div id="editorVision" style="height: 200px;"><?= $vision ?></div> 
+                                <div id="editorVision" style="height: 200px;"><?= $vision ?></div>
                             </section>
                         </div>
                     </div>
@@ -179,36 +179,36 @@
         </form>
     </div>
 
+    <!-- Include Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+    // Initialize Quill editors
+    var editorDescription = new Quill('#editorDescription', {
+        theme: 'snow'
+    });
 
-     <!-- Include Quill library -->
-     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-     <script>
-        // Initialize Quill editors
-        var editorDescription = new Quill('#editorDescription', {
-            theme: 'snow'
-        });
+    var editorMission = new Quill('#editorMission', {
+        theme: 'snow'
+    });
 
-        var editorMission = new Quill('#editorMission', {
-            theme: 'snow'
-        });
+    var editorVision = new Quill('#editorVision', {
+        theme: 'snow'
+    });
 
-        var editorVision = new Quill('#editorVision', {
-            theme: 'snow'
-        });
+    // Function to get HTML content from Quill editors and set them to hidden textarea fields
+    function updateHiddenFields() {
+        document.getElementById('textareaDescription').value = editorDescription.root.innerHTML;
+        document.getElementById('textareaMission').value = editorMission.root.innerHTML;
+        document.getElementById('textareaVision').value = editorVision.root.innerHTML;
+    }
 
-        // Function to get HTML content from Quill editors and set them to hidden textarea fields
-        function updateHiddenFields() {
-            document.getElementById('textareaDescription').value = editorDescription.root.innerHTML;
-            document.getElementById('textareaMission').value = editorMission.root.innerHTML;
-            document.getElementById('textareaVision').value = editorVision.root.innerHTML;
-        }
-
-        // // Call the updateHiddenFields function before submitting the form
-        // document.querySelector('form').addEventListener('submit', function () {
-        //     updateHiddenFields();
-        // });
+    // // Call the updateHiddenFields function before submitting the form
+    // document.querySelector('form').addEventListener('submit', function() {
+    //     updateHiddenFields();
+    // });
     </script>
 </body>
+
 </html>
 
 <script>
@@ -291,5 +291,4 @@ function previewHistoryImage() {
         preview.innerHTML = '';
     }
 }
-
 </script>
