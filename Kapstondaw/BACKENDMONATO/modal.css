@@ -1627,7 +1627,7 @@
   color: wheat;
 }
 
-.modal-editDescription {
+/* .modal-editDescription {
   display: flex;
   z-index: 4;
   height: 100vh;
@@ -1638,18 +1638,17 @@
   right: 0;
   bottom: 0;
   overflow: auto;
-  padding: 10% 0 0 35%;
-
+  padding: 10% 0 0 17%;
+  display: none;
 }
 
 .modal-editDescription .formEditDescription {
   display: flex;
   position: fixed;
   flex-direction: column;
-  border-radius: 10px;
-  background: #F8F8F8;
-  width: 490px;
-  height: auto;
+  border-radius: 20px;
+  
+  width: 1000px;
   padding: 20px;
 
   color: #000;
@@ -1659,14 +1658,23 @@
   font-weight: 400;
   line-height: normal;
 }
+.modal-editDescription .formEditDescription .mb-3 {
+  background: #F8F8F8;
+  border-radius: 5px;
 
-.modal-editDescription .formEditDescription .editor-buttons {
+}
+.modal-editDescription .formEditDescription .mb-3 textarea{
+  background: #F8F8F8;
+  width: auto;
+  height: auto; */
+/* } */
+.mb-3 {
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  width: 95%;
+  flex-direction: column;
 }
 
-.modal-editDescription .formEditDescription .editor-buttons button {
-  padding: 8px 15px;
-  cursor: pointer;
-}
+
+
+
+

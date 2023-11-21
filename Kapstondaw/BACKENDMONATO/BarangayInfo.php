@@ -1,3 +1,4 @@
+
 <?php include './server/server.php'?>
 <!DOCTYPE html>
 <html lang="en">
@@ -6,14 +7,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barangay Information</title>
+    <!-- Bootstrap 5 CDN Link -->
+   
+
+    <!-- Summernote CSS - CDN Link -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <!-- //Summernote CSS - CDN Link -->
     <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="modal.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+
+    
 </head>
 
 <body>
@@ -135,12 +144,14 @@
                     </div>
 
                     <div class="historical-desc">
-                      <label for="history-desc">Historical Background Description</label>
+                      <div class="description-cont">
+                           <label for="history-desc">Historical Background Description</label>
+                           <img src="icons/edit.png" id="edit_description" alt="Edit">
+                      </div>
                       <div class="history-center">
-                          <section>
-                              <!-- Quill editor container -->
-                              <div id="editorDescription" style="height: 300px;"><?= $historicalBackground ?></div>
-                          </section>
+                         <div class="mb-3">
+                            <textarea name="description" id="your_summernote" class="form-control" rows="4"></textarea>
+                         </div>
                       </div>
                     </div>
 
@@ -159,22 +170,19 @@
                                <img src="icons/edit.png" id="editVision" alt="">
                             </div>
                           
-                            <textarea name="vision" id="vision" cols="50" rows="15"></textarea>
+                            <div class="mb-3">
+                              <textarea name="description" id="your_summernote1" class="form-control" rows="4"></textarea>
+                            </div>
                         </div>
                         <div class="mission-cont">
-                            <label for="mission">Mission</label>
-                            <section>
-                                <!-- Quill editor container -->
-                                <div id="editorMission" style="height: 200px;"><?= $mission ?></div>
-                            </section>
-                        </div>
-
-                        <div class="vision-cont">
-                            <label for="vision">Vision</label>
-                            <section>
-                                <!-- Quill editor container -->
-                                <div id="editorVision" style="height: 200px;"><?= $vision ?></div> 
-                            </section>
+                            <div class="label-cont">
+                               <label for="mission">Mission</label>
+                               <img src="icons/edit.png" id="editMission" alt="">
+                            </div>
+                            
+                            <div class="mb-3">
+                              <textarea name="description" id="your_summernote2" class="form-control" rows="4"></textarea>
+                            </div>
                         </div>
 
                         
@@ -189,46 +197,44 @@
         </form>
     </div>
 
-    <div class="modal-editDescription">
-        <form action="#" class="formEditDescription">
-            <textarea name="description" id="description" cols="30" rows="10"></textarea>
-            <div class="editor-buttons">
-               <button onclick="enableEditing()">Edit</button>
-               <button onclick="saveChanges()">Save</button>
+    <!-- <div class="modal-editDescription">
+        <form action="#" class="formEditDescription" id="formEditDescription">
+            <div class="mb-3">
+                <label>Big Description</label>
+                <textarea name="description" id="your_summernote" class="form-control" rows="4"></textarea>
             </div>
-        </form>
-    </div>
+        </form> 
+    </div> -->
 
-     <!-- Include Quill library -->
-     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-     <script>
-        // Initialize Quill editors
-        var editorDescription = new Quill('#editorDescription', {
-            theme: 'snow'
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Summernote JS - CDN Link -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#your_summernote").summernote();
+            $('.dropdown-toggle').dropdown();
         });
-
-        var editorMission = new Quill('#editorMission', {
-            theme: 'snow'
+    </script>
+    <!-- //Summernote JS - CDN Link -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#your_summernote1").summernote();
+            $('.dropdown-toggle').dropdown();
         });
-
-        var editorVision = new Quill('#editorVision', {
-            theme: 'snow'
+    </script>
+    <!-- //Summernote JS - CDN Link -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#your_summernote2").summernote();
+            $('.dropdown-toggle').dropdown();
         });
-
-        // Function to get HTML content from Quill editors and set them to hidden textarea fields
-        function updateHiddenFields() {
-            document.getElementById('textareaDescription').value = editorDescription.root.innerHTML;
-            document.getElementById('textareaMission').value = editorMission.root.innerHTML;
-            document.getElementById('textareaVision').value = editorVision.root.innerHTML;
-        }
-
-        // // Call the updateHiddenFields function before submitting the form
-        // document.querySelector('form').addEventListener('submit', function () {
-        //     updateHiddenFields();
-        // });
     </script>
 </body>
-
 </html>
 
 <script>
@@ -311,4 +317,19 @@ function previewHistoryImage() {
         preview.innerHTML = '';
     }
 }
+
+
+    const editdescription = document.getElementById('edit_description');
+    const modaleditDescription = document.querySelector('.modal-editDescription');
+
+    editdescription.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditDescription.style.display = 'block';
+    });
+
+    // closeButton.addEventListener('click', function() {
+    //     modal.style.display = 'none';
+    // });
+
+    
 </script>
