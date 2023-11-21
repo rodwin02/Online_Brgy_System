@@ -8,7 +8,10 @@
 	}
 	
   $id 	        = $conn->real_escape_string($_POST['complain_id']);
-  $complainant  = $conn->real_escape_string($_POST['complainant']);
+  $complainant_fname  = $conn->real_escape_string($_POST['complainant_fname']);
+    $complainant_mname  = $conn->real_escape_string($_POST['complainant_mname']);
+    $complainant_lname  = $conn->real_escape_string($_POST['complainant_lname']);
+    $complainant_suffix  = $conn->real_escape_string($_POST['complainant_suffix']);
   $date         = $conn->real_escape_string($_POST['date']);
   $time 	      = $conn->real_escape_string($_POST['time']);
   $location     = $conn->real_escape_string($_POST['location']);
@@ -18,7 +21,7 @@
 	if(!empty($id)){
 
 		if($status !== 'settled') {
-			$query = "UPDATE tblcomplain SET `complainant`='$complainant', `date`='$date', `time`='$time', `location`='$location', `details`='$details', `status`='$status' WHERE id=$id;";	
+			$query = "UPDATE tbl_complain SET `complainant_fname`='$complainant_fname', `complainant_mname`='$complainant_mname', `complainant_lname`='$complainant_lname', `complainant_suffix`='$complainant_suffix', `date`='$date', `time`='$time', `location`='$location', `details`='$details', `status`='$status' WHERE id=$id;";	
 			$result 	= $conn->query($query);
 		if($result === true){
             
@@ -32,7 +35,7 @@
 		}
 
 		} else {
-			$query  = "INSERT INTO complain_archive (`complainant`, `date`, `time`, `location`, `details`, `status`) VALUES ('$complainant','$date','$time', '$location', '$details', '$status')";
+			$query  = "INSERT INTO settled_complain_archive (`complainant_fname`, `complainant_mname`, `complainant_lname`, `complainant_suffix`, `date`, `location`, `time`, `details`, `status`) VALUES ('$complainant_fname', '$complainant_mname', '$complainant_lname', '$complainant_suffix', '$date', '$location','$time',  '$details', '$status')";
 			$result 	= $conn->query($query);
 
 		if($result === true){
@@ -40,7 +43,7 @@
 			$_SESSION['message'] = 'Complain has been saved to archived!';
 			$_SESSION['success'] = 'success';
 
-			$delete = $conn->prepare("DELETE FROM tblcomplain WHERE id = ?");
+			$delete = $conn->prepare("DELETE FROM tbl_complain WHERE id = ?");
 			$delete->bind_param("i", $id);
 			$delete->execute();
 

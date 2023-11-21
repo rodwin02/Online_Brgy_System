@@ -7,17 +7,20 @@
         }
     }
     
-    $name  = $conn->real_escape_string($_POST['name']);
+    $firstname  = $conn->real_escape_string($_POST['firstname']);
+    $middlename  = $conn->real_escape_string($_POST['middlename']);
+    $lastname  = $conn->real_escape_string($_POST['lastname']);
+    $suffix  = $conn->real_escape_string($_POST['suffix']);
     $date 	= $conn->real_escape_string($_POST['date']);
     $time 	      = $conn->real_escape_string($_POST['time']);
     $location 	    = $conn->real_escape_string($_POST['location']);
     $details 	  = $conn->real_escape_string($_POST['details_awareness']);
     $status 	    = $conn->real_escape_string($_POST['status_awareness']);
 
-    if(!empty($name) && !empty($date) && !empty($location) && !empty($time) && !empty($details) && !empty($status)){
+    if( !empty($date) && !empty($location) && !empty($time) && !empty($details) && !empty($status)){
 
-        $insert  = "INSERT INTO tblawareness (`name`, `date`, `time`, `location`, `details`,`status`) 
-        VALUES ('$name', '$date','$time', '$location','$details','$status')";
+        $insert  = "INSERT INTO tbl_awareness (`firstname`, `middlename`, `lastname`, `suffix`, `date`, `time`, `location`, `details`,`status`) 
+        VALUES ('$firstname', '$middlename', '$lastname', '$suffix', '$date','$time', '$location','$details','$status')";
 
         $result  = $conn->query($insert);
 

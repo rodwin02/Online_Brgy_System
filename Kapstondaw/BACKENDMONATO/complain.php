@@ -1,6 +1,6 @@
 <?php include './server/server.php'?>
 <?php
-$query =  "SELECT * FROM tblcomplain";
+$query =  "SELECT * FROM tbl_complain";
 $result = $conn->query($query);
 
 $complain = array();
@@ -71,7 +71,8 @@ while($row = $result->fetch_assoc()) {
                     <?php if(!empty($complain)) { ?>
                     <?php $no=1; foreach($complain as $row): ?>
                     <tr>
-                        <td><?= $row['complainant']?></td>
+                        <td><?= $row['complainant_fname']." ".$row['complainant_mname']." ".$row['complainant_lname']." ".$row['complainant_suffix']?>
+                        </td>
                         <td><?= $row['details']?></td>
                         <td><?= $row['date'] ?></td>
                         <td><?= $row['time'] ?></td>
@@ -79,29 +80,31 @@ while($row = $result->fetch_assoc()) {
                         <td><?= $row['status'] ?></td>
                         <td class="actions">
                             <a href="#" class="edit" id="editComplain" onclick="complainEdit(this)"
-                                data-id="<?= $row['id'] ?>" data-complainant="<?= $row['complainant'] ?>"
+                                data-id="<?= $row['id'] ?>" data-complainant-fname="<?= $row['complainant_fname'] ?>"
+                                data-complainant-mname="<?= $row['complainant_mname'] ?>"
+                                data-complainant-lname="<?= $row['complainant_lname'] ?>"
+                                data-complainant-suffix="<?= $row['complainant_suffix'] ?>"
                                 data-date="<?= $row['date'] ?>" data-location="<?= $row['location'] ?>"
                                 data-time="<?= $row['time'] ?>" data-details="<?= $row['details'] ?>"
                                 data-status="<?= $row['status'] ?>">Edit</a>
                             <a href="./model/print_complain.php" class="print">Print</a>
-                            <a href="#"
-                                    class="delete">Cancel</a>
+                            <a href="#" class="delete">Cancel</a>
 
-                                <div class="modal-delete">
-                                    <div class="form-delete">
-                                        <div class="delete-cont">
-                                            <p>Delete</p>
-                                            <img src="icons/close 1.png" alt="" class="close-delete">
-                                        </div>
-                                        <div class="delete-description">
-                                            <p>Deleting this will remove all data
-                                                and cannot be undone.</p>
-                                        </div>
-                                        <div class="delete-submit">
-                                            <a href="./model/remove/remove_complain.php?id=<?= $row['id']?>">Delete</a>
-                                        </div>
+                            <div class="modal-delete">
+                                <div class="form-delete">
+                                    <div class="delete-cont">
+                                        <p>Delete</p>
+                                        <img src="icons/close 1.png" alt="" class="close-delete">
+                                    </div>
+                                    <div class="delete-description">
+                                        <p>Deleting this will remove all data
+                                            and cannot be undone.</p>
+                                    </div>
+                                    <div class="delete-submit">
+                                        <a href="./model/remove/remove_complain.php?id=<?= $row['id']?>">Delete</a>
                                     </div>
                                 </div>
+                            </div>
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>
@@ -131,26 +134,28 @@ while($row = $result->fetch_assoc()) {
                 <div class="unang-left">
                     <label for="name">Complainant:</label>
                     <div class="input-cont-complain">
-                        <input type="text" name="complainant_fname" id="complainant_fname" placeholder="First Name" required>
+                        <input type="text" name="complainant_fname" id="complainant_fname" placeholder="First Name"
+                            required>
                         <input type="text" name="complainant_mname" id="complainant_mname" placeholder="Middle Name">
-                        <input type="text" name="complainant_lname" id="complainant_lname" placeholder="Last Name" required>
+                        <input type="text" name="complainant_lname" id="complainant_lname" placeholder="Last Name"
+                            required>
                         <input type="text" name="complainant_suffix" id="complainant_suffix" placeholder="Suffix">
                     </div>
 
-                    <div class="input-complain222"> 
+                    <div class="input-complain222">
                         <div class="input-cont-complain2">
-                           <label for="time">Time:</label>
-                           <input id="timeComplain" type="time" name="time">
+                            <label for="time">Time:</label>
+                            <input id="timeComplain" type="time" name="time">
                         </div>
-                        
+
                         <div class="input-cont-complain2">
-                           <label for="date">Date:</label>
-                           <input id="dateComplain" type="date" name="date">
+                            <label for="date">Date:</label>
+                            <input id="dateComplain" type="date" name="date">
                         </div>
-                       
+
                         <div class="input-cont-complain2">
-                           <label for="location">Location:</label>
-                           <input id="locationComplain" type="text" name="location" placeholder="Street Name">
+                            <label for="location">Location:</label>
+                            <input id="locationComplain" type="text" name="location" placeholder="Street Name">
                         </div>
                     </div>
                 </div>
@@ -172,7 +177,7 @@ while($row = $result->fetch_assoc()) {
                 </div>
 
                 <div class="submit_cont">
-                   <button type="button">Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
             </div>
         </form>
@@ -193,26 +198,28 @@ while($row = $result->fetch_assoc()) {
                 <div class="unang-left">
                     <label for="name">Complainant:</label>
                     <div class="input-cont-complain">
-                        <input type="text" name="complainant_fname" id="complainant_fname1" placeholder="First Name" required>
+                        <input type="text" name="complainant_fname" id="complainant_fname1" placeholder="First Name"
+                            required>
                         <input type="text" name="complainant_mname" id="complainant_mname1" placeholder="Middle Name">
-                        <input type="text" name="complainant_lname" id="complainant_lname1" placeholder="Last Name" required>
+                        <input type="text" name="complainant_lname" id="complainant_lname1" placeholder="Last Name"
+                            required>
                         <input type="text" name="complainant_suffix" id="complainant_suffix1" placeholder="Suffix">
                     </div>
 
-                    <div class="input-complain222"> 
+                    <div class="input-complain222">
                         <div class="input-cont-complain2">
-                           <label for="time">Time:</label>
-                           <input id="timeComplain1" type="time" name="time">
+                            <label for="time">Time:</label>
+                            <input id="timeComplain1" type="time" name="time">
                         </div>
-                        
+
                         <div class="input-cont-complain2">
-                           <label for="date">Date:</label>
-                           <input id="dateComplain1" type="date" name="date">
+                            <label for="date">Date:</label>
+                            <input id="dateComplain1" type="date" name="date">
                         </div>
-                       
+
                         <div class="input-cont-complain2">
-                           <label for="location">Location:</label>
-                           <input id="locationComplain1" type="text" name="location" placeholder="Street Name">
+                            <label for="location">Location:</label>
+                            <input id="locationComplain1" type="text" name="location" placeholder="Street Name">
                         </div>
                     </div>
                 </div>
@@ -230,21 +237,22 @@ while($row = $result->fetch_assoc()) {
                         <option value="">Select Status</option>
                         <option value="active">Active</option>
                         <option value="schedule">Schedule</option>
+                        <option value="settled">Settled</option>
                     </select>
                 </div>
 
                 <div class="submit_cont">
-                   <button type="button">Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
             </div>
 
             <input type="hidden" name="complain_id" id="complain_id">
-            
+
         </form>
     </div>
     <!-- END EDIT COMPLAIN -->
 
-  
+
 
     <script src="./js/jQuery-3.7.0.js"></script>
     <script src="./js/app.js"></script>
@@ -276,11 +284,10 @@ while($row = $result->fetch_assoc()) {
     closeButtonEdit.addEventListener('click', function() {
         modalEdit.style.display = 'none';
     });
-
-    
     </script>
 
 </body>
+
 </html>
 
 <script>

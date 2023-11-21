@@ -1,4 +1,13 @@
 <?php include '../server/server.php'?>
+<?php
+$query =  "SELECT * FROM del_complain_archive";
+$result = $conn->query($query);
+
+$complain = array();
+while($row = $result->fetch_assoc()) {
+  $complain[] = $row;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,13 +56,22 @@
                         <th>Time</th>
                         <th>Location</th>
                         <th>Status</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if(!empty($complain)) { ?>
+                    <?php $no=1; foreach($complain as $row): ?>
                     <tr>
-                        <td></td>
+                        <td><?= $row['complainant_fname']." ".$row['complainant_mname']." ".$row['complainant_lname']." ".$row['complainant_suffix']?>
+                        </td>
+                        <td><?= $row['details']?></td>
+                        <td><?= $row['date'] ?></td>
+                        <td><?= $row['time'] ?></td>
+                        <td><?= $row['location'] ?></td>
+                        <td><?= $row['status'] ?></td>
                     </tr>
+                    <?php $no++; endforeach ?>
+                    <?php } ?>
                 </tbody>
             </table>
             <div class="pagination">

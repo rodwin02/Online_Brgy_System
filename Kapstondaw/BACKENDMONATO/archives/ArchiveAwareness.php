@@ -1,4 +1,13 @@
 <?php include '../server/server.php'?>
+<?php 
+$query = "SELECT * FROM del_awareness_archive";
+$result = $conn->query($query);
+
+$awareness = array();
+while($row = $result->fetch_assoc()) {
+$awareness[] = $row;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,13 +56,22 @@
                         <th>Time</th>
                         <th>Location</th>
                         <th>Status</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if(!empty($awareness)) { ?>
+                    <?php $no=1; foreach($awareness as $row): ?>
                     <tr>
-                        <td></td>
+                        <td><?= $row['firstname']." ".$row['middlename']." ".$row['lastname']." ".$row['suffix']?>
+                        </td>
+                        <td><?= $row['details']?></td>
+                        <td><?= $row['date'] ?></td>
+                        <td><?= $row['time'] ?></td>
+                        <td><?= $row['location'] ?></td>
+                        <td><?= $row['status'] ?></td>
                     </tr>
+                    <?php $no++; endforeach ?>
+                    <?php } ?>
                 </tbody>
             </table>
             <div class="pagination">
