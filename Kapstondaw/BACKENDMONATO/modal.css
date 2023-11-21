@@ -1626,3 +1626,47 @@
   background-color: #007236;
   color: wheat;
 }
+
+.modal-editDescription {
+  display: flex;
+  z-index: 4;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 10% 0 0 35%;
+
+}
+
+.modal-editDescription .formEditDescription {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #F8F8F8;
+  width: 490px;
+  height: auto;
+  padding: 20px;
+
+  color: #000;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.modal-editDescription .formEditDescription .editor-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modal-editDescription .formEditDescription .editor-buttons button {
+  padding: 8px 15px;
+  cursor: pointer;
+}

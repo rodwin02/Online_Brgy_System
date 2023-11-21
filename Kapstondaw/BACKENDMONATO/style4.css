@@ -1989,16 +1989,27 @@ td {
  
   width: 100%;
   margin-left: 30px;
- 
+
 }
-.barangay-layer2 .historical-desc label {
+.barangay-layer2 .historical-desc .description-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.barangay-layer2 .historical-desc .description-cont img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.barangay-layer2 .historical-desc .description-cont label {
   color: #000000;
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-
+  margin-right: 10px;
 }
 .barangay-layer2 .historical-desc .history-center {
   display: flex;
@@ -2033,20 +2044,27 @@ td {
   margin-top: 5px;
   flex-direction: column;
   padding: 0 152.5px;
-  
 }
-.barangay-layer2 .MissionVision-cont .mission-cont label{
+.barangay-layer2 .MissionVision-cont .mission-cont .label-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.barangay-layer2 .MissionVision-cont .mission-cont .label-cont img {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.barangay-layer2 .MissionVision-cont .mission-cont .label-cont label{
   color: #000000;
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-bottom: 10px;
-  margin-top: 20px;
+  margin-right: 10px;
 }
-
-
+  
 .barangay-layer2 .MissionVision-cont .vision-cont {
   width: 50%;
   
@@ -2057,16 +2075,29 @@ td {
   flex-direction: column;
   padding: 0 152.5px;
 }
+.barangay-layer2 .MissionVision-cont .vision-cont textarea {
+  overflow-y: auto;
+}
+.barangay-layer2 .MissionVision-cont .vision-cont .label-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.barangay-layer2 .MissionVision-cont .vision-cont .label-cont img {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
 
-.barangay-layer2 .MissionVision-cont .vision-cont label {
+.barangay-layer2 .MissionVision-cont .vision-cont .label-cont label {
   color: #000000;
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-bottom: 10px;
-  margin-top: 20px;
+  margin-right: 10px;
 }
 
 .addModal-cont {

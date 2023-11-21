@@ -512,7 +512,8 @@ tr:nth-child(even) {
 
 .edit,
 .print,
-.delete {
+.delete,
+.accountBtn {
   margin-right: 10px;
   text-decoration: none;
 }
@@ -526,6 +527,10 @@ tr:nth-child(even) {
 }
 .delete {
   color: #f00;
+  cursor: pointer;
+}
+.accountBtn {
+  color: rgb(0, 0, 0);
   cursor: pointer;
 }
 .next-button {
@@ -748,7 +753,7 @@ tr:nth-child(even) {
   flex-direction: column;
   background: #f8f8f8;
   width: 900px;
-  height: 360px;
+  height: 410px;
   padding: 20px;
   overflow: hidden;
   border-radius: 20px;
@@ -906,7 +911,7 @@ select {
   margin-bottom: 10px;
   margin-right: 5px;
 } 
-.unang-layerBlotter .input-cont-blotter #respondent_suffix, #complainant_suffix {
+.unang-layerBlotter .input-cont-blotter #respondent_suffix, #complainant_suffix, #victim_suffix{
   width: 20%;
 }
 .pangalawang-layerBlotter {
@@ -1203,16 +1208,17 @@ select {
 }
 
 .form2Blotter .submitBlotter {
-  width: 89.744px;
-  height: 35.836px;
-  flex-shrink: 0;
-  color: white;
+  padding: 7px 18px;
+  border: 1px solid #007236;
+  color: #007236;
   border-radius: 5px;
-  background: #007236;
+  cursor: pointer;
   margin-top: 15px;
-  display: flex;
-  justify-content: center;
   align-self: flex-end;
+}
+.form2Blotter .submitBlotter:hover {
+  background-color: #007236;
+  color: white;
 }
 .form2 .updateBlotter {
   width: 89.744px;

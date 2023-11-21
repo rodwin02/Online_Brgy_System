@@ -26,7 +26,7 @@ function calculateAge($dob) {
   $query4 = "SELECT * FROM tbl_households WHERE `voter_status`='non-voter'";
 	$non = $conn->query($query4)->num_rows;
 
-  $query5 = "SELECT * FROM tblblotter";
+  $query5 = "SELECT * FROM tbl_blotter";
 	$blotter = $conn->query($query5)->num_rows;
 
   $query6 = "SELECT * FROM tbl_households WHERE osy='OSY'";
