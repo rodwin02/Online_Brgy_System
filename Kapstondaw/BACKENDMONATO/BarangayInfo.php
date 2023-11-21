@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style3.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="style4.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
+    <link rel="stylesheet" href="modal.css ?<?php echo time(); ?>">
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -134,13 +135,13 @@
                     </div>
 
                     <div class="historical-desc">
-                        <label for="history-desc">Historical Background Description</label>
-                        <div class="history-center">
-                            <section>
-                                <!-- Quill editor container -->
-                                <div id="editorDescription" style="height: 300px;"><?= $historicalBackground ?></div>
-                            </section>
-                        </div>
+                      <label for="history-desc">Historical Background Description</label>
+                      <div class="history-center">
+                          <section>
+                              <!-- Quill editor container -->
+                              <div id="editorDescription" style="height: 300px;"><?= $historicalBackground ?></div>
+                          </section>
+                      </div>
                     </div>
 
                     <div class="historical-img">
@@ -152,6 +153,14 @@
                             onchange="previewHistoryImage()">
                     </div>
                     <div class="MissionVision-cont">
+                        <div class="vision-cont">
+                            <div class="label-cont">
+                               <label for="vision">Vision</label>
+                               <img src="icons/edit.png" id="editVision" alt="">
+                            </div>
+                          
+                            <textarea name="vision" id="vision" cols="50" rows="15"></textarea>
+                        </div>
                         <div class="mission-cont">
                             <label for="mission">Mission</label>
                             <section>
@@ -164,9 +173,11 @@
                             <label for="vision">Vision</label>
                             <section>
                                 <!-- Quill editor container -->
-                                <div id="editorVision" style="height: 200px;"><?= $vision ?></div>
+                                <div id="editorVision" style="height: 200px;"><?= $vision ?></div> 
                             </section>
                         </div>
+
+                        
                     </div>
 
                 </div>
@@ -175,37 +186,46 @@
             <div class="update-Container">
                 <button type="submit">Update</button>
             </div>
-
         </form>
     </div>
 
-    <!-- Include Quill library -->
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script>
-    // Initialize Quill editors
-    var editorDescription = new Quill('#editorDescription', {
-        theme: 'snow'
-    });
+    <div class="modal-editDescription">
+        <form action="#" class="formEditDescription">
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <div class="editor-buttons">
+               <button onclick="enableEditing()">Edit</button>
+               <button onclick="saveChanges()">Save</button>
+            </div>
+        </form>
+    </div>
 
-    var editorMission = new Quill('#editorMission', {
-        theme: 'snow'
-    });
+     <!-- Include Quill library -->
+     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+     <script>
+        // Initialize Quill editors
+        var editorDescription = new Quill('#editorDescription', {
+            theme: 'snow'
+        });
 
-    var editorVision = new Quill('#editorVision', {
-        theme: 'snow'
-    });
+        var editorMission = new Quill('#editorMission', {
+            theme: 'snow'
+        });
 
-    // Function to get HTML content from Quill editors and set them to hidden textarea fields
-    function updateHiddenFields() {
-        document.getElementById('textareaDescription').value = editorDescription.root.innerHTML;
-        document.getElementById('textareaMission').value = editorMission.root.innerHTML;
-        document.getElementById('textareaVision').value = editorVision.root.innerHTML;
-    }
+        var editorVision = new Quill('#editorVision', {
+            theme: 'snow'
+        });
 
-    // // Call the updateHiddenFields function before submitting the form
-    // document.querySelector('form').addEventListener('submit', function() {
-    //     updateHiddenFields();
-    // });
+        // Function to get HTML content from Quill editors and set them to hidden textarea fields
+        function updateHiddenFields() {
+            document.getElementById('textareaDescription').value = editorDescription.root.innerHTML;
+            document.getElementById('textareaMission').value = editorMission.root.innerHTML;
+            document.getElementById('textareaVision').value = editorVision.root.innerHTML;
+        }
+
+        // // Call the updateHiddenFields function before submitting the form
+        // document.querySelector('form').addEventListener('submit', function () {
+        //     updateHiddenFields();
+        // });
     </script>
 </body>
 

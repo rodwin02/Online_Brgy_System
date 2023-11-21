@@ -158,6 +158,15 @@ while($row = $result->fetch_assoc()) {
                         <input type="text" name="respondent_suffix" id="respondent_suffix" placeholder="Suffix">
                     </div>
 
+                    <label for="victim">Victim</label>
+                    <div class="input-cont-blotter">
+                        <input type="text" name="victim_fname" id="victim_fname" placeholder="First Name"
+                            required>
+                        <input type="text" name="victim_mname" id="victim_mname" placeholder="Middle Name">
+                        <input type="text" name="victim_lname" id="victim_lname" placeholder="Last Name"
+                            required>
+                        <input type="text" name="victim_suffix" id="victim_suffix" placeholder="Suffix">
+                    </div>
                 </div>
 
                 <div class="pangalawang-layerBlotter">
@@ -170,13 +179,9 @@ while($row = $result->fetch_assoc()) {
                         <option value="amicable">Amicable</option>
                         <option value="incident">Incident</option>
                     </select>
-                </div>
-
-                <div class="pangatlong-layerBlotter">
-
 
                     <label for="location">Location</label>
-                    <input id="locationBlotter" type="text" name="location" required>
+                    <input id="locationBlotter" type="text" name="location" placeholder="Street Name" required>
                 </div>
 
                 <div class="pangapat-layerBlotter">
@@ -190,15 +195,6 @@ while($row = $result->fetch_assoc()) {
                         <option value="scheduled">Scheduled</option>
                     </select>
                 </div>
-            </div>
-
-
-            <label for="">Victim</label>
-            <div class="input-cont-blotter" style="display: flex;">
-                <input type="text" name="victim_fname" id="victim_fname" placeholder="First Name" required>
-                <input type="text" name="victim_mname" id="victim_mname" placeholder="Middle Name">
-                <input type="text" name="victim_lname" id="victim_lname" placeholder="Last Name" required>
-                <input type="text" name="victim_suffix" id="victim_suffix" placeholder="Suffix">
             </div>
 
             <div class="panglima-layerBlotter">
@@ -244,7 +240,16 @@ while($row = $result->fetch_assoc()) {
                             required>
                         <input type="text" name="respondent_suffix" id="respondent_suffix1" placeholder="Suffix">
                     </div>
-
+                    
+                    <label for="victim">Victim</label>
+                    <div class="input-cont-blotter">
+                        <input type="text" name="victim_fname" id="victim_fname1" placeholder="First Name"
+                            required>
+                        <input type="text" name="victim_mname" id="victim_mname1" placeholder="Middle Name">
+                        <input type="text" name="victim_lname" id="victim_lname1" placeholder="Last Name"
+                            required>
+                        <input type="text" name="victim_suffix" id="victim_suffix1" placeholder="Suffix">
+                    </div>
                 </div>
 
                 <div class="pangalawang-layerBlotter">
@@ -257,12 +262,9 @@ while($row = $result->fetch_assoc()) {
                         <option value="amicable">Amicable</option>
                         <option value="incident">Incident</option>
                     </select>
-                </div>
-
-                <div class="pangatlong-layerBlotter">
 
                     <label for="location">Location</label>
-                    <input id="locationBlotter1" type="text" name="location" required>
+                    <input id="locationBlotter1" type="text" name="location" placeholder="Street Name" required>
                 </div>
 
                 <div class="pangapat-layerBlotter">
@@ -279,14 +281,6 @@ while($row = $result->fetch_assoc()) {
                 </div>
             </div>
 
-            <label for="">Victim</label>
-            <div class="input-cont-blotter" style="display: flex;">
-                <input type="text" name="victim_fname" id="victim_fname1" placeholder="First Name" required>
-                <input type="text" name="victim_mname" id="victim_mname1" placeholder="Middle Name">
-                <input type="text" name="victim_lname" id="victim_lname1" placeholder="Last Name" required>
-                <input type="text" name="victim_suffix" id="victim_suffix1" placeholder="Suffix">
-            </div>
-
             <div class="panglima-layerBlotter">
                 <label class="detailstext" for="occupation">Details:</label>
                 <textarea id="detailsBlotter1" name="details" cols="4" rows="50" required></textarea>
@@ -294,6 +288,7 @@ while($row = $result->fetch_assoc()) {
 
             <input type="hidden" name="blotter_id" id="blotter_id">
             <input class="submitBlotter" type="submit" value="Create">
+            
         </form>
     </div>
     <!-- END EDIT Blotter -->
