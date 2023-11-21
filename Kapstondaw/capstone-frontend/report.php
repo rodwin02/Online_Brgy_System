@@ -18,17 +18,29 @@
                 <div class="swiper-slide card">
                     <img src="./assets/blotter.png" alt="blotter-img" />
                     <p>BLOTTER</p>
+                    <?php if(!isset($_SESSION['role'])) { ?>
+                    <button class=""><a href="./login_page.php">REPORT</a></button>
+                    <?php } else { ?>
                     <button class="report-btn">REPORT</button>
+                    <?php }?>
                 </div>
                 <div class="swiper-slide card">
                     <img src="./assets/complain.png" alt="complain" />
                     <p>COMPLAIN</p>
+                    <?php if(!isset($_SESSION['role'])) { ?>
+                    <button class=""><a href="./login_page.php">REPORT</a></button>
+                    <?php } else { ?>
                     <button class="report-btn">REPORT</button>
+                    <?php }?>
                 </div>
                 <div class="swiper-slide card">
                     <img src="./assets/awareness.png" alt="awareness-img" />
                     <p>AWARENESS</p>
+                    <?php if(!isset($_SESSION['role'])) { ?>
+                    <button class=""><a href="./login_page.php">REPORT</a></button>
+                    <?php } else { ?>
                     <button class="report-btn">REPORT</button>
+                    <?php }?>
                 </div>
             </div>
 

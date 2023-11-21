@@ -1381,6 +1381,8 @@ footer .com ul li {
 
 .active-service {
   background-color: rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   border: none;
   display: none;
   position: absolute;
@@ -1408,10 +1410,10 @@ footer .com ul li {
   border-radius: 1rem;
   width: 100%;
 }
-.active-service form .main-form p {
-  text-align: end;
-  font-size: 1.2rem;
-  margin: 0;
+.active-service form .main-form .active-service-close {
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 .active-service form .main-form .container {
   display: flex;
@@ -1475,6 +1477,8 @@ footer .com ul li {
 
 .active-report {
   background-color: rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   border: none;
   display: none;
   position: absolute;
@@ -1502,10 +1506,10 @@ footer .com ul li {
   border-radius: 1rem;
   width: 100%;
 }
-.active-report form .main-form p {
-  text-align: end;
-  font-size: 1.2rem;
-  margin: 0;
+.active-report form .main-form .active-report-close {
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 .active-report form .main-form .container {
   display: flex;
@@ -1540,14 +1544,13 @@ footer .com ul li {
 }
 .active-report form .confirmation {
   background-color: #fff;
+  border: none;
+  border-radius: 1rem;
   display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  width: 300px;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 }
 .active-report form .confirmation .buttons {
   display: flex;
@@ -1560,7 +1563,7 @@ footer .com ul li {
   border-radius: 0.2rem;
   font-weight: bold;
 }
-.active-report form .confirmation .buttons .active-service-request {
+.active-report form .confirmation .buttons .active-report-submit {
   background-color: #007236;
   color: #fff;
 }

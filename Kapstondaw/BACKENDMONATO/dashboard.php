@@ -26,7 +26,7 @@ function calculateAge($dob) {
   $query4 = "SELECT * FROM tbl_households WHERE `voter_status`='non-voter'";
 	$non = $conn->query($query4)->num_rows;
 
-  $query5 = "SELECT * FROM tblblotter";
+  $query5 = "SELECT * FROM tbl_blotter";
 	$blotter = $conn->query($query5)->num_rows;
 
   $query6 = "SELECT * FROM tbl_households WHERE osy='OSY'";
@@ -113,35 +113,35 @@ function calculateAge($dob) {
     </div>
     <?php unset($_SESSION['message']); ?>
     <?php endif ?>
-    
+
     <div class="modal_notification">
         <div class="form_notification">
             <div class="one-notif">
                 <div class="row_notif">
-                <div class="left_notif">
-                    <img src="icons/request.png" alt="">
-                </div>
-                <div class="right_notif">
-                    <div class="account_name">Rodwin C. Homeres</div>
-                    <div class="request">REQUEST:</div>
-                    <div class="request_form">Certificate of Late Birth Registration</div>
-                    <div class="time">3 hours ago</div>
-                </div>
+                    <div class="left_notif">
+                        <img src="icons/request.png" alt="">
+                    </div>
+                    <div class="right_notif">
+                        <div class="account_name">Rodwin C. Homeres</div>
+                        <div class="request">REQUEST:</div>
+                        <div class="request_form">Certificate of Late Birth Registration</div>
+                        <div class="time">3 hours ago</div>
+                    </div>
                 </div>
                 <div class="underline"></div>
             </div>
 
             <div class="one-notif">
                 <div class="row_notif">
-                <div class="left_notif">
-                    <img src="icons/request.png" alt="">
-                </div>
-                <div class="right_notif">
-                    <div class="account_name">Rodwin C. Homeres</div>
-                    <div class="request">REQUEST:</div>
-                    <div class="request_form">Certificate of Late Birth Registration</div>
-                    <div class="time">3 hours ago</div>
-                </div>
+                    <div class="left_notif">
+                        <img src="icons/request.png" alt="">
+                    </div>
+                    <div class="right_notif">
+                        <div class="account_name">Rodwin C. Homeres</div>
+                        <div class="request">REQUEST:</div>
+                        <div class="request_form">Certificate of Late Birth Registration</div>
+                        <div class="time">3 hours ago</div>
+                    </div>
                 </div>
                 <div class="underline"></div>
             </div>
@@ -156,9 +156,9 @@ function calculateAge($dob) {
                     <div class="container-header">
                         <img src="icons/bell.png" alt="" id="notifications">
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
-                          <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878"/>
+                            <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878" />
                         </svg>
-                       <a class="logout" href="#">Logout</a>
+                        <a class="logout" href="#">Logout</a>
                     </div>
                 </div>
                 <div class="stats">
@@ -488,47 +488,45 @@ function calculateAge($dob) {
     <script src="./js/jQuery-3.7.0.js"></script>
     <script src="./js/app.js"></script>
     <script>
+    const notifications = document.getElementById('notifications');
+    const modalNotification = document.querySelector('.modal_notification');
+    const svgIcon = document.querySelector('.container-header svg');
 
-const notifications = document.getElementById('notifications');
-const modalNotification = document.querySelector('.modal_notification');
-const svgIcon = document.querySelector('.container-header svg');
+    // Function to check if there is at least one notification
+    function hasNotifications() {
+        return document.querySelectorAll('.one-notif').length > 0;
+    }
 
-// Function to check if there is at least one notification
-function hasNotifications() {
-    return document.querySelectorAll('.one-notif').length > 0;
-}
+    // Toggle modal and SVG icon on notifications click
+    notifications.addEventListener('click', function(event) {
+        event.preventDefault();
 
-// Toggle modal and SVG icon on notifications click
-notifications.addEventListener('click', function (event) {
-    event.preventDefault();
+        if (modalNotification.style.display === 'block') {
+            modalNotification.style.display = 'none';
+            svgIcon.style.display = 'none';
+        } else {
+            modalNotification.style.display = 'block';
+            // Display SVG icon if there is at least one notification
+            if (hasNotifications()) {
+                svgIcon.style.display = 'block';
+            }
+        }
+    });
 
-    if (modalNotification.style.display === 'block') {
-        modalNotification.style.display = 'none';
-        svgIcon.style.display = 'none';
-    } else {
-        modalNotification.style.display = 'block';
-        // Display SVG icon if there is at least one notification
+    // Close modal on outside click
+    document.body.addEventListener('click', function(event) {
+        if (!modalNotification.contains(event.target) && event.target !== notifications) {
+            modalNotification.style.display = 'none';
+            svgIcon.style.display = 'none';
+        }
+    });
+
+    // Check and display SVG icon on page load
+    document.addEventListener('DOMContentLoaded', function() {
         if (hasNotifications()) {
             svgIcon.style.display = 'block';
         }
-    }
-});
-
-// Close modal on outside click
-document.body.addEventListener('click', function (event) {
-    if (!modalNotification.contains(event.target) && event.target !== notifications) {
-        modalNotification.style.display = 'none';
-        svgIcon.style.display = 'none';
-    }
-});
-
-// Check and display SVG icon on page load
-document.addEventListener('DOMContentLoaded', function () {
-    if (hasNotifications()) {
-        svgIcon.style.display = 'block';
-    }
-});
-
+    });
     </script>
 
 

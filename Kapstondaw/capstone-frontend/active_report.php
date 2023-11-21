@@ -1,7 +1,7 @@
 <div class="active-report" id="active-report">
     <form class="active-report-form" action="" method="post">
         <div class="main-form">
-            <p class=" active-report-close"><img src="./assets/close-icon.svg" alt=""></p>
+            <div class="active-report-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Blotter Report</h2>
 
             <input type="hidden" name="sender_fname" value="<?php echo $_SESSION['firstname']?>">
@@ -29,7 +29,7 @@
 <div class="active-report" id="active-report">
     <form class="active-report-form" action="" method="post">
         <div class="main-form">
-            <p class=" active-report-close">x</p>
+            <div class="active-report-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Complain Report</h2>
 
             <input type="hidden" name="sender_fname" value="<?php echo $_SESSION['firstname']?>">
@@ -57,7 +57,7 @@
 <div class="active-report" id="active-report">
     <form class="active-report-form" action="" method="post">
         <div class="main-form">
-            <p class=" active-report-close">x</p>
+            <div class="active-report-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Awareness Report</h2>
 
             <input type="hidden" name="sender_fname" value="<?php echo $_SESSION['firstname']?>">
