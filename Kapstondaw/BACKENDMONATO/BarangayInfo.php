@@ -135,12 +135,12 @@
                     </div>
 
                     <div class="historical-desc">
-                      <div class="description-cont">
-                           <label for="history-desc">Historical Background Description</label>
-                           <img src="icons/edit.png" id="edit_description" alt="Edit">
-                      </div>
+                      <label for="history-desc">Historical Background Description</label>
                       <div class="history-center">
-                           <textarea name="history-desc" id="history-desc" cols="171" rows="20"></textarea>
+                          <section>
+                              <!-- Quill editor container -->
+                              <div id="editorDescription" style="height: 300px;"><?= $historicalBackground ?></div>
+                          </section>
                       </div>
                     </div>
 
@@ -162,12 +162,19 @@
                             <textarea name="vision" id="vision" cols="50" rows="15"></textarea>
                         </div>
                         <div class="mission-cont">
-                            <div class="label-cont">
-                               <label for="mission">Mission</label>
-                               <img src="icons/edit.png" id="editMission" alt="">
-                            </div>
-                            
-                            <textarea name="mission" id="mission" cols="50" rows="15"></textarea>
+                            <label for="mission">Mission</label>
+                            <section>
+                                <!-- Quill editor container -->
+                                <div id="editorMission" style="height: 200px;"><?= $mission ?></div>
+                            </section>
+                        </div>
+
+                        <div class="vision-cont">
+                            <label for="vision">Vision</label>
+                            <section>
+                                <!-- Quill editor container -->
+                                <div id="editorVision" style="height: 200px;"><?= $vision ?></div> 
+                            </section>
                         </div>
 
                         
@@ -192,30 +199,36 @@
         </form>
     </div>
 
+     <!-- Include Quill library -->
+     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+     <script>
+        // Initialize Quill editors
+        var editorDescription = new Quill('#editorDescription', {
+            theme: 'snow'
+        });
 
-    <script>
-    // JavaScript for the text editor functionality
-    const descriptionTextarea = document.getElementById('description');
-    const editButton = document.querySelector('.formEditDescription .editor-buttons button:first-child');
-    const saveButton = document.querySelector('.formEditDescription .editor-buttons button:last-child');
+        var editorMission = new Quill('#editorMission', {
+            theme: 'snow'
+        });
 
-    function enableEditing() {
-        descriptionTextarea.readOnly = false;
-        editButton.disabled = true;
-        saveButton.disabled = false;
-    }
+        var editorVision = new Quill('#editorVision', {
+            theme: 'snow'
+        });
 
-    function saveChanges() {
-        descriptionTextarea.readOnly = true;
-        editButton.disabled = false;
-        saveButton.disabled = true;
+        // Function to get HTML content from Quill editors and set them to hidden textarea fields
+        function updateHiddenFields() {
+            document.getElementById('textareaDescription').value = editorDescription.root.innerHTML;
+            document.getElementById('textareaMission').value = editorMission.root.innerHTML;
+            document.getElementById('textareaVision').value = editorVision.root.innerHTML;
+        }
 
-        // You can add code here to save the changes (e.g., send to the server).
-        // For this example, let's just log the changed text to the console.
-        console.log('Saved changes:', descriptionTextarea.value);
-    }
+        // // Call the updateHiddenFields function before submitting the form
+        // document.querySelector('form').addEventListener('submit', function () {
+        //     updateHiddenFields();
+        // });
     </script>
 </body>
+
 </html>
 
 <script>
@@ -298,5 +311,4 @@ function previewHistoryImage() {
         preview.innerHTML = '';
     }
 }
-
 </script>

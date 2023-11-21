@@ -113,38 +113,40 @@ function calculateAge($dob) {
     </div>
     <?php unset($_SESSION['message']); ?>
     <?php endif ?>
-    
+
     <div class="modal_notification">
         <div class="form_notification">
-            <div class="one-notif">
+            <!-- <div class="one-notif">
                 <div class="row_notif">
-                <div class="left_notif">
-                    <img src="icons/request.png" alt="">
-                </div>
-                <div class="right_notif">
-                    <div class="account_name">Rodwin C. Homeres</div>
-                    <div class="request">REQUEST:</div>
-                    <div class="request_form">Certificate of Late Birth Registration</div>
-                    <div class="time">3 hours ago</div>
-                </div>
+                    <div class="left_notif">
+                        <img src="icons/request.png" alt="">
+                    </div>
+                    <div class="right_notif">
+                        <div class="account_name">Rodwin C. Homeres</div>
+                        <div class="request">REQUEST:</div>
+                        <div class="request_form">Certificate of Late Birth Registration</div>
+                        <div class="time">3 hours ago</div>
+                    </div>
                 </div>
                 <div class="underline"></div>
             </div>
 
             <div class="one-notif">
                 <div class="row_notif">
-                <div class="left_notif">
-                    <img src="icons/request.png" alt="">
-                </div>
-                <div class="right_notif">
-                    <div class="account_name">Rodwin C. Homeres</div>
-                    <div class="request">REQUEST:</div>
-                    <div class="request_form">Certificate of Late Birth Registration</div>
-                    <div class="time">3 hours ago</div>
-                </div>
+                    <div class="left_notif">
+                        <img src="icons/request.png" alt="">
+                    </div>
+                    <div class="right_notif">
+                        <div class="account_name">Rodwin C. Homeres</div>
+                        <div class="request">REQUEST:</div>
+                        <div class="request_form">Certificate of Late Birth Registration</div>
+                        <div class="time">3 hours ago</div>
+                    </div>
                 </div>
                 <div class="underline"></div>
-            </div>
+            </div> -->
+            <?php include './model/functions/notification.php' ?>
+
         </div>
     </div>
 
@@ -156,9 +158,9 @@ function calculateAge($dob) {
                     <div class="container-header">
                         <img src="icons/bell.png" alt="" id="notifications">
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
-                          <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878"/>
+                            <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878" />
                         </svg>
-                       <a class="logout" href="#">Logout</a>
+                        <a class="logout" href="#">Logout</a>
                     </div>
                 </div>
                 <div class="stats">
@@ -166,7 +168,8 @@ function calculateAge($dob) {
                         <div class="a1">
                             <div class="b1">
                                 <div class="c1">Population</div>
-                                <div class="c2"><?= number_format($total) ?></div>
+                                <div class="c2"><?= number_format($total) ?>
+                                </div>
                                 <div class="c3">Total Population</div>
                             </div>
                             <div class="b2">
@@ -488,47 +491,118 @@ function calculateAge($dob) {
     <script src="./js/jQuery-3.7.0.js"></script>
     <script src="./js/app.js"></script>
     <script>
+    const notifications = document.getElementById('notifications');
+    const modalNotification = document.querySelector('.modal_notification');
+    const svgIcon = document.querySelector('.container-header svg');
 
-const notifications = document.getElementById('notifications');
-const modalNotification = document.querySelector('.modal_notification');
-const svgIcon = document.querySelector('.container-header svg');
+    // Function to check if there is at least one notification
+    function hasNotifications() {
+        return document.querySelectorAll('.one-notif').length > 0;
+    }
 
-// Function to check if there is at least one notification
-function hasNotifications() {
-    return document.querySelectorAll('.one-notif').length > 0;
-}
+    // Toggle modal and SVG icon on notifications click
+    notifications.addEventListener('click', function(event) {
+        event.preventDefault();
 
-// Toggle modal and SVG icon on notifications click
-notifications.addEventListener('click', function (event) {
-    event.preventDefault();
+        if (modalNotification.style.display === 'block') {
+            modalNotification.style.display = 'none';
+            svgIcon.style.display = 'none';
+        } else {
+            modalNotification.style.display = 'block';
+            // Display SVG icon if there is at least one notification
+            if (hasNotifications()) {
+                svgIcon.style.display = 'block';
+            }
+        }
+    });
 
-    if (modalNotification.style.display === 'block') {
-        modalNotification.style.display = 'none';
-        svgIcon.style.display = 'none';
-    } else {
-        modalNotification.style.display = 'block';
-        // Display SVG icon if there is at least one notification
+    // Close modal on outside click
+    document.body.addEventListener('click', function(event) {
+        if (!modalNotification.contains(event.target) && event.target !== notifications) {
+            modalNotification.style.display = 'none';
+            svgIcon.style.display = 'none';
+        }
+    });
+
+    // Check and display SVG icon on page load
+    document.addEventListener('DOMContentLoaded', function() {
         if (hasNotifications()) {
             svgIcon.style.display = 'block';
         }
-    }
-});
+    });
+    </script>
 
-// Close modal on outside click
-document.body.addEventListener('click', function (event) {
-    if (!modalNotification.contains(event.target) && event.target !== notifications) {
-        modalNotification.style.display = 'none';
-        svgIcon.style.display = 'none';
+    <script>
+    // Function to fetch and display notifications
+    function fetchNotifications() {
+        $.ajax({
+            url: 'notification.php', // Update the URL to the PHP file handling notifications
+            type: 'GET',
+            dataType: 'html',
+            success: function(data) {
+                // Update the notification container with the fetched data
+                $('#notificationContainer').html(data);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching notifications:', error);
+            }
+        });
     }
-});
 
-// Check and display SVG icon on page load
-document.addEventListener('DOMContentLoaded', function () {
-    if (hasNotifications()) {
-        svgIcon.style.display = 'block';
+    // Function to periodically fetch notifications (every 1 minute in this example)
+    function startFetchingNotifications() {
+        setInterval(fetchNotifications, 60000); // Adjust the interval as needed
     }
-});
 
+    // Start fetching notifications when the page loads
+    $(document).ready(function() {
+        fetchNotifications();
+        startFetchingNotifications();
+    });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add click event listener to all elements with class 'clickable-notification'
+        const clickableNotifications = document.querySelectorAll('.clickable-notification');
+        clickableNotifications.forEach(function(notification) {
+            notification.addEventListener('click', function() {
+                // Get the ID of the clicked notification
+                const notificationId = notification.getAttribute('data-id');
+                const notificationSource = notification.getAttribute('data-source');
+
+                // Send an AJAX request to mark the notification as read
+                const xhr = new XMLHttpRequest();
+                const timestamp = new Date().getTime(); // Add timestamp
+                xhr.open('GET', './model/more/redirect_notification.php?id=' + notificationId +
+                    '&source=' + notificationSource + '&timestamp=' + timestamp, true);
+                xhr.onload = function() {
+                    // Handle the response if needed
+                    if (xhr.status === 200) {
+                        // Redirect to the corresponding page based on the source
+                        if (notificationSource === 'tbl_idform') {
+                            console.log(notificationSource)
+                            window.location.href = 'idForm.php';
+                        } else if (notificationSource === 'tbl_brgyclearance') {
+                            window.location.href = 'brgyClearance.php';
+                        } else if (notificationSource === 'tbl_certoflbr') {
+                            window.location.href = 'certOfLBR.php';
+                        } else {
+                            console.error('Unknown notification source:',
+                                notificationSource);
+                        }
+                    } else {
+                        // Handle errors if needed
+                        console.error('Error marking notification as read:', xhr
+                            .statusText);
+                    }
+                };
+                xhr.send();
+
+                // Add any other logic you need for handling the click event
+            });
+        });
+    });
     </script>
 
 

@@ -17,6 +17,7 @@
 
     <?php include "./model/fetch_brgy_information.php" ?>
     <?php include './actives.php' ?>
+    <?php include './active_service.php' ?>
     <?php include './active_report.php' ?>
     <?php include './header.php' ?>
 
@@ -169,7 +170,7 @@
 
     <?php include './services.php' ?>
 
-    <?php include './concerns.php' ?>
+    <?php include './report.php' ?>
 
     <?php include './announcement.php' ?>
 

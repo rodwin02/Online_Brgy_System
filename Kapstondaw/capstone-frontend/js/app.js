@@ -58,7 +58,6 @@ document.addEventListener("scroll", (e) => {
 // * End of subHeader
 
 // * Services
-const activeForm = document.querySelectorAll(".main-form");
 
 const serviceBtn = document.querySelectorAll(".service-btn");
 const serviceEl = document.querySelectorAll(".active-service");
@@ -104,7 +103,6 @@ const submitReport = document.querySelectorAll(".active-report-submit");
 reportBtn.forEach((btn, i) => {
   btn.addEventListener("click", () => {
     activeReport[i].style.display = "block";
-    console.log("Service", i);
 
     closeReport[i].addEventListener("click", () => {
       activeReport[i].style.display = "none";
@@ -113,6 +111,7 @@ reportBtn.forEach((btn, i) => {
 });
 
 // ! confirmation for requesting and report
+const activeForm = document.querySelectorAll(".main-form");
 
 const fakeBtn = document.querySelectorAll(".fake-btn");
 const confirmation = document.querySelectorAll(".confirmation");
@@ -122,6 +121,7 @@ fakeBtn.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     confirmation[index].style.display = "flex";
     activeForm[index].style.display = "none";
+    console.log(index);
   });
 
   cancelRequest[index].addEventListener("click", () => {
