@@ -116,7 +116,7 @@ function calculateAge($dob) {
 
     <div class="modal_notification">
         <div class="form_notification">
-            <div class="one-notif">
+            <!-- <div class="one-notif">
                 <div class="row_notif">
                     <div class="left_notif">
                         <img src="icons/request.png" alt="">
@@ -144,7 +144,9 @@ function calculateAge($dob) {
                     </div>
                 </div>
                 <div class="underline"></div>
-            </div>
+            </div> -->
+            <?php include './model/functions/notification.php' ?>
+
         </div>
     </div>
 
@@ -166,7 +168,8 @@ function calculateAge($dob) {
                         <div class="a1">
                             <div class="b1">
                                 <div class="c1">Population</div>
-                                <div class="c2"><?= number_format($total) ?></div>
+                                <div class="c2"><?= number_format($total) ?>
+                                </div>
                                 <div class="c3">Total Population</div>
                             </div>
                             <div class="b2">
@@ -526,6 +529,79 @@ function calculateAge($dob) {
         if (hasNotifications()) {
             svgIcon.style.display = 'block';
         }
+    });
+    </script>
+
+    <script>
+    // Function to fetch and display notifications
+    function fetchNotifications() {
+        $.ajax({
+            url: 'notification.php', // Update the URL to the PHP file handling notifications
+            type: 'GET',
+            dataType: 'html',
+            success: function(data) {
+                // Update the notification container with the fetched data
+                $('#notificationContainer').html(data);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching notifications:', error);
+            }
+        });
+    }
+
+    // Function to periodically fetch notifications (every 1 minute in this example)
+    function startFetchingNotifications() {
+        setInterval(fetchNotifications, 60000); // Adjust the interval as needed
+    }
+
+    // Start fetching notifications when the page loads
+    $(document).ready(function() {
+        fetchNotifications();
+        startFetchingNotifications();
+    });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add click event listener to all elements with class 'clickable-notification'
+        const clickableNotifications = document.querySelectorAll('.clickable-notification');
+        clickableNotifications.forEach(function(notification) {
+            notification.addEventListener('click', function() {
+                // Get the ID of the clicked notification
+                const notificationId = notification.getAttribute('data-id');
+                const notificationSource = notification.getAttribute('data-source');
+
+                // Send an AJAX request to mark the notification as read
+                const xhr = new XMLHttpRequest();
+                const timestamp = new Date().getTime(); // Add timestamp
+                xhr.open('GET', './model/more/redirect_notification.php?id=' + notificationId +
+                    '&source=' + notificationSource + '&timestamp=' + timestamp, true);
+                xhr.onload = function() {
+                    // Handle the response if needed
+                    if (xhr.status === 200) {
+                        // Redirect to the corresponding page based on the source
+                        if (notificationSource === 'tbl_idform') {
+                            console.log(notificationSource)
+                            window.location.href = 'idForm.php';
+                        } else if (notificationSource === 'tbl_brgyclearance') {
+                            window.location.href = 'brgyClearance.php';
+                        } else if (notificationSource === 'tbl_certoflbr') {
+                            window.location.href = 'certOfLBR.php';
+                        } else {
+                            console.error('Unknown notification source:',
+                                notificationSource);
+                        }
+                    } else {
+                        // Handle errors if needed
+                        console.error('Error marking notification as read:', xhr
+                            .statusText);
+                    }
+                };
+                xhr.send();
+
+                // Add any other logic you need for handling the click event
+            });
+        });
     });
     </script>
 
