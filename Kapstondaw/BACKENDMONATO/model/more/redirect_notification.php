@@ -13,6 +13,10 @@ if (markCertificateAsRead($conn, $notificationSource, $notificationId)) {
         header('Location: ../../idForm.php');
     } else if ($notificationSource === 'tbl_brgyclearance') {
         header('Location: ../../brgyClearance.php');
+    } else if ($notificationSource === 'tbl_ecertificate') {
+        header('Location: ../../endorsmentCert.php');
+    } else if ($notificationSource === 'tbl_certofindigency') {
+        header('Location: ../../certOfIndigency.php');
     } else if ($notificationSource === 'tbl_certoflbr') {
         header('Location: ../../certOfLBR.php');
     } else {

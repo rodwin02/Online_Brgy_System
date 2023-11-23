@@ -5,6 +5,10 @@ function getNewCertificates($conn) {
             UNION
             SELECT id, applicant_fname, applicant_mname, applicant_lname, date_requested, 'tbl_brgyclearance' AS source FROM tbl_brgyclearance WHERE seen = 'unread'
             UNION
+            SELECT id, applicant_fname, applicant_mname, applicant_lname, date_requested, 'tbl_ecertificate' AS source FROM tbl_ecertificate WHERE seen = 'unread'
+            UNION
+            SELECT id, applicant_fname, applicant_mname, applicant_lname, date_requested, 'tbl_certofindigency' AS source FROM tbl_certofindigency WHERE seen = 'unread'
+            UNION
             SELECT id, applicant_fname, applicant_mname, applicant_lname, date_requested, 'tbl_certoflbr' AS source FROM tbl_certoflbr WHERE seen = 'unread'
             ORDER BY date_requested DESC"; // Adjust the query based on your tables and criteria
 
@@ -53,7 +57,23 @@ foreach ($newCertificates as $certificate) {
                 </div>
                 <div class="right_notif">
                     <div class="account_name">' . $certificate['applicant_fname'] . '</div>
-                    <div class="request">REQUEST:</div>
+                    <div class="request">';
+                            // Check the source and display the appropriate text
+                    if ($certificate['source'] === 'tbl_idform') {
+                        echo 'Identification Form';
+                    } else if ($certificate['source'] === 'tbl_brgyclearance') {
+                        echo 'Barangay Clearance';
+                    } else if ($certificate['source'] === 'tbl_ecertificate') {
+                        echo 'Endorsement Certificate';
+                    } else if ($certificate['source'] === 'tbl_certoflbr') {
+                        echo 'Certificate of Late Birth Registration';
+                    } else if ($certificate['source'] === 'tbl_certofindigency') {
+                        echo 'Certificate of Indigency';
+                    }
+                    else {
+                        echo $certificate['source']; // Display the source name if not tbl_idform
+                    }
+                    echo '</div>
                     <div class="time">' . $certificate['date_requested'] . '</div>
                 </div>
             </div>

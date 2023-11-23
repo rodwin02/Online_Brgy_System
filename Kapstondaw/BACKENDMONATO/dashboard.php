@@ -585,6 +585,10 @@ function calculateAge($dob) {
                             window.location.href = 'idForm.php';
                         } else if (notificationSource === 'tbl_brgyclearance') {
                             window.location.href = 'brgyClearance.php';
+                        } else if (notificationSource === 'tbl_ecertificate') {
+                            window.location.href = 'endorsmentCert.php';
+                        } else if (notificationSource === 'tbl_certofindigency') {
+                            window.location.href = 'certOfIndigency.php';
                         } else if (notificationSource === 'tbl_certoflbr') {
                             window.location.href = 'certOfLBR.php';
                         } else {

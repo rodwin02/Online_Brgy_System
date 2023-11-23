@@ -1493,7 +1493,7 @@ footer .com ul li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(300px, 100%, 500px);
+  width: clamp(300px, 100%, 800px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1511,29 +1511,39 @@ footer .com ul li {
   align-items: center;
   justify-content: end;
 }
-.active-report form .main-form .container {
-  display: flex;
-  flex-direction: column;
+.active-report form .main-form p {
   text-align: start;
 }
-.active-report form .main-form .container input,
-.active-report form .main-form .container textarea,
-.active-report form .main-form .container select {
-  border: none;
-  background-color: rgba(162, 238, 198, 0.25);
-  padding: 0.5rem;
-  margin: 1rem 0;
+.active-report form .main-form .complainant-container,
+.active-report form .main-form .respondent-container,
+.active-report form .main-form .victim-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
-.active-report form .main-form .container textarea {
-  width: 100%;
-  height: 100px;
-  resize: none;
+.active-report form .main-form .complainant-container input,
+.active-report form .main-form .respondent-container input,
+.active-report form .main-form .victim-container input {
+  max-width: 200px;
+  flex-grow: 1;
+  padding: 0.5rem 0.8rem;
 }
-.active-report form .main-form .container select {
-  width: 30%;
+.active-report form .main-form .complainant-container input:nth-child(4),
+.active-report form .main-form .respondent-container input:nth-child(4),
+.active-report form .main-form .victim-container input:nth-child(4) {
+  max-width: 100px;
 }
-.active-report form .main-form .requestor {
-  display: none;
+.active-report form .main-form .others-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.active-report form .main-form .others-container input[type=text] {
+  max-width: 200px;
+  flex-grow: 1;
+  padding: 0.5rem 0.8rem;
 }
 .active-report form .main-form button {
   border: none;

@@ -16,7 +16,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: clamp(300px, 100%, 500px);
+    width: clamp(300px, 100%, 800px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,31 +34,40 @@
         justify-content: end;
       }
 
-      .container {
-        display: flex;
-        flex-direction: column;
+      p {
         text-align: start;
+      }
 
-        input,
-        textarea,
-        select {
-          border: none;
-          background-color: rgba($color: #a2eec6, $alpha: 0.25);
-          padding: 0.5rem;
-          margin: 1rem 0;
+      .complainant-container,
+      .respondent-container,
+      .victim-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        input {
+          max-width: 200px;
+          flex-grow: 1;
+          padding: 0.5rem 0.8rem;
         }
-        textarea {
-          width: 100%;
-          height: 100px;
-          resize: none;
-        }
-        select {
-          width: 30%;
+
+        input:nth-child(4) {
+          max-width: 100px;
         }
       }
 
-      .requestor {
-        display: none;
+      .others-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        input[type="text"] {
+          max-width: 200px;
+          flex-grow: 1;
+          padding: 0.5rem 0.8rem;
+        }
       }
 
       button {
@@ -67,9 +76,6 @@
         border-radius: 1rem;
         color: #fff;
         padding: 0.5rem 1rem;
-      }
-
-      .fake-btn {
       }
     }
 

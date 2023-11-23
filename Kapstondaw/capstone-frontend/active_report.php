@@ -4,6 +4,52 @@
             <div class="active-report-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Blotter Report</h2>
 
+            <p>Complainant Name:</p>
+            <div class="complainant-container">
+                <input type="text" name="complainant_fname" id="" placeholder="First Name">
+                <input type="text" name="complainant_mname" id="" placeholder="Middle Name">
+                <input type="text" name="complainant_lname" id="" placeholder="Last Name">
+                <input type="text" name="complainant_suffix" id="" placeholder="Suffix">
+            </div>
+
+            <p>Respondent Name:</p>
+            <div class="respondent-container">
+                <input type="text" name="respondent_fname" id="" placeholder="First Name">
+                <input type="text" name="respondent_mname" id="" placeholder="Middle Name">
+                <input type="text" name="respondent_lname" id="" placeholder="Last Name">
+                <input type="text" name="respondent_suffix" id="" placeholder="Suffix">
+            </div>
+
+            <p>Victim Name:</p>
+            <div class="victim-container">
+                <input type="text" name="victim_fname" id="" placeholder="First Name">
+                <input type="text" name="victim_mname" id="" placeholder="Middle Name">
+                <input type="text" name="victim_lname" id="" placeholder="Last Name">
+                <input type="text" name="victim_suffix" id="" placeholder="Suffix">
+            </div>
+
+            <div class="others-container">
+                <div class="location-container">
+                    <label for="location">Location:</label>
+                    <input type="text" name="location" id="" placeholder="Location">
+                </div>
+                <div class="time-container">
+                    <label for="time">Time:</label>
+                    <input type="time" name="time" id="">
+                </div>
+                <div class="date-container">
+                    <label for="date">Date:</label>
+                    <input type="date" name="date" id="">
+                </div>
+                <div class="blotter_type-container">
+                    <label for="blotter_type">Type:</label>
+                    <select name="blotter_type" id="blotter_type">
+                        <option value="Amicable">Amicable</option>
+                        <option value="Incident">Incident</option>
+                    </select>
+                </div>
+            </div>
+
             <input type="hidden" name="sender_fname" value="<?php echo $_SESSION['firstname']?>">
             <input type="hidden" name="sender_mname" value="<?php echo $_SESSION['middlename']?>">
             <input type="hidden" name="sender_lname" value="<?php echo $_SESSION['lastname']?>">
