@@ -674,6 +674,7 @@ deleteLink.forEach((del, index) => {
         modalDelete[index].style.display = 'none';
     });
 })
+
 // JavaScript code to handle pagination
 const table = document.getElementById('table');
 const rows = table.querySelectorAll('tbody tr');
