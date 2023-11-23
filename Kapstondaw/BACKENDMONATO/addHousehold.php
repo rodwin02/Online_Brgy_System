@@ -37,15 +37,26 @@
             <div class="bodyInfo">
                 <div class="leftInfo">
                     <div class="inputFullname">
-                        <p>Full name<span>*</span></p>
-                        <input type="text" name="lastName[]" id="lastName"
-                            oninput="this.value = this.value.toUpperCase()" placeholder="Last Name" required>
-                        <input type="text" name="firstName[]" id="firstName"
-                            oninput="this.value = this.value.toUpperCase()" placeholder="First Name" required>
-                        <input type="text" name="middleName[]" id="middleName"
-                            oninput="this.value = this.value.toUpperCase()" placeholder="Middle Name" required>
-                        <input type="text" name="ext[]" class="suffix" id="ext"
-                            oninput="this.value = this.value.toUpperCase()" placeholder="Suffix">
+                        <div class="name-cont">
+                            <p>First Name<span>*</span></p>
+                            <input type="text" name="firstName[]" id="firstName"
+                                oninput="this.value = this.value.toUpperCase()" placeholder="First Name" required>
+                        </div>
+                        <div class="name-cont">
+                            <p>Middle Name<span></span></p>  
+                            <input type="text" name="middleName[]" id="middleName"
+                                oninput="this.value = this.value.toUpperCase()" placeholder="Middle Name" required>
+                        </div>
+                        <div class="name-cont">
+                            <p>Last Name<span>*</span></p>
+                            <input type="text" name="lastName[]" id="lastName"
+                                oninput="this.value = this.value.toUpperCase()" placeholder="Last Name" required>
+                        </div>
+                        <div class="name-cont">
+                            <p>Suffix <span></span></p>
+                            <input type="text" name="ext[]" class="suffix" id="ext"
+                                oninput="this.value = this.value.toUpperCase()" placeholder="Suffix">
+                        </div>
                     </div>
                     <div class="inputDob">
                         <p>Date of Birth<span>*</span></p>
@@ -63,11 +74,11 @@
                             oninput="this.value = this.value.toUpperCase()" required>
                     </div>
                     <div class="inputPhoneNo">
-                        <p>Phone number</p>
+                        <p>Contact Number</p>
                         <input type="number" name="phoneNo[]" id="phoneNo" placeholder="e.g., 09123456789">
                     </div>
                     <div class="inputEmail">
-                        <p>Email</p>
+                        <p>Email Address</p>
                         <input type="text" name="email[]" id="email" placeholder="Enter your email">
                     </div>
                 </div>
