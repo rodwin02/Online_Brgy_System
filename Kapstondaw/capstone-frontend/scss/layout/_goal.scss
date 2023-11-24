@@ -35,30 +35,30 @@
     p {
       margin-top: 1rem;
       line-height: 190%;
-      @media (min-width: 375px) {
-        display: none;
-      }
+      // @media (min-width: 375px) {
+      //   display: none;
+      // }
     }
     @media (min-width: 375px) {
       width: auto;
     }
   }
-  .vision > :nth-child(3) {
-    display: none;
-    @media (min-width: 375px) {
-      display: block;
-      font-size: 1.2rem;
-    }
-  }
+  // .vision > :nth-child(3) {
+  //   display: none;
+  //   @media (min-width: 375px) {
+  //     display: block;
+  //     font-size: 1.2rem;
+  //   }
+  // }
   .mission {
     p {
       margin-bottom: 1rem;
     }
   }
-  .mission > :nth-child(4) {
-    @media (min-width: 375px) {
-      display: block;
-      font-size: 1.2rem;
-    }
-  }
+  // .mission > :nth-child(4) {
+  //   @media (min-width: 375px) {
+  //     display: block;
+  //     font-size: 1.2rem;
+  //   }
+  // }
 }

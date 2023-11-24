@@ -13,16 +13,7 @@
 <body>
     <?php include "./model/fetch_brgy_information.php" ?>
 
-    <?php 
-if(isset($_SESSION['message'])) 
-{ ?>
-    <div class="active-success">
-        <div class="container">
-            <h2><?php echo $_SESSION['message']; ?></h2>
-        </div>
-    </div>
-    <?php unset($_SESSION['message']);
-} ?> <div class="cart">
+    <div class="cart">
 
         <div class="announcementHeader">
             <div class="layer1">

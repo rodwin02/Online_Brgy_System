@@ -62,39 +62,14 @@
         <div class="vision">
             <h2>Vision</h2>
             <p>
-                We envision the Barangay Zone IV to be more productive and enjoy
-                harmonious way of life, business,at work and at home, and most
-                specially for a more directed and progressive Barangay Governance
-            </p>
-            <p>
-                “A Community that maintains Peace and Order, pursue the ideals of a
-                free and democratic society, implement basic health services, protect
-                the children, develop and educate the youth, respect the rights of men
-                and women, take good care of the elders, from the grass-roots to the
-                highest level of our society”.
+                <?= $vision ?>
             </p>
         </div>
 
         <div class="mission">
             <h2>Mission</h2>
             <p>
-                We provide accessible timely and responsive, support to meet the needs
-                of our citizens specially to indigent people. While developing the
-                community, we also ensure the safety and security of our fellow
-                citizens by roving 24/7 and monitoring thru CCTV cameras.
-            </p>
-            <p>
-                We commit to perform better duties and responsibilities to carry out
-                the plans and objectives of the barangay thru voluntary and excellent
-                performance, most specially in the delivery of basic needs such as
-                improved roads and environment, water system, health care, education,
-                housing and agricultural farming needs of the farmers and residents of
-                the barangay.
-            </p>
-            <p>
-                “To establish a vibrant community, dedicated towards a Harmonious,
-                Peace-Loving, Economically stable citizenry, with spiritual guidance
-                of the Almighty God”.
+                <?= $mission ?>
             </p>
         </div>
     </div>
@@ -187,10 +162,11 @@
             <h2>
                 QUICK LINKS
                 <ul>
-                    <li>HOME</li>
-                    <li>ABOUT</li>
-                    <li>SERVICES</li>
-                    <li>ANNOUNCEMENT</li>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#concerns">REPORT</a></li>
+                    <li><a href="#announcement">ANNOUNCEMENT</a></li>
                     <li>CONTACT US</li>
                 </ul>
             </h2>

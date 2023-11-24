@@ -1,4 +1,3 @@
-
 <?php include './server/server.php'?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barangay Information</title>
     <!-- Bootstrap 5 CDN Link -->
-   
+
 
     <!-- Summernote CSS - CDN Link -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
@@ -22,7 +21,7 @@
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
 
 
-    
+
 </head>
 
 <body>
@@ -144,15 +143,16 @@
                     </div>
 
                     <div class="historical-desc">
-                      <div class="description-cont">
-                           <label for="history-desc">Historical Background Description</label>
-                           <img src="icons/edit.png" id="edit_description" alt="Edit">
-                      </div>
-                      <div class="history-center">
-                         <div class="mb-3">
-                            <textarea name="description" id="your_summernote" class="form-control" rows="4"></textarea>
-                         </div>
-                      </div>
+                        <div class="description-cont">
+                            <label for="history-desc">Historical Background Description</label>
+                            <img src="icons/edit.png" id="edit_description" alt="Edit">
+                        </div>
+                        <div class="history-center">
+                            <div class="mb-3">
+                                <textarea name="historicalBackground" id="your_summernote" class="form-control"
+                                    rows="4"><?= $historicalBackground ?></textarea>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="historical-img">
@@ -166,26 +166,28 @@
                     <div class="MissionVision-cont">
                         <div class="vision-cont">
                             <div class="label-cont">
-                               <label for="vision">Vision</label>
-                               <img src="icons/edit.png" id="editVision" alt="">
+                                <label for="vision">Vision</label>
+                                <img src="icons/edit.png" id="editVision" alt="">
                             </div>
-                          
+
                             <div class="mb-3">
-                              <textarea name="description" id="your_summernote1" class="form-control" rows="4"></textarea>
+                                <textarea name="vision" id="your_summernote1" class="form-control"
+                                    rows="4"><?= $vision ?></textarea>
                             </div>
                         </div>
                         <div class="mission-cont">
                             <div class="label-cont">
-                               <label for="mission">Mission</label>
-                               <img src="icons/edit.png" id="editMission" alt="">
+                                <label for="mission">Mission</label>
+                                <img src="icons/edit.png" id="editMission" alt="">
                             </div>
-                            
+
                             <div class="mb-3">
-                              <textarea name="description" id="your_summernote2" class="form-control" rows="4"></textarea>
+                                <textarea name="mission" id="your_summernote2" class="form-control"
+                                    rows="4"><?= $mission?></textarea>
                             </div>
                         </div>
 
-                        
+
                     </div>
 
                 </div>
@@ -213,28 +215,29 @@
     <!-- Summernote JS - CDN Link -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $("#your_summernote").summernote();
-            $('.dropdown-toggle').dropdown();
-        });
+    $(document).ready(function() {
+        $("#your_summernote").summernote();
+        $('.dropdown-toggle').dropdown();
+    });
     </script>
     <!-- //Summernote JS - CDN Link -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $("#your_summernote1").summernote();
-            $('.dropdown-toggle').dropdown();
-        });
+    $(document).ready(function() {
+        $("#your_summernote1").summernote();
+        $('.dropdown-toggle').dropdown();
+    });
     </script>
     <!-- //Summernote JS - CDN Link -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $("#your_summernote2").summernote();
-            $('.dropdown-toggle').dropdown();
-        });
+    $(document).ready(function() {
+        $("#your_summernote2").summernote();
+        $('.dropdown-toggle').dropdown();
+    });
     </script>
 </body>
+
 </html>
 
 <script>
@@ -319,17 +322,15 @@ function previewHistoryImage() {
 }
 
 
-    const editdescription = document.getElementById('edit_description');
-    const modaleditDescription = document.querySelector('.modal-editDescription');
+const editdescription = document.getElementById('edit_description');
+const modaleditDescription = document.querySelector('.modal-editDescription');
 
-    editdescription.addEventListener('click', function(event) {
-        event.preventDefault();
-        modaleditDescription.style.display = 'block';
-    });
+editdescription.addEventListener('click', function(event) {
+    event.preventDefault();
+    modaleditDescription.style.display = 'block';
+});
 
-    // closeButton.addEventListener('click', function() {
-    //     modal.style.display = 'none';
-    // });
-
-    
+// closeButton.addEventListener('click', function() {
+//     modal.style.display = 'none';
+// });
 </script>

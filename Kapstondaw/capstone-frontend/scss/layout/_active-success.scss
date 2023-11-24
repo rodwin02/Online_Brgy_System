@@ -32,5 +32,11 @@
       width: calc(100% - 75%);
       margin: 0;
     }
+
+    .close-icon-message {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+    }
   }
 }

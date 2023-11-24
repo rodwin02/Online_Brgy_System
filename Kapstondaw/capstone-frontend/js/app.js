@@ -146,12 +146,16 @@ cancelItem.forEach((btn, index) => {
 });
 
 // TODO it shows the message but it goes to the top to show the message
+const closeMessage = document.querySelector(".close-icon-message");
 document.addEventListener("DOMContentLoaded", function () {
   if (successEl) {
-    // successEl.style.display = "block";
-    setTimeout(function () {
+    successEl.style.display = "block";
+    // setTimeout(function () {
+    //   successEl.style.display = "none";
+    // }, 2000);
+    closeMessage.addEventListener("click", () => {
       successEl.style.display = "none";
-    }, 2000);
+    });
   }
 });
 // TODO end

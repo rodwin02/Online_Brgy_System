@@ -554,34 +554,13 @@ header ul li:nth-child(5) {
   line-height: 190%;
 }
 @media (min-width: 375px) {
-  .goal .vision p,
-  .goal .mission p {
-    display: none;
-  }
-}
-@media (min-width: 375px) {
   .goal .vision,
   .goal .mission {
     width: auto;
   }
 }
-.goal .vision > :nth-child(3) {
-  display: none;
-}
-@media (min-width: 375px) {
-  .goal .vision > :nth-child(3) {
-    display: block;
-    font-size: 1.2rem;
-  }
-}
 .goal .mission p {
   margin-bottom: 1rem;
-}
-@media (min-width: 375px) {
-  .goal .mission > :nth-child(4) {
-    display: block;
-    font-size: 1.2rem;
-  }
 }
 
 .brgyInformation {
@@ -1615,4 +1594,9 @@ footer .com ul li {
     width: 25%;
     margin: 0;
   }
+}
+.active-success .container .close-icon-message {
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }/*# sourceMappingURL=styles.css.map */
