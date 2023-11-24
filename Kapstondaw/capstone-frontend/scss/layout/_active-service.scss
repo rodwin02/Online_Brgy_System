@@ -32,6 +32,10 @@
         display: flex;
         align-items: center;
         justify-content: end;
+
+        img {
+          cursor: pointer;
+        }
       }
 
       .container {
@@ -62,6 +66,7 @@
       }
 
       button {
+        cursor: pointer;
         border: none;
         background-color: #007236;
         border-radius: 1rem;
@@ -78,17 +83,31 @@
       border: none;
       border-radius: 1rem;
       display: none;
-      width: 300px;
+      width: 500px;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
+      padding: 1.5rem;
+
+      .reminder-container {
+        margin-bottom: 1rem;
+        h3 {
+          margin: 0 0 1rem 0;
+        }
+        p {
+          margin: 0;
+          color: rgba($color: #000000, $alpha: 0.6);
+          line-height: 150%;
+        }
+      }
 
       .buttons {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: end;
+        gap: 1rem;
 
         button {
+          cursor: pointer;
           padding: 0.5rem 1rem;
           border: none;
           border-radius: 0.2rem;

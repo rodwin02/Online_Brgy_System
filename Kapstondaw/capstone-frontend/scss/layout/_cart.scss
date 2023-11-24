@@ -65,12 +65,39 @@
                   background-color: #fff;
                   border: none;
                   border-radius: 0.5rem;
-                  padding: 1rem;
+                  overflow: hidden;
+                  width: 500px;
+
+                  .warning-context {
+                    display: flex;
+                    padding: 1.5rem;
+                    gap: 1rem;
+                    .warning-img {
+                      .container {
+                        background-color: rgba($color: red, $alpha: 0.15);
+                        padding: 0.2rem;
+                        border-radius: 100%;
+                      }
+                    }
+                    .context {
+                      h3 {
+                        margin: 0 0 0.5rem 0;
+                      }
+                      p {
+                        color: rgba($color: #000000, $alpha: 0.6);
+                        margin: 0;
+                        line-height: 150%;
+                      }
+                    }
+                  }
 
                   .buttons {
+                    background-color: #f8f9fa;
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
+                    justify-content: end;
+                    gap: 1rem;
+                    padding: 0.8rem 1.5rem;
 
                     button {
                       padding: 0.5rem 1rem;
@@ -80,7 +107,7 @@
                     }
 
                     .btn1 {
-                      background-color: #007236;
+                      background-color: #e01e37;
                       color: #fff;
                     }
                     .abort-cancel-item {

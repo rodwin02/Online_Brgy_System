@@ -661,6 +661,7 @@ header ul li:nth-child(5) {
   font-size: 1.5rem;
 }
 .services .swiper .container .card button {
+  cursor: pointer;
   border: none;
   border-radius: 5rem;
   background-color: #097338;
@@ -725,6 +726,7 @@ header ul li:nth-child(5) {
   font-size: 1.5rem;
 }
 .concerns .swiper .options .card button {
+  cursor: pointer;
   border: none;
   border-radius: 5rem;
   background-color: #097338;
@@ -1198,12 +1200,34 @@ footer .com ul li {
   background-color: #fff;
   border: none;
   border-radius: 0.5rem;
-  padding: 1rem;
+  overflow: hidden;
+  width: 500px;
+}
+.cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .warning-context {
+  display: flex;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+.cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .warning-context .warning-img .container {
+  background-color: rgba(255, 0, 0, 0.15);
+  padding: 0.2rem;
+  border-radius: 100%;
+}
+.cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .warning-context .context h3 {
+  margin: 0 0 0.5rem 0;
+}
+.cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .warning-context .context p {
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  line-height: 150%;
 }
 .cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .buttons {
+  background-color: #f8f9fa;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
+  gap: 1rem;
+  padding: 0.8rem 1.5rem;
 }
 .cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .buttons button {
   padding: 0.5rem 1rem;
@@ -1212,7 +1236,7 @@ footer .com ul li {
   font-weight: bold;
 }
 .cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .buttons .btn1 {
-  background-color: #007236;
+  background-color: #e01e37;
   color: #fff;
 }
 .cart .main-cart .table-container table tbody tr td .cancel-container .confirm-cancel-item .buttons .abort-cancel-item {
@@ -1394,6 +1418,9 @@ footer .com ul li {
   align-items: center;
   justify-content: end;
 }
+.active-service form .main-form .active-service-close img {
+  cursor: pointer;
+}
 .active-service form .main-form .container {
   display: flex;
   flex-direction: column;
@@ -1419,6 +1446,7 @@ footer .com ul li {
   display: none;
 }
 .active-service form .main-form button {
+  cursor: pointer;
   border: none;
   background-color: #007236;
   border-radius: 1rem;
@@ -1430,17 +1458,30 @@ footer .com ul li {
   border: none;
   border-radius: 1rem;
   display: none;
-  width: 300px;
+  width: 500px;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.5rem;
+}
+.active-service form .confirmation .reminder-container {
+  margin-bottom: 1rem;
+}
+.active-service form .confirmation .reminder-container h3 {
+  margin: 0 0 1rem 0;
+}
+.active-service form .confirmation .reminder-container p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 150%;
 }
 .active-service form .confirmation .buttons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
+  gap: 1rem;
 }
 .active-service form .confirmation .buttons button {
+  cursor: pointer;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.2rem;
@@ -1596,6 +1637,7 @@ footer .com ul li {
   }
 }
 .active-success .container .close-icon-message {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: end;

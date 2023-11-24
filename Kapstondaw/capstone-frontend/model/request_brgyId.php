@@ -33,6 +33,9 @@
 
         if($result === true){
             $_SESSION['message'] = 'Identification requested successfully!';
+            $_SESSION['sub_message'] = '     <p>Thank you for your request. We are working on it! To check your request status, please go to <a
+                href="Cart.php">"Request Status"</a> page.
+        </p>';
             $_SESSION['success'] = 'success';
 
         }else{

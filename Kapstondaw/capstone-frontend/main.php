@@ -16,6 +16,7 @@
 
 
     <?php include "./model/fetch_brgy_information.php" ?>
+    <?php include "./template/message.php" ?>
     <?php include './actives.php' ?>
     <?php include './active_service.php' ?>
     <?php include './active_report.php' ?>
