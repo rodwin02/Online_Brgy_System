@@ -36,7 +36,11 @@
 
         <div class="print-title">
             <p>Certificate of Indigency</p>
-            <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            <div class="left-title">
+                <button type="submit" id="edit">Edit</button>
+                
+                <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            </div>
         </div>
 
         <div class="form-container-brgyClearance" id="printMe">
@@ -433,6 +437,60 @@
             </form>
         </div>
     </div>
+
+     <!-- EDIT MODAL SOMEONE -->
+    <div class="modal-editIndigency_forsomeone">
+        <form class="formIndigency_forsomeone" action="./model/edit_certificates/edit_certOfIdigency.php" method="post">
+            <div class="title-cont-modal">
+                <p>Resident Information</p>
+                <img src="../icons/close 1.png" class="closeForm_forsomeone1" alt="">
+            </div>
+
+            <div class="modal-layer-indigency-someone">
+                <div class="input-indigency-someone">
+                    <label for="applicantName">Applicant:</label>
+                    <div class="label111">
+                        <input type="text" name="applicant_fname" id="applicant_fname_someone1" class="applicant_fname"
+                            placeholder=" First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname_someone1" class="applicant_mname"
+                            placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname_someone1" class="applicant_lname"
+                            placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix_someone1"
+                            class="applicant_suffix" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-indigency-someone">
+                    <label for="requestorName">Requestor:</label>
+                    <div class="label111">
+                        <input type="text" name="requestor_fname" id="requestor_fname_someone1" class="requestor_fname"
+                            placeholder="First Name">
+                        <input type="text" name="requestor_mname" id="requestor_mname_someone1" class="requestor_mname"
+                            placeholder="Middle Name">
+                        <input type="text" name="requestor_lname" id="requestor_lname_someone1" class="requestor_lname"
+                            placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" id="requestor_suffix_someone1"
+                            class="requestor_suffix" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-indigency-someone">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" name="house_no" id="house_no_someone1" class="house_no"
+                            placeholder="Houseno.">
+                        <input type="text" name="street" id="street_someone1" class="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision_someone1" class="subdivision"
+                            placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-indigency-someone">
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" id="purpose_someone1" name="purpose" class="purpose">
+                </div>
+            </div>
+            <input type="submit" id="submit" value="Save">
+        </form>
+    </div>
     <script>
     function printDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;
@@ -484,4 +542,19 @@ function updateDate() {
 
 // Call the updateDate function to set the content initially
 updateDate();
+</script>
+
+<script>
+    const editLink = document.getElementById('edit');
+    const modaleditLink = document.querySelector('.modal-editIndigency_forsomeone');
+    const closeForm = document.querySelector('.closeForm_forsomeone1');
+
+    editLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditLink.style.display = 'block';
+    });
+
+    closeForm.addEventListener('click', function() {
+        modaleditLink.style.display = 'none';
+    });
 </script>

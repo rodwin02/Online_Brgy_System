@@ -36,7 +36,11 @@
 
         <div class="print-title">
             <p>Business Clearance</p>
-            <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            <div class="left-title">
+                <button type="submit" id="edit">Edit</button>
+                
+                <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            </div>
         </div>
 
         <div class="form-container-businessClearance" id="printMe">
@@ -482,10 +486,44 @@
 
                     </div>
                 </div>
-
             </form>
-
         </div>
+    </div>
+
+
+    <div class="modal-editClearance">
+        <form class="formeditClearance" action="./model/add_businessClearance.php" method="post">
+            <div class="title-cont-modal">
+                <p>Resident Infomration</p>
+                <img src="../icons/close 1.png" class="closeClearance" alt="">
+            </div>
+
+            <div class="modal-layer-b-clearance">
+                <div class="input-b-clearance">
+                    <label for="businessName">Business Name:</label>
+                    <input type="text" name="business_name" id="businessName" placeholder="Business name">
+                </div>
+                <div class="input-b-clearance">
+                    <label for="ownerName">Business Owner's Name:</label>
+                    <div class="label111">
+                        <input type="text" name="owner_fname" id="business_owner_fname" placeholder="First Name">
+                        <input type="text" name="owner_mname" id="business_owner_mname" placeholder="Middle Name">
+                        <input type="text" name="owner_lname" id="business_owner_lname" placeholder="Last Name">
+                        <input type="text" name="owner_suffix" id="business_owner_suffix" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-b-clearance">
+                    <label for="address">Business Address:</label>
+                    <div class="label111">
+                        <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" id="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="documentFor" value="Clearance">
+            <input type="submit" id="submit" value="Add">
+        </form>
     </div>
 
     <script>
@@ -517,4 +555,19 @@ setInterval(updateYear, 1000);
 
 // Initial call to set the content immediately
 updateYear();
+</script>
+
+<script>
+    const editLink = document.getElementById('edit');
+    const modaleditLink = document.querySelector('.modal-editClearance');
+    const closeForm = document.querySelector('.closeClearance');
+
+    editLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditLink.style.display = 'block';
+    });
+
+    closeForm.addEventListener('click', function() {
+        modaleditLink.style.display = 'none';
+    });
 </script>

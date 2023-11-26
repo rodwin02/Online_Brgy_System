@@ -28,7 +28,11 @@
 
         <div class="print-title">
             <p>Endorsement Certificate</p>
-            <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            <div class="left-title">
+                <button type="submit" id="edit">Edit</button>
+                
+                <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            </div>
         </div>
 
         <div class="form-container" id="printMe">
@@ -229,6 +233,41 @@
             </form>
         </div>
     </div>
+
+    <div class="modal-editClosure">
+        <form class="formeditClosure" action="">
+            <div class="title-cont-modal">
+                <p>Resident Informatoin</p>
+                <img src="../icons/close 1.png" class="closeClosure" alt="">
+            </div>
+
+            <div class="modal-layer-b-closure">
+                <div class="input-b-closure">
+                    <label for="businessName">Business Name:</label>
+                    <input type="text" id="businessName" placeholder="Business name">
+                </div>
+                <div class="input-b-closure">
+                    <label for="ownerName">Business Owner's Name:</label>
+                    <div class="label111">
+                        <input type="text" id="business_owner_fname" placeholder="First Name">
+                        <input type="text" id="business_owner_mname" placeholder="Middle Name">
+                        <input type="text" id="business_owner_lname" placeholder="Last Name">
+                        <input type="text" id="business_owner_suffix" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-b-closure">
+                    <label for="address">Business Address:</label>
+                    <div class="label111">
+                        <input type="text" id="house_no" placeholder="Houseno.">
+                        <input type="text" id="street" placeholder="Street name">
+                        <input type="text" id="subdivision" placeholder="Subdivision name">
+                    </div>
+                </div>
+
+            </div>
+            <input type="submit" id="submit" value="Add">
+        </form>
+    </div>
     <script>
     function printDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;
@@ -283,4 +322,20 @@ function updateDate() {
 
 // Call the updateDate function to set the content initially
 updateDate();
+</script>
+
+
+<script>
+    const editLink = document.getElementById('edit');
+    const modaleditLink = document.querySelector('.modal-editClosure');
+    const closeForm = document.querySelector('.closeClosure');
+
+    editLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditLink.style.display = 'block';
+    });
+
+    closeForm.addEventListener('click', function() {
+        modaleditLink.style.display = 'none';
+    });
 </script>
