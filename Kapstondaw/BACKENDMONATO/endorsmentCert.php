@@ -100,60 +100,15 @@ while($row = $result->fetch_assoc()) {
                             </td>
                             </td>
                             <td>
-                                <!-- EDIT -->
-                                <?php if($row['documentFor'] === 'Self') { ?>
-                                <a href="#" id="editEcert_forself" class="edit editEcert_forself"
-                                    onclick="editEndorsementCert(this)" data-id="<?=$row['id'] ?>"
-                                    data-applicant_fname="<?=$row['applicant_fname'] ?>"
-                                    data-applicant_mname="<?=$row['applicant_mname'] ?>"
-                                    data-applicant_lname="<?=$row['applicant_lname'] ?>"
-                                    data-applicant_suffix="<?=$row['applicant_suffix'] ?>"
-                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
-                                    data-subdivision="<?=$row['subdivision'] ?>"
-                                    data-document_for="<?=$row['documentFor'] ?>" data-purpose="<?=$row['purpose'] ?>"
-                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
-                                <?php } else {?>
-                                <a href="#" id="editEcert_forsomeone" class="edit editEcert_forsomeone"
-                                    onclick="editEndorsementCert(this)" data-id=" <?=$row['id'] ?>"
-                                    data-applicant_fname="<?=$row['applicant_fname'] ?>"
-                                    data-applicant_mname="<?=$row['applicant_mname'] ?>"
-                                    data-applicant_lname="<?=$row['applicant_lname'] ?>"
-                                    data-applicant_suffix="<?=$row['applicant_suffix'] ?>"
-                                    data-requestor_fname="<?=$row['requestor_fname'] ?>"
-                                    data-requestor_mname="<?=$row['requestor_mname'] ?>"
-                                    data-requestor_lname="<?=$row['requestor_lname'] ?>"
-                                    data-requestor_suffix="<?=$row['requestor_suffix'] ?>"
-                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
-                                    data-subdivision="<?=$row['subdivision'] ?>"
-                                    data-document_for="<?=$row['documentFor'] ?>" data-purpose="<?=$row['purpose'] ?>"
-                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
-                                <?php } ?>
                                 <!-- PRINT -->
                                 <?php if($row['documentFor'] === 'Self') { ?>
                                 <a href="./generate/endorsementCert_generate_forselft.php?id=<?= $row['id']?>"
-                                    class="print">Print</a>
+                                    class="print">View</a>
                                 <?php } else {?>
                                 <a href="./generate/endorsementCert_generate_forsomeone.php?id=<?= $row['id']?>"
-                                    class="print">Print</a>
+                                    class="print">View</a>
                                 <?php } ?>
-                                <a href="#" class="delete">Cancel</a>
-
-                                <div class="modal-delete">
-                                    <div class="form-delete">
-                                        <div class="delete-cont">
-                                            <p>Delete</p>
-                                            <img src="icons/close 1.png" alt="" class="close-delete">
-                                        </div>
-                                        <div class="delete-description">
-                                            <p>Deleting this will remove all data
-                                                and cannot be undone.</p>
-                                        </div>
-                                        <div class="delete-submit">
-                                            <a
-                                                href="./model/remove/remove_endorsementCert.php?id=<?= $row['id']?>">Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
+               
                             </td>
                         </tr>
                         <?php $no++; endforeach ?>

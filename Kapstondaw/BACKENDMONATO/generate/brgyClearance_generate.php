@@ -13,9 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate Barangay Clearance</title>
-    <link rel="stylesheet" href="../style/generateCert.css">
+    <link rel="stylesheet" href="../style/generateCert.css ?<?php echo time(); ?>">
     <script src="sidebar1.js ?<?php echo time(); ?>"></script>
-    <link rel="stylesheet" href="../sidenav.css">
 </head>
 
 <body>
@@ -29,6 +28,11 @@
             <p>Generate Barangay Clearance</p>
             <a href="#">Logout</a>
         </div>
+
+        <a href="../brgyClearance.php" class="backContainer">
+            <img src="../icons/back.png" alt="">
+            <p>Go Back</p>
+        </a>
 
         <div class="print-title">
             <p>Barangay Clearance</p>

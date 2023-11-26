@@ -12,9 +12,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate ID Form</title>
-    <link rel="stylesheet" href="../style/generateCert.css">
+    <link rel="stylesheet" href="../style/generateCert.css ?<?php echo time(); ?>">
     <script src="sidebar1.js ?<?php echo time(); ?>"></script>
-    <link rel="stylesheet" href="../sidenav.css">
+    
 </head>
 
 <body>
@@ -29,9 +29,24 @@
             <a href="#">Logout</a>
         </div>
 
+        <a href="../idForm.php" class="backContainer">
+            <img src="../icons/back.png" alt="">
+            <p>Go Back</p>
+        </a>
+
         <div class="print-title">
             <p>ID Form</p>
-            <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+ 
+            <div class="left-title">
+                <button type="submit">Save</button>
+                <label class="label">
+                    <input type="file" id="image-input" accept="image/*">
+                    <span>Select 2v2 Picture</span>
+                </label>
+                <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            </div>
+          
+            
         </div>
 
         <div class="form-container-idForm" id="printMe">
@@ -75,15 +90,54 @@
                         border-bottom: 1px solid #000;
                         padding-left: 5px;">
                                         <h4>FULLNAME: (FIRST, MIDDLE, & LAST NAME)</h4>
-                                        <h2><?php echo  $idForm['applicant_fname']. " " .$idForm['applicant_mname']. " " .$idForm['applicant_lname']?>
+                                        <h2>
+                                            <div class="label111" 
+                                                style="display: flex;
+                                                       flex-directiont: row;">
+                                                <input type="text" name="applicant_fname" id="applicant_fname"  
+                                                style="margin-right: 5px;
+                                                       width: 100px;
+                                                       height: 28px;
+                                                       border:none;">
+                                                <input type="text" name="applicant_mname" id="applicant_mname" 
+                                                style="margin-right: 5px;
+                                                       width: 100px;
+                                                       height: 28px;
+                                                       border:none;">  
+                                                <input type="text" name="applicant_lname" id="applicant_lname" 
+                                                style="margin-right: 5px;
+                                                       width: 100px;
+                                                       height: 28px;
+                                                       border:none;">
+                                            </div>
+                                           
                                         </h2>
                                     </div>
                                     <div class="address" style="width: 100%;
                         height: 43px;
                         border-bottom: 1px solid #000;
                         padding-left: 5px;">
-                                        <h5>ADDRESS:</h5>
-                                        <h2><?php echo $idForm['house_no']. " ". $idForm['street']. " ". $idForm['subdivision']?>
+                                        <h5>ADDRESS: (HOUSE NO., STREET, & SUBDIVISION)</h5>
+                                        <h2>
+                                            <div class="label111"
+                                            style="display: flex;
+                                                   flex-directiont: row;">
+                                                <input type="text" name="house_no" id="house_no"
+                                                style="margin-right: 5px;
+                                                       width: 70px;
+                                                       height: 28px;
+                                                       border:none;">
+                                                <input type="text" name="street" id="street" 
+                                                style="margin-right: 5px;
+                                                       width: 100px;
+                                                       height: 28px;
+                                                       border:none;">
+                                                <input type="text" name="subdivision" id="subdivision" 
+                                                style="margin-right: 5px;
+                                                       width: 130px;
+                                                       height: 28px;
+                                                       border:none;">
+                                            </div>
                                         </h2>
                                     </div>
                                     <div class="placeStatus-cont" style="display: flex;
@@ -93,13 +147,21 @@
                             border-right: 1px solid #000;
                             padding-left: 5px;">
                                             <h5>PLACE OF BIRTH:</h5>
-                                            <h2><?php echo $idForm['place_of_birth']?></h2>
+                                            <h2><input type="text" name="pob" id="place_of_birth"
+                                            style="margin-right: 5px;
+                                                       width: 130px;
+                                                       height: 28px;
+                                                       border:none;"></h2>
                                         </div>
                                         <div class="civilStatus" style=" width: 40%;
                             height: 44px;
                             padding-left: 5px;">
                                             <h5>CIVIL STATUS:</h5>
-                                            <h2><?php echo $idForm['civil_status']?></h2>
+                                            <h2><input type="text" name="civil_status" id="civil_status"
+                                            style="margin-right: 5px;
+                                                       width: 130px;
+                                                       height: 28px;
+                                                       border:none;"></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -113,34 +175,61 @@
                         border-bottom: 1px solid #000;
                         padding-left: 5px;">
                                         <h5>BIRTH DATE:</h5>
-                                        <h2><?php echo $idForm['birth_date']?></h2>
+                                        <h2><input type="date" name="dob" id="birth_date"
+                                        style="margin-right: 5px;
+                                                       width: 130px;
+                                                       height: 28px;
+                                                       border:none;"></h2>
                                     </div>
                                     <div class="contactNo" style="width: 100%;
                         height: 86px;
                         padding-left: 5px;">
                                         <h5>CONTACT NUMBER:</h5>
-                                        <h2><?php echo $idForm['contact_number']?></h2>
+                                        <h2><input type="text" name="contact_no" id="contact_number"
+                                        style="margin-right: 5px;
+                                                       width: 130px;
+                                                       height: 28px;
+                                                       border:none;"></h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="right" style=" width: 156px;
-            height: 131px;
-            border: 2px solid #000;
-            background: #FFF;
+                            height: 131px;
+                            border: 2px solid #000;
+                            background: #FFF;
 
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
+                            display: flex;
+                            justify-content: center;
+                            align-items: flex-end;
 
-            color: #000;
-            font-family: Poppins;
-            font-size: 7px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;">2X2 Picture (White Background)</div>
+                            color: #000;
+                            font-family: Poppins;
+                            font-size: 7px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: normal;">
+                            <img id="image-preview" 
+                            style="width: 130px;
+                                height: 127px;
+                                border: none;">
+                        </div>
                     </div>
 
+                        <script>
+                            document.getElementById('image-input').addEventListener('change', function (event) {
+                            const input = event.target;
+                            if (input.files && input.files[0]) {
+                                const reader = new FileReader();
+
+                                reader.onload = function (e) {
+                                document.getElementById('image-preview').src = e.target.result;
+                                };
+
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                            });
+                        </script>
                     <p class="warning" style="  color: #F00;
             font-family: Poppins;
             font-size: 13px;
