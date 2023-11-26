@@ -145,7 +145,7 @@ function calculateAge($dob) {
             <div class="add-cont">
                 <a href="./addIndividual.php" class="add">+Individual</a>
                 <a href="./addHousehold.php" class="add">+Household</a>
-                <a href="./model/trial_export.php" class="exportCVS">+Export CVS</a>
+                <a href="./model/export_households_csv.php" class="exportCVS">+Export CVS</a>
                 <button class="importBtn">+Import</button>
                 <a href="archives/ArchiveResident.php" class="archiveResidents">Archive</a>
             </div>

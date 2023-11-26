@@ -70,7 +70,13 @@
         </div>
         <div class="confirmation">
             <div class="main-container">
-                <h1>Are you sure?</h1>
+                <div class="reminder-container">
+                    <h3>Reminder!</h3>
+                    <p>Dear residents, kindly be reminded that in order to claim your documents, please proceed to the
+                        barangay office. Be prepared for a short interview regarding the purpose of your request and
+                        ensure that you have the necessary payment ready for processing your requested documents. Thank
+                        you for your cooperation.</p>
+                </div>
                 <div class="buttons">
                     <button type="submit" class="active-service-request">Request</button>
                     <button type="button" class="cancel-request">Cancel</button>
@@ -113,7 +119,13 @@
         </div>
         <div class="confirmation">
             <div class="main-container">
-                <h1>Are you sure?</h1>
+                <div class="reminder-container">
+                    <h3>Reminder!</h3>
+                    <p>Dear residents, kindly be reminded that in order to claim your documents, please proceed to the
+                        barangay office. Be prepared for a short interview regarding the purpose of your request and
+                        ensure that you have the necessary payment ready for processing your requested documents. Thank
+                        you for your cooperation.</p>
+                </div>
                 <div class="buttons">
                     <button type="submit" class="active-service-request">Request</button>
                     <button type="button" class="cancel-request">Cancel</button>
@@ -157,7 +169,13 @@
         </div>
         <div class="confirmation">
             <div class="main-container">
-                <h1>Are you sure?</h1>
+                <div class="reminder-container">
+                    <h3>Reminder!</h3>
+                    <p>Dear residents, kindly be reminded that in order to claim your documents, please proceed to the
+                        barangay office. Be prepared for a short interview regarding the purpose of your request and
+                        ensure that you have the necessary payment ready for processing your requested documents. Thank
+                        you for your cooperation.</p>
+                </div>
                 <div class="buttons">
                     <button type="submit" class="active-service-request">Request</button>
                     <button type="button" class="cancel-request">Cancel</button>
@@ -214,7 +232,13 @@
         </div>
         <div class="confirmation">
             <div class="main-container">
-                <h1>Are you sure?</h1>
+                <div class="reminder-container">
+                    <h3>Reminder!</h3>
+                    <p>Dear residents, kindly be reminded that in order to claim your documents, please proceed to the
+                        barangay office. Be prepared for a short interview regarding the purpose of your request and
+                        ensure that you have the necessary payment ready for processing your requested documents. Thank
+                        you for your cooperation.</p>
+                </div>
                 <div class="buttons">
                     <button type="submit" class="active-service-request">Request</button>
                     <button type="button" class="cancel-request">Cancel</button>
