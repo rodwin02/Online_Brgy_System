@@ -16,7 +16,9 @@
       <img src="vector/Vector 1.png" alt="">
       <img class="navbarlogo" src="image/navbarlogo.png" alt="">
     </div>
-  </div>
+  </div> 
+
+  
 
   <div class="login-cont">
     <form action="./model/access_login.php" method="POST">

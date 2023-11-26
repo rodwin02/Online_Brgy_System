@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="sidenav.css ?<?php echo time(); ?>">
  <!-- HEADER -->
   <div class="container">
       <div class="layer1"><?= $brgy_name. " " .$town_name." " .$province_name?>

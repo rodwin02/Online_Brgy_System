@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generate Endorsement Certificate For Someone</title>
-    <link rel="stylesheet" href="../style/generateCert.css">
+    <title>Generate Business Clearance</title>
+    <link rel="stylesheet" href="../style/generateCert.css ?<?php echo time(); ?>">
     <script src="sidebar1.js ?<?php echo time(); ?>"></script>
-    <link rel="stylesheet" href="../sidenav.css">
 </head>
 
 <body>
@@ -18,9 +17,14 @@
 
     <div class="printing-container-endorsement">
         <div class="title-cont">
-            <p>Generate Endorsement Certificate For Someone</p>
+            <p>Generate Business Clearance</p>
             <a href="#">Logout</a>
         </div>
+
+        <a href="../businessClearance.php" class="backContainer">
+            <img src="../icons/back.png" alt="">
+            <p>Go Back</p>
+        </a>
 
         <div class="print-title">
             <p>Endorsement Certificate</p>

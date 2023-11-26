@@ -98,39 +98,11 @@ while($row = $result->fetch_assoc()) {
                             </td>
                             </td>
                             <td>
-                                <a class="edit" href="#" id="editbrgyClearance" onclick="editBrgyClearance(this)"
-                                    data-id="<?=$row['id'] ?>" data-applicant_fname="<?=$row['applicant_fname'] ?>"
-                                    data-applicant_mname="<?=$row['applicant_mname'] ?>"
-                                    data-applicant_lname="<?=$row['applicant_lname'] ?>"
-                                    data-applicant_suffix="<?=$row['applicant_suffix'] ?>"
-                                    data-requestor_fname="<?=$row['requestor_fname'] ?>"
-                                    data-requestor_mname="<?=$row['requestor_mname'] ?>"
-                                    data-requestor_lname="<?=$row['requestor_lname'] ?>"
-                                    data-requestor_suffix="<?=$row['requestor_suffix'] ?>"
-                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
-                                    data-subdivision="<?=$row['subdivision'] ?>" data-pob="<?=$row['place-of-birth'] ?>"
-                                    data-dob="<?=$row['date-of-birth'] ?>" data-purpose="<?=$row['purpose'] ?>"
-                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
                                 <a class="print"
-                                    href="./generate/brgyClearance_generate.php?id=<?= $row['id'] ?>">Print</a>
-                                <a href="#" class="delete">Cancel</a>
+                                    href="./generate/brgyClearance_generate.php?id=<?= $row['id'] ?>">View</a>
+                               
 
-                                <div class="modal-delete">
-                                    <div class="form-delete">
-                                        <div class="delete-cont">
-                                            <p>Delete</p>
-                                            <img src="icons/close 1.png" alt="" class="close-delete">
-                                        </div>
-                                        <div class="delete-description">
-                                            <p>Deleting this will remove all data
-                                                and cannot be undone.</p>
-                                        </div>
-                                        <div class="delete-submit">
-                                            <a
-                                                href="./model/remove/remove_brgyClearance.php?id=<?= $row['id']?>">Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </td>
                         </tr>
                         <?php $no++; endforeach ?>

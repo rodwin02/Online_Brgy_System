@@ -83,6 +83,25 @@
   margin-top: 85px;
   margin-left: 75px;
 }
+.printing-container-endorsement .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-endorsement .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-endorsement .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
 .printing-container-endorsement .title-cont {
   height: 50px;
   width: 100%;
@@ -421,6 +440,25 @@
   height: auto;
   margin-top: 85px;
   margin-left: 75px;
+}
+.printing-container-brgyClearance .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-brgyClearance .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-brgyClearance .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
 }
 .printing-container-brgyClearance .title-cont {
   height: 50px;
@@ -984,6 +1022,25 @@
   margin-top: 85px;
   margin-left: 75px;
 }
+.printing-container-indigency .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-indigency .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-indigency .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
 .printing-container-indigency .title-cont {
   height: 50px;
   width: 100%;
@@ -1365,6 +1422,25 @@
   margin-top: 85px;
   margin-left: 75px;
 }
+.printing-container-lbr .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-lbr .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-lbr .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
 .printing-container-lbr .title-cont {
   height: 50px;
   width: 100%;
@@ -1731,6 +1807,25 @@
   height: auto;
   margin-top: 85px;
   margin-left: 75px;
+}
+.printing-container-businessClearance .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-businessClearance .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-businessClearance .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
 }
 .printing-container-businessClearance .title-cont {
   height: 50px;
@@ -2171,6 +2266,25 @@
   margin-top: 85px;
   margin-left: 75px;
 }
+.printing-container-idForm .backContainer {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.printing-container-idForm .backContainer img {
+  width: 15px;
+  height: 15px;
+}
+.printing-container-idForm .backContainer p {
+  margin-left: 5px;
+  color: #000;
+  font-size: 10px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 500;
+  line-height: normal;
+}
 .printing-container-idForm .title-cont {
   height: 50px;
   width: 100%;
@@ -2228,19 +2342,77 @@
   line-height: normal;
   margin-left: 15px;
 }
-.printing-container-idForm .print-title a {
+.printing-container-idForm .print-title .left-title {
+  display: flex;
+  flex-direction: row;
+}
+.printing-container-idForm .print-title .left-title button {
+  color: #007236;
+  cursor: pointer;
+  border: 1px solid #007236;
+  border-radius: 20px;
+  padding: 10px 35px;
+  margin-right: 5px;
+  background: #FFFFFF;
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 14px;
+}
+.printing-container-idForm .print-title .left-title button:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-idForm .print-title .left-title a {
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   text-align: center;
   margin-right: 25px;
+  font-family: Poppins;
+  font-size: 14px;
   color: #007236;
-  width: 105px;
-  height: 39px;
+  padding: 10px 35px;
   border-radius: 20px;
   border: 1px solid #007236;
   background: #FFF;
+}
+.printing-container-idForm .print-title .left-title a:hover {
+  background-color: #007236;
+  color: white;
+}
+.printing-container-idForm .print-title .left-title label.label input[type=file] {
+  position: absolute;
+  top: -1000px;
+}
+.printing-container-idForm .print-title .left-title label.label input[type=file] {
+  position: absolute;
+  top: -1000px;
+}
+.printing-container-idForm .print-title .left-title .label {
+  color: #007236;
+  cursor: pointer;
+  border: 1px solid #007236;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin-right: 5px;
+  background: #FFFFFF;
+  display: inline-block;
+  font-family: Poppins;
+  font-size: 14px;
+}
+.printing-container-idForm .print-title .left-title .label:hover {
+  background: #007236;
+  color: white;
+}
+.printing-container-idForm .print-title .left-title .label:active {
+  background: #9fa1a0;
+}
+.printing-container-idForm .print-title .left-title .label:invalid + span {
+  color: #000000;
+}
+.printing-container-idForm .print-title .left-title .label:valid + span {
+  color: #ffffff;
 }
 .printing-container-idForm .form-container-idForm {
   max-width: 2000px;
@@ -2461,7 +2633,7 @@ body {
   display: flex;
   flex-direction: row;
   position: relative;
-  z-index: 2;
+  z-index: 4;
   justify-content: space-between;
 }
 
@@ -2502,12 +2674,12 @@ body {
 }
 
 .sidebar {
-  z-index: 1;
+  z-index: 3;
   display: flex;
   flex-direction: row;
   width: 75px;
   height: 100%;
-  background: linear-gradient(180.45deg, #007236 10.56%, #92ba21 43.84%, #62a228 71.84%, #007236 100.06%);
+  background: linear-gradient(180.45deg, #007236 10.56%, #92BA21 43.84%, #62A228 71.84%, #007236 100.06%);
   position: fixed;
   transition: width 0.3s;
 }
@@ -2622,6 +2794,24 @@ body {
   height: 30px;
   background: rgba(152, 204, 177, 0.34);
   border-radius: 5px;
+}
+
+.slayer2 .residentInfo {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .household {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+
+.slayer2 .businessInfo {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
 }
 
 .slayer2 .idform {

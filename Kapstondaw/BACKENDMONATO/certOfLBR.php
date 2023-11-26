@@ -108,90 +108,20 @@ while($row = $result->fetch_assoc()) {
                             </td>
                             </td>
                             <td>
-                                <!-- EDIT -->
-                                <?php if($row['documentFor'] === 'Self') { ?>
-                                <a href="#" id="editlbr_forself" class="edit editlbr_forself" onclick="certOfLbr(this)"
-                                    data-id="<?=$row['id'] ?>" data-applicant_fname="<?=$row['applicant_fname'] ?>"
-                                    data-applicant_mname="<?=$row['applicant_mname'] ?>"
-                                    data-applicant_lname="<?=$row['applicant_lname'] ?>"
-                                    data-applicant_suffix="<?=$row['applicant_suffix'] ?>"
-                                    data-father_fname="<?=$row['father_fname'] ?>"
-                                    data-father_mname="<?=$row['father_mname'] ?>"
-                                    data-father_lname="<?=$row['father_lname'] ?>"
-                                    data-father_suffix="<?=$row['father_suffix'] ?>"
-                                    data-mother_fname="<?=$row['mother_fname'] ?>"
-                                    data-mother_mname="<?=$row['mother_mname'] ?>"
-                                    data-mother_lname="<?=$row['mother_lname'] ?>"
-                                    data-mother_suffix="<?=$row['mother_suffix'] ?>"
-                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
-                                    data-subdivision="<?=$row['subdivision'] ?>"
-                                    data-date_of_birth="<?=$row['date_of_birth'] ?>"
-                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
-                                <?php }
-                                  elseif ($row['documentFor'] === 'Children') { ?>
-                                <a href="#" id="editlbr_fortheirchild" class="edit editlbr_fortheirchild"
-                                    onclick="certOfLbr(this)" data-id="<?=$row['id'] ?>"
-                                    data-requestor_fname="<?=$row['requestor_fname'] ?>"
-                                    data-requestor_mname="<?=$row['requestor_mname'] ?>"
-                                    data-requestor_lname="<?=$row['requestor_lname'] ?>"
-                                    data-requestor_suffix="<?=$row['requestor_suffix'] ?>"
-                                    data-father_fname="<?=$row['father_fname'] ?>"
-                                    data-father_mname="<?=$row['father_mname'] ?>"
-                                    data-father_lname="<?=$row['father_lname'] ?>"
-                                    data-father_suffix="<?=$row['father_suffix'] ?>"
-                                    data-mother_fname="<?=$row['mother_fname'] ?>"
-                                    data-mother_mname="<?=$row['mother_mname'] ?>"
-                                    data-mother_lname="<?=$row['mother_lname'] ?>"
-                                    data-mother_suffix="<?=$row['mother_suffix'] ?>"
-                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
-                                    data-subdivision="<?=$row['subdivision'] ?>"
-                                    data-date_of_birth="<?=$row['date_of_birth'] ?>"
-                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
-                                <?php } else {?>
-                                <a href="#" id="editlbr_forsingleparent" class="edit editlbr_forsingleparent"
-                                    onclick="certOfLbr(this)" data-id="<?=$row['id'] ?>"
-                                    data-requestor_fname="<?=$row['requestor_fname'] ?>"
-                                    data-requestor_mname="<?=$row['requestor_mname'] ?>"
-                                    data-requestor_lname="<?=$row['requestor_lname'] ?>"
-                                    data-requestor_suffix="<?=$row['requestor_suffix'] ?>"
-                                    data-parent_fname="<?=$row['parent_fname'] ?>"
-                                    data-parent_mname="<?=$row['parent_mname'] ?>"
-                                    data-parent_lname="<?=$row['parent_lname'] ?>"
-                                    data-parent_suffix="<?=$row['parent_suffix'] ?>"
-                                    data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
-                                    data-subdivision="<?=$row['subdivision'] ?>"
-                                    data-date_of_birth="<?=$row['date_of_birth'] ?>"
-                                    data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
-                                <?php } ?>
+                              
                                 <!-- PRINT -->
                                 <?php if($row['documentFor'] === 'Self') { ?>
                                 <a href="./generate/certOfLBR_generate_forself.php?id=<?= $row['id'] ?>"
-                                    class="print">Print</a>
+                                    class="print">View</a>
                                 <?php }
                                   elseif ($row['documentFor'] === 'children') { ?>
                                 <a href="./generate/certOfLBR_generate_fortheirchild.php?id=<?= $row['id'] ?>"
-                                    class="print">Print</a>
+                                    class="print">View</a>
                                 <?php } else {?>
                                 <a href="./generate/certOfLBR_generate_forsingleparent.php?id=<?= $row['id'] ?>"
-                                    class="print">Print</a>
+                                    class="print">View</a>
                                 <?php } ?>
-                                <a href="#" class="delete">Cancel</a>
 
-                                <div class="modal-delete">
-                                    <div class="form-delete">
-                                        <div class="delete-cont">
-                                            <p>Delete</p>
-                                            <img src="icons/close 1.png" alt="" class="close-delete">
-                                        </div>
-                                        <div class="delete-description">
-                                            <p>Deleting this will remove all data
-                                                and cannot be undone.</p>
-                                        </div>
-                                        <div class="delete-submit">
-                                            <a href="./model/remove/remove_certOfLBR.php?id=<?= $row['id']?>">Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
                             </td>
                         </tr>
                         <?php $no++; endforeach ?>

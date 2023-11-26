@@ -108,44 +108,16 @@ while($row = $result->fetch_assoc()) {
 
                         </td>
                         <td>
-                            <a href="#" id="editIdForm" class="edit" data-id="<?=$row['id'] ?>"
-                                onclick="editIdForm(this)" data-applicant_fname="<?=$row['applicant_fname'] ?>"
-                                data-applicant_mname="<?=$row['applicant_mname'] ?>"
-                                data-applicant_lname="<?=$row['applicant_lname'] ?>"
-                                data-applicant_suffix="<?=$row['applicant_suffix'] ?>"
-                                data-requestor_fname="<?=$row['requestor_fname'] ?>"
-                                data-requestor_mname="<?=$row['requestor_mname'] ?>"
-                                data-requestor_lname="<?=$row['requestor_lname'] ?>"
-                                data-requestor_suffix="<?=$row['requestor_suffix'] ?>"
-                                data-house_no="<?=$row['house_no'] ?>" data-street="<?=$row['street'] ?>"
-                                data-subdivision="<?=$row['subdivision'] ?>" data-pob="<?=$row['place_of_birth'] ?>"
-                                data-dob="<?=$row['birth_date'] ?>" data-civil_status="<?=$row['civil_status'] ?>"
-                                data-contact_no="<?=$row['contact_number'] ?>"
-                                data-document_for="<?=$row['documentFor'] ?>" data-purpose="<?=$row['purpose'] ?>"
-                                data-date_requested="<?=$row['date_requested'] ?>">Edit</a>
+                           
                             <?php if($row['documentFor'] === 'Self') { ?>
-                            <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">Print</a>
+                            <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">View</a>
                             <?php } 
                     else { ?>
-                            <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">Print</a>
+                            <a href="./generate/idForm_generate.php?id=<?= $row['id'] ?>" class="print">View</a>
                             <?php } ?>
-                            <a href="#" class="delete">Cancel</a>
+                
 
-                            <div class="modal-delete">
-                                <div class="form-delete">
-                                    <div class="delete-cont">
-                                        <p>Delete</p>
-                                        <img src="icons/close 1.png" alt="" class="close-delete">
-                                    </div>
-                                    <div class="delete-description">
-                                        <p>Deleting this will remove all data
-                                            and cannot be undone.</p>
-                                    </div>
-                                    <div class="delete-submit">
-                                        <a href="./model/remove/remove_idForm.php?id=<?= $row['id']?>">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </td>
                     </tr>
                     <?php $no++; endforeach ?>

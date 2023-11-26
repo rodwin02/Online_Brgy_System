@@ -45,7 +45,7 @@ body {
   display: flex;
   flex-direction: row;
   position: relative;
-  z-index: 2;
+  z-index: 4;
   justify-content: space-between;
 }
 
@@ -88,18 +88,12 @@ body {
 }
 
 .sidebar {
-  z-index: 1;
+  z-index: 3;
   display: flex;
   flex-direction: row;
   width: 75px;
   height: 100%;
-  background: linear-gradient(
-    180.45deg,
-    #007236 10.56%,
-    #92ba21 43.84%,
-    #62a228 71.84%,
-    #007236 100.06%
-  );
+  background: linear-gradient(180.45deg, #007236 10.56%, #92BA21 43.84%, #62A228 71.84%, #007236 100.06%);
   position: fixed;
   transition: width 0.3s;
 }
@@ -127,7 +121,7 @@ body {
 }
 .slayer1 .bo-icon {
   position: absolute;
-  margin-top: 295px;
+  margin-top:295px;
   margin-left: 8px;
   width: 45px;
   cursor: pointer;
@@ -139,6 +133,7 @@ body {
   margin-left: 8px;
   width: 40px;
   cursor: pointer;
+  
 }
 
 .slayer1 .cc-icon {
@@ -179,7 +174,7 @@ body {
   height: auto;
   width: 75%;
   margin-top: 225px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
@@ -207,9 +202,23 @@ body {
   width: 190px;
   height: 30px;
   background: rgba(152, 204, 177, 0.34);
-  border-radius: 5px;
+  border-radius: 5px;  
 }
-
+.slayer2 .residentInfo {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .household {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
+.slayer2 .businessInfo {
+  margin-left: 15px;
+  margin-top: -1px;
+  display: none;
+}
 .slayer2 .idform {
   margin-left: 15px;
   margin-top: -1px;
@@ -273,7 +282,7 @@ body {
   margin-top: -0.5px;
   display: none;
 }
-.slayer2 .requested {
+.slayer2 .requested{
   margin-left: 15px;
   margin-top: -0.5px;
   display: none;
@@ -294,3 +303,4 @@ body {
   margin-bottom: -20px;
   display: none;
 }
+
