@@ -14,7 +14,7 @@
     <title>Generate ID Form</title>
     <link rel="stylesheet" href="../style/generateCert.css ?<?php echo time(); ?>">
     <script src="sidebar1.js ?<?php echo time(); ?>"></script>
-    
+
 </head>
 
 <body>
@@ -34,9 +34,10 @@
             <p>Go Back</p>
         </a>
 
+
         <div class="print-title">
             <p>ID Form</p>
- 
+
             <div class="left-title">
                 <button type="submit">Save</button>
                 <label class="label">
@@ -45,8 +46,8 @@
                 </label>
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
             </div>
-          
-            
+
+
         </div>
 
         <div class="form-container-idForm" id="printMe">
@@ -91,26 +92,25 @@
                         padding-left: 5px;">
                                         <h4>FULLNAME: (FIRST, MIDDLE, & LAST NAME)</h4>
                                         <h2>
-                                            <div class="label111" 
-                                                style="display: flex;
+                                            <div class="label111" style="display: flex;
                                                        flex-directiont: row;">
-                                                <input type="text" name="applicant_fname" id="applicant_fname"  
-                                                style="margin-right: 5px;
+                                                <input type="text" value="<?= $idForm['applicant_fname']?>"
+                                                    name="applicant_fname" id="applicant_fname" style="margin-right: 5px;
                                                        width: 100px;
                                                        height: 28px;
                                                        border:none;">
-                                                <input type="text" name="applicant_mname" id="applicant_mname" 
-                                                style="margin-right: 5px;
+                                                <input type="text" value="<?= $idForm['applicant_mname']?>"
+                                                    name="applicant_mname" id="applicant_mname" style="margin-right: 5px;
                                                        width: 100px;
                                                        height: 28px;
-                                                       border:none;">  
-                                                <input type="text" name="applicant_lname" id="applicant_lname" 
-                                                style="margin-right: 5px;
+                                                       border:none;">
+                                                <input type="text" value="<?= $idForm['applicant_lname']?>"
+                                                    name="applicant_lname" id="applicant_lname" style="margin-right: 5px;
                                                        width: 100px;
                                                        height: 28px;
                                                        border:none;">
                                             </div>
-                                           
+
                                         </h2>
                                     </div>
                                     <div class="address" style="width: 100%;
@@ -119,21 +119,20 @@
                         padding-left: 5px;">
                                         <h5>ADDRESS: (HOUSE NO., STREET, & SUBDIVISION)</h5>
                                         <h2>
-                                            <div class="label111"
-                                            style="display: flex;
+                                            <div class="label111" style="display: flex;
                                                    flex-directiont: row;">
-                                                <input type="text" name="house_no" id="house_no"
-                                                style="margin-right: 5px;
+                                                <input type="text" value="<?= $idForm['house_no']?>" name="house_no"
+                                                    id="house_no" style="margin-right: 5px;
                                                        width: 70px;
                                                        height: 28px;
                                                        border:none;">
-                                                <input type="text" name="street" id="street" 
-                                                style="margin-right: 5px;
+                                                <input type="text" value="<?= $idForm['street']?>" name="street"
+                                                    id="street" style="margin-right: 5px;
                                                        width: 100px;
                                                        height: 28px;
                                                        border:none;">
-                                                <input type="text" name="subdivision" id="subdivision" 
-                                                style="margin-right: 5px;
+                                                <input type="text" value="<?= $idForm['subdivision']?>"
+                                                    name="subdivision" id="subdivision" style="margin-right: 5px;
                                                        width: 130px;
                                                        height: 28px;
                                                        border:none;">
@@ -147,8 +146,8 @@
                             border-right: 1px solid #000;
                             padding-left: 5px;">
                                             <h5>PLACE OF BIRTH:</h5>
-                                            <h2><input type="text" name="pob" id="place_of_birth"
-                                            style="margin-right: 5px;
+                                            <h2><input type="text" value="<?= $idForm['place_of_birth']?>" name="pob"
+                                                    id="place_of_birth" style="margin-right: 5px;
                                                        width: 130px;
                                                        height: 28px;
                                                        border:none;"></h2>
@@ -157,8 +156,8 @@
                             height: 44px;
                             padding-left: 5px;">
                                             <h5>CIVIL STATUS:</h5>
-                                            <h2><input type="text" name="civil_status" id="civil_status"
-                                            style="margin-right: 5px;
+                                            <h2><input type="text" value="<?= $idForm['civil_status']?>"
+                                                    name="civil_status" id="civil_status" style="margin-right: 5px;
                                                        width: 130px;
                                                        height: 28px;
                                                        border:none;"></h2>
@@ -175,8 +174,8 @@
                         border-bottom: 1px solid #000;
                         padding-left: 5px;">
                                         <h5>BIRTH DATE:</h5>
-                                        <h2><input type="date" name="dob" id="birth_date"
-                                        style="margin-right: 5px;
+                                        <h2><input type="date" value="<?= $idForm['birth_date']?>" name="dob"
+                                                id="birth_date" style="margin-right: 5px;
                                                        width: 130px;
                                                        height: 28px;
                                                        border:none;"></h2>
@@ -185,8 +184,8 @@
                         height: 86px;
                         padding-left: 5px;">
                                         <h5>CONTACT NUMBER:</h5>
-                                        <h2><input type="text" name="contact_no" id="contact_number"
-                                        style="margin-right: 5px;
+                                        <h2><input type="text" value="<?= $idForm['contact_number']?>" name="contact_no"
+                                                id="contact_number" style="margin-right: 5px;
                                                        width: 130px;
                                                        height: 28px;
                                                        border:none;"></h2>
@@ -209,27 +208,26 @@
                             font-style: normal;
                             font-weight: 600;
                             line-height: normal;">
-                            <img id="image-preview" 
-                            style="width: 130px;
+                            <img id="image-preview" style="width: 130px;
                                 height: 127px;
                                 border: none;">
                         </div>
                     </div>
 
-                        <script>
-                            document.getElementById('image-input').addEventListener('change', function (event) {
-                            const input = event.target;
-                            if (input.files && input.files[0]) {
-                                const reader = new FileReader();
+                    <script>
+                    document.getElementById('image-input').addEventListener('change', function(event) {
+                        const input = event.target;
+                        if (input.files && input.files[0]) {
+                            const reader = new FileReader();
 
-                                reader.onload = function (e) {
+                            reader.onload = function(e) {
                                 document.getElementById('image-preview').src = e.target.result;
-                                };
+                            };
 
-                                reader.readAsDataURL(input.files[0]);
-                            }
-                            });
-                        </script>
+                            reader.readAsDataURL(input.files[0]);
+                        }
+                    });
+                    </script>
                     <p class="warning" style="  color: #F00;
             font-family: Poppins;
             font-size: 13px;
