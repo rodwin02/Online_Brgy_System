@@ -13,9 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate Business Clearance</title>
-    <link rel="stylesheet" href="../style/generateCert.css">
+    <link rel="stylesheet" href="../style/generateCert.css ?<?php echo time(); ?>">
     <script src="sidebar1.js ?<?php echo time(); ?>"></script>
-    <link rel="stylesheet" href="../sidenav.css">
 </head>
 
 <body>
@@ -29,6 +28,11 @@
             <p>Generate Business Clearance</p>
             <a href="#">Logout</a>
         </div>
+
+        <a href="../businessClearance.php" class="backContainer">
+            <img src="../icons/back.png" alt="">
+            <p>Go Back</p>
+        </a>
 
         <div class="print-title">
             <p>Business Clearance</p>
@@ -319,8 +323,9 @@
                             margin-bottom: 15px;
                             align-items: center;">BUSINESS ADDRESS:
                                 <input type="text" id="address"
-                                    value="<?php echo $businessClearance['business_address']?>" required="required"
-                                    style="  width: 300px;
+                                    value="<?php echo $businessClearance['business_address']?>" 
+                                    required="required"
+                                    style="width: 300px;
                                 margin-left: 32px;
                                 border: none;
                                 border-bottom: 1px solid black;

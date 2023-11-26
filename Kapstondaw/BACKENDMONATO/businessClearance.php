@@ -83,34 +83,16 @@ $businessClearance[] = $row;
                             </td>
                             </td>
                             <td>
-                                <a href="./generate/businessClearance_generate.php?id=<?= $row['id'] ?>"
-                                    class="print">Print</a>
-                                <!-- <?php if($row['documentFor'] === 'clearance') { ?>
-                            <a href="./generate/businessClearance_generate_forself.php?id=<?= $row['id'] ?>"
-                                class="print">Print</a>
+                            
+                             <!-- PRINT -->
+                            <?php if($row['documentFor'] === 'Clearance') { ?>
+                            <a href="./generate/businessClearance_generate.php?id=<?= $row['id'] ?>"
+                                class="print">View</a>
                             <?php } else {?>
-                            <a href="./generate/businessClosure_generate_forsingleparent.php?id=<?= $row['id'] ?>"
-                                class="print">Print</a>
-                            <?php } ?> -->
-                                <a href="#" class="edit">Edit</a>
-                                <a href="#" class="delete">Cancel</a>
-
-                                <div class="modal-delete">
-                                    <div class="form-delete">
-                                        <div class="delete-cont">
-                                            <p>Delete</p>
-                                            <img src="icons/close 1.png" alt="" class="close-delete">
-                                        </div>
-                                        <div class="delete-description">
-                                            <p>Deleting this will remove all data
-                                                and cannot be undone.</p>
-                                        </div>
-                                        <div class="delete-submit">
-                                            <a
-                                                href="./model/remove/remove_businessClearance.php?id=<?= $row['id']?>">Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
+                            <a href="./generate/businessClosure.php?id=<?= $row['id'] ?>"
+                                class="print">View</a>
+                            <?php } ?>
+                            
                             </td>
                         </tr>
                         <?php $no++; endforeach ?>
