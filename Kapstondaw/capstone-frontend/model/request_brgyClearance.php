@@ -12,9 +12,9 @@
     $applicant_fname    = $conn->real_escape_string($_POST['applicant_fname']);
     $applicant_mname    = $conn->real_escape_string($_POST['applicant_mname']);
     $applicant_lname    = $conn->real_escape_string($_POST['applicant_lname']);
-    $requestor_fname    = $conn->real_escape_string($_POST['requestor_fname']);
-    $requestor_mname    = $conn->real_escape_string($_POST['requestor_mname']);
-    $requestor_lname    = $conn->real_escape_string($_POST['requestor_lname']);
+    $requestor_fname    = $conn->real_escape_string(isset($_POST['requestor_fname']) ? $_POST['requestor_fname'] : "");
+    $requestor_mname    = $conn->real_escape_string(isset($_POST['requestor_mname']) ? $_POST['requestor_mname'] : "");
+    $requestor_lname    = $conn->real_escape_string(isset($_POST['requestor_lname']) ? $_POST['requestor_lname'] : "");
     $applicant_houseNo      = $conn->real_escape_string($_POST['applicant_houseNo']);
     $applicant_street      = $conn->real_escape_string($_POST['applicant_street']);
     $applicant_subdivision      = $conn->real_escape_string($_POST['applicant_subdivision']);
@@ -33,6 +33,8 @@
                 href="Cart.php">"Request Status"</a> page.
         </p>';
             $_SESSION['success'] = 'success';
+            $certClass = "Barangay Clearance";
+            include "./received_request.php";
 
         }else{
             $_SESSION['message'] = 'Something went wrong!';

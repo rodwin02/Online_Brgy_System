@@ -34,6 +34,8 @@
                 href="Cart.php">"Request Status"</a> page.
         </p>';
             $_SESSION['success'] = 'success';
+            $certClass = "Certificate of Indigency";
+            include "./received_request.php";
 
         }else{
             $_SESSION['message'] = 'Something went wrong!';

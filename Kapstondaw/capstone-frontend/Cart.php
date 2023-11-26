@@ -12,7 +12,6 @@
 
 <body>
     <?php include "./model/fetch_brgy_information.php" ?>
-    <?php include "./template/message.php" ?>
 
     <div class="cart">
 
@@ -143,7 +142,7 @@
                                             </div>
                                             <div class="buttons">
                                                 <button type="button" class="btn1"><a
-                                                        href="./model/cancel/cancel_idform.php?id=<?= $row['id'] ?>">Confirm</a></button>
+                                                        href="./model/cancel/cancel_brgyClearance.php?id=<?= $row['id'] ?>">Confirm</a></button>
                                                 <button type="button" class="abort-cancel-item">No</button>
                                             </div>
                                         </div>
@@ -170,7 +169,7 @@
                                             </div>
                                             <div class="buttons">
                                                 <button type="button" class="btn1"><a
-                                                        href="./model/cancel/cancel_idform.php?id=<?= $row['id'] ?>">Confirm</a></button>
+                                                        href="./model/cancel/cancel_endorsement.php?id=<?= $row['id'] ?>">Confirm</a></button>
                                                 <button type="button" class="abort-cancel-item">No</button>
                                             </div>
                                         </div>
@@ -197,7 +196,7 @@
                                             </div>
                                             <div class="buttons">
                                                 <button type="button" class="btn1"><a
-                                                        href="./model/cancel/cancel_idform.php?id=<?= $row['id'] ?>">Confirm</a></button>
+                                                        href="./model/cancel/cancel_certOfLbr.php?id=<?= $row['id'] ?>">Confirm</a></button>
                                                 <button type="button" class="abort-cancel-item">No</button>
                                             </div>
                                         </div>
@@ -224,7 +223,7 @@
                                             </div>
                                             <div class="buttons">
                                                 <button type="button" class="btn1"><a
-                                                        href="./model/cancel/cancel_idform.php?id=<?= $row['id'] ?>">Confirm</a></button>
+                                                        href="./model/cancel/cancel_certOfIndigency.php?id=<?= $row['id'] ?>">Confirm</a></button>
                                                 <button type="button" class="abort-cancel-item">No</button>
                                             </div>
                                         </div>

@@ -18,7 +18,6 @@
     $applicant_houseNo      = $conn->real_escape_string($_POST['applicant_houseNo']);
     $applicant_street      = $conn->real_escape_string($_POST['applicant_street']);
     $applicant_subdivision      = $conn->real_escape_string($_POST['applicant_subdivision']);
-    $purpose      = $conn->real_escape_string($_POST['purpose']);
     $documentFor  = $conn->real_escape_string($_POST['documentFor']);
 
     if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($address)&& !empty($purpose)){
@@ -33,6 +32,8 @@
                 href="Cart.php">"Request Status"</a> page.
         </p>';
             $_SESSION['success'] = 'success';
+            $certClass = "Endorsement Certificate";
+            include "./received_request.php";
 
         }else{
             $_SESSION['message'] = 'Something went wrong!';
