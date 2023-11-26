@@ -23,7 +23,6 @@
     $applicant_civilStatus      = $conn->real_escape_string($_POST['applicant_civilStatus']);
     $contactNo      = $conn->real_escape_string($_POST['contactNo']);
     $documentFor  = $conn->real_escape_string($_POST['documentFor']);
-    $purpose      = $conn->real_escape_string($_POST['purpose']);
     
     if(!empty($applicant_fname) || !empty($requestor_fname) && !empty($address)&& !empty($purpose)){
 
@@ -37,6 +36,8 @@
                 href="Cart.php">"Request Status"</a> page.
         </p>';
             $_SESSION['success'] = 'success';
+            $certClass = "Identification";
+            include "./received_request.php";
 
         }else{
             $_SESSION['message'] = 'Something went wrong daw!';
