@@ -9,20 +9,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $applicant_lname = $conn->real_escape_string(isset($_POST['applicant_lname']) ? $_POST['applicant_lname'] : "");
     $applicant_suffix = $conn->real_escape_string(isset($_POST['applicant_suffix']) ? $_POST['applicant_suffix'] : "");
     
-    $requestor_fname = $conn->real_escape_string($_POST['requestor_fname']);
-    $requestor_mname = $conn->real_escape_string($_POST['requestor_mname']);
-    $requestor_lname = $conn->real_escape_string($_POST['requestor_lname']);
-    $requestor_suffix = $conn->real_escape_string($_POST['requestor_suffix']);
+    $requestor_fname = $conn->real_escape_string(isset($_POST['requestor_fname']) ? $_POST['requestor_fname'] : "");
+    $requestor_mname = $conn->real_escape_string(isset($_POST['requestor_mname']) ? $_POST['requestor_mname'] : "");
+    $requestor_lname = $conn->real_escape_string(isset($_POST['requestor_lname']) ? $_POST['requestor_lname'] : "");
+    $requestor_suffix = $conn->real_escape_string(isset($_POST['requestor_suffix']) ? $_POST['requestor_suffix'] : "");
     
     $parent_fname = $conn->real_escape_string($_POST['parent_fname']);
     $parent_mname = $conn->real_escape_string($_POST['parent_mname']);
     $parent_lname = $conn->real_escape_string($_POST['parent_lname']);
     $parent_suffix = $conn->real_escape_string($_POST['parent_suffix']);
 
-    $father_fname = $conn->real_escape_string($_POST['father_fname']);
-    $father_mname = $conn->real_escape_string($_POST['father_mname']);
-    $father_lname = $conn->real_escape_string($_POST['father_lname']);
-    $father_suffix = $conn->real_escape_string($_POST['father_suffix']);
+    $father_fname = $conn->real_escape_string(isset($_POST['father_fname']) ? $_POST['father_fname'] : "");
+    $father_mname = $conn->real_escape_string(isset($_POST['father_mname']) ? $_POST['father_mname'] : "");
+    $father_lname = $conn->real_escape_string(isset($_POST['father_lname']) ? $_POST['father_lname'] : "");
+    $father_suffix = $conn->real_escape_string(isset($_POST['father_suffix']) ? $_POST['father_suffix'] : "");
 
     $mother_fname = $conn->real_escape_string($_POST['mother_fname']);
     $mother_mname = $conn->real_escape_string($_POST['mother_mname']);
@@ -61,8 +61,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['success'] = 'danger';
     }
 
-    // Redirect to the appropriate page (adjust the path accordingly)
-    header("Location: ../../certOfLBR.php");
+$query = "SELECT documentFor FROM tbl_certoflbr WHERE `id`='$id'";
+$result = $conn->query($query);
+
+if ($result) {
+    $certoflbr = $result->fetch_assoc();
+
+    // Check if the 'documentFor' column exists in the result
+    if (isset($certoflbr['documentFor'])) {
+        $documentFor = $certoflbr['documentFor'];
+
+        // Redirect to the appropriate page based on the 'documentFor' value
+        if ($documentFor == "Self") {
+            header("Location: ../../generate/certOfLBR_generate_forself.php?id=". $id);
+        } else if($documentFor == "Single Parent") {
+            header("Location: ../../generate/certOfLBR_generate_forsingleparent.php?id=". $id);
+        } else {
+            header("Location: ../../generate/certOfLBR_generate_fortheirchild.php?id=". $id);
+        }
+    } else {
+        echo "Error: 'documentFor' column not found in the result.";
+    }
+} else {
+    echo "Error: " . $conn->error;
+}
     exit();
 }
 

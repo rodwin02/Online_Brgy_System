@@ -40,8 +40,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['success'] = 'danger';
     }
 
-    // Redirect to the appropriate page (adjust the path accordingly)
-    header("Location: ../../certOfIndigency.php");
+$query = "SELECT documentFor FROM tbl_certofindigency WHERE `id`='$id'";
+$result = $conn->query($query);
+
+if ($result) {
+    $certofindigency = $result->fetch_assoc();
+
+    // Check if the 'documentFor' column exists in the result
+    if (isset($certofindigency['documentFor'])) {
+        $documentFor = $certofindigency['documentFor'];
+
+        // Redirect to the appropriate page based on the 'documentFor' value
+        if ($documentFor == "Self") {
+            header("Location: ../../generate/certOfIndigency_generate_forself.php?id=". $id);
+        } else {
+            header("Location: ../../generate/certOfIndigency_generate_forsomeone.php?id=". $id);
+        }
+    } else {
+        echo "Error: 'documentFor' column not found in the result.";
+    }
+} else {
+    echo "Error: " . $conn->error;
+}
     exit();
 }
 

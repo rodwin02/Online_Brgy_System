@@ -40,8 +40,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['success'] = 'danger';
     }
 
-    // Redirect to the appropriate page (adjust the path accordingly)
-    header("Location: ../../endorsmentCert.php");
+$query = "SELECT documentFor FROM tbl_ecertificate WHERE `id`='$id'";
+$result = $conn->query($query);
+
+if ($result) {
+    $ecertificate = $result->fetch_assoc();
+
+    // Check if the 'documentFor' column exists in the result
+    if (isset($ecertificate['documentFor'])) {
+        $documentFor = $ecertificate['documentFor'];
+
+        // Redirect to the appropriate page based on the 'documentFor' value
+        if ($documentFor == "Self") {
+            header("Location: ../../generate/endorsementCert_generate_forselft.php?id=". $id);
+        } else {
+            header("Location: ../../generate/endorsementCert_generate_forsomeone.php?id=". $id);
+        }
+    } else {
+        echo "Error: 'documentFor' column not found in the result.";
+    }
+} else {
+    echo "Error: " . $conn->error;
+}
+
     exit();
 }
 

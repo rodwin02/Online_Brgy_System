@@ -198,6 +198,7 @@ function editEndorsementCert(that) {
   street = $(that).attr("data-street");
   subdivision = $(that).attr("data-subdivision");
   purpose = $(that).attr("data-purpose");
+  documentFor = $(that).attr("data-documentFor");
   date_requested = $(that).attr("data-date_requested");
 
   $(".endorsementCert_id").val(id);
@@ -216,6 +217,7 @@ function editEndorsementCert(that) {
   $(".subdivision").val(subdivision);
 
   $(".purpose").val(purpose);
+  $(".documentFor").val(documentFor);
   $(".date_requested").val(date_requested);
 }
 
@@ -236,6 +238,7 @@ function editCertOfIndigency(that) {
   street = $(that).attr("data-street");
   subdivision = $(that).attr("data-subdivision");
   purpose = $(that).attr("data-purpose");
+  documentFor = $(that).attr("data-documentFor");
   date_requested = $(that).attr("data-date_requested");
 
   $(".certOfIndigency_id").val(id);
@@ -254,6 +257,7 @@ function editCertOfIndigency(that) {
   $(".subdivision").val(subdivision);
 
   $(".purpose").val(purpose);
+  $(".documentFor").val(documentFor);
   $(".date_requested").val(date_requested);
 }
 
@@ -290,6 +294,7 @@ function certOfLbr(that) {
   house_no = $(that).attr("data-house_no");
   street = $(that).attr("data-street");
   subdivision = $(that).attr("data-subdivision");
+  documentFor = $(that).attr("data-documentFor");
   date_requested = $(that).attr("data-date_requested");
 
   $(".certOFlbr_id").val(id);
@@ -324,6 +329,7 @@ function certOfLbr(that) {
   $(".street").val(street);
   $(".subdivision").val(subdivision);
 
+  $(".documentFor").val(documentFor);
   $(".date_requested").val(date_requested);
 }
 

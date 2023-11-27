@@ -42,15 +42,32 @@
                     <input type="file" id="image-input" accept="image/*">
                     <span>Select 2v2 Picture</span>
                 </label>
-                <button type="submit" id="edit">Edit</button>
-                
+                <button type="button" id="edit" onclick="editIdForm(this)"
+                    data-id="<?= $idForm['id']?>"
+                    data-applicant_fname="<?= $idForm['applicant_fname']?>"
+                    data-applicant_mname="<?= $idForm['applicant_mname']?>"
+                    data-applicant_lname="<?= $idForm['applicant_lname']?>"
+                    data-applicant_suffix="<?= $idForm['applicant_suffix']?>"
+                    data-requestor_fname="<?= $idForm['requestor_fname']?>"
+                    data-requestor_mname="<?= $idForm['requestor_mname']?>"
+                    data-requestor_lname="<?= $idForm['requestor_lname']?>"
+                    data-requestor_suffix="<?= $idForm['requestor_suffix']?>" data-house_no="<?= $idForm['house_no']?>"
+                    data-street="<?= $idForm['street']?>" data-subdivision="<?= $idForm['subdivision']?>"
+                    data-pob="<?= $idForm['place_of_birth']?>" data-dob="<?= $idForm['birth_date']?>"
+                    data-civil_status="<?= $idForm['civil_status']?>" 
+                    data-contact_no="<?= $idForm['contact_number']?>"
+                    data-document_for="<?= $idForm['documentFor']?>"
+                    data-purpose="<?= $idForm['purpose']?>"
+                    data-date_requested="<?= $idForm['date_requested']?>"
+                    >Edit</button>
+
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
             </div>
         </div>
 
         <div class="form-container-idForm" id="printMe">
             <form action="#" class="paper">
-           
+
                 <div class="half-paper" style=" width: 700px;
             height: 368px;
             border: 3px solid #000;
@@ -214,7 +231,7 @@
                         </div>
                     </div>
 
-                
+
                     <p class="warning" style="  color: #F00;
             font-family: Poppins;
             font-size: 13px;
@@ -439,7 +456,7 @@
                         </div>
                     </div>
 
-                   
+
                     <p class="warning" style="  color: #F00;
             font-family: Poppins;
             font-size: 13px;
@@ -504,7 +521,7 @@
     </div>
 
     <div class="modal-EditIDForm">
-        <form action="#" class="editIDForm">
+        <form action="../model/edit_certificates/edit_idForm.php" method="post" class="editIDForm">
             <div class="title-cont-modal">
                 <p>Resident Information</p>
                 <img src="../icons/close 1.png" class="closeIdForm1" alt="">
@@ -544,9 +561,12 @@
                     <input type="text" name="contact_no" id="contact_number1">
                 </div>
             </div>
+            <input type="hidden" name="id" id="idform_id">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>
+    <script src="../js//jQuery-3.7.0.js"></script>
+    <script src="../js//app.js"></script>
 
     <script>
     function printDiv(divName) {
@@ -563,40 +583,40 @@
 </html>
 
 <script>
-    document.getElementById('image-input').addEventListener('change', function(event) {
-      const input = event.target;
-      
-      if (input.files && input.files[0]) {
+document.getElementById('image-input').addEventListener('change', function(event) {
+    const input = event.target;
+
+    if (input.files && input.files[0]) {
         const reader = new FileReader();
 
         reader.onload = function(e) {
-          const imagePreview1 = document.getElementById('image-preview1');
-          const imagePreview2 = document.getElementById('image-preview2');
+            const imagePreview1 = document.getElementById('image-preview1');
+            const imagePreview2 = document.getElementById('image-preview2');
 
-          // Set the source for both image previews
-          imagePreview1.src = e.target.result;
-          imagePreview2.src = e.target.result;
+            // Set the source for both image previews
+            imagePreview1.src = e.target.result;
+            imagePreview2.src = e.target.result;
 
-          // Show both image previews
-          imagePreview1.style.display = 'block';
-          imagePreview2.style.display = 'block';
+            // Show both image previews
+            imagePreview1.style.display = 'block';
+            imagePreview2.style.display = 'block';
         };
 
         reader.readAsDataURL(input.files[0]);
-      }
-    });
+    }
+});
 
 
-    const editLink = document.getElementById('edit');
-    const modaleditLink = document.querySelector('.modal-EditIDForm');
-    const closeIdForm = document.querySelector('.closeIdForm1');
+const editLink = document.getElementById('edit');
+const modaleditLink = document.querySelector('.modal-EditIDForm');
+const closeIdForm = document.querySelector('.closeIdForm1');
 
-    editLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        modaleditLink.style.display = 'block';
-    });
+editLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    modaleditLink.style.display = 'block';
+});
 
-    closeIdForm.addEventListener('click', function() {
-        modaleditLink.style.display = 'none';
-    });
-  </script>
+closeIdForm.addEventListener('click', function() {
+    modaleditLink.style.display = 'none';
+});
+</script>
