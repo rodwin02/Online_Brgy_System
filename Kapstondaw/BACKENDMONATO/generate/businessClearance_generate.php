@@ -522,7 +522,7 @@
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Clearance">
-            <input type="submit" id="submit" value="Add">
+            <input type="submit" id="submit" value="Save">
         </form>
     </div>
 
