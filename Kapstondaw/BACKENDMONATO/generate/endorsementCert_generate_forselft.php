@@ -36,7 +36,11 @@
 
         <div class="print-title">
             <p>Endorsement Certificate</p>
-            <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            <div class="left-title">
+                <button type="submit" id="edit">Edit</button>
+                
+                <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            </div>
         </div>
 
         <div class="form-container" id="printMe">
@@ -273,8 +277,51 @@
                 </div>
             </form>
         </div>
-
     </div>
+
+
+    <!-- EDIT MODAL SELF -->
+    <div class="modal-editEcert_forself">
+        <form class="formEcert_forself" action="./model/edit_certificates/edit_endorsementCert.php" method="post">
+            <div class="title-cont-modal">
+                <p>Resident Information</p>
+                <img src="../icons/close 1.png" class="closeForm_forself1" alt="">
+            </div>
+
+            <div class="modal-layer-endorsement-self">
+                <div class="input-e-self">
+                    <label for="applicantName">Applicant:</label>
+                    <div class="label111">
+                        <input type="text" name="applicant_fname" id="applicant_fname_self1" class="applicant_fname"
+                            placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname_self1" class="applicant_mname"
+                            placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname_self1" class="applicant_lname"
+                            placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix_self1" class="applicant_suffix"
+                            placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-e-self">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" name="house_no" id="house_no1" class="house_no" placeholder="Houseno.">
+                        <input type="text" name="street" id="street1" class="street" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision1" class="subdivision"
+                            placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-e-self">
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" name="purpose" id="purpose1" class="purpose">
+                </div>
+            </div>
+            <input type="submit" id="submit" value="Save">
+        </form>
+    </div>
+
+
+
     <script>
     function printDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;
@@ -326,4 +373,19 @@ function updateDate() {
 
 // Call the updateDate function to set the content initially
 updateDate();
+</script>
+
+<script>
+    const editLink = document.getElementById('edit');
+    const modaleditLink = document.querySelector('.modal-editEcert_forself');
+    const closeForm = document.querySelector('.closeForm_forself1');
+
+    editLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditLink.style.display = 'block';
+    });
+
+    closeForm.addEventListener('click', function() {
+        modaleditLink.style.display = 'none';
+    });
 </script>

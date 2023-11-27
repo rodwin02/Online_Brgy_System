@@ -36,7 +36,11 @@
 
         <div class="print-title">
             <p>Certificate of Late Birth Registration</p>
-            <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            <div class="left-title">
+                <button type="submit" id="edit">Edit</button>
+                
+                <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            </div>
         </div>
 
         <div class="form-container" id="printMe">
@@ -362,8 +366,76 @@ echo $date->format('F d, Y');
                 </div>
             </form>
         </div>
-
     </div>
+
+     <!-- EDIT MODAL SELF -->
+     <div class="modal-editlbr_forself">
+        <form class="formlbr_forself" action="./model/edit_certificates/edit_certOfLbr.php" method="post">
+            <div class="title-cont-modal">
+                <p>Resident Information</p>
+                <img src="../icons/close 1.png" class="closeForm_forself1" alt="">
+            </div>
+
+            <div class="modal-layer-lbr-self">
+                <div class="input-lbr-self">
+                    <label for="applicantName">Applicant:</label>
+                    <div class="label111">
+                        <input type="text" name="applicant_fname" class="applicant_fname" id="applicant_fname_self1"
+                            placeholder="First Name">
+                        <input type="text" name="applicant_mname" class="applicant_mname" id="applicant_mname_self1"
+                            placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" class="applicant_lname" id="applicant_lname_self1"
+                            placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" class="applicant_suffix" id="applicant_suffix_self1"
+                            placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-lbr-self">
+                    <label for="fatherName">Father Name:</label>
+                    <div class="label111">
+                        <input type="text" name="father_fname" class="father_fname" id="father_fname_self1"
+                            placeholder="First Name">
+                        <input type="text" name="father_mname" class="father_mname" id="father_mname_self1"
+                            placeholder="Middle Name">
+                        <input type="text" name="father_lname" class="father_lname" id="father_lname_self1"
+                            placeholder="Last Name">
+                        <input type="text" name="father_suffix" class="father_suffix" id="father_suffix_self1"
+                            placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-lbr-self">
+                    <label for="motherName">Mother Name:</label>
+                    <div class="label111">
+                        <input type="text" name="mother_fname" class="mother_fname" id="mother_fname_self1"
+                            placeholder="First Name">
+                        <input type="text" name="mother_mname" class="mother_mname" id="mother_mname_self1"
+                            placeholder="Middle Name">
+                        <input type="text" name="mother_lname" class="mother_lname" id="mother_lname_self1"
+                            placeholder="Last Name">
+                        <input type="text" name="mother_suffix" class="mother_suffix" id="mother_suffix_self1"
+                            placeholder="Suffix">
+                    </div>
+                </div>
+
+                <div class="input-lbr-self">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" name="house_no" class="house_no" id="house_no_self1" placeholder="Houseno.">
+                        <input type="text" name="street" class="street" id="street_self1" placeholder="Street name">
+                        <input type="text" name="subdivision" class="subdivision" id="subdivision_self1"
+                            placeholder="Subdivision name">
+                    </div>
+                </div>
+
+                <div class="input-lbr-self">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob_self1" name="dob" class="dob">
+                </div>
+            </div>
+            <input type="submit" id="submit" value="Save">
+        </form>
+    </div>
+
     <script>
     function printDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;
@@ -421,4 +493,19 @@ function updateDate() {
 
 // Call the updateDate function to set the content initially
 updateDate();
+</script>
+
+<script>
+    const editLink = document.getElementById('edit');
+    const modaleditLink = document.querySelector('.modal-editlbr_forself');
+    const closeForm = document.querySelector('.closeForm_forself1');
+
+    editLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditLink.style.display = 'block';
+    });
+
+    closeForm.addEventListener('click', function() {
+        modaleditLink.style.display = 'none';
+    });
 </script>

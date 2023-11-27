@@ -36,7 +36,11 @@
 
         <div class="print-title">
             <p>Certificate of Late Birth Registration</p>
-            <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            <div class="left-title">
+                <button type="submit" id="edit">Edit</button>
+                
+                <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            </div>
         </div>
 
         <div class="form-container" id="printMe">
@@ -369,8 +373,63 @@ echo $date->format('F d, Y');
                 </div>
             </form>
         </div>
-
     </div>
+
+     <!-- EDIT MODAL PARENT -->
+     <div class="modal-editlbr_forsingleparent">
+        <form class="formlbr_forsingleparent" action="./model/edit_certificates/edit_certOfLbr.php" method="post">
+            <div class="title-cont-modal">
+                <p>Resident Information</p>
+                <img src="../icons/close 1.png" class="closeForm_forsingleparent1" alt="">
+            </div>
+
+            <div class="modal-layer-lbr-single-parent">
+                <div class="input-lbr-single-parent">
+                    <label for="requestorName">Requestor:</label>
+                    <div class="label111">
+                        <input type="text" name="requestor_fname" class="requestor_fname" id="requestor_fname_parent1"
+                            placeholder="First Name">
+                        <input type="text" name="requestor_mname" class="requestor_mname" id="requestor_mname_parent1"
+                            placeholder="Middle Name">
+                        <input type="text" name="requestor_lname" class="requestor_lname" id="requestor_lname_parent1"
+                            placeholder="Last Name">
+                        <input type="text" name="requestor_suffix" class="requestor_suffix"
+                            id="requestor_suffix_parent1" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-lbr-single-parent">
+                    <label for="parentName">Parent Name:</label>
+                    <div class="label111">
+                        <input type="text" name="parent_fname" class="parent_fname" id="parent_fname_parent1"
+                            placeholder="First Name">
+                        <input type="text" name="parent_mname" class="requestor_mname" id="parent_mname_parent1"
+                            placeholder="Middle Name">
+                        <input type="text" name="parent_lname" class="requestor_lname" id="parent_lname_parent1"
+                            placeholder="Last Name">
+                        <input type="text" name="parent_suffix" class="requestor_suffix" id="parent_suffix_parent1"
+                            placeholder="Suffix">
+                    </div>
+                </div>
+                
+                <div class="input-lbr-single-parent">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" name="house_no" class="house_no" id="house_no_parent1"
+                            placeholder="Houseno.">
+                        <input type="text" name="street" class="street" id="street_parent1" placeholder="Street name">
+                        <input type="text" name="subdivision" class="subdivision" id="subdivision_parent1"
+                            placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-lbr-single-parent">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob_parent1" name="dob" class="dob">
+                </div>
+            </div>
+            <input type="submit" id="submit" value="Save">
+        </form>
+    </div>
+
     <script>
     function printDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;
@@ -428,4 +487,19 @@ function updateDate() {
 
 // Call the updateDate function to set the content initially
 updateDate();
+</script>
+
+<script>
+    const editLink = document.getElementById('edit');
+    const modaleditLink = document.querySelector('.modal-editlbr_forsingleparent');
+    const closeForm = document.querySelector('.closeForm_forsingleparent1');
+
+    editLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditLink.style.display = 'block';
+    });
+
+    closeForm.addEventListener('click', function() {
+        modaleditLink.style.display = 'none';
+    });
 </script>

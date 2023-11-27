@@ -370,5 +370,137 @@
     }
   }
 }
+.modal-EditIDForm {
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+   
+  .editIDForm {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    border-radius: 20px;
+    background: #F8F8F8;
+    width: 490px;
+    height: auto;
+    padding: 20px;
+  
+    color: #000;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 
+
+    .title-cont-modal {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        p {
+          color: #000;
+          font-family: Poppins;
+          font-size: 17px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
+        
+        img {
+          width: 14px;
+          height: 14px;
+          display: flex;
+          justify-content: center;
+          align-self: center;
+          cursor: pointer;
+        }
+    }
+
+    .modal-layer1 {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 5px;
+      color: #000;
+      font-family: Poppins;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+
+      select {
+        height: 33px;
+        color: #000;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 15px;
+      }
+      input {
+        height: 30px;
+        color: #000;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 15px;
+      }
+      .input-label {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+
+        input {
+          width: 215px;
+          height: 33px;
+          padding-left: 5px;
+        }
+
+        .label111 #house_no1 {
+          width: 24%;
+        }
+        .label111 #street1 {
+          width: 36%;
+        }
+        .label111 #subdivision1 {
+          width: 38%;
+        }
+        .label111 #applicant_fname1, #applicant_mname1, #applicant_lname1 {
+          width: 32.5%;
+        }
+      }
+    }
+    #submit {
+      width: 89.744px;
+      height: 35.836px;
+      flex-shrink: 0;
+      color: #007236;
+      border-radius: 5px;
+      background: #FFFF;
+      border: 1px solid #007236;
+      display: flex;
+      justify-content: center;
+      align-self: flex-end;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    #submit:hover {
+      background-color: #007236;
+      color: #F8F8F8;
+    }
+    
+  }
+}
 

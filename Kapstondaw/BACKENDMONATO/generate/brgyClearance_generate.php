@@ -36,7 +36,11 @@
 
         <div class="print-title">
             <p>Barangay Clearance</p>
-            <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            <div class="left-title">
+                <button type="submit" id="edit">Edit</button>
+                
+                <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
+            </div>
         </div>
 
         <div class="form-container-brgyClearance" id="printMe">
@@ -588,6 +592,51 @@
         </div>
     </div>
 
+     <!-- EDIT MODAL -->
+     <div class="modal-editBrgyClearance">
+        <form class="formBrgyClearance" method="post">
+            <div class="title-cont-modal">
+                <p>Resident Information</p>
+                <img src="../icons/close 1.png" class="closeForm1" alt="">
+            </div>
+
+            <div class="modal-layer-brgyClearance">
+                <div class="input-brgy-clearance">
+                    <label for="applicantName">Applicant:</label>
+                    <div class="label111">
+                        <input type="text" name="applicant_fname" id="applicant_fname1" placeholder="First Name">
+                        <input type="text" name="applicant_mname" id="applicant_mname1" placeholder="Middle Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname1" placeholder="Last Name">
+                        <input type="text" name="applicant_suffix" id="applicant_suffix1" placeholder="Suffix">
+                    </div>
+                </div>
+                <div class="input-brgy-clearance">
+                    <label for="address">Address:</label>
+                    <div class="label111">
+                        <input type="text" name="house_no" id="house_no1" placeholder="Houseno.">
+                        <input type="text" name="street" id="street1" placeholder="Street name">
+                        <input type="text" name="subdivision" id="subdivision1" placeholder="Subdivision name">
+                    </div>
+                </div>
+                <div class="input-brgy-clearance">
+                    <label for="birth_date">Birth Date:</label>
+                    <input type="date" name="dob" id="birth_date1">
+                </div>
+                <div class="input-brgy-clearance">
+                    <label for="place_of_birth">Place of Birth:</label>
+                    <input type="text" name="pob" id="place_of_birth1">
+                </div>
+                <div class="input-brgy-clearance">
+                    <label for="purpose">Purpose:</label>
+                    <input type="text" name="purpose" id="purpose1" name="purpose">
+                </div>
+
+            </div>
+            <input type="submit" id="submit" value="Save">
+        </form>
+    </div>
+
+
     <script>
     function printDiv(divName) {
         var printContents = document
@@ -604,3 +653,18 @@
 </body>
 
 </html>
+
+<script>
+    const editLink = document.getElementById('edit');
+    const modaleditLink = document.querySelector('.modal-editBrgyClearance');
+    const closeForm = document.querySelector('.closeForm1');
+
+    editLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        modaleditLink.style.display = 'block';
+    });
+
+    closeForm.addEventListener('click', function() {
+        modaleditLink.style.display = 'none';
+    });
+</script>

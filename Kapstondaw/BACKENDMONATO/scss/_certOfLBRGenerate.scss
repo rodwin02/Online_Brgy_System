@@ -84,21 +84,48 @@
       line-height: normal;
       margin-left: 15px;
     }
-    a {
+    .left-title {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      text-align: center;
-      margin-right: 25px;
+      flex-direction: row;
+      
+      button {
+        color: #007236;
+        cursor: pointer;
+        border: 1px solid #007236;
+        border-radius: 20px;
+        padding: 10px 35px; 
+        margin-right: 5px;
+        background: #FFFFFF;
+        display: inline-block;
+        font-family: Poppins;
+        font-size: 14px;
+      }
+      button:hover {
+        background-color: #007236;
+        color: white;
+      }
 
-      color: #007236;
-      width: 105px;
-      height: 39px;
-  
-      border-radius: 20px;
-      border: 1px solid #007236;
-      background: #FFF;
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        text-align: center;
+        margin-right: 25px;
+        font-family: Poppins;
+        font-size: 14px;
+        color: #007236;
+        padding: 10px 35px; 
+       
+        border-radius: 20px;
+        border: 1px solid #007236;
+        background: #FFF;
+      }
+      a:hover {
+        background-color: #007236;
+        color: white;
+      }
+    
     }
   }
   .form-container {
@@ -423,4 +450,445 @@
     pointer-events: none;
   }
 }
+
+.modal-editlbr_forself{
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+
+
+  .formlbr_forself{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    border-radius: 20px;
+    background: #F8F8F8;
+    width: 450px;
+    height: auto;
+    padding: 20px;
+  
+    color: #000;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    .title-cont-modal {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+      p {
+        color: #000;
+        font-family: Poppins;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      
+      img {
+        width: 14px;
+        height: 14px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        cursor: pointer;
+      }
+    }
+
+    .modal-layer-lbr-self {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 5px;
+      color: #000;
+      font-family: Poppins;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+
+      select {
+        height: 33px;
+        color: #000;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 15px;
+      }
+      input {
+        height: 30px;
+        color: #000;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 15px;
+      }
+      .input-lbr-self {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+
+        input {
+          width: 194px;
+          height: 33px;
+          padding-left: 5px;
+        }
+
+        .label111 #house_no_self1 {
+          width: 24%;
+        }
+        .label111 #street_self1 {
+          width: 36%;
+        }
+        .label111 #subdivision_self1 {
+          width: 38%;
+        }
+        .label111 #applicant_fname_self1, #applicant_mname_self1, #applicant_lname_self1 {
+          width: 27%;
+        }
+        .label111 #applicant_suffix_self1{
+          width: 16%;
+        }
+        .label111 #father_fname_self1, #father_mname_self1, #father_lname_self1 {
+          width: 27%;
+        }
+        .label111 #father_suffix_self1{
+          width: 16%;
+        }
+        .label111 #mother_fname_self1, #mother_mname_self1, #mother_lname_self1 {
+          width: 27%;
+        }
+        .label111 #mother_suffix_self1{
+          width: 16%;
+        }
+      }
+    }
+    #submit {
+      width: 89.744px;
+      height: 35.836px;
+      flex-shrink: 0;
+      color: #007236;
+      border-radius: 5px;
+      background: #FFFF;
+      border: 1px solid #007236;
+      display: flex;
+      justify-content: center;
+      align-self: flex-end;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    #submit:hover {
+      background-color: #007236;
+      color: #F8F8F8;
+    }
+  }
+}
+
+
+
+.modal-editlbr_forsingleparent{
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+
+
+  .formlbr_forsingleparent {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    border-radius: 20px;
+    background: #F8F8F8;
+    width: 450px;
+    height: auto;
+    padding: 20px;
+  
+    color: #000;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    .title-cont-modal {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+      p {
+        color: #000;
+        font-family: Poppins;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      
+      img {
+        width: 14px;
+        height: 14px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        cursor: pointer;
+      }
+    }
+
+    .modal-layer-lbr-single-parent {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 5px;
+      color: #000;
+      font-family: Poppins;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+
+      select {
+        height: 33px;
+        color: #000;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 15px;
+      }
+      input {
+        height: 30px;
+        color: #000;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 15px;
+      }
+      .input-lbr-single-parent {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+
+        input {
+          width: 194px;
+          height: 33px;
+          padding-left: 5px;
+        }
+
+        .label111 #house_no_parent1 {
+          width: 24%;
+        }
+        .label111 #street_parent1 {
+          width: 36%;
+        }
+        .label111 #subdivision_parent1 {
+          width: 38%;
+        }
+        .label111 #parent_fname_parent1, #parent_mname_parent1, #parent_lname_parent1 {
+          width: 27%;
+        }
+        .label111 #parent_suffix_parent1{
+          width: 16%;
+        }
+        .label111 #requestor_fname_parent1, #requestor_mname_parent1, #requestor_lname_parent1 {
+          width: 27%;
+        }
+        .label111 #requestor_suffix_parent1{
+          width: 16%;
+        }
+      }
+    }
+    #submit {
+      width: 89.744px;
+      height: 35.836px;
+      flex-shrink: 0;
+      color: #007236;
+      border-radius: 5px;
+      background: #FFFF;
+      border: 1px solid #007236;
+      display: flex;
+      justify-content: center;
+      align-self: flex-end;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    #submit:hover {
+      background-color: #007236;
+      color: #F8F8F8;
+    }
+  }
+}
+
+.modal-editlbr_fortheirchild{
+  display: flex;
+  z-index: 5;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding: 15% 0 0 35%;
+  display: none;
+
+
+  .formlbr_fortheirchild {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    border-radius: 20px;
+    background: #F8F8F8;
+    width: 450px;
+    height: auto;
+    padding: 20px;
+  
+    color: #000;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    .title-cont-modal {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+      p {
+        color: #000;
+        font-family: Poppins;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      
+      img {
+        width: 14px;
+        height: 14px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        cursor: pointer;
+      }
+    }
+
+    .modal-layer-lbr-for-child {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 5px;
+      color: #000;
+      font-family: Poppins;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+
+      select {
+        height: 33px;
+        color: #000;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 15px;
+      }
+      input {
+        height: 30px;
+        color: #000;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 15px;
+      }
+      .input-lbr-for-child {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+
+        input {
+          width: 194px;
+          height: 33px;
+          padding-left: 5px;
+        }
+
+        .label111 #house_no_child1 {
+          width: 24%;
+        }
+        .label111 #street_child1 {
+          width: 36%;
+        }
+        .label111 #subdivision_child1 {
+          width: 38%;
+        }
+        .label111 #requestor_fname_child1, #requestor_mname_child1, #requestor_lname_child1 {
+          width: 27%;
+        }
+        .label111 #requestor_suffix_child1{
+          width: 16%;
+        }
+        .label111 #father_fname_child1, #father_mname_child1, #father_lname_child1 {
+          width: 27%;
+        }
+        .label111 #father_suffix_child1{
+          width: 16%;
+        }
+        .label111 #mother_fname_child1, #mother_mname_child1, #mother_lname_child1 {
+          width: 27%;
+        }
+        .label111 #mother_suffix_child1{
+          width: 16%;
+        }
+      }
+    }
+    #submit {
+      width: 89.744px;
+      height: 35.836px;
+      flex-shrink: 0;
+      color: #007236;
+      border-radius: 5px;
+      background: #FFFF;
+      border: 1px solid #007236;
+      display: flex;
+      justify-content: center;
+      align-self: flex-end;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    #submit:hover {
+      background-color: #007236;
+      color: #F8F8F8;
+    }
+  }
+}
+
 
