@@ -59,6 +59,8 @@
                     data-document_for="<?= $idForm['documentFor']?>"
                     data-purpose="<?= $idForm['purpose']?>"
                     data-date_requested="<?= $idForm['date_requested']?>"
+                    data-status="<?= $idFor['status']?>"
+                    data-seen="<?= $idFor['seen']?>"
                     >Edit</button>
 
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
@@ -562,6 +564,10 @@
                 </div>
             </div>
             <input type="hidden" name="id" id="idform_id">
+            <input type="hidden" name="documentFor" id="documentFor1">
+            <input type="hidden" name="date_requested" id="date_requested">
+            <input type="hidden" name="status" id="status">
+            <input type="hidden" name="seen" id="seen">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>

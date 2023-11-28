@@ -43,13 +43,25 @@
     }
 
     button {
-      border: none;
-      background-color: #007236;
+      cursor: pointer;
+      border: 1px solid #007236;
+      background-color: #f8f9fa;
       border-radius: 2rem;
-      color: #fff;
+      font-weight: 600;
+      transition: all 0.2s ease-in-out;
       padding: 0.8rem 1.5rem;
+      a {
+        color: #007236;
+      }
       @media (min-width: 375px) {
         padding: 1rem 2rem;
+      }
+    }
+
+    button:hover {
+      background-color: #007236;
+      a {
+        color: #f8f9fa;
       }
     }
   }

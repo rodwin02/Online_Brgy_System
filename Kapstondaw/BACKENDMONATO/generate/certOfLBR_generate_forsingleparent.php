@@ -53,6 +53,8 @@
                     data-documentFor="<?= $certOfLBR['documentFor']?>"
                     data-date_of_birth="<?= $certOfLBR['date_of_birth']?>"
                     data-date_requested="<?= $certOfLBR['date_requested']?>"
+                    data-status="<?= $certOfLBR['status']?>"
+                    data-seen="<?= $certOfLBR['seen']?>"
                 >Edit</button>
                 
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
@@ -442,6 +444,8 @@
             </div>
             <input type="hidden" name="id" class="certOFlbr_id">
             <input type="hidden" name="documentFor" class="documentFor">
+            <input type="hidden" name="status" class="status">
+            <input type="hidden" name="seen" class="seen">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>

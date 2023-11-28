@@ -25,12 +25,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $documentFor = $conn->real_escape_string($_POST['documentFor']);
     $purpose = $conn->real_escape_string($_POST['purpose']);
     $date_requested = $conn->real_escape_string($_POST['date_requested']);
+    $status = $conn->real_escape_string($_POST['status']);
+    $seen = $conn->real_escape_string($_POST['seen']);
 
 
     // Construct the SQL UPDATE query
     $update_query = "UPDATE tbl_idform
                      SET `applicant_fname` = '$applicant_fname',
-                         `applicant_mname`='$applicant_mname',`applicant_lname`='$applicant_lname',`applicant_suffix`='$applicant_suffix',`requestor_fname`='$requestor_fname',`requestor_mname`='$requestor_mname',`requestor_lname`='$requestor_lname',`requestor_suffix`='$requestor_suffix',`house_no`='$house_no',`street`='$street',`subdivision`='$subdivision',`place_of_birth`='$pob',`birth_date`='$dob',`civil_status`='$civil_status',`contact_number`='$contact_no',`documentFor`='$documentFor',`purpose`='$purpose',`date_requested`='$date_requested'
+                         `applicant_mname`='$applicant_mname',`applicant_lname`='$applicant_lname',`applicant_suffix`='$applicant_suffix',`requestor_fname`='$requestor_fname',`requestor_mname`='$requestor_mname',`requestor_lname`='$requestor_lname',`requestor_suffix`='$requestor_suffix',`house_no`='$house_no',`street`='$street',`subdivision`='$subdivision',`place_of_birth`='$pob',`birth_date`='$dob',`civil_status`='$civil_status',`contact_number`='$contact_no',`documentFor`='$documentFor',`purpose`='$purpose',`date_requested`='$date_requested',
+                         `status`='$status',
+                         `seen`='$seen'
                      WHERE id = '$id'";
 
     // Execute the query

@@ -47,6 +47,8 @@
                     data-pob="<?= $brgyclearance['place-of-birth']?>" data-dob="<?= $brgyclearance['date-of-birth']?>"
                     data-purpose="<?= $brgyclearance['purpose']?>"
                     data-date_requested="<?= $brgyclearance['date_requested']?>"
+                    data-status="<?= $brgyclearance['status']?>"
+                    data-seen="<?= $brgyclearance['seen']?>"
                 >Edit</button>
                 
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
@@ -643,6 +645,8 @@
 
             </div>
             <input type="hidden" name="id" id="brgyClearance_id">
+            <input type="hidden" name="status" id="status">
+            <input type="hidden" name="seen" id="seen">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>

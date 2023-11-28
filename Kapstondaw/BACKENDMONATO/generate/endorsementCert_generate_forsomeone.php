@@ -54,6 +54,8 @@
                     data-purpose="<?= $ecertificate['purpose']?>"
                     data-documentFor="<?= $ecertificate['documentFor']?>"
                     data-date_requested="<?= $ecertificate['date_requested']?>"
+                    data-status="<?= $ecertificate['status']?>"
+                    data-seen="<?= $ecertificate['seen']?>"
                 >Edit</button>
                 
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
@@ -363,6 +365,8 @@
             </div>
             <input type="hidden" name="id" class="endorsementCert_id">
             <input type="hidden" name="documentFor" class="documentFor">
+            <input type="hidden" name="status" class="status">
+            <input type="hidden" name="seen" class="seen">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>

@@ -31,7 +31,7 @@
                 <li><a href="./main.php#about">About</a></li>
                 <li><a href="./main.php#services">Services</a></li>
                 <li><a href="./main.php#announcement">Announcement</a></li>
-                <li>Contact us!</li>
+                <li><a href="./main.php#contact-us">Contact us!</a></li>
                 <?php if(isset($_SESSION['username'])) { ?>
                 <li><a href="#">Cart</a></li>
                 <li><?php echo $_SESSION['username'];?></li>

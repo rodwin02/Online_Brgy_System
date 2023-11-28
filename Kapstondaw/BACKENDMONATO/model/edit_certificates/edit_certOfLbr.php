@@ -37,6 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $documentFor = $conn->real_escape_string($_POST['documentFor']);
     $date_requested = $conn->real_escape_string($_POST['date_requested']);
+    $status = $conn->real_escape_string($_POST['status']);
+    $seen = $conn->real_escape_string($_POST['seen']);
 
 
     // Construct the SQL UPDATE query
@@ -47,7 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                          `father_fname`='$father_fname',`father_mname`='$father_mname',`father_lname`='$father_lname',`father_suffix`='$father_suffix',
                          `mother_fname`='$mother_fname',`mother_mname`='$mother_mname',`mother_lname`='$mother_lname',`mother_suffix`='$mother_suffix',
                          `date_of_birth`='$dob',
-                         `house_no`='$house_no',`street`='$street',`subdivision`='$subdivision',`documentFor`='$documentFor',`date_requested`='$date_requested'
+                         `house_no`='$house_no',`street`='$street',`subdivision`='$subdivision',`documentFor`='$documentFor',`date_requested`='$date_requested',
+                         `status`='$status',
+                         `seen`='$seen'
                      WHERE id = '$id'";
 
     // Execute the query

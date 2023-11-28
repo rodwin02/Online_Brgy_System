@@ -4,15 +4,16 @@
         <img src="./assets/menu.png" alt="menu" id="menu" />
     </div>
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href=" #concerns">Report</a></li>
         <li>
             <div class="logo-container">
                 <img src="../BACKENDMONATO/uploads/logo/<?php echo $brgy_logo ?>" alt="Barangay Logo" />
             </div>
         </li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href=" #concerns">Report</a></li>
+   
         <li><a href=" #announcement">Announcement</a></li>
         <li><a href="#contact-us">Contact Us</a></li>
         <?php if(isset($_SESSION['username'])) { ?>

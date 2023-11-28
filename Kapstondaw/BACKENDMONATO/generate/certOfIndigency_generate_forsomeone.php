@@ -53,6 +53,8 @@
                     data-purpose="<?= $certofindigency['purpose']?>"
                     data-documentFor="<?= $certofindigency['documentFor']?>"
                     data-date_requested="<?= $certofindigency['date_requested']?>"
+                    data-status="<?= $certofindigency['status']?>"
+                    data-seen="<?= $certofindigency['seen']?>"
                 >Edit</button>
                 
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
@@ -506,6 +508,8 @@
             </div>
             <input type="hidden" name="id" class="certOfIndigency_id">
             <input type="hidden" name="documentFor" class="documentFor">
+            <input type="hidden" name="status" class="status">
+            <input type="hidden" name="seen" class="seen">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>

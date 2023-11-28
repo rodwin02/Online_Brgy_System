@@ -28,7 +28,7 @@
             <p>
                 <?= "Camerino Ave, ".$brgy_name. ", Bayan ". $town_name. ", ". $province_name. " Open Hours of Barangay: Monday to Friday (". $formattedOpenTime. " - ". $formattedCloseTime. ") ". $email. " / ". $contactNo?>
             </p>
-            <button>ABOUT US</button>
+            <button><a href="#about">ABOUT US</a></button>
         </div>
         <div class="logo">
             <img src="../BACKENDMONATO/uploads/logo/<?php echo $municipality_logo ?>" alt="dasma-logo" />

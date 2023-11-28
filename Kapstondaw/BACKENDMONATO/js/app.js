@@ -114,6 +114,8 @@ function editIdForm(that) {
   document_for = $(that).attr("data-document_for");
   purpose = $(that).attr("data-purpose");
   date_requested = $(that).attr("data-date_requested");
+  status = $(that).attr("data-status");
+  seen = $(that).attr("data-seen");
 
   $("#idform_id").val(id);
   $("#applicant_fname1").val(applicant_fname);
@@ -137,6 +139,8 @@ function editIdForm(that) {
   $("#documentFor1").val(document_for);
   $("#purpose1").val(purpose);
   $("#date_requested").val(date_requested);
+  $("#status").val(status);
+  $("#seen").val(seen);
 }
 
 // ! EDIT BRGY CLEARANCE
@@ -159,6 +163,8 @@ function editBrgyClearance(that) {
   dob = $(that).attr("data-dob");
   purpose = $(that).attr("data-purpose");
   date_requested = $(that).attr("data-date_requested");
+  status = $(that).attr("data-status");
+  seen = $(that).attr("data-seen");
 
   $("#brgyClearance_id").val(id);
   $("#applicant_fname1").val(applicant_fname);
@@ -179,6 +185,8 @@ function editBrgyClearance(that) {
   $("#birth_date1").val(dob);
   $("#purpose1").val(purpose);
   $("#date_requested").val(date_requested);
+  $("#status").val(status);
+  $("#seen").val(seen);
 }
 
 // ! ENDORSEMENT CERTIFICATE
@@ -200,6 +208,8 @@ function editEndorsementCert(that) {
   purpose = $(that).attr("data-purpose");
   documentFor = $(that).attr("data-documentFor");
   date_requested = $(that).attr("data-date_requested");
+  status = $(that).attr("data-status");
+  seen = $(that).attr("data-seen");
 
   $(".endorsementCert_id").val(id);
   $(".applicant_fname").val(applicant_fname);
@@ -219,6 +229,8 @@ function editEndorsementCert(that) {
   $(".purpose").val(purpose);
   $(".documentFor").val(documentFor);
   $(".date_requested").val(date_requested);
+  $(".status").val(status);
+  $(".seen").val(seen);
 }
 
 // ! CERTIFICATE OF INDIGENCY
@@ -240,6 +252,8 @@ function editCertOfIndigency(that) {
   purpose = $(that).attr("data-purpose");
   documentFor = $(that).attr("data-documentFor");
   date_requested = $(that).attr("data-date_requested");
+  status = $(that).attr("data-status");
+  seen = $(that).attr("data-seen");
 
   $(".certOfIndigency_id").val(id);
   $(".applicant_fname").val(applicant_fname);
@@ -259,6 +273,8 @@ function editCertOfIndigency(that) {
   $(".purpose").val(purpose);
   $(".documentFor").val(documentFor);
   $(".date_requested").val(date_requested);
+  $(".status").val(status);
+  $(".seen").val(seen);
 }
 
 // ! CERTIFICATE OF LBR
@@ -296,6 +312,8 @@ function certOfLbr(that) {
   subdivision = $(that).attr("data-subdivision");
   documentFor = $(that).attr("data-documentFor");
   date_requested = $(that).attr("data-date_requested");
+  status = $(that).attr("data-status");
+  seen = $(that).attr("data-seen");
 
   $(".certOFlbr_id").val(id);
   $(".applicant_fname").val(applicant_fname);
@@ -331,6 +349,8 @@ function certOfLbr(that) {
 
   $(".documentFor").val(documentFor);
   $(".date_requested").val(date_requested);
+  $(".status").val(status);
+  $(".seen").val(seen);
 }
 
 // ! EDIT BUSINESS CLEARANCE

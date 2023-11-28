@@ -113,7 +113,7 @@
         </div>
       </div>
 
-      <div class="container2">
+      <!-- <div class="container2">
         <div class="location">
           <h2>BARANGAY HALL LOCATION</h2>
         </div>
@@ -126,7 +126,7 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-      </div>
+      </div> -->
     </div>
 </body>
 </html>

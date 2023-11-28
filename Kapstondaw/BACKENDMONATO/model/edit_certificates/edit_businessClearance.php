@@ -17,11 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date_applied = $conn->real_escape_string($_POST['date_applied']);
     $document_for = $conn->real_escape_string($_POST['documentFor']);
     $status = $conn->real_escape_string($_POST['status']);
+    $seen = $conn->real_escape_string($_POST['seen']);
 
 
     // Construct the SQL UPDATE query
     $update_query = "UPDATE tbl_businessclearance
-                     SET `business_name`='$business_name',                   `business_owner_fname`='$owner_fname',`business_owner_mname`='$owner_mname',`business_owner_lname`='$owner_lname',`business_owner_suffix`='$owner_suffix',`house_no`='$house_no',`street`='$street',`subdivision`='$subdivision',`date_applied`='$date_applied',`documentFor`='$document_for',`status`='$status' 
+                     SET `business_name`='$business_name',                   `business_owner_fname`='$owner_fname',`business_owner_mname`='$owner_mname',`business_owner_lname`='$owner_lname',`business_owner_suffix`='$owner_suffix',`house_no`='$house_no',`street`='$street',`subdivision`='$subdivision',`date_applied`='$date_applied',`documentFor`='$document_for',`status`='$status', `seen`='$seen'  
                      WHERE id = '$id'";
 
     // Execute the query

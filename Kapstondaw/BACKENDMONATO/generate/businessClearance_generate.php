@@ -51,6 +51,8 @@
                 data-date_applied="<?= $businessClearance['date_applied']?>"
                 data-documentFor="<?= $businessClearance['documentFor']?>"
                 data-status="<?= $businessClearance['status']?>"
+                data-status="<?= $businessClearance['status']?>"
+                data-seen="<?= $businessClearance['seen']?>"
                 >Edit</button>
                 
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
@@ -539,6 +541,7 @@
             <input type="hidden" name="documentFor" id="documentFor" value="Clearance">
             <input type="hidden" name="date_applied" id="date_applied">
             <input type="hidden" name="status" id="status">
+            <input type="hidden" name="seen" id="seen">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>
