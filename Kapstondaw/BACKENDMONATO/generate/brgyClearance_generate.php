@@ -37,7 +37,17 @@
         <div class="print-title">
             <p>Barangay Clearance</p>
             <div class="left-title">
-                <button type="submit" id="edit">Edit</button>
+                <button type="button" id="edit" onclick="editBrgyClearance(this)"
+                    data-id="<?= $brgyclearance['id']?>"
+                    data-applicant_fname="<?= $brgyclearance['applicant_fname']?>"
+                    data-applicant_mname="<?= $brgyclearance['applicant_mname']?>"
+                    data-applicant_lname="<?= $brgyclearance['applicant_lname']?>"
+                    data-applicant_suffix="<?= $brgyclearance['applicant_suffix']?>" data-house_no="<?= $brgyclearance['house_no']?>"
+                    data-street="<?= $brgyclearance['street']?>" data-subdivision="<?= $brgyclearance['subdivision']?>"
+                    data-pob="<?= $brgyclearance['place-of-birth']?>" data-dob="<?= $brgyclearance['date-of-birth']?>"
+                    data-purpose="<?= $brgyclearance['purpose']?>"
+                    data-date_requested="<?= $brgyclearance['date_requested']?>"
+                >Edit</button>
                 
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
             </div>
@@ -594,7 +604,7 @@
 
      <!-- EDIT MODAL -->
      <div class="modal-editBrgyClearance">
-        <form class="formBrgyClearance" method="post">
+        <form class="formBrgyClearance" action="../model/edit_certificates/edit_brgyClearance.php" method="post">
             <div class="title-cont-modal">
                 <p>Resident Information</p>
                 <img src="../icons/close 1.png" class="closeForm1" alt="">
@@ -632,10 +642,13 @@
                 </div>
 
             </div>
+            <input type="hidden" name="id" id="brgyClearance_id">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>
 
+    <script src="../js//jQuery-3.7.0.js"></script>
+    <script src="../js//app.js"></script>
 
     <script>
     function printDiv(divName) {

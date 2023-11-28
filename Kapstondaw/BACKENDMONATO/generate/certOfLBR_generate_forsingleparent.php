@@ -37,7 +37,23 @@
         <div class="print-title">
             <p>Certificate of Late Birth Registration</p>
             <div class="left-title">
-                <button type="submit" id="edit">Edit</button>
+                <button type="button" id="edit" 
+                    onclick="certOfLbr(this)"
+                    data-id="<?= $certOfLBR['id']?>"
+                    data-requestor_fname="<?= $certOfLBR['requestor_fname']?>"
+                    data-requestor_mname="<?= $certOfLBR['requestor_mname']?>"
+                    data-requestor_lname="<?= $certOfLBR['requestor_lname']?>"
+                    data-requestor_suffix="<?= $certOfLBR['requestor_suffix']?>" 
+                    data-parent_fname="<?= $certOfLBR['parent_fname']?>"
+                    data-parent_mname="<?= $certOfLBR['parent_mname']?>"
+                    data-parent_lname="<?= $certOfLBR['parent_lname']?>"
+                    data-parent_suffix="<?= $certOfLBR['parent_suffix']?>"
+                    data-house_no="<?= $certOfLBR['house_no']?>"
+                    data-street="<?= $certOfLBR['street']?>" data-subdivision="<?= $certOfLBR['subdivision']?>"
+                    data-documentFor="<?= $certOfLBR['documentFor']?>"
+                    data-date_of_birth="<?= $certOfLBR['date_of_birth']?>"
+                    data-date_requested="<?= $certOfLBR['date_requested']?>"
+                >Edit</button>
                 
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
             </div>
@@ -191,9 +207,7 @@
                         border-bottom: 1px solid black;
                         width: 203px;">, who was born on
                         <input type="text" id="dob" value="
-<?php 
-$date = new DateTime($certOfLBR['date-of-birth']);
-echo $date->format('F d, Y'); 
+<?php echo $certOfLBR['date_of_birth']
 ?>
                         " placeholder="DATE OF BIRTH" style="color: #000;
                         font-family: Caladea;
@@ -377,7 +391,7 @@ echo $date->format('F d, Y');
 
      <!-- EDIT MODAL PARENT -->
      <div class="modal-editlbr_forsingleparent">
-        <form class="formlbr_forsingleparent" action="./model/edit_certificates/edit_certOfLbr.php" method="post">
+        <form class="formlbr_forsingleparent" action="../model/edit_certificates/edit_certOfLbr.php" method="post">
             <div class="title-cont-modal">
                 <p>Resident Information</p>
                 <img src="../icons/close 1.png" class="closeForm_forsingleparent1" alt="">
@@ -402,11 +416,11 @@ echo $date->format('F d, Y');
                     <div class="label111">
                         <input type="text" name="parent_fname" class="parent_fname" id="parent_fname_parent1"
                             placeholder="First Name">
-                        <input type="text" name="parent_mname" class="requestor_mname" id="parent_mname_parent1"
+                        <input type="text" name="parent_mname" class="parent_mname" id="parent_mname_parent1"
                             placeholder="Middle Name">
-                        <input type="text" name="parent_lname" class="requestor_lname" id="parent_lname_parent1"
+                        <input type="text" name="parent_lname" class="parent_lname" id="parent_lname_parent1"
                             placeholder="Last Name">
-                        <input type="text" name="parent_suffix" class="requestor_suffix" id="parent_suffix_parent1"
+                        <input type="text" name="parent_suffix" class="parent_suffix" id="parent_suffix_parent1"
                             placeholder="Suffix">
                     </div>
                 </div>
@@ -426,9 +440,14 @@ echo $date->format('F d, Y');
                     <input type="date" id="dob_parent1" name="dob" class="dob">
                 </div>
             </div>
+            <input type="hidden" name="id" class="certOFlbr_id">
+            <input type="hidden" name="documentFor" class="documentFor">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>
+
+    <script src="../js//jQuery-3.7.0.js"></script>
+    <script src="../js//app.js"></script>
 
     <script>
     function printDiv(divName) {

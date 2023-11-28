@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Redirect to the appropriate page (adjust the path accordingly)
-    header("Location: ../../brgyClearance.php");
+    header("Location: ../../generate/brgyClearance_generate.php?id=". $id);
     exit();
 }
 

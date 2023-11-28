@@ -37,7 +37,23 @@
         <div class="print-title">
             <p>Certificate of Indigency</p>
             <div class="left-title">
-                <button type="submit" id="edit">Edit</button>
+                <button type="button" id="edit"
+                    onclick="editCertOfIndigency(this)"
+                    data-id="<?= $certofindigency['id']?>"
+                    data-applicant_fname="<?= $certofindigency['applicant_fname']?>"
+                    data-applicant_mname="<?= $certofindigency['applicant_mname']?>"
+                    data-applicant_lname="<?= $certofindigency['applicant_lname']?>"
+                    data-applicant_suffix="<?= $certofindigency['applicant_suffix']?>"
+                    data-requestor_fname="<?= $certofindigency['requestor_fname']?>"
+                    data-requestor_mname="<?= $certofindigency['requestor_mname']?>"
+                    data-requestor_lname="<?= $certofindigency['requestor_lname']?>"
+                    data-requestor_suffix="<?= $certofindigency['requestor_suffix']?>" 
+                    data-house_no="<?= $certofindigency['house_no']?>"
+                    data-street="<?= $certofindigency['street']?>" data-subdivision="<?= $certofindigency['subdivision']?>"
+                    data-purpose="<?= $certofindigency['purpose']?>"
+                    data-documentFor="<?= $certofindigency['documentFor']?>"
+                    data-date_requested="<?= $certofindigency['date_requested']?>"
+                >Edit</button>
                 
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
             </div>
@@ -440,7 +456,7 @@
 
      <!-- EDIT MODAL SOMEONE -->
     <div class="modal-editIndigency_forsomeone">
-        <form class="formIndigency_forsomeone" action="./model/edit_certificates/edit_certOfIdigency.php" method="post">
+        <form class="formIndigency_forsomeone" action="../model/edit_certificates/edit_certOfIdigency.php" method="post">
             <div class="title-cont-modal">
                 <p>Resident Information</p>
                 <img src="../icons/close 1.png" class="closeForm_forsomeone1" alt="">
@@ -488,9 +504,15 @@
                     <input type="text" id="purpose_someone1" name="purpose" class="purpose">
                 </div>
             </div>
+            <input type="hidden" name="id" class="certOfIndigency_id">
+            <input type="hidden" name="documentFor" class="documentFor">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>
+
+    <script src="../js//jQuery-3.7.0.js"></script>
+    <script src="../js//app.js"></script>
+
     <script>
     function printDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;

@@ -37,7 +37,21 @@
         <div class="print-title">
             <p>Business Clearance</p>
             <div class="left-title">
-                <button type="submit" id="edit">Edit</button>
+                <button type="submit" id="edit"
+                onclick="editBusinessClearance(this)"
+                data-id="<?= $businessClearance['id']?>"
+                data-business_name="<?= $businessClearance['business_name']?>"
+                data-business_owner_fname="<?= $businessClearance['business_owner_fname']?>"
+                data-business_owner_mname="<?= $businessClearance['business_owner_mname']?>"
+                data-business_owner_lname="<?= $businessClearance['business_owner_lname']?>"
+                data-business_owner_suffix="<?= $businessClearance['business_owner_suffix']?>"
+                data-house_no="<?= $businessClearance['house_no']?>"
+                data-street="<?= $businessClearance['street']?>"
+                data-subdivision="<?= $businessClearance['subdivision']?>"
+                data-date_applied="<?= $businessClearance['date_applied']?>"
+                data-documentFor="<?= $businessClearance['documentFor']?>"
+                data-status="<?= $businessClearance['status']?>"
+                >Edit</button>
                 
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
             </div>
@@ -327,7 +341,7 @@
                             margin-bottom: 15px;
                             align-items: center;">BUSINESS ADDRESS:
                                 <input type="text" id="address"
-                                    value="<?php echo $businessClearance['business_address']?>" 
+                                    value="<?php echo $businessClearance['house_no']." ".$businessClearance['street']." ".$businessClearance['subdivision']?>" 
                                     required="required"
                                     style="width: 300px;
                                 margin-left: 32px;
@@ -492,7 +506,7 @@
 
 
     <div class="modal-editClearance">
-        <form class="formeditClearance" action="./model/add_businessClearance.php" method="post">
+        <form class="formeditClearance" action="../model/edit_certificates/edit_businessClearance.php" method="post">
             <div class="title-cont-modal">
                 <p>Resident Infomration</p>
                 <img src="../icons/close 1.png" class="closeClearance" alt="">
@@ -521,10 +535,16 @@
                     </div>
                 </div>
             </div>
-            <input type="hidden" name="documentFor" value="Clearance">
+            <input type="hidden" name="id" id="business_id">
+            <input type="hidden" name="documentFor" id="documentFor" value="Clearance">
+            <input type="hidden" name="date_applied" id="date_applied">
+            <input type="hidden" name="status" id="status">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>
+
+    <script src="../js//jQuery-3.7.0.js"></script>
+    <script src="../js//app.js"></script>
 
     <script>
     function printDiv(divName) {

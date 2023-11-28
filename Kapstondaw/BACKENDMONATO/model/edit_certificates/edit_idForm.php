@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Redirect to the appropriate page (adjust the path accordingly)
-    header("Location: ../../idForm.php");
+    header("Location: ../../generate/idForm_generate.php?id=". $id);
     exit();
 }
 

@@ -2,7 +2,7 @@
   height: 100vh;
   padding: 1rem;
   min-width: 100%;
-  @media(min-width: 375px) {
+  @media (min-width: 375px) {
     padding: 6rem;
   }
   h2 {
@@ -13,7 +13,7 @@
   table {
     border-collapse: collapse;
     border: 1px solid black;
-    @media(min-width: 375px) {
+    @media (min-width: 375px) {
       border: none;
       width: 100%;
     }
@@ -21,17 +21,17 @@
     td {
       text-align: start;
       border-bottom: 1px solid black;
-      @media(min-width: 375px) {
+      @media (min-width: 375px) {
         border-top: 1px solid black;
-        padding: .5rem;
+        padding: 0.5rem;
       }
     }
     td:first-child {
       width: 200px;
       padding-right: 1rem;
-      @media(min-width: 375px) {
+      @media (min-width: 375px) {
         width: 50%;
-        padding: .5rem;
+        padding: 0.5rem;
       }
     }
   }

@@ -150,6 +150,8 @@
 
     <?php include './announcement.php' ?>
 
+    <?php include './contact_us.php' ?>
+
     <?php include './hotlines.php' ?>
 
     <footer>

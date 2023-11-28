@@ -37,7 +37,27 @@
         <div class="print-title">
             <p>Certificate of Late Birth Registration</p>
             <div class="left-title">
-                <button type="submit" id="edit">Edit</button>
+                <button type="button" id="edit"
+                       onclick="certOfLbr(this)"
+                    data-id="<?= $certOfLBR['id']?>"
+                    data-applicant_fname="<?= $certOfLBR['applicant_fname']?>"
+                    data-applicant_mname="<?= $certOfLBR['applicant_mname']?>"
+                    data-applicant_lname="<?= $certOfLBR['applicant_lname']?>"
+                    data-applicant_suffix="<?= $certOfLBR['applicant_suffix']?>" 
+                    data-father_fname="<?= $certOfLBR['father_fname']?>"
+                    data-father_mname="<?= $certOfLBR['father_mname']?>"
+                    data-father_lname="<?= $certOfLBR['father_lname']?>"
+                    data-father_suffix="<?= $certOfLBR['father_suffix']?>"
+                    data-mother_fname="<?= $certOfLBR['mother_fname']?>"
+                    data-mother_mname="<?= $certOfLBR['mother_mname']?>"
+                    data-mother_lname="<?= $certOfLBR['mother_lname']?>"
+                    data-mother_suffix="<?= $certOfLBR['mother_suffix']?>" 
+                    data-house_no="<?= $certOfLBR['house_no']?>"
+                    data-street="<?= $certOfLBR['street']?>" data-subdivision="<?= $certOfLBR['subdivision']?>"
+                    data-documentFor="<?= $certOfLBR['documentFor']?>"
+                    data-date_of_birth="<?= $certOfLBR['date_of_birth']?>"
+                    data-date_requested="<?= $certOfLBR['date_requested']?>"
+                >Edit</button>
                 
                 <a href="#" id="print" onclick="printDiv('printMe')">Print</a>
             </div>
@@ -193,9 +213,7 @@
                         border-bottom: 1px solid black;
                         width: 200px;">, who was born on
                         <input type="text" id="dob" value="
-<?php 
-$date = new DateTime($certOfLBR['date-of-birth']);
-echo $date->format('F d, Y'); 
+<?php echo $certOfLBR['date_of_birth']
 ?>
                         " placeholder="DATE OF BIRTH" style="color: #000;
                         font-family: Caladea;
@@ -287,7 +305,7 @@ echo $date->format('F d, Y');
                         border-bottom: 1px solid black;
                         width: 200px;">
                         are personally known to me and permanently residents of
-                        <input type="text" id="address" value="<?php echo $certOfLBR['address'] ?>"
+                        <input type="text" id="address" value="<?php echo $certOfLBR['house_no']." ".$certOfLBR['street']." ".$certOfLBR['subdivision'] ?>"
                             placeholder="ADDRESS" style=" color: #000;
                         font-family: Caladea;
                         font-size: 16px;
@@ -370,7 +388,7 @@ echo $date->format('F d, Y');
 
      <!-- EDIT MODAL SELF -->
      <div class="modal-editlbr_forself">
-        <form class="formlbr_forself" action="./model/edit_certificates/edit_certOfLbr.php" method="post">
+        <form class="formlbr_forself" action="../model/edit_certificates/edit_certOfLbr.php" method="post">
             <div class="title-cont-modal">
                 <p>Resident Information</p>
                 <img src="../icons/close 1.png" class="closeForm_forself1" alt="">
@@ -432,9 +450,14 @@ echo $date->format('F d, Y');
                     <input type="date" id="dob_self1" name="dob" class="dob">
                 </div>
             </div>
+            <input type="hidden" name="id" class="certOFlbr_id">
+            <input type="hidden" name="documentFor" class="documentFor">
             <input type="submit" id="submit" value="Save">
         </form>
     </div>
+
+    <script src="../js//jQuery-3.7.0.js"></script>
+    <script src="../js//app.js"></script>
 
     <script>
     function printDiv(divName) {
