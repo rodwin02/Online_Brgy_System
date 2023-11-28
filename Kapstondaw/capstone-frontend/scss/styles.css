@@ -12,6 +12,7 @@ html {
 }
 
 body {
+  background-color: #f8f9fa;
   font-family: "Poppins", sans-serif;
   position: relative;
   margin: 0;
@@ -612,7 +613,6 @@ header ul li:nth-child(5) {
 }
 
 .services {
-  background-color: #eeeef4;
   width: 100%;
   height: 100vh;
 }
@@ -654,7 +654,7 @@ header ul li:nth-child(5) {
   justify-content: center;
   border: none;
   border-radius: 1rem;
-  box-shadow: 10px 20px 25px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   padding: 2rem;
   text-align: center;
 }
@@ -719,7 +719,7 @@ header ul li:nth-child(5) {
   justify-content: center;
   border: none;
   border-radius: 1rem;
-  box-shadow: 10px 20px 25px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   padding: 2rem;
   text-align: center;
 }
@@ -783,7 +783,7 @@ header ul li:nth-child(5) {
   justify-content: flex-start;
   border: none;
   border-radius: 1rem;
-  box-shadow: 10px 20px 25px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   text-align: center;
   width: -moz-fit-content;
   width: fit-content;
@@ -832,6 +832,129 @@ header ul li:nth-child(5) {
   margin-bottom: 2.5rem;
 }
 .announcement .swiper-pagination-bullet {
+  background-color: #097338;
+}
+
+.contact-us {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-us main {
+  width: clamp(300px, 100%, 1200px);
+  z-index: 1;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.contact-us main .section-1 {
+  flex-grow: 1;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 5rem 7rem;
+}
+.contact-us main .section-1 h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+.contact-us main .section-1 h1 span {
+  font-size: 3rem;
+  color: #097338;
+}
+.contact-us main .section-1 span {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.contact-us main .section-1 form {
+  width: 100%;
+  margin-top: 2rem;
+}
+.contact-us main .section-1 form input {
+  display: block;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  outline: transparent;
+}
+.contact-us main .section-1 form input[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+.contact-us main .section-1 form button {
+  background-color: #097338;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-weight: 700;
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+}
+.contact-us main .section-1 .contacts {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+}
+.contact-us main .section-1 .contacts .container-1,
+.contact-us main .section-1 .contacts .container-2 {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.contact-us main .section-1 .contacts .container-1 .icon,
+.contact-us main .section-1 .contacts .container-2 .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-us main .section-1 .contacts .container-1 .info span:first-of-type,
+.contact-us main .section-1 .contacts .container-2 .info span:first-of-type {
+  text-transform: uppercase;
+}
+.contact-us main .section-1 .contacts .container-1 .info span,
+.contact-us main .section-1 .contacts .container-2 .info span {
+  display: block;
+}
+.contact-us main .section-2 {
+  flex-grow: 2;
+  height: 100%;
+}
+.contact-us main .section-2 iframe {
+  width: 100%;
+  height: inherit;
+}
+@media (min-width: 375px) {
+  .contact-us {
+    height: 100vh;
+  }
+  .contact-us main {
+    flex-direction: row;
+    height: 80%;
+  }
+}
+
+.contact-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 100vh;
   background-color: #097338;
 }
 

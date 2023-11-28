@@ -37,7 +37,7 @@
         <div class="print-title">
             <p>Certificate of Late Birth Registration</p>
             <div class="left-title">
-                <button type="submit" id="edit" 
+                <button type="button" id="edit" 
                     onclick="certOfLbr(this)"
                     data-id="<?= $certOfLBR['id']?>"
                     data-requestor_fname="<?= $certOfLBR['requestor_fname']?>"
@@ -416,11 +416,11 @@
                     <div class="label111">
                         <input type="text" name="parent_fname" class="parent_fname" id="parent_fname_parent1"
                             placeholder="First Name">
-                        <input type="text" name="parent_mname" class="requestor_mname" id="parent_mname_parent1"
+                        <input type="text" name="parent_mname" class="parent_mname" id="parent_mname_parent1"
                             placeholder="Middle Name">
-                        <input type="text" name="parent_lname" class="requestor_lname" id="parent_lname_parent1"
+                        <input type="text" name="parent_lname" class="parent_lname" id="parent_lname_parent1"
                             placeholder="Last Name">
-                        <input type="text" name="parent_suffix" class="requestor_suffix" id="parent_suffix_parent1"
+                        <input type="text" name="parent_suffix" class="parent_suffix" id="parent_suffix_parent1"
                             placeholder="Suffix">
                     </div>
                 </div>

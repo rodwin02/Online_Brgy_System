@@ -14,7 +14,7 @@
             </div>
         </li>
         <li><a href=" #announcement">Announcement</a></li>
-        <li>Contact us!</li>
+        <li><a href="#contact-us">Contact Us</a></li>
         <?php if(isset($_SESSION['username'])) { ?>
         <li><a href="./Cart.php">Cart</a></li>
         <li><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></li>
@@ -45,7 +45,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href=" #concerns">Report</a></li>
         <li><a href="#announcement">Announcement</a></li>
-        <li>Contact us!</li>
+        <li><a href="#contact-us">Contact Us</a></li>
         <?php if(isset($_SESSION['username'])) { ?>
         <li><a href="./Cart.php">Cart</a></li>
         <li><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></li>
@@ -75,7 +75,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href=" #concerns">Report</a></li>
                 <li><a href="#announcement">Announcement</a></li>
-                <li>Contact us!</li>
+                <li><a href="#contact-us">Contact Us</a></li>
             </ul>
         </div>
     </div>
