@@ -265,7 +265,7 @@
                 </div>
 
             </div>
-            <input type="submit" id="submit" value="Add">
+            <input type="submit" id="submit" value="Save">
         </form>
     </div>
     <script>

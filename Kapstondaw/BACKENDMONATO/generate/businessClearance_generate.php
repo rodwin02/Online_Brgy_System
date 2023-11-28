@@ -539,7 +539,7 @@
             <input type="hidden" name="documentFor" id="documentFor" value="Clearance">
             <input type="hidden" name="date_applied" id="date_applied">
             <input type="hidden" name="status" id="status">
-            <input type="submit" id="submit" value="Add">
+            <input type="submit" id="submit" value="Save">
         </form>
     </div>
 
