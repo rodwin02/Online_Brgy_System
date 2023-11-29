@@ -20,7 +20,7 @@ if(isset($_SESSION['username'])) {
                 </div>
                 <span><?= $brgy_name?></span>
             </div>
-            <div class="close-icon">
+            <div class="close-icon close-chat">
                 <img src="./assets/close-login.svg" alt="close">
             </div>
         </header>

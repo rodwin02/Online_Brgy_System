@@ -176,9 +176,9 @@ document.addEventListener("DOMContentLoaded", function () {
 // ! CHAT
 const chatBtn = document.querySelector(".chat-btn");
 const chatScreen = document.querySelector(".chat-screen");
+const closeChat = document.querySelector(".close-chat");
 
 chatBtn.addEventListener("click", () => {
-  console.log("clicked", chatScreen.style.transform);
   // Get the computed style of the element
   const computedStyle = window.getComputedStyle(chatScreen);
   const currentTransform = computedStyle.transform;
@@ -189,4 +189,8 @@ chatBtn.addEventListener("click", () => {
   } else {
     chatScreen.style.transform = "translateX(1000px)";
   }
+});
+
+closeChat.addEventListener("click", () => {
+  chatScreen.style.transform = "translate(1000px)";
 });
