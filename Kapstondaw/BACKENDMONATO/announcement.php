@@ -6,7 +6,7 @@ $result = $conn->query($query);
 $announcement = array();
 while($row = $result->fetch_assoc()) {
   $announcement[] = $row;
-}
+}   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +21,8 @@ while($row = $result->fetch_assoc()) {
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -48,44 +50,39 @@ while($row = $result->fetch_assoc()) {
             </div>
         </div>
 
-        <div class="third_layer">
-            <table id="table">
-                <thead>
-                    <tr>
-                        <th>What</th>
-                        <th>Why</th>
-                        <th>Where</th>
-                        <th>When</th>
-                        <th>Who</th>
-                        <th>Date/Time</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if(!empty($announcement)) { ?>
-                    <?php $no=1; foreach($announcement as $row): ?>
-                    <tr>
-                        <td><?= $row['what_announcement']?></td>
-                        <td><?= $row['why_announcement']?></td>
-                        <td><?= $row['where_announcement']?></td>
-                        <td><?= $row['when_announcement']?></td>
-                        <td><?= $row['who_announcement']?></td>
-                        <td><?= $row['date_announcement']?></td>
-                        <td>
-                            <a href="#" class="edit" id="edit">Edit</a>
-                            <a href="#" class="delete" id="delete">Delete</a>
-                        </td>
-                    </tr>
-                    <?php $no++; endforeach ?>
-                    <?php } ?>
-                </tbody>
-            </table>
-            <div class="pagination">
-                <button id="prevBtn">Previous</button>
-                <div id="pageNumbers" class="page-numbers"></div>
-                <button id="nextBtn">Next</button>
-            </div>
+        <div class="Swiper_anouncement">
+        <!-- Swiper -->
+           <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="one-announcement swiper-slide">
+                    <img src="image/announcement.png" alt="announcement">
+                    <div class="date">May 10, 2023</div>
+                    <div class="title">MAGPA-EARLY REGISTER NA PARA SA SY 2023-2024  </div>
+                    <a href="#">Edit</a> 
+                    <div class="delete">Delete</div>
+                </div>
+
+                <div class="one-announcement swiper-slide">
+                    <img src="image/announcement.png" alt="announcement">
+                    <div class="date">May 10, 2023</div>
+                    <div class="title">MAGPA-EARLY REGISTER NA PARA SA SY 2023-2024  </div>
+                    <a href="#">Edit</a>
+                    <div class="delete">Delete</div>
+                </div>
+               
+                <div class="one-announcement swiper-slide">
+                    <img src="image/announcement.png" alt="announcement">
+                    <div class="date">May 10, 2023</div>
+                    <div class="title">MAGPA-EARLY REGISTER NA PARA SA SY 2023-2024  </div>
+                    <a href="#">Edit</a>
+                    <div class="delete">Delete</div>
+                </div>
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+           </div>
         </div>
+        
     </div>
     <!-- END BODY -->
 
@@ -94,37 +91,58 @@ while($row = $result->fetch_assoc()) {
         <form class="formAnnouncement" action="./model/add_announcement.php" method="post"
             enctype="multipart/form-data">
             <div class="title-container">
-                <p>Announcement</p>
+                <p>Create Announcement</p>
                 <img src="icons/close 1.png" class="closeAnnouncement" alt="">
             </div>
 
-            <div class="add-container">
-                <div class="left">
-                    <label for="what">What:</label>
-                    <input type="text" name="what_announcement" id="what">
-                    <label for="where">Where:</label>
-                    <input type="text" name="where_announcement" id="where">
-                    <label for="who">Who:</label>
-                    <input type="text" name="who_announcement" id="who">
-                </div>
+            <div class="information-cont-line">
+                <p>Announcement Infomration</p>
+                <div class="line"></div>
+            </div>
 
-                <div class="right">
-                    <label for="why">Why:</label>
-                    <input type="text" name="why_announcement" id="why">
-                    <label for="when">When:</label>
-                    <input type="text" name="when_announcement" id="when">
-                    <label for="date">Date</label>
-                    <input type="date" name="date_announcement" id="date">
+            <div class="input-announcement-cont">
+                <div class="title-date-cont">
+                    <div class="title-cont">
+                        <label for="title">Title</label>
+                        <input type="text" id="title">
+                    </div>
+                    <div class="date-cont">
+                        <label for="date">Title</label>
+                        <input type="date" id="date">
+                    </div>
+                </div>
+                
+                <div class="details-cont">
+                    <label for="details">Details</label>
+                    <textarea name="details" id="details" cols="30" rows="10"></textarea>
+
+                    <p class="upload">Upload Photo:</p>
+                    <label for="image" class="image">
+                    <input type="file" name="image_announcement" id="image">
+                    </label>
                 </div>
             </div>
-            <p class="upload">Upload Photo:</p>
-            <label for="image" class="image">
-                <input type="file" name="image_announcement" id="image">
-            </label>
-            <!-- <img id="preview" alt="Barangay Announcement"> -->
 
+            <div class="information-cont-line">
+                <p>Announcement Option</p>
+                <div class="line1"></div>
+            </div>
 
-            <input class="submitAnnouncement" type="submit" value="Add">
+            <div class="option-cont">
+                <p>Duration</p>
+                <div class="timer-cont">
+                    <div class="from-cont">
+                        <label for="from">Show From</label>
+                        <input type="date" id="from">
+                    </div>
+                    <div class="until-cont">
+                        <label for="until">Show Until</label>
+                        <input type="date" id="until">
+                    </div>
+                </div>
+            </div>
+
+            <input class="submitAnnouncement" type="submit" value="Submit">
         </form>
     </div>
     <!-- END MODAL ANNOUNCEMENT -->
@@ -138,36 +156,68 @@ while($row = $result->fetch_assoc()) {
                 <img src="icons/close 1.png" class="closeAnnouncementEdit" alt="">
             </div>
 
-            <div class="add-container">
-                <div class="left">
-                    <label for="what">What:</label>
-                    <input type="text" name="what" id="what1">
-                    <label for="where">Where:</label>
-                    <input type="text" name="where" id="where1">
-                    <label for="who">Who:</label>
-                    <input type="text" name="who" id="who1">
-                </div>
+            <div class="information-cont-line">
+                <p>Announcement Infomration</p>
+                <div class="line"></div>
+            </div>
 
-                <div class="right">
-                    <label for="why">Why:</label>
-                    <input type="text" name="why" id="why1">
-                    <label for="when">When:</label>
-                    <input type="text" name="when" id="when1">
-                    <label for="dateTime">Date/Time:</label>
-                    <input type="datetime-local" name="dateTime" id="dateTime1">
+            <div class="input-announcement-cont">
+                <div class="title-date-cont">
+                    <div class="title-cont">
+                        <label for="title">Title</label>
+                        <input type="text" id="title1">
+                    </div>
+                    <div class="date-cont">
+                        <label for="date">Title</label>
+                        <input type="date" id="date1">
+                    </div>
+                </div>
+                
+                <div class="details-cont">
+                    <label for="details">Details</label>
+                    <textarea name="details" id="details1" cols="30" rows="10"></textarea>
+
+                    <p class="upload">Upload Photo:</p>
+                    <label for="image" class="image">
+                    <input type="file" name="image_announcement" id="image1">
+                    </label>
                 </div>
             </div>
 
-            <p class="upload">Upload Photo:</p>
-            <label for="image" class="image">
-                <input type="file" id="image1"> </label>
-            <img id="preview" alt="Barangay Announcement">
+            <div class="information-cont-line">
+                <p>Announcement Option</p>
+                <div class="line1"></div>
+            </div>
 
-            <input class="submitAnnouncement" type="submit" value="Add">
+            <div class="option-cont">
+                <p>Duration</p>
+                <div class="timer-cont">
+                    <div class="from-cont">
+                        <label for="from">Show From</label>
+                        <input type="date" id="from1">
+                    </div>
+                    <div class="until-cont">
+                        <label for="until">Show Until</label>
+                        <input type="date" id="until1">
+                    </div>
+                </div>
+            </div>
+
+            <input class="submitAnnouncement" type="submit" value="Submit">
         </form>
     </div>
     <!-- END EDIT MODAL ANNOUNCEMENT -->
 
+
+    <script>
+     var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: '3',
+        paginationClickable: true,
+        spaceBetween: 0
+    });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>
@@ -264,3 +314,5 @@ document.getElementById('prevBtn').addEventListener('click', () => {
     }
 });
 </script>
+
+
