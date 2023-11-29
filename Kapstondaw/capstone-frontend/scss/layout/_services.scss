@@ -1,6 +1,7 @@
 .services {
   width: 100%;
   height: 100vh;
+  padding: 2rem;
   .serve {
     padding: 1rem;
     h2 {
@@ -13,13 +14,18 @@
       }
     }
   }
-
   .swiper {
-    height: calc(100vh - 40%);
-    width: 100%;
-    height: 70%;
+    width: 90%;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 30%);
+    border-radius: 1rem;
+    overflow: hidden;
     @media (min-width: 375px) {
-      padding: 2rem;
+      // padding: 2rem;
     }
     .container {
       height: 95%;

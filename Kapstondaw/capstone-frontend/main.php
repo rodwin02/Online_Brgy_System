@@ -152,6 +152,8 @@
 
     <?php include './contact_us.php' ?>
 
+   
+
     <?php include './hotlines.php' ?>
 
     <footer>
@@ -193,12 +195,16 @@
         </div>
     </footer>
 
+
     <div class="copyright">
         <h2>
             Copyright © 2023 by <?= $brgy_name." ".$town_name." ".$province_name ?>. All Rights
             Reserved.
         </h2>
     </div>
+
+    <?php include "./chat.php" ?>
+
 
     <script src="./js//jQuery-3-7-0.js"></script>
     <script src="./js//app.js"></script>
@@ -209,9 +215,13 @@
     var swiper = new Swiper(".servicesSwiper", {
         spaceBetween: 30,
         loop: true,
+        centerSlide: 'true',
+        grabCursor: 'true',
+        fade: 'true',
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
+            dynamicBullets: true,
         },
         navigation: {
             nextEl: ".swiper-button-next",
@@ -233,9 +243,13 @@
     var swiper = new Swiper(".swiperConcerns", {
         spaceBetween: 30,
         loop: true,
+        centerSlide: 'true',
+        grabCursor: 'true',
+        fade: 'true',
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
+            dynamicBullets: true,
         },
         navigation: {
             nextEl: ".swiper-button-next",
@@ -257,9 +271,13 @@
     var swiper = new Swiper(".swiperAnnouncement", {
         spaceBetween: 30,
         loop: true,
+        centerSlide: 'true',
+        grabCursor: 'true',
+        fade: 'true',
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
+            dynamicBullets: true,
         },
         navigation: {
             nextEl: ".swiper-button-next",
@@ -276,6 +294,23 @@
                 slidesPerView: 3,
             },
         },
+    });
+
+    var swiper = new Swiper(".emNumberSwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
     </script>
 </body>

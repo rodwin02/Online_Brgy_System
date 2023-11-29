@@ -172,3 +172,21 @@ document.addEventListener("DOMContentLoaded", function () {
 // if (cartBody && cartBody.rows.length > 10) {
 //   cartBody.classList.add("scroll");
 // }
+
+// ! CHAT
+const chatBtn = document.querySelector(".chat-btn");
+const chatScreen = document.querySelector(".chat-screen");
+
+chatBtn.addEventListener("click", () => {
+  console.log("clicked", chatScreen.style.transform);
+  // Get the computed style of the element
+  const computedStyle = window.getComputedStyle(chatScreen);
+  const currentTransform = computedStyle.transform;
+
+  // Check the current transform value
+  if (currentTransform === "matrix(1, 0, 0, 1, 1000, 0)") {
+    chatScreen.style.transform = "translateX(0)";
+  } else {
+    chatScreen.style.transform = "translateX(1000px)";
+  }
+});

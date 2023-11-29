@@ -21,7 +21,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: #f8f9fa;
 }
 
 header {
@@ -627,6 +627,7 @@ header ul li:nth-child(1) {
 .services {
   width: 100%;
   height: 100vh;
+  padding: 2rem;
 }
 .services .serve {
   padding: 1rem;
@@ -642,14 +643,15 @@ header ul li:nth-child(1) {
   }
 }
 .services .swiper {
-  height: calc(100vh - 40%);
-  width: 100%;
-  height: 70%;
-}
-@media (min-width: 375px) {
-  .services .swiper {
-    padding: 2rem;
-  }
+  width: 90%;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 30%);
+  border-radius: 1rem;
+  overflow: hidden;
 }
 .services .swiper .container {
   height: 95%;
@@ -707,14 +709,15 @@ header ul li:nth-child(1) {
   }
 }
 .concerns .swiper {
-  height: calc(100vh - 40%);
-  width: 100%;
-  height: 80%;
-}
-@media (min-width: 375px) {
-  .concerns .swiper {
-    padding: 2rem;
-  }
+  width: 90%;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 30%);
+  border-radius: 1rem;
+  overflow: hidden;
 }
 .concerns .swiper .options {
   height: 95%;
@@ -771,14 +774,15 @@ header ul li:nth-child(1) {
   }
 }
 .announcement .swiper {
-  height: calc(100vh - 40%);
-  width: 100%;
-  height: 80%;
-}
-@media (min-width: 375px) {
-  .announcement .swiper {
-    padding: 2rem;
-  }
+  width: 90%;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 30%);
+  border-radius: 1rem;
+  overflow: hidden;
 }
 .announcement .swiper .options {
   height: 95%;
@@ -968,6 +972,60 @@ header ul li:nth-child(1) {
   width: 500px;
   height: 100vh;
   background-color: #097338;
+}
+
+.emergency_numbers {
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.emergency_numbers .emNumberSwiper {
+  width: 90%;
+  height: 500px;
+  background-color: red;
+}
+.emergency_numbers .emNumberSwiper .cards-container {
+  width: 100%;
+  height: 500px;
+  background-color: black;
+}
+.emergency_numbers .emNumberSwiper .cards-container .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #e5b3fe;
+  border-radius: 1rem;
+}
+.emergency_numbers .emNumberSwiper .cards-container .card .pic {
+  background-color: black;
+  width: 60px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.emergency_numbers .emNumberSwiper .cards-container .card .pic img {
+  width: 100%;
+  height: 100%;
+}
+.emergency_numbers .emNumberSwiper .cards-container .card .layer1,
+.emergency_numbers .emNumberSwiper .cards-container .card .layer2 {
+  text-align: center;
+}
+.emergency_numbers .emNumberSwiper .cards-container .card .layer1 h2,
+.emergency_numbers .emNumberSwiper .cards-container .card .layer2 h2 {
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin: 0;
+}
+.emergency_numbers .emNumberSwiper .cards-container .card .layer1 p,
+.emergency_numbers .emNumberSwiper .cards-container .card .layer2 p {
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 180%;
 }
 
 .hotlines {
@@ -1779,4 +1837,107 @@ footer .com ul li {
   display: flex;
   align-items: center;
   justify-content: end;
+}
+
+.chat-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.chat-container .chat-screen {
+  transform: translateX(1000px);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.5s ease-in-out;
+}
+.chat-container .chat-screen header {
+  border-radius: 1rem 1rem 0 0;
+  min-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.7rem 1rem;
+}
+.chat-container .chat-screen header .section-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.chat-container .chat-screen header .section-1 .brgy-icon {
+  width: 30px;
+  height: 30px;
+}
+.chat-container .chat-screen header .section-1 .brgy-icon img {
+  width: 100%;
+  height: 100%;
+}
+.chat-container .chat-screen header .section-1 span {
+  font-weight: 600;
+  color: #f8f9fa;
+}
+.chat-container .chat-screen header .close-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat-container .chat-screen form {
+  position: relative;
+  border-radius: 0 0 1rem 1rem;
+  background-color: #f8f9fa;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.25);
+  height: 400px;
+}
+.chat-container .chat-screen form .messages-container {
+  height: 85%;
+}
+.chat-container .chat-screen form hr {
+  margin: 0;
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.chat-container .chat-screen form .create-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  height: 15%;
+}
+.chat-container .chat-screen form .create-message input {
+  padding: 0.5rem 0.8rem;
+  width: 80%;
+  background-color: transparent;
+  border-bottom-color: 2px solid black;
+  border: none;
+  outline: transparent;
+}
+.chat-container .chat-screen form .create-message button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.chat-container .click-chat {
+  overflow: hidden;
+}
+.chat-container .click-chat button {
+  background-color: #0a7cff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 0.8rem;
+  color: #f8f9fa;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
 }/*# sourceMappingURL=styles.css.map */
