@@ -12,9 +12,8 @@
         <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href=" #concerns">Report</a></li>
-   
         <li><a href=" #announcement">Announcement</a></li>
+        <li><a href=" #awareness-page">Awareness</a></li>
         <li><a href="#contact-us">Contact Us</a></li>
         <?php if(isset($_SESSION['username'])) { ?>
         <li><a href="./Cart.php">Cart</a></li>
@@ -44,8 +43,8 @@
         <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href=" #concerns">Report</a></li>
         <li><a href="#announcement">Announcement</a></li>
+        <li><a href=" #awareness-page">Awareness</a></li>
         <li><a href="#contact-us">Contact Us</a></li>
         <?php if(isset($_SESSION['username'])) { ?>
         <li><a href="./Cart.php">Cart</a></li>
@@ -74,8 +73,8 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href=" #concerns">Report</a></li>
                 <li><a href="#announcement">Announcement</a></li>
+                <li><a href=" #awareness-page">Awareness</a></li>
                 <li><a href="#contact-us">Contact Us</a></li>
             </ul>
         </div>

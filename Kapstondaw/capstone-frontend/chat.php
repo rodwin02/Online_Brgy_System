@@ -9,6 +9,7 @@ if(isset($_SESSION['username'])) {
     while($row = $result->fetch_assoc()) {
     $message[] = $row;
     }
+
 }
  ?>
 <div class="chat-container">
@@ -25,7 +26,7 @@ if(isset($_SESSION['username'])) {
             </div>
         </header>
 
-        <div class="messages-container">
+        <div class="messages-container" id="messagesContainer">
             <?php if(!empty($message)) { ?>
                 <?php $no=1; foreach($message as $row) : ?>
                     <div class="message-subContainer">
@@ -39,9 +40,10 @@ if(isset($_SESSION['username'])) {
 
         <hr>
 
-        <form action="./model/send_chat.php" method="post">
+        <form id="chatForm" action="./model/send_chat.php" method="post">
         <div class="create-message">
-            <input type="text" name="message" id="" placeholder="Ask a question">
+            <!-- <input type="text" name="message" id="messageInput" placeholder="Ask a question"> -->
+            <textarea name="message" id="messageInput" placeholder="Ask a question"></textarea>
             <button type="submit"><img src="./assets/send-icon.svg" alt="send-icon"></button>
         </div>
         </form>

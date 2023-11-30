@@ -146,9 +146,9 @@
 
     <?php include './services.php' ?>
 
-    <?php include './report.php' ?>
-
     <?php include './announcement.php' ?>
+
+    <?php include './awareness.php' ?>
 
     <?php include './contact_us.php' ?>
 

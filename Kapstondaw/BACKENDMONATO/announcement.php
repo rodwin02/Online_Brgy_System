@@ -21,7 +21,7 @@ while($row = $result->fetch_assoc()) {
     <link rel="stylesheet" href="./style/generateCert.css?<?php echo time(); ?>">
     <script src="sidebar.js ?<?php echo time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 
@@ -52,32 +52,20 @@ while($row = $result->fetch_assoc()) {
 
         <div class="Swiper_anouncement">
         <!-- Swiper -->
-           <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="one-announcement swiper-slide">
-                    <img src="image/announcement.png" alt="announcement">
-                    <div class="date">May 10, 2023</div>
-                    <div class="title">MAGPA-EARLY REGISTER NA PARA SA SY 2023-2024  </div>
-                    <a href="#">Edit</a> 
-                    <div class="delete">Delete</div>
+           <div class="swiper swiper-container">
+                <div class="swiper-wrapper">
+                    <?php if(!empty($announcement)) { ?>
+                    <?php $no=1; foreach($announcement as $row): ?>
+                        <div class="one-announcement swiper-slide">
+                            <img src="./uploads//announcement/<?= $row['image_announcement']?>" alt="announcement-image">
+                            <div class="date"><?= $row['date_announcement']?></div>
+                            <div class="title">MAGPA-EARLY REGISTER NA PARA SA SY 2023-2024  </div>
+                            <a href="#">Edit</a> 
+                            <div class="delete">Delete</div>
+                        </div>
+                    <?php $no++; endforeach ?>
+                    <?php } ?>
                 </div>
-
-                <div class="one-announcement swiper-slide">
-                    <img src="image/announcement.png" alt="announcement">
-                    <div class="date">May 10, 2023</div>
-                    <div class="title">MAGPA-EARLY REGISTER NA PARA SA SY 2023-2024  </div>
-                    <a href="#">Edit</a>
-                    <div class="delete">Delete</div>
-                </div>
-               
-                <div class="one-announcement swiper-slide">
-                    <img src="image/announcement.png" alt="announcement">
-                    <div class="date">May 10, 2023</div>
-                    <div class="title">MAGPA-EARLY REGISTER NA PARA SA SY 2023-2024  </div>
-                    <a href="#">Edit</a>
-                    <div class="delete">Delete</div>
-                </div>
-              </div>
               <!-- Add Pagination -->
               <div class="swiper-pagination"></div>
            </div>
@@ -208,16 +196,30 @@ while($row = $result->fetch_assoc()) {
     </div>
     <!-- END EDIT MODAL ANNOUNCEMENT -->
 
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
      var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        slidesPerView: '3',
-        paginationClickable: true,
-        spaceBetween: 0
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            600: {
+                slidesPerView: 2,
+            },
+            900: {
+                slidesPerView: 3,
+            },
+        },
     });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>

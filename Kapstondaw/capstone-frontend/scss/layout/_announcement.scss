@@ -19,14 +19,14 @@
     width: 90%;
     border-radius: 1rem;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     height: calc(100vh - 30%);
     border-radius: 1rem;
-    overflow: hidden;
+    // background-color: red;
     @media (min-width: 375px) {
-      // padding: 2rem;
+      padding: 2rem;
     }
     .options {
       height: 95%;
@@ -95,5 +95,6 @@
   }
   .swiper-pagination-bullet {
     background-color: #097338;
+    transform: translateX(-5px);
   }
 }

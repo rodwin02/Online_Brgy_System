@@ -194,3 +194,30 @@ chatBtn.addEventListener("click", () => {
 closeChat.addEventListener("click", () => {
   chatScreen.style.transform = "translate(1000px)";
 });
+
+// Function to update chat messages
+function updateChat() {
+  $.get("./model/get_chat.php", function (messages) {
+    $("#messagesContainer").html(messages);
+    scrollChatToBottom();
+  });
+}
+
+// Periodically update chat messages every 3 seconds
+setInterval(updateChat, 3000);
+
+// Submit new message
+$("#chatForm").submit(function (e) {
+  e.preventDefault();
+  console.log("chat");
+
+  $.post("./model/send_chat.php", $("#chatForm").serialize(), function () {
+    $("#messageInput").val("");
+    updateChat();
+  });
+});
+
+function scrollChatToBottom() {
+  var messagesContainer = document.getElementById("messagesContainer");
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
