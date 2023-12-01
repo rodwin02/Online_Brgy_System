@@ -6,7 +6,7 @@
             header("Location: " . $_SERVER["HTTP_REFERER"]);
         }
     }
-    if (isset($_POST['message'])) {
+    if ($_POST['message'] !== "") {
         $message = $_POST['message'];
         $from = $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname'];
 

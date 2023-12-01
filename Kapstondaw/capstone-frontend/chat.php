@@ -48,6 +48,7 @@ if(isset($_SESSION['username'])) {
         </div>
         </form>
     </div>
+    
     <?php if(isset($_SESSION['username'])) { ?>
     <div class="click-chat">
         <button class="chat-btn"><img src="./assets/chat-icon.svg" alt="chat-icon"><span>Chat</span></button>

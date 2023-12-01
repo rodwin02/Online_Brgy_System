@@ -1006,6 +1006,15 @@ header ul li:nth-child(1) {
   -webkit-appearance: none;
   -moz-appearance: textfield;
 }
+.contact-us main .section-1 form textarea {
+  resize: none;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  height: 20vh;
+  padding: 0.8rem 1rem;
+}
 .contact-us main .section-1 form button {
   background-color: #097338;
   border: none;
@@ -1944,11 +1953,22 @@ footer .com ul li {
   display: flex;
   flex-direction: column;
   align-items: end;
+  justify-content: end;
+}
+@media (min-width: 375px) {
+  .chat-container {
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: black;
+    border-radius: 2rem;
+  }
 }
 .chat-container .chat-screen {
+  position: absolute;
   transform: translateX(1000px);
   border-radius: 1rem;
-  margin-bottom: 1rem;
   background-color: #e9ecef;
   transition: transform 0.5s ease-in-out;
 }

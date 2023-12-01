@@ -170,9 +170,9 @@
                     <li><a href="#">HOME</a></li>
                     <li><a href="#about">ABOUT</a></li>
                     <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#concerns">REPORT</a></li>
                     <li><a href="#announcement">ANNOUNCEMENT</a></li>
-                    <li>CONTACT US</li>
+                    <li><a href=" #awareness-page">Awareness</a></li>
+                    <li><a href="#contact-us">Contact Us</a></li>
                 </ul>
             </h2>
         </div>

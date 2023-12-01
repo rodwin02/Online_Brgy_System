@@ -188,18 +188,28 @@ chatBtn.addEventListener("click", () => {
     chatScreen.style.transform = "translateX(0)";
   } else {
     chatScreen.style.transform = "translateX(1000px)";
+    chatBtn.style.display = "flex";
   }
 });
 
 closeChat.addEventListener("click", () => {
   chatScreen.style.transform = "translate(1000px)";
+  chatBtn.style.display = "flex";
 });
 
 // Function to update chat messages
 function updateChat() {
+  var messagesContainer = document.getElementById("messagesContainer");
+  var isScrolledToBottom =
+    messagesContainer.scrollHeight - messagesContainer.clientHeight <=
+    messagesContainer.scrollTop + 1;
+
   $.get("./model/get_chat.php", function (messages) {
     $("#messagesContainer").html(messages);
-    scrollChatToBottom();
+
+    if (isScrolledToBottom) {
+      scrollChatToBottom();
+    }
   });
 }
 

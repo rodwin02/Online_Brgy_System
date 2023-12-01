@@ -16,7 +16,7 @@
         <li><a href=" #awareness-page">Awareness</a></li>
         <li><a href="#contact-us">Contact Us</a></li>
         <?php if(isset($_SESSION['username'])) { ?>
-        <li><a href="./Cart.php">Cart</a></li>
+        <li><a href="./Cart.php">Request</a></li>
         <li><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></li>
         <li><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
         <?php } else {?>
@@ -47,7 +47,7 @@
         <li><a href=" #awareness-page">Awareness</a></li>
         <li><a href="#contact-us">Contact Us</a></li>
         <?php if(isset($_SESSION['username'])) { ?>
-        <li><a href="./Cart.php">Cart</a></li>
+        <li><a href="./Cart.php">Request</a></li>
         <li><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></li>
         <li><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
         <?php } else {?>
@@ -64,7 +64,7 @@
             </div>
             <ul>
                 <?php if(isset($_SESSION['username'])) { ?>
-                <li><a href="./Cart.php">Cart</a></li>
+                <li><a href="./Cart.php">Request    </a></li>
                 <li><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></li>
                 <li><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
                 <?php } else {?>

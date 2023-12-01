@@ -18,7 +18,6 @@ while ($row = $result->fetch_assoc()) {
     echo "<div class='$messageClass'>
             <div class='main-message'>
                 <p>{$row['messages']}</p>
-                <p>{$row['from']}</p>
             </div>
           </div>";
 }

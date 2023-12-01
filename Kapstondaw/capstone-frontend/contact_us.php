@@ -5,9 +5,10 @@
             <span>Do you want to contact us?</span>
 
             <form action="">
-                <input type="text" name="name" placeholder="Name">
-                <input type="email" name="email" placeholder="Email">
-                <input type="number" name="number" placeholder="Phone number">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <!-- <input type="number" name="number" placeholder="Phone number"> -->
+                <textarea name="message" id="" placeholder="Message..." required></textarea>
                 <button type="submit">Submit</button>
             </form>
 
