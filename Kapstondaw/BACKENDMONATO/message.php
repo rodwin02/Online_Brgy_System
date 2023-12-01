@@ -58,6 +58,7 @@
                     </svg>
                 </div>
 
+                
             </div>  
             <div class="chat-cont">
                 <div class="header-name">
@@ -66,16 +67,77 @@
                 </div>
 
                 <div class="body-message">
-                    
+
+                    <div id="chat-container">
+                        <div id="chat-messages">
+                            <div class="message-user">
+                              <p class="chat-user">Chat ni User Chat ni UserChat UserChat UserChat UserChat UserChat UserChat UserChat ni UserChat ni UserChat ni UserChat ni UserChat ni UserChat ni UserChat ni User</p>
+                            </div>
+                           
+                        </div>
+                        <div id="user-input">
+                            <textarea type="text" id="user-message" placeholder="Type your message..."> </textarea>
+                            <img id="send-button" src="icons/send.png" alt="" onclick="sendMessage()">
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-       
-       
-
-      
-
-        
     </div>
+
+
+
+<!-- Add this script after including sidebar.js -->
+<script>
+    function sendMessage() {
+        // Get user input from the textarea
+        var userMessage = document.getElementById('user-message').value;
+
+        // Check if the user input is not empty
+        if (userMessage.trim() !== '') {
+            // Create a new message-admin container
+            var newMessageAdminContainer = document.createElement('div');
+            newMessageAdminContainer.classList.add('message-admin');
+
+            // Create a paragraph element for the message content
+            var messageContent = document.createElement('p');
+            messageContent.classList.add('chat-admin');
+            messageContent.textContent = userMessage;
+
+            // Set the CSS property for word-wrap to break-word
+            messageContent.style.wordWrap = 'break-word';
+
+            // Append the message content to the message-admin container
+            newMessageAdminContainer.appendChild(messageContent);
+
+            // Get the chat-messages div where the new message-admin container will be appended
+            var chatMessages = document.getElementById('chat-messages');
+
+            // Append the new message-admin container to the chat-messages div
+            chatMessages.appendChild(newMessageAdminContainer);
+
+            // Clear the user input after sending the message
+            document.getElementById('user-message').value = '';
+        }
+    }
+
+    // Attach the function to the keyup event of the user-message textarea
+    document.getElementById('user-message').addEventListener('keyup', function(event) {
+        // Check if the Enter key is released (keyCode 13)
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent the default behavior of the Enter key (e.g., adding a newline)
+
+            // Call the sendMessage function when Enter is released
+            sendMessage();
+        }
+    });
+</script>
+
+
+
+
+    
+
 </body>
 </html>
