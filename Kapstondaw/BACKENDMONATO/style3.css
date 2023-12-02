@@ -1721,13 +1721,15 @@ select {
 .messages-cont {
   display: flex;
   flex-direction: row;
+  height: 663px;
 }
 .inbox-cont {
   display: flex;
   flex-direction: column;
   width: 25%;
-  height: 900px;
- 
+  height: auto;
+  
+  overflow-y: auto;
 }
 .inbox-cont .search-cont {
   display: flex;
@@ -1816,7 +1818,7 @@ select {
   display: flex;
   flex-direction: column;
   width: 75%;
-  height: 900px;
+  height: auto;
  
 }
 
@@ -1850,8 +1852,102 @@ select {
 .chat-cont .body-message {
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: auto;
 
+}
+.chat-cont .body-message #chat-container {
+  width: 100%;
+  margin: 0px auto;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding-top: 20px;
+}
+.chat-cont .body-message #chat-container #chat-messages {
+  height: 500px;
+  overflow-y: scroll;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+.chat-cont .body-message #chat-container #chat-messages .message-user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+ 
+}
+.chat-cont .body-message #chat-container #chat-messages .message-admin {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+ 
+}
+.chat-cont .body-message #chat-container #chat-messages .message-admin .chat-admin {
+  max-width: 60%;
+  height: auto;
+  padding: 10px 10px;
+  background-color: #0A7CFF;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: #ffffff;
+  text-align: start;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+
+.chat-cont .body-message #chat-container #chat-messages .message-user .chat-user {
+  max-width: 60%;
+  padding: 10px 10px;
+  background-color: #D9D9D9;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  color: #000000;
+  text-align: start;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+
+.chat-cont .body-message #chat-container #user-input {
+  display: flex;
+  padding: 10px;
+}
+.chat-cont .body-message #chat-container #user-input #user-message {
+  flex-grow: 1;
+  padding: 5px 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  color: #000000;
+  text-align: start;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  
+  height: 50px;
+}
+.chat-cont .body-message #chat-container #user-input #send-button {
+  margin-left: 10px;
+  margin-top: 12px;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
 }
 
 
