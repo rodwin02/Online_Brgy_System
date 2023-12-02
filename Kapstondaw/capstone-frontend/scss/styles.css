@@ -38,12 +38,12 @@ header {
     background: linear-gradient(94deg, #006630 26.26%, #6ba024 134.24%, #f6eb13 242.21%);
     background-size: cover;
     height: 40vh;
-    padding: 2rem 0;
+    padding: 5rem;
     min-width: 780px;
     max-width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
 header .header-image {
@@ -75,6 +75,33 @@ header .menu img {
     display: none;
   }
 }
+header .logo-container {
+  width: 112px;
+  height: 112px;
+  border-radius: 100%;
+  position: relative;
+  border: none;
+  margin: 0 auto;
+  z-index: 3;
+}
+header .logo-container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 375px) {
+  header .logo-container {
+    width: 181px;
+    height: 181px;
+    margin: 0;
+  }
+}
 header ul {
   color: #fff;
   display: flex;
@@ -86,7 +113,8 @@ header ul {
 }
 @media (min-width: 375px) {
   header ul {
-    width: 90%;
+    width: 100%;
+    max-width: 800px;
   }
 }
 header ul li {
@@ -99,33 +127,30 @@ header ul li {
     display: block;
   }
 }
-header ul li .logo-container {
-  width: 112px;
-  height: 112px;
-  border-radius: 100%;
-  position: relative;
-  border: none;
-}
-header ul li .logo-container img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: inherit;
-  height: inherit;
-  border-radius: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+header .user {
+  display: none;
+  z-index: 3;
 }
 @media (min-width: 375px) {
-  header ul li .logo-container img {
-    width: 181px;
-    height: 181px;
+  header .user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
   }
-}
-header ul li:nth-child(1) {
-  z-index: 2;
-  display: block;
+  header .user .login-div {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+  }
+  header .user .login-div p {
+    margin: 0;
+  }
+  header .user .login-div p a {
+    color: #006630;
+    font-weight: 600;
+  }
 }
 
 .subHeader {
@@ -1059,6 +1084,7 @@ header ul li:nth-child(1) {
 .contact-us main .section-2 iframe {
   width: 500px;
   height: inherit;
+  background-color: black;
 }
 @media (min-width: 375px) {
   .contact-us {

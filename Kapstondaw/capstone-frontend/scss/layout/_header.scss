@@ -20,12 +20,12 @@ header {
     );
     background-size: cover;
     height: 40vh;
-    padding: 2rem 0;
+    padding: 5rem;
     min-width: 780px;
     max-width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .header-image {
@@ -56,6 +56,33 @@ header {
     }
   }
 
+  .logo-container {
+    width: 112px;
+    height: 112px;
+    border-radius: 100%;
+    position: relative;
+    border: none;
+    margin: 0 auto;
+    z-index: 3;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: 375px) {
+      width: 181px;
+      height: 181px;
+      margin: 0;
+    }
+  }
+
   ul {
     color: #fff;
     display: flex;
@@ -65,7 +92,8 @@ header {
     padding: 0;
     z-index: 2;
     @media (min-width: 375px) {
-      width: 90%;
+      width: 100%;
+      max-width: 800px;
     }
 
     li {
@@ -75,32 +103,31 @@ header {
       @media (min-width: 375px) {
         display: block;
       }
-      .logo-container {
-        width: 112px;
-        height: 112px;
-        border-radius: 100%;
-        position: relative;
-        border: none;
+    }
+  }
 
-        img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: inherit;
-          height: inherit;
-          border-radius: 100%;
-          object-fit: cover;
-          @media (min-width: 375px) {
-            width: 181px;
-            height: 181px;
+  .user {
+    display: none;
+    z-index: 3;
+    @media (min-width: 375px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .login-div {
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        background-color: #f8f9fa;
+        p {
+          margin: 0;
+          a {
+            color: #006630;
+            font-weight: 600;
           }
         }
       }
-    }
-    li:nth-child(1) {
-      z-index: 2;
-      display: block;
     }
   }
 }

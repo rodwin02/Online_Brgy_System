@@ -3,12 +3,12 @@
     <div class="menu">
         <img src="./assets/menu.png" alt="menu" id="menu" />
     </div>
+    
+    <div class="logo-container">
+        <img src="../BACKENDMONATO/uploads/logo/<?php echo $brgy_logo ?>" alt="Barangay Logo" />
+    </div>
+
     <ul>
-        <li>
-            <div class="logo-container">
-                <img src="../BACKENDMONATO/uploads/logo/<?php echo $brgy_logo ?>" alt="Barangay Logo" />
-            </div>
-        </li>
         <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -17,12 +17,20 @@
         <li><a href="#contact-us">Contact Us</a></li>
         <?php if(isset($_SESSION['username'])) { ?>
         <li><a href="./Cart.php">Request</a></li>
-        <li><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></li>
-        <li><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
-        <?php } else {?>
-        <li class="" id=""><a href="./login_page.php">Login</a></li>
         <?php } ?>
     </ul>
+
+    <div class="user">
+        <?php if(isset($_SESSION['username'])) { ?>
+        <p><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></p>
+        <p><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></p>
+        <?php } else {?>
+            <div class="login-div">
+                <p id=""><a href="./login_page.php">Login</a></p>
+            </div>
+        <?php } ?>
+    </div>
+
     <div class="header-image">
         <img src="../BACKENDMONATO/uploads/logo/<?= $header_image ?>" alt="Header">
     </div>
