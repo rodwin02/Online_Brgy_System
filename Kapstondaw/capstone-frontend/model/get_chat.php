@@ -7,13 +7,13 @@ if (!isset($_SESSION['username'])) {
     }
 }
 
-$name = $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname'];
+$sender = $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname'];
 
-$result = $conn->query("SELECT * FROM chat_messages WHERE `from`='$name' OR `to_receiver`='$name' ORDER BY timestamp ASC");
+$result = $conn->query("SELECT * FROM chat_messages WHERE `sender`='$sender' OR `receiver`='$sender' ORDER BY timestamp ASC");
 
 $messages = array();
 while ($row = $result->fetch_assoc()) {
-    $messageClass = ($row['from'] === 'admin') ? 'message-subContainer-admin' : 'message-subContainer';
+    $messageClass = ($row['sender'] === 'admin') ? 'message-subContainer-admin' : 'message-subContainer';
 
     echo "<div class='$messageClass'>
             <div class='main-message'>

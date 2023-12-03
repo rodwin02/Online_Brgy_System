@@ -187,7 +187,6 @@
   justify-content: center;
   margin-right: 20px;
   display: flex;
-  
 }
 
 .second_layer .add-cont .archiveResidents {
@@ -723,7 +722,6 @@ tr:nth-child(even) {
   padding: 20px;
   overflow-y: auto;
   border-radius: 20px;
-
 }
 .form2Complain {
   display: flex;
@@ -910,15 +908,18 @@ select {
   height: 30px;
   margin-bottom: 10px;
   margin-right: 5px;
-} 
-.unang-layerBlotter .input-cont-blotter #respondent_suffix, #complainant_suffix, #victim_suffix{
+}
+.unang-layerBlotter .input-cont-blotter #respondent_suffix,
+#complainant_suffix,
+#victim_suffix {
   width: 20%;
 }
 .pangalawang-layerBlotter {
   display: flex;
   flex-direction: column;
 }
-.pangalawang-layerBlotter input,select {
+.pangalawang-layerBlotter input,
+select {
   width: 150px;
   height: 30px;
   margin-bottom: 10px;
@@ -939,7 +940,8 @@ select {
   display: flex;
   flex-direction: column;
 }
-.pangapat-layerBlotter input,select {
+.pangapat-layerBlotter input,
+select {
   width: 150px;
   height: 30px;
   margin-bottom: 10px;
@@ -985,7 +987,7 @@ select {
 .unang-left {
   display: flex;
   flex-direction: column;
- 
+
   width: 100%;
 }
 .unang-left .input-complain222 {
@@ -1002,7 +1004,12 @@ select {
   flex-direction: column;
   margin-right: 5px;
 }
-.unang-left .input-cont-complain2 #timeComplain, #dateComplain, #locationComplain, #timeComplain1, #dateComplain1, #locationComplain1 {
+.unang-left .input-cont-complain2 #timeComplain,
+#dateComplain,
+#locationComplain,
+#timeComplain1,
+#dateComplain1,
+#locationComplain1 {
   width: 100%;
   height: 30px;
 }
@@ -1067,7 +1074,6 @@ select {
   justify-content: space-between;
   margin-top: 20px;
   width: 100%;
- 
 }
 .pangatlong-layer-to .statusComplain_cont {
   display: flex;
@@ -1080,13 +1086,13 @@ select {
   font-weight: 700;
   line-height: normal;
 }
-.pangatlong-layer-to .submit_cont  {
+.pangatlong-layer-to .submit_cont {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
 }
-.pangatlong-layer-to .submit_cont button  {
+.pangatlong-layer-to .submit_cont button {
   padding: 6px 16px;
   border: 1px solid #007236;
   color: #007236;
@@ -1230,7 +1236,6 @@ select {
   margin-left: 690px;
   margin-top: 10px;
 }
-
 
 .form2Awareness .submitAwareness {
   width: 89.744px;
@@ -1728,7 +1733,7 @@ select {
   flex-direction: column;
   width: 25%;
   height: auto;
-  
+
   overflow-y: auto;
 }
 .inbox-cont .search-cont {
@@ -1764,7 +1769,7 @@ select {
 }
 .inbox-cont .one-inbox {
   display: flex;
-  background-color: #f5f5f5; 
+  background-color: #f5f5f5;
   padding: 5px 10px;
   cursor: pointer;
 }
@@ -1773,7 +1778,7 @@ select {
 }
 .inbox-cont .one-inbox .user-cont {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   width: 70%;
@@ -1788,7 +1793,7 @@ select {
   line-height: normal;
 }
 .inbox-cont .one-inbox .user-cont .question {
-  color: #6D6D6D;
+  color: #6d6d6d;
   font-family: Poppins;
   font-size: 15px;
   font-style: normal;
@@ -1819,14 +1824,13 @@ select {
   flex-direction: column;
   width: 75%;
   height: auto;
- 
 }
 
 .chat-cont .header-name {
   display: flex;
   flex-direction: column;
-  
-  background: #FFF;
+
+  background: #fff;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 15px 20px;
 }
@@ -1853,7 +1857,6 @@ select {
   display: flex;
   flex-direction: column;
   height: auto;
-
 }
 .chat-cont .body-message #chat-container {
   width: 100%;
@@ -1863,33 +1866,43 @@ select {
   padding-top: 20px;
 }
 .chat-cont .body-message #chat-container #chat-messages {
-  height: 500px;
+  height: fit-content;
   overflow-y: scroll;
   padding: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
-
 }
-.chat-cont .body-message #chat-container #chat-messages .message-user {
+.chat-cont .body-message #chat-container #chat-messages .message-sender {
   display: flex;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: center;
   width: 100%;
- 
 }
+
+.chat-cont .body-message #chat-container #chat-messages .message-admin-sender {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+
 .chat-cont .body-message #chat-container #chat-messages .message-admin {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   width: 100%;
- 
 }
-.chat-cont .body-message #chat-container #chat-messages .message-admin .chat-admin {
+.chat-cont
+  .body-message
+  #chat-container
+  #chat-messages
+  .message-admin
+  .chat-admin {
   max-width: 60%;
   height: auto;
   padding: 10px 10px;
-  background-color: #0A7CFF;
+  background-color: #0a7cff;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -1903,10 +1916,15 @@ select {
   margin-bottom: 15px;
 }
 
-.chat-cont .body-message #chat-container #chat-messages .message-user .chat-user {
+.chat-cont
+  .body-message
+  #chat-container
+  #chat-messages
+  .message-sender
+  .sender {
   max-width: 60%;
   padding: 10px 10px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -1918,7 +1936,28 @@ select {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin-bottom: 15px;
+}
+
+.chat-cont
+  .body-message
+  #chat-container
+  #chat-messages
+  .message-admin-sender
+  .admin-sender {
+  max-width: 60%;
+  padding: 10px 10px;
+  background-color: #0a7cff;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  color: #fff;
+  text-align: start;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .chat-cont .body-message #chat-container #user-input {
@@ -1938,7 +1977,7 @@ select {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  
+
   height: 50px;
 }
 .chat-cont .body-message #chat-container #user-input #send-button {
@@ -1949,5 +1988,3 @@ select {
   height: 25px;
   cursor: pointer;
 }
-
-

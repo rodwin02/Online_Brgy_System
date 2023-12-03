@@ -8,10 +8,10 @@
     }
     if ($_POST['message'] !== "") {
         $message = $_POST['message'];
-        $from = $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname'];
+        $sender = $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname'];
 
-        $stmt = $conn->prepare("INSERT INTO chat_messages (messages, `from`) VALUES (?,?)");
-        $stmt->bind_param("ss", $message, $from);
+        $stmt = $conn->prepare("INSERT INTO chat_messages (messages, `sender`) VALUES (?,?)");
+        $stmt->bind_param("ss", $message, $sender);
         $stmt->execute();
         $stmt->close();
         $conn->close();

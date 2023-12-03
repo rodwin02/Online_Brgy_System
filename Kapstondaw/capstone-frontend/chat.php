@@ -1,7 +1,7 @@
 <?php
 if(isset($_SESSION['username'])) {
-    $from = $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname'];
-    $query = "SELECT * FROM chat_messages WHERE `from`='$from' ORDER BY timestamp ASC";
+    $sender = $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname'];
+    $query = "SELECT * FROM chat_messages WHERE `sender`='$sender' ORDER BY timestamp ASC";
 
     $result = $conn->query($query);
 

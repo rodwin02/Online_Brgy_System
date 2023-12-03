@@ -663,3 +663,45 @@ function displayDetails() {
     memberList.appendChild(tableRow);
   });
 }
+
+// ! Chat
+// Function to update chat messages
+function updateChat() {
+  var messagesContainer = document.getElementById("chat-container");
+  var isScrolledToBottom =
+    messagesContainer.scrollHeight - messagesContainer.clientHeight <=
+    messagesContainer.scrollTop + 1;
+
+  var urlParams = new URLSearchParams(window.location.search);
+  var name = urlParams.get("name");
+
+  $.get(
+    "./model/get_chat.php?name=" + encodeURIComponent(name),
+    function (messages) {
+      $("#chat-container").html(messages);
+
+      if (isScrolledToBottom) {
+        scrollChatToBottom();
+      }
+    }
+  );
+}
+
+// Periodically update chat messages every 3 seconds
+setInterval(updateChat, 3000);
+
+// Submit new message
+$("#chatForm").submit(function (e) {
+  e.preventDefault();
+  console.log("chat");
+
+  $.post("./model/reply_message.php", $("#chatForm").serialize(), function () {
+    $("#user-message").val("");
+    updateChat();
+  });
+});
+
+function scrollChatToBottom() {
+  var messagesContainer = document.getElementById("chat-container");
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
