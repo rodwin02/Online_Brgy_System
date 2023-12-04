@@ -9,52 +9,57 @@ if (!isset($_SESSION['username'])) {
     }
 }
 
+$id 	= $conn->real_escape_string($_POST['id']);
 $resUsername = trim($_POST['username'] ?? '');
 $password = trim($_POST['password'] ?? '');
 $userType = trim($_POST['usertype-user'] ?? '');
-
 $firstname = trim($_POST['res_firstname'] ?? '');
 $middlename = trim($_POST['res_middlename'] ?? '');
 $lastname = trim($_POST['res_lastname'] ?? '');
-$age = trim($_POST['res_age'] ?? '');
 $gender = trim($_POST['res_gender'] ?? '');
 $cstatus = trim($_POST['res_cstatus'] ?? '');
 $street = trim($_POST['res_street'] ?? '');
 $houseNo = trim($_POST['res_houseNo'] ?? '');
 $subdivision = trim($_POST['res_subdivision'] ?? '');
 $dbirth = trim($_POST['res_dbirth'] ?? '');
-$email = $_POST['email'] ?? '';
+$pbirth = trim($_POST['res_pbirth'] ?? '');
+$email 	= $conn->real_escape_string($_POST['email']);
 
-
-if ($username === '' || $password === '' || $userType === '') {
+// Validate input
+if ($resUsername === '' || $password === '' || $userType === '') {
     setMessageAndRedirect('Please fill up the form completely!', 'danger', '../users.php');
 }
 
 // Hash the password using bcrypt
 $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
 
+// Check if the user already exists
 $query = $conn->prepare("SELECT * FROM tbl_users WHERE firstname = ? AND middlename = ? AND lastname = ?");
 $query->bind_param("sss", $firstname, $middlename, $lastname);
 $query->execute();
-
 $result = $query->get_result();
 
 if ($result->num_rows > 0) {
     setMessageAndRedirect('Please enter a unique username!', 'danger', '../users.php');
 }
-if(!empty($email)) {
-insertUser($conn, $resUsername, $passwordHashed, $firstname, $middlename, $lastname, $gender, $cstatus, $street, $dbirth, $email, $userType, $age, $subdivision, $houseNo);
-    
-} else {
-$insert = $conn->prepare("INSERT INTO tbl_users (username, password, role, firstname, middlename, lastname, age, gender, civil_status, street, house_no, subdivision, date_of_birth, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$insert->bind_param("ssssssssssssss", $resUsername, $passwordHashed, $userType, $firstname, $middlename, $lastname, $age, $gender, $cstatus, $street, $houseNo, $subdivision, $dbirth, $email);
-}
 
-
+$yourName = $firstname." ".$middlename." ".$lastname;
+// Insert the user
+$insert = $conn->prepare("INSERT INTO tbl_users (username, password, role, firstname, middlename, lastname, gender, civil_status, street, house_no, subdivision, date_of_birth, email, place_of_birth) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$insert->bind_param("ssssssssssssss", $resUsername, $passwordHashed, $userType, $firstname, $middlename, $lastname, $gender, $cstatus, $street, $houseNo, $subdivision, $dbirth, $email, $pbirth);
 
 if ($insert->execute()) {
-    setMessageAndRedirect('User added!', 'success', '../users.php');
-    if(!empty($email)) {
+    
+    $updateEmail = $conn->prepare("UPDATE tbl_households SET `email` = ? WHERE id = ?");
+    $updateEmail->bind_param("si", $email, $id);
+    $updateResult = $updateEmail->execute();
+    $updateEmail->close();
+
+    setMessageAndRedirect('User added!'. $id, 'success', '../residentInfo.php');
+
+    // Update email in tbl_households
+    if (!empty($email)) {
+        // Include the sendAccount.php file after updating the email
         include "./sendAccount.php";
     }
 } else {
@@ -69,3 +74,4 @@ function setMessageAndRedirect($message, $status, $location) {
     header("Location: $location");
     exit();
 }
+?>

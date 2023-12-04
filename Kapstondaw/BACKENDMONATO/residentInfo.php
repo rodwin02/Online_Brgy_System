@@ -207,12 +207,19 @@ function calculateAge($dob) {
                             ?>
                             <?php if(!$userExists) { ?>
                             <a href="#" class="accountBtn" onclick="createAccount(this)"
-                                data-fname="<?= $row['firstname'] ?>" data-mname="<?= $row['middlename'] ?>"
+                                data-id="<?= $row['id'] ?>" 
+                                data-fname="<?= $row['firstname'] ?>" 
+                                data-mname="<?= $row['middlename'] ?>"
                                 data-lname="<?= $row['lastname'] ?>"
-                                data-age="<?= calculateAge($row['date_of_birth']) ?>" data-sex="<?= $row['sex'] ?>"
-                                data-houseNo="<?= $row['house_no'] ?>" data-street="<?= $row['street'] ?>"
-                                data-subdivision="<?= $row['subdivision'] ?>" data-cstatus="<?= $row['civil_status'] ?>"
-                                data-dbirth="<?= $row['date_of_birth'] ?>" data-email="<?= $row['email'] ?>">Account</a>
+                                data-age="<?= calculateAge($row['date_of_birth']) ?>" 
+                                data-sex="<?= $row['sex'] ?>"
+                                data-houseNo="<?= $row['house_no'] ?>" 
+                                data-street="<?= $row['street'] ?>"
+                                data-subdivision="<?= $row['subdivision'] ?>" 
+                                data-cstatus="<?= $row['civil_status'] ?>"
+                                data-dbirth="<?= $row['date_of_birth'] ?>" 
+                                data-pbirth="<?= $row['place_of_birth'] ?>" 
+                                data-email="<?= $row['email'] ?>">Account</a>
                             <?php } ?>
                             <a href="#" class="delete delete-archive" id="delete-archive">Delete</a>
 

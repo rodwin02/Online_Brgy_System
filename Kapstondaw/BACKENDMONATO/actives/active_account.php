@@ -24,6 +24,8 @@
         <input type="hidden" id="res_dbirth" name="res_dbirth">
 
         <input type="hidden" name="usertype-user" value="user">
+        <input type="hidden" name="id" id="res_id">
+        <input type="hidden" id="res_pbirth" name="res_pbirth">
         <button type="submit" class="res_submit" id="res_submit">Submit</button>
     </form>
 </div>

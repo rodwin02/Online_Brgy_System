@@ -566,6 +566,7 @@ restoreBtn.addEventListener("click", (e) => {
 });
 
 function createAccount(that) {
+  id = $(that).attr("data-id");
   fname = $(that).attr("data-fname");
   mname = $(that).attr("data-mname");
   lname = $(that).attr("data-lname");
@@ -576,7 +577,9 @@ function createAccount(that) {
   street = $(that).attr("data-street");
   subdi = $(that).attr("data-subdivision");
   dbirth = $(that).attr("data-dbirth");
+  pbirth = $(that).attr("data-pbirth");
   email = $(that).attr("data-email");
+  $("#res_id").val(id);
   $("#res_firstname").val(fname);
   $("#res_middlename").val(mname);
   $("#res_lastname").val(lname);
@@ -587,6 +590,7 @@ function createAccount(that) {
   $("#res_subdivision").val(subdi);
   $("#res_street").val(street);
   $("#res_dbirth").val(dbirth);
+  $("#res_pbirth").val(pbirth);
   $("#res_email").val(email);
 }
 
