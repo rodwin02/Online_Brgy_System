@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Barangay Management System</title>
-    <link rel="stylesheet" href="./scss/styles.css?<?php echo time() ?>" />
+    <link rel="stylesheet" href="./frontendScss/styles.css?<?php echo time() ?>" />
 
     <!-- swiper js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -15,8 +15,8 @@
 <body>
 
 
-    <?php include "./model/fetch_brgy_information.php" ?>
-    <?php include "./template/message.php" ?>
+    <?php include "./frontendModel/fetch_brgy_information.php" ?>
+    <?php include "./frontendTemplate/message.php" ?>
     <?php include './actives.php' ?>
     <?php include './active_service.php' ?>
     <?php include './active_report.php' ?>
@@ -206,8 +206,8 @@
     <?php include "./chat.php" ?>
 
 
-    <script src="./js//jQuery-3-7-0.js"></script>
-    <script src="./js//app.js"></script>
+    <script src="./forntendJs//jQuery-3-7-0.js"></script>
+    <script src="./forntendJs//app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->

@@ -40,7 +40,7 @@ if(isset($_SESSION['username'])) {
 
         <hr>
 
-        <form id="chatForm" action="./model/send_chat.php" method="post">
+        <form id="chatForm" action="./frontendModel/send_chat.php" method="post">
         <div class="create-message">
             <!-- <input type="text" name="message" id="messageInput" placeholder="Ask a question"> -->
             <textarea name="message" id="messageInput" placeholder="Ask a question"></textarea>

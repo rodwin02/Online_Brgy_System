@@ -1,5 +1,5 @@
 <div class="active-service" id="active-service">
-    <form class="active-form" action="./model/request_brgyId.php" method="post">
+    <form class="active-form" action="./frontendModel/request_brgyId.php" method="post">
         <div class="main-form">
             <div class="active-service-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Barangay ID</h2>
@@ -54,7 +54,7 @@
 
 
 <div class="active-service" id="active-service">
-    <form class="active-form" action="./model/request_brgyClearance.php" method="post">
+    <form class="active-form" action="./frontendModel/request_brgyClearance.php" method="post">
         <div class="main-form">
             <div class="active-service-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Barangay Clearance</h2>
@@ -87,7 +87,7 @@
 </div>
 
 <div class="active-service" id="active-service">
-    <form class="active-form" action="./model/request_endoresement.php" method="POST">
+    <form class="active-form" action="./frontendModel/request_endoresement.php" method="POST">
         <div class="main-form">
             <div class="active-service-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Endorsement</h2>
@@ -136,7 +136,7 @@
 </div>
 
 <div class="active-service" id="active-service">
-    <form class="active-form" action="./model/request_certOfIndigency.php" method="POST">
+    <form class="active-form" action="./frontendModel/request_certOfIndigency.php" method="POST">
         <div class="main-form">
             <div class="active-service-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Certificate of Indigency</h2>
@@ -187,7 +187,7 @@
 
 
 <div class="active-service" id="active-service">
-    <form class="active-form" action="./model/request_certOfLBR.php" method="post">
+    <form class="active-form" action="./frontendModel/request_certOfLBR.php" method="post">
         <div class="main-form">
             <div class="active-service-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Certificate of Late Birth Registration</h2>
@@ -249,7 +249,7 @@
 </div>
 
 <div class="active-service" id="active-service">
-    <form class="active-form" action="./model/request_businessClearance.php" method="post">
+    <form class="active-form" action="./frontendModel/request_businessClearance.php" method="post">
         <div class="main-form">
             <div class="active-service-close"><img src="./assets/close-login.svg" alt=""></div>
             <h2>Business Clearance</h2>

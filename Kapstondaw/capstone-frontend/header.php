@@ -23,7 +23,7 @@
     <div class="user">
         <?php if(isset($_SESSION['username'])) { ?>
         <p><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></p>
-        <p><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></p>
+        <p><a href="./frontendModel/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></p>
         <?php } else {?>
             <div class="login-div">
                 <p id=""><a href="./login_page.php">Login</a></p>
@@ -57,7 +57,7 @@
         <?php if(isset($_SESSION['username'])) { ?>
         <li><a href="./Cart.php">Request</a></li>
         <li><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></li>
-        <li><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
+        <li><a href="./frontendModel/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
         <?php } else {?>
         <li class="" id=""><a href="./login_page.php">Login</a></li>
         <?php } ?>
@@ -74,7 +74,7 @@
                 <?php if(isset($_SESSION['username'])) { ?>
                 <li><a href="./Cart.php">Request    </a></li>
                 <li><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></li>
-                <li><a href="./model/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
+                <li><a href="./frontendModel/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></li>
                 <?php } else {?>
                 <li class="login" id="login">Login</li>
                 <?php } ?>
