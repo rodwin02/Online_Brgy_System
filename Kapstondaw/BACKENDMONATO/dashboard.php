@@ -150,16 +150,45 @@ function calculateAge($dob) {
         </div>
     </div>
 
+    <div class="modal_message">
+        <div class="form_message">
+            <div class="one-message">
+                <div class="row_message">
+                    <div class="left_message">
+                        <img src="icons/message.png" alt="">
+                    </div>
+                    <div class="right_message">
+                        <div class="account_name">Rodwin C. Homeres</div>
+                        <div class="message">Message:</div>
+                        <div class="message_form">message ko na daw to</div>
+                        <div class="time">3 hours ago</div>
+                    </div>
+                </div>
+                <div class="underline"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="home-container">
         <div class="center">
             <div class="box">
                 <div class="rectangle">
                     <p>Dashboard</p>
                     <div class="container-header">
-                        <img src="icons/bell.png" alt="" id="notifications">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
-                            <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878" />
-                        </svg>
+                        <div class="message-cont">
+                            <img src="icons/message.png" alt="" id="messages">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
+                                <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878" />
+                            </svg>
+                        </div>
+                       
+                        <div class="notif-cont">
+                            <img src="icons/bell.png" alt="" id="notifications">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="7" viewBox="0 0 8 7" fill="none">
+                                <circle cx="4.04541" cy="3.37378" r="3.37378" fill="#EB7878" />
+                            </svg>
+                        </div>
+                       
                         <a class="logout" href="#">Logout</a>
                     </div>
                 </div>
@@ -227,7 +256,7 @@ function calculateAge($dob) {
                             </div>
                         </div>
                     </div>
-                    <div class="voters">
+                    <!-- <div class="voters">
                         <div class="a1">
                             <div class="b1">
                                 <div class="c1">VOTERS</div>
@@ -246,7 +275,7 @@ function calculateAge($dob) {
                                 <img src="icons/down-arrow.png" alt="">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="blotter">
                         <div class="a1">
@@ -493,7 +522,7 @@ function calculateAge($dob) {
     <script>
     const notifications = document.getElementById('notifications');
     const modalNotification = document.querySelector('.modal_notification');
-    const svgIcon = document.querySelector('.container-header svg');
+    const svgIcon = document.querySelector('.notif-cont svg');
 
     // Function to check if there is at least one notification
     function hasNotifications() {
@@ -528,6 +557,42 @@ function calculateAge($dob) {
     document.addEventListener('DOMContentLoaded', function() {
         if (hasNotifications()) {
             svgIcon.style.display = 'block';
+        }
+    });
+    </script>
+
+    <script>
+        //MESSAGE MODAL
+        const messages = document.getElementById('messages');
+        const modalMessages = document.querySelector('.modal_message');
+        const svgIcon1 = document.querySelector('.message-cont svg');
+        
+        // Toggle modal and SVG icon on messages click
+        messages.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        if (modalMessages.style.display === 'block') {
+            modalMessages.style.display = 'none';
+            svgIcon1.style.display = 'none';
+        } else {
+            modalMessages.style.display = 'block';
+            // Display SVG icon if there is at least one notification
+            if (hasMesssages()) {
+                svgIcon1.style.display = 'block';
+            }
+        }
+    });
+     // Close modal on outside click
+     document.body.addEventListener('click', function(event) {
+        if (!modalMessages.contains(event.target) && event.target !== messages) {
+            modalMessages.style.display = 'none';
+            svgIcon1.style.display = 'none';
+        }
+    });
+    // Check and display SVG icon on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        if (hasMessages()) {
+            svgIcon1.style.display = 'block';
         }
     });
     </script>
