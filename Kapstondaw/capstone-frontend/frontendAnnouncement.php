@@ -1,4 +1,4 @@
-<?php include "./server/server.php" ?>
+<?php include "./frontendServer/server.php" ?>
 <?php
 $query =  "SELECT * FROM tbl_announcement";
 $result = $conn->query($query);
@@ -23,7 +23,7 @@ while($row = $result->fetch_assoc()) {
             <h2>Barangay News</h2>
         </div>
 
-        <div class="hide swiper swiperAnnouncement" id="announcement">
+        <div class="hide swiper swiperAnnouncement" id="frontendAnnouncement">
             <div class="swiper-wrapper options">
                 <?php if(!empty($announcement)) { ?>
                 <?php $no=1; foreach($announcement as $row): ?>

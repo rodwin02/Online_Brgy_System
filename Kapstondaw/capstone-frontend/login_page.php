@@ -1,4 +1,4 @@
-<?php include "./server/server.php" ?>
+<?php include "./frontendServer/server.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 

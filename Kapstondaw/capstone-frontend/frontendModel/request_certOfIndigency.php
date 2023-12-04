@@ -1,5 +1,5 @@
 <?php 
-	include('../server/server.php');
+	include('../frontendServer/server.php');
 
     if(!isset($_SESSION['username'])){
         if (isset($_SERVER["HTTP_REFERER"])) {

@@ -1,4 +1,4 @@
-<?php include './server/server.php' ?>
+<?php include './frontendServer/server.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -146,9 +146,9 @@
 
     <?php include './services.php' ?>
 
-    <?php include './announcement.php' ?>
+    <?php include './frontendAnnouncement.php' ?>
 
-    <?php include './awareness.php' ?>
+    <?php include './frontendAwareness.php' ?>
 
     <?php include './contact_us.php' ?>
 
@@ -170,8 +170,8 @@
                     <li><a href="#">HOME</a></li>
                     <li><a href="#about">ABOUT</a></li>
                     <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#announcement">ANNOUNCEMENT</a></li>
-                    <li><a href=" #awareness-page">Awareness</a></li>
+                    <li><a href="#frontendAnnouncement">ANNOUNCEMENT</a></li>
+                    <li><a href=" #frontendAwareness">Awareness</a></li>
                     <li><a href="#contact-us">Contact Us</a></li>
                 </ul>
             </h2>

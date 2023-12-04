@@ -1,4 +1,4 @@
-<div class="awareness-page" id="awareness-page">
+<div class="awareness-page" id="frontendAwareness">
     <div class="section-1">
         <h1>Awareness</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ex molestiae quos! Porro in et dolores eum pariatur molestias error natus harum dicta consequuntur, facere libero voluptate obcaecati eaque minus.

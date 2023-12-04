@@ -1,5 +1,5 @@
 <?php
-include '../server/server.php';
+include '../frontendServer/server.php';
 
 $username = trim($_POST['username'] ?? '');
 $password = trim($_POST['password'] ?? '');

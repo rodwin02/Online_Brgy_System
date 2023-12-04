@@ -1,4 +1,4 @@
-<?php include "./server/server.php" ?>
+<?php include "./frontendServer/server.php" ?>
 <?php
     $id = $_GET['id'];
     $query = "SELECT * FROM tbl_announcement WHERE `id`='$id'";

@@ -1,5 +1,5 @@
 <?php
-	include '../server/server.php';
+	include '../frontendServer/server.php';
    	session_destroy();
     unset($_SESSION['username']);
     unset($_SESSION['role']);
