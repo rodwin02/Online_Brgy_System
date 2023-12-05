@@ -82,11 +82,25 @@
   cursor: pointer;
   z-index: 2;
 }
-.container-header svg {
+
+.container-header .message-cont {
+  display: flex;
+
+}
+.container-header .message-cont svg {
   position: absolute;
-  margin-right: 113px;
-  margin-bottom: 15px;
-  display: none;
+  margin-left: 22px;
+  margin-top: -2px;
+  z-index: 2;
+}
+.container-header .notif-cont {
+  display: flex;
+  
+}
+.container-header .notif-cont svg {
+  position: absolute;
+  margin-left: 15px;
+  margin-top: 1px;
   z-index: 2;
 }
 
@@ -2060,6 +2074,94 @@ tr:nth-child(even) {
   line-height: normal;
 }
 .form_notification .underline {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #D3D3D3;
+  height: 1px;
+}
+
+.modal_message{
+  display: flex;
+  z-index: 0;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10% 0 0 75%;
+  display: none;
+  z-index: 1;
+ 
+}
+.form_message{
+  width: 89%;
+  height: 600px;
+  border-radius: 5px;
+  background: #F2F2F2;
+  box-shadow: 0px 3px 4px 3px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.form_message .one-message:hover {
+  background: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.form_message .row_message {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.form_message .row_message .left_message {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+}
+.form_message .row_message .right_message {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 5px;
+}
+.form_message .row_message .right_message .account_name {
+  color: #BDBDBD;
+  font-family: Poppins;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+.form_message .row_message .right_message .message {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.form_message .row_message .right_message .message_form {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.form_message .row_message .right_message .time {
+  color: #818181;
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.form_message .underline {
   margin-top: 10px;
   width: 100%;
   background-color: #D3D3D3;
