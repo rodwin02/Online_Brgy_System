@@ -2079,6 +2079,7 @@ footer .com ul li {
   overflow-y: scroll;
   overflow-x: hidden;
   max-height: 400px;
+  min-height: 400px;
   padding: 1rem;
 }
 .chat-container .chat-screen .messages-container .message-subContainer {
