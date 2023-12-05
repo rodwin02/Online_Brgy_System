@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
-    <link rel="stylesheet" href="./scss/styles.css?<?php echo time()?>">
+    <link rel="stylesheet" href="./frontendScss/styles.css?<?php echo time()?>">
 
 </head>
 
@@ -33,7 +33,7 @@
                 <li><a href="./main.php#frontendAnnouncement">Announcement</a></li>
                 <li><a href="./main.php#contact-us">Contact us!</a></li>
                 <?php if(isset($_SESSION['username'])) { ?>
-                <li><a href="#">Cart</a></li>
+                <li><a href="#">Request</a></li>
                 <li><?php echo $_SESSION['username'];?></li>
                 <li><a href="./frontendModel/logout.php?username=<?= $_SESSION['username']  ?>">Logout</a></li>
                 <?php } else {?>

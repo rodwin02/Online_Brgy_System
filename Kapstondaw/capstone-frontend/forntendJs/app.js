@@ -231,3 +231,12 @@ function scrollChatToBottom() {
   var messagesContainer = document.getElementById("messagesContainer");
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
+
+// ! PROFILE
+const downBtn = document.querySelector(".down-btn");
+const profileOption = document.querySelector(".profile-option");
+
+downBtn.addEventListener("click", () => {
+  profileOption.style.height = "fit-content";
+  profileOption.style.padding = ".5rem";
+});
