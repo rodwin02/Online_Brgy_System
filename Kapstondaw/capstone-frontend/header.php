@@ -22,8 +22,16 @@
 
     <div class="user">
         <?php if(isset($_SESSION['username'])) { ?>
-        <p><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></p>
-        <p><a href="./frontendModel/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></p>
+            <div class="profile-img">
+                <img src="./assets/default-profile.svg" alt="default-profile">
+            </div>
+            <p><?php echo $_SESSION['firstname']." ".$_SESSION['middlename']." ".$_SESSION['lastname']?></p>
+            <div class="profile-down">
+                <img class="down-btn" src="./assets/profile-down.svg" alt="down">
+            </div>
+            <div class="profile-option">
+                <p><a href="./frontendModel/logout.php?username=<?= $_SESSION['username'] ?>">Logout</a></p>
+            </div>
         <?php } else {?>
             <div class="login-div">
                 <p id=""><a href="./login_page.php">Login</a></p>

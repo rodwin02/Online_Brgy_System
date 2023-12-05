@@ -128,7 +128,7 @@
                     </div>
                     <div class="inputProfile">
                         <p>Image Profile</p>
-                        <input type="file" id="imageProfile" accept="image/*" onchange="previewProfile()">
+                        <input type="file" name="imageProfile[]" id="imageProfile" accept="image/*" onchange="previewProfile()">
                     </div>
 
                 </div>
@@ -140,7 +140,7 @@
 
         <p class="List">List of Members</p>
 
-        <form action="./model/add_households.php" method="post" class="input-table">
+        <form action="./model/add_households.php" enctype="multipart/form-data" method="post" class="input-table">
             <table class="main-table">
                 <thead>
                     <tr>
@@ -212,7 +212,7 @@
             const sex = document.getElementById('sex').value;
             const civilStatus = document.getElementById('civilStatus').value;
             const votersStatus = document.getElementById('votersStatus').value;
-            const imageProfile = document.getElementById('imageProfile').value;
+            const imageProfile = document.getElementById('imageProfile').files[0]
 
             // Phone number validation for the Philippines (10 digits starting with 09)
             const phoneNoValue = document.getElementById('phoneNo').value;
@@ -404,14 +404,17 @@
 
             // Create a new cell for the "Image Profile" input
             const imageProfileCell = newRow.insertCell(11); // Adjust the column index if needed
-            imageProfileCell.style.display = 'none';
+            // imageProfileCell.style.display = 'none';
             const imageProfileInput = document.createElement('input');
             imageProfileInput.type = 'file';
             imageProfileInput.name = 'imageProfile[]'; // Add [] for multiple file inputs
             imageProfileInput.accept = 'image/*';
-            imageProfileInput.onchange = function() {
-                previewProfile(imageProfileInput); // Call the previewProfile function
-            };
+            imageProfileInput.files[0] = imageProfile;
+            // console.log(imageProfile)
+   
+            // imageProfileInput.onchange = function() {
+            //     previewProfile(imageProfileInput); // Call the previewProfile function
+            // };
 
             imageProfileCell.appendChild(imageProfileInput);
 

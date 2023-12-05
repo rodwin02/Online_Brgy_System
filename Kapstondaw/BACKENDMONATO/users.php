@@ -110,7 +110,7 @@ while($row = $result->fetch_assoc()) {
     </div>
 
     <div class="modal-AddUser">
-        <form class="form2-user" action="./model/add_user.php" method="POST">
+        <form class="form2-user" action="./model/create_account.php" method="POST">
             <div class="title-cont-1">
                 <p class="title-name">Create New User</p>
                 <img src="icons/close 1.png" class="closeBtn" alt="">

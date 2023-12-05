@@ -27,7 +27,7 @@
             $_SESSION['success'] = 'danger';
         } else {
             // Chairmanship position doesn't exist, proceed with insertion
-            $insert = "INSERT INTO tblofficials (`firstname`, `middlename`, `lastname`, `suffix`, `chairmanship`, `position`, `termstart`, `termend`, `status`) VALUES ('$fname', '$mname', '$lname', '$suffix', '$chair','$pos', '$start','$end', '$status')";
+            $insert = "INSERT INTO tblofficials (`firstname`, `middlename`, `lastname`, `suffix`, `chairmanship`, `termstart`, `termend`, `status`) VALUES ('$fname', '$mname', '$lname', '$suffix', '$chair', '$start','$end', '$status')";
             $result = $conn->query($insert);
 
             if ($result === true) {
@@ -37,6 +37,15 @@
                 $_SESSION['message'] = 'Something went wrong!';
                 $_SESSION['success'] = 'danger';
             }
+
+            $adminName = $fname." ".$mname." ".$lname;
+            $passwordHashed = password_hash("admin", PASSWORD_DEFAULT);
+            $role = "admin";
+
+            $insertAdmin = $conn->prepare("INSERT INTO tbl_users (username, password, role) VALUES (?, ?, ?)");
+            $insertAdmin->bind_param("sss", $adminName, $passwordHashed, $role);
+            $insertAdmin->execute();
+
         }
 
     }else{
