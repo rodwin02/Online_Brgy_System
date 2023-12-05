@@ -93,15 +93,24 @@ if(!empty($_GET['name'])) {
                         <?php } ?>
                     </div>
 
-                        <form action="./model/reply_message.php" method="post" id="chatForm">
-                            <input type="hidden" name="name" value="<?= $name ?>">
-                            <div id="user-input">
-                                <textarea type="text" name="reply" id="user-message" placeholder="Type your message..."> </textarea>
-                                <button type="submit">
-                                    <img id="send-button" src="icons/send.png" alt="" onclick="sendMessage()">
-                                </button>
-                            </div>
-                        </form>
+                    <form action="./model/reply_message.php" method="post" id="chatForm">
+                        <input type="hidden" name="name" value="<?= $name ?>">
+                        <div id="user-input" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                            <textarea type="text" name="reply" id="user-message" placeholder="Type your message..."
+                                style="width: 900px; height: 32px; padding: 5px 5px; margin: 15px 0px; text-align: start;
+                                font-family: Poppins;
+                                font-size: 12px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;" maxlength="70" > </textarea>
+                            
+                            <button type="submit" style="margin-left: 12px; border: none; cursor: pointer;"> 
+                               <img id="send-button" src="icons/send.png" alt="" onclick="sendMessage()" style="display: flex;">
+                            </button>
+                           
+                           
+                        </div>
+                    </form>
 
                 </div>
             </div>

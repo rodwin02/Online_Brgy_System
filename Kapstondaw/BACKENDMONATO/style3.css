@@ -1791,6 +1791,7 @@ select {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  text-decoration: none;
 }
 .inbox-cont .one-inbox .user-cont .question {
   color: #6d6d6d;
@@ -1799,6 +1800,7 @@ select {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-decoration: none;
 }
 
 .inbox-cont .one-inbox .time-cont {
@@ -1864,6 +1866,7 @@ select {
   border: 1px solid #ccc;
   overflow: hidden;
   padding-top: 20px;
+  height: 500px;
 }
 .chat-cont .body-message #chat-container #chat-messages {
   height: fit-content;
@@ -1964,22 +1967,8 @@ select {
   display: flex;
   padding: 10px;
 }
-.chat-cont .body-message #chat-container #user-input #user-message {
-  flex-grow: 1;
-  padding: 5px 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 
-  color: #000000;
-  text-align: start;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
 
-  height: 50px;
-}
 .chat-cont .body-message #chat-container #user-input #send-button {
   margin-left: 10px;
   margin-top: 12px;
@@ -1987,4 +1976,10 @@ select {
   width: 25px;
   height: 25px;
   cursor: pointer;
+
+}
+
+.body-message #chatForm .user-input .submit {
+  display: flex;
+  background-color: red;
 }
