@@ -127,10 +127,7 @@
                         </select>
                     </div>
 
-                    <div class="inputProfile">
-                        <p>Image Profile</p>
-                        <input type="file" name="imageProfile[]" id="imageProfile" accept="image/*" onchange="previewProfile()">
-                    </div>
+                  
 
                 </div>
             </div>
@@ -213,7 +210,7 @@
             const sex = document.getElementById('sex').value;
             const civilStatus = document.getElementById('civilStatus').value;
             const votersStatus = document.getElementById('votersStatus').value;
-            const imageProfile = document.getElementById('imageProfile').files[0]
+  
 
 
             // Phone number validation for the Philippines (10 digits starting with 09)
@@ -403,21 +400,7 @@
 
             votersStatusCell.appendChild(votersStatusInput);
 
-            // Create a new cell for the "Image Profile" input
-            const imageProfileCell = newRow.insertCell(11); // Adjust the column index if needed
-            // imageProfileCell.style.display = 'none';
-            const imageProfileInput = document.createElement('input');
-            imageProfileInput.type = 'file';
-            imageProfileInput.name = 'imageProfile[]'; // Add [] for multiple file inputs
-            imageProfileInput.accept = 'image/*';
-            imageProfileInput.files[0] = imageProfile;
-            // console.log(imageProfile)
-   
-            // imageProfileInput.onchange = function() {
-            //     previewProfile(imageProfileInput); // Call the previewProfile function
-            // };
-
-            imageProfileCell.appendChild(imageProfileInput);
+            
 
             const householdHeadCell = newRow.insertCell(10);
 
