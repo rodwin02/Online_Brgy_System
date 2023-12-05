@@ -220,7 +220,7 @@ tr:nth-child(even) {
 
 .modal-AddOfficials {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -235,7 +235,7 @@ tr:nth-child(even) {
 }
 .modal-editOfficials {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -299,18 +299,30 @@ tr:nth-child(even) {
   margin-bottom: 10px;
   margin-top: 5px;
 }
-
-.formOfficials .submitAdd {
-  width: 82px;
-  height: 29px;
-  margin-top: 5px;
-  
-  border-radius: 5px;
-  background: #007236;
-  color: wheat;
+.addContOfficial {
   display: flex;
-  align-self: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
+}
+.addContOfficial button {
+  padding: 5px 25px;
+  height: 30.836px;
+  color: #007236;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  border: solid 1px #007236;
+  cursor: pointer;
+
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 10px;
+}
+.addContOfficial button:hover {
+  background-color: #007236;
+  color: white;
 }
 
 .pangalawang-cont .labelOfficials {

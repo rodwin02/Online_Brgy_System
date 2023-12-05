@@ -141,7 +141,10 @@
 
                 <input type="hidden" name="status" value="Active">
 
-                <input class="submitAdd" type="submit" value="Create">
+                <div class="addContOfficial">
+                   <button type="submit">Submit</button>
+                </div>
+           
             </div>
 
         </form>
