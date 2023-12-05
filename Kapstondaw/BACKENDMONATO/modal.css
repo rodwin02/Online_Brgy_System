@@ -1,7 +1,7 @@
 /* ID FORM CSS */
 .modal-addIdForm {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -15,7 +15,7 @@
 }
 .modal-editIdForm {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -187,7 +187,7 @@
 /* BRGY CLEARANCE CSS */
 .modal-addBrgyClearance {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -201,7 +201,7 @@
 }
 .modal-editBrgyClearance {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -286,7 +286,7 @@
 /* E CERT */
 .modal-addEcert_forself {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -300,7 +300,7 @@
 }
 .modal-editEcert_forself {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -383,7 +383,7 @@
 
 .modal-addEcert_forsomeone {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -397,7 +397,7 @@
 }
 .modal-editEcert_forsomeone {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -494,7 +494,7 @@
 /* CERT OF INDIGENCY */
 .modal-addIndigency_forself {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -508,7 +508,7 @@
 }
 .modal-editIndigency_forself {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -591,7 +591,7 @@
 
 .modal-addIndigency_forsomeone {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -605,7 +605,7 @@
 }
 .modal-editIndigency_forsomeone {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -699,7 +699,7 @@
 /* CERT OF LBR */
 .modal-addlbr_forself {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -713,7 +713,7 @@
 }
 .modal-editlbr_forself {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -807,7 +807,7 @@
 
 .modal-addlbr_forsingleparent {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -821,7 +821,7 @@
 }
 .modal-editlbr_forsingleparent {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -916,7 +916,7 @@
 
 .modal-addlbr_fortheirchild {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -930,7 +930,7 @@
 }
 .modal-editlbr_fortheirchild {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -1026,7 +1026,7 @@
 
 .modal-addClearance {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -1091,7 +1091,7 @@
 }
 .modal-addClosure {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -1160,7 +1160,7 @@
 
 .Edit_Member {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);

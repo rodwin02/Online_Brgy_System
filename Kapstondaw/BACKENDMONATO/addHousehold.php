@@ -126,10 +126,8 @@
                             <option value="Non-voters">Non-voters</option>
                         </select>
                     </div>
-                    <div class="inputProfile">
-                        <p>Image Profile</p>
-                        <input type="file" id="imageProfile" accept="image/*" onchange="previewProfile()">
-                    </div>
+                    
+                    
 
                 </div>
             </div>
@@ -212,7 +210,7 @@
             const sex = document.getElementById('sex').value;
             const civilStatus = document.getElementById('civilStatus').value;
             const votersStatus = document.getElementById('votersStatus').value;
-            const imageProfile = document.getElementById('imageProfile').value;
+       
 
             // Phone number validation for the Philippines (10 digits starting with 09)
             const phoneNoValue = document.getElementById('phoneNo').value;
@@ -253,7 +251,6 @@
                 'sex',
                 'civilStatus',
                 'votersStatus',
-                'imageProfile',
                 'ext'
             ];
             // Create a single set of input fields for names
@@ -373,7 +370,7 @@
 
             occupationCell.appendChild(occupationInput);
 
-            const sexCell = newRow.insertCell(8);
+            const sexCell = newRow.insertCell(7);
             const sexInput = document.createElement('input');
             sexInput.type = 'text';
             sexInput.name = 'sex[]';
@@ -381,7 +378,7 @@
 
             sexCell.appendChild(sexInput);
 
-            const civilStatusCell = newRow.insertCell(9);
+            const civilStatusCell = newRow.insertCell(8);
             civilStatusCell.style.display = 'none';
             const civilStatusInput = document.createElement('input');
             civilStatusInput.type = 'text';
@@ -393,7 +390,7 @@
 
 
             // Create a new cell for the "Voters Status" input
-            const votersStatusCell = newRow.insertCell(10); // Adjust the column index if needed
+            const votersStatusCell = newRow.insertCell(9); // Adjust the column index if needed
             votersStatusCell.style.display = 'none';
             const votersStatusInput = document.createElement('input');
             votersStatusInput.type = 'text';
@@ -402,20 +399,9 @@
 
             votersStatusCell.appendChild(votersStatusInput);
 
-            // Create a new cell for the "Image Profile" input
-            const imageProfileCell = newRow.insertCell(11); // Adjust the column index if needed
-            imageProfileCell.style.display = 'none';
-            const imageProfileInput = document.createElement('input');
-            imageProfileInput.type = 'file';
-            imageProfileInput.name = 'imageProfile[]'; // Add [] for multiple file inputs
-            imageProfileInput.accept = 'image/*';
-            imageProfileInput.onchange = function() {
-                previewProfile(imageProfileInput); // Call the previewProfile function
-            };
+            
 
-            imageProfileCell.appendChild(imageProfileInput);
-
-            const householdHeadCell = newRow.insertCell(12);
+            const householdHeadCell = newRow.insertCell(10);
 
             const radioInput = document.createElement('input');
             radioInput.type = 'radio';
@@ -436,7 +422,7 @@
             householdHeadCell.appendChild(radioInput);
 
             // Create a "Delete" button for the "Action" column
-            const actionCell = newRow.insertCell(13);
+            const actionCell = newRow.insertCell(11);
             const deleteButton = document.createElement('button');
             deleteButton.textContent =
                 'Delete';

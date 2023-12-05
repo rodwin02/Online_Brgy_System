@@ -136,9 +136,9 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-indigency-self">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" name="applicant_fname" id="applicant_fname_self" placeholder="First Name">
+                        <input type="text" name="applicant_fname" id="applicant_fname_self" placeholder="First Name" required>
                         <input type="text" name="applicant_mname" id="applicant_mname_self" placeholder="Middle Name">
-                        <input type="text" name="applicant_lname" id="applicant_lname_self" placeholder="Last Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname_self" placeholder="Last Name" required>
                         <input type="text" name="applicant_suffix" id="applicant_suffix_self" placeholder="Suffix">
                     </div>
                 </div>
@@ -146,17 +146,17 @@ while($row = $result->fetch_assoc()) {
                     <label for="address">Address:</label>
                     <div class="label111">
                         <input type="text" name="house_no" id="house_no_self" placeholder="Houseno.">
-                        <input type="text" name="street" id="street_self" placeholder="Street name">
+                        <input type="text" name="street" id="street_self" placeholder="Street name" required>
                         <input type="text" name="subdivision" id="subdivision_self" placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-indigency-self">
                     <label for="purpose">Purpose:</label>
-                    <input type="text" id="purpose_self" name="purpose">
+                    <input type="text" id="purpose_self" name="purpose" required>
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Self">
-            <input type="submit" id="submit" value="Submit">
+            <input type="submit" id="submit" value="Request">
         </form>
     </div>
 
@@ -174,11 +174,11 @@ while($row = $result->fetch_assoc()) {
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
                         <input type="text" name="applicant_fname" id="applicant_fname_self1" class="applicant_fname"
-                            placeholder="First Name">
+                            placeholder="First Name" required>
                         <input type="text" name="applicant_mname" id="applicant_mname_self1" class="applicant_mname"
                             placeholder="Middle Name">
                         <input type="text" name="applicant_lname" id="applicant_lname_self1" class="applicant_lname"
-                            placeholder="Last Name">
+                            placeholder="Last Name" required>
                         <input type="text" name="applicant_suffix" id="applicant_suffix_self1" class="applicant_suffix"
                             placeholder="Suffix">
                     </div>
@@ -187,7 +187,7 @@ while($row = $result->fetch_assoc()) {
                     <label for="address">Address:</label>
                     <div class="label111">
                         <input type="text" name="house_no" id="house_no_self1" class="house_no" placeholder="Houseno.">
-                        <input type="text" name="street" id="street_self1" class="street" placeholder="Street name">
+                        <input type="text" name="street" id="street_self1" class="street" placeholder="Street name" required>
                         <input type="text" name="subdivision" id="subdivision_self1" class="subdivision"
                             placeholder="Subdivision name">
                     </div>
@@ -200,7 +200,7 @@ while($row = $result->fetch_assoc()) {
             <input type="hidden" name="documentFor" value="Self">
             <input type="hidden" name="date_requested" id="date_requested" class="date_requested">
             <input type="hidden" name="id" id="certOfIndigency_id" class="certOfIndigency_id">
-            <input type="submit" id="submit" value="Submit">
+            <input type="submit" id="submit" value="Request">
         </form>
     </div>
 
@@ -215,20 +215,20 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-indigency-someone">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" name="applicant_fname" id="applicant_fname_someone" placeholder="First Name">
+                        <input type="text" name="applicant_fname" id="applicant_fname_someone" placeholder="First Name" required>
                         <input type="text" name="applicant_mname" id="applicant_mname_someone"
                             placeholder="Middle Name">
-                        <input type="text" name="applicant_lname" id="applicant_lname_someone" placeholder="Last Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname_someone" placeholder="Last Name" required>
                         <input type="text" name="applicant_suffix" id="applicant_suffix_someone" placeholder="Suffix">
                     </div>
                 </div>
                 <div class="input-indigency-someone">
                     <label for="requestorName">Requestor:</label>
                     <div class="label111">
-                        <input type="text" name="requestor_fname" id="requestor_fname_someone" placeholder="First Name">
+                        <input type="text" name="requestor_fname" id="requestor_fname_someone" placeholder="First Name" required>
                         <input type="text" name="requestor_mname" id="requestor_mname_someone"
                             placeholder="Middle Name">
-                        <input type="text" name="requestor_lname" id="requestor_lname_someone" placeholder="Last Name">
+                        <input type="text" name="requestor_lname" id="requestor_lname_someone" placeholder="Last Name" required>
                         <input type="text" name="requestor_suffix" id="requestor_suffix_someone" placeholder="Suffix">
                     </div>
                 </div>
@@ -236,17 +236,17 @@ while($row = $result->fetch_assoc()) {
                     <label for="address">Address:</label>
                     <div class="label111">
                         <input type="text" name="house_no" id="house_no_someone" placeholder="Houseno.">
-                        <input type="text" name="street" id="street_someone" placeholder="Street name">
+                        <input type="text" name="street" id="street_someone" placeholder="Street name" required>
                         <input type="text" name="subdivision" id="subdivision_someone" placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-indigency-someone">
                     <label for="purpose">Purpose:</label>
-                    <input type="text" id="purpose_someone" name="purpose">
+                    <input type="text" id="purpose_someone" name="purpose" required>
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Someone">
-            <input type="submit" id="submit" value="Submit">
+            <input type="submit" id="submit" value="Request">
         </form>
     </div>
 
@@ -263,11 +263,11 @@ while($row = $result->fetch_assoc()) {
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
                         <input type="text" name="applicant_fname" id="applicant_fname_someone1" class="applicant_fname"
-                            placeholder=" First Name">
+                            placeholder=" First Name" required>
                         <input type="text" name="applicant_mname" id="applicant_mname_someone1" class="applicant_mname"
                             placeholder="Middle Name">
                         <input type="text" name="applicant_lname" id="applicant_lname_someone1" class="applicant_lname"
-                            placeholder="Last Name">
+                            placeholder="Last Name" required>
                         <input type="text" name="applicant_suffix" id="applicant_suffix_someone1"
                             class="applicant_suffix" placeholder="Suffix">
                     </div>
@@ -276,11 +276,11 @@ while($row = $result->fetch_assoc()) {
                     <label for="requestorName">Requestor:</label>
                     <div class="label111">
                         <input type="text" name="requestor_fname" id="requestor_fname_someone1" class="requestor_fname"
-                            placeholder="First Name">
+                            placeholder="First Name" required>
                         <input type="text" name="requestor_mname" id="requestor_mname_someone1" class="requestor_mname"
                             placeholder="Middle Name">
                         <input type="text" name="requestor_lname" id="requestor_lname_someone1" class="requestor_lname"
-                            placeholder="Last Name">
+                            placeholder="Last Name" required>
                         <input type="text" name="requestor_suffix" id="requestor_suffix_someone1"
                             class="requestor_suffix" placeholder="Suffix">
                     </div>
@@ -290,20 +290,20 @@ while($row = $result->fetch_assoc()) {
                     <div class="label111">
                         <input type="text" name="house_no" id="house_no_someone1" class="house_no"
                             placeholder="Houseno.">
-                        <input type="text" name="street" id="street_someone1" class="street" placeholder="Street name">
+                        <input type="text" name="street" id="street_someone1" class="street" placeholder="Street name" required>
                         <input type="text" name="subdivision" id="subdivision_someone1" class="subdivision"
                             placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-indigency-someone">
                     <label for="purpose">Purpose:</label>
-                    <input type="text" id="purpose_someone1" name="purpose" class="purpose">
+                    <input type="text" id="purpose_someone1" name="purpose" class="purpose" required>
                 </div>
             </div>
             <input type="hidden" name="documentFor" value="Someone">
             <input type="hidden" name="date_requested" id="date_requested" class="date_requested">
             <input type="hidden" name="id" id="certOfIndigency_id" class="certOfIndigency_id">
-            <input type="submit" id="submit" value="Submit">
+            <input type="submit" id="submit" value="Request">
         </form>
     </div>
 

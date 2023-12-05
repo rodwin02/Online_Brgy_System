@@ -129,9 +129,9 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-brgy-clearance">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" name="applicant_fname" id="applicant_fname" placeholder="First Name">
+                        <input type="text" name="applicant_fname" id="applicant_fname" placeholder="First Name" required>
                         <input type="text" name="applicant_mname" id="applicant_mname" placeholder="Middle Name">
-                        <input type="text" name="applicant_lname" id="applicant_lname" placeholder="Last Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname" placeholder="Last Name" required>
                         <input type="text" name="applicant_suffix" id="applicant_suffix" placeholder="Suffix">
                     </div>
                 </div>
@@ -139,25 +139,25 @@ while($row = $result->fetch_assoc()) {
                     <label for="address">Address:</label>
                     <div class="label111">
                         <input type="text" name="house_no" id="house_no" placeholder="Houseno.">
-                        <input type="text" name="street" id="street" placeholder="Street name">
+                        <input type="text" name="street" id="street" placeholder="Street name" required>
                         <input type="text" name="subdivision" id="subdivision" placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-brgy-clearance">
                     <label for="birth_date">Birth Date:</label>
-                    <input type="date" name="dob" id="birth_date">
+                    <input type="date" name="dob" id="birth_date" required>
                 </div>
                 <div class="input-brgy-clearance">
                     <label for="place_of_birth">Place of Birth:</label>
-                    <input type="text" name="pob" id="place_of_birth">
+                    <input type="text" name="pob" id="place_of_birth" required>
                 </div>
                 <div class="input-brgy-clearance">
                     <label for="purpose">Purpose:</label>
-                    <input type="text" name="purpose" id="purpose" name="purpose">
+                    <input type="text" name="purpose" id="purpose" name="purpose" required>
                 </div>
 
             </div>
-            <input type="submit" id="submit" value="Add">
+            <input type="submit" id="submit" value="Request">
         </form>
     </div>
 
@@ -173,9 +173,9 @@ while($row = $result->fetch_assoc()) {
                 <div class="input-brgy-clearance">
                     <label for="applicantName">Applicant:</label>
                     <div class="label111">
-                        <input type="text" name="applicant_fname" id="applicant_fname1" placeholder="First Name">
+                        <input type="text" name="applicant_fname" id="applicant_fname1" placeholder="First Name" required>
                         <input type="text" name="applicant_mname" id="applicant_mname1" placeholder="Middle Name">
-                        <input type="text" name="applicant_lname" id="applicant_lname1" placeholder="Last Name">
+                        <input type="text" name="applicant_lname" id="applicant_lname1" placeholder="Last Name" required>
                         <input type="text" name="applicant_suffix" id="applicant_suffix1" placeholder="Suffix">
                     </div>
                 </div>
@@ -183,27 +183,27 @@ while($row = $result->fetch_assoc()) {
                     <label for="address">Address:</label>
                     <div class="label111">
                         <input type="text" name="house_no" id="house_no1" placeholder="Houseno.">
-                        <input type="text" name="street" id="street1" placeholder="Street name">
+                        <input type="text" name="street" id="street1" placeholder="Street name" required>
                         <input type="text" name="subdivision" id="subdivision1" placeholder="Subdivision name">
                     </div>
                 </div>
                 <div class="input-brgy-clearance">
                     <label for="birth_date">Birth Date:</label>
-                    <input type="date" name="dob" id="birth_date1">
+                    <input type="date" name="dob" id="birth_date1" required>
                 </div>
                 <div class="input-brgy-clearance">
                     <label for="place_of_birth">Place of Birth:</label>
-                    <input type="text" name="pob" id="place_of_birth1">
+                    <input type="text" name="pob" id="place_of_birth1" required>
                 </div>
                 <div class="input-brgy-clearance">
                     <label for="purpose">Purpose:</label>
-                    <input type="text" name="purpose" id="purpose1" name="purpose">
+                    <input type="text" name="purpose" id="purpose1" name="purpose" required>
                 </div>
 
             </div>
             <input type="hidden" name="id" id="brgyClearance_id">
             <input type="hidden" name="date_requested" id="date_requested">
-            <input type="submit" id="submit" value="Add">
+            <input type="submit" id="submit" value="Request">
         </form>
     </div>
 

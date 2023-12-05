@@ -90,7 +90,7 @@
   margin-left: 10px;
 }
 .second_layer .search-cont .sort {
-  z-index: 2;
+  z-index: 4;
   margin-top: 190px;
   width: 350px;
   height: auto;
@@ -538,7 +538,7 @@ tr:nth-child(even) {
 
 .modal-AddResidents {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -552,7 +552,7 @@ tr:nth-child(even) {
 }
 .modal-editResidents {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -567,7 +567,7 @@ tr:nth-child(even) {
 
 .modal-AddBlotter {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -581,7 +581,7 @@ tr:nth-child(even) {
 }
 .modal-editBlotter {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -596,7 +596,7 @@ tr:nth-child(even) {
 
 .modal-AddComplain {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -613,7 +613,7 @@ tr:nth-child(even) {
 }
 .modal-editComplain {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -630,7 +630,7 @@ tr:nth-child(even) {
 }
 .modal-AddAwareness {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -647,7 +647,7 @@ tr:nth-child(even) {
 }
 .modal-editAwareness {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -665,7 +665,7 @@ tr:nth-child(even) {
 
 .modal-AddUser {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
@@ -679,7 +679,7 @@ tr:nth-child(even) {
 }
 .modal-editUser {
   display: flex;
-  z-index: 2;
+  z-index: 4;
   height: 100vh;
   position: fixed;
   background: rgba(0, 0, 0, 0.45);
